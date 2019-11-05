@@ -2,10 +2,10 @@ site_name: RARE
 nav:
   - Home: index.md
   - Guides: 
-    - 'Management': '/guides/mgmt-plane/'
+    - 'Network management': '/guides/mgmt-plane/'
     - 'Routing': '/guides/control-plane/'
-    - 'Service': '/guides/svc-plane/'
-    - 'Dataplane': '/guides/data-plane/' 
+    - 'Network service': '/guides/svc-plane/'
+    - 'Data-plane': '/guides/data-plane/' 
   - License: license.md
   - About: about.md
  
