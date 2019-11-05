@@ -86,13 +86,36 @@ r2 ping 4321::1 /vrf v1
 
 ```
 show ipv4 ospf 1 interfaces
+<cli output>
+
 ```
 
 ```
 show ipv4 ospf 1 neighbors
+<cli output>
+
 ```
 
 ```
 show ipv4 ospf 1 database 0
+<cli output>
+
 ```
 
+```
+show ipv6 ospf 1 interfaces
+<cli output>
+
+```
+
+```
+show ipv6 ospf 1 neighbors
+<cli output>
+
+```
+
+```
+show ipv6 ospf 1 database 0
+<cli output>
+
+```
