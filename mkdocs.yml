@@ -1,0 +1,54 @@
+site_name: RARE 
+nav:
+  - Home: index.md
+  - Guides: 
+    - 'Management': '/guides/mgmt-plane/'
+    - 'Routing': '/guides/control-plane/'
+    - 'Service': '/guides/svc-plane/'
+    - 'Dataplane': '/guides/data-plane/' 
+  - License: license.md
+  - About: about.md
+ 
+theme:
+  logo: 'img/rare-icon.png'
+  favicon: 'img/favicon.ico'
+  name: 'material'
+  custom_dir: 'theme' 
+  font:
+    text: 'Ubuntu'
+    code: 'Ubuntu Mono'
+
+extra_css:
+  - 'css/extra.css'
+
+config:
+  copyright: GÉANT RARE / FreerTr projects
+
+extra:
+  search:
+    language: 'en'
+    tokenizer: '[\s\-\.]+'
+
+markdown_extensions:
+  - admonition
+  - codehilite
+  - footnotes
+  - meta
+  - toc:
+      permalink: true
+  - pymdownx.arithmatex
+  #- pymdownx.betterem:
+  #    smart_enable: all
+  - pymdownx.caret
+  - pymdownx.critic
+  - pymdownx.details
+  - pymdownx.emoji:
+      emoji_generator: !!python/name:pymdownx.emoji.to_svg
+  - pymdownx.inlinehilite
+  - pymdownx.magiclink
+  - pymdownx.mark
+  - pymdownx.smartsymbols
+  - pymdownx.superfences
+  - pymdownx.tasklist:
+      custom_checkbox: true
+  - pymdownx.tilde
