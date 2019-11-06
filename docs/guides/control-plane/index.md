@@ -1,14 +1,13 @@
-# Routing configuration guide ![under-contruction-small](/img/under-construction-small.png)
+# **Routing configuration guide** ![under-contruction-small](/img/under-construction-small.png)
 
-## Interior Gateway Protocol
+## **Interior Gateway Protocol**
 ### [OSPF](igp/ospf/)
 ### Integrated IS-IS
 
-## Label Transport Protocol
+## **Label Transport Protocol**
 ### LDP 
-### RSVP Traffic Engineering
 ### OSPF Segment Routing extension
 ### Integrated IS-IS Segment Routing extension
 
-## Internet Protocol
+## **Internet Protocol**
 ### BGP

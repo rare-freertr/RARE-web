@@ -2,11 +2,11 @@
 
 Establish OSPF point to point adjaceny between 2 nodes
 
-# Topology diagram
+## Topology diagram
 
 ![topology](/img/rout-ospf01.png)
 
-# Configuration
+## Configuration
 
 r1:
 ```
@@ -74,7 +74,7 @@ int eth1
 !
 ```
 
-# Verification
+## Verification
 
 ```
 r1 ping 2.2.2.2 /vrf v1

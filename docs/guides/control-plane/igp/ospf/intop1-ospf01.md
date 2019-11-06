@@ -2,11 +2,11 @@
 
 Establish OSPF point to point adjaceny between FreerTr and cisco IOS 
 
-# Topology diagram
+### Topology diagram
 
 ![topology](/img/intop1-ospf01.png)
 
-# Configuration
+### Configuration
 
 r1:
 ```
@@ -68,7 +68,7 @@ interface gigabit1
 !
 ```
 
-# Verification
+### Verification
 
 ```
 r1 ping 2.2.2.2 /vrf v1

@@ -1,11 +1,25 @@
 site_name: RARE 
+site_dir: /home/floui/frederic-loui.github.io
 nav:
   - Home: index.md
-  - Guides: 
+  - Getting started: index.md
+  - Reference guides: 
     - 'Network management': '/guides/mgmt-plane/'
     - 'Routing': '/guides/control-plane/'
     - 'Network service': '/guides/svc-plane/'
-    - 'Data-plane': '/guides/data-plane/' 
+    - 'Dataplane': '/guides/data-plane/' 
+  - Validated design: 
+    - 'SP BGP route reflector': index.md
+    - 'K8s BGP route reflector': index.md
+    - 'MPLS LSR':
+      - 'LDP LSR': index.md
+      - 'ISIS-SR LSR': index.md
+      - 'OSPF-SR LSR': index.md
+    - 'MPLS LER':
+      - 'VPNv4/6VPE': index.md
+      - 'Point to point L2VPN': index.md
+      - 'VPLS': index.md
+      - 'EVPN': index.md
   - License: license.md
   - About: about.md
  
@@ -20,9 +34,6 @@ theme:
 
 extra_css:
   - 'css/extra.css'
-
-config:
-  copyright: GÉANT RARE / FreerTr projects
 
 extra:
   search:
