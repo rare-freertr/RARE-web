@@ -1,8 +1,8 @@
 site_name: RARE 
-site_dir: ./web/
+site_dir: ../frederic-loui.github.io/
 nav:
   - Home: index.md
-  - Getting started: index.md
+  - Getting started: getting-started.md
   - Reference guides: 
     - 'Network management': '/guides/mgmt-plane/'
     - 'Routing': '/guides/control-plane/'

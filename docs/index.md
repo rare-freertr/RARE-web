@@ -20,7 +20,7 @@ You'll find in this page various guides that will help you deploy and use **RARE
 
 ## **Guides** 
 
-Each guide falls under one of the 4 main categories listed below and is applicable to IPv4 and IPv6:
+Each guide is IPv4/IPv6 compliant and falls under one category listed below:
 
 ### **Network management**
  - features related to the network management plane  
@@ -47,7 +47,7 @@ Each guide falls under one of the 4 main categories listed below and is applicab
         * Point to point L2VPN
         * VPLS
         * EVPN
-    * SRv6 (<- on-going effort)
+    * SRv6 (on-going)
         * L3VPN function
         * L2VPN function
 ### **Dataplane**
@@ -62,5 +62,4 @@ Each guide falls under one of the 4 main categories listed below and is applicab
     * Supported **[P4](https://p4.org/)** dataplane
         * **[p4lang](https://p4.org/)**: [bmv2](https://github.com/p4lang/behavioral-model)
         * **[INTEL/BAREFOOT](https://www.barefootnetworks.com/)**: [TOFINO](https://www.barefootnetworks.com/products/brief-tofino/)
-        * **[P4](https://p4.org/)** on FPGA: [CESNET liberouter project](https://www.liberouter.org/technologies/p4/)[<- on-going effort study] 
-
+        * **[P4](https://p4.org/)** on FPGA: [CESNET liberouter project](https://www.liberouter.org/technologies/p4/)(on-going) 
