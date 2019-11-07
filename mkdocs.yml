@@ -9,17 +9,17 @@ nav:
     - 'Network service': '/guides/svc-plane/'
     - 'Dataplane': '/guides/data-plane/' 
   - Validated design: 
-    - 'SP BGP route reflector': index.md
-    - 'K8s BGP route reflector': index.md
+    - 'SP BGP route reflector': '/rvd/sp-bgp-rr/'
+    - 'K8s BGP route reflector': '/rvd/k8s-bgp-rr/'
     - 'MPLS LSR':
-      - 'LDP LSR': index.md
-      - 'ISIS-SR LSR': index.md
-      - 'OSPF-SR LSR': index.md
+      - 'LDP LSR': '/rvd/mpls-lsr/ldp/' 
+      - 'ISIS-SR LSR': '/rvd/mpls-lsr/isis-sr/' 
+      - 'OSPF-SR LSR': '/rvd/mpls-lsr/ospf-sr/'
     - 'MPLS LER':
-      - 'VPNv4/6VPE': index.md
-      - 'Point to point L2VPN': index.md
-      - 'VPLS': index.md
-      - 'EVPN': index.md
+      - 'VPNv4/6VPE': '/rvd/mpls-ler/vpnv4-6vpe/' 
+      - 'Point to point L2VPN': '/rvd/mpls-ler/p2p-l2vpn/'
+      - 'VPLS': '/rvd/mpls-ler/vpls/'
+      - 'EVPN': '/rvd/mpls-ler/evpn/' 
   - License: license.md
   - About: about.md
  
