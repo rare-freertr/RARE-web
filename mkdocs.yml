@@ -1,5 +1,5 @@
 site_name: RARE 
-site_dir: /home/floui/frederic-loui.github.io
+site_dir: ./web/
 nav:
   - Home: index.md
   - Getting started: index.md
