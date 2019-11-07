@@ -1,4 +1,4 @@
-# **Example: ospf point to point chain**
+# Example: ospf point to point chain
 
 Establish ospf point to point adjaceny between 4 nodes
 
