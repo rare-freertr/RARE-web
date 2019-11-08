@@ -2,12 +2,13 @@
 
 ## **Interior Gateway Protocol**
 ### [OSPF](igp/ospf/)
-### Integrated IS-IS
+### [Integrated IS-IS](igp/isis/)
+### [Enhanced Interior Gateway Routing Protocol](igp/eigrp/)
 
 ## **Label Transport Protocol**
-### LDP 
-### OSPF Segment Routing extension
-### Integrated IS-IS Segment Routing extension
+### [Label Distribution Protocol](mpls/ldp/)
+### [OSPF Segment Routing extension](mpls/ospf-sr/)
+### [Integrated IS-IS Segment Routing extension](mpls/isis-sr/)
 
 ## **Internet Protocol**
-### BGP
+### [BGP](ip-protocol/bgp/)

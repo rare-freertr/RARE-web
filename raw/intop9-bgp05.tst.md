@@ -1,0 +1,51 @@
+# Example: interop9: bgp metric
+
+## **Topology diagram**
+
+![topology](/img/intop9-bgp05.tst.png)
+
+## **Configuration**
+
+**r1:**
+```
+hostname r1
+logging file debug ../binTmp/zzz-log-r1.run
+vrf def v1
+ rd 1:1
+ exit
+int eth1
+ vrf for v1
+ ipv4 addr 1.1.1.1 255.255.255.0
+ ipv6 addr 1234::1 ffff::
+ exit
+int lo0
+ vrf for v1
+ ipv4 addr 2.2.2.1 255.255.255.255
+ ipv6 addr 4321::1 ffff:ffff:ffff:ffff:ffff:ffff:ffff:ffff
+ exit
+route-map rm1
+ sequence 10 act deny
+  match metric 1234
+ sequence 20 act permit
+ exit
+router bgp4 1
+ vrf v1
+ address uni
+ local-as 1
+ router-id 4.4.4.1
+ neigh 1.1.1.2 remote-as 1
+ neigh 1.1.1.2 route-map-in rm1
+ red conn
+ exit
+router bgp6 1
+ vrf v1
+ address uni
+ local-as 1
+ router-id 6.6.6.1
+ neigh 1234::2 remote-as 1
+ neigh 1234::2 route-map-in rm1
+ red conn
+ exit
+```
+
+## **Verification**
