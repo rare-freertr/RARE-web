@@ -1,2 +1,2 @@
-# **Data plane configuration guide**
+# **Dataplane configuration guide**
 ![under-contruction](/img/under-construction.png)

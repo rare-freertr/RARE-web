@@ -1,4 +1,4 @@
-# **Open Shortest Path First** ![under-contruction-small](/img/under-construction-small.png)
+# Open Shortest Path First 
 
 ## **Configuration**
 ### [ospf point2point connection](/guides/tst/rout-ospf01.tst/)
@@ -67,13 +67,3 @@
 ### [ospf authentication](/guides/tst/intop2-ospf09.tst/)
 ### [ospf p2mp te](/guides/tst/intop2-ospf10.tst/)
 ### [ospf sr](/guides/tst/intop2-ospf11.tst/)
-### [point2point ospf](/guides/tst/intop9-ospf01.tst/)
-### [ospf dr](/guides/tst/intop9-ospf02.tst/)
-### [ospf nondr](/guides/tst/intop9-ospf03.tst/)
-### [ospf transit area](/guides/tst/intop9-ospf04.tst/)
-### [ospf stub area](/guides/tst/intop9-ospf05.tst/)
-### [ospf nssa area](/guides/tst/intop9-ospf06.tst/)
-### [ospf te](/guides/tst/intop9-ospf07.tst/)
-### [ospf prefix withdraw](/guides/tst/intop9-ospf08.tst/)
-### [ospf p2mp te](/guides/tst/intop9-ospf09.tst/)
-### [ospf sr](/guides/tst/intop9-ospf10.tst/)

@@ -1,4 +1,4 @@
-# **Enhanced Interior Gateway Routing Protocol** 
+# Enhanced Interior Gateway Routing Protocol 
 
 ## **Configuration**
 ### [eigrp point2point connection](/guides/tst/rout-eigrp01.tst/)

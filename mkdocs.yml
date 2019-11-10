@@ -4,10 +4,10 @@ nav:
   - Home: index.md
   - Getting started: getting-started.md
   - Reference guides: 
-    - 'Network management': '/guides/mgmt-plane/'
     - 'Routing': '/guides/control-plane/'
     - 'Network service': '/guides/svc-plane/'
     - 'Dataplane': '/guides/data-plane/' 
+    - 'Network management': '/guides/mgmt-plane/'
   - Validated design: 
     - 'SP BGP route reflector': '/rvd/sp-bgp-rr/'
     - 'K8s BGP route reflector': '/rvd/k8s-bgp-rr/'
