@@ -44,7 +44,7 @@
 
 ### [redistribution with ospf](/guides/tst/rout-redist02.tst/)
 
-## **Interoperability test**
+## **Interoperability test with Cisco IOS**
 ### [point2point ospf](/guides/tst/intop1-ospf01.tst/)
 ### [ospf dr](/guides/tst/intop1-ospf02.tst/)
 ### [ospf nondr](/guides/tst/intop1-ospf03.tst/)
@@ -56,6 +56,7 @@
 ### [ospf authentication](/guides/tst/intop1-ospf09.tst/)
 ### [ospf p2mp te](/guides/tst/intop1-ospf10.tst/)
 ### [ospf sr](/guides/tst/intop1-ospf11.tst/)
+## **Interoperability test with Cisco IOS-XR**
 ### [point2point ospf](/guides/tst/intop2-ospf01.tst/)
 ### [ospf dr](/guides/tst/intop2-ospf02.tst/)
 ### [ospf nondr](/guides/tst/intop2-ospf03.tst/)
