@@ -1,4 +1,4 @@
-# Integrated IS-IS ![under-contruction-small](/img/under-construction-small.png) 
+# Integrated IS-IS 
 
 ## **Configuration**
 ### [isis over ethernet](/guides/tst/rout-isis01.tst/)
@@ -54,10 +54,9 @@
 ### [isis inter-level with bier](/guides/tst/rout-isis51.tst/)
 ### [isis multi-topology with bier](/guides/tst/rout-isis52.tst/)
 ### [isis autoroute](/guides/tst/rout-isis53.tst/)
-
 ### [redistribution with isis](/guides/tst/rout-redist01.tst/)
 
-## **Interoperability test**
+## **Interoperability test with Cisco IOS**
 ### [point2point isis](/guides/tst/intop1-isis01.tst/)
 ### [isis dis](/guides/tst/intop1-isis02.tst/)
 ### [isis nondis](/guides/tst/intop1-isis03.tst/)
@@ -68,6 +67,8 @@
 ### [isis authentication](/guides/tst/intop1-isis08.tst/)
 ### [isis p2mp te](/guides/tst/intop1-isis09.tst/)
 ### [isis sr](/guides/tst/intop1-isis10.tst/)
+
+## **Interoperability test with Cisco IOS-XR**
 ### [point2point isis](/guides/tst/intop2-isis01.tst/)
 ### [isis dis](/guides/tst/intop2-isis02.tst/)
 ### [isis nondis](/guides/tst/intop2-isis03.tst/)
@@ -78,11 +79,3 @@
 ### [isis authentication](/guides/tst/intop2-isis08.tst/)
 ### [isis p2mp te](/guides/tst/intop2-isis09.tst/)
 ### [isis sr](/guides/tst/intop2-isis10.tst/)
-### [point2point isis](/guides/tst/intop9-isis01.tst/)
-### [isis dis](/guides/tst/intop9-isis02.tst/)
-### [isis nondis](/guides/tst/intop9-isis03.tst/)
-### [isis te](/guides/tst/intop9-isis04.tst/)
-### [isis prefix withdraw](/guides/tst/intop9-isis05.tst/)
-### [isis p2mp te](/guides/tst/intop9-isis06.tst/)
-### [isis sr](/guides/tst/intop9-isis07.tst/)
-
