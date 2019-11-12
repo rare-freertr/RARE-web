@@ -29,8 +29,6 @@
 ### [ospf with bfd](/guides/tst/rout-ospf26.tst/)
 ### [ospf with te](/guides/tst/rout-ospf27.tst/)
 ### [ospf peer template](/guides/tst/rout-ospf28.tst/)
-### [ospf with sr](/guides/tst/rout-ospf29.tst/)
-### [ospf transit area with sr](/guides/tst/rout-ospf30.tst/)
 ### [ospf prefix withdraw](/guides/tst/rout-ospf31.tst/)
 ### [ospf change in metric](/guides/tst/rout-ospf32.tst/)
 ### [ospf change in tag](/guides/tst/rout-ospf33.tst/)
@@ -54,8 +52,6 @@
 ### [ospf te](/guides/tst/intop1-ospf07.tst/)
 ### [ospf prefix withdraw](/guides/tst/intop1-ospf08.tst/)
 ### [ospf authentication](/guides/tst/intop1-ospf09.tst/)
-### [ospf p2mp te](/guides/tst/intop1-ospf10.tst/)
-### [ospf sr](/guides/tst/intop1-ospf11.tst/)
 ## **Interoperability test with Cisco IOS-XR**
 ### [point2point ospf](/guides/tst/intop2-ospf01.tst/)
 ### [ospf dr](/guides/tst/intop2-ospf02.tst/)
@@ -66,5 +62,3 @@
 ### [ospf te](/guides/tst/intop2-ospf07.tst/)
 ### [ospf prefix withdraw](/guides/tst/intop2-ospf08.tst/)
 ### [ospf authentication](/guides/tst/intop2-ospf09.tst/)
-### [ospf p2mp te](/guides/tst/intop2-ospf10.tst/)
-### [ospf sr](/guides/tst/intop2-ospf11.tst/)

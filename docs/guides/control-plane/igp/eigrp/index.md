@@ -24,8 +24,9 @@
 ### [eigrp autoroute](/guides/tst/rout-eigrp21.tst/)
 ### [redistribution with eigrp](/guides/tst/rout-redist08.tst/)
 
-## **Interoperability test**
+## **Interoperability test with Cisco IOS**
 ### [eigrp](/guides/tst/intop1-eigrp01.tst/)
 ### [eigrp prefix withdraw](/guides/tst/intop1-eigrp02.tst/)
+## **Interoperability test with Cisco IOS-XR**
 ### [eigrp](/guides/tst/intop2-eigrp01.tst/)
 ### [eigrp prefix withdraw](/guides/tst/intop2-eigrp02.tst/)
