@@ -41,9 +41,6 @@
 ### [isis multi-topology with te](/guides/tst/rout-isis38.tst/)
 ### [isis chain of broadcast nets with multi-topology](/guides/tst/rout-isis39.tst/)
 ### [isis broadcast subnet with multi-topology](/guides/tst/rout-isis40.tst/)
-### [isis with sr](/guides/tst/rout-isis41.tst/)
-### [isis inter-level with sr](/guides/tst/rout-isis42.tst/)
-### [isis multi-topology with sr](/guides/tst/rout-isis43.tst/)
 ### [isis prefix withdraw](/guides/tst/rout-isis44.tst/)
 ### [isis change in metric](/guides/tst/rout-isis45.tst/)
 ### [isis aggregate](/guides/tst/rout-isis46.tst/)
@@ -65,8 +62,6 @@
 ### [isis multi-topology](/guides/tst/intop1-isis06.tst/)
 ### [isis prefix withdraw](/guides/tst/intop1-isis07.tst/)
 ### [isis authentication](/guides/tst/intop1-isis08.tst/)
-### [isis p2mp te](/guides/tst/intop1-isis09.tst/)
-### [isis sr](/guides/tst/intop1-isis10.tst/)
 
 ## **Interoperability test with Cisco IOS-XR**
 ### [point2point isis](/guides/tst/intop2-isis01.tst/)
@@ -77,5 +72,3 @@
 ### [isis multi-topology](/guides/tst/intop2-isis06.tst/)
 ### [isis prefix withdraw](/guides/tst/intop2-isis07.tst/)
 ### [isis authentication](/guides/tst/intop2-isis08.tst/)
-### [isis p2mp te](/guides/tst/intop2-isis09.tst/)
-### [isis sr](/guides/tst/intop2-isis10.tst/)
