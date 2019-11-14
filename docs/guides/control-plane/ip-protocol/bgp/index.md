@@ -401,7 +401,7 @@
 ### [redistribution with bgp vpn](/guides/tst/rout-redist04.tst/)
 ### [redistribution with bgp othervpn](/guides/tst/rout-redist05.tst/)
 
-## **Interoperability**
+## **Interoperability test with Cisco IOS**
 ### [ebgp](/guides/tst/intop1-bgp01.tst/)
 ### [ibgp](/guides/tst/intop1-bgp02.tst/)
 ### [bgp locpref](/guides/tst/intop1-bgp03.tst/)
@@ -420,6 +420,8 @@
 ### [bgp extended community](/guides/tst/intop1-bgp16.tst/)
 ### [evpn/cmac over bgp](/guides/tst/intop1-bgp17.tst/)
 ### [bgp 6pe](/guides/tst/intop1-bgp18.tst/)
+
+## **Interoperability test with Cisco IOS-XR**
 ### [ebgp](/guides/tst/intop2-bgp01.tst/)
 ### [ibgp](/guides/tst/intop2-bgp02.tst/)
 ### [bgp locpref](/guides/tst/intop2-bgp03.tst/)
@@ -442,20 +444,3 @@
 ### [bgp vpnv6 over srv6](/guides/tst/intop2-bgp20.tst/)
 ### [bgp 6pe](/guides/tst/intop2-bgp21.tst/)
 ### [evpn/vpws over bgp](/guides/tst/intop2-bgp22.tst/)
-### [ebgp](/guides/tst/intop9-bgp01.tst/)
-### [ibgp](/guides/tst/intop9-bgp02.tst/)
-### [bgp locpref](/guides/tst/intop9-bgp03.tst/)
-### [bgp origin](/guides/tst/intop9-bgp04.tst/)
-### [bgp metric](/guides/tst/intop9-bgp05.tst/)
-### [bgp community](/guides/tst/intop9-bgp06.tst/)
-### [bgp aspath](/guides/tst/intop9-bgp07.tst/)
-### [bgp with labels](/guides/tst/intop9-bgp08.tst/)
-### [bgp addpath](/guides/tst/intop9-bgp09.tst/)
-### [bgp prefix withdraw](/guides/tst/intop9-bgp10.tst/)
-### [bgp vpnv4](/guides/tst/intop9-bgp11.tst/)
-### [bgp authentication](/guides/tst/intop9-bgp12.tst/)
-### [bgp vpnv6](/guides/tst/intop9-bgp13.tst/)
-### [vpls/ldp over bgp](/guides/tst/intop9-bgp14.tst/)
-### [vpls/bgp over bgp](/guides/tst/intop9-bgp15.tst/)
-### [bgp extended community](/guides/tst/intop9-bgp16.tst/)
-### [bgp large community](/guides/tst/intop9-bgp17.tst/)
