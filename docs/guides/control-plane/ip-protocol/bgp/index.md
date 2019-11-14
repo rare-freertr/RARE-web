@@ -1,4 +1,4 @@
-# Border Gateway Protocol ![under-contruction-small](/img/under-construction-small.png)
+# Border Gateway Protocol 
   
 ## **Configuration**
 ### [ebgp in chain](/guides/tst/rout-bgp001.tst/)
