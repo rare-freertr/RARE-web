@@ -29,11 +29,7 @@
 ## **Interoperability test with Cisco IOS**
 ### [ldp lsp](/guides/tst/intop1-ldp01.tst/)
 ### [ethernet over mpls](/guides/tst/intop1-ldp02.tst/)
-### [ldp p2mp lsp](/guides/tst/intop1-ldp03.tst/)
-### [ldp mp2mp lsp](/guides/tst/intop1-ldp04.tst/)
 
 ## **Interoperability test with Cisco IOS-XR**
 ### [ldp lsp](/guides/tst/intop2-ldp01.tst/)
 ### [ethernet over mpls](/guides/tst/intop2-ldp02.tst/)
-### [ldp p2mp lsp](/guides/tst/intop2-ldp03.tst/)
-### [ldp mp2mp lsp](/guides/tst/intop2-ldp04.tst/)
