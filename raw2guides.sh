@@ -669,3 +669,41 @@ ln -s -r ./raw/rout-eigrp20.tst.md ./docs/guides/tst/rout-eigrp20.tst.md
 ln -s -r ./raw/rout-eigrp21.tst.md ./docs/guides/tst/rout-eigrp21.tst.md
 ln -s -r ./raw/rout-redist08.tst.md ./docs/guides/tst/rout-redist08.tst.md
 
+# ldp
+
+ln -s -r ./raw/intop1-ldp01.tst.md ./docs/guides/tst/intop1-ldp01.tst.md
+ln -s -r ./raw/intop1-ldp02.tst.md ./docs/guides/tst/intop1-ldp02.tst.md
+ln -s -r ./raw/intop1-ldp03.tst.md ./docs/guides/tst/intop1-ldp03.tst.md
+ln -s -r ./raw/intop1-ldp04.tst.md ./docs/guides/tst/intop1-ldp04.tst.md
+ln -s -r ./raw/intop2-ldp01.tst.md ./docs/guides/tst/intop2-ldp01.tst.md
+ln -s -r ./raw/intop2-ldp02.tst.md ./docs/guides/tst/intop2-ldp02.tst.md
+ln -s -r ./raw/intop2-ldp03.tst.md ./docs/guides/tst/intop2-ldp03.tst.md
+ln -s -r ./raw/intop2-ldp04.tst.md ./docs/guides/tst/intop2-ldp04.tst.md
+ln -s -r ./raw/intop9-ldp01.tst.md ./docs/guides/tst/intop9-ldp01.tst.md
+ln -s -r ./raw/intop9-ldp02.tst.md ./docs/guides/tst/intop9-ldp02.tst.md
+ln -s -r ./raw/intop9-ldp03.tst.md ./docs/guides/tst/intop9-ldp03.tst.md
+ln -s -r ./raw/intop9-ldp04.tst.md ./docs/guides/tst/intop9-ldp04.tst.md
+ln -s -r ./raw/mpls-ldp01.tst.md ./docs/guides/tst/mpls-ldp01.tst.md
+ln -s -r ./raw/mpls-ldp02.tst.md ./docs/guides/tst/mpls-ldp02.tst.md
+ln -s -r ./raw/mpls-ldp03.tst.md ./docs/guides/tst/mpls-ldp03.tst.md
+ln -s -r ./raw/mpls-ldp04.tst.md ./docs/guides/tst/mpls-ldp04.tst.md
+ln -s -r ./raw/mpls-ldp05.tst.md ./docs/guides/tst/mpls-ldp05.tst.md
+ln -s -r ./raw/mpls-ldp06.tst.md ./docs/guides/tst/mpls-ldp06.tst.md
+ln -s -r ./raw/mpls-ldp07.tst.md ./docs/guides/tst/mpls-ldp07.tst.md
+ln -s -r ./raw/mpls-ldp08.tst.md ./docs/guides/tst/mpls-ldp08.tst.md
+ln -s -r ./raw/mpls-ldp09.tst.md ./docs/guides/tst/mpls-ldp09.tst.md
+ln -s -r ./raw/mpls-ldp10.tst.md ./docs/guides/tst/mpls-ldp10.tst.md
+ln -s -r ./raw/mpls-ldp11.tst.md ./docs/guides/tst/mpls-ldp11.tst.md
+ln -s -r ./raw/mpls-ldp12.tst.md ./docs/guides/tst/mpls-ldp12.tst.md
+ln -s -r ./raw/mpls-ldp13.tst.md ./docs/guides/tst/mpls-ldp13.tst.md
+ln -s -r ./raw/mpls-ldp14.tst.md ./docs/guides/tst/mpls-ldp14.tst.md
+ln -s -r ./raw/mpls-ldp15.tst.md ./docs/guides/tst/mpls-ldp15.tst.md
+ln -s -r ./raw/mpls-ldp16.tst.md ./docs/guides/tst/mpls-ldp16.tst.md
+ln -s -r ./raw/mpls-ldp17.tst.md ./docs/guides/tst/mpls-ldp17.tst.md
+ln -s -r ./raw/mpls-ldp18.tst.md ./docs/guides/tst/mpls-ldp18.tst.md
+ln -s -r ./raw/mpls-ldp19.tst.md ./docs/guides/tst/mpls-ldp19.tst.md
+ln -s -r ./raw/mpls-ldp20.tst.md ./docs/guides/tst/mpls-ldp20.tst.md
+ln -s -r ./raw/mpls-ldp21.tst.md ./docs/guides/tst/mpls-ldp21.tst.md
+ln -s -r ./raw/mpls-ldp22.tst.md ./docs/guides/tst/mpls-ldp22.tst.md
+ln -s -r ./raw/mpls-ldp23.tst.md ./docs/guides/tst/mpls-ldp23.tst.md
+ln -s -r ./raw/mpls-ldp24.tst.md ./docs/guides/tst/mpls-ldp24.tst.md
