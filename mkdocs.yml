@@ -9,8 +9,9 @@ nav:
     - 'Dataplane': '/guides/data-plane/' 
     - 'Network management': '/guides/mgmt-plane/'
   - Validated design: 
-    - 'SP BGP route reflector': '/rvd/sp-bgp-rr/'
-    - 'K8s BGP route reflector': '/rvd/k8s-bgp-rr/'
+    - 'BGP route reflector': 
+      - 'Service Provider': '/rvd/sp-bgp-rr/'
+      - 'Kubernetes': '/rvd/k8s-bgp-rr/'
     - 'MPLS LSR':
       - 'LDP LSR': '/rvd/mpls-lsr/ldp/' 
       - 'ISIS-SR LSR': '/rvd/mpls-lsr/isis-sr/' 

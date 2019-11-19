@@ -1,4 +1,4 @@
-# **Routing configuration guide** ![under-contruction-small](/img/under-construction-small.png)
+# Routing configuration guide 
 
 ## **Interior Gateway Protocol**
 ### [OSPF](igp/ospf/)
