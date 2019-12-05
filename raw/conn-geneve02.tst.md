@@ -127,5 +127,3 @@ vpdn vx
 !
 end
 ```
-
-## **Verification**

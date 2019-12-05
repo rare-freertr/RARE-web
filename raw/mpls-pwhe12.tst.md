@@ -132,5 +132,3 @@ server l2f l2f
 !
 end
 ```
-
-## **Verification**

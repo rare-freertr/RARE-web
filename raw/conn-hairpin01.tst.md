@@ -82,7 +82,7 @@ r1#show inter ha11 full
 r1#show inter ha11 full
 hairpin11 is up (since 00:00:03, 1 changes)
  description:
- type is hairpin, hwaddr=0078.5d21.4b0b, mtu=1500, bw=100mbps, vrf=v1
+ type is hairpin, hwaddr=0079.6608.6b44, mtu=1500, bw=100mbps, vrf=v1
  ip4 address=1.1.1.1/24, netmask=255.255.255.0, ifcid=10011
  ip6 address=1234::1/16, netmask=ffff::, ifcid=10011
  received 28 packets (2740 bytes) dropped 0 packets (0 bytes)

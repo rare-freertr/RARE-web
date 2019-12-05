@@ -889,5 +889,3 @@ ipv6 route v1 4321::5 ffff:ffff:ffff:ffff:ffff:ffff:ffff:ffff 1234:5::1
 !
 end
 ```
-
-## **Verification**

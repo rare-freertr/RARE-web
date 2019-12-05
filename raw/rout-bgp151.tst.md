@@ -127,11 +127,11 @@ router bgp4 1
  neighbor 2.2.2.2 pmsitun
  neighbor 2.2.2.2 send-community standard extended
  afi-evpn 101 bridge-group 1
- afi-evpn 101 bmac 0000.410e.5542
+ afi-evpn 101 bmac 001e.6b55.5140
  afi-evpn 101 encapsulation pbb
  afi-evpn 101 update-source loopback0
  afi-evpn 102 bridge-group 3
- afi-evpn 102 bmac 001f.3d64.6725
+ afi-evpn 102 bmac 0026.2702.035c
  afi-evpn 102 encapsulation pbb
  afi-evpn 102 update-source loopback0
  redistribute connected
@@ -152,11 +152,11 @@ router bgp6 1
  neighbor 4321::2 pmsitun
  neighbor 4321::2 send-community standard extended
  afi-evpn 101 bridge-group 2
- afi-evpn 101 bmac 0003.644f.633b
+ afi-evpn 101 bmac 0066.1b5c.1461
  afi-evpn 101 encapsulation pbb
  afi-evpn 101 update-source loopback0
  afi-evpn 102 bridge-group 4
- afi-evpn 102 bmac 0052.0415.0c07
+ afi-evpn 102 bmac 0016.4f04.165e
  afi-evpn 102 encapsulation pbb
  afi-evpn 102 update-source loopback0
  redistribute connected
@@ -302,11 +302,11 @@ router bgp4 1
  neighbor 2.2.2.1 pmsitun
  neighbor 2.2.2.1 send-community standard extended
  afi-evpn 101 bridge-group 1
- afi-evpn 101 bmac 0067.2f35.6242
+ afi-evpn 101 bmac 006a.0343.5223
  afi-evpn 101 encapsulation pbb
  afi-evpn 101 update-source loopback0
  afi-evpn 102 bridge-group 3
- afi-evpn 102 bmac 005f.500f.3546
+ afi-evpn 102 bmac 005f.065e.7623
  afi-evpn 102 encapsulation pbb
  afi-evpn 102 update-source loopback0
  redistribute connected
@@ -327,11 +327,11 @@ router bgp6 1
  neighbor 4321::1 pmsitun
  neighbor 4321::1 send-community standard extended
  afi-evpn 101 bridge-group 2
- afi-evpn 101 bmac 0073.0811.5669
+ afi-evpn 101 bmac 002d.5d58.6107
  afi-evpn 101 encapsulation pbb
  afi-evpn 101 update-source loopback0
  afi-evpn 102 bridge-group 4
- afi-evpn 102 bmac 0068.6930.7e48
+ afi-evpn 102 bmac 001f.394f.1035
  afi-evpn 102 encapsulation pbb
  afi-evpn 102 update-source loopback0
  redistribute connected
@@ -355,5 +355,3 @@ ipv6 route v1 4321::1 ffff:ffff:ffff:ffff:ffff:ffff:ffff:ffff 1234:1::1
 !
 end
 ```
-
-## **Verification**

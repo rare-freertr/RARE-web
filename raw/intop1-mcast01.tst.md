@@ -91,5 +91,3 @@ interface gigabit1
 ip route 2.2.2.1 255.255.255.255 1.1.1.1
 ipv6 route 4321::1/128 gigabit1 fe80::1
 ```
-
-## **Verification**

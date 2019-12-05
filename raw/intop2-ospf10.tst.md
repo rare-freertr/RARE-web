@@ -5,5 +5,3 @@
 ![topology](/img/intop2-ospf10.tst.png)
 
 ## **Configuration**
-
-## **Verification**

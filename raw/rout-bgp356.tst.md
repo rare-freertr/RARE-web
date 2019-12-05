@@ -87,7 +87,7 @@ router bgp4 1
  neighbor 1.1.1.2 send-community standard extended
  afi-evpn 101 bridge-group 1
  afi-evpn 101 srv6 tunnel1
- afi-evpn 101 bmac 0014.2268.6273
+ afi-evpn 101 bmac 0052.1248.2439
  afi-evpn 101 encapsulation pbb
  afi-evpn 101 update-source ethernet1
  exit
@@ -107,7 +107,7 @@ router bgp6 1
  neighbor 1234::2 send-community standard extended
  afi-evpn 102 bridge-group 2
  afi-evpn 102 srv6 tunnel1
- afi-evpn 102 bmac 0063.0156.6321
+ afi-evpn 102 bmac 001b.241a.6913
  afi-evpn 102 encapsulation pbb
  afi-evpn 102 update-source ethernet1
  exit
@@ -211,7 +211,7 @@ router bgp4 1
  neighbor 1.1.1.1 send-community standard extended
  afi-evpn 101 bridge-group 1
  afi-evpn 101 srv6 tunnel1
- afi-evpn 101 bmac 0030.2a1a.3134
+ afi-evpn 101 bmac 0031.2432.6d0f
  afi-evpn 101 encapsulation pbb
  afi-evpn 101 update-source ethernet1
  exit
@@ -231,7 +231,7 @@ router bgp6 1
  neighbor 1234::1 send-community standard extended
  afi-evpn 102 bridge-group 2
  afi-evpn 102 srv6 tunnel1
- afi-evpn 102 bmac 0000.7305.3f73
+ afi-evpn 102 bmac 007a.1736.1817
  afi-evpn 102 encapsulation pbb
  afi-evpn 102 update-source ethernet1
  exit
@@ -253,5 +253,3 @@ ipv6 route v1 4321:1:: ffff:ffff:: 1234::1
 !
 end
 ```
-
-## **Verification**

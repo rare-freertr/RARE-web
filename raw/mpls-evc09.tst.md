@@ -170,7 +170,7 @@ interface ethernet1
 interface pwether1
  no description
  mtu 1500
- macaddr 0006.527c.1e6d
+ macaddr 0074.7556.1162
  service-instance 11 bridge-group 1
  service-instance 12 bridge-group 2
  service-instance 13 bridge-group 3
@@ -195,5 +195,3 @@ interface pwether1
 !
 end
 ```
-
-## **Verification**

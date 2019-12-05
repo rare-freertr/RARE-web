@@ -5,5 +5,3 @@
 ![topology](/img/conn-vdc02.tst.png)
 
 ## **Configuration**
-
-## **Verification**

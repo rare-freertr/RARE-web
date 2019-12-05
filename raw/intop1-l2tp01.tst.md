@@ -96,5 +96,3 @@ vpdn-group 1
  no l2tp tunnel authentication
  exit
 ```
-
-## **Verification**

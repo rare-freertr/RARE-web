@@ -87,5 +87,3 @@ interface serial1
 !
 end
 ```
-
-## **Verification**

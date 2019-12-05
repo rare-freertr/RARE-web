@@ -70,7 +70,7 @@ router bgp4 1
  neighbor 2.2.2.2 pmsitun
  neighbor 2.2.2.2 send-community standard extended
  afi-evpn 101 bridge-group 1
- afi-evpn 101 bmac 0040.0f1d.4e26
+ afi-evpn 101 bmac 0008.7e75.4b68
  afi-evpn 101 encapsulation vpws
  afi-evpn 101 update-source loopback0
  exit
@@ -190,5 +190,3 @@ interface ethernet1
 !
 end
 ```
-
-## **Verification**

@@ -134,7 +134,7 @@ interface ethernet1
 interface pwether1
  no description
  mtu 1500
- macaddr 0021.6a19.2426
+ macaddr 0060.4709.7e73
  pseudowire v1 ethernet1 vxlan 2.2.2.1 123
  no shutdown
  no log-link-change
@@ -183,5 +183,3 @@ interface pwether1.13
 !
 end
 ```
-
-## **Verification**

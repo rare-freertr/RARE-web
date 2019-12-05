@@ -99,5 +99,3 @@ router igmp
 root
 commit
 ```
-
-## **Verification**

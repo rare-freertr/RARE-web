@@ -213,5 +213,3 @@ vpdn bvi13
 !
 end
 ```
-
-## **Verification**

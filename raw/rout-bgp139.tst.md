@@ -117,11 +117,11 @@ router bgp4 1
  neighbor 1.1.1.4 pmsitun
  neighbor 1.1.1.4 send-community standard extended
  afi-evpn 101 bridge-group 1
- afi-evpn 101 bmac 0052.335c.2e70
+ afi-evpn 101 bmac 004e.6009.0a1a
  afi-evpn 101 encapsulation pbb
  afi-evpn 101 update-source loopback0
  afi-evpn 102 bridge-group 3
- afi-evpn 102 bmac 0012.4a67.3627
+ afi-evpn 102 bmac 000b.6a15.6d61
  afi-evpn 102 encapsulation pbb
  afi-evpn 102 update-source loopback0
  exit
@@ -140,11 +140,11 @@ router bgp6 1
  neighbor 1234:1::4 pmsitun
  neighbor 1234:1::4 send-community standard extended
  afi-evpn 101 bridge-group 2
- afi-evpn 101 bmac 005c.0467.7b37
+ afi-evpn 101 bmac 004c.2773.5234
  afi-evpn 101 encapsulation pbb
  afi-evpn 101 update-source loopback0
  afi-evpn 102 bridge-group 4
- afi-evpn 102 bmac 0051.6068.4369
+ afi-evpn 102 bmac 0026.0615.557d
  afi-evpn 102 encapsulation pbb
  afi-evpn 102 update-source loopback0
  exit
@@ -281,11 +281,11 @@ router bgp4 1
  neighbor 1.1.1.4 pmsitun
  neighbor 1.1.1.4 send-community standard extended
  afi-evpn 101 bridge-group 1
- afi-evpn 101 bmac 000f.595c.7348
+ afi-evpn 101 bmac 0050.3e41.5171
  afi-evpn 101 encapsulation pbb
  afi-evpn 101 update-source loopback0
  afi-evpn 102 bridge-group 3
- afi-evpn 102 bmac 0059.2e44.5b37
+ afi-evpn 102 bmac 0019.7342.4d37
  afi-evpn 102 encapsulation pbb
  afi-evpn 102 update-source loopback0
  exit
@@ -304,11 +304,11 @@ router bgp6 1
  neighbor 1234:1::4 pmsitun
  neighbor 1234:1::4 send-community standard extended
  afi-evpn 101 bridge-group 2
- afi-evpn 101 bmac 0045.141a.0411
+ afi-evpn 101 bmac 0026.2e38.226d
  afi-evpn 101 encapsulation pbb
  afi-evpn 101 update-source loopback0
  afi-evpn 102 bridge-group 4
- afi-evpn 102 bmac 001b.4b68.5a35
+ afi-evpn 102 bmac 001a.701b.212e
  afi-evpn 102 encapsulation pbb
  afi-evpn 102 update-source loopback0
  exit
@@ -445,11 +445,11 @@ router bgp4 1
  neighbor 1.1.1.4 pmsitun
  neighbor 1.1.1.4 send-community standard extended
  afi-evpn 101 bridge-group 1
- afi-evpn 101 bmac 003d.661e.5e02
+ afi-evpn 101 bmac 0040.076e.2d20
  afi-evpn 101 encapsulation pbb
  afi-evpn 101 update-source loopback0
  afi-evpn 102 bridge-group 3
- afi-evpn 102 bmac 007a.0d79.057b
+ afi-evpn 102 bmac 0017.7d12.3479
  afi-evpn 102 encapsulation pbb
  afi-evpn 102 update-source loopback0
  exit
@@ -468,11 +468,11 @@ router bgp6 1
  neighbor 1234:1::4 pmsitun
  neighbor 1234:1::4 send-community standard extended
  afi-evpn 101 bridge-group 2
- afi-evpn 101 bmac 0050.7c1b.6767
+ afi-evpn 101 bmac 0044.5e39.5a04
  afi-evpn 101 encapsulation pbb
  afi-evpn 101 update-source loopback0
  afi-evpn 102 bridge-group 4
- afi-evpn 102 bmac 0043.520f.0474
+ afi-evpn 102 bmac 0031.6102.1400
  afi-evpn 102 encapsulation pbb
  afi-evpn 102 update-source loopback0
  exit
@@ -627,5 +627,3 @@ ipv6 route v1 4321::3 ffff:ffff:ffff:ffff:ffff:ffff:ffff:ffff 1234:1::3
 !
 end
 ```
-
-## **Verification**

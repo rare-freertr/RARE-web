@@ -157,5 +157,3 @@ vpdn tel
 !
 end
 ```
-
-## **Verification**

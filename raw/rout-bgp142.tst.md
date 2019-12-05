@@ -707,5 +707,3 @@ ipv6 route v4 :: :: 9974::1
 !
 end
 ```
-
-## **Verification**

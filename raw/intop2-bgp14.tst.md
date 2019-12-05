@@ -5,5 +5,3 @@
 ![topology](/img/intop2-bgp14.tst.png)
 
 ## **Configuration**
-
-## **Verification**

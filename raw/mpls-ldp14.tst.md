@@ -341,5 +341,3 @@ ipv6 route v1 :: :: 1234:3::1
 !
 end
 ```
-
-## **Verification**

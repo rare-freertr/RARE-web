@@ -94,7 +94,7 @@ router bgp4 1
  neighbor 2.2.2.2 pmsitun
  neighbor 2.2.2.2 send-community standard extended
  afi-evpn 101 bridge-group 1
- afi-evpn 101 bmac 000b.5c11.4552
+ afi-evpn 101 bmac 0060.312f.4874
  afi-evpn 101 encapsulation vxlan
  afi-evpn 101 update-source loopback0
  redistribute connected
@@ -115,7 +115,7 @@ router bgp6 1
  neighbor 4321::2 pmsitun
  neighbor 4321::2 send-community standard extended
  afi-evpn 101 bridge-group 2
- afi-evpn 101 bmac 002b.384a.6079
+ afi-evpn 101 bmac 0004.6d0d.0c12
  afi-evpn 101 encapsulation vxlan
  afi-evpn 101 update-source loopback0
  redistribute connected
@@ -228,7 +228,7 @@ router bgp4 1
  neighbor 2.2.2.1 pmsitun
  neighbor 2.2.2.1 send-community standard extended
  afi-evpn 101 bridge-group 1
- afi-evpn 101 bmac 0032.4c1d.0b08
+ afi-evpn 101 bmac 0033.3121.4e5c
  afi-evpn 101 encapsulation vxlan
  afi-evpn 101 update-source loopback0
  redistribute connected
@@ -249,7 +249,7 @@ router bgp6 1
  neighbor 4321::1 pmsitun
  neighbor 4321::1 send-community standard extended
  afi-evpn 101 bridge-group 2
- afi-evpn 101 bmac 003a.720c.0a19
+ afi-evpn 101 bmac 0047.5f3f.6602
  afi-evpn 101 encapsulation vxlan
  afi-evpn 101 update-source loopback0
  redistribute connected
@@ -273,5 +273,3 @@ ipv6 route v1 4321::1 ffff:ffff:ffff:ffff:ffff:ffff:ffff:ffff 1234:1::1
 !
 end
 ```
-
-## **Verification**

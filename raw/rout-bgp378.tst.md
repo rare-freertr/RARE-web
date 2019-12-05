@@ -60,8 +60,8 @@ router bgp4 1
  neighbor 1.1.1.2 additional-path-rx other
  neighbor 1.1.1.2 additional-path-tx other
  neighbor 1.1.1.2 segrout
- other srv6 tunnel1
- other redistribute connected
+ afi-other srv6 tunnel1
+ afi-other redistribute connected
  exit
 !
 router bgp6 1
@@ -77,8 +77,8 @@ router bgp6 1
  neighbor 1234::2 additional-path-rx other
  neighbor 1234::2 additional-path-tx other
  neighbor 1234::2 segrout
- other srv6 tunnel1
- other redistribute connected
+ afi-other srv6 tunnel1
+ afi-other redistribute connected
  exit
 !
 !
@@ -153,8 +153,8 @@ router bgp4 1
  neighbor 1.1.1.1 additional-path-rx other
  neighbor 1.1.1.1 additional-path-tx other
  neighbor 1.1.1.1 segrout
- other srv6 tunnel1
- other redistribute connected
+ afi-other srv6 tunnel1
+ afi-other redistribute connected
  exit
 !
 router bgp6 1
@@ -170,8 +170,8 @@ router bgp6 1
  neighbor 1234::1 additional-path-rx other
  neighbor 1234::1 additional-path-tx other
  neighbor 1234::1 segrout
- other srv6 tunnel1
- other redistribute connected
+ afi-other srv6 tunnel1
+ afi-other redistribute connected
  exit
 !
 !
@@ -191,5 +191,3 @@ ipv6 route v1 4321:1:: ffff:ffff:: 1234::1
 !
 end
 ```
-
-## **Verification**

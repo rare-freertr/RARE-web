@@ -103,5 +103,3 @@ router bgp 1
   redistribute connected
  exit
 ```
-
-## **Verification**

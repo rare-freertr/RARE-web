@@ -150,5 +150,3 @@ ipv6 route v1 :: :: 4321::1
 !
 end
 ```
-
-## **Verification**

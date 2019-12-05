@@ -46,7 +46,7 @@ router bgp4 1
  neighbor 1.1.1.3 local-as 1
  neighbor 1.1.1.3 address-family unicast other
  neighbor 1.1.1.3 distance 20
- other redistribute connected
+ afi-other redistribute connected
  redistribute connected
  exit
 !
@@ -107,7 +107,7 @@ router bgp4 1
  neighbor 1.1.1.3 local-as 2
  neighbor 1.1.1.3 address-family unicast other
  neighbor 1.1.1.3 distance 20
- other redistribute connected
+ afi-other redistribute connected
  redistribute connected
  exit
 !
@@ -182,7 +182,7 @@ router bgp4 1
  neighbor 1.1.1.2 address-family unicast other
  neighbor 1.1.1.2 distance 20
  neighbor 1.1.1.2 route-server-client
- other redistribute connected
+ afi-other redistribute connected
  redistribute connected
  exit
 !
@@ -202,5 +202,3 @@ router bgp4 1
 !
 end
 ```
-
-## **Verification**

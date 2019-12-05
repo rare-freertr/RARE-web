@@ -215,5 +215,3 @@ interface ethernet2.12
 !
 end
 ```
-
-## **Verification**

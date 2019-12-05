@@ -158,5 +158,3 @@ interface bdi1
  no shutdown
  exit
 ```
-
-## **Verification**

@@ -227,5 +227,3 @@ ipv6 route v1 1234:: ffff:: 2345::1
 !
 end
 ```
-
-## **Verification**

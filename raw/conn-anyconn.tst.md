@@ -150,11 +150,11 @@ r2#
 r2#
 r2#show inter dia1 full
 r2#show inter dia1 full
-dialer1 is up (since 00:00:03, 1 changes)
+dialer1 is up (since 00:00:02, 1 changes)
  description:
  type is dialer, hwaddr=none, mtu=1504, bw=8000kbps, vrf=v1
- ip4 address=2.2.2.66/24, netmask=255.255.255.0, ifcid=10012
- ip6 address=2222::80/64, netmask=ffff:ffff:ffff:ffff::, ifcid=10012
+ ip4 address=2.2.2.189/24, netmask=255.255.255.0, ifcid=10012
+ ip6 address=2222::66/64, netmask=ffff:ffff:ffff:ffff::, ifcid=10012
  received 23 packets (2494 bytes) dropped 0 packets (0 bytes)
  transmitted 23 packets (2310 bytes) promisc=false macsec=false
  |~~~~~~~|~~~~~~|~~~~~~~~~|~~~~~~|~~~~~~|~~~~~~~~~|~~~~~~|
@@ -214,7 +214,7 @@ dialer1 is up (since 00:00:03, 1 changes)
         8145|#
         5430|#
         2715|#
-           0|# #
+           0|##
          bps|0---------10--------20--------30--------40--------50-------- seconds
            1|
            0|

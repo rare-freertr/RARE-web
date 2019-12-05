@@ -108,5 +108,3 @@ connect con
 !
 end
 ```
-
-## **Verification**

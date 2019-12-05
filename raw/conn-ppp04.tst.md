@@ -159,5 +159,3 @@ server tacacs rad
 !
 end
 ```
-
-## **Verification**

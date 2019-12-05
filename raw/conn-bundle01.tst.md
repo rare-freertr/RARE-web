@@ -124,7 +124,7 @@ r1#show inter bun1 full
 r1#show inter bun1 full
 bundle1 is up (since 00:00:03, 2 changes)
  description:
- type is bundle, hwaddr=002d.6243.222f, mtu=1500, bw=100mbps, vrf=v1
+ type is bundle, hwaddr=0077.4a44.3a71, mtu=1500, bw=100mbps, vrf=v1
  ip4 address=1.1.1.1/24, netmask=255.255.255.0, ifcid=10011
  ip6 address=1234::1/16, netmask=ffff::, ifcid=10011
  received 28 packets (2746 bytes) dropped 0 packets (0 bytes)

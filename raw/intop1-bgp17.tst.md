@@ -70,7 +70,7 @@ router bgp4 1
  neighbor 2.2.2.2 pmsitun
  neighbor 2.2.2.2 send-community standard extended
  afi-evpn 10 bridge-group 1
- afi-evpn 10 bmac 0013.0a46.0f6a
+ afi-evpn 10 bmac 0028.2f6f.371d
  afi-evpn 10 encapsulation cmac
  afi-evpn 10 update-source loopback0
  exit
@@ -125,10 +125,10 @@ interface gigabit2
  no shutdown
  exit
 interface gigabit1
+ no shutdown
  service instance 10 ethernet
   encapsulation dot1q 10
   rewrite ingress tag pop 1 symmetric
- no shutdown
  exit
 ip route 2.2.2.1 255.255.255.255 1.1.1.1
 ipv6 route 4321::1/128 1234::1
@@ -201,5 +201,3 @@ interface ethernet1.10
 !
 end
 ```
-
-## **Verification**

@@ -197,5 +197,3 @@ interface ethernet1
 !
 end
 ```
-
-## **Verification**

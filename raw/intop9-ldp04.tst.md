@@ -5,5 +5,3 @@
 ![topology](/img/intop9-ldp04.tst.png)
 
 ## **Configuration**
-
-## **Verification**

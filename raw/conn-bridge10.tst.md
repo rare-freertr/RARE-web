@@ -147,5 +147,3 @@ interface ethernet4
 !
 end
 ```
-
-## **Verification**

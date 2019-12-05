@@ -196,5 +196,3 @@ ipv6 route v1 3333::1 ffff:ffff:ffff:ffff:ffff:ffff:ffff:ffff 4321::1
 !
 end
 ```
-
-## **Verification**

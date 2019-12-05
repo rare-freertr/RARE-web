@@ -112,5 +112,3 @@ router bgp 1
 root
 commit
 ```
-
-## **Verification**

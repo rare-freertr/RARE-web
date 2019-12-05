@@ -59,5 +59,3 @@ commit
 !asdf
 !asdf
 ```
-
-## **Verification**

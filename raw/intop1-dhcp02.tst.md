@@ -80,5 +80,3 @@ ip dhcp pool p1
  default-router 1.1.1.1
  exit
 ```
-
-## **Verification**

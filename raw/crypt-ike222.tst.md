@@ -5,5 +5,3 @@
 ![topology](/img/crypt-ike222.tst.png)
 
 ## **Configuration**
-
-## **Verification**

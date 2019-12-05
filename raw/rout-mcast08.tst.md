@@ -301,5 +301,3 @@ ipv6 multicast v2 join-group ff06::1 3333::1
 !
 end
 ```
-
-## **Verification**

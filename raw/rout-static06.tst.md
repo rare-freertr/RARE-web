@@ -202,5 +202,3 @@ ipv6 route v1 :: :: 1234:2::2 mplsexp
 !
 end
 ```
-
-## **Verification**

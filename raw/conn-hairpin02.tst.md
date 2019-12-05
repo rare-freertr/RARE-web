@@ -72,5 +72,3 @@ interface hairpin12
 !
 end
 ```
-
-## **Verification**

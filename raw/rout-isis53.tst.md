@@ -239,5 +239,3 @@ interface serial4
 !
 end
 ```
-
-## **Verification**

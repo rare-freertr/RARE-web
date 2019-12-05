@@ -144,7 +144,7 @@ r2#show inter dia1 full
 dialer1 is up (since 00:00:01, 2 changes)
  description:
  type is dialer, hwaddr=none, mtu=1396, bw=8000kbps, vrf=v1
- ip4 address=2.2.2.187/25, netmask=255.255.255.128, ifcid=10012
+ ip4 address=2.2.2.98/25, netmask=255.255.255.128, ifcid=10012
  received 10 packets (940 bytes) dropped 0 packets (0 bytes)
  transmitted 10 packets (940 bytes) promisc=false macsec=false
  |~~~~~~~|~~~~~~|~~~~~~~~~|~~~~~~|~~~~~~|~~~~~~~~~|~~~~~~|

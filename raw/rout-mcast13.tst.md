@@ -397,5 +397,3 @@ ipv6 multicast v1 join-group ff06::1 4321::1
 !
 end
 ```
-
-## **Verification**

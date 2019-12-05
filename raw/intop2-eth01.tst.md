@@ -54,5 +54,3 @@ interface gigabit0/0/0/0
 root
 commit
 ```
-
-## **Verification**

@@ -150,5 +150,3 @@ nsh 3 255 interface ethernet1 0000.1111.2222
 !
 end
 ```
-
-## **Verification**

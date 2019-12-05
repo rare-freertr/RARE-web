@@ -87,5 +87,3 @@ interface loopback0
  ipv6 mld join-group ff06::1 4321::1
  exit
 ```
-
-## **Verification**

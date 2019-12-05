@@ -93,5 +93,3 @@ router rip
 root
 commit
 ```
-
-## **Verification**

@@ -94,5 +94,3 @@ interface tunnel-ip2
 root
 commit
 ```
-
-## **Verification**

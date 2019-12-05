@@ -5,5 +5,3 @@
 ![topology](/img/intop2-rip03.tst.png)
 
 ## **Configuration**
-
-## **Verification**

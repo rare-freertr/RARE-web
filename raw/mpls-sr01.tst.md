@@ -344,30 +344,30 @@ r1#show mpls forw
  |~~~~~~~~|~~~~~~|~~~~~~~~~~~|~~~~~~~~~|~~~~~~~~~~~~|~~~~~~~~~|~~~~~~~|
  | label  | vrf  | iface     | hop     | label      | targets | bytes |
  |--------|------|-----------|---------|------------|---------|-------|
- | 59721  | v1:4 | ethernet1 | 1.1.1.2 | 3          |         | 0     |
- | 253284 | v1:6 | null      | null    | unlabelled | local   | 0     |
- | 478740 | null | null      | null    | unlabelled |         | 0     |
- | 478741 | v1:4 | null      | null    | unlabelled | local   | 2760  |
- | 478742 | v1:4 | ethernet1 | 1.1.1.2 | 519367     |         | 0     |
- | 478743 | v1:4 | ethernet1 | 1.1.1.2 | 519368     |         | 0     |
- | 478744 | v1:4 | ethernet1 | 1.1.1.2 | 519369     |         | 0     |
- | 478745 | null | null      | null    | unlabelled |         | 0     |
- | 478746 | null | null      | null    | unlabelled |         | 0     |
- | 478747 | null | null      | null    | unlabelled |         | 0     |
- | 478748 | null | null      | null    | unlabelled |         | 0     |
- | 478749 | null | null      | null    | unlabelled |         | 0     |
- | 687071 | v1:4 | null      | null    | unlabelled | local   | 0     |
- | 930850 | v1:6 | ethernet1 | 1234::2 | 3          |         | 0     |
- | 981996 | null | null      | null    | unlabelled |         | 0     |
- | 981997 | v1:6 | null      | null    | unlabelled | local   | 3360  |
- | 981998 | v1:6 | ethernet1 | 1234::2 | 259971     |         | 0     |
- | 981999 | v1:6 | ethernet1 | 1234::2 | 259972     |         | 0     |
- | 982000 | v1:6 | ethernet1 | 1234::2 | 259973     |         | 0     |
- | 982001 | null | null      | null    | unlabelled |         | 0     |
- | 982002 | null | null      | null    | unlabelled |         | 0     |
- | 982003 | null | null      | null    | unlabelled |         | 0     |
- | 982004 | null | null      | null    | unlabelled |         | 0     |
- | 982005 | null | null      | null    | unlabelled |         | 0     |
+ | 9126   | null | null      | null    | unlabelled |         | 0     |
+ | 9127   | v1:6 | null      | null    | unlabelled | local   | 3360  |
+ | 9128   | v1:6 | ethernet1 | 1234::2 | 301353     |         | 0     |
+ | 9129   | v1:6 | ethernet1 | 1234::2 | 301354     |         | 0     |
+ | 9130   | v1:6 | ethernet1 | 1234::2 | 301355     |         | 0     |
+ | 9131   | null | null      | null    | unlabelled |         | 0     |
+ | 9132   | null | null      | null    | unlabelled |         | 0     |
+ | 9133   | null | null      | null    | unlabelled |         | 0     |
+ | 9134   | null | null      | null    | unlabelled |         | 0     |
+ | 9135   | null | null      | null    | unlabelled |         | 0     |
+ | 25870  | v1:6 | null      | null    | unlabelled | local   | 0     |
+ | 699554 | v1:4 | null      | null    | unlabelled | local   | 0     |
+ | 804360 | null | null      | null    | unlabelled |         | 0     |
+ | 804361 | v1:4 | null      | null    | unlabelled | local   | 2944  |
+ | 804362 | v1:4 | ethernet1 | 1.1.1.2 | 615912     |         | 0     |
+ | 804363 | v1:4 | ethernet1 | 1.1.1.2 | 615913     |         | 0     |
+ | 804364 | v1:4 | ethernet1 | 1.1.1.2 | 615914     |         | 0     |
+ | 804365 | null | null      | null    | unlabelled |         | 0     |
+ | 804366 | null | null      | null    | unlabelled |         | 0     |
+ | 804367 | null | null      | null    | unlabelled |         | 0     |
+ | 804368 | null | null      | null    | unlabelled |         | 0     |
+ | 804369 | null | null      | null    | unlabelled |         | 0     |
+ | 823333 | v1:6 | ethernet1 | 1234::2 | 3          |         | 0     |
+ | 897139 | v1:4 | ethernet1 | 1.1.1.2 | 3          |         | 0     |
  |________|______|___________|_________|____________|_________|_______|
 r1#
 r1#
@@ -378,112 +378,112 @@ r2#
 r2#
 r2#show mpls forw
 r2#show mpls forw
- |~~~~~~~~~|~~~~~~|~~~~~~~~~~~|~~~~~~~~~|~~~~~~~~~~~~|~~~~~~~~~|~~~~~~~|
- | label   | vrf  | iface     | hop     | label      | targets | bytes |
- |---------|------|-----------|---------|------------|---------|-------|
- | 3124    | v1:4 | ethernet1 | 1.1.1.1 | 3          |         | 0     |
- | 200340  | v1:6 | ethernet1 | 1234::1 | 3          |         | 0     |
- | 259969  | null | null      | null    | unlabelled |         | 0     |
- | 259970  | v1:6 | ethernet1 | 1234::1 | 981997     |         | 2240  |
- | 259971  | v1:6 | null      | null    | unlabelled | local   | 3360  |
- | 259972  | v1:6 | ethernet2 | 1235::3 | 715493     |         | 1120  |
- | 259973  | v1:6 | ethernet2 | 1235::3 | 715494     |         | 1120  |
- | 259974  | null | null      | null    | unlabelled |         | 0     |
- | 259975  | null | null      | null    | unlabelled |         | 0     |
- | 259976  | null | null      | null    | unlabelled |         | 0     |
- | 259977  | null | null      | null    | unlabelled |         | 0     |
- | 259978  | null | null      | null    | unlabelled |         | 0     |
- | 443687  | v1:6 | ethernet2 | 1235::3 | 3          |         | 0     |
- | 510763  | v1:4 | null      | null    | unlabelled | local   | 0     |
- | 519365  | null | null      | null    | unlabelled |         | 0     |
- | 519366  | v1:4 | ethernet1 | 1.1.1.1 | 478741     |         | 1840  |
- | 519367  | v1:4 | null      | null    | unlabelled | local   | 2760  |
- | 519368  | v1:4 | ethernet2 | 1.1.2.3 | 1000428    |         | 920   |
- | 519369  | v1:4 | ethernet2 | 1.1.2.3 | 1000429    |         | 920   |
- | 519370  | null | null      | null    | unlabelled |         | 0     |
- | 519371  | null | null      | null    | unlabelled |         | 0     |
- | 519372  | null | null      | null    | unlabelled |         | 0     |
- | 519373  | null | null      | null    | unlabelled |         | 0     |
- | 519374  | null | null      | null    | unlabelled |         | 0     |
- | 585986  | v1:4 | ethernet2 | 1.1.2.3 | 3          |         | 0     |
- | 1017724 | v1:6 | null      | null    | unlabelled | local   | 0     |
- |_________|______|___________|_________|____________|_________|_______|
-r2#
-r2#
-```
-
-```
-r3#
-r3#
-r3#show mpls forw
-r3#show mpls forw
- |~~~~~~~~~|~~~~~~|~~~~~~~~~~~|~~~~~~~~~|~~~~~~~~~~~~|~~~~~~~~~|~~~~~~~|
- | label   | vrf  | iface     | hop     | label      | targets | bytes |
- |---------|------|-----------|---------|------------|---------|-------|
- | 370620  | v1:6 | ethernet2 | 1236::4 | 3          |         | 0     |
- | 479919  | v1:6 | null      | null    | unlabelled | local   | 0     |
- | 618493  | v1:4 | ethernet1 | 1.1.2.2 | 3          |         | 0     |
- | 625538  | v1:6 | ethernet1 | 1235::2 | 3          |         | 0     |
- | 715490  | null | null      | null    | unlabelled |         | 0     |
- | 715491  | v1:6 | ethernet1 | 1235::2 | 259970     |         | 1120  |
- | 715492  | v1:6 | ethernet1 | 1235::2 | 259971     |         | 1120  |
- | 715493  | v1:6 | null      | null    | unlabelled | local   | 3360  |
- | 715494  | v1:6 | ethernet2 | 1236::4 | 360286     |         | 2240  |
- | 715495  | null | null      | null    | unlabelled |         | 0     |
- | 715496  | null | null      | null    | unlabelled |         | 0     |
- | 715497  | null | null      | null    | unlabelled |         | 0     |
- | 715498  | null | null      | null    | unlabelled |         | 0     |
- | 715499  | null | null      | null    | unlabelled |         | 0     |
- | 745398  | v1:4 | ethernet2 | 1.1.3.4 | 3          |         | 0     |
- | 755124  | v1:4 | null      | null    | unlabelled | local   | 0     |
- | 1000425 | null | null      | null    | unlabelled |         | 0     |
- | 1000426 | v1:4 | ethernet1 | 1.1.2.2 | 519366     |         | 920   |
- | 1000427 | v1:4 | ethernet1 | 1.1.2.2 | 519367     |         | 920   |
- | 1000428 | v1:4 | null      | null    | unlabelled | local   | 2760  |
- | 1000429 | v1:4 | ethernet2 | 1.1.3.4 | 86527      |         | 1840  |
- | 1000430 | null | null      | null    | unlabelled |         | 0     |
- | 1000431 | null | null      | null    | unlabelled |         | 0     |
- | 1000432 | null | null      | null    | unlabelled |         | 0     |
- | 1000433 | null | null      | null    | unlabelled |         | 0     |
- | 1000434 | null | null      | null    | unlabelled |         | 0     |
- |_________|______|___________|_________|____________|_________|_______|
-r3#
-r3#
-```
-
-```
-r4#
-r4#
-r4#show mpls forw
-r4#show mpls forw
  |~~~~~~~~|~~~~~~|~~~~~~~~~~~|~~~~~~~~~|~~~~~~~~~~~~|~~~~~~~~~|~~~~~~~|
  | label  | vrf  | iface     | hop     | label      | targets | bytes |
  |--------|------|-----------|---------|------------|---------|-------|
- | 86523  | null | null      | null    | unlabelled |         | 0     |
- | 86524  | v1:4 | ethernet1 | 1.1.3.3 | 1000426    |         | 0     |
- | 86525  | v1:4 | ethernet1 | 1.1.3.3 | 1000427    |         | 0     |
- | 86526  | v1:4 | ethernet1 | 1.1.3.3 | 1000428    |         | 0     |
- | 86527  | v1:4 | null      | null    | unlabelled | local   | 2760  |
- | 86528  | null | null      | null    | unlabelled |         | 0     |
- | 86529  | null | null      | null    | unlabelled |         | 0     |
- | 86530  | null | null      | null    | unlabelled |         | 0     |
- | 86531  | null | null      | null    | unlabelled |         | 0     |
- | 86532  | null | null      | null    | unlabelled |         | 0     |
- | 360282 | null | null      | null    | unlabelled |         | 0     |
- | 360283 | v1:6 | ethernet1 | 1236::3 | 715491     |         | 0     |
- | 360284 | v1:6 | ethernet1 | 1236::3 | 715492     |         | 0     |
- | 360285 | v1:6 | ethernet1 | 1236::3 | 715493     |         | 0     |
- | 360286 | v1:6 | null      | null    | unlabelled | local   | 3360  |
- | 360287 | null | null      | null    | unlabelled |         | 0     |
- | 360288 | null | null      | null    | unlabelled |         | 0     |
- | 360289 | null | null      | null    | unlabelled |         | 0     |
- | 360290 | null | null      | null    | unlabelled |         | 0     |
- | 360291 | null | null      | null    | unlabelled |         | 0     |
- | 662570 | v1:6 | null      | null    | unlabelled | local   | 0     |
- | 744992 | v1:6 | ethernet1 | 1236::3 | 3          |         | 0     |
- | 851519 | v1:4 | null      | null    | unlabelled | local   | 0     |
- | 962275 | v1:4 | ethernet1 | 1.1.3.3 | 3          |         | 0     |
+ | 180161 | v1:6 | ethernet1 | 1234::1 | 3          |         | 0     |
+ | 301351 | null | null      | null    | unlabelled |         | 0     |
+ | 301352 | v1:6 | ethernet1 | 1234::1 | 9127       |         | 2240  |
+ | 301353 | v1:6 | null      | null    | unlabelled | local   | 3360  |
+ | 301354 | v1:6 | ethernet2 | 1235::3 | 678742     |         | 1120  |
+ | 301355 | v1:6 | ethernet2 | 1235::3 | 678743     |         | 1120  |
+ | 301356 | null | null      | null    | unlabelled |         | 0     |
+ | 301357 | null | null      | null    | unlabelled |         | 0     |
+ | 301358 | null | null      | null    | unlabelled |         | 0     |
+ | 301359 | null | null      | null    | unlabelled |         | 0     |
+ | 301360 | null | null      | null    | unlabelled |         | 0     |
+ | 408261 | v1:4 | ethernet2 | 1.1.2.3 | 3          |         | 0     |
+ | 615910 | null | null      | null    | unlabelled |         | 0     |
+ | 615911 | v1:4 | ethernet1 | 1.1.1.1 | 804361     |         | 1840  |
+ | 615912 | v1:4 | null      | null    | unlabelled | local   | 2944  |
+ | 615913 | v1:4 | ethernet2 | 1.1.2.3 | 174096     |         | 920   |
+ | 615914 | v1:4 | ethernet2 | 1.1.2.3 | 174097     |         | 920   |
+ | 615915 | null | null      | null    | unlabelled |         | 0     |
+ | 615916 | null | null      | null    | unlabelled |         | 0     |
+ | 615917 | null | null      | null    | unlabelled |         | 0     |
+ | 615918 | null | null      | null    | unlabelled |         | 0     |
+ | 615919 | null | null      | null    | unlabelled |         | 0     |
+ | 761588 | v1:4 | null      | null    | unlabelled | local   | 0     |
+ | 841387 | v1:6 | null      | null    | unlabelled | local   | 0     |
+ | 849492 | v1:6 | ethernet2 | 1235::3 | 3          |         | 0     |
+ | 865589 | v1:4 | ethernet1 | 1.1.1.1 | 3          |         | 0     |
  |________|______|___________|_________|____________|_________|_______|
+r2#
+r2#
+```
+
+```
+r3#
+r3#
+r3#show mpls forw
+r3#show mpls forw
+ |~~~~~~~~|~~~~~~|~~~~~~~~~~~|~~~~~~~~~|~~~~~~~~~~~~|~~~~~~~~~|~~~~~~~|
+ | label  | vrf  | iface     | hop     | label      | targets | bytes |
+ |--------|------|-----------|---------|------------|---------|-------|
+ | 174093 | null | null      | null    | unlabelled |         | 0     |
+ | 174094 | v1:4 | ethernet1 | 1.1.2.2 | 615911     |         | 920   |
+ | 174095 | v1:4 | ethernet1 | 1.1.2.2 | 615912     |         | 920   |
+ | 174096 | v1:4 | null      | null    | unlabelled | local   | 2760  |
+ | 174097 | v1:4 | ethernet2 | 1.1.3.4 | 328494     |         | 1840  |
+ | 174098 | null | null      | null    | unlabelled |         | 0     |
+ | 174099 | null | null      | null    | unlabelled |         | 0     |
+ | 174100 | null | null      | null    | unlabelled |         | 0     |
+ | 174101 | null | null      | null    | unlabelled |         | 0     |
+ | 174102 | null | null      | null    | unlabelled |         | 0     |
+ | 275694 | v1:6 | null      | null    | unlabelled | local   | 0     |
+ | 411264 | v1:6 | ethernet1 | 1235::2 | 3          |         | 0     |
+ | 634309 | v1:4 | ethernet2 | 1.1.3.4 | 3          |         | 0     |
+ | 649106 | v1:4 | null      | null    | unlabelled | local   | 0     |
+ | 678739 | null | null      | null    | unlabelled |         | 0     |
+ | 678740 | v1:6 | ethernet1 | 1235::2 | 301352     |         | 1120  |
+ | 678741 | v1:6 | ethernet1 | 1235::2 | 301353     |         | 1120  |
+ | 678742 | v1:6 | null      | null    | unlabelled | local   | 3360  |
+ | 678743 | v1:6 | ethernet2 | 1236::4 | 758345     |         | 2240  |
+ | 678744 | null | null      | null    | unlabelled |         | 0     |
+ | 678745 | null | null      | null    | unlabelled |         | 0     |
+ | 678746 | null | null      | null    | unlabelled |         | 0     |
+ | 678747 | null | null      | null    | unlabelled |         | 0     |
+ | 678748 | null | null      | null    | unlabelled |         | 0     |
+ | 841622 | v1:6 | ethernet2 | 1236::4 | 3          |         | 0     |
+ | 872388 | v1:4 | ethernet1 | 1.1.2.2 | 3          |         | 0     |
+ |________|______|___________|_________|____________|_________|_______|
+r3#
+r3#
+```
+
+```
+r4#
+r4#
+r4#show mpls forw
+r4#show mpls forw
+ |~~~~~~~~~|~~~~~~|~~~~~~~~~~~|~~~~~~~~~|~~~~~~~~~~~~|~~~~~~~~~|~~~~~~~|
+ | label   | vrf  | iface     | hop     | label      | targets | bytes |
+ |---------|------|-----------|---------|------------|---------|-------|
+ | 97876   | v1:4 | null      | null    | unlabelled | local   | 0     |
+ | 328490  | null | null      | null    | unlabelled |         | 0     |
+ | 328491  | v1:4 | ethernet1 | 1.1.3.3 | 174094     |         | 0     |
+ | 328492  | v1:4 | ethernet1 | 1.1.3.3 | 174095     |         | 0     |
+ | 328493  | v1:4 | ethernet1 | 1.1.3.3 | 174096     |         | 0     |
+ | 328494  | v1:4 | null      | null    | unlabelled | local   | 2760  |
+ | 328495  | null | null      | null    | unlabelled |         | 0     |
+ | 328496  | null | null      | null    | unlabelled |         | 0     |
+ | 328497  | null | null      | null    | unlabelled |         | 0     |
+ | 328498  | null | null      | null    | unlabelled |         | 0     |
+ | 328499  | null | null      | null    | unlabelled |         | 0     |
+ | 728473  | v1:6 | null      | null    | unlabelled | local   | 0     |
+ | 758341  | null | null      | null    | unlabelled |         | 0     |
+ | 758342  | v1:6 | ethernet1 | 1236::3 | 678740     |         | 0     |
+ | 758343  | v1:6 | ethernet1 | 1236::3 | 678741     |         | 0     |
+ | 758344  | v1:6 | ethernet1 | 1236::3 | 678742     |         | 0     |
+ | 758345  | v1:6 | null      | null    | unlabelled | local   | 3360  |
+ | 758346  | null | null      | null    | unlabelled |         | 0     |
+ | 758347  | null | null      | null    | unlabelled |         | 0     |
+ | 758348  | null | null      | null    | unlabelled |         | 0     |
+ | 758349  | null | null      | null    | unlabelled |         | 0     |
+ | 758350  | null | null      | null    | unlabelled |         | 0     |
+ | 759363  | v1:4 | ethernet1 | 1.1.3.3 | 3          |         | 0     |
+ | 1019718 | v1:6 | ethernet1 | 1236::3 | 3          |         | 0     |
+ |_________|______|___________|_________|____________|_________|_______|
 r4#
 r4#
 ```

@@ -126,5 +126,3 @@ server etherip ei
 !
 end
 ```
-
-## **Verification**

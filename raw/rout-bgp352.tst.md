@@ -47,7 +47,7 @@ router bgp4 1
  neighbor 1.1.1.2 address-family unicast other
  neighbor 1.1.1.2 distance 20
  neighbor 1.1.1.2 confederation-peer
- other redistribute connected
+ afi-other redistribute connected
  redistribute connected
  exit
 !
@@ -109,7 +109,7 @@ router bgp4 1
  neighbor 1.1.1.1 address-family unicast other
  neighbor 1.1.1.1 distance 20
  neighbor 1.1.1.1 confederation-peer
- other redistribute connected
+ afi-other redistribute connected
  redistribute connected
  exit
 !
@@ -129,5 +129,3 @@ router bgp4 1
 !
 end
 ```
-
-## **Verification**

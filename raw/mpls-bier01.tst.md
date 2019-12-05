@@ -345,14 +345,14 @@ r1#
 r1#
 r1#show mpls forw
 r1#show mpls forw
- |~~~~~~~~~|~~~~~~|~~~~~~~|~~~~~~|~~~~~~~~~~~~|~~~~~~~~~|~~~~~~~|
- | label   | vrf  | iface | hop  | label      | targets | bytes |
- |---------|------|-------|------|------------|---------|-------|
- | 120305  | v1:4 | null  | null | unlabelled | bier    | 660   |
- | 173765  | v1:6 | null  | null | unlabelled | local   | 0     |
- | 420181  | v1:6 | null  | null | unlabelled | bier    | 760   |
- | 1036316 | v1:4 | null  | null | unlabelled | local   | 0     |
- |_________|______|_______|______|____________|_________|_______|
+ |~~~~~~~~|~~~~~~|~~~~~~~|~~~~~~|~~~~~~~~~~~~|~~~~~~~~~|~~~~~~~|
+ | label  | vrf  | iface | hop  | label      | targets | bytes |
+ |--------|------|-------|------|------------|---------|-------|
+ | 38840  | v1:4 | null  | null | unlabelled | bier    | 660   |
+ | 410374 | v1:6 | null  | null | unlabelled | bier    | 760   |
+ | 651550 | v1:6 | null  | null | unlabelled | local   | 0     |
+ | 880961 | v1:4 | null  | null | unlabelled | local   | 0     |
+ |________|______|_______|______|____________|_________|_______|
 r1#
 r1#
 ```
@@ -362,14 +362,14 @@ r2#
 r2#
 r2#show mpls forw
 r2#show mpls forw
- |~~~~~~~~~|~~~~~~|~~~~~~~|~~~~~~|~~~~~~~~~~~~|~~~~~~~~~|~~~~~~~|
- | label   | vrf  | iface | hop  | label      | targets | bytes |
- |---------|------|-------|------|------------|---------|-------|
- | 50967   | v1:6 | null  | null | unlabelled | local   | 0     |
- | 437812  | v1:4 | null  | null | unlabelled | bier    | 1320  |
- | 577348  | v1:4 | null  | null | unlabelled | local   | 0     |
- | 1034154 | v1:6 | null  | null | unlabelled | bier    | 1520  |
- |_________|______|_______|______|____________|_________|_______|
+ |~~~~~~~~|~~~~~~|~~~~~~~|~~~~~~|~~~~~~~~~~~~|~~~~~~~~~|~~~~~~~|
+ | label  | vrf  | iface | hop  | label      | targets | bytes |
+ |--------|------|-------|------|------------|---------|-------|
+ | 126490 | v1:6 | null  | null | unlabelled | bier    | 1520  |
+ | 136068 | v1:4 | null  | null | unlabelled | bier    | 1320  |
+ | 296522 | v1:4 | null  | null | unlabelled | local   | 0     |
+ | 626342 | v1:6 | null  | null | unlabelled | local   | 0     |
+ |________|______|_______|______|____________|_________|_______|
 r2#
 r2#
 ```
@@ -382,10 +382,10 @@ r3#show mpls forw
  |~~~~~~~~|~~~~~~|~~~~~~~|~~~~~~|~~~~~~~~~~~~|~~~~~~~~~|~~~~~~~|
  | label  | vrf  | iface | hop  | label      | targets | bytes |
  |--------|------|-------|------|------------|---------|-------|
- | 243256 | v1:4 | null  | null | unlabelled | bier    | 1320  |
- | 390220 | v1:6 | null  | null | unlabelled | local   | 0     |
- | 477618 | v1:4 | null  | null | unlabelled | local   | 0     |
- | 749306 | v1:6 | null  | null | unlabelled | bier    | 1520  |
+ | 216758 | v1:4 | null  | null | unlabelled | bier    | 1320  |
+ | 524088 | v1:6 | null  | null | unlabelled | bier    | 1520  |
+ | 787107 | v1:6 | null  | null | unlabelled | local   | 0     |
+ | 922291 | v1:4 | null  | null | unlabelled | local   | 0     |
  |________|______|_______|______|____________|_________|_______|
 r3#
 r3#
@@ -399,10 +399,10 @@ r4#show mpls forw
  |~~~~~~~~|~~~~~~|~~~~~~~|~~~~~~|~~~~~~~~~~~~|~~~~~~~~~|~~~~~~~|
  | label  | vrf  | iface | hop  | label      | targets | bytes |
  |--------|------|-------|------|------------|---------|-------|
- | 203480 | v1:4 | null  | null | unlabelled | local   | 0     |
- | 404241 | v1:4 | null  | null | unlabelled | bier    | 660   |
- | 785340 | v1:6 | null  | null | unlabelled | local   | 0     |
- | 805546 | v1:6 | null  | null | unlabelled | bier    | 760   |
+ | 181788 | v1:6 | null  | null | unlabelled | local   | 0     |
+ | 356523 | v1:6 | null  | null | unlabelled | bier    | 760   |
+ | 435355 | v1:4 | null  | null | unlabelled | bier    | 660   |
+ | 545177 | v1:4 | null  | null | unlabelled | local   | 0     |
  |________|______|_______|______|____________|_________|_______|
 r4#
 r4#

@@ -113,5 +113,3 @@ router isis 1
 root
 commit
 ```
-
-## **Verification**

@@ -49,7 +49,7 @@ interface ethernet1
 interface sdn1
  no description
  mtu 1500
- macaddr 005f.5a7c.7e74
+ macaddr 0077.0f6c.756a
  vrf forwarding v1
  ipv4 address 1.1.1.1 255.255.255.0
  ipv6 address 1234:1::1 ffff:ffff::
@@ -60,7 +60,7 @@ interface sdn1
 interface sdn2
  no description
  mtu 1500
- macaddr 001a.1260.3a7e
+ macaddr 003e.302a.1062
  vrf forwarding v1
  ipv4 address 1.1.2.1 255.255.255.0
  ipv6 address 1234:2::1 ffff:ffff::
@@ -71,7 +71,7 @@ interface sdn2
 interface sdn3
  no description
  mtu 1500
- macaddr 0034.7434.5419
+ macaddr 0014.5716.777d
  vrf forwarding v1
  ipv4 address 1.1.3.1 255.255.255.0
  ipv6 address 1234:3::1 ffff:ffff::
@@ -82,7 +82,7 @@ interface sdn3
 interface sdn4
  no description
  mtu 1500
- macaddr 006f.552d.1946
+ macaddr 0009.3e01.3c1d
  vrf forwarding v1
  ipv4 address 1.1.4.1 255.255.255.0
  ipv6 address 1234:4::1 ffff:ffff::
@@ -398,16 +398,16 @@ end
 ```
 tcl:%noproc:telnet 10.11.12.111 2323 /vrf v9 /int lo9%
 tcl>exec "telnet 10.11.12.111 2323 /vrf v9 /int lo9"
-info prt.prtTcp.connectionRcvd:prtTcp.java:730 got future acknowledge number telnet #10011 57426 -> 10.11.12.111 2323
+info prt.prtTcp.connectionRcvd:prtTcp.java:730 got future acknowledge number telnet #10011 53041 -> 10.11.12.111 2323
 tcl: - connecting to 10.11.12.111 2323
 OFPST_GROUP_DESC reply (OF1.1) (xid=0x2):
- cookie=0x21843ff4, duration=39.508s, table=0, n_packets=160, n_bytes=18434, priority=1,in_port=ens4 actions=CONTROLLER:65535
- cookie=0x3e0760d7, duration=39.508s, table=0, n_packets=160, n_bytes=18434, priority=1,in_port=ens5 actions=CONTROLLER:65535
- cookie=0x5c1e5fea, duration=39.508s, table=0, n_packets=160, n_bytes=18434, priority=1,in_port=ens6 actions=CONTROLLER:65535
- cookie=0x2530dd8f, duration=39.508s, table=0, n_packets=160, n_bytes=18434, priority=1,in_port=ens7 actions=CONTROLLER:65535
- cookie=0x55abe591, duration=39.509s, table=0, n_packets=0, n_bytes=0, priority=0 actions=drop
- cookie=0xa762bb, duration=39.508s, table=1, n_packets=0, n_bytes=0, priority=0 actions=drop
- cookie=0x3c2bcab0, duration=39.508s, table=2, n_packets=0, n_bytes=0, priority=0 actions=drop
- cookie=0x11e3fd39, duration=39.508s, table=3, n_packets=0, n_bytes=0, priority=0 actions=drop
+ cookie=0x4cab17cc, duration=40.903s, table=0, n_packets=160, n_bytes=18434, priority=1,in_port=ens4 actions=CONTROLLER:65535
+ cookie=0x6f1b37b8, duration=40.903s, table=0, n_packets=160, n_bytes=18434, priority=1,in_port=ens5 actions=CONTROLLER:65535
+ cookie=0x3e73caa6, duration=40.903s, table=0, n_packets=160, n_bytes=18434, priority=1,in_port=ens6 actions=CONTROLLER:65535
+ cookie=0x3dd1ee67, duration=40.903s, table=0, n_packets=160, n_bytes=18434, priority=1,in_port=ens7 actions=CONTROLLER:65535
+ cookie=0x2ef144c4, duration=40.903s, table=0, n_packets=0, n_bytes=0, priority=0 actions=drop
+ cookie=0x56431ce4, duration=40.903s, table=1, n_packets=0, n_bytes=0, priority=0 actions=drop
+ cookie=0xac5fa20, duration=40.903s, table=2, n_packets=0, n_bytes=0, priority=0 actions=drop
+ cookie=0x14de6782, duration=40.903s, table=3, n_packets=0, n_bytes=0, priority=0 actions=drop
 connection closed
 ```

@@ -104,5 +104,3 @@ server gre mi
 !
 end
 ```
-
-## **Verification**

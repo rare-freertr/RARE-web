@@ -104,5 +104,3 @@ server mplsip mi
 !
 end
 ```
-
-## **Verification**

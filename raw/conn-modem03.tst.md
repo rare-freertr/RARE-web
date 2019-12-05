@@ -162,5 +162,3 @@ dial-peer 1
 !
 end
 ```
-
-## **Verification**

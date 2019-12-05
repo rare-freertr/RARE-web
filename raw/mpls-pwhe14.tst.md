@@ -132,5 +132,3 @@ server l2tp2 l2tp
 !
 end
 ```
-
-## **Verification**

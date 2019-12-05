@@ -99,5 +99,3 @@ interface atm1
 !
 end
 ```
-
-## **Verification**

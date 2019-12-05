@@ -42,7 +42,7 @@ interface ethernet1
 interface pwether1
  no description
  mtu 1500
- macaddr 0052.3355.214c
+ macaddr 0075.6706.3f25
  vrf forwarding v1
  ipv4 address 3.3.3.1 255.255.255.0
  pseudowire v1 loopback0 pweompls 2.2.2.2 1234 control-word
@@ -105,7 +105,7 @@ interface ethernet1
 interface pwether1
  no description
  mtu 1500
- macaddr 006d.754d.2932
+ macaddr 000f.0000.5840
  vrf forwarding v1
  ipv4 address 3.3.3.2 255.255.255.0
  pseudowire v1 loopback0 pweompls 2.2.2.1 1234 control-word
@@ -131,5 +131,3 @@ ipv6 route v1 4321::1 ffff:ffff:ffff:ffff:ffff:ffff:ffff:ffff 1234::1
 !
 end
 ```
-
-## **Verification**

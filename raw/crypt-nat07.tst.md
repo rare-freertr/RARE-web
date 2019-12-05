@@ -137,5 +137,3 @@ ipv6 route v1 :: :: 1234::101:106
 !
 end
 ```
-
-## **Verification**

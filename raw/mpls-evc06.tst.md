@@ -237,5 +237,3 @@ interface ethernet1.13
 !
 end
 ```
-
-## **Verification**

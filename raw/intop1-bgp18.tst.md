@@ -49,7 +49,7 @@ router bgp4 1
  neighbor 2.2.2.2 distance 200
  neighbor 2.2.2.2 update-source loopback0
  neighbor 2.2.2.2 send-community standard extended
- other redistribute connected
+ afi-other redistribute connected
  exit
 !
 !
@@ -97,5 +97,3 @@ router bgp 1
   red conn
  exit
 ```
-
-## **Verification**

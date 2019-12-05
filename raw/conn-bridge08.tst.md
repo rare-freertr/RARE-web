@@ -148,5 +148,3 @@ interface bvi1
 !
 end
 ```
-
-## **Verification**

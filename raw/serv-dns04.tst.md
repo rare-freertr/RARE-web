@@ -105,5 +105,3 @@ client name-server 1.1.1.1
 !
 end
 ```
-
-## **Verification**

@@ -123,5 +123,3 @@ ipv6 route v1 :: :: 1234:1::1 distance 22
 !
 end
 ```
-
-## **Verification**

@@ -5,5 +5,3 @@
 ![topology](/img/intop1-ssh.tst.png)
 
 ## **Configuration**
-
-## **Verification**

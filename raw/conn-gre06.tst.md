@@ -123,5 +123,3 @@ vpdn pou
 !
 end
 ```
-
-## **Verification**

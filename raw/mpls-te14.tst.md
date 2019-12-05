@@ -302,5 +302,3 @@ ipv6 route v1 4321::3 ffff:ffff:ffff:ffff:ffff:ffff:ffff:ffff 1234:3::1
 !
 end
 ```
-
-## **Verification**

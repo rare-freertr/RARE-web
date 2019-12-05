@@ -145,5 +145,3 @@ int eth2
  ipv6 addr 1234:3::2 ffff:ffff::
  exit
 ```
-
-## **Verification**

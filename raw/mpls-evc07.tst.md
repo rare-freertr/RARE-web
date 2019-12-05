@@ -136,7 +136,7 @@ interface ethernet1
 interface pwether11
  no description
  mtu 1500
- macaddr 001d.6a45.3d3a
+ macaddr 0077.2044.5a11
  vrf forwarding v1
  ipv4 address 1.1.1.2 255.255.255.0
  ipv6 address 1111::2 ffff::
@@ -148,7 +148,7 @@ interface pwether11
 interface pwether12
  no description
  mtu 1500
- macaddr 007d.5e03.6603
+ macaddr 0006.7379.3c7a
  vrf forwarding v1
  ipv4 address 1.1.2.2 255.255.255.0
  ipv6 address 1112::2 ffff::
@@ -160,7 +160,7 @@ interface pwether12
 interface pwether13
  no description
  mtu 1500
- macaddr 0071.2134.3827
+ macaddr 005c.5864.4a2f
  vrf forwarding v1
  ipv4 address 1.1.3.2 255.255.255.0
  ipv6 address 1113::2 ffff::
@@ -185,5 +185,3 @@ interface pwether13
 !
 end
 ```
-
-## **Verification**

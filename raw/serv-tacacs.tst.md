@@ -120,5 +120,3 @@ server tacacs tac
 !
 end
 ```
-
-## **Verification**

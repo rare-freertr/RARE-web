@@ -38,7 +38,7 @@ interface ethernet1
 interface pwether1
  no description
  mtu 1500
- macaddr 005d.5f49.2c73
+ macaddr 0057.051f.4b56
  vrf forwarding v1
  ipv4 address 3.3.3.1 255.255.255.0
  pseudowire v1 loopback0 pckoudp 2.2.2.2 1234
@@ -97,7 +97,7 @@ interface ethernet1
 interface pwether1
  no description
  mtu 1500
- macaddr 0023.1133.3a73
+ macaddr 0050.6c61.7138
  vrf forwarding v1
  ipv4 address 3.3.3.2 255.255.255.0
  pseudowire v1 loopback0 pckoudp 2.2.2.1 1234
@@ -133,7 +133,7 @@ r1#show inter pweth1 full
 r1#show inter pweth1 full
 pwether1 is up (since 00:00:05, 1 changes)
  description:
- type is pwether, hwaddr=005d.5f49.2c73, mtu=1500, bw=4000kbps, vrf=v1
+ type is pwether, hwaddr=0057.051f.4b56, mtu=1500, bw=4000kbps, vrf=v1
  ip4 address=3.3.3.1/24, netmask=255.255.255.0, ifcid=10013
  received 15 packets (1346 bytes) dropped 0 packets (0 bytes)
  transmitted 15 packets (1346 bytes) promisc=false macsec=false
@@ -232,7 +232,7 @@ r1#show ipv4 arp pweth1
  |~~~~~~~~~~~~~~~~|~~~~~~~~~|~~~~~~~~~~|~~~~~~~~|
  | mac            | address | time     | static |
  |----------------|---------|----------|--------|
- | 0023.1133.3a73 | 3.3.3.2 | 00:00:05 | false  |
+ | 0050.6c61.7138 | 3.3.3.2 | 00:00:05 | false  |
  |________________|_________|__________|________|
 r1#
 r1#

@@ -126,11 +126,11 @@ router bgp4 1
  neighbor 2.2.2.2 pmsitun
  neighbor 2.2.2.2 send-community standard extended
  afi-evpn 101 bridge-group 1
- afi-evpn 101 bmac 0044.3a45.4c2e
+ afi-evpn 101 bmac 0037.7874.6f62
  afi-evpn 101 encapsulation vpws
  afi-evpn 101 update-source loopback0
  afi-evpn 102 bridge-group 3
- afi-evpn 102 bmac 0045.2341.5802
+ afi-evpn 102 bmac 000b.4d62.415d
  afi-evpn 102 encapsulation vpws
  afi-evpn 102 update-source loopback0
  redistribute connected
@@ -150,11 +150,11 @@ router bgp6 1
  neighbor 4321::2 pmsitun
  neighbor 4321::2 send-community standard extended
  afi-evpn 101 bridge-group 2
- afi-evpn 101 bmac 0041.0b1e.7471
+ afi-evpn 101 bmac 0041.4d6b.1513
  afi-evpn 101 encapsulation vpws
  afi-evpn 101 update-source loopback0
  afi-evpn 102 bridge-group 4
- afi-evpn 102 bmac 003d.4854.6224
+ afi-evpn 102 bmac 002b.1e55.2552
  afi-evpn 102 encapsulation vpws
  afi-evpn 102 update-source loopback0
  redistribute connected
@@ -299,11 +299,11 @@ router bgp4 1
  neighbor 2.2.2.1 pmsitun
  neighbor 2.2.2.1 send-community standard extended
  afi-evpn 101 bridge-group 1
- afi-evpn 101 bmac 000b.440e.3317
+ afi-evpn 101 bmac 0047.426c.1560
  afi-evpn 101 encapsulation vpws
  afi-evpn 101 update-source loopback0
  afi-evpn 102 bridge-group 3
- afi-evpn 102 bmac 0017.4042.310b
+ afi-evpn 102 bmac 0048.4177.114f
  afi-evpn 102 encapsulation vpws
  afi-evpn 102 update-source loopback0
  redistribute connected
@@ -323,11 +323,11 @@ router bgp6 1
  neighbor 4321::1 pmsitun
  neighbor 4321::1 send-community standard extended
  afi-evpn 101 bridge-group 2
- afi-evpn 101 bmac 0003.5906.6363
+ afi-evpn 101 bmac 0027.084a.5d0f
  afi-evpn 101 encapsulation vpws
  afi-evpn 101 update-source loopback0
  afi-evpn 102 bridge-group 4
- afi-evpn 102 bmac 0037.0300.062a
+ afi-evpn 102 bmac 001a.7b17.551e
  afi-evpn 102 encapsulation vpws
  afi-evpn 102 update-source loopback0
  redistribute connected
@@ -351,5 +351,3 @@ ipv6 route v1 4321::1 ffff:ffff:ffff:ffff:ffff:ffff:ffff:ffff 1234:1::1
 !
 end
 ```
-
-## **Verification**

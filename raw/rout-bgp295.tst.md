@@ -680,5 +680,3 @@ router bgp6 4
 !
 end
 ```
-
-## **Verification**

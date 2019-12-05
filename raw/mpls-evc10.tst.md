@@ -143,7 +143,7 @@ interface ethernet2
 interface pwether1
  no description
  mtu 1500
- macaddr 0026.2f60.645b
+ macaddr 007c.5665.5d5a
  service-instance 11 xconnect v1 ethernet2 vxlan 3.3.3.2 123
  service-instance 12 xconnect v1 ethernet2 geneve 3.3.3.2 123
  service-instance 13 xconnect v1 ethernet2 etherip 3.3.3.2 123
@@ -192,7 +192,7 @@ interface ethernet1
 interface pwether11
  no description
  mtu 1500
- macaddr 003a.3e27.1367
+ macaddr 002e.1a1e.536a
  vrf forwarding v1
  ipv4 address 1.1.1.2 255.255.255.0
  ipv6 address 1111::2 ffff::
@@ -204,7 +204,7 @@ interface pwether11
 interface pwether12
  no description
  mtu 1500
- macaddr 005e.296f.315e
+ macaddr 004c.3c23.4d71
  vrf forwarding v1
  ipv4 address 1.1.2.2 255.255.255.0
  ipv6 address 1112::2 ffff::
@@ -216,7 +216,7 @@ interface pwether12
 interface pwether13
  no description
  mtu 1500
- macaddr 0068.1757.743a
+ macaddr 006f.266c.316a
  vrf forwarding v1
  ipv4 address 1.1.3.2 255.255.255.0
  ipv6 address 1113::2 ffff::
@@ -241,5 +241,3 @@ interface pwether13
 !
 end
 ```
-
-## **Verification**

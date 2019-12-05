@@ -249,5 +249,3 @@ server telnet tel
 !
 end
 ```
-
-## **Verification**

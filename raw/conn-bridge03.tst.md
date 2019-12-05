@@ -208,5 +208,3 @@ interface ethernet3
 !
 end
 ```
-
-## **Verification**

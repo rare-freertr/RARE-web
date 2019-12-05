@@ -99,5 +99,3 @@ int eth8
  lldp ena
  exit
 ```
-
-## **Verification**

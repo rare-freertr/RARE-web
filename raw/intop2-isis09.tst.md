@@ -5,5 +5,3 @@
 ![topology](/img/intop2-isis09.tst.png)
 
 ## **Configuration**
-
-## **Verification**

@@ -204,5 +204,3 @@ ipv6 pbr v1 sequence 10 b2a6 v1 interface ethernet1 nexthop 1234:2::2
 !
 end
 ```
-
-## **Verification**

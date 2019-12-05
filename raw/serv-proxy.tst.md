@@ -156,5 +156,3 @@ server telnet telnet
 !
 end
 ```
-
-## **Verification**

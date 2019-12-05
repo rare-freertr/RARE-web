@@ -103,8 +103,8 @@ r2#show policy eth1 in
 r2#show policy eth1 in
 description=
   childs=0, queues=0/128, interval=100, bytes/interval=1024
-  match=1018 packets (139706 bytes)
-  transmit=1006 packets (138086 bytes)
+  match=718 packets (102706 bytes)
+  transmit=715 packets (102256 bytes)
 r2#
 r2#
 ```

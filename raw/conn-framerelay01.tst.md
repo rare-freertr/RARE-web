@@ -98,8 +98,8 @@ serial1 is up (since 00:00:01, 2 changes)
  type is serial, hwaddr=none, mtu=1498, bw=2000kbps, vrf=v1
  ip4 address=1.1.1.1/24, netmask=255.255.255.0, ifcid=10011
  ip6 address=1234::1/16, netmask=ffff::, ifcid=10011
- received 23 packets (2310 bytes) dropped 3 packets (230 bytes)
- transmitted 20 packets (2080 bytes) promisc=false macsec=false
+ received 23 packets (2310 bytes) dropped 0 packets (0 bytes)
+ transmitted 23 packets (2310 bytes) promisc=false macsec=false
  |~~~~~~~|~~~~~~|~~~~~~~~~|~~~~~~|~~~~~~|~~~~~~~~~|~~~~~~|
  | time  | send | receive | drop | send | receive | drop |
  |-------|------|---------|------|------|---------|------|
@@ -120,13 +120,13 @@ serial1 is up (since 00:00:01, 2 changes)
  |~~~~~~~|~~~~~~|~~~~~~|
  | proto | pack | byte |
  |-------|------|------|
- | 58    | 10   | 1140 |
+ | 58    | 13   | 1370 |
  | 1     | 10   | 940  |
  |_______|______|______|
  |~~~~~~~~~~~~|~~~~|~~~~|~~~~~~|~~~~~~|~~~~~~|~~~~~~|
  | size       | tx | rx | drop | tx   | rx   | drop |
  |------------|----|----|------|------|------|------|
- | 0-255      | 20 | 23 | 0    | 2080 | 2310 | 0    |
+ | 0-255      | 23 | 23 | 0    | 2310 | 2310 | 0    |
  | 256-511    | 0  | 0  | 0    | 0    | 0    | 0    |
  | 512-767    | 0  | 0  | 0    | 0    | 0    | 0    |
  | 768-1023   | 0  | 0  | 0    | 0    | 0    | 0    |
@@ -138,7 +138,7 @@ serial1 is up (since 00:00:01, 2 changes)
  |~~~~~~~|~~~~~|~~~~~|~~~~~~|~~~~~~|~~~~~~|~~~~~~|
  | class | cos | exp | prec | cos  | exp  | prec |
  |-------|-----|-----|------|------|------|------|
- | 0     | 20  | 20  | 20   | 2080 | 2080 | 2080 |
+ | 0     | 23  | 23  | 23   | 2310 | 2310 | 2310 |
  | 1     | 0   | 0   | 0    | 0    | 0    | 0    |
  | 2     | 0   | 0   | 0    | 0    | 0    | 0    |
  | 3     | 0   | 0   | 0    | 0    | 0    | 0    |

@@ -91,5 +91,3 @@ interface Tunnel1
  ipv6 address 2222::2/64
  exit
 ```
-
-## **Verification**

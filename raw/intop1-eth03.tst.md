@@ -5,5 +5,3 @@
 ![topology](/img/intop1-eth03.tst.png)
 
 ## **Configuration**
-
-## **Verification**

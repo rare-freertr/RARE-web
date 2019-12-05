@@ -94,5 +94,3 @@ router eigrp 1
 root
 commit
 ```
-
-## **Verification**

@@ -95,5 +95,3 @@ router ospfv3 1
 root
 commit
 ```
-
-## **Verification**

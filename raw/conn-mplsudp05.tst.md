@@ -104,5 +104,3 @@ server mplsudp mu
 !
 end
 ```
-
-## **Verification**

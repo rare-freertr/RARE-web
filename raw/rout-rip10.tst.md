@@ -225,5 +225,3 @@ interface ethernet2
 !
 end
 ```
-
-## **Verification**

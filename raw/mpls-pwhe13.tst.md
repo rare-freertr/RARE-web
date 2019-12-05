@@ -132,5 +132,3 @@ server pptp pptp
 !
 end
 ```
-
-## **Verification**

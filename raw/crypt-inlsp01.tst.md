@@ -131,7 +131,7 @@ r1#show inter tun1 full
 r1#show inter tun1 full
 tunnel1 is up (since 00:00:03, 1 changes)
  description:
- type is inlsp, hwaddr=0054.7c3d.113b, mtu=1470, bw=2000kbps, vrf=v1
+ type is inlsp, hwaddr=0055.5246.4b1c, mtu=1470, bw=2000kbps, vrf=v1
  ip4 address=2.2.2.1/24, netmask=255.255.255.0, ifcid=10012
  ip6 address=4321::1/16, netmask=ffff::, ifcid=10012
  received 27 packets (2710 bytes) dropped 0 packets (0 bytes)

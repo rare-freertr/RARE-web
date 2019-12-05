@@ -91,5 +91,3 @@ interface ethernet1.11
 !
 end
 ```
-
-## **Verification**

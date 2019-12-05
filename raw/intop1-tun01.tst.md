@@ -94,5 +94,3 @@ interface tunnel2
  ipv6 address 3333::2/64
  exit
 ```
-
-## **Verification**

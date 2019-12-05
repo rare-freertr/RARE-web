@@ -84,7 +84,7 @@ interface ethernet1
 interface pwether1
  no description
  mtu 1500
- macaddr 004e.7d03.2636
+ macaddr 003b.673f.2421
  vrf forwarding v1
  ipv4 address 2.2.2.2 255.255.255.0
  ipv6 address 4321::2 ffff:ffff::
@@ -113,5 +113,3 @@ proxy-profile p1
 !
 end
 ```
-
-## **Verification**

@@ -156,5 +156,3 @@ server radius rad
 !
 end
 ```
-
-## **Verification**

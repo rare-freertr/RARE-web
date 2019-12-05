@@ -183,5 +183,3 @@ interface template2
 !
 end
 ```
-
-## **Verification**

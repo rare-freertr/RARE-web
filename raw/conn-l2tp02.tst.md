@@ -138,5 +138,3 @@ vpdn l2tp
 !
 end
 ```
-
-## **Verification**

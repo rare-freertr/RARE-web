@@ -199,5 +199,3 @@ interface serial2
 !
 end
 ```
-
-## **Verification**

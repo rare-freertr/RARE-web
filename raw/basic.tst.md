@@ -55,7 +55,7 @@ r1#
 r1#
 r1#show version
 r1#show version
-freeRouter v19.11.7-testing, done by cs@nop.
+freeRouter v20.1.15-testing, done by cs@nop.
 place on the net: http://freerouter.nop.hu/
 license: http://creativecommons.org/licenses/by-sa/4.0/
 quote1: make the world better
@@ -74,19 +74,19 @@ r1#
 r1#
 r1#show platform
 r1#show platform
-freeRouter v19.11.7-testing, done by cs@nop.
+freeRouter v20.1.15-testing, done by cs@nop.
 name: r1
 hwid: null
-uptime: since 2019-11-07 10:38:01, for 00:00:00
+uptime: since 2020-01-15 06:17:58, for 00:00:00
 reload: code#1=finished
 hwcfg: ../binTmp/zzz-r1-hw.txt
 swcfg: ../binTmp/zzz-r1-sw.txt
 cpu: 8*amd64
 mem: free=224m, max=268m, used=264m
-host: Linux v5.3.0-1-amd64
+host: Linux v5.4.0-2-amd64
 java: Debian v14-ea @ /usr/lib/jvm/java-14-openjdk-amd64
 jspec: Oracle Corporation (Java Platform API Specification) v14
-vm: Debian (OpenJDK 64-Bit Server VM) v14-ea+19-Debian-1
+vm: Debian (OpenJDK 64-Bit Server VM) v14-ea+27-Debian-1
 vmspec: Oracle Corporation (Java Virtual Machine Specification) v14
 class: v58.0 @ rtr.jar
 r1#

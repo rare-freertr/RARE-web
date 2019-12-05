@@ -167,12 +167,6 @@ interface ethernet1
  no log-link-change
  exit
 !
-interface ethernet2
- no description
- no shutdown
- no log-link-change
- exit
-!
 !
 !
 !
@@ -189,5 +183,3 @@ interface ethernet2
 !
 end
 ```
-
-## **Verification**

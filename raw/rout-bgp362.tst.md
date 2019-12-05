@@ -58,8 +58,8 @@ router bgp4 1
  neighbor 1.1.1.3 address-family other
  neighbor 1.1.1.3 distance 200
  neighbor 1.1.1.3 segrout
- other srv6 tunnel1
- other redistribute connected
+ afi-other srv6 tunnel1
+ afi-other redistribute connected
  exit
 !
 router bgp6 1
@@ -73,8 +73,8 @@ router bgp6 1
  neighbor 1234::3 address-family other
  neighbor 1234::3 distance 200
  neighbor 1234::3 segrout
- other srv6 tunnel1
- other redistribute connected
+ afi-other srv6 tunnel1
+ afi-other redistribute connected
  exit
 !
 !
@@ -147,8 +147,8 @@ router bgp4 1
  neighbor 1.1.1.3 address-family other
  neighbor 1.1.1.3 distance 200
  neighbor 1.1.1.3 segrout
- other srv6 tunnel1
- other redistribute connected
+ afi-other srv6 tunnel1
+ afi-other redistribute connected
  exit
 !
 router bgp6 1
@@ -162,8 +162,8 @@ router bgp6 1
  neighbor 1234::3 address-family other
  neighbor 1234::3 distance 200
  neighbor 1234::3 segrout
- other srv6 tunnel1
- other redistribute connected
+ afi-other srv6 tunnel1
+ afi-other redistribute connected
  exit
 !
 !
@@ -280,5 +280,3 @@ router bgp6 1
 !
 end
 ```
-
-## **Verification**

@@ -40,5 +40,3 @@ int tun1
  ipv6 addr 4321::1 ffff::
  exit
 ```
-
-## **Verification**

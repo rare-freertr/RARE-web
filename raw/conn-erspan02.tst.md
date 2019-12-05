@@ -127,5 +127,3 @@ vpdn er
 !
 end
 ```
-
-## **Verification**

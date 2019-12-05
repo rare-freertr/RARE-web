@@ -363,5 +363,3 @@ ipv6 route v1 4321::2221 ffff:ffff:ffff:ffff:ffff:ffff:ffff:ffff 4321::1111 mpls
 !
 end
 ```
-
-## **Verification**

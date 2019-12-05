@@ -209,5 +209,3 @@ router bgp6 1
 !
 end
 ```
-
-## **Verification**

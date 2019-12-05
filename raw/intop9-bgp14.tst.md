@@ -9,57 +9,166 @@
 **r1:**
 ```
 hostname r1
+buggy
+!
 logging file debug ../binTmp/zzz-log-r1.run
-vrf def v1
+!
+bridge 1
+ rd 1:1
+ rt-import 1:1
+ rt-export 1:1
+ mac-learn
+ private-bridge
+ exit
+!
+vrf definition v1
  rd 1:1
  label-mode per-prefix
  exit
-bridge 1
- rd 1:1
- rt-both 1:1
- mac-learn
- private
+!
+interface loopback0
+ no description
+ vrf forwarding v1
+ ipv4 address 2.2.2.1 255.255.255.255
+ ipv6 address 4321::1 ffff:ffff:ffff:ffff:ffff:ffff:ffff:ffff
+ no shutdown
+ no log-link-change
  exit
-int eth1
- vrf for v1
- ipv4 addr 1.1.1.1 255.255.255.0
- ipv6 addr 1234::1 ffff::
+!
+interface bvi1
+ no description
+ vrf forwarding v1
+ ipv4 address 3.3.3.1 255.255.255.252
+ ipv6 address 3333::1 ffff::
+ no shutdown
+ no log-link-change
+ exit
+!
+interface ethernet1
+ no description
+ vrf forwarding v1
+ ipv4 address 1.1.1.1 255.255.255.0
+ ipv6 address 1234::1 ffff::
  mpls enable
  mpls ldp4
  mpls ldp6
+ no shutdown
+ no log-link-change
  exit
-ipv4 route v1 2.2.2.2 255.255.255.255 1.1.1.2
-ipv6 route v1 4321::2 ffff:ffff:ffff:ffff:ffff:ffff:ffff:ffff 1234::2
-int lo0
- vrf for v1
- ipv4 addr 2.2.2.1 255.255.255.255
- ipv6 addr 4321::1 ffff:ffff:ffff:ffff:ffff:ffff:ffff:ffff
- exit
-int bvi1
- vrf for v1
- ipv4 addr 3.3.3.1 255.255.255.252
- ipv6 addr 3333::1 ffff::
- exit
+!
 router bgp4 1
  vrf v1
- address vpls
  local-as 1
  router-id 4.4.4.1
- neigh 2.2.2.2 remote-as 1
- neigh 2.2.2.2 update lo0
- neigh 2.2.2.2 send-comm both
- afi-vpls 1:1 bridge 1
- afi-vpls 1:1 update lo0
+ address-family vpls
+ neighbor 2.2.2.2 remote-as 1
+ no neighbor 2.2.2.2 description
+ neighbor 2.2.2.2 local-as 1
+ neighbor 2.2.2.2 address-family vpls
+ neighbor 2.2.2.2 distance 200
+ neighbor 2.2.2.2 update-source loopback0
+ neighbor 2.2.2.2 send-community standard extended
+ afi-vpls 1:1 bridge-group 1
+ afi-vpls 1:1 update-source loopback0
  exit
+!
 router bgp6 1
  vrf v1
- address vpls
  local-as 1
  router-id 6.6.6.1
- neigh 4321::2 remote-as 1
- neigh 4321::2 update lo0
- neigh 4321::2 send-comm both
+ address-family vpls
+ neighbor 4321::2 remote-as 1
+ no neighbor 4321::2 description
+ neighbor 4321::2 local-as 1
+ neighbor 4321::2 address-family vpls
+ neighbor 4321::2 distance 200
+ neighbor 4321::2 update-source loopback0
+ neighbor 4321::2 send-community standard extended
  exit
+!
+!
+ipv4 route v1 2.2.2.2 255.255.255.255 1.1.1.2
+!
+ipv6 route v1 4321::2 ffff:ffff:ffff:ffff:ffff:ffff:ffff:ffff 1234::2
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+end
 ```
 
-## **Verification**
+**r2:**
+```
+hostname r2
+set interfaces ge-0/0/0.0 family inet address 1.1.1.2/24
+set interfaces ge-0/0/0.0 family inet6 address 1234::2/64
+set interfaces ge-0/0/0.0 family mpls
+set interfaces lo0.0 family inet address 2.2.2.2/32
+set interfaces lo0.0 family inet6 address 4321::2/128
+set protocols ldp interface ge-0/0/0.0
+set protocols ldp interface lo0.0
+set protocols mpls interface ge-0/0/0.0
+set routing-options rib inet.0 static route 2.2.2.1/32 next-hop 1.1.1.1
+set routing-options rib inet6.0 static route 4321::1/128 next-hop 1234::1
+set routing-options autonomous-system 1
+set protocols bgp group peers type internal
+set protocols bgp group peers peer-as 1
+set protocols bgp group peers neighbor 2.2.2.1
+set protocols bgp group peers local-address 2.2.2.2
+set protocols bgp group peers family l2vpn auto-discovery-only
+set interfaces ge-0/0/1 encapsulation ethernet-vpls
+set interfaces ge-0/0/1.0 family vpls
+set routing-instances b1 instance-type vpls
+set routing-instances b1 vlan-id none
+set routing-instances b1 interface ge-0/0/1.0
+set routing-instances b1 route-distinguisher 1:1
+set routing-instances b1 vrf-target target:1:1
+set routing-instances b1 l2vpn-id l2vpn-id:1:1
+set routing-instances b1 protocols vpls no-tunnel-services
+commit
+```
+
+**r3:**
+```
+hostname r3
+buggy
+!
+logging file debug ../binTmp/zzz-log-r3.run
+!
+vrf definition v1
+ rd 1:1
+ exit
+!
+interface ethernet1
+ no description
+ vrf forwarding v1
+ ipv4 address 3.3.3.2 255.255.255.0
+ ipv6 address 3333::2 ffff::
+ no shutdown
+ no log-link-change
+ exit
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+end
+```

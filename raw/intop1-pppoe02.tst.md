@@ -71,5 +71,3 @@ interface gigabit1
  no shutdown
  exit
 ```
-
-## **Verification**

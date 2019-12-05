@@ -144,16 +144,16 @@ r2#
 r2#
 r2#show inter dia1 full
 r2#show inter dia1 full
-dialer1 is up (since 00:00:01, 2 changes)
+dialer1 is up (since 00:00:00, 2 changes)
  description:
  type is dialer, hwaddr=none, mtu=1396, bw=8000kbps, vrf=v1
- ip4 address=2.2.2.50/25, netmask=255.255.255.128, ifcid=10012
+ ip4 address=2.2.2.233/25, netmask=255.255.255.128, ifcid=10012
  received 10 packets (940 bytes) dropped 0 packets (0 bytes)
  transmitted 10 packets (940 bytes) promisc=false macsec=false
  |~~~~~~~|~~~~~~|~~~~~~~~~|~~~~~~|~~~~~~|~~~~~~~~~|~~~~~~|
  | time  | send | receive | drop | send | receive | drop |
  |-------|------|---------|------|------|---------|------|
- | 1sec  | 0    | 0       | 0    | 0    | 0       | 0    |
+ | 1sec  | 940  | 940     | 0    | 10   | 10      | 0    |
  | 1min  | 0    | 0       | 0    | 0    | 0       | 0    |
  | 1hour | 0    | 0       | 0    | 0    | 0       | 0    |
  |_______|______|_________|______|______|_________|______|
@@ -195,17 +195,17 @@ dialer1 is up (since 00:00:01, 2 changes)
  | 6     | 0   | 0   | 0    | 0   | 0   | 0    |
  | 7     | 0   | 0   | 0    | 0   | 0   | 0    |
  |_______|_____|_____|______|_____|_____|______|
-           1|
-           0|
-           0|
-           0|
-           0|
-           0|
-           0|
-           0|
-           0|
-           0|
-           0|
+         15k|
+         13k|#
+         12k|#
+         10k|#
+        9024|#
+        7520|#
+        6016|#
+        4512|#
+        3008|#
+        1504|#
+           0|#
          bps|0---------10--------20--------30--------40--------50-------- seconds
            1|
            0|

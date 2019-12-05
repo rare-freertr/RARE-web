@@ -40,7 +40,7 @@ interface ethernet1
 interface pwether1
  no description
  mtu 1500
- macaddr 003d.7059.4674
+ macaddr 0070.4c11.4337
  vrf forwarding v1
  ipv4 address 3.3.3.1 255.255.255.0
  pseudowire v1 loopback0 pweompls 2.2.2.3 1234
@@ -164,7 +164,7 @@ interface ethernet1
 interface pwether1
  no description
  mtu 1500
- macaddr 0039.7760.6b42
+ macaddr 001a.254b.2618
  vrf forwarding v1
  ipv4 address 3.3.3.2 255.255.255.0
  pseudowire v1 loopback0 pweompls 2.2.2.1 1234
@@ -214,5 +214,3 @@ router bgp6 1
 !
 end
 ```
-
-## **Verification**

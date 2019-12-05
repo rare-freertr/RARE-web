@@ -132,5 +132,3 @@ router bgp 1
   redistribute connected route-map rm1
  exit
 ```
-
-## **Verification**
