@@ -40,10 +40,12 @@ wget http://www.freertr.net/rtr.jar
 
 ## 3 Configuration
 freeRtr needs two files in order to run properly:
+
 - A hardware definition file
 - A software configuration file
 ### 3.1 Hardware configuration file
 This file encompasses definition of the router:
+
 - platform information
 - interfaces definition
 - external port translation to freeRtr port namespace
@@ -74,6 +76,7 @@ int eth2 eth 0000.1111.0002 127.0.0.1 1002 127.0.0.1 3002
 ### 3.2 Software configuratio file
 This is basically `r1` freeRtr configuration similar to Cisco IOS `startup-config` file.
 In the example below:
+
 - you notice `eth1` and `eth2` that have been declared in the hardware file.
 - These interface have `lldp` and an `ipv4` and `ipv6` addresses configured.
 - In addition to that, we added a `lo0` that is of course not included in `r1-hw.txt` file as it is a logical interface.
