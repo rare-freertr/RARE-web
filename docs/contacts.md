@@ -8,7 +8,10 @@
 
 ## freeRtr mailing list
 
-- [freertr@groups.io](mailto:freertr@groups.io): freeRtr opensource control plane mailing list
+- [freertr@groups.io](mailto:freertr@groups.io): If you have questions specific to freeRtr opensource control plane
 
 ## freeRtr IRC @ [Hackint](https://hackint.org/)
 IRC channel: #freertr
+
+## RARE/freeRtr twitter
+[RARE/freeRtr twitter](https://twitter.com/rare_freerouter): Follow us on Twitter ! This is where we are publishing news about RARE project (Blog article, new feature implementation, breakthrough ... and more ! )

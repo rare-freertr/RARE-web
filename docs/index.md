@@ -31,7 +31,7 @@ This section encompasses documents that would guide one to deploy **RARE/freeRtr
 -->
 
 ### **Getting started**
-This section will introduce you to [freeRtr](freertr.net) open source control plane. It will guide you in learning how to install, configure and run freeRtr in a basic scenario.
+This section will introduce you to [freeRtr](http://www.freertr.net) open source control plane. It will guide you in learning how to install, configure and run freeRtr in a basic scenario.
 
 <!--
 ### **Reference guides**
