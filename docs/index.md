@@ -19,6 +19,8 @@ The project aims to integrate different pieces of software related to building b
 
 ## **How to use this site**
 You'll find in this page various guides that will help you deploy and use **RARE/FreerTr** router.
+!!! Note
+    This documentation site is a `work in progress`, so don't be surprised if feels "incomplete". We are working hard on providing relevant material so you can quickly start your RARE/freeRtr journey in the best possible way.
 
 <!-- There are 3 categories of documentation:
 
