@@ -1,1 +1,0 @@
-../../../raw/rout-bgp188.tst.md

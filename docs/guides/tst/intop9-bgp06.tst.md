@@ -1,1 +1,0 @@
-../../../raw/intop9-bgp06.tst.md

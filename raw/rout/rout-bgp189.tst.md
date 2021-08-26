@@ -1,0 +1,447 @@
+# Example: evpn/vxlan over ebgp
+
+## **Topology diagram**
+
+![topology](/img/rout-bgp189.tst.png)
+
+## **Configuration**
+
+**r1:**
+```
+hostname r1
+buggy
+!
+logging file debug ../binTmp/zzz4r1-log.run
+!
+bridge 1
+ rd 1:1
+ rt-import 1:1
+ rt-export 1:1
+ mac-learn
+ private-bridge
+ exit
+!
+bridge 2
+ rd 1:2
+ rt-import 1:2
+ rt-export 1:2
+ mac-learn
+ private-bridge
+ exit
+!
+vrf definition tester
+ exit
+!
+vrf definition v1
+ rd 1:1
+ label-mode per-prefix
+ exit
+!
+interface loopback0
+ no description
+ vrf forwarding v1
+ ipv4 address 2.2.2.1 255.255.255.255
+ ipv6 address 4321::1 ffff:ffff:ffff:ffff:ffff:ffff:ffff:ffff
+ no shutdown
+ no log-link-change
+ exit
+!
+interface bvi1
+ no description
+ vrf forwarding v1
+ ipv4 address 3.3.3.1 255.255.255.252
+ ipv6 address 3333::1 ffff::
+ no shutdown
+ no log-link-change
+ exit
+!
+interface bvi2
+ no description
+ vrf forwarding v1
+ ipv4 address 4.4.4.1 255.255.255.252
+ ipv6 address 4444::1 ffff::
+ no shutdown
+ no log-link-change
+ exit
+!
+interface ethernet1
+ no description
+ vrf forwarding v1
+ ipv4 address 1.1.1.1 255.255.255.252
+ ipv6 address 1234:1::1 ffff:ffff::
+ no shutdown
+ no log-link-change
+ exit
+!
+router bgp4 1
+ vrf v1
+ local-as 1
+ router-id 4.4.4.1
+ address-family evpn
+ neighbor 2.2.2.2 remote-as 2
+ no neighbor 2.2.2.2 description
+ neighbor 2.2.2.2 local-as 1
+ neighbor 2.2.2.2 address-family evpn
+ neighbor 2.2.2.2 distance 20
+ neighbor 2.2.2.2 update-source loopback0
+ neighbor 2.2.2.2 pmsitun
+ neighbor 2.2.2.2 send-community standard extended
+ afi-evpn 101 bridge-group 1
+ afi-evpn 101 bmac 0002.1b0c.7825
+ afi-evpn 101 encapsulation vxlan
+ afi-evpn 101 update-source loopback0
+ exit
+!
+router bgp6 1
+ vrf v1
+ local-as 1
+ router-id 6.6.6.1
+ address-family evpn
+ neighbor 4321::2 remote-as 2
+ no neighbor 4321::2 description
+ neighbor 4321::2 local-as 1
+ neighbor 4321::2 address-family evpn
+ neighbor 4321::2 distance 20
+ neighbor 4321::2 update-source loopback0
+ neighbor 4321::2 pmsitun
+ neighbor 4321::2 send-community standard extended
+ afi-evpn 101 bridge-group 2
+ afi-evpn 101 bmac 006a.105e.5f5e
+ afi-evpn 101 encapsulation vxlan
+ afi-evpn 101 update-source loopback0
+ exit
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+ipv4 route v1 2.2.2.2 255.255.255.255 1.1.1.2
+!
+ipv6 route v1 4321::2 ffff:ffff:ffff:ffff:ffff:ffff:ffff:ffff 1234:1::2
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+server telnet tester
+ security protocol telnet
+ no exec authorization
+ no login authentication
+ vrf tester
+ exit
+!
+!
+end
+```
+
+**r2:**
+```
+hostname r2
+buggy
+!
+logging file debug ../binTmp/zzz4r2-log.run
+!
+bridge 1
+ rd 1:1
+ rt-import 1:1
+ rt-export 1:1
+ mac-learn
+ private-bridge
+ exit
+!
+bridge 2
+ rd 1:2
+ rt-import 1:2
+ rt-export 1:2
+ mac-learn
+ private-bridge
+ exit
+!
+vrf definition tester
+ exit
+!
+vrf definition v1
+ rd 1:1
+ label-mode per-prefix
+ exit
+!
+interface loopback0
+ no description
+ vrf forwarding v1
+ ipv4 address 2.2.2.2 255.255.255.255
+ ipv6 address 4321::2 ffff:ffff:ffff:ffff:ffff:ffff:ffff:ffff
+ no shutdown
+ no log-link-change
+ exit
+!
+interface bvi1
+ no description
+ vrf forwarding v1
+ ipv4 address 3.3.3.2 255.255.255.252
+ ipv6 address 3333::2 ffff::
+ no shutdown
+ no log-link-change
+ exit
+!
+interface bvi2
+ no description
+ vrf forwarding v1
+ ipv4 address 4.4.4.2 255.255.255.252
+ ipv6 address 4444::2 ffff::
+ no shutdown
+ no log-link-change
+ exit
+!
+interface ethernet1
+ no description
+ vrf forwarding v1
+ ipv4 address 1.1.1.2 255.255.255.252
+ ipv6 address 1234:1::2 ffff:ffff::
+ no shutdown
+ no log-link-change
+ exit
+!
+router bgp4 1
+ vrf v1
+ local-as 2
+ router-id 4.4.4.2
+ address-family evpn
+ neighbor 2.2.2.1 remote-as 1
+ no neighbor 2.2.2.1 description
+ neighbor 2.2.2.1 local-as 2
+ neighbor 2.2.2.1 address-family evpn
+ neighbor 2.2.2.1 distance 20
+ neighbor 2.2.2.1 update-source loopback0
+ neighbor 2.2.2.1 pmsitun
+ neighbor 2.2.2.1 send-community standard extended
+ afi-evpn 101 bridge-group 1
+ afi-evpn 101 bmac 003f.1079.5e4a
+ afi-evpn 101 encapsulation vxlan
+ afi-evpn 101 update-source loopback0
+ exit
+!
+router bgp6 1
+ vrf v1
+ local-as 2
+ router-id 6.6.6.2
+ address-family evpn
+ neighbor 4321::1 remote-as 1
+ no neighbor 4321::1 description
+ neighbor 4321::1 local-as 2
+ neighbor 4321::1 address-family evpn
+ neighbor 4321::1 distance 20
+ neighbor 4321::1 update-source loopback0
+ neighbor 4321::1 pmsitun
+ neighbor 4321::1 send-community standard extended
+ afi-evpn 101 bridge-group 2
+ afi-evpn 101 bmac 0038.0d54.2b03
+ afi-evpn 101 encapsulation vxlan
+ afi-evpn 101 update-source loopback0
+ exit
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+ipv4 route v1 2.2.2.1 255.255.255.255 1.1.1.1
+!
+ipv6 route v1 4321::1 ffff:ffff:ffff:ffff:ffff:ffff:ffff:ffff 1234:1::1
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+server telnet tester
+ security protocol telnet
+ no exec authorization
+ no login authentication
+ vrf tester
+ exit
+!
+!
+end
+```
+
+## **Verification**
+
+```
+r1#
+r1#
+r1#show ipv4 bgp 1 sum
+r1#show ipv4 bgp 1 sum
+ |~~~~|~~~~~~~|~~~~~~|~~~~~~~|~~~~~~~~~~|~~~~~~~~~~|
+ | as | learn | sent | ready | neighbor | uptime   |
+ |----|-------|------|-------|----------|----------|
+ | 2  | 2     | 4    | true  | 2.2.2.2  | 00:00:13 |
+ |____|_______|______|_______|__________|__________|
+r1#
+r1#
+```
+
+```
+r1#
+r1#
+r1#show ipv6 bgp 1 sum
+r1#show ipv6 bgp 1 sum
+ |~~~~|~~~~~~~|~~~~~~|~~~~~~~|~~~~~~~~~~|~~~~~~~~~~|
+ | as | learn | sent | ready | neighbor | uptime   |
+ |----|-------|------|-------|----------|----------|
+ | 2  | 2     | 4    | true  | 4321::2  | 00:00:13 |
+ |____|_______|______|_______|__________|__________|
+r1#
+r1#
+```
+
+```
+r1#
+r1#
+r1#show ipv4 bgp 1 evpn dat
+r1#show ipv4 bgp 1 evpn dat
+ |~~~~~~~~~~~~~~~~~~~~~~~~~|~~~~~~~~~|~~~~~~~~~~~~|~~~~~~~~|
+ | prefix                  | hop     | metric     | aspath |
+ |-------------------------|---------|------------|--------|
+ | 200::1d:84e:717#:: 1:1  | 2.2.2.1 | 0/0/0/0    |        |
+ | 200::61:41e:2702#:: 1:1 | 2.2.2.2 | 20/100/0/0 | 2      |
+ | 300::#2.2.2.2 1:1       | 2.2.2.2 | 20/100/0/0 | 2      |
+ | 300::#2.2.2.1 1:1       | 2.2.2.1 | 0/0/0/0    |        |
+ |_________________________|_________|____________|________|
+r1#
+r1#
+```
+
+```
+r1#
+r1#
+r1#show ipv6 bgp 1 evpn dat
+r1#show ipv6 bgp 1 evpn dat
+ |~~~~~~~~~~~~~~~~~~~~~~~~~~|~~~~~~~~~|~~~~~~~~~~~~|~~~~~~~~|
+ | prefix                   | hop     | metric     | aspath |
+ |--------------------------|---------|------------|--------|
+ | 200::15:3706:c3f#:: 1:2  | 4321::1 | 0/0/0/0    |        |
+ | 200::2d:1e34:783b#:: 1:2 | 4321::2 | 20/100/0/0 | 2      |
+ | 300::#4321::2 1:2        | 4321::2 | 20/100/0/0 | 2      |
+ | 300::#4321::1 1:2        | 4321::1 | 0/0/0/0    |        |
+ |__________________________|_________|____________|________|
+r1#
+r1#
+```
+
+```
+r1#
+r1#
+r1#show ipv4 route v1
+r1#show ipv4 route v1
+ |~~~~~|~~~~~~~~~~~~|~~~~~~~~|~~~~~~~~~~~|~~~~~~~~~|~~~~~~~~~~|
+ | typ | prefix     | metric | iface     | hop     | time     |
+ |-----|------------|--------|-----------|---------|----------|
+ | C   | 1.1.1.0/30 | 0/0    | ethernet1 | null    | 00:00:16 |
+ | LOC | 1.1.1.1/32 | 0/1    | ethernet1 | null    | 00:00:16 |
+ | C   | 2.2.2.1/32 | 0/0    | loopback0 | null    | 00:00:16 |
+ | S   | 2.2.2.2/32 | 1/0    | ethernet1 | 1.1.1.2 | 00:00:16 |
+ | C   | 3.3.3.0/30 | 0/0    | bvi1      | null    | 00:00:16 |
+ | LOC | 3.3.3.1/32 | 0/1    | bvi1      | null    | 00:00:16 |
+ | C   | 4.4.4.0/30 | 0/0    | bvi2      | null    | 00:00:16 |
+ | LOC | 4.4.4.1/32 | 0/1    | bvi2      | null    | 00:00:16 |
+ |_____|____________|________|___________|_________|__________|
+r1#
+r1#
+```
+
+```
+r1#
+r1#
+r1#show ipv6 route v1
+r1#show ipv6 route v1
+ |~~~~~|~~~~~~~~~~~~~~~|~~~~~~~~|~~~~~~~~~~~|~~~~~~~~~~~|~~~~~~~~~~|
+ | typ | prefix        | metric | iface     | hop       | time     |
+ |-----|---------------|--------|-----------|-----------|----------|
+ | C   | 1234:1::/32   | 0/0    | ethernet1 | null      | 00:00:16 |
+ | LOC | 1234:1::1/128 | 0/1    | ethernet1 | null      | 00:00:16 |
+ | C   | 3333::/16     | 0/0    | bvi1      | null      | 00:00:16 |
+ | LOC | 3333::1/128   | 0/1    | bvi1      | null      | 00:00:16 |
+ | C   | 4321::1/128   | 0/0    | loopback0 | null      | 00:00:16 |
+ | S   | 4321::2/128   | 1/0    | ethernet1 | 1234:1::2 | 00:00:16 |
+ | C   | 4444::/16     | 0/0    | bvi2      | null      | 00:00:16 |
+ | LOC | 4444::1/128   | 0/1    | bvi2      | null      | 00:00:16 |
+ |_____|_______________|________|___________|___________|__________|
+r1#
+r1#
+```
+
+```
+r1#
+r1#
+r1#show bridge 1
+r1#show bridge 1
+ |~~~~~~~~~~~~~~~~~~|~~~~~~|~~~~~~~|~~~~|~~~~|~~~~~~|~~~~~~|~~~~~~|~~~~~~|~~~~~|
+ |                                 | packet         | byte               |     |
+ | iface            | fwd  | phys  | tx | rx | drop | tx   | rx   | drop | grp |
+ |------------------|------|-------|----|----|------|------|------|------|-----|
+ | bvi              | true | true  | 0  | 0  | 0    | 0    | 0    | 0    |     |
+ | vxlan to 2.2.2.2 | true | false | 29 | 28 | 0    | 1894 | 2164 | 0    |     |
+ |__________________|______|_______|____|____|______|______|______|______|_____|
+ |~~~~~~~~~~~~~~~~|~~~~~~~~~~~~~~~~~~|~~~~~~~~~~|~~~~|~~~~|~~~~~~|~~~~~~|~~~~~~|~~~~~~|
+ |                                              | packet         | byte               |
+ | addr           | iface            | time     | tx | rx | drop | tx   | rx   | drop |
+ |----------------|------------------|----------|----|----|------|------|------|------|
+ | 001d.084e.0717 | bvi              | 00:00:16 | 27 | 34 | 0    | 1754 | 2208 | 0    |
+ | 0061.041e.2702 | vxlan to 2.2.2.2 | 00:00:16 | 27 | 28 | 0    | 1790 | 1828 | 0    |
+ |________________|__________________|__________|____|____|______|______|______|______|
+r1#
+r1#
+```
+
+```
+r1#
+r1#
+r1#show bridge 2
+r1#show bridge 2
+ |~~~~~~~~~~~~~~~~~~|~~~~~~|~~~~~~~|~~~~|~~~~|~~~~~~|~~~~~~|~~~~~~|~~~~~~|~~~~~|
+ |                                 | packet         | byte               |     |
+ | iface            | fwd  | phys  | tx | rx | drop | tx   | rx   | drop | grp |
+ |------------------|------|-------|----|----|------|------|------|------|-----|
+ | bvi              | true | true  | 0  | 0  | 0    | 0    | 0    | 0    |     |
+ | vxlan to 4321::2 | true | false | 31 | 30 | 0    | 2026 | 2320 | 0    |     |
+ |__________________|______|_______|____|____|______|______|______|______|_____|
+ |~~~~~~~~~~~~~~~~|~~~~~~~~~~~~~~~~~~|~~~~~~~~~~|~~~~|~~~~|~~~~~~|~~~~~~|~~~~~~|~~~~~~|
+ |                                              | packet         | byte               |
+ | addr           | iface            | time     | tx | rx | drop | tx   | rx   | drop |
+ |----------------|------------------|----------|----|----|------|------|------|------|
+ | 0015.3706.0c3f | bvi              | 00:00:17 | 29 | 34 | 0    | 1886 | 2280 | 0    |
+ | 002d.1e34.783b | vxlan to 4321::2 | 00:00:17 | 29 | 30 | 0    | 1922 | 1960 | 0    |
+ |________________|__________________|__________|____|____|______|______|______|______|
+r1#
+r1#
+```

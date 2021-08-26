@@ -1,1 +1,0 @@
-../../../raw/rout-bgp060.tst.md

@@ -1,2 +1,2 @@
 # RARE-web
-RARE documention web site
+RARE/freeRtr documention web site

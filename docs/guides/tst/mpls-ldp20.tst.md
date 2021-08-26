@@ -1,1 +1,0 @@
-../../../raw/mpls-ldp20.tst.md

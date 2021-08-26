@@ -1,1 +1,0 @@
-../../../raw/mpls-ldp22.tst.md

@@ -1,6 +1,7 @@
 @font-face {
     font-family: Airlock;
-    src: url('css/airlock.ttf'); 
+    src: url('fonts/airlock.ttf');
+    /*src: url('css/airlock.ttf'); **/
 }
 
 span.md-header-nav__topic {

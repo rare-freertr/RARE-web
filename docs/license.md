@@ -1,6 +1,6 @@
 # License
 
-**Copyright [2019] [GÉANT RARE project]**
+**Copyright [2019] [[GÉANT](https://www.geant.org/) [RARE project](https://wiki.geant.org/display/RARE)]**
 
 Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.

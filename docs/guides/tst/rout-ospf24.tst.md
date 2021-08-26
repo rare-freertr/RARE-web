@@ -1,1 +1,0 @@
-../../../raw/rout-ospf24.tst.md

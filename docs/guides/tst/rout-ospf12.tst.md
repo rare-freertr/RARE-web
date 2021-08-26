@@ -1,1 +1,0 @@
-../../../raw/rout-ospf12.tst.md

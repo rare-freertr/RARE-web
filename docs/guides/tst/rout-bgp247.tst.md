@@ -1,1 +1,0 @@
-../../../raw/rout-bgp247.tst.md

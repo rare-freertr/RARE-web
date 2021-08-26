@@ -1,1 +1,0 @@
-../../../raw/rout-ospf05.tst.md

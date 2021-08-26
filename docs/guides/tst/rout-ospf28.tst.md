@@ -1,1 +1,0 @@
-../../../raw/rout-ospf28.tst.md

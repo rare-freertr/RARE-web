@@ -1,1 +1,0 @@
-../../../raw/rout-ospf20.tst.md

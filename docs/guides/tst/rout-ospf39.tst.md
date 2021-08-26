@@ -1,1 +1,0 @@
-../../../raw/rout-ospf39.tst.md

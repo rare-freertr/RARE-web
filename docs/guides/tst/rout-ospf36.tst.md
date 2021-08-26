@@ -1,1 +1,0 @@
-../../../raw/rout-ospf36.tst.md

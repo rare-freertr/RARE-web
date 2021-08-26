@@ -1,1 +1,0 @@
-../../../raw/conn-telnet02.tst.md

@@ -1,1 +1,0 @@
-../../../raw/intop1-ospf03.tst.md

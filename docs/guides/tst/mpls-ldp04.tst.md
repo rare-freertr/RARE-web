@@ -1,1 +1,0 @@
-../../../raw/mpls-ldp04.tst.md

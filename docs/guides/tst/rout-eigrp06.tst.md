@@ -1,1 +1,0 @@
-../../../raw/rout-eigrp06.tst.md

@@ -1,1 +1,0 @@
-../../../raw/intop1-isis06.tst.md

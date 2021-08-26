@@ -1,1 +1,0 @@
-../../../raw/intop9-ospf08.tst.md
