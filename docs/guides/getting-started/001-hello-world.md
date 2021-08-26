@@ -53,7 +53,10 @@ This file encompasses definition of the router:
 Let's give it the name `$hostname-hw.txt` (It can be of course any name)
 
 - The router we will create is `r1` so the hardware file is:`r1-hw.txt`
-- declare 2 interfaces for `r1`. The format of interface declaration is:
+- declare 2 interfaces for `r1`.
+
+The format of interface declaration is:
+
 ```
 int <intf_name> <intf_type> <intf_mac> <ip_socket_a> <port_socket_a> <ip_socket_b> <port_socket_b>
 ```
@@ -230,7 +233,9 @@ This section demonstrated:
 - How to install and configure freeRtr on any OS able to run JVM
 - How to create a freeRtr router process that has:
     - two interfaces (`eth1` and `eth2`)
-    - and their respective corresponding UNIX UDP sockets (`127.0.0.1 1001` and `127.0.0.1 1002`)
+    - `eth1` is UDP sockets `127.0.0.1 1001`, remote end is `127.0.0.1 2001`
+    - `eth2` is UDP sockets `127.0.0.1 1002`, remote end is `127.0.0.1 3002`
+
 - How to start freeRtr
 !!! Note
     Most of you have probaly noticed that `r1` has both `eth1` and `eth2` interfaces connected to nowhere. And you are right ! We will see in the [next "getting started" article](002-topology-example.md) how to implement a entire local topology by interconnecting through UDP sockets 4 freeRtr router processes.
