@@ -13,13 +13,13 @@ The project aims to integrate different pieces of software related to building b
 
 **[P4](https://p4.org/)** and **[NPL](https://nplang.org/)** are such languages that allows data plane programmability.
 
-!!! Note
+!!! note
     **[P4](https://p4.org/)** and **[NPL](https://nplang.org/)** languages attempt to be as much as possible independent from the target or Programmable Ethernet ASIC architecture.
     However architecture dependance is still prominent. Code adjustments followed by a target specific compilation is necessary if you want to run your dataplane program on a specific architecture.
 
 ## **How to use this site**
 You'll find in this page various guides that will help you deploy and use **RARE/FreerTr** router.
-!!! Note
+???+ info
     This documentation site is a `work in progress`, so don't be surprised if feels "incomplete". We are working hard on providing relevant material so you can quickly start your RARE/freeRtr journey in the best possible way.
 
 <!-- There are 3 categories of documentation:

@@ -187,9 +187,42 @@ int eth2
  exit
 !
 ```
+## 3 Explanation
+### 3.1  **router** `r1`
+`r1` has 2 interfaces:
 
-## 3 Verification
-### 3.1 Launch all nodes
+- `r1@eth1` has socket `127.0.0.1 1001` and is conected to `127.0.0.1 2001`
+- `r1@eth2` has socket `127.0.0.1 1002` and is conected to `127.0.0.1 3002`
+
+if you look at subsequent declarations below:
+
+- `127.0.0.1 2001` is `r2@eth1`
+- `127.0.0.1 3002` is `r3@eth2`
+
+### 3.2  **router** `r2`
+
+- `r2@eth1` has socket `127.0.0.1 2001` and is conected to `127.0.0.1 1001`
+- `r2@eth2` has socket `127.0.0.1 2002` and is conected to `127.0.0.1 4002`
+
+if you look at subsequent declarations below:
+
+- `127.0.0.1 1001` is `r1@eth1`
+- `127.0.0.1 4002` is `r4@eth2`
+
+### 3.3  **router** `r3`
+
+- `r3@eth1` has socket `127.0.0.1 3001` and is conected to `127.0.0.1 4001`
+- `r3@eth2` has socket `127.0.0.1 3002` and is conected to `127.0.0.1 1002`
+
+if you look at subsequent declarations below:
+
+- `127.0.0.1 4001` is `r4@eth1`
+- `127.0.0.1 1002` is `r1@eth2`
+
+### 3.4  **router** `r4`
+
+## 4 Verification
+### 4.1 Launch all nodes
 
 Run `r1`,`r2`,`r3`,`r4` in different terminal windows:
 
@@ -209,9 +242,9 @@ java -jar rtr.jar routersc r3-hw.txt r3-sw.txt
 ```
 java -jar rtr.jar routersc r4-hw.txt r4-sw.txt
 ```
-### 3.2 Physical connectivity check
+### 4.2 Physical connectivity check
 
-#### 3.2.1  **router** `r1`
+#### 4.2.1  **router** `r1`
 ```
 r1#sh lldp nei
 interface  hostname  iface      ipv4     ipv6
@@ -244,7 +277,7 @@ pinging 1234:2::2, src=null, vrf=v1, cnt=5, len=64, tim=1000, gap=0, ttl=255, to
 result=100%, recv/sent/lost/err=5/5/0/0, rtt min/avg/max/total=0/1/4/16
 r1#
 ```
-#### 3.2.2  **router** `r2`
+#### 4.2.2  **router** `r2`
 ```
 r2#sh lldp nei
 interface  hostname  iface      ipv4      ipv6
@@ -276,7 +309,7 @@ pinging 1234:3::2, src=null, vrf=v1, cnt=5, len=64, tim=1000, gap=0, ttl=255, to
 result=100%, recv/sent/lost/err=5/5/0/0, rtt min/avg/max/total=0/2/4/14
 r2#
 ```
-#### 3.2.3  **router** `r3`
+#### 4.2.3  **router** `r3`
 ```
 r3#sh lldp nei
 interface  hostname  iface      ipv4      ipv6
@@ -310,7 +343,7 @@ result=100%, recv/sent/lost/err=5/5/0/0, rtt min/avg/max/total=0/1/4/12
 r3#
 ```
 
-#### 3.2.4  **router** `r4`
+#### 4.2.4  **router** `r4`
 ```
 r4#sh lldp nei
 interface  hostname  iface      ipv4      ipv6
@@ -345,7 +378,7 @@ result=100%, recv/sent/lost/err=5/5/0/0, rtt min/avg/max/total=0/1/3/12
 r4#
 ```
 
-## 3 Conclusion
+## 4 Conclusion
 This section demonstrated:
 
 - How to implement a local square topology:
