@@ -119,12 +119,12 @@ For learning sake, we will add a new keywords:
 
 ```
 hwid MyDebianVM
-tcp2vrf 2323 v1 23
+tcp2vrf 2321 v1 23
 ```
 
 - `hwid` is the hardware identifier shown usign the `show platform` command.
 - `tcp2vrf` declare:
-  -  a Linux host high port `2323`
+  -  a Linux host high port `2321`
   -  that is translated to port `23`
   -  into freeRtr VRF `v1` namespace
 
@@ -332,10 +332,10 @@ c - clear counters
 ```
 
 ## 4 Verification
-Port translation verification via tcp2vrf`2323` -> `23`
+Port translation verification via tcp2vrf`2321` -> `23`
 
 ```
-telnet 127.0.0.1 2323
+telnet 127.0.0.1 2321
 Trying 127.0.0.1...
 Connected to 127.0.0.1.
 Escape character is '^]'.
