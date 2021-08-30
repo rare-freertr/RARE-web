@@ -6,6 +6,7 @@ nav:
     - 'Hello freeRtr !': 'guides/getting-started/001-hello-world.md'
     - 'Topology example': 'guides/getting-started/002-topology-example.md'
     - 'Unleash freeRtr !': 'guides/getting-started/003-unleash.md'
+    - "Intra domain routing": 'guides/getting-started/004-igp.md'
 #  - Reference guides:
 #    - 'Routing': 'guides/reference/rout/'
 #    - 'MPLS': '/guides/reference/mpls/'
