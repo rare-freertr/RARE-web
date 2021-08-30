@@ -1,5 +1,5 @@
 site_name: RARE/freeRtr
-site_dir: ../frederic-loui.github.io/
+site_dir: ../../frederic-loui.github.io/
 nav:
   - Home: index.md
   - Getting started:

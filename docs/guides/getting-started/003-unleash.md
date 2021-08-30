@@ -70,11 +70,11 @@ echo 1 > /proc/sys/net/ipv6/conf/enp0s9/disable_ipv6
 ```
 
 ### 2.2 Additional freeRtr softwares
-As mentioned previously, `r1` interface definition mentions a UDP socket pair:
+Let's add an additional interface definition `eth3`
 
-- `eth1`, A-end:`127.0.0.1 1001` ---- B-end:`127.0.0.1 2001`
+- `eth3`, A-end:`127.0.0.1 1003` ---- B-end:`127.0.0.1 5003`
 
-In [Hello freeRtr !](001-hello-world.md) B-end was connected to nowhere and in [Topology example](002-topology-example.md) B-end was connected to another router interface socket. In this example B-end will be an existing Linux interface. `r1@eth1` which has socket `127.0.0.1 1001` will be bind to `enp0s9` Linux interface. In order to accomplish this,  we will use a simple tool called `pcapInt` part of freeRtr bundles
+In this example B-end will be stitched to an existing Linux interface. `r1@eth3` which has socket `127.0.0.1 1003` will be bind to `enp0s9` Linux interface. In order to accomplish this,  we will use a simple tool called `pcapInt` part of freeRtr bundles
 
 Let's first install freeRtr addtional tools bundle.
 
@@ -106,16 +106,14 @@ vlan.bin
 ```
 
 ## 3 Configuration
-### 3.1 freeRtr "hardware" definition file
-We will re-use `r1` hardware definition file from previous articles, but we will just remove `eth2` for simplicity's sake.
-
-`r1-hw.txt` is declaring 2 interfaces (`eth1`,`eth2`) of type `ethernet`
+### 3.1 freeRtr "hardware" file
+We will re-use `r1` hardware definition file from previous articles and add `eth3`
 
 ```
-int eth1 eth 0000.1111.0001 127.0.0.1 1001 127.0.0.1 2001
+int eth3 eth 0000.1111.0003 127.0.0.1 1003 127.0.0.1 5003
 ```
 
-- `eth1` is identified by socket `127.0.0.1 1001` and remote end is `127.0.0.1 2001`
+- `eth3` is identified by socket `127.0.0.1 1003` and remote end is `127.0.0.1 5003`
 
 For learning sake, we will add a new keywords:
 
@@ -133,7 +131,7 @@ tcp2vrf 2323 v1 23
 ???+ info
      We will see the effect of these new keywords in the verification section.
 
-### 3.2 freeRtr "configuration" definition files
+### 3.2 freeRtr "configuration" file
 
 ```
 hostname r1
@@ -148,6 +146,19 @@ prefix-list p6
  sequence 10 permit ::/0 ge 0 le 0
  exit
 int eth1
+ lldp ena
+ vrf for v1
+ ipv4 addr 1.1.1.1 255.255.255.252
+ ipv6 addr 1234:1::1 ffff:ffff::
+ exit
+int eth2
+ lldp ena
+ vrf for v1
+ ipv4 addr 1.1.1.5 255.255.255.252
+ ipv6 addr 1234:2::1 ffff:ffff::
+ exit
+int eth3
+ description r1@eth3[127.0.0.1 1003]->enp0s9[127.0.0.1 5003]
  lldp ena
  vrf for v1
  ipv4 address dynamic 255.255.255.0
@@ -240,8 +251,20 @@ vrf definition v1
  rd 1:1
  exit
 !
-interface ethernet1
- description r1@eth1[127.0.0.1 1001]->enp0s9[127.0.0.1 2001]
+int eth1
+ lldp ena
+ vrf for v1
+ ipv4 addr 1.1.1.1 255.255.255.252
+ ipv6 addr 1234:1::1 ffff:ffff::
+ exit
+int eth2
+ lldp ena
+ vrf for v1
+ ipv4 addr 1.1.1.5 255.255.255.252
+ ipv6 addr 1234:2::1 ffff:ffff::
+ exit
+interface ethernet3
+ description r1@eth3[127.0.0.1 1003]->enp0s9[127.0.0.1 5003]
  lldp enable
  vrf forwarding v1
  ipv4 address dynamic 255.255.255.0
@@ -270,7 +293,7 @@ end
 r1#
 ```
 
-Now, it is time to bind  `r1@eth1` to `epn0s9`. First let's run `pcapInt` without any parameter.
+Now, it is time to bind  `r1@eth3` to `epn0s9`. First let's run `pcapInt` without any parameter.
 
 ```
 ./pcapInt.bin
@@ -283,15 +306,21 @@ commands: l=list interfaces
 
 Now, let's use `pcapInt` in order to bind `r1@eth1` to `epn0s9`.
 
-- `r1@eth1` socket to `enp0s9` using socket `127.0.0.1 2001`
+- `r1@eth3` socket to `enp0s9` using socket `127.0.0.1 5003`
 
 ```
-./pcapInt.bin enp0s9 2001 127.0.0.1 1001 127.0.0.1
-binded to local port 127.0.0.1 2001.
-will send to 127.0.0.1 1001.
+./pcapInt.bin enp0s9 5003 127.0.0.1 1003 127.0.0.1
+binded to local port 127.0.0.1 5003.
+will send to 127.0.0.1 1003.
 pcap version: libpcap version 1.10.0 (with TPACKET_V3)
 opening interface enp0s9
 serving others
+> d
+iface counters:
+                      packets                bytes
+received                   24                 6104
+sent                        0                    0
+
 > h
 commands:
 h - this help
@@ -299,13 +328,7 @@ q - exit process
 d - display counters
 c - clear counters
 
-> d
-iface counters:
-                      packets                bytes
-received                  471                96099
-sent                        4                  818
-
->
+> 
 ```
 
 ## 4 Verification
@@ -346,25 +369,28 @@ r1#
 `eth1` DHCP client verification
 
 ```
-r1#show ipv4 interface
+show ipv4 int                                                                                                               
 interface  state  address         netmask
 loopback0  up     2.2.2.1         255.255.255.255
-ethernet1  up     192.168.136.30  255.255.255.0
+ethernet1  up     1.1.1.1         255.255.255.252
+ethernet2  up     1.1.1.5         255.255.255.252
+ethernet3  up     192.168.136.67  255.255.255.0
 
-r1#show ipv6 interface
-interface  state  address                             netmask
-loopback0  up     4321::1                             ffff:ffff:ffff:ffff:ffff:ffff:ffff:ffff
-ethernet1  up     2a01:e0a:159:2856:200:11ff:fe11:11  ffff:ffff:ffff:ffff::
+r1#show ipv6 int                                                                                                               
+interface  state  address                            netmask
+loopback0  up     4321::1                            ffff:ffff:ffff:ffff:ffff:ffff:ffff:ffff
+ethernet1  up     1234:1::1                          ffff:ffff::
+ethernet2  up     1234:2::1                          ffff:ffff::
+ethernet3  up     2a01:e0a:159:2856:200:11ff:fe11:3  ffff:ffff:ffff:ffff::
 
-r1#show interfaces eth1
-ethernet1 is up (since 00:12:45, 1 changes)
- description: r1@eth1 -> r2@eth1
- type is ethernet, hwaddr=0000.1111.0011, mtu=1500, bw=100mbps, vrf=v1
- ip4 address=192.168.136.30/24, netmask=255.255.255.0, ifcid=198743743
- ip6 address=2a01:e0a:159:2856:200:11ff:fe11:11/64, netmask=ffff:ffff:ffff:ffff::, ifcid=532899467
- received 20392 packets (5194470 bytes) dropped 0 packets (0 bytes)
- transmitted 75 packets (9650 bytes) promisc=false macsec=false
-
+r1#sh int eth3                                                                                                                 
+ethernet3 is up (since 00:02:29, 1 changes)
+ description: r1@eth3[127.0.0.1 1003]->enp0s9[127.0.0.1 5003]
+ type is ethernet, hwaddr=0000.1111.0003, mtu=1500, bw=100mbps, vrf=v1
+ ip4 address=192.168.136.67/24, netmask=255.255.255.0, ifcid=347805334
+ ip6 address=2a01:e0a:159:2856:200:11ff:fe11:3/64, netmask=ffff:ffff:ffff:ffff::, ifcid=752263581
+ received 3555 packets (810051 bytes) dropped 0 packets (0 bytes)
+ transmitted 18 packets (2714 bytes) promisc=false macsec=false
 ```
 
 External connectitivy verification (ping Cloudfarre DNS)
@@ -412,13 +438,14 @@ This section demonstrated:
 
 - How to complete freeRtr installation by installating freeRtr tools bundle
 - How to reset an existing Linux interface so that it can be controlled by freeRtr
-- How to create a freeRtr router process that has:
-    - one interfaces (`eth1` )
-    - and its corresponding UNIX UDP sockets (`127.0.0.1 1001` )
-- How bind a Linux interface through UDP socket `127.0.0.1 2001` using `pcapInt` tool included in the freeRtr addtional tools bundle.
-- Configure `eth1` interface so that it could initiate IPv4 DHCP request and IPv6 SLAAC operation in order to get IPv4 and IPv6 address from local router acting as DHCP server and IPv6 SLAAC gateway.
+- Added a third interface to `r1`:
+    - interface (`eth3` )
+    - and its corresponding UNIX UDP sockets (`127.0.0.1 1003` )
+- How bind a Linux interface through UDP socket `127.0.0.1 5003` using `pcapInt` tool included in the freeRtr addtional tools bundle.
+- Configure `eth3` interface so that it could initiate IPv4 DHCP request and IPv6 SLAAC operation in order to get IPv4 and IPv6 address from local router acting as DHCP server and IPv6 SLAAC gateway.
 
 !!! note
-    The article demonstrated basic `ping` and `ssh` external connectivity. However, the real power of this setup is that from there, you can activate any IGP such as OSPF or ISIS on `eth1`. You can even push further connectivity extension by enabling multihop eBGP towards external system and start behaving as an ISP ... If for any reasons you have a Service Provider able to provide you MPLS services, you have the possibility to extend the Service Provider MPLS service towards any of your internal host in your network. You have guessed it, you just got a hand on the most powerful open source network swiss army knife !
+    The article demonstrated basic `ping` and `ssh` external connectivity. However, the real power of this setup is that from there, you can activate any IGP such as OSPF or ISIS on `eth3`. You can even push further connectivity extension by enabling multihop eBGP towards external system and start behaving as an ISP ... If you have the chance to have Service Provider able to provide you MPLS services, you'll get the possibility to extend MPLS service towards any of your internal host in your network. You have guessed it, you just got a hand on the most powerful open source network swiss army knife !
+    In the next article, we will start implementing a small service provider with `r1`,`r2`,`r3`,`r4` so that the lab topology can appear as an external network. The first step will to implement an IGP !
 
 
