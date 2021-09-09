@@ -220,6 +220,9 @@ java -jar rtr.jar routersc r4-hw.txt r4-sw.txt
 ### 3.2 Connectivity between RR and RR client `r1`
 - **`r4` (RR) reachability from `r1`**
 
+!!! note
+    In order to avoid cluttering the page, verification will be done for IPv4 only. You can do IPv6 checks as an exercice.  :-)
+
 **TL;DR**
 
 ```
