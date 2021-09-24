@@ -73,7 +73,7 @@ int eth2 eth 0000.1111.0002 127.0.0.1 1002 127.0.0.1 3002
 - `eth2` is identified by socket `127.0.0.1 1001` and remote end is `127.0.0.1 3002`
 
 
-### 3.2 Software configuratio file
+### 3.2 Software configuration file
 This is basically `r1` freeRtr configuration similar to Cisco IOS `startup-config` file.
 In the example below:
 
@@ -81,6 +81,8 @@ In the example below:
 - These interface have `lldp` and an `ipv4` and `ipv6` addresses configured.
 - In addition to that, we added a `lo0` that is of course not included in `r1-hw.txt` file as it is a logical interface.
 - One peculiarity is that freeRtr enforces VRF usage. (in the example `vrf v1`) There is therefore no ambiguity related to the default VRF or VRF-aware features.
+
+Let's give it the name `$hostname-sw.txt` (It can be of course any name)
 
 ```
 hostname r1
@@ -128,8 +130,9 @@ parameters:
   exec <cmd>              - execute exec command, command to execute
 ```
 From the output above you observe some indications indicating how to launch freeRtr with various options. In our case we will then launch freeRtr with `r1-hw.txt` and `r1-sw.txt` and we also would like to have a CLI console access:
+
 ```
-java -jar rtr.jar routersc r1-hw.txt r1-sw.txt
+sudo java -jar rtr.jar routersc r1-hw.txt r1-sw.txt
 
 
 #######                         ##################
@@ -229,6 +232,9 @@ end
 r1#
 ```
 Congratulations! You have launched your first freeRtr router process using native UNIX UDP socket forwarding!
+
+!!!+ info
+     In the example above we spawned a freeRtr process with `sudo`, the reason for using it here is that freeRtr base directory is in `/rtr` and port below reserved port range. Other than that, freeRtr can be launched as a regular Unix user.
 
 ## 4 Conclusion
 This section demonstrated:
