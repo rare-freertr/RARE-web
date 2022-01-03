@@ -1,0 +1,1 @@
+../../../../raw/rout-static06.tst.md

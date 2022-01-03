@@ -1,0 +1,193 @@
+{
+    "nodes": [
+        {
+            "id": 0,
+            "name": "R1",
+            "lo0@v1": "3.3.3.1/32 - 3333::1/128",
+            "bvi1@v1": "2.2.2.1/24 - 4321::1/32"
+        },
+        {
+            "id": 1,
+            "name": "R2",
+            "bvi1@v1": "2.2.2.2/24 - 4321::2/32"
+        },
+        {
+            "id": 2,
+            "name": "R3",
+            "lo0@v1": "3.3.3.3/32 - 3333::3/128",
+            "bvi1@v1": "2.2.2.3/24 - 4321::3/32"
+        },
+        {
+            "id": 3,
+            "name": "R4",
+            "bvi1@v1": "2.2.2.4/24 - 4321::4/32"
+        },
+        {
+            "id": 4,
+            "name": "R5",
+            "bvi1@v1": "2.2.2.5/24 - 4321::5/32"
+        },
+        {
+            "id": 5,
+            "name": "R6",
+            "bvi1@v1": "2.2.2.6/24 - 4321::6/32"
+        },
+        {
+            "id": 6,
+            "name": "R7",
+            "bvi1@v1": "2.2.2.7/24 - 4321::7/32"
+        },
+        {
+            "id": 7,
+            "name": "R8",
+            "bvi1@v1": "2.2.2.8/24 - 4321::8/32"
+        },
+        {
+            "id": 8,
+            "name": "R9",
+            "bvi1@v1": "2.2.2.9/24 - 4321::9/32"
+        },
+        {
+            "id": 9,
+            "name": "R10",
+            "bvi1@v1": "2.2.2.10/24 - 4321::10/32"
+        },
+        {
+            "id": 10,
+            "name": "R11",
+            "bvi1@v1": "2.2.2.11/24 - 4321::11/32"
+        },
+        {
+            "id": 11,
+            "name": "R12",
+            "bvi1@v1": "2.2.2.12/24 - 4321::12/32"
+        },
+        {
+            "id": 12,
+            "name": "R13",
+            "bvi1@v1": "2.2.2.13/24 - 4321::13/32"
+        }
+    ],
+    "links": [
+        {
+            "id": "R1 -- R2",
+            "source": "R1",
+            "target": "R2",
+            "midlabel": "1.1.1.0/30 - 1234:1::/32",
+            "taillabel": "eth1[1]",
+            "headlabel": "eth1[2]",
+            "tailtooltip": "1.1.1.1 - 1234:1::1",
+            "headtooltip": "1.1.1.2 - 1234:1::2"
+        },
+        {
+            "id": "R1 -- R3",
+            "source": "R1",
+            "target": "R3",
+            "midlabel": "1.1.1.4/30 - 1234:2::/32",
+            "taillabel": "eth2[5]",
+            "headlabel": "eth1[6]",
+            "tailtooltip": "1.1.1.5 - 1234:2::1",
+            "headtooltip": "1.1.1.6 - 1234:2::2"
+        },
+        {
+            "id": "R1 -- R4",
+            "source": "R1",
+            "target": "R4",
+            "midlabel": "1.1.1.8/30 - 1234:3::/32",
+            "taillabel": "eth3[9]",
+            "headlabel": "eth1[10]",
+            "tailtooltip": "1.1.1.9 - 1234:3::1",
+            "headtooltip": "1.1.1.10 - 1234:3::2"
+        },
+        {
+            "id": "R1 -- R5",
+            "source": "R1",
+            "target": "R5",
+            "midlabel": "1.1.1.12/30 - 1234:4::/32",
+            "taillabel": "eth4[13]",
+            "headlabel": "eth1[14]",
+            "tailtooltip": "1.1.1.13 - 1234:4::1",
+            "headtooltip": "1.1.1.14 - 1234:4::2"
+        },
+        {
+            "id": "R1 -- R6",
+            "source": "R1",
+            "target": "R6",
+            "midlabel": "1.1.1.16/30 - 1234:5::/32",
+            "taillabel": "eth5[17]",
+            "headlabel": "eth1[18]",
+            "tailtooltip": "1.1.1.17 - 1234:5::1",
+            "headtooltip": "1.1.1.18 - 1234:5::2"
+        },
+        {
+            "id": "R1 -- R7",
+            "source": "R1",
+            "target": "R7",
+            "midlabel": "1.1.1.20/30 - 1234:6::/32",
+            "taillabel": "eth6[21]",
+            "headlabel": "eth1[22]",
+            "tailtooltip": "1.1.1.21 - 1234:6::1",
+            "headtooltip": "1.1.1.22 - 1234:6::2"
+        },
+        {
+            "id": "R1 -- R8",
+            "source": "R1",
+            "target": "R8",
+            "midlabel": "1.1.1.24/30 - 1234:7::/32",
+            "taillabel": "eth7[25]",
+            "headlabel": "eth1[26]",
+            "tailtooltip": "1.1.1.25 - 1234:7::1",
+            "headtooltip": "1.1.1.26 - 1234:7::2"
+        },
+        {
+            "id": "R1 -- R9",
+            "source": "R1",
+            "target": "R9",
+            "midlabel": "1.1.1.28/30 - 1234:8::/32",
+            "taillabel": "eth8[29]",
+            "headlabel": "eth1[30]",
+            "tailtooltip": "1.1.1.29 - 1234:8::1",
+            "headtooltip": "1.1.1.30 - 1234:8::2"
+        },
+        {
+            "id": "R1 -- R10",
+            "source": "R1",
+            "target": "R10",
+            "midlabel": "1.1.1.32/30 - 1234:9::/32",
+            "taillabel": "eth9[33]",
+            "headlabel": "eth1[34]",
+            "tailtooltip": "1.1.1.33 - 1234:9::1",
+            "headtooltip": "1.1.1.34 - 1234:9::2"
+        },
+        {
+            "id": "R1 -- R11",
+            "source": "R1",
+            "target": "R11",
+            "midlabel": "1.1.1.36/30 - 1234:10::/32",
+            "taillabel": "eth10[37]",
+            "headlabel": "eth1[38]",
+            "tailtooltip": "1.1.1.37 - 1234:10::1",
+            "headtooltip": "1.1.1.38 - 1234:10::2"
+        },
+        {
+            "id": "R1 -- R12",
+            "source": "R1",
+            "target": "R12",
+            "midlabel": "1.1.1.40/30 - 1234:11::/32",
+            "taillabel": "eth11[41]",
+            "headlabel": "eth1[42]",
+            "tailtooltip": "1.1.1.41 - 1234:11::1",
+            "headtooltip": "1.1.1.42 - 1234:11::2"
+        },
+        {
+            "id": "R1 -- R13",
+            "source": "R1",
+            "target": "R13",
+            "midlabel": "1.1.1.44/30 - 1234:12::/32",
+            "taillabel": "eth12[45]",
+            "headlabel": "eth1[46]",
+            "tailtooltip": "1.1.1.45 - 1234:12::1",
+            "headtooltip": "1.1.1.46 - 1234:12::2"
+        }
+    ]
+}

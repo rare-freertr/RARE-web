@@ -1,0 +1,86 @@
+{
+    "nodes": [
+        {
+            "id": 0,
+            "name": "R1",
+            "lo1@v1": "2.2.2.1/32 - 4321::1/128"
+        },
+        {
+            "id": 1,
+            "name": "R2",
+            "lo1@v1": "2.2.2.2/32 - 4321::2/128"
+        },
+        {
+            "id": 2,
+            "name": "R3",
+            "lo1@v1": "2.2.2.3/32 - 4321::3/128"
+        },
+        {
+            "id": 3,
+            "name": "R4",
+            "lo1@v1": "2.2.2.4/32 - 4321::4/128"
+        },
+        {
+            "id": 4,
+            "name": "R5",
+            "lo1@v1": "2.2.2.5/32 - 4321::5/128"
+        },
+        {
+            "id": 5,
+            "name": "R6",
+            "lo1@v1": "2.2.2.6/32 - 4321::6/128"
+        }
+    ],
+    "links": [
+        {
+            "id": "R1 -- R2",
+            "source": "R1",
+            "target": "R2",
+            "midlabel": "",
+            "taillabel": "eth1",
+            "headlabel": "eth1",
+            "tailtooltip": "eth1",
+            "headtooltip": "eth1"
+        },
+        {
+            "id": "R2 -- R3",
+            "source": "R2",
+            "target": "R3",
+            "midlabel": "",
+            "taillabel": "eth2",
+            "headlabel": "eth1",
+            "tailtooltip": "eth2",
+            "headtooltip": "eth1"
+        },
+        {
+            "id": "R3 -- R4",
+            "source": "R3",
+            "target": "R4",
+            "midlabel": "",
+            "taillabel": "eth2",
+            "headlabel": "eth1",
+            "tailtooltip": "eth2",
+            "headtooltip": "eth1"
+        },
+        {
+            "id": "R4 -- R5",
+            "source": "R4",
+            "target": "R5",
+            "midlabel": "",
+            "taillabel": "eth2",
+            "headlabel": "eth1",
+            "tailtooltip": "eth2",
+            "headtooltip": "eth1"
+        },
+        {
+            "id": "R5 -- R6",
+            "source": "R5",
+            "target": "R6",
+            "midlabel": "",
+            "taillabel": "eth2",
+            "headlabel": "eth1",
+            "tailtooltip": "eth2",
+            "headtooltip": "eth1"
+        }
+    ]
+}

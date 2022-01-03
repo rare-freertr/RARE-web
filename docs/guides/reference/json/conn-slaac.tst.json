@@ -1,0 +1,25 @@
+{
+    "nodes": [
+        {
+            "id": 0,
+            "name": "R1",
+            "lo0@v1": "4444::4/128"
+        },
+        {
+            "id": 1,
+            "name": "R2"
+        }
+    ],
+    "links": [
+        {
+            "id": "R1 -- R2",
+            "source": "R1",
+            "target": "R2",
+            "midlabel": "1234::/16",
+            "taillabel": "eth1[1]",
+            "headlabel": "eth1[3]",
+            "tailtooltip": "1234::1",
+            "headtooltip": "3333::3"
+        }
+    ]
+}

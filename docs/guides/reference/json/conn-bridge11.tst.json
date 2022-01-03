@@ -1,0 +1,40 @@
+{
+    "nodes": [
+        {
+            "id": 0,
+            "name": "R1",
+            "bvi1@v1": "1.1.1.1/24 - 1234::1/16"
+        },
+        {
+            "id": 1,
+            "name": "R2",
+            "bvi3@v1": "1.1.1.2/24 - 1234::2/16"
+        },
+        {
+            "id": 2,
+            "name": "R3"
+        }
+    ],
+    "links": [
+        {
+            "id": "R1 -- R2",
+            "source": "R1",
+            "target": "R2",
+            "midlabel": "",
+            "taillabel": "eth1",
+            "headlabel": "eth1",
+            "tailtooltip": "bridge 1",
+            "headtooltip": "bridge 1"
+        },
+        {
+            "id": "R2 -- R3",
+            "source": "R2",
+            "target": "R3",
+            "midlabel": "",
+            "taillabel": "eth2",
+            "headlabel": "eth1",
+            "tailtooltip": "bridge 2",
+            "headtooltip": "bridge None"
+        }
+    ]
+}

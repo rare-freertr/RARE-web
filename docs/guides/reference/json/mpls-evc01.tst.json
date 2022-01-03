@@ -1,0 +1,27 @@
+{
+    "nodes": [
+        {
+            "id": 0,
+            "name": "R1"
+        },
+        {
+            "id": 1,
+            "name": "R2",
+            "bvi1@v1": "1.1.1.2/24 - 1111::2/16",
+            "bvi2@v1": "1.1.2.2/24 - 1112::2/16",
+            "bvi3@v1": "1.1.3.2/24 - 1113::2/16"
+        }
+    ],
+    "links": [
+        {
+            "id": "R1 -- R2",
+            "source": "R1",
+            "target": "R2",
+            "midlabel": "",
+            "taillabel": "eth1",
+            "headlabel": "eth1",
+            "tailtooltip": "eth1",
+            "headtooltip": "eth1"
+        }
+    ]
+}

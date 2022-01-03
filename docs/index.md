@@ -7,7 +7,7 @@ The project aims to integrate different pieces of software related to building b
 ### **Control plane**:
 * **RARE** uses **[FreeRtr](http://freerouter.nop.hu/)** under the hood used as the control plane component
 ### **Programmable dataplane**
-* **[P4](https://p4.org/)** , **[DPDK](https://www.dpdk.org/)** or **[TCPDUMP/libpcap](https://tcpdump.org)** are possible candidates
+* **[P4](https://p4.org/), [DPDK](https://www.dpdk.org/), [XDP](https://prototype-kernel.readthedocs.io/en/latest/networking/XDP/) or [TCPDUMP/libpcap](https://tcpdump.org)** are possible candidates
 ### **Communication interface**
 * This is the interface between the control plane and data plane and it is specific to the target dataplane. For example, [BMv2](https://github.com/p4lang/behavioral-model), the open source P4 virtual switch developed by [p4.org](https://p4,org), uses [P4Runtime](https://github.com/p4lang/p4runtime) in order to expose internal P4 program's object to an external control plane
 

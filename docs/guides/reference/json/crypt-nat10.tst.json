@@ -1,0 +1,41 @@
+{
+    "nodes": [
+        {
+            "id": 0,
+            "name": "R1",
+            "lo1@v1": "2.2.2.2/32"
+        },
+        {
+            "id": 1,
+            "name": "R2",
+            "tun1@": "10.1.64.65/30 - 6464::a01:4042/96"
+        },
+        {
+            "id": 2,
+            "name": "R3",
+            "lo1@v1": "8888::8/128"
+        }
+    ],
+    "links": [
+        {
+            "id": "R1 -- R2",
+            "source": "R1",
+            "target": "R2",
+            "midlabel": "dynamic/dynamic",
+            "taillabel": "eth1[1]",
+            "headlabel": "eth1[2]",
+            "tailtooltip": "1.1.1.1",
+            "headtooltip": "1.1.1.2"
+        },
+        {
+            "id": "R2 -- R3",
+            "source": "R2",
+            "target": "R3",
+            "midlabel": "1234::/32",
+            "taillabel": "eth2[1]",
+            "headlabel": "eth1[2]",
+            "tailtooltip": "1234::1",
+            "headtooltip": "1234::2"
+        }
+    ]
+}

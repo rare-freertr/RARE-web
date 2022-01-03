@@ -1,0 +1,34 @@
+{
+    "nodes": [
+        {
+            "id": 0,
+            "name": "R1"
+        },
+        {
+            "id": 1,
+            "name": "R2"
+        }
+    ],
+    "links": [
+        {
+            "id": "R1 -- R2",
+            "source": "R1",
+            "target": "R2",
+            "midlabel": "",
+            "taillabel": "eth1",
+            "headlabel": "eth1",
+            "tailtooltip": "eth1",
+            "headtooltip": "eth1"
+        },
+        {
+            "id": "R1 -- R2",
+            "source": "R1",
+            "target": "R2",
+            "midlabel": "",
+            "taillabel": "eth2",
+            "headlabel": "eth2",
+            "tailtooltip": "eth2",
+            "headtooltip": "eth2"
+        }
+    ]
+}

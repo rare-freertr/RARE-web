@@ -1,5 +1,5 @@
 site_name: RARE/freeRtr
-site_dir: ../../frederic-loui.github.io/
+site_dir: ../frederic-loui.github.io/
 nav:
   - Home: index.md
   - Getting started:
@@ -9,23 +9,9 @@ nav:
     - "Intra domain routing": 'guides/getting-started/004-igp.md'
     - "MPLS forwarding core": 'guides/getting-started/005-mpls.md'
     - "iBGP": 'guides/getting-started/006-ibgp.md'
-#  - Reference guides:
-#    - 'Routing': 'guides/reference/rout/'
-#    - 'MPLS': '/guides/reference/mpls/'
-#    - 'QoS': '/guides/reference/qos/'
-#  - Validated design:
-#    - 'BGP route reflector':
-#      - 'Service Provider': '/rvd/sp-bgp-rr/'
-#      - 'Kubernetes': '/rvd/k8s-bgp-rr/'
-#    - 'MPLS LSR':
-#      - 'LDP LSR': '/rvd/mpls-lsr/ldp/'
-#      - 'ISIS-SR LSR': '/rvd/mpls-lsr/isis-sr/'
-#      - 'OSPF-SR LSR': '/rvd/mpls-lsr/ospf-sr/'
-#    - 'MPLS LER':
-#      - 'VPNv4/6VPE': '/rvd/mpls-ler/vpnv4-6vpe/'
-#      - 'Point to point L2VPN': '/rvd/mpls-ler/p2p-l2vpn/'
-#      - 'VPLS': '/rvd/mpls-ler/vpls/'
-#      - 'EVPN': '/rvd/mpls-ler/evpn/'
+  - References:
+     - 'All features in one page': 'guides/reference/index.md'
+     - 'Features category': 'guides/reference/tabbed.md'
   - License: license.md
   - Contacts: contacts.md
   - About: about.md
@@ -48,9 +34,14 @@ extra:
     tokenizer: '[\s\-\.]+'
 
 markdown_extensions:
+  - pymdownx.snippets:
+        base_path: ['docs/guides/reference/snippets','.']
+        check_paths: true
   - pymdownx.highlight:
         linenums: true
   - pymdownx.superfences
+  - pymdownx.tabbed:
+        alternate_style: true
   - admonition
   - codehilite
   - footnotes
@@ -63,6 +54,8 @@ markdown_extensions:
   - pymdownx.details
   - pymdownx.emoji:
       emoji_generator: !!python/name:pymdownx.emoji.to_svg
+      emoji_index: !!python/name:materialx.emoji.twemoji
+      emoji_generator: !!python/name:materialx.emoji.to_svg
   - pymdownx.inlinehilite
   - pymdownx.magiclink
   - pymdownx.mark
@@ -70,3 +63,4 @@ markdown_extensions:
   - pymdownx.tasklist:
       custom_checkbox: true
   - pymdownx.tilde
+  - tables

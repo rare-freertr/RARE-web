@@ -1,0 +1,693 @@
+
+.n-topology.n-topology-rare {
+  position: relative;
+  overflow: hidden;
+  background: hsla(232, 15%, 21%, 1);
+  -webkit-transition: background 0.6s;
+  /* For Safari 3.1 to 6.0 */
+  transition: background 0.6s;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  -o-user-select: none;
+  user-select: none;
+}
+.n-topology.n-topology-rare:focus {
+  outline: 0 none;
+}
+.n-topology.n-topology-rare .n-topology-fit {
+  -webkit-transition: all 0.6s linear !important;
+  /* For Safari 3.1 to 6.0 */
+  transition: all 0.6s linear !important;
+}
+.n-topology.n-topology-rare .n-topology-fit .node,
+.n-topology.n-topology-rare .n-topology-fit .nodeSet,
+.n-topology.n-topology-rare .n-topology-fit .link,
+.n-topology.n-topology-rare .n-topology-fit .linkSet {
+  -webkit-transition: all 0.9s linear !important;
+  /* For Safari 3.1 to 6.0 */
+  transition: all 0.9s linear !important;
+}
+.n-topology.n-topology-rare.n-topology-loading svg,
+.n-topology.n-topology-rare.n-topology-loading .n-topology-nav {
+  -webkit-filter: blur(5px);
+  -moz-filter: blur(5px);
+}
+.n-topology.n-topology-rare svg {
+  box-sizing: content-box;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+.n-topology.n-topology-rare text:empty {
+  display: none;
+}
+.n-topology.n-topology-rare g {
+  pointer-events: all;
+}
+.n-topology.n-topology-rare defs .bg {
+  fill: #00ff00;
+}
+.n-topology.n-topology-rare defs .stroke {
+  stroke: #00ff00;
+}
+.n-topology.n-topology-rare defs [fill*='#FFFFFF'] {
+  fill: hsla(232, 15%, 21%, 1); 
+}
+.n-topology.n-topology-rare .n-svg {
+  border: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  -o-user-select: none;
+  user-select: none;
+}
+.n-topology.n-topology-rare .fontIcon {
+  font-family: 'next-font';
+  fill: #00ff00;
+  alignment-baseline: central;
+  text-anchor: middle;
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+.n-topology.n-topology-rare text {
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+.n-topology.n-topology-rare .n-topology-icon .fontIcon {
+  cursor: pointer;
+}
+.n-topology.n-topology-rare .iconBG {
+  fill: hsla(232, 15%, 21%,1);
+}
+.n-topology.n-topology-rare .iconBGActive {
+  fill: hsla(232, 15%, 21%, 1); 
+}
+.n-topology.n-topology-rare .node:not(.node-selected) .selectedBG {
+  display: none;
+}
+.n-topology.n-topology-rare .node .selectedBG {
+  fill: transparent;
+  opacity: 0.8;
+  stroke: #ff7900;
+  stroke-width: 3;
+  pointer-events: none;
+}
+.n-topology.n-topology-rare .node .dot {
+  fill: #00ff00;
+}
+.n-topology.n-topology-rare .node text.node-label {
+  font-family: "Cisco Sans Reg";
+  fill: #00ff00;
+  pointer-events: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  -o-user-select: none;
+  user-select: none;
+  font-size: 11px;
+}
+.n-topology.n-topology-rare .node.disable .node-label {
+  fill: #ccc !important;
+}
+.n-topology.n-topology-rare .node.disable .showIcon .iconShape {
+  fill: #ccc;
+}
+.n-topology.n-topology-rare .node.disable .iconBG.iconBGActive {
+  fill: #ccc;
+}
+.n-topology.n-topology-rare .link path,
+.n-topology.n-topology-rare .link line {
+  stroke: #997b19;
+  stroke-width: 1px;
+  fill: none;
+  cursor: pointer;
+}
+.n-topology.n-topology-rare .link path.link:hover,
+.n-topology.n-topology-rare .link line.link:hover {
+  stroke: #55440e;
+}
+.n-topology.n-topology-rare .link line.link_bg:hover ~ line {
+  stroke: #55440e !important;
+}
+.n-topology.n-topology-rare .link .link-label {
+  font-family: "Cisco Sans Reg";
+  fill: #00ff00;
+  font-size: 12px;
+}
+.n-topology.n-topology-rare .link .source-abel {
+  font-family: "Cisco Sans Reg";
+  fill: #00ff00;
+  opacity: 0.8;
+  font-size: 12px;
+}
+.n-topology.n-topology-rare .link .target-label {
+  font-family: "Cisco Sans Reg";
+  fill: #00ff00;
+  opacity: 0.8;
+  font-size: 12px;
+}
+.n-topology.n-topology-rare .link .disable-label {
+  fill: #fff;
+}
+.n-topology.n-topology-rare .link .disable-bg {
+  fill: #ccc;
+}
+.n-topology.n-topology-rare .link .link_bg {
+  stroke: transparent;
+}
+.n-topology.n-topology-rare .link.disable path,
+.n-topology.n-topology-rare .link.disable line {
+  stroke: #ccc !important;
+  stroke-width: 1px;
+}
+.n-topology.n-topology-rare .link.disable .link_bg {
+  stroke: transparent !important;
+}
+.n-topology.n-topology-rare .link.link-selected path,
+.n-topology.n-topology-rare .link.link-selected line {
+  stroke: #ccc;
+  stroke-width: 2px;
+}
+.n-topology.n-topology-rare .nodeset .selectedBG {
+  fill: transparent;
+  opacity: 0.8;
+  stroke: #ff7900;
+  stroke-width: 3;
+  pointer-events: none;
+}
+.n-topology.n-topology-rare .nodeset .dot {
+  fill: hsla(232, 15%, 21%,1);
+  stroke: #00ff00;
+  stroke-width: 1;
+}
+.n-topology.n-topology-rare .nodeset .icon {
+  cursor: pointer;
+}
+.n-topology.n-topology-rare .nodeset .bg {
+  fill: #00ff00;
+  pointer-events: none;
+}
+.n-topology.n-topology-rare .nodeset text.node-label {
+  font-family: "Cisco Sans Reg";
+  fill: #00ff00;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  -o-user-select: none;
+  user-select: none;
+  pointer-events: none;
+}
+.n-topology.n-topology-rare .nodeset.disable {
+  opacity: 0.3;
+  stroke: #ccc;
+}
+.n-topology.n-topology-rare .nodeset .iconBG {
+  fill: hsla(232, 15%, 21%,1);
+}
+.n-topology.n-topology-rare .nodeset .iconBGActive {
+  fill: hsla(232, 15%, 21%,1);
+}
+.n-topology.n-topology-rare .nodeset .iconBGActive ~ .iconShape {
+  display: block !important;
+}
+.n-topology.n-topology-rare .nodeset .indicator .iconBG {
+  fill: hsla(232, 15%, 21%,1);
+}
+.n-topology.n-topology-rare .nodeset .indicator .iconBG:hover {
+  fill: #00ff00;
+}
+.n-topology.n-topology-rare .nodeset .indicator .iconShape {
+  fill: #cc9b00;
+}
+.n-topology.n-topology-rare .group .bg {
+  opacity: 0.6;
+  stroke-width: 10px;
+  stroke-linejoin: round;
+}
+.n-topology.n-topology-rare .group .groupLabel {
+  cursor: pointer;
+  font-size: 18px;
+  font-family: "Cisco Sans Reg";
+  text-anchor: middle;
+  alignment-baseline: inherit;
+}
+.n-topology.n-topology-rare .group .fontIcon.iconShape {
+  fill: #9BB150;
+}
+.n-topology.n-topology-rare .group .nodeSetGroupLabel {
+  cursor: pointer;
+  font-size: 18px;
+  font-family: "Cisco Sans Reg";
+  alignment-baseline: inherit;
+  fill: #9BB150;
+}
+.n-topology.n-topology-rare .group .groupLabel:hover ~ .bg {
+  opacity: 0.7;
+}
+.n-topology.n-topology-rare .group.aggregationGroup .bg {
+  stroke-width: 10px;
+  stroke-linejoin: round;
+  fill: #9BB150;
+  stroke: #9BB150;
+  pointer-events: none;
+  opacity: 0;
+  -webkit-transition: opacity 0.3s linear;
+  /* For Safari 3.1 to 6.0 */
+  transition: opacity 0.3s linear;
+}
+.n-topology.n-topology-rare .group.aggregationGroup.fade-active-item {
+  opacity: 1;
+}
+.n-topology.n-topology-rare .group.aggregationGroup.fade-active-item .bg {
+  opacity: 0.5;
+}
+.n-topology.n-topology-rare .link-set-bg {
+  stroke: #997b19;
+  stroke-width: 2px;
+}
+.n-topology.n-topology-rare .link-set-circle {
+  fill: #00ff00;
+  stroke: #00ff00;
+  stroke-width: 16px;
+  stroke-linejoin: round;
+}
+.n-topology.n-topology-rare .link-set-text {
+  font-family: "Cisco Sans Reg";
+  fill: hsla(232, 15%, 21%,1);
+  text-anchor: middle;
+  dominant-baseline: central;
+  font-size: 12px;
+  pointer-events: none;
+}
+.n-topology.n-topology-rare .link-set.disable .link-set-bg {
+  stroke: #ccc;
+}
+.n-topology.n-topology-rare .link-set.disable .link-set-circle {
+  fill: #ccc;
+  stroke: #ccc;
+}
+@media screen and (-webkit-min-device-pixel-ratio: 0) {
+  .n-topology.n-topology-rare {
+    /* Safari only override */
+  }
+  .n-topology.n-topology-rare ::i-block-chrome,
+  .n-topology.n-topology-rare .link-set-circle {
+    stroke-width: 8px !important;
+  }
+}
+.n-topology.n-topology-rare .mapPath {
+  fill: #333333;
+  stroke: #555555;
+  stroke-width: 1;
+  opacity: 0.5;
+  pointer-events: none;
+}
+.n-topology.n-topology-rare .mapBoundary {
+  fill: none;
+  stroke: #555555;
+  stroke-width: 1;
+  pointer-events: none;
+}
+.n-topology.n-topology-rare .selectionRect {
+  stroke: #00ff00;
+  fill: #00ff00;
+  fill-opacity: 0.1;
+  pointer-events: none;
+}
+.n-topology.n-topology-rare-setting {
+  max-width: none !important;
+}
+.n-topology.n-topology-rare .aggregationGroup .aggregationText {
+  fill: #00ff00;
+  font-size: 12px;
+}
+.n-topology.n-topology-rare .aggregationGroup .aggregationRect {
+  fill: #00ff00;
+  opacity: 0.2;
+  stroke: #00ff00;
+  stroke-width: 3;
+  stroke-linejoin: round;
+  pointer-events: none;
+}
+.n-topology.n-topology-rare .layer > * {
+  transition: opacity .6s;
+}
+.n-topology.n-topology-rare .layer.fade-layer > *:not(.fade-highlight-item):not(.fade-active-item) {
+  opacity: .2;
+}
+.n-topology.n-topology-rare.fade-active-priority.fade-active-occur .layer.fade-layer > .fade-highlight-item:not(.fade-active-item) {
+  opacity: .2;
+}
+.n-topology.n-topology-rare.fade-all .layer > *:not(.fade-highlight-item):not(.fade-active-item) {
+  opacity: .2;
+}
+.n-topology.n-topology-rare.fade-active-priority.fade-active-occur.fade-all .layer > .fade-highlight-item:not(.fade-active-item) {
+  opacity: .2;
+}
+.n-topology.n-topology-rare .n-topology-nav {
+  position: absolute;
+  top: 0px;
+  left: 8px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  -o-user-select: none;
+  user-select: none;
+}
+.n-topology.n-topology-rare .n-topology-nav li {
+  list-style: none;
+  padding: 0px;
+}
+.n-topology.n-topology-rare .n-topology-nav ul {
+  padding: 0px;
+  margin: 0px;
+}
+.n-topology.n-topology-rare .n-topology-nav span {
+  -webkit-transition: all 0.6s;
+  /* For Safari 3.1 to 6.0 */
+  transition: all 0.6s;
+}
+.n-topology.n-topology-rare .n-topology-nav > ul {
+  padding: 0px;
+  margin-top: 30px;
+  width: 32px;
+}
+.n-topology.n-topology-rare .n-topology-nav > ul > li {
+  display: inline-block;
+  list-style: none;
+  width: 25px;
+  margin-top: 5px;
+  -webkit-transition: all 0.6s;
+  /* For Safari 3.1 to 6.0 */
+  transition: all 0.6s;
+}
+.n-topology.n-topology-rare .n-topology-nav-mode {
+  padding: 0px;
+  position: relative;
+  width: 25px;
+}
+.n-topology.n-topology-rare .n-topology-nav-mode li {
+  width: 25px;
+  height: 25px;
+  line-height: 30px;
+  display: inline-block;
+  text-align: center;
+  cursor: pointer;
+  -webkit-transition: all 0.6s;
+  /* For Safari 3.1 to 6.0 */
+  transition: all 0.6s;
+  background: #333333;
+  margin-top: -2px;
+}
+.n-topology.n-topology-rare .n-topology-nav-mode li:hover span {
+  color: #00ff00;
+}
+.n-topology.n-topology-rare .n-topology-nav-mode span {
+  color: #666666;
+  display: inline-block;
+  font-size: 18px;
+}
+.n-topology.n-topology-rare .n-topology-nav-mode-selected {
+  background: #00ff00 !important;
+}
+.n-topology.n-topology-rare .n-topology-nav-mode-selected span {
+  color: hsla(232, 15%, 21%,1);
+}
+.n-topology.n-topology-rare .n-topology-nav-mode-selected:hover {
+  background: #00ff00 !important;
+}
+.n-topology.n-topology-rare .n-topology-nav-mode-selected:hover span {
+  color: hsla(232, 15%, 21%,1) !important;
+}
+.n-topology.n-topology-rare .n-topology-nav-zoom {
+  position: relative;
+  height: 51px;
+  margin-top: 10px !important;
+}
+.n-topology.n-topology-rare .n-topology-nav-zoom > span {
+  display: inline-block;
+  position: absolute;
+  text-align: center;
+  font-size: 25px;
+  color: #666666;
+  background: #333333;
+}
+.n-topology.n-topology-rare .n-topology-nav-zoom-in {
+  top: 0px;
+  left: 0px;
+  cursor: pointer;
+}
+.n-topology.n-topology-rare .n-topology-nav-zoom-in:hover {
+  color: #b3b3b3;
+  background: #4d4d4d;
+}
+.n-topology.n-topology-rare .n-topology-nav-zoom-out {
+  top: 25px;
+  left: 0px;
+  cursor: pointer;
+}
+.n-topology.n-topology-rare .n-topology-nav-zoom-out:hover {
+  color: #b3b3b3;
+  background: #4d4d4d;
+}
+.n-topology.n-topology-rare .n-topology-nav-zoom-selection {
+  cursor: pointer;
+  text-align: center;
+  font-size: 22px;
+  color: #666666;
+}
+.n-topology.n-topology-rare .n-topology-nav-zoom-selection:hover {
+  color: #b3b3b3;
+}
+.n-topology.n-topology-rare .n-topology-nav-zoom-selection-selected {
+  color: #ffda66;
+}
+.n-topology.n-topology-rare .n-topology-nav-fit {
+  cursor: pointer;
+  text-align: center;
+  font-size: 22px;
+  color: #666666;
+}
+.n-topology.n-topology-rare .n-topology-nav-fit:hover {
+  color: #b3b3b3;
+}
+.n-topology.n-topology-rare .n-topology-nav-agr {
+  cursor: pointer;
+  line-height: 24px;
+  text-align: center;
+  font-size: 20px;
+  height: 24px;
+  color: #666666;
+  display: none;
+}
+.n-topology.n-topology-rare .n-topology-nav-agr:hover {
+  color: #b3b3b3;
+}
+@-webkit-keyframes agr-icon-ani {
+  0% {
+    -webkit-transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+  }
+}
+.n-topology.n-topology-rare .n-topology-nav .agr-icon {
+  -webkit-animation-duration: 3s;
+  -webkit-animation-name: agr-icon-ani;
+  -webkit-animation-iteration-count: infinite;
+  -webkit-animation-direction: normal;
+  -webkit-animation-timing-function: linear;
+  -webkit-transition: 0 none;
+  color: #ffc81a;
+}
+.n-topology.n-topology-rare .n-topology-nav .agr-text {
+  font-size: 10px;
+  color: #333333;
+  position: absolute;
+  left: 10px;
+  margin-top: -1px;
+  height: 12px;
+}
+.n-topology.n-topology-rare .n-topology-nav-full {
+  cursor: pointer;
+  text-align: center;
+  font-size: 18px;
+  color: #666666;
+}
+.n-topology.n-topology-rare .n-topology-nav-full:hover {
+  color: #b3b3b3;
+}
+.n-topology.n-topology-rare .n-topology-nav-setting {
+  cursor: pointer;
+  text-align: center;
+  color: #666666;
+  line-height: 1;
+  -webkit-transition: none 0 !important;
+  /* For Safari 3.1 to 6.0 */
+  transition: none 0 !important;
+}
+.n-topology.n-topology-rare .n-topology-nav-setting:hover {
+  opacity: 1;
+  color: #ffc81a;
+}
+.n-topology.n-topology-rare .n-topology-nav-setting-icon {
+  font-size: 20px;
+}
+.n-topology.n-topology-rare .n-topology-nav-setting-icon-selected {
+  color: #ffc81a;
+}
+.n-topology.n-topology-rare .n-topology-loading {
+  overflow: hidden;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 100%;
+  width: 100%;
+  display: none;
+}
+.n-topology.n-topology-rare .n-topology-loading ul {
+  position: absolute;
+  left: calc(49.3%);
+  top: calc(45.8%);
+  display: inline-block;
+  text-indent: 2.8em;
+}
+.n-topology.n-topology-rare .n-topology-loading ul li:after,
+.n-topology.n-topology-rare .n-topology-loading ul:after {
+  width: 1.4em;
+  height: 1.4em;
+  border-radius: 100%;
+}
+.n-topology.n-topology-rare .n-topology-loading ul li:after,
+.n-topology.n-topology-rare .n-topology-loading ul:after {
+  content: "";
+  display: block;
+}
+.n-topology.n-topology-rare .n-topology-loading ul:after {
+  position: absolute;
+  top: 2.8em;
+}
+.n-topology.n-topology-rare .n-topology-loading li {
+  position: absolute;
+  padding-bottom: 5.6em;
+  top: 0;
+  left: 0;
+  list-style: none;
+}
+.n-topology.n-topology-rare .n-topology-loading li:after {
+  background: #00ff00;
+}
+.n-topology.n-topology-rare .n-topology-loading li:nth-child(1) {
+  -webkit-transform: rotate(0deg);
+  -webkit-animation-delay: 0.125s;
+}
+.n-topology.n-topology-rare .n-topology-loading li:nth-child(1):after {
+  -webkit-animation-delay: 0.125s;
+}
+.n-topology.n-topology-rare .n-topology-loading li:nth-child(2) {
+  -webkit-transform: rotate(36deg);
+  -webkit-animation-delay: 0.25s;
+}
+.n-topology.n-topology-rare .n-topology-loading li:nth-child(2):after {
+  -webkit-animation-delay: 0.25s;
+}
+.n-topology.n-topology-rare .n-topology-loading li:nth-child(3) {
+  -webkit-transform: rotate(72deg);
+  -webkit-animation-delay: 0.375s;
+}
+.n-topology.n-topology-rare .n-topology-loading li:nth-child(3):after {
+  -webkit-animation-delay: 0.375s;
+}
+.n-topology.n-topology-rare .n-topology-loading li:nth-child(4) {
+  -webkit-transform: rotate(108deg);
+  -webkit-animation-delay: 0.5s;
+}
+.n-topology.n-topology-rare .n-topology-loading li:nth-child(4):after {
+  -webkit-animation-delay: 0.5s;
+}
+.n-topology.n-topology-rare .n-topology-loading li:nth-child(5) {
+  -webkit-transform: rotate(144deg);
+  -webkit-animation-delay: 0.625s;
+}
+.n-topology.n-topology-rare .n-topology-loading li:nth-child(5):after {
+  -webkit-animation-delay: 0.625s;
+}
+.n-topology.n-topology-rare .n-topology-loading li:nth-child(6) {
+  -webkit-transform: rotate(180deg);
+  -webkit-animation-delay: 0.75s;
+}
+.n-topology.n-topology-rare .n-topology-loading li:nth-child(6):after {
+  -webkit-animation-delay: 0.75s;
+}
+.n-topology.n-topology-rare .n-topology-loading li:nth-child(7) {
+  -webkit-transform: rotate(216deg);
+  -webkit-animation-delay: 0.875s;
+}
+.n-topology.n-topology-rare .n-topology-loading li:nth-child(7):after {
+  -webkit-animation-delay: 0.875s;
+}
+.n-topology.n-topology-rare .n-topology-loading li:nth-child(8) {
+  -webkit-transform: rotate(252deg);
+  -webkit-animation-delay: 1s;
+}
+.n-topology.n-topology-rare .n-topology-loading li:nth-child(8):after {
+  -webkit-animation-delay: 1s;
+}
+.n-topology.n-topology-rare .n-topology-loading li:nth-child(9) {
+  -webkit-transform: rotate(288deg);
+  -webkit-animation-delay: 1.125s;
+}
+.n-topology.n-topology-rare .n-topology-loading li:nth-child(9):after {
+  -webkit-animation-delay: 1.125s;
+}
+.n-topology.n-topology-rare .n-topology-loading li:nth-child(10) {
+  -webkit-transform: rotate(324deg);
+  -webkit-animation-delay: 1.25s;
+}
+.n-topology.n-topology-rare .n-topology-loading li:nth-child(10):after {
+  -webkit-animation-delay: 1.25s;
+}
+.n-topology.n-topology-rare .n-topology-loading li {
+  -webkit-animation: dotAnimation 2.5s infinite;
+}
+@-webkit-keyframes dotAnimation {
+  0%,
+  55%,
+  100% {
+    padding: 0 0 5.6em 0;
+  }
+  5%,
+  50% {
+    padding: 2.8em 0;
+  }
+}
+.n-topology.n-topology-rare .n-topology-loading li:after {
+  -webkit-animation: dotAnimationTwo 2.5s infinite;
+}
+@-webkit-keyframes dotAnimationTwo {
+  0%,
+  55%,
+  100% {
+    opacity: 1;
+    -webkit-transform: scale(1);
+  }
+  5%,
+  50% {
+    opacity: .5;
+    -webkit-transform: scale(0.5);
+  }
+}
+

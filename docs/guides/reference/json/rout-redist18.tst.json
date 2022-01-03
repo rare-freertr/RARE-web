@@ -1,0 +1,161 @@
+{
+    "nodes": [
+        {
+            "id": 0,
+            "name": "R1",
+            "lo1@v1": "2.2.2.1/32 - 4321::1/128"
+        },
+        {
+            "id": 1,
+            "name": "R2",
+            "lo1@v1": "2.2.2.2/32 - 4321::2/128"
+        },
+        {
+            "id": 2,
+            "name": "R3",
+            "lo1@v1": "2.2.2.3/32 - 4321::3/128"
+        },
+        {
+            "id": 3,
+            "name": "R4",
+            "lo1@v1": "2.2.2.4/32 - 4321::4/128"
+        },
+        {
+            "id": 4,
+            "name": "R5",
+            "lo1@v1": "2.2.2.5/32 - 4321::5/128"
+        },
+        {
+            "id": 5,
+            "name": "R6",
+            "lo1@v1": "2.2.2.6/32 - 4321::6/128"
+        },
+        {
+            "id": 6,
+            "name": "R7",
+            "lo1@v1": "2.2.2.7/32 - 4321::7/128"
+        },
+        {
+            "id": 7,
+            "name": "R8",
+            "lo1@v1": "2.2.2.8/32 - 4321::8/128"
+        },
+        {
+            "id": 8,
+            "name": "R9",
+            "lo1@v1": "2.2.2.9/32 - 4321::9/128"
+        },
+        {
+            "id": 9,
+            "name": "R10",
+            "lo1@v1": "2.2.2.10/32 - 4321::10/128"
+        },
+        {
+            "id": 10,
+            "name": "R11",
+            "lo1@v1": "2.2.2.11/32 - 4321::11/128"
+        }
+    ],
+    "links": [
+        {
+            "id": "R1 -- R2",
+            "source": "R1",
+            "target": "R2",
+            "midlabel": "",
+            "taillabel": "eth1",
+            "headlabel": "eth1",
+            "tailtooltip": "eth1",
+            "headtooltip": "eth1"
+        },
+        {
+            "id": "R1 -- R3",
+            "source": "R1",
+            "target": "R3",
+            "midlabel": "",
+            "taillabel": "eth2",
+            "headlabel": "eth1",
+            "tailtooltip": "eth2",
+            "headtooltip": "eth1"
+        },
+        {
+            "id": "R1 -- R4",
+            "source": "R1",
+            "target": "R4",
+            "midlabel": "",
+            "taillabel": "eth3",
+            "headlabel": "eth1",
+            "tailtooltip": "eth3",
+            "headtooltip": "eth1"
+        },
+        {
+            "id": "R1 -- R5",
+            "source": "R1",
+            "target": "R5",
+            "midlabel": "",
+            "taillabel": "eth4",
+            "headlabel": "eth1",
+            "tailtooltip": "eth4",
+            "headtooltip": "eth1"
+        },
+        {
+            "id": "R1 -- R6",
+            "source": "R1",
+            "target": "R6",
+            "midlabel": "",
+            "taillabel": "eth5",
+            "headlabel": "eth1",
+            "tailtooltip": "eth5",
+            "headtooltip": "eth1"
+        },
+        {
+            "id": "R1 -- R7",
+            "source": "R1",
+            "target": "R7",
+            "midlabel": "",
+            "taillabel": "eth6",
+            "headlabel": "eth1",
+            "tailtooltip": "eth6",
+            "headtooltip": "eth1"
+        },
+        {
+            "id": "R1 -- R8",
+            "source": "R1",
+            "target": "R8",
+            "midlabel": "",
+            "taillabel": "eth7",
+            "headlabel": "eth1",
+            "tailtooltip": "eth7",
+            "headtooltip": "eth1"
+        },
+        {
+            "id": "R1 -- R9",
+            "source": "R1",
+            "target": "R9",
+            "midlabel": "",
+            "taillabel": "eth8",
+            "headlabel": "eth1",
+            "tailtooltip": "eth8",
+            "headtooltip": "eth1"
+        },
+        {
+            "id": "R1 -- R10",
+            "source": "R1",
+            "target": "R10",
+            "midlabel": "",
+            "taillabel": "eth9",
+            "headlabel": "eth1",
+            "tailtooltip": "eth9",
+            "headtooltip": "eth1"
+        },
+        {
+            "id": "R1 -- R11",
+            "source": "R1",
+            "target": "R11",
+            "midlabel": "",
+            "taillabel": "eth10",
+            "headlabel": "eth1",
+            "tailtooltip": "eth10",
+            "headtooltip": "eth1"
+        }
+    ]
+}

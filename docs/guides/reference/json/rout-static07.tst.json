@@ -1,0 +1,38 @@
+{
+    "nodes": [
+        {
+            "id": 0,
+            "name": "R1"
+        },
+        {
+            "id": 1,
+            "name": "R2"
+        },
+        {
+            "id": 2,
+            "name": "R3"
+        }
+    ],
+    "links": [
+        {
+            "id": "R1 -- R2",
+            "source": "R1",
+            "target": "R2",
+            "midlabel": "1.1.1.0/24 - 1234::/32",
+            "taillabel": "eth1[1]",
+            "headlabel": "eth1[2]",
+            "tailtooltip": "1.1.1.1 - 1234::1",
+            "headtooltip": "1.1.1.2 - 1234::2"
+        },
+        {
+            "id": "R1 -- R3",
+            "source": "R1",
+            "target": "R3",
+            "midlabel": "1.1.1.0/24 - 1234::/32",
+            "taillabel": "eth2[1]",
+            "headlabel": "eth1[3]",
+            "tailtooltip": "1.1.1.1 - 1234::1",
+            "headtooltip": "1.1.1.3 - 1234::3"
+        }
+    ]
+}

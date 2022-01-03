@@ -1,0 +1,28 @@
+{
+    "nodes": [
+        {
+            "id": 0,
+            "name": "R1",
+            "tun1@v1": "2.2.2.1/30",
+            "tun2@v1": "4321::1/16"
+        },
+        {
+            "id": 1,
+            "name": "R2",
+            "tun1@v1": "2.2.2.2/30",
+            "tun2@v1": "4321::2/16"
+        }
+    ],
+    "links": [
+        {
+            "id": "R1 -- R2",
+            "source": "R1",
+            "target": "R2",
+            "midlabel": "",
+            "taillabel": "eth1",
+            "headlabel": "eth1",
+            "tailtooltip": "eth1",
+            "headtooltip": "eth1"
+        }
+    ]
+}

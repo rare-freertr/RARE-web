@@ -1,0 +1,30 @@
+{
+    "nodes": [
+        {
+            "id": 0,
+            "name": "R1",
+            "lo11@v1": "2.2.2.1/32",
+            "lo12@v1": "4321::1/128",
+            "lo21@v1": "2.2.2.2/32",
+            "lo22@v1": "4321::2/128",
+            "lo31@v1": "2.2.2.3/32",
+            "lo32@v1": "4321::3/128"
+        },
+        {
+            "id": 1,
+            "name": "R2"
+        }
+    ],
+    "links": [
+        {
+            "id": "R1 -- R2",
+            "source": "R1",
+            "target": "R2",
+            "midlabel": "",
+            "taillabel": "eth1",
+            "headlabel": "eth1",
+            "tailtooltip": "eth1",
+            "headtooltip": "eth1"
+        }
+    ]
+}

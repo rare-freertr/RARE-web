@@ -1,0 +1,1 @@
+../../../../raw/serv-bmp02.tst.md

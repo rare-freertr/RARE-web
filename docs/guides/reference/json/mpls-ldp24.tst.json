@@ -1,0 +1,36 @@
+{
+    "nodes": [
+        {
+            "id": 0,
+            "name": "R1",
+            "lo0@v1": "2.2.2.1/32 - 4321::1/128"
+        },
+        {
+            "id": 1,
+            "name": "R2",
+            "lo0@v1": "2.2.2.2/32 - 4321::2/128"
+        }
+    ],
+    "links": [
+        {
+            "id": "R1 -- R2",
+            "source": "R1",
+            "target": "R2",
+            "midlabel": "1.1.1.0/24 - 1234:1::/32",
+            "taillabel": "ser1[1]",
+            "headlabel": "ser1[2]",
+            "tailtooltip": "1.1.1.1 - 1234:1::1",
+            "headtooltip": "1.1.1.2 - 1234:1::2"
+        },
+        {
+            "id": "R1 -- R2",
+            "source": "R1",
+            "target": "R2",
+            "midlabel": "1.1.2.0/24 - 1234:2::/32",
+            "taillabel": "ser2[1]",
+            "headlabel": "ser2[2]",
+            "tailtooltip": "1.1.2.1 - 1234:2::1",
+            "headtooltip": "1.1.2.2 - 1234:2::2"
+        }
+    ]
+}

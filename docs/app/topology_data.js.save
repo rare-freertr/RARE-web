@@ -1,0 +1,52 @@
+var topologyData = {
+	"nodes": [
+		{
+			"id": 0,
+			"name": "HQ"
+		},
+		{
+			"id": 1,
+			"name": "Mars"
+		},
+		{
+			"id": 2,
+			"name": "Saturn"
+		},
+		{
+			"id": 3,
+			"name": "Pluto"
+		}
+	],
+	"links": [
+		{
+			"id": 0,
+			"source": 0,
+			"destination": 1
+		},
+		{
+			"id": 1,
+			"source": 0,
+			"destination": 2
+		},
+		{
+			"id": 2,
+			"source": 0,
+			"destination": 3
+		},
+		{
+			"id": 3,
+			"source": 1,
+			"destination": 2
+		},
+		{
+			"id": 4,
+			"source": 2,
+			"destination": 3
+		},
+		{
+			"id": 5,
+			"source": 3,
+			"destination": 1
+		}
+	]
+};
