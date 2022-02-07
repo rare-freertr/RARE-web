@@ -11,6 +11,7 @@
     | [conn-amt03](md/conn-amt03.tst.md) | :material-check: | amt over amt |
     | [conn-amt04](md/conn-amt04.tst.md) | :material-check: | amt over loopback |
     | [conn-anyconn](md/conn-anyconn.tst.md) | :material-check: | ip over anyconnect |
+    | [conn-arcnet](md/conn-arcnet.tst.md) | :material-check: | arcnet encapsulation |
     | [conn-atmdxi](md/conn-atmdxi.tst.md) | :material-check: | atmdxi encapsulation |
     | [conn-atmsar](md/conn-atmsar.tst.md) | :material-check: | atmsar encapsulation |
     | [conn-ax2501](md/conn-ax2501.tst.md) | :material-check: | ppp with ax25 |
@@ -33,7 +34,9 @@
     | [conn-bridge11](md/conn-bridge11.tst.md) | :material-check: | bridged ethernet over bridge |
     | [conn-bridge12](md/conn-bridge12.tst.md) | :material-check: | bridge split horizon |
     | [conn-bridge13](md/conn-bridge13.tst.md) | :material-check: | bridge mac learning |
-    | [conn-bridge14](md/conn-bridge14.tst.md) | :material-check: | bridged mac rewrite |
+    | [conn-bridge14](md/conn-bridge14.tst.md) | :material-check: | bridge mac rewrite |
+    | [conn-bridge15](md/conn-bridge15.tst.md) | :material-check: | bridge port security |
+    | [conn-bridge16](md/conn-bridge16.tst.md) | :material-check: | bridge static address |
     | [conn-bstun](md/conn-bstun.tst.md) | :material-check: | ppp over bstun |
     | [conn-bundle01](md/conn-bundle01.tst.md) | :material-check: | bundle of ethernet port |
     | [conn-bundle02](md/conn-bundle02.tst.md) | :material-check: | bundle of serial port |
@@ -175,6 +178,7 @@
     | [conn-icmp02](md/conn-icmp02.tst.md) | :material-check: | icmptunnel over ipv6 |
     | [conn-icmp03](md/conn-icmp03.tst.md) | :material-check: | icmptunnel over icmptunnel |
     | [conn-icmp04](md/conn-icmp04.tst.md) | :material-check: | icmptunnel over loopback |
+    | [conn-infini](md/conn-infini.tst.md) | :material-check: | infini encapsulation |
     | [conn-ipcomp01](md/conn-ipcomp01.tst.md) | :material-check: | ipcomp over ipv4 |
     | [conn-ipcomp02](md/conn-ipcomp02.tst.md) | :material-check: | ipcomp over ipv6 |
     | [conn-ipcomp03](md/conn-ipcomp03.tst.md) | :material-check: | ipcomp over ipcomp |
@@ -427,6 +431,10 @@
     | [crypt-access04](md/crypt-access04.tst.md) | :material-check: | access subnet |
     | [crypt-access05](md/crypt-access05.tst.md) | :material-check: | remote triggered blackhole access |
     | [crypt-access06](md/crypt-access06.tst.md) | :material-check: | remote triggered whitelist access |
+    | [crypt-access07](md/crypt-access07.tst.md) | :material-check: | access total |
+    | [crypt-access08](md/crypt-access08.tst.md) | :material-check: | access tracker |
+    | [crypt-access09](md/crypt-access09.tst.md) | :material-check: | access negated tracker |
+    | [crypt-access10](md/crypt-access10.tst.md) | :material-check: | access follow tracker |
     | [crypt-acl01](md/crypt-acl01.tst.md) | :material-check: | ingress protocol matching access list |
     | [crypt-acl02](md/crypt-acl02.tst.md) | :material-check: | egress protocol matching access list |
     | [crypt-acl03](md/crypt-acl03.tst.md) | :material-check: | ingress destination matching access list |
@@ -514,9 +522,9 @@
     | [crypt-ike105](md/crypt-ike105.tst.md) | :material-check: | ike1 with des |
     | [crypt-ike106](md/crypt-ike106.tst.md) | :material-check: | ike1 with blowfish |
     | [crypt-ike107](md/crypt-ike107.tst.md) | :material-check: | ike1 with 3des |
-    | [crypt-ike108](md/crypt-ike108.tst.md) | :material-check: | ike1 with aes128 |
-    | [crypt-ike109](md/crypt-ike109.tst.md) | :material-check: | ike1 with aes192 |
-    | [crypt-ike110](md/crypt-ike110.tst.md) | :material-check: | ike1 with aes256 |
+    | [crypt-ike108](md/crypt-ike108.tst.md) | :material-check: | ike1 with aes128cbc |
+    | [crypt-ike109](md/crypt-ike109.tst.md) | :material-check: | ike1 with aes192cbc |
+    | [crypt-ike110](md/crypt-ike110.tst.md) | :material-check: | ike1 with aes256cbc |
     | [crypt-ike111](md/crypt-ike111.tst.md) | :material-check: | ike1 with md5 |
     | [crypt-ike112](md/crypt-ike112.tst.md) | :material-check: | ike1 with sha1 |
     | [crypt-ike113](md/crypt-ike113.tst.md) | :material-check: | ike1 with sha256 |
@@ -540,9 +548,9 @@
     | [crypt-ike205](md/crypt-ike205.tst.md) | :material-check: | ike2 with des |
     | [crypt-ike206](md/crypt-ike206.tst.md) | :material-check: | ike2 with blowfish |
     | [crypt-ike207](md/crypt-ike207.tst.md) | :material-check: | ike2 with 3des |
-    | [crypt-ike208](md/crypt-ike208.tst.md) | :material-check: | ike2 with aes128 |
-    | [crypt-ike209](md/crypt-ike209.tst.md) | :material-check: | ike2 with aes192 |
-    | [crypt-ike210](md/crypt-ike210.tst.md) | :material-check: | ike2 with aes256 |
+    | [crypt-ike208](md/crypt-ike208.tst.md) | :material-check: | ike2 with aes128cbc |
+    | [crypt-ike209](md/crypt-ike209.tst.md) | :material-check: | ike2 with aes192cbc |
+    | [crypt-ike210](md/crypt-ike210.tst.md) | :material-check: | ike2 with aes256cbc |
     | [crypt-ike211](md/crypt-ike211.tst.md) | :material-check: | ike2 with md5 |
     | [crypt-ike212](md/crypt-ike212.tst.md) | :material-check: | ike2 with sha1 |
     | [crypt-ike213](md/crypt-ike213.tst.md) | :material-check: | ike2 with sha256 |
@@ -566,13 +574,27 @@
     | [crypt-inlsp05](md/crypt-inlsp05.tst.md) | :material-check: | inlsp with des |
     | [crypt-inlsp06](md/crypt-inlsp06.tst.md) | :material-check: | inlsp with blowfish |
     | [crypt-inlsp07](md/crypt-inlsp07.tst.md) | :material-check: | inlsp with 3des |
-    | [crypt-inlsp08](md/crypt-inlsp08.tst.md) | :material-check: | inlsp with aes128 |
-    | [crypt-inlsp09](md/crypt-inlsp09.tst.md) | :material-check: | inlsp with aes192 |
-    | [crypt-inlsp10](md/crypt-inlsp10.tst.md) | :material-check: | inlsp with aes256 |
+    | [crypt-inlsp08](md/crypt-inlsp08.tst.md) | :material-check: | inlsp with aes128cbc |
+    | [crypt-inlsp09](md/crypt-inlsp09.tst.md) | :material-check: | inlsp with aes192cbc |
+    | [crypt-inlsp10](md/crypt-inlsp10.tst.md) | :material-check: | inlsp with aes256cbc |
     | [crypt-inlsp11](md/crypt-inlsp11.tst.md) | :material-check: | inlsp with md5 |
     | [crypt-inlsp12](md/crypt-inlsp12.tst.md) | :material-check: | inlsp with sha1 |
     | [crypt-inlsp13](md/crypt-inlsp13.tst.md) | :material-check: | inlsp with sha256 |
     | [crypt-inlsp14](md/crypt-inlsp14.tst.md) | :material-check: | inlsp with sha512 |
+    | [crypt-inlsp15](md/crypt-inlsp15.tst.md) | :material-check: | inlsp with aes128cfb |
+    | [crypt-inlsp16](md/crypt-inlsp16.tst.md) | :material-check: | inlsp with aes192cfb |
+    | [crypt-inlsp17](md/crypt-inlsp17.tst.md) | :material-check: | inlsp with aes256cfb |
+    | [crypt-inlsp18](md/crypt-inlsp18.tst.md) | :material-check: | inlsp with aes128ecb |
+    | [crypt-inlsp19](md/crypt-inlsp19.tst.md) | :material-check: | inlsp with aes192ecb |
+    | [crypt-inlsp20](md/crypt-inlsp20.tst.md) | :material-check: | inlsp with aes256ecb |
+    | [crypt-inlsp21](md/crypt-inlsp21.tst.md) | :material-check: | inlsp with sha224 |
+    | [crypt-inlsp22](md/crypt-inlsp22.tst.md) | :material-check: | inlsp with sha384 |
+    | [crypt-inlsp23](md/crypt-inlsp23.tst.md) | :material-check: | inlsp with sha3224 |
+    | [crypt-inlsp24](md/crypt-inlsp24.tst.md) | :material-check: | inlsp with sha3256 |
+    | [crypt-inlsp25](md/crypt-inlsp25.tst.md) | :material-check: | inlsp with sha3384 |
+    | [crypt-inlsp26](md/crypt-inlsp26.tst.md) | :material-check: | inlsp with sha3512 |
+    | [crypt-inlsp27](md/crypt-inlsp27.tst.md) | :material-check: | inlsp with none encryption |
+    | [crypt-inlsp28](md/crypt-inlsp28.tst.md) | :material-check: | inlsp with none hash |
     | [crypt-insp01](md/crypt-insp01.tst.md) | :material-check: | route inspection |
     | [crypt-insp02](md/crypt-insp02.tst.md) | :material-check: | flow inspection |
     | [crypt-insp03](md/crypt-insp03.tst.md) | :material-check: | interface inspection |
@@ -598,9 +620,9 @@
     | [crypt-macsec10](md/crypt-macsec10.tst.md) | :material-check: | macsec with des |
     | [crypt-macsec11](md/crypt-macsec11.tst.md) | :material-check: | macsec with blowfish |
     | [crypt-macsec12](md/crypt-macsec12.tst.md) | :material-check: | macsec with 3des |
-    | [crypt-macsec13](md/crypt-macsec13.tst.md) | :material-check: | macsec with aes128 |
-    | [crypt-macsec14](md/crypt-macsec14.tst.md) | :material-check: | macsec with aes192 |
-    | [crypt-macsec15](md/crypt-macsec15.tst.md) | :material-check: | macsec with aes256 |
+    | [crypt-macsec13](md/crypt-macsec13.tst.md) | :material-check: | macsec with aes128cbc |
+    | [crypt-macsec14](md/crypt-macsec14.tst.md) | :material-check: | macsec with aes192cbc |
+    | [crypt-macsec15](md/crypt-macsec15.tst.md) | :material-check: | macsec with aes256cbc |
     | [crypt-macsec16](md/crypt-macsec16.tst.md) | :material-check: | macsec with md5 |
     | [crypt-macsec17](md/crypt-macsec17.tst.md) | :material-check: | macsec with sha1 |
     | [crypt-macsec18](md/crypt-macsec18.tst.md) | :material-check: | macsec with sha256 |
@@ -619,6 +641,26 @@
     | [crypt-macsec31](md/crypt-macsec31.tst.md) | :material-check: | macsec over ethernet bundle |
     | [crypt-macsec32](md/crypt-macsec32.tst.md) | :material-check: | macsec over ethernet hairpin |
     | [crypt-macsec33](md/crypt-macsec33.tst.md) | :material-check: | no macsec over ethernet |
+    | [crypt-macsec34](md/crypt-macsec34.tst.md) | :material-check: | macsec with aes128cfb |
+    | [crypt-macsec35](md/crypt-macsec35.tst.md) | :material-check: | macsec with aes192cfb |
+    | [crypt-macsec36](md/crypt-macsec36.tst.md) | :material-check: | macsec with aes256cfb |
+    | [crypt-macsec37](md/crypt-macsec37.tst.md) | :material-check: | macsec with aes128ecb |
+    | [crypt-macsec38](md/crypt-macsec38.tst.md) | :material-check: | macsec with aes192ecb |
+    | [crypt-macsec39](md/crypt-macsec39.tst.md) | :material-check: | macsec with aes256ecb |
+    | [crypt-macsec40](md/crypt-macsec40.tst.md) | :material-check: | macsec with sha224 |
+    | [crypt-macsec41](md/crypt-macsec41.tst.md) | :material-check: | macsec with sha384 |
+    | [crypt-macsec42](md/crypt-macsec42.tst.md) | :material-check: | macsec with sha3224 |
+    | [crypt-macsec43](md/crypt-macsec43.tst.md) | :material-check: | macsec with sha3256 |
+    | [crypt-macsec44](md/crypt-macsec44.tst.md) | :material-check: | macsec with sha3384 |
+    | [crypt-macsec45](md/crypt-macsec45.tst.md) | :material-check: | macsec with sha3512 |
+    | [crypt-macsec46](md/crypt-macsec46.tst.md) | :material-check: | macsec with none encryption |
+    | [crypt-macsec47](md/crypt-macsec47.tst.md) | :material-check: | macsec with none hash |
+    | [crypt-macsec48](md/crypt-macsec48.tst.md) | :material-check: | macsec with aes128gcm and hash |
+    | [crypt-macsec49](md/crypt-macsec49.tst.md) | :material-check: | macsec with aes192gcm and hash |
+    | [crypt-macsec50](md/crypt-macsec50.tst.md) | :material-check: | macsec with aes256gcm and hash |
+    | [crypt-macsec51](md/crypt-macsec51.tst.md) | :material-check: | macsec with aes128gcm and aead |
+    | [crypt-macsec52](md/crypt-macsec52.tst.md) | :material-check: | macsec with aes192gcm and aead |
+    | [crypt-macsec53](md/crypt-macsec53.tst.md) | :material-check: | macsec with aes256gcm and aead |
     | [crypt-nat01](md/crypt-nat01.tst.md) | :material-check: | source list translation to interface |
     | [crypt-nat02](md/crypt-nat02.tst.md) | :material-check: | source list translation to address |
     | [crypt-nat03](md/crypt-nat03.tst.md) | :material-check: | source address translation to interface |
@@ -639,14 +681,28 @@
     | [crypt-openvpn05](md/crypt-openvpn05.tst.md) | :material-check: | openvpn with des |
     | [crypt-openvpn06](md/crypt-openvpn06.tst.md) | :material-check: | openvpn with blowfish |
     | [crypt-openvpn07](md/crypt-openvpn07.tst.md) | :material-check: | openvpn with 3des |
-    | [crypt-openvpn08](md/crypt-openvpn08.tst.md) | :material-check: | openvpn with aes128 |
-    | [crypt-openvpn09](md/crypt-openvpn09.tst.md) | :material-check: | openvpn with aes192 |
-    | [crypt-openvpn10](md/crypt-openvpn10.tst.md) | :material-check: | openvpn with aes256 |
+    | [crypt-openvpn08](md/crypt-openvpn08.tst.md) | :material-check: | openvpn with aes128cbc |
+    | [crypt-openvpn09](md/crypt-openvpn09.tst.md) | :material-check: | openvpn with aes192cbc |
+    | [crypt-openvpn10](md/crypt-openvpn10.tst.md) | :material-check: | openvpn with aes256cbc |
     | [crypt-openvpn11](md/crypt-openvpn11.tst.md) | :material-check: | openvpn with md5 |
     | [crypt-openvpn12](md/crypt-openvpn12.tst.md) | :material-check: | openvpn with sha1 |
     | [crypt-openvpn13](md/crypt-openvpn13.tst.md) | :material-check: | openvpn with sha256 |
     | [crypt-openvpn14](md/crypt-openvpn14.tst.md) | :material-check: | openvpn with sha512 |
     | [crypt-openvpn15](md/crypt-openvpn15.tst.md) | :material-check: | openvpn over asymmetric ports |
+    | [crypt-openvpn16](md/crypt-openvpn16.tst.md) | :material-check: | openvpn with aes128cfb |
+    | [crypt-openvpn17](md/crypt-openvpn17.tst.md) | :material-check: | openvpn with aes192cfb |
+    | [crypt-openvpn18](md/crypt-openvpn18.tst.md) | :material-check: | openvpn with aes256cfb |
+    | [crypt-openvpn19](md/crypt-openvpn19.tst.md) | :material-check: | openvpn with aes128ecb |
+    | [crypt-openvpn20](md/crypt-openvpn20.tst.md) | :material-check: | openvpn with aes192ecb |
+    | [crypt-openvpn21](md/crypt-openvpn21.tst.md) | :material-check: | openvpn with aes256ecb |
+    | [crypt-openvpn22](md/crypt-openvpn22.tst.md) | :material-check: | openvpn with sha224 |
+    | [crypt-openvpn23](md/crypt-openvpn23.tst.md) | :material-check: | openvpn with sha384 |
+    | [crypt-openvpn24](md/crypt-openvpn24.tst.md) | :material-check: | openvpn with sha3224 |
+    | [crypt-openvpn25](md/crypt-openvpn25.tst.md) | :material-check: | openvpn with sha3256 |
+    | [crypt-openvpn26](md/crypt-openvpn26.tst.md) | :material-check: | openvpn with sha3384 |
+    | [crypt-openvpn27](md/crypt-openvpn27.tst.md) | :material-check: | openvpn with sha3512 |
+    | [crypt-openvpn28](md/crypt-openvpn28.tst.md) | :material-check: | openvpn with none encryption |
+    | [crypt-openvpn29](md/crypt-openvpn29.tst.md) | :material-check: | openvpn with none hash |
     | [crypt-proxy](md/crypt-proxy.tst.md) | :material-check: | transparent proxy |
     | [crypt-satp01](md/crypt-satp01.tst.md) | :material-check: | satp over ipv4 |
     | [crypt-satp02](md/crypt-satp02.tst.md) | :material-check: | satp over ipv6 |
@@ -655,14 +711,28 @@
     | [crypt-satp05](md/crypt-satp05.tst.md) | :material-check: | satp with des |
     | [crypt-satp06](md/crypt-satp06.tst.md) | :material-check: | satp with blowfish |
     | [crypt-satp07](md/crypt-satp07.tst.md) | :material-check: | satp with 3des |
-    | [crypt-satp08](md/crypt-satp08.tst.md) | :material-check: | satp with aes128 |
-    | [crypt-satp09](md/crypt-satp09.tst.md) | :material-check: | satp with aes192 |
-    | [crypt-satp10](md/crypt-satp10.tst.md) | :material-check: | satp with aes256 |
+    | [crypt-satp08](md/crypt-satp08.tst.md) | :material-check: | satp with aes128cbc |
+    | [crypt-satp09](md/crypt-satp09.tst.md) | :material-check: | satp with aes192cbc |
+    | [crypt-satp10](md/crypt-satp10.tst.md) | :material-check: | satp with aes256cbc |
     | [crypt-satp11](md/crypt-satp11.tst.md) | :material-check: | satp with md5 |
     | [crypt-satp12](md/crypt-satp12.tst.md) | :material-check: | satp with sha1 |
     | [crypt-satp13](md/crypt-satp13.tst.md) | :material-check: | satp with sha256 |
     | [crypt-satp14](md/crypt-satp14.tst.md) | :material-check: | satp with sha512 |
     | [crypt-satp15](md/crypt-satp15.tst.md) | :material-check: | satp over asymmetric ports |
+    | [crypt-satp16](md/crypt-satp16.tst.md) | :material-check: | satp with aes128cfb |
+    | [crypt-satp17](md/crypt-satp17.tst.md) | :material-check: | satp with aes192cfb |
+    | [crypt-satp18](md/crypt-satp18.tst.md) | :material-check: | satp with aes256cfb |
+    | [crypt-satp19](md/crypt-satp19.tst.md) | :material-check: | satp with aes128ecb |
+    | [crypt-satp20](md/crypt-satp20.tst.md) | :material-check: | satp with aes192ecb |
+    | [crypt-satp21](md/crypt-satp21.tst.md) | :material-check: | satp with aes256ecb |
+    | [crypt-satp22](md/crypt-satp22.tst.md) | :material-check: | satp with sha224 |
+    | [crypt-satp23](md/crypt-satp23.tst.md) | :material-check: | satp with sha384 |
+    | [crypt-satp24](md/crypt-satp24.tst.md) | :material-check: | satp with sha3224 |
+    | [crypt-satp25](md/crypt-satp25.tst.md) | :material-check: | satp with sha3256 |
+    | [crypt-satp26](md/crypt-satp26.tst.md) | :material-check: | satp with sha3384 |
+    | [crypt-satp27](md/crypt-satp27.tst.md) | :material-check: | satp with sha3512 |
+    | [crypt-satp28](md/crypt-satp28.tst.md) | :material-check: | satp with none encryption |
+    | [crypt-satp29](md/crypt-satp29.tst.md) | :material-check: | satp with none hash |
     | [crypt-skip01](md/crypt-skip01.tst.md) | :material-check: | skip over ipv4 |
     | [crypt-skip02](md/crypt-skip02.tst.md) | :material-check: | skip over ipv6 |
     | [crypt-skip03](md/crypt-skip03.tst.md) | :material-check: | skip over skip |
@@ -670,13 +740,27 @@
     | [crypt-skip05](md/crypt-skip05.tst.md) | :material-check: | skip with des |
     | [crypt-skip06](md/crypt-skip06.tst.md) | :material-check: | skip with blowfish |
     | [crypt-skip07](md/crypt-skip07.tst.md) | :material-check: | skip with 3des |
-    | [crypt-skip08](md/crypt-skip08.tst.md) | :material-check: | skip with aes128 |
-    | [crypt-skip09](md/crypt-skip09.tst.md) | :material-check: | skip with aes192 |
-    | [crypt-skip10](md/crypt-skip10.tst.md) | :material-check: | skip with aes256 |
+    | [crypt-skip08](md/crypt-skip08.tst.md) | :material-check: | skip with aes128cbc |
+    | [crypt-skip09](md/crypt-skip09.tst.md) | :material-check: | skip with aes192cbc |
+    | [crypt-skip10](md/crypt-skip10.tst.md) | :material-check: | skip with aes256cbc |
     | [crypt-skip11](md/crypt-skip11.tst.md) | :material-check: | skip with md5 |
     | [crypt-skip12](md/crypt-skip12.tst.md) | :material-check: | skip with sha1 |
     | [crypt-skip13](md/crypt-skip13.tst.md) | :material-check: | skip with sha256 |
     | [crypt-skip14](md/crypt-skip14.tst.md) | :material-check: | skip with sha512 |
+    | [crypt-skip15](md/crypt-skip15.tst.md) | :material-check: | skip with aes128cfb |
+    | [crypt-skip16](md/crypt-skip16.tst.md) | :material-check: | skip with aes192cfb |
+    | [crypt-skip17](md/crypt-skip17.tst.md) | :material-check: | skip with aes256cfb |
+    | [crypt-skip18](md/crypt-skip18.tst.md) | :material-check: | skip with aes128ecb |
+    | [crypt-skip19](md/crypt-skip19.tst.md) | :material-check: | skip with aes192ecb |
+    | [crypt-skip20](md/crypt-skip20.tst.md) | :material-check: | skip with aes256ecb |
+    | [crypt-skip21](md/crypt-skip21.tst.md) | :material-check: | skip with sha224 |
+    | [crypt-skip22](md/crypt-skip22.tst.md) | :material-check: | skip with sha384 |
+    | [crypt-skip23](md/crypt-skip23.tst.md) | :material-check: | skip with sha3224 |
+    | [crypt-skip24](md/crypt-skip24.tst.md) | :material-check: | skip with sha3256 |
+    | [crypt-skip25](md/crypt-skip25.tst.md) | :material-check: | skip with sha3384 |
+    | [crypt-skip26](md/crypt-skip26.tst.md) | :material-check: | skip with sha3512 |
+    | [crypt-skip27](md/crypt-skip27.tst.md) | :material-check: | skip with none encryption |
+    | [crypt-skip28](md/crypt-skip28.tst.md) | :material-check: | skip with none hash |
     | [crypt-ssh](md/crypt-ssh.tst.md) | :material-check: | ssh test |
     | [crypt-swipe01](md/crypt-swipe01.tst.md) | :material-check: | swipe over ipv4 |
     | [crypt-swipe02](md/crypt-swipe02.tst.md) | :material-check: | swipe over ipv6 |
@@ -685,13 +769,27 @@
     | [crypt-swipe05](md/crypt-swipe05.tst.md) | :material-check: | swipe with des |
     | [crypt-swipe06](md/crypt-swipe06.tst.md) | :material-check: | swipe with blowfish |
     | [crypt-swipe07](md/crypt-swipe07.tst.md) | :material-check: | swipe with 3des |
-    | [crypt-swipe08](md/crypt-swipe08.tst.md) | :material-check: | swipe with aes128 |
-    | [crypt-swipe09](md/crypt-swipe09.tst.md) | :material-check: | swipe with aes192 |
-    | [crypt-swipe10](md/crypt-swipe10.tst.md) | :material-check: | swipe with aes256 |
+    | [crypt-swipe08](md/crypt-swipe08.tst.md) | :material-check: | swipe with aes128cbc |
+    | [crypt-swipe09](md/crypt-swipe09.tst.md) | :material-check: | swipe with aes192cbc |
+    | [crypt-swipe10](md/crypt-swipe10.tst.md) | :material-check: | swipe with aes256cbc |
     | [crypt-swipe11](md/crypt-swipe11.tst.md) | :material-check: | swipe with md5 |
     | [crypt-swipe12](md/crypt-swipe12.tst.md) | :material-check: | swipe with sha1 |
     | [crypt-swipe13](md/crypt-swipe13.tst.md) | :material-check: | swipe with sha256 |
     | [crypt-swipe14](md/crypt-swipe14.tst.md) | :material-check: | swipe with sha512 |
+    | [crypt-swipe15](md/crypt-swipe15.tst.md) | :material-check: | swipe with aes128cfb |
+    | [crypt-swipe16](md/crypt-swipe16.tst.md) | :material-check: | swipe with aes192cfb |
+    | [crypt-swipe17](md/crypt-swipe17.tst.md) | :material-check: | swipe with aes256cfb |
+    | [crypt-swipe18](md/crypt-swipe18.tst.md) | :material-check: | swipe with aes128ecb |
+    | [crypt-swipe19](md/crypt-swipe19.tst.md) | :material-check: | swipe with aes192ecb |
+    | [crypt-swipe20](md/crypt-swipe20.tst.md) | :material-check: | swipe with aes256ecb |
+    | [crypt-swipe21](md/crypt-swipe21.tst.md) | :material-check: | swipe with sha224 |
+    | [crypt-swipe22](md/crypt-swipe22.tst.md) | :material-check: | swipe with sha384 |
+    | [crypt-swipe23](md/crypt-swipe23.tst.md) | :material-check: | swipe with sha3224 |
+    | [crypt-swipe24](md/crypt-swipe24.tst.md) | :material-check: | swipe with sha3256 |
+    | [crypt-swipe25](md/crypt-swipe25.tst.md) | :material-check: | swipe with sha3384 |
+    | [crypt-swipe26](md/crypt-swipe26.tst.md) | :material-check: | swipe with sha3512 |
+    | [crypt-swipe27](md/crypt-swipe27.tst.md) | :material-check: | swipe with none encryption |
+    | [crypt-swipe28](md/crypt-swipe28.tst.md) | :material-check: | swipe with none hash |
     | [crypt-tls](md/crypt-tls.tst.md) | :material-check: | tls test |
     | [crypt-wireguard01](md/crypt-wireguard01.tst.md) | :material-check: | wireguard over ipv4 |
     | [crypt-wireguard02](md/crypt-wireguard02.tst.md) | :material-check: | wireguard over ipv6 |
@@ -1521,6 +1619,10 @@
     | [rout-bgp528](md/rout-bgp528.tst.md) | :material-check: | bgp without recursion |
     | [rout-bgp529](md/rout-bgp529.tst.md) | :material-check: | bgp with recursion |
     | [rout-bgp530](md/rout-bgp530.tst.md) | :material-check: | bgp with route flap dampening |
+    | [rout-bgp531](md/rout-bgp531.tst.md) | :material-check: | bgp routemap filtering with nexthop |
+    | [rout-bgp532](md/rout-bgp532.tst.md) | :material-check: | bgp routepolicy filtering with nexthop |
+    | [rout-bgp533](md/rout-bgp533.tst.md) | :material-check: | bgp routemap filtering with nexthop with soft-reconfig |
+    | [rout-bgp534](md/rout-bgp534.tst.md) | :material-check: | bgp routepolicy filtering with nexthop with soft-reconfig |
     | [rout-eigrp01](md/rout-eigrp01.tst.md) | :material-check: | eigrp point2point connection |
     | [rout-eigrp02](md/rout-eigrp02.tst.md) | :material-check: | eigrp point2multipoint connection |
     | [rout-eigrp03](md/rout-eigrp03.tst.md) | :material-check: | eigrp point2point chain |
@@ -1885,6 +1987,7 @@
     | [rout-redist29](md/rout-redist29.tst.md) | :material-check: | redistribution with ouni bgp |
     | [rout-redist30](md/rout-redist30.tst.md) | :material-check: | redistribution with bgp labels |
     | [rout-redist31](md/rout-redist31.tst.md) | :material-check: | redistribution with olab bgp |
+    | [rout-redist32](md/rout-redist32.tst.md) | :material-check: | vrf route limit |
     | [rout-rip01](md/rout-rip01.tst.md) | :material-check: | rip on one subnet |
     | [rout-rip02](md/rout-rip02.tst.md) | :material-check: | rip in chain |
     | [rout-rip03](md/rout-rip03.tst.md) | :material-check: | rip ingress route filtering with prefixlist |
@@ -1926,6 +2029,13 @@
     | [rout-static09](md/rout-static09.tst.md) | :material-check: | recursive static routing |
     | [rout-static10](md/rout-static10.tst.md) | :material-check: | recursive static routing with labels |
     | [rout-static11](md/rout-static11.tst.md) | :material-check: | static routing with ecmp |
+    | [rout-static12](md/rout-static12.tst.md) | :material-check: | static routing with udp tracker |
+    | [rout-static13](md/rout-static13.tst.md) | :material-check: | static routing with twamp tracker |
+    | [rout-static14](md/rout-static14.tst.md) | :material-check: | static routing with interface tracker |
+    | [rout-static15](md/rout-static15.tst.md) | :material-check: | static routing with prefix tracker |
+    | [rout-static16](md/rout-static16.tst.md) | :material-check: | static routing with other tracker |
+    | [rout-static17](md/rout-static17.tst.md) | :material-check: | static routing with check tracker |
+    | [rout-static18](md/rout-static18.tst.md) | :material-check: | static routing with nrpe tracker |
 
 === "Server"
 

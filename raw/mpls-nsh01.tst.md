@@ -14,7 +14,7 @@
     hostname r1
     buggy
     !
-    logging file debug ../binTmp/zzz1r1-log.run
+    logging file debug ../binTmp/zzz63r1-log.run
     !
     vrf definition tester
      exit
@@ -74,7 +74,7 @@
     hostname r2
     buggy
     !
-    logging file debug ../binTmp/zzz1r2-log.run
+    logging file debug ../binTmp/zzz63r2-log.run
     !
     vrf definition tester
      exit
@@ -127,7 +127,7 @@
     hostname r3
     buggy
     !
-    logging file debug ../binTmp/zzz1r3-log.run
+    logging file debug ../binTmp/zzz63r3-log.run
     !
     vrf definition tester
      exit
@@ -180,7 +180,7 @@
     hostname r4
     buggy
     !
-    logging file debug ../binTmp/zzz1r4-log.run
+    logging file debug ../binTmp/zzz63r4-log.run
     !
     vrf definition tester
      exit
@@ -242,19 +242,19 @@
     r2#
     r2#show inter eth1 full
     r2#show inter eth1 full
-    ethernet1 is promisc, up (since 00:00:09, 3 changes)
+    ethernet1 is promisc, up (since 00:00:03, 3 changes)
      description:
      type is ethernet, hwaddr=0000.0000.2222, mtu=1500, bw=100mbps
      received 28 packets (1874 bytes) dropped 0 packets (0 bytes)
      transmitted 28 packets (1874 bytes) promisc=true macsec=false
-     |~~~~~~~|~~~~|~~~~|~~~~~~|~~~~~|~~~~~|~~~~~~|
-     |       | packet         | byte             |
-     | time  | tx | rx | drop | tx  | rx  | drop |
-     |-------|----|----|------|-----|-----|------|
-     | 1sec  | 4  | 4  | 0    | 264 | 264 | 0    |
-     | 1min  | 0  | 0  | 0    | 0   | 0   | 0    |
-     | 1hour | 0  | 0  | 0    | 0   | 0   | 0    |
-     |_______|____|____|______|_____|_____|______|
+     |~~~~~~~|~~~~|~~~~|~~~~~~|~~~~~~|~~~~~~|~~~~~~|
+     |       | packet         | byte               |
+     | time  | tx | rx | drop | tx   | rx   | drop |
+     |-------|----|----|------|------|------|------|
+     | 1sec  | 20 | 20 | 0    | 1320 | 1320 | 0    |
+     | 1min  | 0  | 0  | 0    | 0    | 0    | 0    |
+     | 1hour | 0  | 0  | 0    | 0    | 0    | 0    |
+     |_______|____|____|______|______|______|______|
      |~~~~~~~~|~~~~~~~|~~~~~~~~~|~~~~|~~~~|~~~~~~|~~~~~~|~~~~~~|~~~~~~|
      |                          | packet         | byte               |
      | type   | value | handler | tx | rx | drop | tx   | rx   | drop |
@@ -297,17 +297,17 @@
      | 6     | 0   | 0   | 0    | 0    | 0    | 0    |
      | 7     | 0   | 0   | 0    | 0    | 0    | 0    |
      |_______|_____|_____|______|______|______|______|
-            4224|
-            3801|#
-            3379|#
-            2956|#
-            2534|#
-            2112|#
-            1689|#
-            1267|#
-             844|#   ####
-             422|##  ####
-               0|##  ####
+             21k|
+             19k|#
+             16k|#
+             14k|#
+             12k|#
+             10k|#
+            8448|#
+            6336|#
+            4224|# #
+            2112|###
+               0|###
              bps|0---------10--------20--------30--------40--------50-------- seconds
                1|
                0|
@@ -342,7 +342,7 @@
     r2#
     r2#show inter eth2 full
     r2#show inter eth2 full
-    ethernet2 is up (since 00:00:09, 3 changes)
+    ethernet2 is up (since 00:00:04, 3 changes)
      description:
      type is ethernet, hwaddr=0000.0000.2222, mtu=1500, bw=100mbps
      received 28 packets (2490 bytes) dropped 0 packets (0 bytes)
@@ -405,9 +405,9 @@
              14k|#
              11k|#
             8448|#
-            5632|#
-            2816|##
-               0|###  ####
+            5632|# #
+            2816|###
+               0|###
              bps|0---------10--------20--------30--------40--------50-------- seconds
                1|
                0|

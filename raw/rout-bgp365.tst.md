@@ -14,7 +14,7 @@
     hostname r1
     buggy
     !
-    logging file debug ../binTmp/zzz1r1-log.run
+    logging file debug ../binTmp/zzz38r1-log.run
     !
     bridge 1
      rd 1:1
@@ -93,7 +93,7 @@
      neighbor 1.1.1.3 send-community standard extended
      afi-evpn 101 bridge-group 1
      afi-evpn 101 srv6 tunnel1
-     afi-evpn 101 bmac 007d.352b.5114
+     afi-evpn 101 bmac 0045.3e68.7165
      afi-evpn 101 encapsulation cmac
      afi-evpn 101 update-source ethernet1
      exit
@@ -113,7 +113,7 @@
      neighbor 1234::3 send-community standard extended
      afi-evpn 102 bridge-group 2
      afi-evpn 102 srv6 tunnel1
-     afi-evpn 102 bmac 0036.3d28.5e6c
+     afi-evpn 102 bmac 002c.5f1c.3774
      afi-evpn 102 encapsulation cmac
      afi-evpn 102 update-source ethernet1
      exit
@@ -161,7 +161,7 @@
     hostname r2
     buggy
     !
-    logging file debug ../binTmp/zzz1r2-log.run
+    logging file debug ../binTmp/zzz38r2-log.run
     !
     bridge 1
      rd 1:1
@@ -240,7 +240,7 @@
      neighbor 1.1.1.3 send-community standard extended
      afi-evpn 101 bridge-group 1
      afi-evpn 101 srv6 tunnel1
-     afi-evpn 101 bmac 0031.6870.4817
+     afi-evpn 101 bmac 002e.4e2b.6027
      afi-evpn 101 encapsulation cmac
      afi-evpn 101 update-source ethernet1
      exit
@@ -260,7 +260,7 @@
      neighbor 1234::3 send-community standard extended
      afi-evpn 102 bridge-group 2
      afi-evpn 102 srv6 tunnel1
-     afi-evpn 102 bmac 0032.0857.5340
+     afi-evpn 102 bmac 001d.0021.2c48
      afi-evpn 102 encapsulation cmac
      afi-evpn 102 update-source ethernet1
      exit
@@ -308,7 +308,7 @@
     hostname r3
     buggy
     !
-    logging file debug ../binTmp/zzz1r3-log.run
+    logging file debug ../binTmp/zzz38r3-log.run
     !
     bridge 1
      mac-learn

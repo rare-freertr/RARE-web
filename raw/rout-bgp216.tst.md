@@ -123,11 +123,11 @@
      neighbor 2.2.2.2 pmsitun
      neighbor 2.2.2.2 send-community standard extended
      afi-evpn 101 bridge-group 1
-     afi-evpn 101 bmac 003c.7b06.423b
+     afi-evpn 101 bmac 0066.226f.5240
      afi-evpn 101 encapsulation cmac
      afi-evpn 101 update-source loopback0
      afi-evpn 102 bridge-group 3
-     afi-evpn 102 bmac 002d.5b6d.6241
+     afi-evpn 102 bmac 003b.217e.6c07
      afi-evpn 102 encapsulation pbb
      afi-evpn 102 update-source loopback0
      exit
@@ -146,11 +146,11 @@
      neighbor 4321::2 pmsitun
      neighbor 4321::2 send-community standard extended
      afi-evpn 101 bridge-group 2
-     afi-evpn 101 bmac 0051.2f74.0c07
+     afi-evpn 101 bmac 0002.5414.5e64
      afi-evpn 101 encapsulation cmac
      afi-evpn 101 update-source loopback0
      afi-evpn 102 bridge-group 4
-     afi-evpn 102 bmac 0063.1550.6a5b
+     afi-evpn 102 bmac 0039.227b.0c51
      afi-evpn 102 encapsulation pbb
      afi-evpn 102 update-source loopback0
      exit
@@ -308,11 +308,11 @@
      neighbor 2.2.2.1 pmsitun
      neighbor 2.2.2.1 send-community standard extended
      afi-evpn 101 bridge-group 1
-     afi-evpn 101 bmac 000a.4e7d.0a1a
+     afi-evpn 101 bmac 0065.277d.4004
      afi-evpn 101 encapsulation cmac
      afi-evpn 101 update-source loopback0
      afi-evpn 102 bridge-group 3
-     afi-evpn 102 bmac 0042.462c.0e6b
+     afi-evpn 102 bmac 0062.4d35.085c
      afi-evpn 102 encapsulation pbb
      afi-evpn 102 update-source loopback0
      exit
@@ -331,11 +331,11 @@
      neighbor 4321::1 pmsitun
      neighbor 4321::1 send-community standard extended
      afi-evpn 101 bridge-group 2
-     afi-evpn 101 bmac 0051.0900.310f
+     afi-evpn 101 bmac 0049.210d.3d58
      afi-evpn 101 encapsulation cmac
      afi-evpn 101 update-source loopback0
      afi-evpn 102 bridge-group 4
-     afi-evpn 102 bmac 0071.680b.770b
+     afi-evpn 102 bmac 004c.216e.1223
      afi-evpn 102 encapsulation pbb
      afi-evpn 102 update-source loopback0
      exit

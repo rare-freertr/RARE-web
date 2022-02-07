@@ -14,7 +14,7 @@
     hostname r1
     buggy
     !
-    logging file debug ../binTmp/zzz1r1-log.run
+    logging file debug ../binTmp/zzz68r1-log.run
     !
     bridge 1
      mac-learn
@@ -149,7 +149,7 @@
     hostname r2
     buggy
     !
-    logging file debug ../binTmp/zzz1r2-log.run
+    logging file debug ../binTmp/zzz68r2-log.run
     !
     route-policy rm1
      sequence 10 set bandwidth set 8888
@@ -253,7 +253,7 @@
     hostname r3
     buggy
     !
-    logging file debug ../binTmp/zzz1r3-log.run
+    logging file debug ../binTmp/zzz68r3-log.run
     !
     route-policy rm1
      sequence 10 if bandwidth 8888

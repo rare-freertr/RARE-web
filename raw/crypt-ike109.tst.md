@@ -1,4 +1,4 @@
-# Example: ike1 with aes192
+# Example: ike1 with aes192cbc
     
 === "Topology"
     
@@ -14,11 +14,11 @@
     hostname r1
     buggy
     !
-    logging file debug ../binTmp/zzz1r1-log.run
+    logging file debug ../binTmp/zzz69r1-log.run
     !
     crypto ipsec ips
      group 02
-     cipher aes192
+     cipher aes192cbc
      hash md5
      seconds 3600
      bytes 1024000
@@ -96,11 +96,11 @@
     hostname r2
     buggy
     !
-    logging file debug ../binTmp/zzz1r2-log.run
+    logging file debug ../binTmp/zzz69r2-log.run
     !
     crypto ipsec ips
      group 02
-     cipher aes192
+     cipher aes192cbc
      hash md5
      seconds 3600
      bytes 1024000

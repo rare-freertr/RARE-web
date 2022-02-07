@@ -14,7 +14,7 @@
     hostname r1
     buggy
     !
-    logging file debug ../binTmp/zzz1r1-log.run
+    logging file debug ../binTmp/zzz62r1-log.run
     !
     vrf definition tester
      exit
@@ -81,7 +81,7 @@
     r1#
     r1#show version
     r1#show version
-    freeRouter v21.12.30-cur, done by cs@nop.
+    freeRouter v22.2.5-cur, done by cs@nop.
     place on the web: http://www.freertr.net/
     license: http://creativecommons.org/licenses/by-sa/4.0/
     quote1: make the world better
@@ -100,21 +100,21 @@
     r1#
     r1#show platform
     r1#show platform
-    freeRouter v21.12.30-cur, done by cs@nop.
+    freeRouter v22.2.5-cur, done by cs@nop.
     name: r1
-    hwid: tester-slot1
-    uptime: since 2021-12-30 18:24:05, for 00:00:01
-    reload: code#1=finished
-    hwcfg: ../binTmp/zzz1r1-hw.txt
-    swcfg: ../binTmp/zzz1r1-sw.txt
-    cpu: 1*amd64
-    mem: free=16m, max=259m, used=32m
-    host: Linux v5.10.0-10-amd64
-    java: Debian v11.0.13 @ /usr/lib/jvm/java-11-openjdk-amd64
-    jspec: Oracle Corporation (Java Platform API Specification) v11
-    vm: Debian (OpenJDK 64-Bit Server VM) v11.0.13+8-post-Debian-1deb11u1
-    vmspec: Oracle Corporation (Java Virtual Machine Specification) v11
-    class: v55.0 @ rtr.jar
+    hwid: tester-slot62
+    uptime: since 2022-02-05 15:26:43, for 00:00:00
+    reload: code#9=dual active, reloading because lost on priority
+    hwcfg: ../binTmp/zzz62r1-hw.txt
+    swcfg: ../binTmp/zzz62r1-sw.txt
+    cpu: 40*amd64
+    mem: free=162g, max=162g, used=162g
+    host: Linux v5.15.0-3-amd64
+    java: Oracle Corporation v17.0.2 @ null
+    jspec: Oracle Corporation (Java Platform API Specification) v17
+    vm: Oracle Corporation (Substrate VM) vGraalVM 22.0.0.2 Java 17 CE
+    vmspec: Oracle Corporation (Java Virtual Machine Specification) v17
+    class: v61.0 @
     r1#
     r1#
     ```

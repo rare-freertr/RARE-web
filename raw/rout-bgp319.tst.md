@@ -14,7 +14,7 @@
     hostname r1
     buggy
     !
-    logging file debug ../binTmp/zzz1r1-log.run
+    logging file debug ../binTmp/zzz16r1-log.run
     !
     route-policy rm1
      sequence 10 if safi 128
@@ -307,7 +307,7 @@
     hostname r2
     buggy
     !
-    logging file debug ../binTmp/zzz1r2-log.run
+    logging file debug ../binTmp/zzz16r2-log.run
     !
     vrf definition tester
      exit
@@ -396,7 +396,7 @@
     hostname r3
     buggy
     !
-    logging file debug ../binTmp/zzz1r3-log.run
+    logging file debug ../binTmp/zzz16r3-log.run
     !
     bridge 1
      rd 1:1

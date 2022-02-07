@@ -14,7 +14,7 @@
     hostname r1
     buggy
     !
-    logging file debug ../binTmp/zzz1r1-log.run
+    logging file debug ../binTmp/zzz24r1-log.run
     !
     vrf definition tester
      exit
@@ -98,7 +98,7 @@
     hostname r2
     buggy
     !
-    logging file debug ../binTmp/zzz1r2-log.run
+    logging file debug ../binTmp/zzz24r2-log.run
     !
     vrf definition tester
      exit
@@ -187,15 +187,15 @@
     dialer1 is up (since 00:00:00, 3 changes)
      description:
      type is dialer, hwaddr=none, mtu=1396, bw=4000kbps, vrf=v1
-     ip4 address=2.2.2.1/24, netmask=255.255.255.0, ifcid=4355154
-     ip6 address=4321::1/16, netmask=ffff::, ifcid=471009378
-     received 20 packets (1320 bytes) dropped 3 packets (230 bytes)
-     transmitted 20 packets (1320 bytes) promisc=false macsec=false
+     ip4 address=2.2.2.1/24, netmask=255.255.255.0, ifcid=895186226
+     ip6 address=4321::1/16, netmask=ffff::, ifcid=366788670
+     received 23 packets (1550 bytes) dropped 0 packets (0 bytes)
+     transmitted 23 packets (1550 bytes) promisc=false macsec=false
      |~~~~~~~|~~~~|~~~~|~~~~~~|~~~~~|~~~~~|~~~~~~|
      |       | packet         | byte             |
      | time  | tx | rx | drop | tx  | rx  | drop |
      |-------|----|----|------|-----|-----|------|
-     | 1sec  | 6  | 5  | 0    | 396 | 330 | 0    |
+     | 1sec  | 8  | 8  | 0    | 560 | 560 | 0    |
      | 1min  | 0  | 0  | 0    | 0   | 0   | 0    |
      | 1hour | 0  | 0  | 0    | 0   | 0   | 0    |
      |_______|____|____|______|_____|_____|______|
@@ -205,7 +205,7 @@
      |--------|-------|---------|----|----|------|-----|-----|------|
      | ethtyp | 0000  | null    | 0  | 0  | 0    | 0   | 0   | 0    |
      | ethtyp | 0800  | ip4     | 10 | 10 | 0    | 660 | 660 | 0    |
-     | ethtyp | 86dd  | ip6     | 13 | 10 | 0    | 890 | 660 | 0    |
+     | ethtyp | 86dd  | ip6     | 13 | 13 | 0    | 890 | 890 | 0    |
      |________|_______|_________|____|____|______|_____|_____|______|
      |~~~~~|~~~~|~~~~|
      | who | tx | rx |
@@ -215,13 +215,13 @@
      | proto | pack | byte |
      |-------|------|------|
      | 1     | 10   | 660  |
-     | 58    | 10   | 660  |
+     | 58    | 13   | 890  |
      |_______|______|______|
      |~~~~~~~~~~~~|~~~~|~~~~|~~~~~~|~~~~~~|~~~~~~|~~~~~~|
      |            | packet         | byte               |
      | size       | tx | rx | drop | tx   | rx   | drop |
      |------------|----|----|------|------|------|------|
-     | 0-255      | 20 | 20 | 0    | 1320 | 1320 | 0    |
+     | 0-255      | 23 | 23 | 0    | 1550 | 1550 | 0    |
      | 256-511    | 0  | 0  | 0    | 0    | 0    | 0    |
      | 512-767    | 0  | 0  | 0    | 0    | 0    | 0    |
      | 768-1023   | 0  | 0  | 0    | 0    | 0    | 0    |
@@ -234,7 +234,7 @@
      |       | packet           | byte               |
      | class | cos | exp | prec | cos  | exp  | prec |
      |-------|-----|-----|------|------|------|------|
-     | 0     | 20  | 20  | 20   | 1320 | 1320 | 1320 |
+     | 0     | 23  | 23  | 23   | 1550 | 1550 | 1550 |
      | 1     | 0   | 0   | 0    | 0    | 0    | 0    |
      | 2     | 0   | 0   | 0    | 0    | 0    | 0    |
      | 3     | 0   | 0   | 0    | 0    | 0    | 0    |
@@ -243,17 +243,17 @@
      | 6     | 0   | 0   | 0    | 0    | 0    | 0    |
      | 7     | 0   | 0   | 0    | 0    | 0    | 0    |
      |_______|_____|_____|______|______|______|______|
-            5808|
-            5227|#
-            4646|#
-            4065|#
-            3484|#
-            2904|#
-            2323|#
-            1742|#    #
-            1161|#    #
-             580|#    #
-               0|#    #
+            8960|
+            8064|#
+            7168|#
+            6272|#
+            5376|#
+            4480|#
+            3584|#
+            2688|#
+            1792|#
+             896|#
+               0|#
              bps|0---------10--------20--------30--------40--------50-------- seconds
                1|
                0|

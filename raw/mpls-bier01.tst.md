@@ -14,7 +14,7 @@
     hostname r1
     buggy
     !
-    logging file debug ../binTmp/zzz1r1-log.run
+    logging file debug ../binTmp/zzz18r1-log.run
     !
     vrf definition tester
      exit
@@ -128,7 +128,7 @@
     hostname r2
     buggy
     !
-    logging file debug ../binTmp/zzz1r2-log.run
+    logging file debug ../binTmp/zzz18r2-log.run
     !
     vrf definition tester
      exit
@@ -226,7 +226,7 @@
     hostname r3
     buggy
     !
-    logging file debug ../binTmp/zzz1r3-log.run
+    logging file debug ../binTmp/zzz18r3-log.run
     !
     vrf definition tester
      exit
@@ -324,7 +324,7 @@
     hostname r4
     buggy
     !
-    logging file debug ../binTmp/zzz1r4-log.run
+    logging file debug ../binTmp/zzz18r4-log.run
     !
     vrf definition tester
      exit
@@ -440,16 +440,16 @@
     r1#
     r1#show mpls forw
     r1#show mpls forw
-     |~~~~~~~~~|~~~~~~~~~~|~~~~~~~|~~~~~~|~~~~~~~~~~~~|~~~~~~~~~|~~~~~~~|
-     | label   | vrf      | iface | hop  | label      | targets | bytes |
-     |---------|----------|-------|------|------------|---------|-------|
-     | 24998   | v1:4     | null  | null | unlabelled | bier    | 520   |
-     | 217723  | v1:6     | null  | null | unlabelled | local   | 0     |
-     | 283585  | tester:6 | null  | null | unlabelled | local   | 0     |
-     | 298188  | tester:4 | null  | null | unlabelled | local   | 0     |
-     | 369375  | v1:4     | null  | null | unlabelled | local   | 0     |
-     | 1016573 | v1:6     | null  | null | unlabelled | bier    | 520   |
-     |_________|__________|_______|______|____________|_________|_______|
+     |~~~~~~~~|~~~~~~~~~~|~~~~~~~|~~~~~~|~~~~~~~~~~~~|~~~~~~~~~|~~~~~~~|
+     | label  | vrf      | iface | hop  | label      | targets | bytes |
+     |--------|----------|-------|------|------------|---------|-------|
+     | 125648 | v1:6     | null  | null | unlabelled | local   | 0     |
+     | 569592 | tester:4 | null  | null | unlabelled | local   | 0     |
+     | 654896 | tester:6 | null  | null | unlabelled | local   | 0     |
+     | 772155 | v1:4     | null  | null | unlabelled | bier    | 520   |
+     | 841965 | v1:6     | null  | null | unlabelled | bier    | 520   |
+     | 886732 | v1:4     | null  | null | unlabelled | local   | 0     |
+     |________|__________|_______|______|____________|_________|_______|
     r1#
     r1#
     ```
@@ -459,16 +459,16 @@
     r2#
     r2#show mpls forw
     r2#show mpls forw
-     |~~~~~~~~~|~~~~~~~~~~|~~~~~~~|~~~~~~|~~~~~~~~~~~~|~~~~~~~~~|~~~~~~~|
-     | label   | vrf      | iface | hop  | label      | targets | bytes |
-     |---------|----------|-------|------|------------|---------|-------|
-     | 111587  | v1:4     | null  | null | unlabelled | local   | 0     |
-     | 470776  | v1:6     | null  | null | unlabelled | bier    | 1456  |
-     | 581172  | tester:4 | null  | null | unlabelled | local   | 0     |
-     | 701187  | tester:6 | null  | null | unlabelled | local   | 0     |
-     | 870359  | v1:6     | null  | null | unlabelled | local   | 0     |
-     | 1001531 | v1:4     | null  | null | unlabelled | bier    | 1040  |
-     |_________|__________|_______|______|____________|_________|_______|
+     |~~~~~~~~|~~~~~~~~~~|~~~~~~~|~~~~~~|~~~~~~~~~~~~|~~~~~~~~~|~~~~~~~|
+     | label  | vrf      | iface | hop  | label      | targets | bytes |
+     |--------|----------|-------|------|------------|---------|-------|
+     | 213753 | tester:4 | null  | null | unlabelled | local   | 0     |
+     | 360163 | v1:4     | null  | null | unlabelled | bier    | 1040  |
+     | 393019 | v1:4     | null  | null | unlabelled | local   | 0     |
+     | 611558 | v1:6     | null  | null | unlabelled | bier    | 1040  |
+     | 713774 | tester:6 | null  | null | unlabelled | local   | 0     |
+     | 864808 | v1:6     | null  | null | unlabelled | local   | 0     |
+     |________|__________|_______|______|____________|_________|_______|
     r2#
     r2#
     ```
@@ -481,12 +481,12 @@
      |~~~~~~~~|~~~~~~~~~~|~~~~~~~|~~~~~~|~~~~~~~~~~~~|~~~~~~~~~|~~~~~~~|
      | label  | vrf      | iface | hop  | label      | targets | bytes |
      |--------|----------|-------|------|------------|---------|-------|
-     | 98883  | v1:6     | null  | null | unlabelled | bier    | 1456  |
-     | 222793 | v1:4     | null  | null | unlabelled | bier    | 1040  |
-     | 263987 | tester:4 | null  | null | unlabelled | local   | 0     |
-     | 309002 | v1:6     | null  | null | unlabelled | local   | 0     |
-     | 869421 | tester:6 | null  | null | unlabelled | local   | 0     |
-     | 921870 | v1:4     | null  | null | unlabelled | local   | 0     |
+     | 131601 | tester:6 | null  | null | unlabelled | local   | 0     |
+     | 205451 | v1:6     | null  | null | unlabelled | bier    | 1040  |
+     | 309158 | v1:4     | null  | null | unlabelled | local   | 0     |
+     | 342667 | v1:6     | null  | null | unlabelled | local   | 0     |
+     | 402628 | tester:4 | null  | null | unlabelled | local   | 0     |
+     | 428717 | v1:4     | null  | null | unlabelled | bier    | 1040  |
      |________|__________|_______|______|____________|_________|_______|
     r3#
     r3#
@@ -500,12 +500,12 @@
      |~~~~~~~~~|~~~~~~~~~~|~~~~~~~|~~~~~~|~~~~~~~~~~~~|~~~~~~~~~|~~~~~~~|
      | label   | vrf      | iface | hop  | label      | targets | bytes |
      |---------|----------|-------|------|------------|---------|-------|
-     | 243566  | tester:4 | null  | null | unlabelled | local   | 0     |
-     | 325164  | v1:6     | null  | null | unlabelled | bier    | 936   |
-     | 518462  | v1:4     | null  | null | unlabelled | bier    | 520   |
-     | 676274  | tester:6 | null  | null | unlabelled | local   | 0     |
-     | 917707  | v1:4     | null  | null | unlabelled | local   | 0     |
-     | 1042748 | v1:6     | null  | null | unlabelled | local   | 0     |
+     | 511709  | tester:6 | null  | null | unlabelled | local   | 0     |
+     | 536126  | v1:4     | null  | null | unlabelled | local   | 0     |
+     | 626443  | v1:4     | null  | null | unlabelled | bier    | 520   |
+     | 787599  | tester:4 | null  | null | unlabelled | local   | 0     |
+     | 800433  | v1:6     | null  | null | unlabelled | bier    | 520   |
+     | 1047068 | v1:6     | null  | null | unlabelled | local   | 0     |
      |_________|__________|_______|______|____________|_________|_______|
     r4#
     r4#

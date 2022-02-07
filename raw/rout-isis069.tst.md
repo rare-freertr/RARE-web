@@ -14,7 +14,7 @@
     hostname r1
     buggy
     !
-    logging file debug ../binTmp/zzz1r1-log.run
+    logging file debug ../binTmp/zzz62r1-log.run
     !
     vrf definition tester
      exit
@@ -97,7 +97,7 @@
     hostname r2
     buggy
     !
-    logging file debug ../binTmp/zzz1r2-log.run
+    logging file debug ../binTmp/zzz62r2-log.run
     !
     vrf definition tester
      exit
@@ -192,7 +192,7 @@
     hostname r3
     buggy
     !
-    logging file debug ../binTmp/zzz1r3-log.run
+    logging file debug ../binTmp/zzz62r3-log.run
     !
     vrf definition tester
      exit
@@ -274,6 +274,8 @@
     ```
     r2#
     r2#
+    r2#show ipv4 i
+    r2#show ipv4 i
     r2#show ipv4 isis 1 nei
     r2#show ipv4 isis 1 nei
     % no such process
@@ -290,7 +292,7 @@
      | interface | mac address    | level | routerid       | ip address | other address | state | uptime   |
      |-----------|----------------|-------|----------------|------------|---------------|-------|----------|
      | ethernet1 | 0000.0000.0000 | 2     | 4444.0000.1111 | 1234:1::1  | 1.1.1.1       | up    | 00:00:12 |
-     | ethernet2 | 0000.0000.0000 | 2     | 4444.0000.3333 | 1234:2::2  | 1.1.1.6       | up    | 00:00:22 |
+     | ethernet2 | 0000.0000.0000 | 2     | 4444.0000.3333 | 1234:2::2  | 1.1.1.6       | up    | 00:00:13 |
      |___________|________________|_______|________________|____________|_______________|_______|__________|
     r2#
     r2#
@@ -314,9 +316,9 @@
      |~~~~~~~~~~~~~~~~~~~~~~|~~~~~~~~~~|~~~~~~~|~~~~~|~~~~~~~~~~|
      | lspid                | sequence | flags | len | time     |
      |----------------------|----------|-------|-----|----------|
-     | 4444.0000.1111.00-00 | 0000000c | apo   | 90  | 00:19:46 |
-     | 4444.0000.3333.00-00 | 0000000e | apo   | 90  | 00:19:56 |
-     | 6666.0000.2222.00-00 | 00000014 | apo   | 130 | 00:19:47 |
+     | 4444.0000.1111.00-00 | 0000000b | apo   | 90  | 00:19:46 |
+     | 4444.0000.3333.00-00 | 0000000b | apo   | 90  | 00:19:55 |
+     | 6666.0000.2222.00-00 | 00000011 | apo   | 130 | 00:19:46 |
      |______________________|__________|_______|_____|__________|
     r2#
     r2#
@@ -378,7 +380,7 @@
      | LOC  | 1234:2::1/128 | 0/1    | ethernet2 | null      | 00:00:23 |
      | I EX | 4321::1/128   | 115/10 | ethernet1 | 1234:1::1 | 00:00:13 |
      | C    | 4321::2/128   | 0/0    | loopback1 | null      | 00:00:23 |
-     | I EX | 4321::3/128   | 115/10 | ethernet2 | 1234:2::2 | 00:00:22 |
+     | I EX | 4321::3/128   | 115/10 | ethernet2 | 1234:2::2 | 00:00:13 |
      |______|_______________|________|___________|___________|__________|
     r2#
     r2#

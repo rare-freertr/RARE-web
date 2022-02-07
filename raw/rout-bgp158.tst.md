@@ -14,7 +14,7 @@
     hostname r1
     buggy
     !
-    logging file debug ../binTmp/zzz1r1-log.run
+    logging file debug ../binTmp/zzz69r1-log.run
     !
     prefix-list all
      sequence 10 permit 0.0.0.0/0 ge 0 le 32
@@ -130,11 +130,11 @@
      neighbor 2.2.2.2 pmsitun
      neighbor 2.2.2.2 send-community standard extended
      afi-evpn 101 bridge-group 1
-     afi-evpn 101 bmac 001e.124b.6675
+     afi-evpn 101 bmac 0005.7b2b.5e27
      afi-evpn 101 encapsulation pbb
      afi-evpn 101 update-source loopback0
      afi-evpn 102 bridge-group 3
-     afi-evpn 102 bmac 0044.401f.7d25
+     afi-evpn 102 bmac 001b.414c.6f33
      afi-evpn 102 encapsulation pbb
      afi-evpn 102 update-source loopback0
      automesh all
@@ -154,11 +154,11 @@
      neighbor 4321::2 pmsitun
      neighbor 4321::2 send-community standard extended
      afi-evpn 101 bridge-group 2
-     afi-evpn 101 bmac 0025.6a29.235d
+     afi-evpn 101 bmac 0019.0b5b.5067
      afi-evpn 101 encapsulation pbb
      afi-evpn 101 update-source loopback0
      afi-evpn 102 bridge-group 4
-     afi-evpn 102 bmac 007a.4d19.6c62
+     afi-evpn 102 bmac 0058.4127.3c24
      afi-evpn 102 encapsulation pbb
      afi-evpn 102 update-source loopback0
      automesh all
@@ -208,7 +208,7 @@
     hostname r2
     buggy
     !
-    logging file debug ../binTmp/zzz1r2-log.run
+    logging file debug ../binTmp/zzz69r2-log.run
     !
     prefix-list all
      sequence 10 permit 0.0.0.0/0 ge 0 le 32
@@ -324,11 +324,11 @@
      neighbor 2.2.2.1 pmsitun
      neighbor 2.2.2.1 send-community standard extended
      afi-evpn 101 bridge-group 1
-     afi-evpn 101 bmac 0011.252d.3156
+     afi-evpn 101 bmac 0038.4749.2475
      afi-evpn 101 encapsulation pbb
      afi-evpn 101 update-source loopback0
      afi-evpn 102 bridge-group 3
-     afi-evpn 102 bmac 002d.1d4e.636a
+     afi-evpn 102 bmac 0014.5e3f.2748
      afi-evpn 102 encapsulation pbb
      afi-evpn 102 update-source loopback0
      automesh all
@@ -348,11 +348,11 @@
      neighbor 4321::1 pmsitun
      neighbor 4321::1 send-community standard extended
      afi-evpn 101 bridge-group 2
-     afi-evpn 101 bmac 005a.4c3c.131d
+     afi-evpn 101 bmac 007d.387e.6358
      afi-evpn 101 encapsulation pbb
      afi-evpn 101 update-source loopback0
      afi-evpn 102 bridge-group 4
-     afi-evpn 102 bmac 000e.6441.5848
+     afi-evpn 102 bmac 007e.0d62.5f19
      afi-evpn 102 encapsulation pbb
      afi-evpn 102 update-source loopback0
      automesh all

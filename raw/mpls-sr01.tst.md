@@ -14,7 +14,7 @@
     hostname r1
     buggy
     !
-    logging file debug ../binTmp/zzz1r1-log.run
+    logging file debug ../binTmp/zzz95r1-log.run
     !
     access-list test4
      sequence 10 deny 1 any all any all
@@ -112,7 +112,7 @@
     hostname r2
     buggy
     !
-    logging file debug ../binTmp/zzz1r2-log.run
+    logging file debug ../binTmp/zzz95r2-log.run
     !
     access-list test4
      sequence 10 deny 1 any all any all
@@ -224,7 +224,7 @@
     hostname r3
     buggy
     !
-    logging file debug ../binTmp/zzz1r3-log.run
+    logging file debug ../binTmp/zzz95r3-log.run
     !
     access-list test4
      sequence 10 deny 1 any all any all
@@ -336,7 +336,7 @@
     hostname r4
     buggy
     !
-    logging file debug ../binTmp/zzz1r4-log.run
+    logging file debug ../binTmp/zzz95r4-log.run
     !
     access-list test4
      sequence 10 deny 1 any all any all
@@ -436,36 +436,36 @@
     r1#
     r1#show mpls forw
     r1#show mpls forw
-     |~~~~~~~~|~~~~~~~~~~|~~~~~~~~~~~|~~~~~~~~~|~~~~~~~~~~~~|~~~~~~~~~|~~~~~~~|
-     | label  | vrf      | iface     | hop     | label      | targets | bytes |
-     |--------|----------|-----------|---------|------------|---------|-------|
-     | 40610  | tester:4 | null      | null    | unlabelled | local   | 0     |
-     | 72305  | v1:4     | ethernet1 | 1.1.1.2 | 3          |         | 0     |
-     | 272087 | v1:6     | ethernet1 | 1234::2 | 3          |         | 0     |
-     | 344135 | null     | null      | null    | unlabelled |         | 0     |
-     | 344136 | v1:6     | null      | null    | unlabelled | local   | 1920  |
-     | 344137 | v1:6     | ethernet1 | 1234::2 | 869200     |         | 0     |
-     | 344138 | v1:6     | ethernet1 | 1234::2 | 869201     |         | 0     |
-     | 344139 | v1:6     | ethernet1 | 1234::2 | 869202     |         | 0     |
-     | 344140 | null     | null      | null    | unlabelled |         | 0     |
-     | 344141 | null     | null      | null    | unlabelled |         | 0     |
-     | 344142 | null     | null      | null    | unlabelled |         | 0     |
-     | 344143 | null     | null      | null    | unlabelled |         | 0     |
-     | 344144 | null     | null      | null    | unlabelled |         | 0     |
-     | 576729 | v1:6     | null      | null    | unlabelled | local   | 0     |
-     | 873795 | v1:4     | null      | null    | unlabelled | local   | 0     |
-     | 885493 | null     | null      | null    | unlabelled |         | 0     |
-     | 885494 | v1:4     | null      | null    | unlabelled | local   | 1920  |
-     | 885495 | v1:4     | ethernet1 | 1.1.1.2 | 356410     |         | 0     |
-     | 885496 | v1:4     | ethernet1 | 1.1.1.2 | 356411     |         | 0     |
-     | 885497 | v1:4     | ethernet1 | 1.1.1.2 | 356412     |         | 0     |
-     | 885498 | null     | null      | null    | unlabelled |         | 0     |
-     | 885499 | null     | null      | null    | unlabelled |         | 0     |
-     | 885500 | null     | null      | null    | unlabelled |         | 0     |
-     | 885501 | null     | null      | null    | unlabelled |         | 0     |
-     | 885502 | null     | null      | null    | unlabelled |         | 0     |
-     | 903174 | tester:6 | null      | null    | unlabelled | local   | 0     |
-     |________|__________|___________|_________|____________|_________|_______|
+     |~~~~~~~~~|~~~~~~~~~~|~~~~~~~~~~~|~~~~~~~~~|~~~~~~~~~~~~|~~~~~~~~~|~~~~~~~|
+     | label   | vrf      | iface     | hop     | label      | targets | bytes |
+     |---------|----------|-----------|---------|------------|---------|-------|
+     | 56223   | tester:6 | null      | null    | unlabelled | local   | 0     |
+     | 197984  | v1:6     | null      | null    | unlabelled | local   | 0     |
+     | 304954  | v1:6     | ethernet1 | 1234::2 | 3          |         | 0     |
+     | 466489  | v1:4     | ethernet1 | 1.1.1.2 | 3          |         | 0     |
+     | 534977  | tester:4 | null      | null    | unlabelled | local   | 0     |
+     | 590765  | null     | null      | null    | unlabelled |         | 0     |
+     | 590766  | v1:6     | null      | null    | unlabelled | local   | 1920  |
+     | 590767  | v1:6     | ethernet1 | 1234::2 | 785802     |         | 0     |
+     | 590768  | v1:6     | ethernet1 | 1234::2 | 785803     |         | 0     |
+     | 590769  | v1:6     | ethernet1 | 1234::2 | 785804     |         | 0     |
+     | 590770  | null     | null      | null    | unlabelled |         | 0     |
+     | 590771  | null     | null      | null    | unlabelled |         | 0     |
+     | 590772  | null     | null      | null    | unlabelled |         | 0     |
+     | 590773  | null     | null      | null    | unlabelled |         | 0     |
+     | 590774  | null     | null      | null    | unlabelled |         | 0     |
+     | 999164  | v1:4     | null      | null    | unlabelled | local   | 0     |
+     | 1020630 | null     | null      | null    | unlabelled |         | 0     |
+     | 1020631 | v1:4     | null      | null    | unlabelled | local   | 1920  |
+     | 1020632 | v1:4     | ethernet1 | 1.1.1.2 | 1640       |         | 0     |
+     | 1020633 | v1:4     | ethernet1 | 1.1.1.2 | 1641       |         | 0     |
+     | 1020634 | v1:4     | ethernet1 | 1.1.1.2 | 1642       |         | 0     |
+     | 1020635 | null     | null      | null    | unlabelled |         | 0     |
+     | 1020636 | null     | null      | null    | unlabelled |         | 0     |
+     | 1020637 | null     | null      | null    | unlabelled |         | 0     |
+     | 1020638 | null     | null      | null    | unlabelled |         | 0     |
+     | 1020639 | null     | null      | null    | unlabelled |         | 0     |
+     |_________|__________|___________|_________|____________|_________|_______|
     r1#
     r1#
     ```
@@ -478,34 +478,34 @@
      |~~~~~~~~|~~~~~~~~~~|~~~~~~~~~~~|~~~~~~~~~|~~~~~~~~~~~~|~~~~~~~~~|~~~~~~~|
      | label  | vrf      | iface     | hop     | label      | targets | bytes |
      |--------|----------|-----------|---------|------------|---------|-------|
-     | 3154   | tester:6 | null      | null    | unlabelled | local   | 0     |
-     | 34014  | v1:4     | ethernet2 | 1.1.2.3 | 3          |         | 0     |
-     | 162538 | v1:6     | ethernet1 | 1234::1 | 3          |         | 0     |
-     | 356408 | null     | null      | null    | unlabelled |         | 0     |
-     | 356409 | v1:4     | ethernet1 | 1.1.1.1 | 885494     |         | 1280  |
-     | 356410 | v1:4     | null      | null    | unlabelled | local   | 1920  |
-     | 356411 | v1:4     | ethernet2 | 1.1.2.3 | 562120     |         | 640   |
-     | 356412 | v1:4     | ethernet2 | 1.1.2.3 | 562121     |         | 640   |
-     | 356413 | null     | null      | null    | unlabelled |         | 0     |
-     | 356414 | null     | null      | null    | unlabelled |         | 0     |
-     | 356415 | null     | null      | null    | unlabelled |         | 0     |
-     | 356416 | null     | null      | null    | unlabelled |         | 0     |
-     | 356417 | null     | null      | null    | unlabelled |         | 0     |
-     | 501047 | tester:4 | null      | null    | unlabelled | local   | 0     |
-     | 573517 | v1:4     | null      | null    | unlabelled | local   | 0     |
-     | 711246 | v1:4     | ethernet1 | 1.1.1.1 | 3          |         | 0     |
-     | 776227 | v1:6     | null      | null    | unlabelled | local   | 0     |
-     | 836902 | v1:6     | ethernet2 | 1235::3 | 3          |         | 0     |
-     | 869198 | null     | null      | null    | unlabelled |         | 0     |
-     | 869199 | v1:6     | ethernet1 | 1234::1 | 344136     |         | 1280  |
-     | 869200 | v1:6     | null      | null    | unlabelled | local   | 1920  |
-     | 869201 | v1:6     | ethernet2 | 1235::3 | 113746     |         | 640   |
-     | 869202 | v1:6     | ethernet2 | 1235::3 | 113747     |         | 640   |
-     | 869203 | null     | null      | null    | unlabelled |         | 0     |
-     | 869204 | null     | null      | null    | unlabelled |         | 0     |
-     | 869205 | null     | null      | null    | unlabelled |         | 0     |
-     | 869206 | null     | null      | null    | unlabelled |         | 0     |
-     | 869207 | null     | null      | null    | unlabelled |         | 0     |
+     | 1638   | null     | null      | null    | unlabelled |         | 0     |
+     | 1639   | v1:4     | ethernet1 | 1.1.1.1 | 1020631    |         | 1280  |
+     | 1640   | v1:4     | null      | null    | unlabelled | local   | 1920  |
+     | 1641   | v1:4     | ethernet2 | 1.1.2.3 | 389008     |         | 640   |
+     | 1642   | v1:4     | ethernet2 | 1.1.2.3 | 389009     |         | 640   |
+     | 1643   | null     | null      | null    | unlabelled |         | 0     |
+     | 1644   | null     | null      | null    | unlabelled |         | 0     |
+     | 1645   | null     | null      | null    | unlabelled |         | 0     |
+     | 1646   | null     | null      | null    | unlabelled |         | 0     |
+     | 1647   | null     | null      | null    | unlabelled |         | 0     |
+     | 41911  | v1:4     | ethernet1 | 1.1.1.1 | 3          |         | 0     |
+     | 237642 | v1:6     | ethernet1 | 1234::1 | 3          |         | 0     |
+     | 314935 | v1:4     | ethernet2 | 1.1.2.3 | 3          |         | 0     |
+     | 527924 | v1:6     | null      | null    | unlabelled | local   | 0     |
+     | 547679 | v1:6     | ethernet2 | 1235::3 | 3          |         | 0     |
+     | 626356 | v1:4     | null      | null    | unlabelled | local   | 0     |
+     | 644914 | tester:6 | null      | null    | unlabelled | local   | 0     |
+     | 785800 | null     | null      | null    | unlabelled |         | 0     |
+     | 785801 | v1:6     | ethernet1 | 1234::1 | 590766     |         | 1280  |
+     | 785802 | v1:6     | null      | null    | unlabelled | local   | 1920  |
+     | 785803 | v1:6     | ethernet2 | 1235::3 | 228673     |         | 640   |
+     | 785804 | v1:6     | ethernet2 | 1235::3 | 228674     |         | 640   |
+     | 785805 | null     | null      | null    | unlabelled |         | 0     |
+     | 785806 | null     | null      | null    | unlabelled |         | 0     |
+     | 785807 | null     | null      | null    | unlabelled |         | 0     |
+     | 785808 | null     | null      | null    | unlabelled |         | 0     |
+     | 785809 | null     | null      | null    | unlabelled |         | 0     |
+     | 855214 | tester:4 | null      | null    | unlabelled | local   | 0     |
      |________|__________|___________|_________|____________|_________|_______|
     r2#
     r2#
@@ -516,38 +516,38 @@
     r3#
     r3#show mpls forw
     r3#show mpls forw
-     |~~~~~~~~|~~~~~~~~~~|~~~~~~~~~~~|~~~~~~~~~|~~~~~~~~~~~~|~~~~~~~~~|~~~~~~~|
-     | label  | vrf      | iface     | hop     | label      | targets | bytes |
-     |--------|----------|-----------|---------|------------|---------|-------|
-     | 113743 | null     | null      | null    | unlabelled |         | 0     |
-     | 113744 | v1:6     | ethernet1 | 1235::2 | 869199     |         | 640   |
-     | 113745 | v1:6     | ethernet1 | 1235::2 | 869200     |         | 640   |
-     | 113746 | v1:6     | null      | null    | unlabelled | local   | 1920  |
-     | 113747 | v1:6     | ethernet2 | 1236::4 | 802040     |         | 1280  |
-     | 113748 | null     | null      | null    | unlabelled |         | 0     |
-     | 113749 | null     | null      | null    | unlabelled |         | 0     |
-     | 113750 | null     | null      | null    | unlabelled |         | 0     |
-     | 113751 | null     | null      | null    | unlabelled |         | 0     |
-     | 113752 | null     | null      | null    | unlabelled |         | 0     |
-     | 230658 | v1:4     | ethernet2 | 1.1.3.4 | 3          |         | 0     |
-     | 294635 | v1:6     | ethernet2 | 1236::4 | 3          |         | 0     |
-     | 422941 | tester:6 | null      | null    | unlabelled | local   | 0     |
-     | 479853 | v1:4     | ethernet1 | 1.1.2.2 | 3          |         | 0     |
-     | 496555 | tester:4 | null      | null    | unlabelled | local   | 0     |
-     | 532959 | v1:4     | null      | null    | unlabelled | local   | 0     |
-     | 538825 | v1:6     | null      | null    | unlabelled | local   | 0     |
-     | 562117 | null     | null      | null    | unlabelled |         | 0     |
-     | 562118 | v1:4     | ethernet1 | 1.1.2.2 | 356409     |         | 640   |
-     | 562119 | v1:4     | ethernet1 | 1.1.2.2 | 356410     |         | 640   |
-     | 562120 | v1:4     | null      | null    | unlabelled | local   | 1920  |
-     | 562121 | v1:4     | ethernet2 | 1.1.3.4 | 119681     |         | 1280  |
-     | 562122 | null     | null      | null    | unlabelled |         | 0     |
-     | 562123 | null     | null      | null    | unlabelled |         | 0     |
-     | 562124 | null     | null      | null    | unlabelled |         | 0     |
-     | 562125 | null     | null      | null    | unlabelled |         | 0     |
-     | 562126 | null     | null      | null    | unlabelled |         | 0     |
-     | 669077 | v1:6     | ethernet1 | 1235::2 | 3          |         | 0     |
-     |________|__________|___________|_________|____________|_________|_______|
+     |~~~~~~~~~|~~~~~~~~~~|~~~~~~~~~~~|~~~~~~~~~|~~~~~~~~~~~~|~~~~~~~~~|~~~~~~~|
+     | label   | vrf      | iface     | hop     | label      | targets | bytes |
+     |---------|----------|-----------|---------|------------|---------|-------|
+     | 55771   | v1:4     | ethernet1 | 1.1.2.2 | 3          |         | 0     |
+     | 153401  | v1:4     | null      | null    | unlabelled | local   | 0     |
+     | 228670  | null     | null      | null    | unlabelled |         | 0     |
+     | 228671  | v1:6     | ethernet1 | 1235::2 | 785801     |         | 640   |
+     | 228672  | v1:6     | ethernet1 | 1235::2 | 785802     |         | 640   |
+     | 228673  | v1:6     | null      | null    | unlabelled | local   | 1920  |
+     | 228674  | v1:6     | ethernet2 | 1236::4 | 602056     |         | 1280  |
+     | 228675  | null     | null      | null    | unlabelled |         | 0     |
+     | 228676  | null     | null      | null    | unlabelled |         | 0     |
+     | 228677  | null     | null      | null    | unlabelled |         | 0     |
+     | 228678  | null     | null      | null    | unlabelled |         | 0     |
+     | 228679  | null     | null      | null    | unlabelled |         | 0     |
+     | 389005  | null     | null      | null    | unlabelled |         | 0     |
+     | 389006  | v1:4     | ethernet1 | 1.1.2.2 | 1639       |         | 640   |
+     | 389007  | v1:4     | ethernet1 | 1.1.2.2 | 1640       |         | 640   |
+     | 389008  | v1:4     | null      | null    | unlabelled | local   | 1920  |
+     | 389009  | v1:4     | ethernet2 | 1.1.3.4 | 661162     |         | 1280  |
+     | 389010  | null     | null      | null    | unlabelled |         | 0     |
+     | 389011  | null     | null      | null    | unlabelled |         | 0     |
+     | 389012  | null     | null      | null    | unlabelled |         | 0     |
+     | 389013  | null     | null      | null    | unlabelled |         | 0     |
+     | 389014  | null     | null      | null    | unlabelled |         | 0     |
+     | 490126  | v1:6     | ethernet1 | 1235::2 | 3          |         | 0     |
+     | 782559  | v1:4     | ethernet2 | 1.1.3.4 | 3          |         | 0     |
+     | 798272  | tester:4 | null      | null    | unlabelled | local   | 0     |
+     | 888787  | tester:6 | null      | null    | unlabelled | local   | 0     |
+     | 1023424 | v1:6     | ethernet2 | 1236::4 | 3          |         | 0     |
+     | 1030998 | v1:6     | null      | null    | unlabelled | local   | 0     |
+     |_________|__________|___________|_________|____________|_________|_______|
     r3#
     r3#
     ```
@@ -560,32 +560,32 @@
      |~~~~~~~~|~~~~~~~~~~|~~~~~~~~~~~|~~~~~~~~~|~~~~~~~~~~~~|~~~~~~~~~|~~~~~~~|
      | label  | vrf      | iface     | hop     | label      | targets | bytes |
      |--------|----------|-----------|---------|------------|---------|-------|
-     | 69346  | tester:6 | null      | null    | unlabelled | local   | 0     |
-     | 119677 | null     | null      | null    | unlabelled |         | 0     |
-     | 119678 | v1:4     | ethernet1 | 1.1.3.3 | 562118     |         | 0     |
-     | 119679 | v1:4     | ethernet1 | 1.1.3.3 | 562119     |         | 0     |
-     | 119680 | v1:4     | ethernet1 | 1.1.3.3 | 562120     |         | 0     |
-     | 119681 | v1:4     | null      | null    | unlabelled | local   | 1920  |
-     | 119682 | null     | null      | null    | unlabelled |         | 0     |
-     | 119683 | null     | null      | null    | unlabelled |         | 0     |
-     | 119684 | null     | null      | null    | unlabelled |         | 0     |
-     | 119685 | null     | null      | null    | unlabelled |         | 0     |
-     | 119686 | null     | null      | null    | unlabelled |         | 0     |
-     | 338958 | v1:6     | null      | null    | unlabelled | local   | 0     |
-     | 384951 | tester:4 | null      | null    | unlabelled | local   | 0     |
-     | 485172 | v1:4     | ethernet1 | 1.1.3.3 | 3          |         | 0     |
-     | 647325 | v1:6     | ethernet1 | 1236::3 | 3          |         | 0     |
-     | 727110 | v1:4     | null      | null    | unlabelled | local   | 0     |
-     | 802036 | null     | null      | null    | unlabelled |         | 0     |
-     | 802037 | v1:6     | ethernet1 | 1236::3 | 113744     |         | 0     |
-     | 802038 | v1:6     | ethernet1 | 1236::3 | 113745     |         | 0     |
-     | 802039 | v1:6     | ethernet1 | 1236::3 | 113746     |         | 0     |
-     | 802040 | v1:6     | null      | null    | unlabelled | local   | 1920  |
-     | 802041 | null     | null      | null    | unlabelled |         | 0     |
-     | 802042 | null     | null      | null    | unlabelled |         | 0     |
-     | 802043 | null     | null      | null    | unlabelled |         | 0     |
-     | 802044 | null     | null      | null    | unlabelled |         | 0     |
-     | 802045 | null     | null      | null    | unlabelled |         | 0     |
+     | 77969  | v1:6     | ethernet1 | 1236::3 | 3          |         | 0     |
+     | 520648 | tester:4 | null      | null    | unlabelled | local   | 0     |
+     | 602052 | null     | null      | null    | unlabelled |         | 0     |
+     | 602053 | v1:6     | ethernet1 | 1236::3 | 228671     |         | 0     |
+     | 602054 | v1:6     | ethernet1 | 1236::3 | 228672     |         | 0     |
+     | 602055 | v1:6     | ethernet1 | 1236::3 | 228673     |         | 0     |
+     | 602056 | v1:6     | null      | null    | unlabelled | local   | 1920  |
+     | 602057 | null     | null      | null    | unlabelled |         | 0     |
+     | 602058 | null     | null      | null    | unlabelled |         | 0     |
+     | 602059 | null     | null      | null    | unlabelled |         | 0     |
+     | 602060 | null     | null      | null    | unlabelled |         | 0     |
+     | 602061 | null     | null      | null    | unlabelled |         | 0     |
+     | 644966 | tester:6 | null      | null    | unlabelled | local   | 0     |
+     | 661158 | null     | null      | null    | unlabelled |         | 0     |
+     | 661159 | v1:4     | ethernet1 | 1.1.3.3 | 389006     |         | 0     |
+     | 661160 | v1:4     | ethernet1 | 1.1.3.3 | 389007     |         | 0     |
+     | 661161 | v1:4     | ethernet1 | 1.1.3.3 | 389008     |         | 0     |
+     | 661162 | v1:4     | null      | null    | unlabelled | local   | 1920  |
+     | 661163 | null     | null      | null    | unlabelled |         | 0     |
+     | 661164 | null     | null      | null    | unlabelled |         | 0     |
+     | 661165 | null     | null      | null    | unlabelled |         | 0     |
+     | 661166 | null     | null      | null    | unlabelled |         | 0     |
+     | 661167 | null     | null      | null    | unlabelled |         | 0     |
+     | 714696 | v1:4     | ethernet1 | 1.1.3.3 | 3          |         | 0     |
+     | 920687 | v1:6     | null      | null    | unlabelled | local   | 0     |
+     | 949393 | v1:4     | null      | null    | unlabelled | local   | 0     |
      |________|__________|___________|_________|____________|_________|_______|
     r4#
     r4#

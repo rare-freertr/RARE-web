@@ -14,7 +14,7 @@
     hostname r1
     buggy
     !
-    logging file debug ../binTmp/zzz1r1-log.run
+    logging file debug ../binTmp/zzz41r1-log.run
     !
     ipv4 pool p4 2.2.2.1 0.0.0.1 254
     !
@@ -101,7 +101,7 @@
     hostname r2
     buggy
     !
-    logging file debug ../binTmp/zzz1r2-log.run
+    logging file debug ../binTmp/zzz41r2-log.run
     !
     prefix-list p1
      sequence 10 permit 0.0.0.0/0 ge 0 le 0
@@ -196,17 +196,17 @@
     dialer1 is up (since 00:00:00, 3 changes)
      description:
      type is dialer, hwaddr=none, mtu=1396, bw=4000kbps, vrf=v1
-     ip4 address=2.2.2.112/25, netmask=255.255.255.128, ifcid=1027025875
+     ip4 address=2.2.2.118/25, netmask=255.255.255.128, ifcid=344533878
      received 10 packets (660 bytes) dropped 0 packets (0 bytes)
      transmitted 10 packets (660 bytes) promisc=false macsec=false
-     |~~~~~~~|~~~~|~~~~|~~~~~~|~~~~~|~~~~~|~~~~~~|
-     |       | packet         | byte             |
-     | time  | tx | rx | drop | tx  | rx  | drop |
-     |-------|----|----|------|-----|-----|------|
-     | 1sec  | 5  | 5  | 0    | 330 | 330 | 0    |
-     | 1min  | 0  | 0  | 0    | 0   | 0   | 0    |
-     | 1hour | 0  | 0  | 0    | 0   | 0   | 0    |
-     |_______|____|____|______|_____|_____|______|
+     |~~~~~~~|~~~~|~~~~|~~~~~~|~~~~|~~~~|~~~~~~|
+     |       | packet         | byte           |
+     | time  | tx | rx | drop | tx | rx | drop |
+     |-------|----|----|------|----|----|------|
+     | 1sec  | 0  | 0  | 0    | 0  | 0  | 0    |
+     | 1min  | 0  | 0  | 0    | 0  | 0  | 0    |
+     | 1hour | 0  | 0  | 0    | 0  | 0  | 0    |
+     |_______|____|____|______|____|____|______|
      |~~~~~~~~|~~~~~~~|~~~~~~~~~|~~~~|~~~~|~~~~~~|~~~~~|~~~~~|~~~~~~|
      |                          | packet         | byte             |
      | type   | value | handler | tx | rx | drop | tx  | rx  | drop |
@@ -249,17 +249,17 @@
      | 6     | 0   | 0   | 0    | 0   | 0   | 0    |
      | 7     | 0   | 0   | 0    | 0   | 0   | 0    |
      |_______|_____|_____|______|_____|_____|______|
-            5280|
-            4752|#
-            4224|#
-            3696|#
-            3168|#
-            2640|#
-            2112|#
-            1584|#
-            1056|#
-             528|#
-               0|#
+               1|
+               0|
+               0|
+               0|
+               0|
+               0|
+               0|
+               0|
+               0|
+               0|
+               0|
              bps|0---------10--------20--------30--------40--------50-------- seconds
                1|
                0|

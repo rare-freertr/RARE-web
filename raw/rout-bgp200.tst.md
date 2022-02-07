@@ -14,7 +14,7 @@
     hostname r1
     buggy
     !
-    logging file debug ../binTmp/zzz1r1-log.run
+    logging file debug ../binTmp/zzz77r1-log.run
     !
     bridge 1
      rd 1:1
@@ -101,7 +101,7 @@
      neighbor 2.2.2.2 pmsitun
      neighbor 2.2.2.2 send-community standard extended
      afi-evpn 101 bridge-group 1
-     afi-evpn 101 bmac 006b.485d.5e52
+     afi-evpn 101 bmac 003b.5717.3161
      afi-evpn 101 encapsulation vxlan
      afi-evpn 101 update-source loopback0
      redistribute connected
@@ -123,7 +123,7 @@
      neighbor 4321::2 pmsitun
      neighbor 4321::2 send-community standard extended
      afi-evpn 101 bridge-group 2
-     afi-evpn 101 bmac 001a.1b6a.3c7b
+     afi-evpn 101 bmac 001c.605b.7958
      afi-evpn 101 encapsulation vxlan
      afi-evpn 101 update-source loopback0
      redistribute connected
@@ -173,7 +173,7 @@
     hostname r2
     buggy
     !
-    logging file debug ../binTmp/zzz1r2-log.run
+    logging file debug ../binTmp/zzz77r2-log.run
     !
     bridge 1
      rd 1:1
@@ -260,7 +260,7 @@
      neighbor 2.2.2.1 pmsitun
      neighbor 2.2.2.1 send-community standard extended
      afi-evpn 101 bridge-group 1
-     afi-evpn 101 bmac 0009.1802.075e
+     afi-evpn 101 bmac 005e.2a16.722e
      afi-evpn 101 encapsulation vxlan
      afi-evpn 101 update-source loopback0
      redistribute connected
@@ -282,7 +282,7 @@
      neighbor 4321::1 pmsitun
      neighbor 4321::1 send-community standard extended
      afi-evpn 101 bridge-group 2
-     afi-evpn 101 bmac 0020.4f19.0a63
+     afi-evpn 101 bmac 001b.6037.4508
      afi-evpn 101 encapsulation vxlan
      afi-evpn 101 update-source loopback0
      redistribute connected

@@ -14,7 +14,7 @@
     hostname r1
     buggy
     !
-    logging file debug ../binTmp/zzz1r1-log.run
+    logging file debug ../binTmp/zzz7r1-log.run
     !
     access-list test4a
      sequence 10 permit all any all any all ttl 110-120
@@ -94,7 +94,7 @@
     hostname r2
     buggy
     !
-    logging file debug ../binTmp/zzz1r2-log.run
+    logging file debug ../binTmp/zzz7r2-log.run
     !
     vrf definition tester
      exit

@@ -14,7 +14,7 @@
     hostname r1
     buggy
     !
-    logging file debug ../binTmp/zzz1r1-log.run
+    logging file debug ../binTmp/zzz89r1-log.run
     !
     vrf definition tester
      exit
@@ -76,7 +76,7 @@
     hostname r2
     buggy
     !
-    logging file debug ../binTmp/zzz1r2-log.run
+    logging file debug ../binTmp/zzz89r2-log.run
     !
     bridge 1
      exit
@@ -237,7 +237,7 @@
     **r3:**
     ```
     hostname r3
-    logging file debug ../binTmp/zzz1r3-log.run
+    logging file debug ../binTmp/zzz89r3-log.run
     vrf definition tester
      exit
     server telnet tester
@@ -262,7 +262,7 @@
     **r4:**
     ```
     hostname r4
-    logging file debug ../binTmp/zzz1r4-log.run
+    logging file debug ../binTmp/zzz89r4-log.run
     vrf definition tester
      exit
     server telnet tester
@@ -287,7 +287,7 @@
     **r5:**
     ```
     hostname r5
-    logging file debug ../binTmp/zzz1r5-log.run
+    logging file debug ../binTmp/zzz89r5-log.run
     vrf definition tester
      exit
     server telnet tester

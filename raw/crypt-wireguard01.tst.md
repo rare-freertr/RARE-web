@@ -14,7 +14,7 @@
     hostname r1
     buggy
     !
-    logging file debug ../binTmp/zzz1r1-log.run
+    logging file debug ../binTmp/zzz82r1-log.run
     !
     crypto ipsec ips
      key $v10$RUZ3MnJKRWRxRkdEZ0M4MHVtM2Z3TW1BYWZ3cVhubytQc2JNSFBaMHVtTT1NNnZEVjhRZGlXRFFwcFZLaktmOHhqb0t0eUdBZVJLL1VlNDhrd0tJNVNzPQ==
@@ -93,7 +93,7 @@
     hostname r2
     buggy
     !
-    logging file debug ../binTmp/zzz1r2-log.run
+    logging file debug ../binTmp/zzz82r2-log.run
     !
     crypto ipsec ips
      key $v10$NkpoeXZLUHV0UTlETkx1cE9QbURuUUxSV3RVV2xVakk2UFRKL0laOWwxdz1iUU1tcENhR1Z5cTlmK3Y0OFhHbWZINURNTHl0a3F6aUlEK3JCSCtxUWljPQ==
@@ -174,12 +174,12 @@
     r1#
     r1#show inter tun1 full
     r1#show inter tun1 full
-    tunnel1 is up (since 00:00:07, 15 changes)
+    tunnel1 is up (since 00:00:06, 15 changes)
      description:
      type is wireguard, hwaddr=none, mtu=1400, bw=8000kbps, vrf=v1
-     ip4 address=2.2.2.1/24, netmask=255.255.255.0, ifcid=268501714
-     ip6 address=4321::1/16, netmask=ffff::, ifcid=411512759
-     received 21 packets (1722 bytes) dropped 0 packets (0 bytes)
+     ip4 address=2.2.2.1/24, netmask=255.255.255.0, ifcid=576604496
+     ip6 address=4321::1/16, netmask=ffff::, ifcid=621097865
+     received 20 packets (1640 bytes) dropped 0 packets (0 bytes)
      transmitted 28 packets (1880 bytes) promisc=false macsec=false
      |~~~~~~~|~~~~|~~~~|~~~~~~|~~~~|~~~~|~~~~~~|
      |       | packet         | byte           |
@@ -194,7 +194,7 @@
      | type   | value | handler | tx | rx | drop | tx  | rx  | drop |
      |--------|-------|---------|----|----|------|-----|-----|------|
      | ethtyp | 0000  | null    | 0  | 0  | 0    | 0   | 0   | 0    |
-     | ethtyp | 0800  | ip4     | 15 | 11 | 0    | 990 | 902 | 0    |
+     | ethtyp | 0800  | ip4     | 15 | 10 | 0    | 990 | 820 | 0    |
      | ethtyp | 86dd  | ip6     | 13 | 10 | 0    | 890 | 820 | 0    |
      |________|_______|_________|____|____|______|_____|_____|______|
      |~~~~~|~~~~|~~~~|
@@ -211,7 +211,7 @@
      |            | packet         | byte               |
      | size       | tx | rx | drop | tx   | rx   | drop |
      |------------|----|----|------|------|------|------|
-     | 0-255      | 28 | 21 | 0    | 1880 | 1722 | 0    |
+     | 0-255      | 28 | 20 | 0    | 1880 | 1640 | 0    |
      | 256-511    | 0  | 0  | 0    | 0    | 0    | 0    |
      | 512-767    | 0  | 0  | 0    | 0    | 0    | 0    |
      | 768-1023   | 0  | 0  | 0    | 0    | 0    | 0    |
@@ -233,17 +233,17 @@
      | 6     | 0   | 0   | 0    | 0    | 0    | 0    |
      | 7     | 0   | 0   | 0    | 0    | 0    | 0    |
      |_______|_____|_____|______|______|______|______|
-            1840|
-            1656|      #
-            1472|      #
-            1288|      #
-            1104| #    #
-             920| #    #
-             736| #    #
-             552| #    #
-             368| ######
-             184| ######
-               0| ######
+            2368|
+            2131|     #
+            1894|     #
+            1657|     #
+            1420|     #
+            1184|     #
+             947|     #
+             710|     #
+             473| #####
+             236| #####
+               0| #####
              bps|0---------10--------20--------30--------40--------50-------- seconds
                1|
                0|

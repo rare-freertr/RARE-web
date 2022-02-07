@@ -14,7 +14,7 @@
     hostname r1
     buggy
     !
-    logging file debug ../binTmp/zzz1r1-log.run
+    logging file debug ../binTmp/zzz29r1-log.run
     !
     vrf definition tester
      exit
@@ -136,7 +136,7 @@
     hostname r2
     buggy
     !
-    logging file debug ../binTmp/zzz1r2-log.run
+    logging file debug ../binTmp/zzz29r2-log.run
     !
     prefix-list p4
      sequence 10 deny 2.2.2.222/32 ge 32 le 32
@@ -268,7 +268,7 @@
     hostname r3
     buggy
     !
-    logging file debug ../binTmp/zzz1r3-log.run
+    logging file debug ../binTmp/zzz29r3-log.run
     !
     vrf definition tester
      exit

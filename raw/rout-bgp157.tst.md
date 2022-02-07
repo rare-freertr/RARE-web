@@ -14,7 +14,7 @@
     hostname r1
     buggy
     !
-    logging file debug ../binTmp/zzz1r1-log.run
+    logging file debug ../binTmp/zzz76r1-log.run
     !
     prefix-list all
      sequence 10 permit 0.0.0.0/0 ge 0 le 32
@@ -198,7 +198,7 @@
     hostname r2
     buggy
     !
-    logging file debug ../binTmp/zzz1r2-log.run
+    logging file debug ../binTmp/zzz76r2-log.run
     !
     prefix-list all
      sequence 10 permit 0.0.0.0/0 ge 0 le 32

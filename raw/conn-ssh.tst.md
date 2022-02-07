@@ -14,13 +14,13 @@
     hostname r1
     buggy
     !
-    logging file debug ../binTmp/zzz1r1-log.run
+    logging file debug ../binTmp/zzz98r1-log.run
     !
-    crypto rsakey rsa import $v10$TUlJRW93SUJBQUtDQVFCdjdrRjhyNEpmKzRYTXVCVEFRT2pLQldKc0d4R2w0aWR2QjJ6VWRxNHEwazRQNk82SUovbERpNFJSWXdRUzFvdU1Zd2hwKzJUS2ljeklVUjZndGh6Z3RDNGlBM0ZibWF4aG5uaDU5dVpvM3hyU3NqRU1QK1cxd0wrN3BjMm5IL1F1bWZsVHVKais4aUhyRzZCTmRGRFdseWozUVIrZVpIMEhUbDdjSGZkNlRiZnV0dDV2N1ZhaUcyQ0c4Yml1aXdnSHlsQWZ1dkkwNEVYQ0J4bFFxWklETkRMeEdWTENMSHltUlowMUs5RCsvTkZJcHVJcVNmRGg3N1dmNkVBUnlkWnVQN2QxZDlyVldZWDdRWTVlT3R3NDZ5b1RqRXpIc214YW1zMFBzYTBnQnBMMGxKRWdYT1ZXVnJkOTFGZnlaaXlwU3hmOVJqUWFQczRac3hPb0IzOS9BZ01CQUFFQ2dnRUFLd29DUkY5NFVrLzA4dk1WaDVkdDY4Q0dSK3RncmRoNE1VazVuN2pDMzlSZUQrQVJXR21HZjJKMlRwVTBTOG9UZnJmVjFHckdKdHMxMHhEZUpnM2dyTWFidHBoOFRpeVpEREJUUXhLZEpsWWppa0RhZTB0V21MeTAvUUtVUVY4WUZaTS9PK0lQY25qSWNnNzlaTXNGQ242MVVkM0l1cThKSkhZT0k3V2lJM1NjUFdXeUw1OXVVS2ZlSDBsV21WTjRqbGF2UVdyWG9JNDA3YTRSVzJ1TC9ZTlU3dG5FWXZqY1dVenc3Mnk3dzkwUnR6eE5EOEpLVVlJemJRRThmbklSZUFsKzgwTG1JbWEyUHZLWWVKci9Ud09aRzhNemsxR3F5czBOak90RVpjSmNOY0VQcEVnMjJjUHZjc21nRkI0WjFwL1dmUzU4b2IxcGRXYlJRYWlLQVFLQmdRQzVZUHI1TEhZMnBRZ3p2dWhyRXY0NUJmZEprWXR6R0hQOFVtUXhjMGw4USswVlpRQUtjZXQ3RXkxMUVEekNocDFna0NMaTdiaUZKdWRUWllnYUt4QWIzdmJkSWNGN2M4UU1uVldOUmxtZCtlRXQwQUJwNTI5Q2x1ek5rUktJVnJYNkRpQThkeHR3RTkyMFdvZGsxNUNOT1hqNUxieU9lT2VETGh4dFliM05VUUtCZ1FDYWtrUHlETlhvRXZSM283YlY4NHRUbndJR0plVWZ2enArZHo3S2d0OUhPdENaWVYwdzhOOEFhalBZM0tDWlJlVlErMWJ1RENOSGNoWjVlckdsZjRjRWFhQmtCL002d1lPclh5SGtYMXl4WXBzTkF3NC84ZTBKU3RVL2J4Yy9SUm4yeEFZUzhOc2JoSVJMNHlyeklMUlNxNGwrazZ3ckVyRVFOd0VMblB3THp3S0JnUUNQL3dnVVkzZ1Q3RStadWxKWlVmQ05wTmU0bXNqQ2g1MFl3M3MyZWtIN3Q5dkNnYWp0ZEI0aGhQMExjS2h4eGhVYk8vc05ZUEN5NVV4TkdKSUhHYW95ckJnQUgwZG11TDd4dVlrSjZ6cVRudFZPTzhNR2dKS0pIQ2tuYU9nSFphdUhhRStjQ0QwVTZ5bU0vY0VzRU5JbEVSNnFGOS9lbjRYZC9RUng1cm1EY1FLQmdRQ1lXMCtweUVrWUJZYitYbHFiclFGS0hWTkxhQkxlSmdtc0dqSEVQeGVDQ0ZFUXZrMnpMZGxCZVcwOWRzcStDWTB0TTNET0Z4eTNFWmRoaWpTTVlwVmRIaGhBUVMzWVhtSkFpdmJIT2RBTjhKblFTNURDS3Q1djZGa2x1NFI0a3M0eTA2a0JCbk9TUGg2QkJwdVJKazFYcDBsUmdKR1ZxMGpvS0s5WkdSVy9OUUtCZ0hXdVhJeGRrbDQ4MjFHeXVhR1lqY0Y2TmwvUHNzQkJsUGpCbml0SXhjYzdMak16M0ZDTml0bXdzSGlrN3dGV0x4S3lYRm14MVRZaXlFTnBENlZCazBoWUlBcFBTTExGaFhKV0U0VnBDLytycHZVRUpCbUJKNkExV041b1lUNlVlUnRZak5qTHhxbFBGbGljRVZaQzIyQS9MVHpKbXlrUTBDTXdKSmZzUnpGdQ==
+    crypto rsakey rsa import $v10$TUlJRXBRSUJBQUtDQVFFQTVuWXVuRytiVnpva0tWMUt2K3Z3ZDRMZldZangyRkN4ckMwa0dqRUd1NGZRbU02c2Uza3NwWDJRVjIxQTJVMXdiMzlzcUNqWmFIKzZWclRZWlE0MkYxM3JEOHhIaGl3eHAwcDVnY01GODRqYjNXUGN1MGJDOVVMSGtQcldvL3JrazhNYW9CYTNXQy9FTnlkTkJTQm5UZXdqallJQ05DZnNYVnBCY1pnSHBLRTBKc0pYN0xiTDRVSDdZcEdPbmk4NTB6eTVKdk9PdHZ6dWl4a0JWVDR1UVdhdW5tQm1wVmQrN3ozc253Qlk4Qk4rMzBUZVhjcUlsdHZnNGFzRHlxeHdiOC8wTVZ2MzlPWlBPdG85ZXNoRjJHZFhhUFhvUUlrSGZWdU8vdThHMHJZaHBCSWhGVXhPRUcxRkcrSi9CSjU0NUNJeldxZUVpbm9lQVNrTFRsR2svd0lEQVFBQkFvSUJBUURPa3ZDRTJLVnRNbmhuZTNBZFIrZHJ1S3RySGcxcDBDcnlJaVJTTmMvTEdKb3AzbGRNOWZqRy9oMzd2N3A1RGFqU3lHMGs3aml5S290a1hRWDZ6eG85Sjdvamx3QWxqRWVWcEhQMWxGSXBVV3VDcnBpVVpZRXJSb2lMczh2aGdHcVM2RGRkZC84djFPRVVidTNpd29EV24rdmVVOEtWN1pNNHVrWWZCQjhWdUpXbVViOXNTOGN0WTdUTEp6aTdwMlNrNlEwN0kyTXlKTmhYYWp3L1h0NE1vaTFtbzdUQ2UzUDlKY3BhQ2RORFR3Q2tGL21BTm03WHhJZGxNNFRja015b2p3cWxYdXhsaTU1L04zdkpTT0x2dDFPTjY0U1RUMDgxVlR2RFhja3Q3d01EdUVsZnpTUnJObEhxY3JKTEZmcU9UUXJ6dzVKNXZoNkd2TTkzWUQ4QkFvR0JBUDJJTXJkeWViYmtBMzlJcFVjc3FpTHFsZ1BzdmgweFVLSzIxY0FJOTRnOXI4Yy84dmMxeGh5Q0dndnZHVkFNaHFBRVZrTHNQRjhKdTBEcWFhc1pSejZoUk1mRWgzQ0FvakhuOWp0RGRoMHRzZUJjNzRxY2ZGbzkrbEVNaVBUdEpDcTFBRmg3WEE3Z2pPRXJGRjRrZ2RCR2t4LzkzUWp2ZjBjM0ZBa3k2YlZ2QW9HQkFPaTBmaG05Y05hdkNKT3NlRmViZnBxSWdqdFQzWWFnQjRXdThxdWZuc0pGOUJSb2tWMUhydjFzMm40ekV3SkhBVUxtSHRWWnRZL1FETXFZamVXYi8rQ0FCQWV4N0EzVkF0NDFpM0YyQlBRWE1XeVFydUlnTnc4eFdIT2lMQUREUTVhUGJPMnlBQ0JEQ2hCNWxva3lFdkV1am5GUXFqMzZwRVhPcTJGNWJ1RnhBb0dBZENjVzNUYkVEb2RPRnQxb1kwQlNQaWJ0VGFVRHdJb2NZRCtWbENKSGpaSjlXckt3bEpOOVRRaEorSmUxS0JobEFTQ2JpSk9FWVNJck9PVnNQZWdaM05hemxUWXp1dFlqK090Rnd3YjRNUXdEUjBBc3VudFErV01Wc0ZZbTFOZGtUM0NYVlBKSFRjV1FwWVJBRTVWMEo4QjluUldJVTVTdDRpbVlzMUl4QWw4Q2dZRUE1VTJ1RUtrbS9yVjlpeDdoZXRxRGQ3MWFMeUhsNFpuaHI2NkQrL0FQSGJxVzJHRnVGRy9sbEYzbU00TWFrUnpzdGtKU1VjUFRjRUgveU1kbzA3L1Q5U0hRVnREUkhaUXYva3plK2sva2M2NURDb3JMZVpGckQvSjlDWHpkUldja084RmJBaUpyazE3Y0ZQM3JBNGd2T0MrN054ZlltYmhZbFYwZ2JhMmVRRkVDZ1lFQXNQRWZFQjBHQzZPTGFnMkR3cjl6TGZIeUl3V2lCNWZGMDUxMVVYU0JWbU43eHNiODB6bGgwVDNvdDhGM3NBQmpPLzdiYW9TcW5WcktkVlRpb3Fwdk9aSTQ1VHJhUXUvaFdaeWtZSXNVRlBtR1loMlhMcUY5dk5kNkN5WWtKWUdWODB5NnF3Rk1LTGdBU0tZZEJOR1dXQjhUYVdnTitOSW12UDZ2eUNad1Z2TT0=
     !
-    crypto dsakey dsa import $v10$TUlJQnVnSUJBQUtCZ0ZQcWdQUDYzVzcxa3h4YUNrbjdIaHZQeG9qT2hZR2VQRUxKK2ZkMmkxd01VeDdrbVdDQzg4OTJKQzR4YnE2dE5JRnp2Z2RqbkMyQzNqRjdpdEQ0bGNneEpWMlRwajNzeC9IRUZwa1M1WE9DS1pNNTZFM1pqUFNrMWVFU0NlZDhxNVlTRER4UTVkdnhWWmlPc3J0VGNVV2xBVGlJLzhqRm1nL0MwTlMwQjRnckFoVUFwa093R2IxclVQS3BpVVRrS0FGYmxRdjhrcGtDZ1lBRXY2dXhtaUlHMGx1NXhyT0xKMHJ5TlVYdml4UkhvTnlueEpIVG1iemsxSFpuNTl0L1dPQnN3RTNJNXA2bDM4QzQzR1V0SzEyem9NOEI2Tk5TcTNMeFFDaXV1YkJlaW9xOURCOGx3ZkJSeUN2bFdXWTdYRjVZYzdkQ3FjcWEyR3lMNXFrZnF3OXovVkVpcUJ4UVNlWXczVytsTUFPaDk4STRUTCt1L2VidzRBS0JnRU9kK3dPTHNESmg4S3I0L1BRdHFaK3M1cmUzajVodWkvZSswVk9TN3lOeUllTWNHUnoySThVd2g2L3l1OEVZKzRsY3VVUHNBa09CUlBmZk5WbEs1Y2NpQ3V0WCs0N0ZEUC9JTXpuT1BYME9TODdNYUpmSXlVcWlvZnJCWHZ2eGJ4ajNPcmxHbG5XaDBpQUVLblVGMlgzSTZlaUZHRXZsU1hTQ0NPUjdZeCtrQWhVQWo5MkNPTGtIajdwbk9qMmdwcE5xbXF2WWFTUT0=
+    crypto dsakey dsa import $v10$TUlJQnVRSUJBQUtCZ0U2WFRMRTd4dlBYUUtncGY1U1FoSFlETmF5enQrRTM5c0hVcm9MaGQxbDl4WG4wRE0zS0NiQk9LQWx0R3FGQVRpNFR1RlpSTkVraGdIZDlMTEVBVldwZWdnOGc0VDlydkJ0cUlWczRTNUpPc3Z1UFJvZGJZS1FZSXNFN2ZoVVdsRHdLZEYrK0xZTXBQZTI0R29Mc0d3THR6b3J4REpBQkc5K2szeDBnV1JncEFoVUE4Mm5kbHBtOElaVE5QbllYeHJsa0dzSmg1SzhDZ1lBVmpERjYzeVBtcCtWcDVWcWVjNTBZNWNSUmJEUXR5cVJON2RpazZEQ1VBK2ZNQmhNZzlQNFR4U3htTGoyaE9YS3MxYllhZ0FwTDJzVXJIV0gyRGtBdEpyTmNwNHdueGQ3WGtBY2hWTGxCNWhOY3A5Smxrd3c1aFRUMC9hLzQ1WE9EeXB5VldpbHkyUERQM2hRaHZLRzZJdEhyVnc0L1B1ZGsyejc0SWN5UGp3S0JnRVgzV1pjVzdBeCtDZXhYVnpxWjYxbUpyVjdTRmhIYy8wQzZIRWVzTEFHNVdtYytTSHJPWVdneGNjUFQxRXFqZU52dEpFcmVsdDJvR0MzZzlxZG9hNnNHUmJJZHZ3amtPYk8rMit0VnhaSHRWRXF2T2dzOHNEMWNIYW43U0NiY1FBUk51aE1RSmNmVGRTc3hkUlJuTmNiWFhFelNVVEtOVUdLSGZjWFkrL0RIQWhRSklLVGlNWmMzSHJKcXd5RU85bFhHYUs0WG1nPT0=
     !
-    crypto ecdsakey ecdsa import $v10$TUhRQ0FRRUVJQURQSE1ralM2SVc2bmc0aWZiVHQ3TUxyMXpQQ3V0R2VPOHpCaXlrSklobW9BY0dCU3VCQkFBS29VUURRZ0FFekVaNXVPNWdEQ3hRN2g1dmt5Q0hxQVhJdEZJS0MxSjRBR3VaUUR5a0c1OU5wcWFDVkQxbE0rUmYxNzhIbjJpU0xGb0k3SWFWRGpkTkgwdjFRdEIvNGc9PQ==
+    crypto ecdsakey ecdsa import $v10$TUhNQ0FRRUVIMEVxZ0FKV2dvNExzTzhXNDRMZFJBejViZTZtcUNwZkNVZGJYZGxhZitDZ0J3WUZLNEVFQUFxaFJBTkNBQVNWVHpWS2Vlc3cwY1BERmRKb3Z1N3pWY2tYemtmZHpWUG8wVUZVMWUycy9sK0RBcUkvelJlRWZMWlJtcUE0MDhGa2hYclQ0OHFLS0o5TEhGUkp2YnZF
     !
     aaa userlist usr
      username u
@@ -119,7 +119,7 @@
     hostname r2
     buggy
     !
-    logging file debug ../binTmp/zzz1r2-log.run
+    logging file debug ../binTmp/zzz98r2-log.run
     !
     chat-script login
      sequence 10 send ppp
@@ -219,17 +219,17 @@
     dialer1 is up (since 00:00:00, 3 changes)
      description:
      type is dialer, hwaddr=none, mtu=1500, bw=128kbps, vrf=v1
-     ip4 address=2.2.2.79/25, netmask=255.255.255.128, ifcid=63278296
+     ip4 address=2.2.2.61/25, netmask=255.255.255.128, ifcid=898191263
      received 10 packets (660 bytes) dropped 0 packets (0 bytes)
      transmitted 10 packets (660 bytes) promisc=false macsec=false
-     |~~~~~~~|~~~~|~~~~|~~~~~~|~~~~|~~~~|~~~~~~|
-     |       | packet         | byte           |
-     | time  | tx | rx | drop | tx | rx | drop |
-     |-------|----|----|------|----|----|------|
-     | 1sec  | 0  | 0  | 0    | 0  | 0  | 0    |
-     | 1min  | 0  | 0  | 0    | 0  | 0  | 0    |
-     | 1hour | 0  | 0  | 0    | 0  | 0  | 0    |
-     |_______|____|____|______|____|____|______|
+     |~~~~~~~|~~~~|~~~~|~~~~~~|~~~~~|~~~~~|~~~~~~|
+     |       | packet         | byte             |
+     | time  | tx | rx | drop | tx  | rx  | drop |
+     |-------|----|----|------|-----|-----|------|
+     | 1sec  | 10 | 10 | 0    | 660 | 660 | 0    |
+     | 1min  | 0  | 0  | 0    | 0   | 0   | 0    |
+     | 1hour | 0  | 0  | 0    | 0   | 0   | 0    |
+     |_______|____|____|______|_____|_____|______|
      |~~~~~~~~|~~~~~~~|~~~~~~~~~|~~~~|~~~~|~~~~~~|~~~~~|~~~~~|~~~~~~|
      |                          | packet         | byte             |
      | type   | value | handler | tx | rx | drop | tx  | rx  | drop |
@@ -272,17 +272,17 @@
      | 6     | 0   | 0   | 0    | 0   | 0   | 0    |
      | 7     | 0   | 0   | 0    | 0   | 0   | 0    |
      |_______|_____|_____|______|_____|_____|______|
-               1|
-               0|
-               0|
-               0|
-               0|
-               0|
-               0|
-               0|
-               0|
-               0|
-               0|
+             10k|
+            9504|#
+            8448|#
+            7392|#
+            6336|#
+            5280|#
+            4224|#
+            3168|#
+            2112|#
+            1056|#
+               0|#
              bps|0---------10--------20--------30--------40--------50-------- seconds
                1|
                0|

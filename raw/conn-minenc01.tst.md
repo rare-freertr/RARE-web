@@ -14,7 +14,7 @@
     hostname r1
     buggy
     !
-    logging file debug ../binTmp/zzz1r1-log.run
+    logging file debug ../binTmp/zzz9r1-log.run
     !
     vrf definition tester
      exit
@@ -87,7 +87,7 @@
     hostname r2
     buggy
     !
-    logging file debug ../binTmp/zzz1r2-log.run
+    logging file debug ../binTmp/zzz9r2-log.run
     !
     vrf definition tester
      exit
@@ -162,18 +162,18 @@
     r1#
     r1#show inter tun1 full
     r1#show inter tun1 full
-    tunnel1 is up (since 00:00:02, 13 changes)
+    tunnel1 is up (since 00:00:01, 13 changes)
      description:
      type is minenc, hwaddr=none, mtu=1480, bw=100mbps, vrf=v1
-     ip4 address=2.2.2.1/24, netmask=255.255.255.0, ifcid=856286442
-     ip6 address=4321::1/16, netmask=ffff::, ifcid=454891264
+     ip4 address=2.2.2.1/24, netmask=255.255.255.0, ifcid=826254934
+     ip6 address=4321::1/16, netmask=ffff::, ifcid=340903826
      received 23 packets (1550 bytes) dropped 0 packets (0 bytes)
      transmitted 23 packets (1550 bytes) promisc=false macsec=false
      |~~~~~~~|~~~~|~~~~|~~~~~~|~~~~~|~~~~~|~~~~~~|
      |       | packet         | byte             |
      | time  | tx | rx | drop | tx  | rx  | drop |
      |-------|----|----|------|-----|-----|------|
-     | 1sec  | 5  | 5  | 0    | 330 | 330 | 0    |
+     | 1sec  | 8  | 8  | 0    | 560 | 560 | 0    |
      | 1min  | 0  | 0  | 0    | 0   | 0   | 0    |
      | 1hour | 0  | 0  | 0    | 0   | 0   | 0    |
      |_______|____|____|______|_____|_____|______|
@@ -221,17 +221,17 @@
      | 6     | 0   | 0   | 0    | 0    | 0    | 0    |
      | 7     | 0   | 0   | 0    | 0    | 0    | 0    |
      |_______|_____|_____|______|______|______|______|
-            5280|
-            4752|#
-            4224|#
-            3696|#
-            3168|##
-            2640|##
-            2112|##
-            1584|##
-            1056|##
-             528|##
-               0|##
+            8960|
+            8064|#
+            7168|#
+            6272|#
+            5376|#
+            4480|#
+            3584|#
+            2688|#
+            1792|#
+             896|#
+               0|#
              bps|0---------10--------20--------30--------40--------50-------- seconds
                1|
                0|

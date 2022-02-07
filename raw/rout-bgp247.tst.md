@@ -14,7 +14,7 @@
     hostname r1
     buggy
     !
-    logging file debug ../binTmp/zzz1r1-log.run
+    logging file debug ../binTmp/zzz5r1-log.run
     !
     bridge 1
      mac-learn
@@ -145,7 +145,7 @@
     hostname r2
     buggy
     !
-    logging file debug ../binTmp/zzz1r2-log.run
+    logging file debug ../binTmp/zzz5r2-log.run
     !
     route-policy rm1
      sequence 10 set lrgcomm 1:1234:4321
@@ -247,7 +247,7 @@
     hostname r3
     buggy
     !
-    logging file debug ../binTmp/zzz1r3-log.run
+    logging file debug ../binTmp/zzz5r3-log.run
     !
     route-policy rm1
      sequence 10 if lrgcomm 1:1234:4321

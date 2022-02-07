@@ -14,7 +14,7 @@
     hostname r1
     buggy
     !
-    logging file debug ../binTmp/zzz1r1-log.run
+    logging file debug ../binTmp/zzz68r1-log.run
     !
     aaa radius rad
      secret $v10$dGVzdGVy
@@ -99,7 +99,7 @@
     hostname r2
     buggy
     !
-    logging file debug ../binTmp/zzz1r2-log.run
+    logging file debug ../binTmp/zzz68r2-log.run
     !
     aaa userlist usr
      username c

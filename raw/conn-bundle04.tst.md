@@ -14,7 +14,7 @@
     hostname r1
     buggy
     !
-    logging file debug ../binTmp/zzz1r1-log.run
+    logging file debug ../binTmp/zzz72r1-log.run
     !
     bundle 1
      no ethernet
@@ -94,7 +94,7 @@
     hostname r2
     buggy
     !
-    logging file debug ../binTmp/zzz1r2-log.run
+    logging file debug ../binTmp/zzz72r2-log.run
     !
     bundle 1
      no ethernet

@@ -1,4 +1,4 @@
-# Example: interop1: ike1 with aes128
+# Example: interop1: ike1 with aes128cbc
     
 === "Topology"
     
@@ -12,7 +12,7 @@
     **r1:**
     ```
     hostname r1
-    logging file debug ../binTmp/zzz1r1-log.run
+    logging file debug ../binTmp/zzz93r1-log.run
     vrf definition tester
      exit
     server telnet tester
@@ -29,7 +29,7 @@
      exit
     crypto ipsec ips
      group 01
-     cipher aes128
+     cipher aes128cbc
      hash md5
      seconds 3600
      bytes 67108864

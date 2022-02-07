@@ -14,7 +14,7 @@
     hostname r1
     buggy
     !
-    logging file debug ../binTmp/zzz1r1-log.run
+    logging file debug ../binTmp/zzz8r1-log.run
     !
     vrf definition tester
      exit
@@ -674,7 +674,7 @@
     hostname r2
     buggy
     !
-    logging file debug ../binTmp/zzz1r2-log.run
+    logging file debug ../binTmp/zzz8r2-log.run
     !
     vrf definition tester
      exit
@@ -778,7 +778,7 @@
     hostname r3
     buggy
     !
-    logging file debug ../binTmp/zzz1r3-log.run
+    logging file debug ../binTmp/zzz8r3-log.run
     !
     vrf definition tester
      exit
@@ -880,7 +880,7 @@
     hostname r4
     buggy
     !
-    logging file debug ../binTmp/zzz1r4-log.run
+    logging file debug ../binTmp/zzz8r4-log.run
     !
     vrf definition tester
      exit
@@ -974,7 +974,7 @@
     hostname r5
     buggy
     !
-    logging file debug ../binTmp/zzz1r5-log.run
+    logging file debug ../binTmp/zzz8r5-log.run
     !
     vrf definition tester
      exit
@@ -1082,7 +1082,7 @@
     hostname r6
     buggy
     !
-    logging file debug ../binTmp/zzz1r6-log.run
+    logging file debug ../binTmp/zzz8r6-log.run
     !
     vrf definition tester
      exit
@@ -1216,7 +1216,7 @@
     hostname r7
     buggy
     !
-    logging file debug ../binTmp/zzz1r7-log.run
+    logging file debug ../binTmp/zzz8r7-log.run
     !
     vrf definition tester
      exit
@@ -1312,7 +1312,7 @@
     hostname r8
     buggy
     !
-    logging file debug ../binTmp/zzz1r8-log.run
+    logging file debug ../binTmp/zzz8r8-log.run
     !
     vrf definition tester
      exit
@@ -1410,7 +1410,7 @@
     hostname r9
     buggy
     !
-    logging file debug ../binTmp/zzz1r9-log.run
+    logging file debug ../binTmp/zzz8r9-log.run
     !
     vrf definition tester
      exit
@@ -1506,7 +1506,7 @@
     hostname r10
     buggy
     !
-    logging file debug ../binTmp/zzz1r10-log.run
+    logging file debug ../binTmp/zzz8r10-log.run
     !
     vrf definition tester
      exit
@@ -1602,7 +1602,7 @@
     hostname r11
     buggy
     !
-    logging file debug ../binTmp/zzz1r11-log.run
+    logging file debug ../binTmp/zzz8r11-log.run
     !
     vrf definition tester
      exit

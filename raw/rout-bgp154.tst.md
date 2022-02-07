@@ -14,7 +14,7 @@
     hostname r1
     buggy
     !
-    logging file debug ../binTmp/zzz1r1-log.run
+    logging file debug ../binTmp/zzz89r1-log.run
     !
     bridge 1
      rd 1:1
@@ -134,11 +134,11 @@
      neighbor 2.2.2.2 pmsitun
      neighbor 2.2.2.2 send-community standard extended
      afi-evpn 101 bridge-group 1
-     afi-evpn 101 bmac 0066.1f06.7739
+     afi-evpn 101 bmac 0034.3704.6e2e
      afi-evpn 101 encapsulation pbb
      afi-evpn 101 update-source loopback0
      afi-evpn 102 bridge-group 3
-     afi-evpn 102 bmac 0024.3f65.2d2d
+     afi-evpn 102 bmac 006f.552b.0923
      afi-evpn 102 encapsulation pbb
      afi-evpn 102 update-source loopback0
      redistribute connected
@@ -160,11 +160,11 @@
      neighbor 4321::2 pmsitun
      neighbor 4321::2 send-community standard extended
      afi-evpn 101 bridge-group 2
-     afi-evpn 101 bmac 0071.7d51.0724
+     afi-evpn 101 bmac 007a.023e.7800
      afi-evpn 101 encapsulation pbb
      afi-evpn 101 update-source loopback0
      afi-evpn 102 bridge-group 4
-     afi-evpn 102 bmac 0024.374f.4c16
+     afi-evpn 102 bmac 0008.2a25.5608
      afi-evpn 102 encapsulation pbb
      afi-evpn 102 update-source loopback0
      redistribute connected
@@ -214,7 +214,7 @@
     hostname r2
     buggy
     !
-    logging file debug ../binTmp/zzz1r2-log.run
+    logging file debug ../binTmp/zzz89r2-log.run
     !
     bridge 1
      rd 1:1
@@ -334,11 +334,11 @@
      neighbor 2.2.2.1 pmsitun
      neighbor 2.2.2.1 send-community standard extended
      afi-evpn 101 bridge-group 1
-     afi-evpn 101 bmac 0017.4e00.5539
+     afi-evpn 101 bmac 0078.243f.276a
      afi-evpn 101 encapsulation pbb
      afi-evpn 101 update-source loopback0
      afi-evpn 102 bridge-group 3
-     afi-evpn 102 bmac 0013.3739.322d
+     afi-evpn 102 bmac 007d.791e.7936
      afi-evpn 102 encapsulation pbb
      afi-evpn 102 update-source loopback0
      redistribute connected
@@ -360,11 +360,11 @@
      neighbor 4321::1 pmsitun
      neighbor 4321::1 send-community standard extended
      afi-evpn 101 bridge-group 2
-     afi-evpn 101 bmac 0064.722c.184a
+     afi-evpn 101 bmac 0074.3361.5814
      afi-evpn 101 encapsulation pbb
      afi-evpn 101 update-source loopback0
      afi-evpn 102 bridge-group 4
-     afi-evpn 102 bmac 0063.7601.5374
+     afi-evpn 102 bmac 001c.4875.693d
      afi-evpn 102 encapsulation pbb
      afi-evpn 102 update-source loopback0
      redistribute connected

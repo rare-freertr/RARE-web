@@ -14,7 +14,7 @@
     hostname r1
     buggy
     !
-    logging file debug ../binTmp/zzz1r1-log.run
+    logging file debug ../binTmp/zzz5r1-log.run
     !
     vrf definition tester
      exit
@@ -87,7 +87,7 @@
     hostname r2
     buggy
     !
-    logging file debug ../binTmp/zzz1r2-log.run
+    logging file debug ../binTmp/zzz5r2-log.run
     !
     vrf definition tester
      exit
@@ -147,7 +147,7 @@
     hostname r3
     buggy
     !
-    logging file debug ../binTmp/zzz1r3-log.run
+    logging file debug ../binTmp/zzz5r3-log.run
     !
     vrf definition tester
      exit
@@ -212,8 +212,8 @@
      |~~~~~|~~~~~~~~~~~~|~~~~~~~~|~~~~~~~~~~~|~~~~~~|~~~~~~~~~~|
      | typ | prefix     | metric | iface     | hop  | time     |
      |-----|------------|--------|-----------|------|----------|
-     | C   | 1.1.1.0/24 | 0/0    | ethernet1 | null | 00:00:09 |
-     | LOC | 1.1.1.2/32 | 0/1    | ethernet1 | null | 00:00:09 |
+     | C   | 1.1.1.0/24 | 0/0    | ethernet1 | null | 00:00:05 |
+     | LOC | 1.1.1.2/32 | 0/1    | ethernet1 | null | 00:00:05 |
      |_____|____________|________|___________|______|__________|
     r2#
     r2#
@@ -227,8 +227,8 @@
      |~~~~~|~~~~~~~~~~~~~|~~~~~~~~|~~~~~~~~~~~|~~~~~~|~~~~~~~~~~|
      | typ | prefix      | metric | iface     | hop  | time     |
      |-----|-------------|--------|-----------|------|----------|
-     | C   | 1234::/32   | 0/0    | ethernet1 | null | 00:00:09 |
-     | LOC | 1234::2/128 | 0/1    | ethernet1 | null | 00:00:09 |
+     | C   | 1234::/32   | 0/0    | ethernet1 | null | 00:00:05 |
+     | LOC | 1234::2/128 | 0/1    | ethernet1 | null | 00:00:05 |
      |_____|_____________|________|___________|______|__________|
     r2#
     r2#

@@ -14,7 +14,7 @@
     hostname r1
     buggy
     !
-    logging file debug ../binTmp/zzz1r1-log.run
+    logging file debug ../binTmp/zzz12r1-log.run
     !
     route-map rm1
      sequence 10 action permit
@@ -129,7 +129,7 @@
     hostname r2
     buggy
     !
-    logging file debug ../binTmp/zzz1r2-log.run
+    logging file debug ../binTmp/zzz12r2-log.run
     !
     vrf definition tester
      exit
@@ -226,7 +226,7 @@
     hostname r3
     buggy
     !
-    logging file debug ../binTmp/zzz1r3-log.run
+    logging file debug ../binTmp/zzz12r3-log.run
     !
     route-map rm1
      sequence 10 action permit
@@ -381,9 +381,9 @@
      |~~~~~~~~~~~~~~~~~~~~~~|~~~~~~~~~~|~~~~~~~|~~~~~|~~~~~~~~~~|
      | lspid                | sequence | flags | len | time     |
      |----------------------|----------|-------|-----|----------|
-     | 4444.0000.1111.00-00 | 0000000b | apo   | 118 | 00:19:51 |
-     | 4444.0000.3333.00-00 | 00000009 | apo   | 118 | 00:19:31 |
-     | 6666.0000.2222.00-00 | 0000000b | apo   | 119 | 00:19:32 |
+     | 4444.0000.1111.00-00 | 0000000c | apo   | 118 | 00:19:51 |
+     | 4444.0000.3333.00-00 | 00000009 | apo   | 118 | 00:19:32 |
+     | 6666.0000.2222.00-00 | 0000000c | apo   | 119 | 00:19:32 |
      |______________________|__________|_______|_____|__________|
     r2#
     r2#
@@ -402,6 +402,8 @@
     ```
     r2#
     r2#
+    r2#show ipv6 isis 1
+    r2#show ipv6 isis 1
     r2#show ipv6 isis 1 tre 2
     r2#show ipv6 isis 1 tre 2
     `--r2
@@ -424,8 +426,8 @@
      | C   | 1.1.1.4/30   | 0/0    | ethernet2 | null    | 00:00:28 |
      | LOC | 1.1.1.5/32   | 0/1    | ethernet2 | null    | 00:00:28 |
      | I   | 2.2.2.1/32   | 115/20 | ethernet1 | 1.1.1.1 | 00:00:07 |
-     | C   | 2.2.2.2/32   | 0/0    | loopback1 | null    | 00:00:29 |
-     | I   | 2.2.2.3/32   | 115/30 | ethernet2 | 1.1.1.6 | 00:00:24 |
+     | C   | 2.2.2.2/32   | 0/0    | loopback1 | null    | 00:00:28 |
+     | I   | 2.2.2.3/32   | 115/30 | ethernet2 | 1.1.1.6 | 00:00:25 |
      | I   | 2.2.2.222/32 | 115/20 | ethernet1 | 1.1.1.1 | 00:00:07 |
      |_____|______________|________|___________|_________|__________|
     r2#
@@ -444,10 +446,10 @@
      | LOC  | 1234:1::2/128 | 0/1    | ethernet1 | null      | 00:00:28 |
      | C    | 1234:2::/32   | 0/0    | ethernet2 | null      | 00:00:28 |
      | LOC  | 1234:2::1/128 | 0/1    | ethernet2 | null      | 00:00:28 |
-     | I EX | 4321::1/128   | 115/20 | ethernet1 | 1234:1::1 | 00:00:04 |
-     | C    | 4321::2/128   | 0/0    | loopback1 | null      | 00:00:29 |
-     | I EX | 4321::3/128   | 115/30 | ethernet2 | 1234:2::2 | 00:00:24 |
-     | I EX | 4321::222/128 | 115/20 | ethernet1 | 1234:1::1 | 00:00:04 |
+     | I EX | 4321::1/128   | 115/20 | ethernet1 | 1234:1::1 | 00:00:07 |
+     | C    | 4321::2/128   | 0/0    | loopback1 | null      | 00:00:28 |
+     | I EX | 4321::3/128   | 115/30 | ethernet2 | 1234:2::2 | 00:00:25 |
+     | I EX | 4321::222/128 | 115/20 | ethernet1 | 1234:1::1 | 00:00:07 |
      |______|_______________|________|___________|___________|__________|
     r2#
     r2#

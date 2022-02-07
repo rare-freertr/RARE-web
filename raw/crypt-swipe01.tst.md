@@ -14,7 +14,7 @@
     hostname r1
     buggy
     !
-    logging file debug ../binTmp/zzz1r1-log.run
+    logging file debug ../binTmp/zzz63r1-log.run
     !
     crypto ipsec ips
      cipher des
@@ -95,7 +95,7 @@
     hostname r2
     buggy
     !
-    logging file debug ../binTmp/zzz1r2-log.run
+    logging file debug ../binTmp/zzz63r2-log.run
     !
     crypto ipsec ips
      cipher des
@@ -178,27 +178,27 @@
     r1#
     r1#show inter tun1 full
     r1#show inter tun1 full
-    tunnel1 is up (since 00:00:05, 15 changes)
+    tunnel1 is up (since 00:00:06, 15 changes)
      description:
-     type is swipe, hwaddr=0016.3b20.6927, mtu=1470, bw=2000kbps, vrf=v1
-     ip4 address=2.2.2.1/24, netmask=255.255.255.0, ifcid=13497596
-     ip6 address=4321::1/16, netmask=ffff::, ifcid=400333904
-     received 23 packets (1518 bytes) dropped 0 packets (0 bytes)
+     type is swipe, hwaddr=0027.6f15.0b29, mtu=1470, bw=2000kbps, vrf=v1
+     ip4 address=2.2.2.1/24, netmask=255.255.255.0, ifcid=913665183
+     ip6 address=4321::1/16, netmask=ffff::, ifcid=511735434
+     received 21 packets (1386 bytes) dropped 0 packets (0 bytes)
      transmitted 28 packets (1904 bytes) promisc=false macsec=false
-     |~~~~~~~|~~~~|~~~~|~~~~~~|~~~~~~|~~~~~~|~~~~~~|
-     |       | packet         | byte               |
-     | time  | tx | rx | drop | tx   | rx   | drop |
-     |-------|----|----|------|------|------|------|
-     | 1sec  | 20 | 20 | 0    | 1320 | 1320 | 0    |
-     | 1min  | 0  | 0  | 0    | 0    | 0    | 0    |
-     | 1hour | 0  | 0  | 0    | 0    | 0    | 0    |
-     |_______|____|____|______|______|______|______|
+     |~~~~~~~|~~~~|~~~~|~~~~~~|~~~~~|~~~~~|~~~~~~|
+     |       | packet         | byte             |
+     | time  | tx | rx | drop | tx  | rx  | drop |
+     |-------|----|----|------|-----|-----|------|
+     | 1sec  | 15 | 15 | 0    | 990 | 990 | 0    |
+     | 1min  | 0  | 0  | 0    | 0   | 0   | 0    |
+     | 1hour | 0  | 0  | 0    | 0   | 0   | 0    |
+     |_______|____|____|______|_____|_____|______|
      |~~~~~~~~|~~~~~~~|~~~~~~~~~|~~~~|~~~~|~~~~~~|~~~~~|~~~~~|~~~~~~|
      |                          | packet         | byte             |
      | type   | value | handler | tx | rx | drop | tx  | rx  | drop |
      |--------|-------|---------|----|----|------|-----|-----|------|
      | ethtyp | 0000  | null    | 0  | 0  | 0    | 0   | 0   | 0    |
-     | ethtyp | 0800  | ip4     | 15 | 13 | 0    | 990 | 858 | 0    |
+     | ethtyp | 0800  | ip4     | 15 | 11 | 0    | 990 | 726 | 0    |
      | ethtyp | 86dd  | ip6     | 13 | 10 | 0    | 914 | 660 | 0    |
      |________|_______|_________|____|____|______|_____|_____|______|
      |~~~~~|~~~~|~~~~|
@@ -215,7 +215,7 @@
      |            | packet         | byte               |
      | size       | tx | rx | drop | tx   | rx   | drop |
      |------------|----|----|------|------|------|------|
-     | 0-255      | 28 | 23 | 0    | 1904 | 1518 | 0    |
+     | 0-255      | 28 | 21 | 0    | 1904 | 1386 | 0    |
      | 256-511    | 0  | 0  | 0    | 0    | 0    | 0    |
      | 512-767    | 0  | 0  | 0    | 0    | 0    | 0    |
      | 768-1023   | 0  | 0  | 0    | 0    | 0    | 0    |
@@ -237,17 +237,17 @@
      | 6     | 0   | 0   | 0    | 0    | 0    | 0    |
      | 7     | 0   | 0   | 0    | 0    | 0    | 0    |
      |_______|_____|_____|______|______|______|______|
-             21k|
-             19k|#
-             16k|#
+             15k|
              14k|#
              12k|#
-             10k|#
-            8448|#
+             11k|#
+            9504|#
+            7920|#
             6336|#
-            4224|#
-            2112|##
-               0|#####
+            4752|#
+            3168|#
+            1584|#    #
+               0|######
              bps|0---------10--------20--------30--------40--------50-------- seconds
                1|
                0|

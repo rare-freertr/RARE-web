@@ -14,7 +14,7 @@
     hostname r1
     buggy
     !
-    logging file debug ../binTmp/zzz1r1-log.run
+    logging file debug ../binTmp/zzz60r1-log.run
     !
     access-list test4
      sequence 10 deny 1 any all any all
@@ -58,7 +58,7 @@
     interface pwether1
      no description
      mtu 1500
-     macaddr 0025.2209.5e24
+     macaddr 004a.3072.4914
      vrf forwarding v1
      ipv4 address 3.3.3.1 255.255.255.0
      pseudowire v1 loopback0 pweompls 2.2.2.3 1234
@@ -69,7 +69,7 @@
     interface pwether2
      no description
      mtu 1500
-     macaddr 0049.4d60.6671
+     macaddr 0053.5476.5507
      vrf forwarding v1
      ipv4 address 3.3.4.1 255.255.255.0
      pseudowire v1 loopback0 pweompls 4321::3 1234
@@ -147,7 +147,7 @@
     hostname r2
     buggy
     !
-    logging file debug ../binTmp/zzz1r2-log.run
+    logging file debug ../binTmp/zzz60r2-log.run
     !
     access-list test4
      sequence 10 deny 1 any all any all
@@ -282,7 +282,7 @@
     hostname r3
     buggy
     !
-    logging file debug ../binTmp/zzz1r3-log.run
+    logging file debug ../binTmp/zzz60r3-log.run
     !
     access-list test4
      sequence 10 deny 1 any all any all
@@ -326,7 +326,7 @@
     interface pwether1
      no description
      mtu 1500
-     macaddr 002d.6244.0378
+     macaddr 0008.054d.6c7d
      vrf forwarding v1
      ipv4 address 3.3.3.2 255.255.255.0
      pseudowire v1 loopback0 pweompls 2.2.2.1 1234
@@ -337,7 +337,7 @@
     interface pwether2
      no description
      mtu 1500
-     macaddr 0048.5b70.2023
+     macaddr 0038.6574.687e
      vrf forwarding v1
      ipv4 address 3.3.4.2 255.255.255.0
      pseudowire v1 loopback0 pweompls 4321::1 1234

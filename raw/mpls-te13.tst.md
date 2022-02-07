@@ -14,7 +14,7 @@
     hostname r1
     buggy
     !
-    logging file debug ../binTmp/zzz1r1-log.run
+    logging file debug ../binTmp/zzz32r1-log.run
     !
     vrf definition tester
      exit
@@ -117,7 +117,7 @@
     hostname r2
     buggy
     !
-    logging file debug ../binTmp/zzz1r2-log.run
+    logging file debug ../binTmp/zzz32r2-log.run
     !
     vrf definition tester
      exit
@@ -218,7 +218,7 @@
     hostname r3
     buggy
     !
-    logging file debug ../binTmp/zzz1r3-log.run
+    logging file debug ../binTmp/zzz32r3-log.run
     !
     vrf definition tester
      exit
@@ -319,7 +319,7 @@
     hostname r4
     buggy
     !
-    logging file debug ../binTmp/zzz1r4-log.run
+    logging file debug ../binTmp/zzz32r4-log.run
     !
     vrf definition tester
      exit
@@ -426,20 +426,20 @@
     r1#
     r1#show mpls forw
     r1#show mpls forw
-     |~~~~~~~~|~~~~~~~~~~|~~~~~~~~~~~|~~~~~~~~~~~|~~~~~~~~~~~~|~~~~~~~~~|~~~~~~~~~|
-     | label  | vrf      | iface     | hop       | label      | targets | bytes   |
-     |--------|----------|-----------|-----------|------------|---------|---------|
-     | 69934  | v1:6     | null      | null      | unlabelled | local   | 220864  |
-     | 138162 | v1:4     | ethernet1 | 1.1.11.2  | unlabelled |         | 0       |
-     | 239173 | tester:6 | null      | null      | unlabelled | local   | 0       |
-     | 339748 | v1:4     | null      | null      | unlabelled | local   | 451904  |
-     | 590057 | tester:4 | null      | null      | unlabelled | local   | 0       |
-     | 601997 | v1:6     | null      | null      | unlabelled | local   | 433024  |
-     | 668518 | v1:4     | null      | null      | unlabelled | local   | 1262912 |
-     | 852460 | v1:6     | ethernet1 | 1234:1::2 | unlabelled |         | 0       |
-     | 884215 | v1:6     | null      | null      | unlabelled | local   | 0       |
-     | 913242 | v1:4     | null      | null      | unlabelled | local   | 0       |
-     |________|__________|___________|___________|____________|_________|_________|
+     |~~~~~~~~~|~~~~~~~~~~|~~~~~~~~~~~|~~~~~~~~~~~|~~~~~~~~~~~~|~~~~~~~~~|~~~~~~~~~|
+     | label   | vrf      | iface     | hop       | label      | targets | bytes   |
+     |---------|----------|-----------|-----------|------------|---------|---------|
+     | 74888   | v1:4     | ethernet1 | 1.1.11.2  | unlabelled |         | 0       |
+     | 106424  | v1:6     | null      | null      | unlabelled | local   | 378688  |
+     | 267951  | v1:4     | null      | null      | unlabelled | local   | 0       |
+     | 285953  | v1:6     | null      | null      | unlabelled | local   | 1226816 |
+     | 318948  | v1:4     | null      | null      | unlabelled | local   | 3103296 |
+     | 368238  | v1:6     | ethernet1 | 1234:1::2 | unlabelled |         | 0       |
+     | 396987  | v1:6     | null      | null      | unlabelled | local   | 0       |
+     | 470078  | tester:4 | null      | null      | unlabelled | local   | 0       |
+     | 565193  | tester:6 | null      | null      | unlabelled | local   | 0       |
+     | 1046678 | v1:4     | null      | null      | unlabelled | local   | 1238208 |
+     |_________|__________|___________|___________|____________|_________|_________|
     r1#
     r1#
     ```
@@ -452,10 +452,10 @@
      |~~~~~~~~~|~~~~~~~|~~~~~~~~~~|~~~~|~~~~~~~~~|~~~~~~~~~~~~|~~~~~~~~~~~~~|
      | source  | id    | subgroup | id | target  | id         | description |
      |---------|-------|----------|----|---------|------------|-------------|
-     | 2.2.2.1 | 3434  | 2.2.2.2  | 1  | 2.2.2.2 | 225050624  | r1:tunnel1  |
-     | 2.2.2.1 | 3434  | 2.2.2.3  | 2  | 2.2.2.3 | 225050625  | r1:tunnel1  |
-     | 2.2.2.3 | 4007  | ::       | 0  | 2.2.2.1 | 1934900783 | r3:tunnel1  |
-     | 2.2.2.2 | 23362 | ::       | 0  | 2.2.2.1 | 287938838  | r2:tunnel1  |
+     | 2.2.2.2 | 5430  | ::       | 0  | 2.2.2.1 | 1720271317 | r2:tunnel1  |
+     | 2.2.2.1 | 18593 | 2.2.2.2  | 1  | 2.2.2.2 | 1218510848 | r1:tunnel1  |
+     | 2.2.2.1 | 18593 | 2.2.2.3  | 2  | 2.2.2.3 | 1218510849 | r1:tunnel1  |
+     | 2.2.2.3 | 21566 | ::       | 0  | 2.2.2.1 | 2066515514 | r3:tunnel1  |
      |_________|_______|__________|____|_________|____________|_____________|
     r1#
     r1#
@@ -466,14 +466,14 @@
     r1#
     r1#show ipv6 rsvp v1 sum
     r1#show ipv6 rsvp v1 sum
-     |~~~~~~~~~|~~~~~~~|~~~~~~~~~~|~~~~|~~~~~~~~~|~~~~~~~~~~~~|~~~~~~~~~~~~~|
-     | source  | id    | subgroup | id | target  | id         | description |
-     |---------|-------|----------|----|---------|------------|-------------|
-     | 4321::2 | 12001 | ::       | 0  | 4321::1 | 301905321  | r2:tunnel2  |
-     | 4321::1 | 14434 | 4321::2  | 1  | 4321::2 | 945946624  | r1:tunnel2  |
-     | 4321::1 | 14434 | 4321::3  | 2  | 4321::3 | 945946625  | r1:tunnel2  |
-     | 4321::3 | 15484 | ::       | 0  | 4321::1 | 2000963083 | r3:tunnel2  |
-     |_________|_______|__________|____|_________|____________|_____________|
+     |~~~~~~~~~|~~~~~~|~~~~~~~~~~|~~~~|~~~~~~~~~|~~~~~~~~~~~|~~~~~~~~~~~~~|
+     | source  | id   | subgroup | id | target  | id        | description |
+     |---------|------|----------|----|---------|-----------|-------------|
+     | 4321::2 | 1282 | ::       | 0  | 4321::1 | 179834191 | r2:tunnel2  |
+     | 4321::3 | 3757 | ::       | 0  | 4321::1 | 127162031 | r3:tunnel2  |
+     | 4321::1 | 6454 | 4321::2  | 1  | 4321::2 | 422969344 | r1:tunnel2  |
+     | 4321::1 | 6454 | 4321::3  | 2  | 4321::3 | 422969345 | r1:tunnel2  |
+     |_________|______|__________|____|_________|___________|_____________|
     r1#
     r1#
     ```

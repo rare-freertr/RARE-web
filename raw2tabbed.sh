@@ -25,7 +25,7 @@ qos=0
 rout=0
 serv=0
 
-RAW_FOLDER=rawtest
+RAW_FOLDER=raw
 RAW_FILES=$(ls -1 $RAW_FOLDER)
 PROGRAM_NAME="$(basename "$(test -L "$0" && readlink "$0" || echo "$0")")"
 

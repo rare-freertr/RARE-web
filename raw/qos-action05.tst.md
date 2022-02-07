@@ -14,7 +14,7 @@
     hostname r1
     buggy
     !
-    logging file debug ../binTmp/zzz1r1-log.run
+    logging file debug ../binTmp/zzz39r1-log.run
     !
     vrf definition tester
      exit
@@ -74,7 +74,7 @@
     hostname r2
     buggy
     !
-    logging file debug ../binTmp/zzz1r2-log.run
+    logging file debug ../binTmp/zzz39r2-log.run
     !
     policy-map p1
      sequence 10 action police
@@ -146,7 +146,7 @@
     description=
       childs=0, queues=0/128, interval=100, bytes/interval=1024
       match=tx=0(0) rx=42014(418) drp=0(0)
-      transmit=tx=38444(383) rx=42014(418) drp=0(0)
+      transmit=tx=38342(382) rx=42014(418) drp=0(0)
     r2#
     r2#
     ```

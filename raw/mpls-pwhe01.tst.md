@@ -14,7 +14,7 @@
     hostname r1
     buggy
     !
-    logging file debug ../binTmp/zzz1r1-log.run
+    logging file debug ../binTmp/zzz89r1-log.run
     !
     vrf definition tester
      exit
@@ -95,7 +95,7 @@
     hostname r2
     buggy
     !
-    logging file debug ../binTmp/zzz1r2-log.run
+    logging file debug ../binTmp/zzz89r2-log.run
     !
     vrf definition tester
      exit
@@ -178,20 +178,20 @@
     r1#
     r1#show inter virt1 full
     r1#show inter virt1 full
-    virtualppp1 is up (since 00:00:00, 3 changes)
+    virtualppp1 is up (since 00:00:02, 3 changes)
      description:
      type is virtualppp, hwaddr=none, mtu=1396, bw=4000kbps, vrf=v1
-     ip4 address=3.3.3.1/24, netmask=255.255.255.0, ifcid=342379925
+     ip4 address=3.3.3.1/24, netmask=255.255.255.0, ifcid=758803050
      received 10 packets (660 bytes) dropped 0 packets (0 bytes)
      transmitted 10 packets (660 bytes) promisc=false macsec=false
-     |~~~~~~~|~~~~|~~~~|~~~~~~|~~~~|~~~~|~~~~~~|
-     |       | packet         | byte           |
-     | time  | tx | rx | drop | tx | rx | drop |
-     |-------|----|----|------|----|----|------|
-     | 1sec  | 0  | 0  | 0    | 0  | 0  | 0    |
-     | 1min  | 0  | 0  | 0    | 0  | 0  | 0    |
-     | 1hour | 0  | 0  | 0    | 0  | 0  | 0    |
-     |_______|____|____|______|____|____|______|
+     |~~~~~~~|~~~~|~~~~|~~~~~~|~~~~~|~~~~~|~~~~~~|
+     |       | packet         | byte             |
+     | time  | tx | rx | drop | tx  | rx  | drop |
+     |-------|----|----|------|-----|-----|------|
+     | 1sec  | 10 | 10 | 0    | 660 | 660 | 0    |
+     | 1min  | 0  | 0  | 0    | 0   | 0   | 0    |
+     | 1hour | 0  | 0  | 0    | 0   | 0   | 0    |
+     |_______|____|____|______|_____|_____|______|
      |~~~~~~~~|~~~~~~~|~~~~~~~~~|~~~~|~~~~|~~~~~~|~~~~~|~~~~~|~~~~~~|
      |                          | packet         | byte             |
      | type   | value | handler | tx | rx | drop | tx  | rx  | drop |
@@ -234,17 +234,17 @@
      | 6     | 0   | 0   | 0    | 0   | 0   | 0    |
      | 7     | 0   | 0   | 0    | 0   | 0   | 0    |
      |_______|_____|_____|______|_____|_____|______|
-               1|
-               0|
-               0|
-               0|
-               0|
-               0|
-               0|
-               0|
-               0|
-               0|
-               0|
+             10k|
+            9504|#
+            8448|#
+            7392|#
+            6336|#
+            5280|#
+            4224|#
+            3168|#
+            2112|#
+            1056|#
+               0|#
              bps|0---------10--------20--------30--------40--------50-------- seconds
                1|
                0|

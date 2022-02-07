@@ -14,7 +14,7 @@
     hostname r1
     buggy
     !
-    logging file debug ../binTmp/zzz1r1-log.run
+    logging file debug ../binTmp/zzz34r1-log.run
     !
     vrf definition tester
      exit
@@ -87,7 +87,7 @@
     hostname r2
     buggy
     !
-    logging file debug ../binTmp/zzz1r2-log.run
+    logging file debug ../binTmp/zzz34r2-log.run
     !
     vrf definition tester
      exit
@@ -162,21 +162,21 @@
     r1#
     r1#show inter tun1 full
     r1#show inter tun1 full
-    tunnel1 is up (since 00:00:02, 13 changes)
+    tunnel1 is up (since 00:00:01, 13 changes)
      description:
      type is udpgre, hwaddr=none, mtu=1400, bw=8000kbps, vrf=v1
-     ip4 address=2.2.2.1/24, netmask=255.255.255.0, ifcid=960943485
-     ip6 address=4321::1/16, netmask=ffff::, ifcid=474910092
+     ip4 address=2.2.2.1/24, netmask=255.255.255.0, ifcid=600408887
+     ip6 address=4321::1/16, netmask=ffff::, ifcid=280142847
      received 20 packets (1320 bytes) dropped 0 packets (0 bytes)
      transmitted 23 packets (1550 bytes) promisc=false macsec=false
-     |~~~~~~~|~~~~|~~~~|~~~~~~|~~~~~|~~~~~|~~~~~~|
-     |       | packet         | byte             |
-     | time  | tx | rx | drop | tx  | rx  | drop |
-     |-------|----|----|------|-----|-----|------|
-     | 1sec  | 10 | 10 | 0    | 660 | 660 | 0    |
-     | 1min  | 0  | 0  | 0    | 0   | 0   | 0    |
-     | 1hour | 0  | 0  | 0    | 0   | 0   | 0    |
-     |_______|____|____|______|_____|_____|______|
+     |~~~~~~~|~~~~|~~~~|~~~~~~|~~~~~~|~~~~~~|~~~~~~|
+     |       | packet         | byte               |
+     | time  | tx | rx | drop | tx   | rx   | drop |
+     |-------|----|----|------|------|------|------|
+     | 1sec  | 23 | 20 | 0    | 1550 | 1320 | 0    |
+     | 1min  | 0  | 0  | 0    | 0    | 0    | 0    |
+     | 1hour | 0  | 0  | 0    | 0    | 0    | 0    |
+     |_______|____|____|______|______|______|______|
      |~~~~~~~~|~~~~~~~|~~~~~~~~~|~~~~|~~~~|~~~~~~|~~~~~|~~~~~|~~~~~~|
      |                          | packet         | byte             |
      | type   | value | handler | tx | rx | drop | tx  | rx  | drop |
@@ -221,17 +221,17 @@
      | 6     | 0   | 0   | 0    | 0    | 0    | 0    |
      | 7     | 0   | 0   | 0    | 0    | 0    | 0    |
      |_______|_____|_____|______|______|______|______|
-             10k|
-            9504|#
-            8448|#
-            7392|#
-            6336|#
-            5280|#
-            4224|#
-            3168|#
-            2112|#
-            1056|##
-               0|##
+             22k|
+             20k|#
+             18k|#
+             16k|#
+             13k|#
+             11k|#
+            9184|#
+            6888|#
+            4592|#
+            2296|#
+               0|#
              bps|0---------10--------20--------30--------40--------50-------- seconds
                1|
                0|

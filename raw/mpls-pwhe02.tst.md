@@ -14,7 +14,7 @@
     hostname r1
     buggy
     !
-    logging file debug ../binTmp/zzz1r1-log.run
+    logging file debug ../binTmp/zzz99r1-log.run
     !
     vrf definition tester
      exit
@@ -44,7 +44,7 @@
     interface pwether1
      no description
      mtu 1500
-     macaddr 0003.1d43.2173
+     macaddr 0001.6f40.0b06
      vrf forwarding v1
      ipv4 address 3.3.3.1 255.255.255.0
      pseudowire v1 loopback0 pckoudp 2.2.2.2 1234
@@ -96,7 +96,7 @@
     hostname r2
     buggy
     !
-    logging file debug ../binTmp/zzz1r2-log.run
+    logging file debug ../binTmp/zzz99r2-log.run
     !
     vrf definition tester
      exit
@@ -126,7 +126,7 @@
     interface pwether1
      no description
      mtu 1500
-     macaddr 006b.4c65.3376
+     macaddr 006a.0c2a.3b68
      vrf forwarding v1
      ipv4 address 3.3.3.2 255.255.255.0
      pseudowire v1 loopback0 pckoudp 2.2.2.1 1234
@@ -182,8 +182,8 @@
     r1#show inter pweth1 full
     pwether1 is up (since 00:00:06, 3 changes)
      description:
-     type is pwether, hwaddr=0003.1d43.2173, mtu=1500, bw=4000kbps, vrf=v1
-     ip4 address=3.3.3.1/24, netmask=255.255.255.0, ifcid=684900770
+     type is pwether, hwaddr=0001.6f40.0b06, mtu=1500, bw=4000kbps, vrf=v1
+     ip4 address=3.3.3.1/24, netmask=255.255.255.0, ifcid=397917535
      received 15 packets (954 bytes) dropped 0 packets (0 bytes)
      transmitted 15 packets (954 bytes) promisc=false macsec=false
      |~~~~~~~|~~~~|~~~~|~~~~~~|~~~~~|~~~~~|~~~~~~|
@@ -286,7 +286,7 @@
      |~~~~~~~~~~~~~~~~|~~~~~~~~~|~~~~~~~~~~|~~~~~~~~|
      | mac            | address | time     | static |
      |----------------|---------|----------|--------|
-     | 006b.4c65.3376 | 3.3.3.2 | 00:00:06 | false  |
+     | 006a.0c2a.3b68 | 3.3.3.2 | 00:00:06 | false  |
      |________________|_________|__________|________|
     r1#
     r1#

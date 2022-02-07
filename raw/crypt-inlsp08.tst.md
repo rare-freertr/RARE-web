@@ -1,4 +1,4 @@
-# Example: inlsp with aes128
+# Example: inlsp with aes128cbc
     
 === "Topology"
     
@@ -14,10 +14,10 @@
     hostname r1
     buggy
     !
-    logging file debug ../binTmp/zzz1r1-log.run
+    logging file debug ../binTmp/zzz77r1-log.run
     !
     crypto ipsec ips
-     cipher aes128
+     cipher aes128cbc
      hash md5
      key $v10$dGVzdGVy
      exit
@@ -95,10 +95,10 @@
     hostname r2
     buggy
     !
-    logging file debug ../binTmp/zzz1r2-log.run
+    logging file debug ../binTmp/zzz77r2-log.run
     !
     crypto ipsec ips
-     cipher aes128
+     cipher aes128cbc
      hash md5
      key $v10$dGVzdGVy
      exit

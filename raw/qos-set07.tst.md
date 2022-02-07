@@ -14,7 +14,7 @@
     hostname r1
     buggy
     !
-    logging file debug ../binTmp/zzz1r1-log.run
+    logging file debug ../binTmp/zzz88r1-log.run
     !
     policy-map p1
      sequence 10 action drop
@@ -85,7 +85,7 @@
     hostname r2
     buggy
     !
-    logging file debug ../binTmp/zzz1r2-log.run
+    logging file debug ../binTmp/zzz88r2-log.run
     !
     policy-map p1
      sequence 10 action transit
@@ -166,7 +166,7 @@
     hostname r3
     buggy
     !
-    logging file debug ../binTmp/zzz1r3-log.run
+    logging file debug ../binTmp/zzz88r3-log.run
     !
     policy-map p1
      sequence 10 action drop

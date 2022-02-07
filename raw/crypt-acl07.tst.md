@@ -14,7 +14,7 @@
     hostname r1
     buggy
     !
-    logging file debug ../binTmp/zzz1r1-log.run
+    logging file debug ../binTmp/zzz17r1-log.run
     !
     access-list test4
      sequence 10 deny all 1.1.1.2 255.255.255.255 all 1.1.1.3 255.255.255.255 all
@@ -105,7 +105,7 @@
     hostname r2
     buggy
     !
-    logging file debug ../binTmp/zzz1r2-log.run
+    logging file debug ../binTmp/zzz17r2-log.run
     !
     vrf definition tester
      exit
@@ -165,7 +165,7 @@
     hostname r3
     buggy
     !
-    logging file debug ../binTmp/zzz1r3-log.run
+    logging file debug ../binTmp/zzz17r3-log.run
     !
     vrf definition tester
      exit

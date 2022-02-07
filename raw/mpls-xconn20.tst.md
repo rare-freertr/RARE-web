@@ -14,7 +14,7 @@
     hostname r1
     buggy
     !
-    logging file debug ../binTmp/zzz1r1-log.run
+    logging file debug ../binTmp/zzz18r1-log.run
     !
     bridge 1
      mac-learn
@@ -307,7 +307,7 @@
     hostname r2
     buggy
     !
-    logging file debug ../binTmp/zzz1r2-log.run
+    logging file debug ../binTmp/zzz18r2-log.run
     !
     bridge 1
      exit
@@ -393,7 +393,7 @@
     hostname r3
     buggy
     !
-    logging file debug ../binTmp/zzz1r3-log.run
+    logging file debug ../binTmp/zzz18r3-log.run
     !
     bridge 1
      exit
@@ -495,7 +495,7 @@
     hostname r4
     buggy
     !
-    logging file debug ../binTmp/zzz1r4-log.run
+    logging file debug ../binTmp/zzz18r4-log.run
     !
     bridge 1
      exit
@@ -579,7 +579,7 @@
     hostname r5
     buggy
     !
-    logging file debug ../binTmp/zzz1r5-log.run
+    logging file debug ../binTmp/zzz18r5-log.run
     !
     bridge 1
      exit
@@ -661,7 +661,7 @@
     hostname r6
     buggy
     !
-    logging file debug ../binTmp/zzz1r6-log.run
+    logging file debug ../binTmp/zzz18r6-log.run
     !
     bridge 1
      exit
@@ -743,7 +743,7 @@
     hostname r7
     buggy
     !
-    logging file debug ../binTmp/zzz1r7-log.run
+    logging file debug ../binTmp/zzz18r7-log.run
     !
     bridge 1
      exit
@@ -827,7 +827,7 @@
     hostname r8
     buggy
     !
-    logging file debug ../binTmp/zzz1r8-log.run
+    logging file debug ../binTmp/zzz18r8-log.run
     !
     bridge 1
      exit
@@ -911,7 +911,7 @@
     hostname r9
     buggy
     !
-    logging file debug ../binTmp/zzz1r9-log.run
+    logging file debug ../binTmp/zzz18r9-log.run
     !
     bridge 1
      exit
@@ -995,7 +995,7 @@
     hostname r10
     buggy
     !
-    logging file debug ../binTmp/zzz1r10-log.run
+    logging file debug ../binTmp/zzz18r10-log.run
     !
     bridge 1
      exit
@@ -1079,7 +1079,7 @@
     hostname r11
     buggy
     !
-    logging file debug ../binTmp/zzz1r11-log.run
+    logging file debug ../binTmp/zzz18r11-log.run
     !
     bridge 1
      exit
@@ -1163,7 +1163,7 @@
     hostname r12
     buggy
     !
-    logging file debug ../binTmp/zzz1r12-log.run
+    logging file debug ../binTmp/zzz18r12-log.run
     !
     bridge 1
      exit
@@ -1246,7 +1246,7 @@
     hostname r13
     buggy
     !
-    logging file debug ../binTmp/zzz1r13-log.run
+    logging file debug ../binTmp/zzz18r13-log.run
     !
     bridge 1
      exit

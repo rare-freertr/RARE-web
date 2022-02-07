@@ -14,7 +14,7 @@
     hostname r1
     buggy
     !
-    logging file debug ../binTmp/zzz1r1-log.run
+    logging file debug ../binTmp/zzz89r1-log.run
     !
     vrf definition tester
      exit
@@ -115,7 +115,7 @@
     hostname r2
     buggy
     !
-    logging file debug ../binTmp/zzz1r2-log.run
+    logging file debug ../binTmp/zzz89r2-log.run
     !
     vrf definition tester
      exit
@@ -204,7 +204,7 @@
     hostname r3
     buggy
     !
-    logging file debug ../binTmp/zzz1r3-log.run
+    logging file debug ../binTmp/zzz89r3-log.run
     !
     vrf definition tester
      exit
@@ -310,14 +310,14 @@
      |~~~~~~~~|~~~~~~~~~~|~~~~~~~~~~~|~~~~~~~~~~~|~~~~~~~~~~~~|~~~~~~~~~|~~~~~~~|
      | label  | vrf      | iface     | hop       | label      | targets | bytes |
      |--------|----------|-----------|-----------|------------|---------|-------|
-     | 3632   | v1:4     | ethernet1 | 1.1.1.2   | 874378     |         | 0     |
-     | 238752 | tester:6 | null      | null      | unlabelled | local   | 0     |
-     | 569456 | v1:6     | ethernet1 | 1234:1::2 | 871013     |         | 0     |
-     | 589465 | v1:6     | null      | null      | unlabelled | local   | 1920  |
-     | 621254 | v1:4     | null      | null      | unlabelled | local   | 1536  |
-     | 640351 | v1:6     | ethernet1 | 1234:1::2 | 24779      |         | 0     |
-     | 724213 | tester:4 | null      | null      | unlabelled | local   | 0     |
-     | 823055 | v1:4     | ethernet1 | 1.1.1.2   | 269240     |         | 0     |
+     | 258055 | tester:6 | null      | null      | unlabelled | local   | 0     |
+     | 495391 | v1:4     | ethernet1 | 1.1.1.2   | 799047     |         | 0     |
+     | 614377 | tester:4 | null      | null      | unlabelled | local   | 0     |
+     | 625654 | v1:4     | null      | null      | unlabelled | local   | 640   |
+     | 628818 | v1:4     | ethernet1 | 1.1.1.2   | 494918     |         | 0     |
+     | 902336 | v1:6     | ethernet1 | 1234:1::2 | 540084     |         | 0     |
+     | 922436 | v1:6     | null      | null      | unlabelled | local   | 640   |
+     | 977932 | v1:6     | ethernet1 | 1234:1::2 | 791185     |         | 0     |
      |________|__________|___________|___________|____________|_________|_______|
     r1#
     r1#
@@ -361,13 +361,13 @@
      |~~~~~~~~~~~~|~~~~~~~~|~~~~~~~~|~~~~~~~~~|
      | prefix     | local  | remote | hop     |
      |------------|--------|--------|---------|
-     | 1.1.1.0/24 | 621254 |        | null    |
-     | 1.1.1.1/32 | 621254 |        | null    |
-     | 2.2.2.1/32 | 621254 |        | null    |
-     | 2.2.2.2/32 | 823055 | 269240 | 1.1.1.2 |
-     | 2.2.2.3/32 | 3632   | 874378 | 1.1.1.2 |
-     | 3.3.3.0/24 | 621254 |        | null    |
-     | 3.3.3.1/32 | 621254 |        | null    |
+     | 1.1.1.0/24 | 625654 |        | null    |
+     | 1.1.1.1/32 | 625654 |        | null    |
+     | 2.2.2.1/32 | 625654 |        | null    |
+     | 2.2.2.2/32 | 495391 | 799047 | 1.1.1.2 |
+     | 2.2.2.3/32 | 628818 | 494918 | 1.1.1.2 |
+     | 3.3.3.0/24 | 625654 |        | null    |
+     | 3.3.3.1/32 | 625654 |        | null    |
      |____________|________|________|_________|
     r1#
     r1#
@@ -381,13 +381,13 @@
      |~~~~~~~~~~~~~~~|~~~~~~~~|~~~~~~~~|~~~~~~~~~~~|
      | prefix        | local  | remote | hop       |
      |---------------|--------|--------|-----------|
-     | 1234:1::/32   | 589465 |        | null      |
-     | 1234:1::1/128 | 589465 |        | null      |
-     | 3333::/32     | 589465 |        | null      |
-     | 3333::1/128   | 589465 |        | null      |
-     | 4321::1/128   | 589465 |        | null      |
-     | 4321::2/128   | 569456 | 871013 | 1234:1::2 |
-     | 4321::3/128   | 640351 | 24779  | 1234:1::2 |
+     | 1234:1::/32   | 922436 |        | null      |
+     | 1234:1::1/128 | 922436 |        | null      |
+     | 3333::/32     | 922436 |        | null      |
+     | 3333::1/128   | 922436 |        | null      |
+     | 4321::1/128   | 922436 |        | null      |
+     | 4321::2/128   | 902336 | 540084 | 1234:1::2 |
+     | 4321::3/128   | 977932 | 791185 | 1234:1::2 |
      |_______________|________|________|___________|
     r1#
     r1#
@@ -398,17 +398,17 @@
     r1#
     r1#show inter tun1 full
     r1#show inter tun1 full
-    tunnel1 is up (since 00:00:14, 13 changes)
+    tunnel1 is up (since 00:00:13, 13 changes)
      description:
      type is p2pldp, hwaddr=none, mtu=1500, bw=8000kbps, vrf=v1
-     ip4 address=3.3.3.1/24, netmask=255.255.255.0, ifcid=110241223
+     ip4 address=3.3.3.1/24, netmask=255.255.255.0, ifcid=554981266
      received 0 packets (0 bytes) dropped 0 packets (0 bytes)
      transmitted 15 packets (990 bytes) promisc=false macsec=false
      |~~~~~~~|~~~~|~~~~|~~~~~~|~~~~~|~~~~|~~~~~~|
      |       | packet         | byte            |
      | time  | tx | rx | drop | tx  | rx | drop |
      |-------|----|----|------|-----|----|------|
-     | 1sec  | 4  | 0  | 0    | 264 | 0  | 0    |
+     | 1sec  | 10 | 0  | 0    | 660 | 0  | 0    |
      | 1min  | 0  | 0  | 0    | 0   | 0  | 0    |
      | 1hour | 0  | 0  | 0    | 0   | 0  | 0    |
      |_______|____|____|______|_____|____|______|
@@ -454,17 +454,17 @@
      | 6     | 0   | 0   | 0    | 0   | 0   | 0    |
      | 7     | 0   | 0   | 0    | 0   | 0   | 0    |
      |_______|_____|_____|______|_____|_____|______|
-            2112|
-            1900|#
-            1689|#
-            1478|#
-            1267|#
+            5280|
+            4752|#
+            4224|#
+            3696|#
+            3168|#
+            2640|#
+            2112|#
+            1584|#
             1056|#
-             844|#
-             633|#
-             422|##
-             211|##
-               0|##
+             528|#
+               0|# #####
              bps|0---------10--------20--------30--------40--------50-------- seconds
                1|
                0|
@@ -499,10 +499,10 @@
     r1#
     r1#show inter tun2 full
     r1#show inter tun2 full
-    tunnel2 is up (since 00:00:14, 13 changes)
+    tunnel2 is up (since 00:00:13, 13 changes)
      description:
      type is p2pldp, hwaddr=none, mtu=1500, bw=8000kbps, vrf=v1
-     ip6 address=3333::1/32, netmask=ffff:ffff::, ifcid=368262853
+     ip6 address=3333::1/32, netmask=ffff:ffff::, ifcid=272816037
      received 0 packets (0 bytes) dropped 0 packets (0 bytes)
      transmitted 13 packets (890 bytes) promisc=false macsec=false
      |~~~~~~~|~~~~|~~~~|~~~~~~|~~~~~|~~~~|~~~~~~|
@@ -562,10 +562,10 @@
             3168|#
             2640|#
             2112|#
-            1584|#            #
-            1056|#            #
-             528|#            #
-               0|#            #
+            1584|#           #
+            1056|#           #
+             528|#           #
+               0|#           #
              bps|0---------10--------20--------30--------40--------50-------- seconds
                1|
                0|

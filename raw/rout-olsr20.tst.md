@@ -14,7 +14,7 @@
     hostname r1
     buggy
     !
-    logging file debug ../binTmp/zzz1r1-log.run
+    logging file debug ../binTmp/zzz61r1-log.run
     !
     vrf definition tester
      exit
@@ -95,7 +95,7 @@
     hostname r2
     buggy
     !
-    logging file debug ../binTmp/zzz1r2-log.run
+    logging file debug ../binTmp/zzz61r2-log.run
     !
     vrf definition tester
      exit
@@ -243,8 +243,8 @@
      |-----|------------|--------|-----------|---------|----------|
      | C   | 1.1.1.0/30 | 0/0    | ethernet1 | null    | 00:02:31 |
      | LOC | 1.1.1.2/32 | 0/1    | ethernet1 | null    | 00:02:31 |
-     | N   | 2.2.2.1/32 | 140/1  | ethernet1 | 1.1.1.1 | 00:00:01 |
-     | C   | 2.2.2.2/32 | 0/0    | loopback0 | null    | 00:02:32 |
+     | N   | 2.2.2.1/32 | 140/1  | ethernet1 | 1.1.1.1 | 00:00:00 |
+     | C   | 2.2.2.2/32 | 0/0    | loopback0 | null    | 00:02:31 |
      |_____|____________|________|___________|_________|__________|
     r2#
     r2#
@@ -261,7 +261,7 @@
      | C   | 1234:1::/32   | 0/0    | ethernet1 | null      | 00:02:31 |
      | LOC | 1234:1::2/128 | 0/1    | ethernet1 | null      | 00:02:31 |
      | N   | 4321::1/128   | 140/1  | ethernet1 | 1234:1::1 | 00:00:01 |
-     | C   | 4321::2/128   | 0/0    | loopback0 | null      | 00:02:32 |
+     | C   | 4321::2/128   | 0/0    | loopback0 | null      | 00:02:31 |
      |_____|_______________|________|___________|___________|__________|
     r2#
     r2#

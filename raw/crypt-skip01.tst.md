@@ -14,7 +14,7 @@
     hostname r1
     buggy
     !
-    logging file debug ../binTmp/zzz1r1-log.run
+    logging file debug ../binTmp/zzz94r1-log.run
     !
     crypto ipsec ips
      cipher des
@@ -95,7 +95,7 @@
     hostname r2
     buggy
     !
-    logging file debug ../binTmp/zzz1r2-log.run
+    logging file debug ../binTmp/zzz94r2-log.run
     !
     crypto ipsec ips
      cipher des
@@ -178,12 +178,12 @@
     r1#
     r1#show inter tun1 full
     r1#show inter tun1 full
-    tunnel1 is up (since 00:00:05, 15 changes)
+    tunnel1 is up (since 00:00:06, 15 changes)
      description:
-     type is skip, hwaddr=0005.780d.2c1c, mtu=1466, bw=2000kbps, vrf=v1
-     ip4 address=2.2.2.1/24, netmask=255.255.255.0, ifcid=269263982
-     ip6 address=4321::1/16, netmask=ffff::, ifcid=427078097
-     received 23 packets (1518 bytes) dropped 0 packets (0 bytes)
+     type is skip, hwaddr=0003.5447.2153, mtu=1466, bw=2000kbps, vrf=v1
+     ip4 address=2.2.2.1/24, netmask=255.255.255.0, ifcid=721769577
+     ip6 address=4321::1/16, netmask=ffff::, ifcid=1007592948
+     received 21 packets (1386 bytes) dropped 0 packets (0 bytes)
      transmitted 28 packets (1904 bytes) promisc=false macsec=false
      |~~~~~~~|~~~~|~~~~|~~~~~~|~~~~~|~~~~~|~~~~~~|
      |       | packet         | byte             |
@@ -198,7 +198,7 @@
      | type   | value | handler | tx | rx | drop | tx  | rx  | drop |
      |--------|-------|---------|----|----|------|-----|-----|------|
      | ethtyp | 0000  | null    | 0  | 0  | 0    | 0   | 0   | 0    |
-     | ethtyp | 0800  | ip4     | 15 | 13 | 0    | 990 | 858 | 0    |
+     | ethtyp | 0800  | ip4     | 15 | 11 | 0    | 990 | 726 | 0    |
      | ethtyp | 86dd  | ip6     | 13 | 10 | 0    | 914 | 660 | 0    |
      |________|_______|_________|____|____|______|_____|_____|______|
      |~~~~~|~~~~|~~~~|
@@ -215,7 +215,7 @@
      |            | packet         | byte               |
      | size       | tx | rx | drop | tx   | rx   | drop |
      |------------|----|----|------|------|------|------|
-     | 0-255      | 28 | 23 | 0    | 1904 | 1518 | 0    |
+     | 0-255      | 28 | 21 | 0    | 1904 | 1386 | 0    |
      | 256-511    | 0  | 0  | 0    | 0    | 0    | 0    |
      | 512-767    | 0  | 0  | 0    | 0    | 0    | 0    |
      | 768-1023   | 0  | 0  | 0    | 0    | 0    | 0    |
@@ -246,8 +246,8 @@
             6336|#
             4752|#
             3168|#
-            1584|##  #
-               0|#####
+            1584|#    #
+               0|######
              bps|0---------10--------20--------30--------40--------50-------- seconds
                1|
                0|

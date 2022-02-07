@@ -1,0 +1,24 @@
+{
+    "nodes": [
+        {
+            "id": 0,
+            "name": "R1"
+        },
+        {
+            "id": 1,
+            "name": "R2"
+        }
+    ],
+    "links": [
+        {
+            "id": "R1 -- R2",
+            "source": "R1",
+            "target": "R2",
+            "midlabel": "1.1.1.0/24 - 1234::/16",
+            "taillabel": "infini1[1]",
+            "headlabel": "infini1[2]",
+            "tailtooltip": "1.1.1.1 - 1234::1",
+            "headtooltip": "1.1.1.2 - 1234::2"
+        }
+    ]
+}

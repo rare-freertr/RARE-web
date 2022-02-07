@@ -14,7 +14,7 @@
     hostname r1
     buggy
     !
-    logging file debug ../binTmp/zzz1r1-log.run
+    logging file debug ../binTmp/zzz2r1-log.run
     !
     access-list test4
      sequence 10 deny 1 any all any all
@@ -103,7 +103,7 @@
     hostname r2
     buggy
     !
-    logging file debug ../binTmp/zzz1r2-log.run
+    logging file debug ../binTmp/zzz2r2-log.run
     !
     access-list test4
      sequence 10 deny 1 any all any all
@@ -197,12 +197,12 @@
      |~~~~~~~~|~~~~~~~~~~|~~~~~~~~~~~|~~~~~~~~~|~~~~~~~~~~~~|~~~~~~~~~|~~~~~~~|
      | label  | vrf      | iface     | hop     | label      | targets | bytes |
      |--------|----------|-----------|---------|------------|---------|-------|
-     | 125121 | tester:6 | null      | null    | unlabelled | local   | 0     |
-     | 168612 | tester:4 | null      | null    | unlabelled | local   | 0     |
-     | 539775 | v1:4     | null      | null    | unlabelled | local   | 832   |
-     | 617069 | v1:6     | null      | null    | unlabelled | local   | 768   |
-     | 657344 | v1:4     | ethernet1 | 1.1.1.2 | 404711     |         | 0     |
-     | 884471 | v1:6     | ethernet1 | 1234::2 | 567681     |         | 0     |
+     | 206636 | v1:4     | null      | null    | unlabelled | local   | 896   |
+     | 411024 | v1:6     | null      | null    | unlabelled | local   | 640   |
+     | 448118 | tester:4 | null      | null    | unlabelled | local   | 0     |
+     | 587125 | v1:4     | ethernet1 | 1.1.1.2 | 601014     |         | 0     |
+     | 792761 | tester:6 | null      | null    | unlabelled | local   | 0     |
+     | 953386 | v1:6     | ethernet1 | 1234::2 | 690562     |         | 0     |
      |________|__________|___________|_________|____________|_________|_______|
     r1#
     r1#
@@ -246,10 +246,10 @@
      |~~~~~~~~~~~~|~~~~~~~~|~~~~~~~~|~~~~~~~~~|
      | prefix     | local  | remote | hop     |
      |------------|--------|--------|---------|
-     | 1.1.1.0/24 | 539775 |        | null    |
-     | 1.1.1.1/32 | 539775 |        | null    |
-     | 2.2.2.1/32 | 539775 |        | null    |
-     | 2.2.2.2/32 | 657344 | 404711 | 1.1.1.2 |
+     | 1.1.1.0/24 | 206636 |        | null    |
+     | 1.1.1.1/32 | 206636 |        | null    |
+     | 2.2.2.1/32 | 206636 |        | null    |
+     | 2.2.2.2/32 | 587125 | 601014 | 1.1.1.2 |
      |____________|________|________|_________|
     r1#
     r1#
@@ -263,10 +263,10 @@
      |~~~~~~~~~~~~~|~~~~~~~~|~~~~~~~~|~~~~~~~~~|
      | prefix      | local  | remote | hop     |
      |-------------|--------|--------|---------|
-     | 1234::/16   | 617069 |        | null    |
-     | 1234::1/128 | 617069 |        | null    |
-     | 4321::1/128 | 617069 |        | null    |
-     | 4321::2/128 | 884471 | 567681 | 1234::2 |
+     | 1234::/16   | 411024 |        | null    |
+     | 1234::1/128 | 411024 |        | null    |
+     | 4321::1/128 | 411024 |        | null    |
+     | 4321::2/128 | 953386 | 690562 | 1234::2 |
      |_____________|________|________|_________|
     r1#
     r1#

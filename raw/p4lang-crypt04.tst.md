@@ -1,4 +1,4 @@
-# Example: p4lang: macsec with aes192
+# Example: p4lang: macsec with aes192cbc
     
 === "Topology"
     
@@ -12,7 +12,7 @@
     **r1:**
     ```
     hostname r1
-    logging file debug ../binTmp/zzz1r1-log.run
+    logging file debug ../binTmp/zzz19r1-log.run
     vrf definition tester
      exit
     server telnet tester
@@ -58,7 +58,7 @@
      exit
     crypto ipsec ips
      group 02
-     cipher aes192
+     cipher aes192cbc
      hash md5
      key tester
      replay 0

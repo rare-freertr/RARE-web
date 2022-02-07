@@ -14,7 +14,7 @@
     hostname r1
     buggy
     !
-    logging file debug ../binTmp/zzz1r1-log.run
+    logging file debug ../binTmp/zzz5r1-log.run
     !
     vrf definition tester
      exit
@@ -87,7 +87,7 @@
     hostname r2
     buggy
     !
-    logging file debug ../binTmp/zzz1r2-log.run
+    logging file debug ../binTmp/zzz5r2-log.run
     !
     route-map rm1
      sequence 10 action permit
@@ -176,7 +176,7 @@
     hostname r3
     buggy
     !
-    logging file debug ../binTmp/zzz1r3-log.run
+    logging file debug ../binTmp/zzz5r3-log.run
     !
     vrf definition tester
      exit
@@ -278,8 +278,8 @@
      | 1234:1::2/128 | 0    | 0    | 00:00:08 |
      | 1234:2::/32   | 0    | 0    | 00:00:08 |
      | 1234:2::2/128 | 0    | 0    | 00:00:08 |
-     | 4321::1/128   | 20   | 1280 | 00:00:08 |
-     | 4321::2/128   | 20   | 1280 | 00:00:08 |
+     | 4321::1/128   | 25   | 1600 | 00:00:08 |
+     | 4321::2/128   | 25   | 1600 | 00:00:08 |
      | 4321::3/128   | 20   | 1280 | 00:00:08 |
      |_______________|______|______|__________|
     r2#

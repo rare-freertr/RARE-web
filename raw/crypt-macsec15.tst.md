@@ -1,4 +1,4 @@
-# Example: macsec with aes256
+# Example: macsec with aes256cbc
     
 === "Topology"
     
@@ -14,11 +14,11 @@
     hostname r1
     buggy
     !
-    logging file debug ../binTmp/zzz1r1-log.run
+    logging file debug ../binTmp/zzz67r1-log.run
     !
     crypto ipsec ips
      group 02
-     cipher aes256
+     cipher aes256cbc
      hash md5
      key $v10$dGVzdGVy
      exit
@@ -82,11 +82,11 @@
     hostname r2
     buggy
     !
-    logging file debug ../binTmp/zzz1r2-log.run
+    logging file debug ../binTmp/zzz67r2-log.run
     !
     crypto ipsec ips
      group 02
-     cipher aes256
+     cipher aes256cbc
      hash md5
      key $v10$dGVzdGVy
      exit

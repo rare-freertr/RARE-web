@@ -14,7 +14,7 @@
     hostname r1
     buggy
     !
-    logging file debug ../binTmp/zzz1r1-log.run
+    logging file debug ../binTmp/zzz42r1-log.run
     !
     vrf definition tester
      exit
@@ -87,7 +87,7 @@
     hostname r2
     buggy
     !
-    logging file debug ../binTmp/zzz1r2-log.run
+    logging file debug ../binTmp/zzz42r2-log.run
     !
     vrf definition tester
      exit
@@ -162,28 +162,28 @@
     r1#
     r1#show inter tun1 full
     r1#show inter tun1 full
-    tunnel1 is up (since 00:00:02, 13 changes)
+    tunnel1 is up (since 00:00:01, 13 changes)
      description:
      type is tmux, hwaddr=none, mtu=1476, bw=100mbps, vrf=v1
-     ip4 address=2.2.2.1/24, netmask=255.255.255.0, ifcid=885817496
-     ip6 address=4321::1/16, netmask=ffff::, ifcid=1034031505
-     received 20 packets (1320 bytes) dropped 0 packets (0 bytes)
+     ip4 address=2.2.2.1/24, netmask=255.255.255.0, ifcid=1036713302
+     ip6 address=4321::1/16, netmask=ffff::, ifcid=1050281665
+     received 23 packets (1550 bytes) dropped 0 packets (0 bytes)
      transmitted 23 packets (1550 bytes) promisc=false macsec=false
-     |~~~~~~~|~~~~|~~~~|~~~~~~|~~~~~|~~~~~|~~~~~~|
-     |       | packet         | byte             |
-     | time  | tx | rx | drop | tx  | rx  | drop |
-     |-------|----|----|------|-----|-----|------|
-     | 1sec  | 5  | 5  | 0    | 330 | 330 | 0    |
-     | 1min  | 0  | 0  | 0    | 0   | 0   | 0    |
-     | 1hour | 0  | 0  | 0    | 0   | 0   | 0    |
-     |_______|____|____|______|_____|_____|______|
+     |~~~~~~~|~~~~|~~~~|~~~~~~|~~~~~~|~~~~~~|~~~~~~|
+     |       | packet         | byte               |
+     | time  | tx | rx | drop | tx   | rx   | drop |
+     |-------|----|----|------|------|------|------|
+     | 1sec  | 23 | 23 | 0    | 1550 | 1550 | 0    |
+     | 1min  | 0  | 0  | 0    | 0    | 0    | 0    |
+     | 1hour | 0  | 0  | 0    | 0    | 0    | 0    |
+     |_______|____|____|______|______|______|______|
      |~~~~~~~~|~~~~~~~|~~~~~~~~~|~~~~|~~~~|~~~~~~|~~~~~|~~~~~|~~~~~~|
      |                          | packet         | byte             |
      | type   | value | handler | tx | rx | drop | tx  | rx  | drop |
      |--------|-------|---------|----|----|------|-----|-----|------|
      | ethtyp | 0000  | null    | 0  | 0  | 0    | 0   | 0   | 0    |
      | ethtyp | 0800  | ip4     | 10 | 10 | 0    | 660 | 660 | 0    |
-     | ethtyp | 86dd  | ip6     | 13 | 10 | 0    | 890 | 660 | 0    |
+     | ethtyp | 86dd  | ip6     | 13 | 13 | 0    | 890 | 890 | 0    |
      |________|_______|_________|____|____|______|_____|_____|______|
      |~~~~~|~~~~|~~~~|
      | who | tx | rx |
@@ -199,7 +199,7 @@
      |            | packet         | byte               |
      | size       | tx | rx | drop | tx   | rx   | drop |
      |------------|----|----|------|------|------|------|
-     | 0-255      | 23 | 20 | 0    | 1550 | 1320 | 0    |
+     | 0-255      | 23 | 23 | 0    | 1550 | 1550 | 0    |
      | 256-511    | 0  | 0  | 0    | 0    | 0    | 0    |
      | 512-767    | 0  | 0  | 0    | 0    | 0    | 0    |
      | 768-1023   | 0  | 0  | 0    | 0    | 0    | 0    |
@@ -221,17 +221,17 @@
      | 6     | 0   | 0   | 0    | 0    | 0    | 0    |
      | 7     | 0   | 0   | 0    | 0    | 0    | 0    |
      |_______|_____|_____|______|______|______|______|
-            5280|
-            4752|#
-            4224|#
-            3696|#
-            3168|#
-            2640|#
-            2112|#
-            1584|##
-            1056|##
-             528|##
-               0|##
+             24k|
+             22k|#
+             19k|#
+             17k|#
+             14k|#
+             12k|#
+            9920|#
+            7440|#
+            4960|#
+            2480|#
+               0|#
              bps|0---------10--------20--------30--------40--------50-------- seconds
                1|
                0|

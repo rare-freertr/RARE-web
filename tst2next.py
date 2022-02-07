@@ -456,12 +456,12 @@ def tst2next(tst_path):
 # rout
 # serv
 
-#tst_dir_path = '/home/floui/nextcloud/all-tests/tst/conn/'
-#tst_dir_path = '/home/floui/nextcloud/all-tests/tst/crypt/'
-#tst_dir_path = '/home/floui/nextcloud/all-tests/tst/mpls/'
-#tst_dir_path = '/home/floui/nextcloud/all-tests/tst/qos/'
-#tst_dir_path = '/home/floui/nextcloud/all-tests/tst/rout/'
-#tst_dir_path = '/home/floui/nextcloud/all-tests/tst/serv/'
+#tst_dir_path = 'tst/conn/'
+#tst_dir_path = 'tst/crypt/'
+#tst_dir_path = 'tst/mpls/'
+#tst_dir_path = 'tst/qos/'
+#tst_dir_path = 'tst/rout/'
+tst_dir_path = 'tst/serv/'
 for tst in get_tst_list(tst_dir_path):
     print('--------------------------------------------------------------------')
     print(tst)

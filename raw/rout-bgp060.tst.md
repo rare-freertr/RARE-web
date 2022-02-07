@@ -14,7 +14,7 @@
     hostname r1
     buggy
     !
-    logging file debug ../binTmp/zzz1r1-log.run
+    logging file debug ../binTmp/zzz10r1-log.run
     !
     route-map rm1
      sequence 10 action permit
@@ -146,7 +146,7 @@
     hostname r2
     buggy
     !
-    logging file debug ../binTmp/zzz1r2-log.run
+    logging file debug ../binTmp/zzz10r2-log.run
     !
     route-map rm1
      sequence 10 action permit
@@ -288,7 +288,7 @@
      |~~~~~~~~~~~|~~~~|~~~~~~~|~~~~~~~|~~~~~~|~~~~~~~~~~|
      | neighbor  | as | ready | learn | sent | uptime   |
      |-----------|----|-------|-------|------|----------|
-     | 1234:1::2 | 2  | true  | 3     | 4    | 00:00:05 |
+     | 1234:1::2 | 2  | true  | 3     | 4    | 00:00:04 |
      | 1234:2::2 | 2  | true  | 3     | 4    | 00:00:06 |
      |___________|____|_______|_______|______|__________|
     r1#
@@ -318,7 +318,7 @@
      |~~~~~~~~~~~|~~~~|~~~~~~~|~~~~~~~~~~|~~~~~|~~~~~~~~~~|
      | neighbor  | as | reach | chg      | num | uptime   |
      |-----------|----|-------|----------|-----|----------|
-     | 1234:1::2 | 2  | true  | 00:00:07 | 1   | 00:00:05 |
+     | 1234:1::2 | 2  | true  | 00:00:07 | 1   | 00:00:04 |
      | 1234:2::2 | 2  | true  | 00:00:07 | 1   | 00:00:06 |
      |___________|____|_______|__________|_____|__________|
     r1#

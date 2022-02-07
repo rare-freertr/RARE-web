@@ -1,4 +1,4 @@
-site_name: RARE/freeRtr
+site_name: RARE/freeRtr documentation
 site_dir: ../frederic-loui.github.io/
 nav:
   - Home: index.md

@@ -1,4 +1,4 @@
-# Example: p4lang: ipsec with aes128
+# Example: p4lang: ipsec with aes128cbc
     
 === "Topology"
     
@@ -12,7 +12,7 @@
     **r1:**
     ```
     hostname r1
-    logging file debug ../binTmp/zzz1r1-log.run
+    logging file debug ../binTmp/zzz15r1-log.run
     vrf definition tester
      exit
     server telnet tester
@@ -59,7 +59,7 @@
      exit
     crypto ipsec ips
      group 02
-     cipher aes128
+     cipher aes128cbc
      hash md5
      seconds 3600
      bytes 1024000

@@ -14,7 +14,7 @@
     hostname r1
     buggy
     !
-    logging file debug ../binTmp/zzz1r1-log.run
+    logging file debug ../binTmp/zzz35r1-log.run
     !
     vrf definition tester
      exit
@@ -48,7 +48,7 @@
     interface pwether1
      no description
      mtu 1500
-     macaddr 0050.7a0f.0157
+     macaddr 000b.7206.4e76
      vrf forwarding v1
      ipv4 address 3.3.3.1 255.255.255.0
      pseudowire v1 loopback0 pweompls 2.2.2.6 1234
@@ -59,7 +59,7 @@
     interface pwether2
      no description
      mtu 1500
-     macaddr 007c.1951.1c47
+     macaddr 0028.4501.5b52
      vrf forwarding v1
      ipv4 address 3.3.4.1 255.255.255.0
      pseudowire v1 loopback0 pweompls 4321::6 1234
@@ -141,7 +141,7 @@
     hostname r2
     buggy
     !
-    logging file debug ../binTmp/zzz1r2-log.run
+    logging file debug ../binTmp/zzz35r2-log.run
     !
     vrf definition tester
      exit
@@ -230,7 +230,7 @@
     hostname r3
     buggy
     !
-    logging file debug ../binTmp/zzz1r3-log.run
+    logging file debug ../binTmp/zzz35r3-log.run
     !
     vrf definition tester
      exit
@@ -361,7 +361,7 @@
     hostname r4
     buggy
     !
-    logging file debug ../binTmp/zzz1r4-log.run
+    logging file debug ../binTmp/zzz35r4-log.run
     !
     vrf definition tester
      exit
@@ -492,7 +492,7 @@
     hostname r5
     buggy
     !
-    logging file debug ../binTmp/zzz1r5-log.run
+    logging file debug ../binTmp/zzz35r5-log.run
     !
     vrf definition tester
      exit
@@ -581,7 +581,7 @@
     hostname r6
     buggy
     !
-    logging file debug ../binTmp/zzz1r6-log.run
+    logging file debug ../binTmp/zzz35r6-log.run
     !
     vrf definition tester
      exit
@@ -615,7 +615,7 @@
     interface pwether1
      no description
      mtu 1500
-     macaddr 0036.3e79.7d65
+     macaddr 006a.4d7d.617a
      vrf forwarding v1
      ipv4 address 3.3.3.2 255.255.255.0
      pseudowire v1 loopback0 pweompls 2.2.2.1 1234
@@ -626,7 +626,7 @@
     interface pwether2
      no description
      mtu 1500
-     macaddr 004d.6b5d.141d
+     macaddr 003a.3179.7054
      vrf forwarding v1
      ipv4 address 3.3.4.2 255.255.255.0
      pseudowire v1 loopback0 pweompls 4321::1 1234

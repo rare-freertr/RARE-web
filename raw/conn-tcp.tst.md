@@ -14,7 +14,7 @@
     hostname r1
     buggy
     !
-    logging file debug ../binTmp/zzz1r1-log.run
+    logging file debug ../binTmp/zzz90r1-log.run
     !
     aaa userlist usr
      username c
@@ -108,7 +108,7 @@
     hostname r2
     buggy
     !
-    logging file debug ../binTmp/zzz1r2-log.run
+    logging file debug ../binTmp/zzz90r2-log.run
     !
     chat-script login
      sequence 10 recv 5000 .*ser
@@ -212,14 +212,14 @@
     dialer1 is up (since 00:00:00, 3 changes)
      description:
      type is dialer, hwaddr=none, mtu=1500, bw=128kbps, vrf=v1
-     ip4 address=2.2.2.122/25, netmask=255.255.255.128, ifcid=342179257
+     ip4 address=2.2.2.237/25, netmask=255.255.255.128, ifcid=494461879
      received 10 packets (660 bytes) dropped 0 packets (0 bytes)
      transmitted 10 packets (660 bytes) promisc=false macsec=false
      |~~~~~~~|~~~~|~~~~|~~~~~~|~~~~~|~~~~~|~~~~~~|
      |       | packet         | byte             |
      | time  | tx | rx | drop | tx  | rx  | drop |
      |-------|----|----|------|-----|-----|------|
-     | 1sec  | 5  | 5  | 0    | 330 | 330 | 0    |
+     | 1sec  | 10 | 10 | 0    | 660 | 660 | 0    |
      | 1min  | 0  | 0  | 0    | 0   | 0   | 0    |
      | 1hour | 0  | 0  | 0    | 0   | 0   | 0    |
      |_______|____|____|______|_____|_____|______|
@@ -265,16 +265,16 @@
      | 6     | 0   | 0   | 0    | 0   | 0   | 0    |
      | 7     | 0   | 0   | 0    | 0   | 0   | 0    |
      |_______|_____|_____|______|_____|_____|______|
-            5280|
-            4752|#
+             10k|
+            9504|#
+            8448|#
+            7392|#
+            6336|#
+            5280|#
             4224|#
-            3696|#
             3168|#
-            2640|#
             2112|#
-            1584|#
             1056|#
-             528|#
                0|#
              bps|0---------10--------20--------30--------40--------50-------- seconds
                1|

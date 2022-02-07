@@ -2,3 +2,4 @@ site/
 *.tar.gz
 __pycache__/
 .DS_Store
+tst/

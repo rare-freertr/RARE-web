@@ -14,7 +14,7 @@
     hostname r1
     buggy
     !
-    logging file debug ../binTmp/zzz1r1-log.run
+    logging file debug ../binTmp/zzz61r1-log.run
     !
     access-list test4
      sequence 10 deny 1 any all any all
@@ -115,7 +115,7 @@
     hostname r2
     buggy
     !
-    logging file debug ../binTmp/zzz1r2-log.run
+    logging file debug ../binTmp/zzz61r2-log.run
     !
     access-list test4
      sequence 10 deny 1 any all any all
@@ -209,55 +209,4 @@
     !
     !
     end
-    ```
-    
-=== "Verification"
-    
-    ```
-    r1#
-    r1#
-    r1#show mpls forw
-    r1#show mpls forw
-     |~~~~~~~~~|~~~~~~~~~~|~~~~~~~|~~~~~~|~~~~~~~~~~~~|~~~~~~~~~|~~~~~~~|
-     | label   | vrf      | iface | hop  | label      | targets | bytes |
-     |---------|----------|-------|------|------------|---------|-------|
-     | 493782  | tester:4 | null  | null | unlabelled | local   | 0     |
-     | 708913  | tester:6 | null  | null | unlabelled | local   | 0     |
-     | 786577  | v1:4     | null  | null | unlabelled | local   | 0     |
-     | 803165  | v1:4     | null  | null | unlabelled | local   | 704   |
-     | 995601  | v1:6     | null  | null | unlabelled | local   | 640   |
-     | 1047121 | v1:6     | null  | null | unlabelled | local   | 0     |
-     |_________|__________|_______|______|____________|_________|_______|
-    r1#
-    r1#
-    ```
-    
-    ```
-    r1#
-    r1#
-    r1#show ipv4 rsvp v1 sum
-    r1#show ipv4 rsvp v1 sum
-     |~~~~~~~~~|~~~~~~~|~~~~~~~~~~|~~~~|~~~~~~~~~|~~~~~~~~~~~~|~~~~~~~~~~~~~|
-     | source  | id    | subgroup | id | target  | id         | description |
-     |---------|-------|----------|----|---------|------------|-------------|
-     | 1.1.1.2 | 23705 | ::       | 0  | 1.1.1.1 | 1643259325 | r2:tunnel1  |
-     | 1.1.1.1 | 25653 | ::       | 0  | 1.1.1.2 | 214255587  | r1:tunnel1  |
-     |_________|_______|__________|____|_________|____________|_____________|
-    r1#
-    r1#
-    ```
-    
-    ```
-    r1#
-    r1#
-    r1#show ipv6 rsvp v1 sum
-    r1#show ipv6 rsvp v1 sum
-     |~~~~~~~~~|~~~~~~~|~~~~~~~~~~|~~~~|~~~~~~~~~|~~~~~~~~~~~|~~~~~~~~~~~~~|
-     | source  | id    | subgroup | id | target  | id        | description |
-     |---------|-------|----------|----|---------|-----------|-------------|
-     | 1234::2 | 16597 | ::       | 0  | 1234::1 | 62583601  | r2:tunnel2  |
-     | 1234::1 | 28263 | ::       | 0  | 1234::2 | 403966682 | r1:tunnel2  |
-     |_________|_______|__________|____|_________|___________|_____________|
-    r1#
-    r1#
     ```

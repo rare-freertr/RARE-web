@@ -14,7 +14,7 @@
     hostname r1
     buggy
     !
-    logging file debug ../binTmp/zzz1r1-log.run
+    logging file debug ../binTmp/zzz58r1-log.run
     !
     bridge 1
      rd 1:1
@@ -123,11 +123,11 @@
      neighbor 1.1.1.4 pmsitun
      neighbor 1.1.1.4 send-community standard extended
      afi-evpn 101 bridge-group 1
-     afi-evpn 101 bmac 004e.105e.1453
+     afi-evpn 101 bmac 0020.6f26.3d3f
      afi-evpn 101 encapsulation cmac
      afi-evpn 101 update-source loopback0
      afi-evpn 102 bridge-group 3
-     afi-evpn 102 bmac 005f.4f2f.0e5a
+     afi-evpn 102 bmac 002f.223e.1809
      afi-evpn 102 encapsulation cmac
      afi-evpn 102 update-source loopback0
      exit
@@ -146,11 +146,11 @@
      neighbor 1234:1::4 pmsitun
      neighbor 1234:1::4 send-community standard extended
      afi-evpn 101 bridge-group 2
-     afi-evpn 101 bmac 0069.4336.531f
+     afi-evpn 101 bmac 0002.7466.2f53
      afi-evpn 101 encapsulation cmac
      afi-evpn 101 update-source loopback0
      afi-evpn 102 bridge-group 4
-     afi-evpn 102 bmac 0044.2458.4d29
+     afi-evpn 102 bmac 0002.5753.793e
      afi-evpn 102 encapsulation cmac
      afi-evpn 102 update-source loopback0
      exit
@@ -201,7 +201,7 @@
     hostname r2
     buggy
     !
-    logging file debug ../binTmp/zzz1r2-log.run
+    logging file debug ../binTmp/zzz58r2-log.run
     !
     bridge 1
      rd 1:1
@@ -310,11 +310,11 @@
      neighbor 1.1.1.4 pmsitun
      neighbor 1.1.1.4 send-community standard extended
      afi-evpn 101 bridge-group 1
-     afi-evpn 101 bmac 006e.585c.307a
+     afi-evpn 101 bmac 0044.570b.717b
      afi-evpn 101 encapsulation cmac
      afi-evpn 101 update-source loopback0
      afi-evpn 102 bridge-group 3
-     afi-evpn 102 bmac 0034.6413.3a5c
+     afi-evpn 102 bmac 007c.2947.6b42
      afi-evpn 102 encapsulation cmac
      afi-evpn 102 update-source loopback0
      exit
@@ -333,11 +333,11 @@
      neighbor 1234:1::4 pmsitun
      neighbor 1234:1::4 send-community standard extended
      afi-evpn 101 bridge-group 2
-     afi-evpn 101 bmac 0029.333b.6361
+     afi-evpn 101 bmac 005f.5b30.6135
      afi-evpn 101 encapsulation cmac
      afi-evpn 101 update-source loopback0
      afi-evpn 102 bridge-group 4
-     afi-evpn 102 bmac 0005.1676.077c
+     afi-evpn 102 bmac 0025.4b5b.7216
      afi-evpn 102 encapsulation cmac
      afi-evpn 102 update-source loopback0
      exit
@@ -388,7 +388,7 @@
     hostname r3
     buggy
     !
-    logging file debug ../binTmp/zzz1r3-log.run
+    logging file debug ../binTmp/zzz58r3-log.run
     !
     bridge 1
      rd 1:1
@@ -497,11 +497,11 @@
      neighbor 1.1.1.4 pmsitun
      neighbor 1.1.1.4 send-community standard extended
      afi-evpn 101 bridge-group 1
-     afi-evpn 101 bmac 0028.4575.6b1e
+     afi-evpn 101 bmac 0039.5510.7605
      afi-evpn 101 encapsulation cmac
      afi-evpn 101 update-source loopback0
      afi-evpn 102 bridge-group 3
-     afi-evpn 102 bmac 003d.2900.111c
+     afi-evpn 102 bmac 004d.7a74.3772
      afi-evpn 102 encapsulation cmac
      afi-evpn 102 update-source loopback0
      exit
@@ -520,11 +520,11 @@
      neighbor 1234:1::4 pmsitun
      neighbor 1234:1::4 send-community standard extended
      afi-evpn 101 bridge-group 2
-     afi-evpn 101 bmac 0050.415d.2231
+     afi-evpn 101 bmac 0014.5644.2270
      afi-evpn 101 encapsulation cmac
      afi-evpn 101 update-source loopback0
      afi-evpn 102 bridge-group 4
-     afi-evpn 102 bmac 003d.4b6a.7473
+     afi-evpn 102 bmac 004d.6237.4d30
      afi-evpn 102 encapsulation cmac
      afi-evpn 102 update-source loopback0
      exit
@@ -575,7 +575,7 @@
     hostname r4
     buggy
     !
-    logging file debug ../binTmp/zzz1r4-log.run
+    logging file debug ../binTmp/zzz58r4-log.run
     !
     bridge 1
      mac-learn

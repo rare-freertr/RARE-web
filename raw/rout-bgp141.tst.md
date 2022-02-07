@@ -14,7 +14,7 @@
     hostname r1
     buggy
     !
-    logging file debug ../binTmp/zzz1r1-log.run
+    logging file debug ../binTmp/zzz82r1-log.run
     !
     bridge 1
      rd 1:1
@@ -111,7 +111,7 @@
      neighbor 2.2.2.2 pmsitun
      neighbor 2.2.2.2 send-community standard extended
      afi-evpn 101 bridge-group 1
-     afi-evpn 101 bmac 005b.1458.3e6d
+     afi-evpn 101 bmac 007a.635c.2068
      afi-evpn 101 encapsulation pbb
      afi-evpn 101 update-source loopback0
      exit
@@ -130,7 +130,7 @@
      neighbor 4321::2 pmsitun
      neighbor 4321::2 send-community standard extended
      afi-evpn 101 bridge-group 2
-     afi-evpn 101 bmac 002a.1379.282f
+     afi-evpn 101 bmac 0065.7c20.2c45
      afi-evpn 101 encapsulation pbb
      afi-evpn 101 update-source loopback0
      exit
@@ -179,7 +179,7 @@
     hostname r2
     buggy
     !
-    logging file debug ../binTmp/zzz1r2-log.run
+    logging file debug ../binTmp/zzz82r2-log.run
     !
     bridge 1
      rd 1:1
@@ -276,7 +276,7 @@
      neighbor 2.2.2.1 pmsitun
      neighbor 2.2.2.1 send-community standard extended
      afi-evpn 101 bridge-group 1
-     afi-evpn 101 bmac 0072.5027.2156
+     afi-evpn 101 bmac 0057.3125.3014
      afi-evpn 101 encapsulation pbb
      afi-evpn 101 update-source loopback0
      exit
@@ -295,7 +295,7 @@
      neighbor 4321::1 pmsitun
      neighbor 4321::1 send-community standard extended
      afi-evpn 101 bridge-group 2
-     afi-evpn 101 bmac 0049.297c.5e70
+     afi-evpn 101 bmac 0007.352d.163c
      afi-evpn 101 encapsulation pbb
      afi-evpn 101 update-source loopback0
      exit
@@ -344,7 +344,7 @@
     hostname r3
     buggy
     !
-    logging file debug ../binTmp/zzz1r3-log.run
+    logging file debug ../binTmp/zzz82r3-log.run
     !
     vrf definition tester
      exit
@@ -419,7 +419,7 @@
     hostname r4
     buggy
     !
-    logging file debug ../binTmp/zzz1r4-log.run
+    logging file debug ../binTmp/zzz82r4-log.run
     !
     vrf definition tester
      exit

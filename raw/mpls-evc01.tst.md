@@ -14,7 +14,7 @@
     hostname r1
     buggy
     !
-    logging file debug ../binTmp/zzz1r1-log.run
+    logging file debug ../binTmp/zzz64r1-log.run
     !
     vrf definition tester
      exit
@@ -98,7 +98,7 @@
     hostname r2
     buggy
     !
-    logging file debug ../binTmp/zzz1r2-log.run
+    logging file debug ../binTmp/zzz64r2-log.run
     !
     bridge 1
      exit
@@ -196,7 +196,7 @@
     r2#
     r2#show inter eth1 full
     r2#show inter eth1 full
-    ethernet1 is promisc, up (since 00:00:11, 3 changes)
+    ethernet1 is promisc, up (since 00:00:09, 3 changes)
      description:
      type is ethernet, hwaddr=0000.0000.2222, mtu=1500, bw=100mbps
      received 84 packets (5946 bytes) dropped 0 packets (0 bytes)
@@ -205,7 +205,7 @@
      |       | packet         | byte               |
      | time  | tx | rx | drop | tx   | rx   | drop |
      |-------|----|----|------|------|------|------|
-     | 1sec  | 35 | 35 | 0    | 2450 | 2450 | 0    |
+     | 1sec  | 30 | 30 | 0    | 2100 | 2100 | 0    |
      | 1min  | 0  | 0  | 0    | 0    | 0    | 0    |
      | 1hour | 0  | 0  | 0    | 0    | 0    | 0    |
      |_______|____|____|______|______|______|______|
@@ -253,17 +253,17 @@
      | 6     | 0   | 0   | 0    | 0    | 0    | 0    |
      | 7     | 0   | 0   | 0    | 0    | 0    | 0    |
      |_______|_____|_____|______|______|______|______|
-             39k|
-             35k|#
-             31k|#
-             27k|#
+             33k|
+             30k|#
+             26k|#
              23k|#
-             19k|#
-             15k|#
-             11k|#
-            7840|# #  #
-            3920|#### ## ###
-               0|###########
+             20k|#
+             16k|#
+             13k|#
+             10k|# #    #
+            6720|# #    #
+            3360|########
+               0|########
              bps|0---------10--------20--------30--------40--------50-------- seconds
                1|
                0|

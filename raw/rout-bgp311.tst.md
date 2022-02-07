@@ -14,7 +14,7 @@
     hostname r1
     buggy
     !
-    logging file debug ../binTmp/zzz1r1-log.run
+    logging file debug ../binTmp/zzz64r1-log.run
     !
     route-policy rm1
      sequence 10 pass
@@ -145,7 +145,7 @@
     hostname r2
     buggy
     !
-    logging file debug ../binTmp/zzz1r2-log.run
+    logging file debug ../binTmp/zzz64r2-log.run
     !
     route-policy rm1
      sequence 10 pass

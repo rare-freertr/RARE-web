@@ -14,7 +14,7 @@
     hostname r1
     buggy
     !
-    logging file debug ../binTmp/zzz1r1-log.run
+    logging file debug ../binTmp/zzz63r1-log.run
     !
     vrf definition tester
      exit
@@ -98,7 +98,7 @@
     hostname r2
     buggy
     !
-    logging file debug ../binTmp/zzz1r2-log.run
+    logging file debug ../binTmp/zzz63r2-log.run
     !
     vrf definition tester
      exit
@@ -165,7 +165,7 @@
     hostname r3
     buggy
     !
-    logging file debug ../binTmp/zzz1r3-log.run
+    logging file debug ../binTmp/zzz63r3-log.run
     !
     vrf definition tester
      exit
@@ -186,7 +186,7 @@
     interface pwether1
      no description
      mtu 1500
-     macaddr 0052.6127.3628
+     macaddr 001b.2b16.647a
      pseudowire v1 ethernet1 vxlan 2.2.2.1 123
      no shutdown
      no log-link-change

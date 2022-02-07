@@ -14,7 +14,7 @@
     hostname r1
     buggy
     !
-    logging file debug ../binTmp/zzz1r1-log.run
+    logging file debug ../binTmp/zzz92r1-log.run
     !
     vrf definition tester
      exit
@@ -98,7 +98,7 @@
     hostname r2
     buggy
     !
-    logging file debug ../binTmp/zzz1r2-log.run
+    logging file debug ../binTmp/zzz92r2-log.run
     !
     vrf definition tester
      exit
@@ -165,7 +165,7 @@
     hostname r3
     buggy
     !
-    logging file debug ../binTmp/zzz1r3-log.run
+    logging file debug ../binTmp/zzz92r3-log.run
     !
     bridge 1
      exit
@@ -222,7 +222,7 @@
     interface pwether1
      no description
      mtu 1500
-     macaddr 0078.3536.4a74
+     macaddr 0067.2610.2168
      service-instance 11 bridge-group 1
      service-instance 12 bridge-group 2
      service-instance 13 bridge-group 3

@@ -14,7 +14,7 @@
     hostname r1
     buggy
     !
-    logging file debug ../binTmp/zzz1r1-log.run
+    logging file debug ../binTmp/zzz56r1-log.run
     !
     hairpin 1
      exit
@@ -107,16 +107,16 @@
     r1#show inter ha11 full
     hairpin11 is up (since 00:00:03, 3 changes)
      description:
-     type is hairpin, hwaddr=0052.366d.5f31, mtu=1500, bw=100mbps, vrf=v1
-     ip4 address=1.1.1.1/24, netmask=255.255.255.0, ifcid=750980772
-     ip6 address=1234::1/16, netmask=ffff::, ifcid=825521795
+     type is hairpin, hwaddr=0000.290b.577e, mtu=1500, bw=100mbps, vrf=v1
+     ip4 address=1.1.1.1/24, netmask=255.255.255.0, ifcid=973815860
+     ip6 address=1234::1/16, netmask=ffff::, ifcid=781878860
      received 28 packets (1868 bytes) dropped 0 packets (0 bytes)
      transmitted 28 packets (1868 bytes) promisc=false macsec=false
      |~~~~~~~|~~~~|~~~~|~~~~~~|~~~~~|~~~~~|~~~~~~|
      |       | packet         | byte             |
      | time  | tx | rx | drop | tx  | rx  | drop |
      |-------|----|----|------|-----|-----|------|
-     | 1sec  | 4  | 4  | 0    | 264 | 264 | 0    |
+     | 1sec  | 5  | 5  | 0    | 330 | 330 | 0    |
      | 1min  | 0  | 0  | 0    | 0   | 0   | 0    |
      | 1hour | 0  | 0  | 0    | 0   | 0   | 0    |
      |_______|____|____|______|_____|_____|______|
@@ -166,16 +166,16 @@
      | 6     | 0   | 0   | 0    | 0    | 0    | 0    |
      | 7     | 0   | 0   | 0    | 0    | 0    | 0    |
      |_______|_____|_____|______|______|______|______|
-            4224|
-            3801|# #
-            3379|# #
-            2956|# #
-            2534|# #
-            2112|# #
-            1689|# #
-            1267|# #
-             844|# #
-             422|###
+            5280|
+            4752|#
+            4224|# #
+            3696|###
+            3168|###
+            2640|###
+            2112|###
+            1584|###
+            1056|###
+             528|###
                0|###
              bps|0---------10--------20--------30--------40--------50-------- seconds
                1|

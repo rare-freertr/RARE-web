@@ -14,11 +14,11 @@
     hostname r1
     buggy
     !
-    logging file debug ../binTmp/zzz1r1-log.run
+    logging file debug ../binTmp/zzz24r1-log.run
     !
     crypto ipsec ips
      group 02
-     cipher aes256
+     cipher aes256cbc
      hash sha1
      key $v10$dGVzdGVy
      exit
@@ -108,11 +108,11 @@
     hostname r2
     buggy
     !
-    logging file debug ../binTmp/zzz1r2-log.run
+    logging file debug ../binTmp/zzz24r2-log.run
     !
     crypto ipsec ips
      group 02
-     cipher aes256
+     cipher aes256cbc
      hash sha1
      key $v10$dGVzdGVy
      exit
