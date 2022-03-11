@@ -14,7 +14,7 @@
     hostname r1
     buggy
     !
-    logging file debug ../binTmp/zzz59r1-log.run
+    logging file debug ../binTmp/zzz79r1-log.run
     !
     vrf definition tester
      exit
@@ -57,6 +57,7 @@
      vrf v1
      local-as 1
      router-id 4.4.4.1
+     no safe-ebgp
      address-family olab
      neighbor 1.1.1.2 remote-as 1
      no neighbor 1.1.1.2 description
@@ -75,6 +76,7 @@
      vrf v1
      local-as 1
      router-id 6.6.6.1
+     no safe-ebgp
      address-family olab
      neighbor 1234::2 remote-as 1
      no neighbor 1234::2 description
@@ -132,7 +134,7 @@
     hostname r2
     buggy
     !
-    logging file debug ../binTmp/zzz59r2-log.run
+    logging file debug ../binTmp/zzz79r2-log.run
     !
     vrf definition tester
      exit
@@ -175,6 +177,7 @@
      vrf v1
      local-as 1
      router-id 4.4.4.2
+     no safe-ebgp
      address-family olab
      neighbor 1.1.1.1 remote-as 1
      no neighbor 1.1.1.1 description
@@ -193,6 +196,7 @@
      vrf v1
      local-as 1
      router-id 6.6.6.2
+     no safe-ebgp
      address-family olab
      neighbor 1234::1 remote-as 1
      no neighbor 1234::1 description

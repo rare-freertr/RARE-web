@@ -14,7 +14,7 @@
     hostname r1
     buggy
     !
-    logging file debug ../binTmp/zzz16r1-log.run
+    logging file debug ../binTmp/zzz52r1-log.run
     !
     bridge 1
      mac-learn
@@ -99,7 +99,7 @@
     hostname r2
     buggy
     !
-    logging file debug ../binTmp/zzz16r2-log.run
+    logging file debug ../binTmp/zzz52r2-log.run
     !
     vrf definition tester
      exit
@@ -161,7 +161,7 @@
     hostname r3
     buggy
     !
-    logging file debug ../binTmp/zzz16r3-log.run
+    logging file debug ../binTmp/zzz52r3-log.run
     !
     vrf definition tester
      exit
@@ -195,7 +195,7 @@
     interface pwether1
      no description
      mtu 1500
-     macaddr 0031.6124.1169
+     macaddr 0020.6126.402f
      vrf forwarding v1
      pseudowire v1 ethernet1 erspan 1.1.1.1 123
      no shutdown

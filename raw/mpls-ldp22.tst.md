@@ -14,7 +14,7 @@
     hostname r1
     buggy
     !
-    logging file debug ../binTmp/zzz68r1-log.run
+    logging file debug ../binTmp/zzz2r1-log.run
     !
     access-list test4
      sequence 10 deny 1 any all any all
@@ -107,7 +107,7 @@
     hostname r2
     buggy
     !
-    logging file debug ../binTmp/zzz68r2-log.run
+    logging file debug ../binTmp/zzz2r2-log.run
     !
     access-list test4
      sequence 10 deny 1 any all any all

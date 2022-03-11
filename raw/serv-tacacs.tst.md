@@ -14,7 +14,7 @@
     hostname r1
     buggy
     !
-    logging file debug ../binTmp/zzz25r1-log.run
+    logging file debug ../binTmp/zzz21r1-log.run
     !
     aaa tacacs tac
      secret $v10$dGVzdGVy
@@ -99,7 +99,7 @@
     hostname r2
     buggy
     !
-    logging file debug ../binTmp/zzz25r2-log.run
+    logging file debug ../binTmp/zzz21r2-log.run
     !
     aaa userlist usr
      username c

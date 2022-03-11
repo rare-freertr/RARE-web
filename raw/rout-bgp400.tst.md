@@ -14,7 +14,7 @@
     hostname r1
     buggy
     !
-    logging file debug ../binTmp/zzz60r1-log.run
+    logging file debug ../binTmp/zzz99r1-log.run
     !
     access-list test4
      sequence 10 deny 1 any all any all
@@ -58,7 +58,7 @@
     interface pwether1
      no description
      mtu 1500
-     macaddr 004a.3072.4914
+     macaddr 0050.5f0b.4e4c
      vrf forwarding v1
      ipv4 address 3.3.3.1 255.255.255.0
      pseudowire v1 loopback0 pweompls 2.2.2.3 1234
@@ -69,7 +69,7 @@
     interface pwether2
      no description
      mtu 1500
-     macaddr 0053.5476.5507
+     macaddr 0079.3957.2504
      vrf forwarding v1
      ipv4 address 3.3.4.1 255.255.255.0
      pseudowire v1 loopback0 pweompls 4321::3 1234
@@ -81,6 +81,7 @@
      vrf v1
      local-as 1
      router-id 4.4.4.1
+     no safe-ebgp
      address-family labeled
      neighbor 1.1.1.2 remote-as 2
      no neighbor 1.1.1.2 description
@@ -95,6 +96,7 @@
      vrf v1
      local-as 1
      router-id 6.6.6.1
+     no safe-ebgp
      address-family labeled
      neighbor 1234:1::2 remote-as 2
      no neighbor 1234:1::2 description
@@ -147,7 +149,7 @@
     hostname r2
     buggy
     !
-    logging file debug ../binTmp/zzz60r2-log.run
+    logging file debug ../binTmp/zzz99r2-log.run
     !
     access-list test4
      sequence 10 deny 1 any all any all
@@ -204,6 +206,7 @@
      vrf v1
      local-as 2
      router-id 4.4.4.2
+     no safe-ebgp
      address-family labeled
      neighbor 1.1.1.1 remote-as 1
      no neighbor 1.1.1.1 description
@@ -224,6 +227,7 @@
      vrf v1
      local-as 2
      router-id 6.6.6.2
+     no safe-ebgp
      address-family labeled
      neighbor 1234:1::1 remote-as 1
      no neighbor 1234:1::1 description
@@ -282,7 +286,7 @@
     hostname r3
     buggy
     !
-    logging file debug ../binTmp/zzz60r3-log.run
+    logging file debug ../binTmp/zzz99r3-log.run
     !
     access-list test4
      sequence 10 deny 1 any all any all
@@ -326,7 +330,7 @@
     interface pwether1
      no description
      mtu 1500
-     macaddr 0008.054d.6c7d
+     macaddr 0049.013e.4958
      vrf forwarding v1
      ipv4 address 3.3.3.2 255.255.255.0
      pseudowire v1 loopback0 pweompls 2.2.2.1 1234
@@ -337,7 +341,7 @@
     interface pwether2
      no description
      mtu 1500
-     macaddr 0038.6574.687e
+     macaddr 0002.2031.7b70
      vrf forwarding v1
      ipv4 address 3.3.4.2 255.255.255.0
      pseudowire v1 loopback0 pweompls 4321::1 1234
@@ -349,6 +353,7 @@
      vrf v1
      local-as 3
      router-id 4.4.4.3
+     no safe-ebgp
      address-family labeled
      neighbor 1.1.1.5 remote-as 2
      no neighbor 1.1.1.5 description
@@ -363,6 +368,7 @@
      vrf v1
      local-as 3
      router-id 6.6.6.3
+     no safe-ebgp
      address-family labeled
      neighbor 1234:2::1 remote-as 2
      no neighbor 1234:2::1 description

@@ -14,7 +14,7 @@
     hostname r1
     buggy
     !
-    logging file debug ../binTmp/zzz56r1-log.run
+    logging file debug ../binTmp/zzz2r1-log.run
     !
     bridge 1
      exit
@@ -98,7 +98,7 @@
     hostname r2
     buggy
     !
-    logging file debug ../binTmp/zzz56r2-log.run
+    logging file debug ../binTmp/zzz2r2-log.run
     !
     bridge 1
      exit

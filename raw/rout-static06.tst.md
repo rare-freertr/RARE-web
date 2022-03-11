@@ -14,7 +14,7 @@
     hostname r1
     buggy
     !
-    logging file debug ../binTmp/zzz31r1-log.run
+    logging file debug ../binTmp/zzz8r1-log.run
     !
     access-list test4
      sequence 10 deny 1 any all any all
@@ -98,7 +98,7 @@
     hostname r2
     buggy
     !
-    logging file debug ../binTmp/zzz31r2-log.run
+    logging file debug ../binTmp/zzz8r2-log.run
     !
     access-list test4
      sequence 10 deny 1 any all any all
@@ -196,7 +196,7 @@
     hostname r3
     buggy
     !
-    logging file debug ../binTmp/zzz31r3-log.run
+    logging file debug ../binTmp/zzz8r3-log.run
     !
     access-list test4
      sequence 10 deny 1 any all any all
@@ -285,13 +285,13 @@
      |~~~~~|~~~~~~~~~~~~~~|~~~~~~~~|~~~~~~~~~~~|~~~~~~~~~|~~~~~~~~~~|
      | typ | prefix       | metric | iface     | hop     | time     |
      |-----|--------------|--------|-----------|---------|----------|
-     | C   | 1.1.1.0/30   | 0/0    | ethernet1 | null    | 00:00:10 |
-     | LOC | 1.1.1.2/32   | 0/1    | ethernet1 | null    | 00:00:10 |
-     | C   | 1.1.1.4/30   | 0/0    | ethernet2 | null    | 00:00:10 |
-     | LOC | 1.1.1.6/32   | 0/1    | ethernet2 | null    | 00:00:10 |
-     | S   | 2.2.2.101/32 | 1/0    | ethernet1 | 1.1.1.1 | 00:00:10 |
-     | S   | 2.2.2.201/32 | 1/0    | ethernet2 | 1.1.1.5 | 00:00:10 |
-     | C   | 2.2.2.222/32 | 0/0    | loopback0 | null    | 00:00:10 |
+     | C   | 1.1.1.0/30   | 0/0    | ethernet1 | null    | 00:00:12 |
+     | LOC | 1.1.1.2/32   | 0/1    | ethernet1 | null    | 00:00:12 |
+     | C   | 1.1.1.4/30   | 0/0    | ethernet2 | null    | 00:00:11 |
+     | LOC | 1.1.1.6/32   | 0/1    | ethernet2 | null    | 00:00:11 |
+     | S   | 2.2.2.101/32 | 1/0    | ethernet1 | 1.1.1.1 | 00:00:11 |
+     | S   | 2.2.2.201/32 | 1/0    | ethernet2 | 1.1.1.5 | 00:00:11 |
+     | C   | 2.2.2.222/32 | 0/0    | loopback0 | null    | 00:00:12 |
      |_____|______________|________|___________|_________|__________|
     r2#
     r2#
@@ -305,13 +305,13 @@
      |~~~~~|~~~~~~~~~~~~~~~|~~~~~~~~|~~~~~~~~~~~|~~~~~~~~~~~|~~~~~~~~~~|
      | typ | prefix        | metric | iface     | hop       | time     |
      |-----|---------------|--------|-----------|-----------|----------|
-     | C   | 1234:1::/32   | 0/0    | ethernet1 | null      | 00:00:10 |
-     | LOC | 1234:1::2/128 | 0/1    | ethernet1 | null      | 00:00:10 |
-     | C   | 1234:2::/32   | 0/0    | ethernet2 | null      | 00:00:10 |
-     | LOC | 1234:2::2/128 | 0/1    | ethernet2 | null      | 00:00:10 |
-     | S   | 4321::101/128 | 1/0    | ethernet1 | 1234:1::1 | 00:00:10 |
-     | S   | 4321::201/128 | 1/0    | ethernet2 | 1234:2::1 | 00:00:10 |
-     | C   | 4321::222/128 | 0/0    | loopback0 | null      | 00:00:10 |
+     | C   | 1234:1::/32   | 0/0    | ethernet1 | null      | 00:00:12 |
+     | LOC | 1234:1::2/128 | 0/1    | ethernet1 | null      | 00:00:12 |
+     | C   | 1234:2::/32   | 0/0    | ethernet2 | null      | 00:00:11 |
+     | LOC | 1234:2::2/128 | 0/1    | ethernet2 | null      | 00:00:11 |
+     | S   | 4321::101/128 | 1/0    | ethernet1 | 1234:1::1 | 00:00:11 |
+     | S   | 4321::201/128 | 1/0    | ethernet2 | 1234:2::1 | 00:00:11 |
+     | C   | 4321::222/128 | 0/0    | loopback0 | null      | 00:00:12 |
      |_____|_______________|________|___________|___________|__________|
     r2#
     r2#

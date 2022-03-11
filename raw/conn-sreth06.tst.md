@@ -14,7 +14,7 @@
     hostname r1
     buggy
     !
-    logging file debug ../binTmp/zzz39r1-log.run
+    logging file debug ../binTmp/zzz71r1-log.run
     !
     vrf definition tester
      exit
@@ -76,7 +76,7 @@
     hostname r2
     buggy
     !
-    logging file debug ../binTmp/zzz39r2-log.run
+    logging file debug ../binTmp/zzz71r2-log.run
     !
     vrf definition tester
      exit
@@ -145,7 +145,7 @@
     hostname r3
     buggy
     !
-    logging file debug ../binTmp/zzz39r3-log.run
+    logging file debug ../binTmp/zzz71r3-log.run
     !
     vrf definition tester
      exit
@@ -214,7 +214,7 @@
     hostname r4
     buggy
     !
-    logging file debug ../binTmp/zzz39r4-log.run
+    logging file debug ../binTmp/zzz71r4-log.run
     !
     vrf definition tester
      exit

@@ -1,4 +1,4 @@
-# Example: ingress source port matching hibryd access list
+# Example: ingress source port matching hybrid access list
     
 === "Topology"
     
@@ -14,7 +14,7 @@
     hostname r1
     buggy
     !
-    logging file debug ../binTmp/zzz17r1-log.run
+    logging file debug ../binTmp/zzz50r1-log.run
     !
     object-group port test
      sequence 10 123
@@ -142,7 +142,7 @@
     hostname r2
     buggy
     !
-    logging file debug ../binTmp/zzz17r2-log.run
+    logging file debug ../binTmp/zzz50r2-log.run
     !
     vrf definition tester
      exit

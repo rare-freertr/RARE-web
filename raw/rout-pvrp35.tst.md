@@ -14,7 +14,7 @@
     hostname r1
     buggy
     !
-    logging file debug ../binTmp/zzz21r1-log.run
+    logging file debug ../binTmp/zzz30r1-log.run
     !
     access-list test4
      sequence 10 deny 1 any all any all
@@ -113,7 +113,7 @@
     hostname r2
     buggy
     !
-    logging file debug ../binTmp/zzz21r2-log.run
+    logging file debug ../binTmp/zzz30r2-log.run
     !
     access-list test4
      sequence 10 deny 1 any all any all
@@ -275,11 +275,11 @@
      |~~~~~~|~~~~~~~~~~~~|~~~~~~~~|~~~~~~~~~~~|~~~~~~~~~|~~~~~~~~~~|
      | typ  | prefix     | metric | iface     | hop     | time     |
      |------|------------|--------|-----------|---------|----------|
-     | C    | 1.1.1.0/24 | 1/0    | ethernet1 | null    | 00:00:11 |
-     | null | 2.2.2.1/32 | 80/10  | ethernet1 | 1.1.1.1 | 00:00:11 |
-     | C    | 2.2.2.2/32 | 2/0    | loopback0 | null    | 00:00:22 |
-     | C    | 2.2.2.3/32 | 2/0    | loopback1 | null    | 00:00:22 |
-     | C    | 2.2.2.4/32 | 2/0    | loopback2 | null    | 00:00:22 |
+     | C    | 1.1.1.0/24 | 1/0    | ethernet1 | null    | 00:00:12 |
+     | null | 2.2.2.1/32 | 80/10  | ethernet1 | 1.1.1.1 | 00:00:12 |
+     | C    | 2.2.2.2/32 | 2/0    | loopback0 | null    | 00:00:23 |
+     | C    | 2.2.2.3/32 | 2/0    | loopback1 | null    | 00:00:23 |
+     | C    | 2.2.2.4/32 | 2/0    | loopback2 | null    | 00:00:23 |
      |______|____________|________|___________|_________|__________|
     r2#
     r2#
@@ -293,11 +293,11 @@
      |~~~~~~|~~~~~~~~~~~~~|~~~~~~~~|~~~~~~~~~~~|~~~~~~~~~|~~~~~~~~~~|
      | typ  | prefix      | metric | iface     | hop     | time     |
      |------|-------------|--------|-----------|---------|----------|
-     | C    | 1234::/16   | 1/0    | ethernet1 | null    | 00:00:13 |
-     | null | 4321::1/128 | 80/10  | ethernet1 | 1234::1 | 00:00:13 |
-     | C    | 4321::2/128 | 2/0    | loopback0 | null    | 00:00:22 |
-     | C    | 4321::3/128 | 2/0    | loopback1 | null    | 00:00:22 |
-     | C    | 4321::4/128 | 2/0    | loopback2 | null    | 00:00:22 |
+     | C    | 1234::/16   | 1/0    | ethernet1 | null    | 00:00:11 |
+     | null | 4321::1/128 | 80/10  | ethernet1 | 1234::1 | 00:00:11 |
+     | C    | 4321::2/128 | 2/0    | loopback0 | null    | 00:00:23 |
+     | C    | 4321::3/128 | 2/0    | loopback1 | null    | 00:00:23 |
+     | C    | 4321::4/128 | 2/0    | loopback2 | null    | 00:00:23 |
      |______|_____________|________|___________|_________|__________|
     r2#
     r2#
@@ -332,7 +332,7 @@
      |------|-------------|--------|-----------|---------|----------|
      | C    | 1234::/16   | 0/0    | ethernet1 | null    | 00:00:23 |
      | LOC  | 1234::2/128 | 0/1    | ethernet1 | null    | 00:00:23 |
-     | P EX | 4321::1/128 | 80/10  | ethernet1 | 1234::1 | 00:00:13 |
+     | P EX | 4321::1/128 | 80/10  | ethernet1 | 1234::1 | 00:00:12 |
      | C    | 4321::2/128 | 0/0    | loopback0 | null    | 00:00:23 |
      | C    | 4321::3/128 | 0/0    | loopback1 | null    | 00:00:23 |
      | C    | 4321::4/128 | 0/0    | loopback2 | null    | 00:00:23 |

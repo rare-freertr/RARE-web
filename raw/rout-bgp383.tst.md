@@ -14,7 +14,7 @@
     hostname r1
     buggy
     !
-    logging file debug ../binTmp/zzz43r1-log.run
+    logging file debug ../binTmp/zzz98r1-log.run
     !
     bridge 1
      rd 1:1
@@ -113,6 +113,7 @@
      vrf v1
      local-as 1
      router-id 4.4.4.1
+     no safe-ebgp
      address-family evpn
      neighbor 2.2.2.2 remote-as 2
      no neighbor 2.2.2.2 description
@@ -124,11 +125,11 @@
      neighbor 2.2.2.2 confederation-peer
      neighbor 2.2.2.2 send-community standard extended
      afi-evpn 101 bridge-group 1
-     afi-evpn 101 bmac 005a.1567.3d6f
+     afi-evpn 101 bmac 0018.7226.0927
      afi-evpn 101 encapsulation vpws
      afi-evpn 101 update-source loopback0
      afi-evpn 102 bridge-group 3
-     afi-evpn 102 bmac 002a.772c.7e1e
+     afi-evpn 102 bmac 0002.3668.3617
      afi-evpn 102 encapsulation vpws
      afi-evpn 102 update-source loopback0
      exit
@@ -137,6 +138,7 @@
      vrf v1
      local-as 1
      router-id 6.6.6.1
+     no safe-ebgp
      address-family evpn
      neighbor 4321::2 remote-as 2
      no neighbor 4321::2 description
@@ -148,11 +150,11 @@
      neighbor 4321::2 confederation-peer
      neighbor 4321::2 send-community standard extended
      afi-evpn 101 bridge-group 2
-     afi-evpn 101 bmac 005a.6f4d.2235
+     afi-evpn 101 bmac 0024.535a.5d73
      afi-evpn 101 encapsulation vpws
      afi-evpn 101 update-source loopback0
      afi-evpn 102 bridge-group 4
-     afi-evpn 102 bmac 0062.7c06.245a
+     afi-evpn 102 bmac 0055.6039.1721
      afi-evpn 102 encapsulation vpws
      afi-evpn 102 update-source loopback0
      exit
@@ -201,7 +203,7 @@
     hostname r2
     buggy
     !
-    logging file debug ../binTmp/zzz43r2-log.run
+    logging file debug ../binTmp/zzz98r2-log.run
     !
     bridge 1
      rd 2:1
@@ -300,6 +302,7 @@
      vrf v1
      local-as 2
      router-id 4.4.4.2
+     no safe-ebgp
      address-family evpn
      neighbor 2.2.2.1 remote-as 1
      no neighbor 2.2.2.1 description
@@ -311,11 +314,11 @@
      neighbor 2.2.2.1 confederation-peer
      neighbor 2.2.2.1 send-community standard extended
      afi-evpn 101 bridge-group 1
-     afi-evpn 101 bmac 0049.5e0b.3127
+     afi-evpn 101 bmac 0034.0b63.510f
      afi-evpn 101 encapsulation vpws
      afi-evpn 101 update-source loopback0
      afi-evpn 102 bridge-group 3
-     afi-evpn 102 bmac 0032.1b04.3515
+     afi-evpn 102 bmac 001d.3859.4310
      afi-evpn 102 encapsulation vpws
      afi-evpn 102 update-source loopback0
      exit
@@ -324,6 +327,7 @@
      vrf v1
      local-as 2
      router-id 6.6.6.2
+     no safe-ebgp
      address-family evpn
      neighbor 4321::1 remote-as 1
      no neighbor 4321::1 description
@@ -335,11 +339,11 @@
      neighbor 4321::1 confederation-peer
      neighbor 4321::1 send-community standard extended
      afi-evpn 101 bridge-group 2
-     afi-evpn 101 bmac 001d.0907.3e56
+     afi-evpn 101 bmac 0060.641d.3531
      afi-evpn 101 encapsulation vpws
      afi-evpn 101 update-source loopback0
      afi-evpn 102 bridge-group 4
-     afi-evpn 102 bmac 0063.4664.6152
+     afi-evpn 102 bmac 0078.7418.2873
      afi-evpn 102 encapsulation vpws
      afi-evpn 102 update-source loopback0
      exit

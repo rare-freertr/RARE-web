@@ -14,7 +14,7 @@
     hostname r1
     buggy
     !
-    logging file debug ../binTmp/zzz32r1-log.run
+    logging file debug ../binTmp/zzz97r1-log.run
     !
     vrf definition tester
      exit
@@ -114,7 +114,7 @@
     hostname r2
     buggy
     !
-    logging file debug ../binTmp/zzz32r2-log.run
+    logging file debug ../binTmp/zzz97r2-log.run
     !
     vrf definition tester
      exit
@@ -216,7 +216,7 @@
     hostname r3
     buggy
     !
-    logging file debug ../binTmp/zzz32r3-log.run
+    logging file debug ../binTmp/zzz97r3-log.run
     !
     vrf definition tester
      exit
@@ -316,7 +316,7 @@
     hostname r4
     buggy
     !
-    logging file debug ../binTmp/zzz32r4-log.run
+    logging file debug ../binTmp/zzz97r4-log.run
     !
     vrf definition tester
      exit
@@ -421,12 +421,12 @@
      |~~~~~~~~|~~~~~~~~~~|~~~~~~~|~~~~~~|~~~~~~~~~~~~|~~~~~~~~~~~~~~~~~|~~~~~~~|
      | label  | vrf      | iface | hop  | label      | targets         | bytes |
      |--------|----------|-------|------|------------|-----------------|-------|
-     | 259787 | v1:4     | null  | null | unlabelled | local           | 0     |
-     | 441662 | tester:6 | null  | null | unlabelled | local           | 0     |
-     | 479437 | tester:4 | null  | null | unlabelled | local           | 0     |
-     | 572246 | v1:4     | null  | null | unlabelled | local duplicate | 832   |
-     | 760795 | v1:6     | null  | null | unlabelled | local duplicate | 640   |
-     | 889504 | v1:6     | null  | null | unlabelled | local           | 0     |
+     | 79411  | v1:4     | null  | null | unlabelled | local           | 0     |
+     | 212709 | v1:6     | null  | null | unlabelled | local duplicate | 640   |
+     | 431423 | tester:4 | null  | null | unlabelled | local           | 0     |
+     | 464947 | tester:6 | null  | null | unlabelled | local           | 0     |
+     | 739421 | v1:6     | null  | null | unlabelled | local           | 0     |
+     | 895427 | v1:4     | null  | null | unlabelled | local duplicate | 640   |
      |________|__________|_______|______|____________|_________________|_______|
     r3#
     r3#
@@ -441,7 +441,7 @@
      | prefix         | layer2         | p2mp           |                     |
      | learn | advert | learn | advert | learn | advert | neighbor | uptime   |
      |-------|--------|-------|--------|-------|--------|----------|----------|
-     | 0     | 0      | 0     | 0      | 0     | 1      | 1.1.2.1  | 00:00:04 |
+     | 0     | 0      | 0     | 0      | 0     | 1      | 1.1.2.1  | 00:00:08 |
      |_______|________|_______|________|_______|________|__________|__________|
     r3#
     r3#
@@ -456,7 +456,7 @@
      | prefix         | layer2         | p2mp           |                      |
      | learn | advert | learn | advert | learn | advert | neighbor  | uptime   |
      |-------|--------|-------|--------|-------|--------|-----------|----------|
-     | 0     | 0      | 0     | 0      | 0     | 1      | 1234:2::1 | 00:00:04 |
+     | 0     | 0      | 0     | 0      | 0     | 1      | 1234:2::1 | 00:00:09 |
      |_______|________|_______|________|_______|________|___________|__________|
     r3#
     r3#
@@ -470,7 +470,7 @@
      |~~~~~~|~~~~~~~~~~~~|~~~~~~~~~|~~~~~~~~~~~~~~~~~~~~~~|~~~~~~~~~|~~~~~~~~~~~~~~~~~~~~~~~~~|
      | type | local      | root    | opaque               | uplink  | peers                   |
      |------|------------|---------|----------------------|---------|-------------------------|
-     | p2mp | false true | 2.2.2.1 | 01 00 04 00 00 04 d2 | 1.1.2.1 | local 572246/1.1.2.1/-1 |
+     | p2mp | false true | 2.2.2.1 | 01 00 04 00 00 04 d2 | 1.1.2.1 | local 895427/1.1.2.1/-1 |
      |______|____________|_________|______________________|_________|_________________________|
     r3#
     r3#
@@ -484,7 +484,7 @@
      |~~~~~~|~~~~~~~~~~~~|~~~~~~~~~|~~~~~~~~~~~~~~~~~~~~~~|~~~~~~~~~~~|~~~~~~~~~~~~~~~~~~~~~~~~~~~|
      | type | local      | root    | opaque               | uplink    | peers                     |
      |------|------------|---------|----------------------|-----------|---------------------------|
-     | p2mp | false true | 4321::1 | 01 00 04 00 00 04 d2 | 1234:2::1 | local 760795/1234:2::1/-1 |
+     | p2mp | false true | 4321::1 | 01 00 04 00 00 04 d2 | 1234:2::1 | local 212709/1234:2::1/-1 |
      |______|____________|_________|______________________|___________|___________________________|
     r3#
     r3#
@@ -495,12 +495,12 @@
     r3#
     r3#show inter tun1 full
     r3#show inter tun1 full
-    tunnel1 is up (since 00:00:15, 15 changes)
+    tunnel1 is up (since 00:00:14, 15 changes)
      description:
      type is p2mpldp, hwaddr=none, mtu=1500, bw=8000kbps, vrf=v1
-     ip4 address=3.3.3.3/24, netmask=255.255.255.0, ifcid=351971805
+     ip4 address=3.3.3.3/24, netmask=255.255.255.0, ifcid=574823525
      received 0 packets (0 bytes) dropped 0 packets (0 bytes)
-     transmitted 5 packets (330 bytes) promisc=false macsec=false
+     transmitted 5 packets (330 bytes) promisc=false macsec=false sgt=false
      |~~~~~~~|~~~~|~~~~|~~~~~~|~~~~~|~~~~|~~~~~~|
      |       | packet         | byte            |
      | time  | tx | rx | drop | tx  | rx | drop |
@@ -596,20 +596,20 @@
     r3#
     r3#show inter tun2 full
     r3#show inter tun2 full
-    tunnel2 is up (since 00:00:15, 15 changes)
+    tunnel2 is up (since 00:00:14, 15 changes)
      description:
      type is p2mpldp, hwaddr=none, mtu=1500, bw=8000kbps, vrf=v1
-     ip6 address=3333::3/32, netmask=ffff:ffff::, ifcid=268284002
+     ip6 address=3333::3/32, netmask=ffff:ffff::, ifcid=83766878
      received 0 packets (0 bytes) dropped 0 packets (0 bytes)
-     transmitted 8 packets (560 bytes) promisc=false macsec=false
-     |~~~~~~~|~~~~|~~~~|~~~~~~|~~~~~|~~~~|~~~~~~|
-     |       | packet         | byte            |
-     | time  | tx | rx | drop | tx  | rx | drop |
-     |-------|----|----|------|-----|----|------|
-     | 1sec  | 5  | 0  | 0    | 330 | 0  | 0    |
-     | 1min  | 0  | 0  | 0    | 0   | 0  | 0    |
-     | 1hour | 0  | 0  | 0    | 0   | 0  | 0    |
-     |_______|____|____|______|_____|____|______|
+     transmitted 8 packets (560 bytes) promisc=false macsec=false sgt=false
+     |~~~~~~~|~~~~|~~~~|~~~~~~|~~~~|~~~~|~~~~~~|
+     |       | packet         | byte           |
+     | time  | tx | rx | drop | tx | rx | drop |
+     |-------|----|----|------|----|----|------|
+     | 1sec  | 0  | 0  | 0    | 0  | 0  | 0    |
+     | 1min  | 0  | 0  | 0    | 0  | 0  | 0    |
+     | 1hour | 0  | 0  | 0    | 0  | 0  | 0    |
+     |_______|____|____|______|____|____|______|
      |~~~~~~~~|~~~~~~~|~~~~~~~~~|~~~~|~~~~|~~~~~~|~~~~~|~~~~|~~~~~~|
      |                          | packet         | byte            |
      | type   | value | handler | tx | rx | drop | tx  | rx | drop |
@@ -653,16 +653,16 @@
      | 7     | 0   | 0   | 0    | 0   | 0   | 0    |
      |_______|_____|_____|______|_____|_____|______|
             2640|
-            2376|#
-            2112|#
-            1848|#
-            1584|#            #
-            1320|#            #
-            1056|#            #
-             792|#            #
-             528|#            #
-             264|#            #
-               0|#            #
+            2376| #
+            2112| #
+            1848| #
+            1584| #           #
+            1320| #           #
+            1056| #           #
+             792| #           #
+             528| #           #
+             264| #           #
+               0| #           #
              bps|0---------10--------20--------30--------40--------50-------- seconds
                1|
                0|

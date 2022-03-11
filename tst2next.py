@@ -456,19 +456,21 @@ def tst2next(tst_path):
 # rout
 # serv
 
-#tst_dir_path = 'tst/conn/'
 #tst_dir_path = 'tst/crypt/'
 #tst_dir_path = 'tst/mpls/'
 #tst_dir_path = 'tst/qos/'
 #tst_dir_path = 'tst/rout/'
-tst_dir_path = 'tst/serv/'
-for tst in get_tst_list(tst_dir_path):
-    print('--------------------------------------------------------------------')
-    print(tst)
-    print('--------------------------------------------------------------------')
-    tst2next(tst)
-    CONNS={}
-    EDGES={}
-    CONFIGS={}
+#tst_dir_path = 'tst/serv/'
+tst_category_list = ['conn','crypt','mpls','qos','rout','serv']
+for category in tst_category_list:
+    tst_dir_path = 'tst/%s/' % category
+    for tst in get_tst_list(tst_dir_path):
+        print('--------------------------------------------------------------------')
+        print(tst)
+        print('--------------------------------------------------------------------')
+        tst2next(tst)
+        CONNS={}
+        EDGES={}
+        CONFIGS={}
 
 

@@ -14,7 +14,7 @@
     hostname r1
     buggy
     !
-    logging file debug ../binTmp/zzz77r1-log.run
+    logging file debug ../binTmp/zzz98r1-log.run
     !
     bridge 1
      rd 1:1
@@ -80,6 +80,7 @@
      vrf v1
      local-as 1
      router-id 4.4.4.1
+     no safe-ebgp
      address-family evpn
      neighbor 2.2.2.2 remote-as 2
      no neighbor 2.2.2.2 description
@@ -92,7 +93,7 @@
      neighbor 2.2.2.2 pmsitun
      neighbor 2.2.2.2 send-community standard extended
      afi-evpn 101 bridge-group 1
-     afi-evpn 101 bmac 0062.7772.5027
+     afi-evpn 101 bmac 0029.0e6a.5c5f
      afi-evpn 101 encapsulation vxlan
      afi-evpn 101 update-source loopback0
      exit
@@ -101,6 +102,7 @@
      vrf v1
      local-as 1
      router-id 6.6.6.1
+     no safe-ebgp
      address-family evpn
      neighbor 4321::2 remote-as 2
      no neighbor 4321::2 description
@@ -113,7 +115,7 @@
      neighbor 4321::2 pmsitun
      neighbor 4321::2 send-community standard extended
      afi-evpn 101 bridge-group 2
-     afi-evpn 101 bmac 0000.2d4d.2918
+     afi-evpn 101 bmac 006a.011b.2038
      afi-evpn 101 encapsulation vxlan
      afi-evpn 101 update-source loopback0
      exit
@@ -162,7 +164,7 @@
     hostname r2
     buggy
     !
-    logging file debug ../binTmp/zzz77r2-log.run
+    logging file debug ../binTmp/zzz98r2-log.run
     !
     bridge 1
      rd 1:1
@@ -228,6 +230,7 @@
      vrf v1
      local-as 2
      router-id 4.4.4.2
+     no safe-ebgp
      address-family evpn
      neighbor 2.2.2.1 remote-as 1
      no neighbor 2.2.2.1 description
@@ -240,7 +243,7 @@
      neighbor 2.2.2.1 pmsitun
      neighbor 2.2.2.1 send-community standard extended
      afi-evpn 101 bridge-group 1
-     afi-evpn 101 bmac 0023.3343.1506
+     afi-evpn 101 bmac 0024.0b77.5f6c
      afi-evpn 101 encapsulation vxlan
      afi-evpn 101 update-source loopback0
      exit
@@ -249,6 +252,7 @@
      vrf v1
      local-as 2
      router-id 6.6.6.2
+     no safe-ebgp
      address-family evpn
      neighbor 4321::1 remote-as 1
      no neighbor 4321::1 description
@@ -261,7 +265,7 @@
      neighbor 4321::1 pmsitun
      neighbor 4321::1 send-community standard extended
      afi-evpn 101 bridge-group 2
-     afi-evpn 101 bmac 0049.5d1d.481f
+     afi-evpn 101 bmac 000c.7a63.5232
      afi-evpn 101 encapsulation vxlan
      afi-evpn 101 update-source loopback0
      exit

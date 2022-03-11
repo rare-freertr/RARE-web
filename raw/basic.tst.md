@@ -14,7 +14,7 @@
     hostname r1
     buggy
     !
-    logging file debug ../binTmp/zzz62r1-log.run
+    logging file debug ../binTmp/zzz31r1-log.run
     !
     vrf definition tester
      exit
@@ -81,7 +81,7 @@
     r1#
     r1#show version
     r1#show version
-    freeRouter v22.2.5-cur, done by cs@nop.
+    freeRouter v22.3.10-cur, done by cs@nop.
     place on the web: http://www.freertr.net/
     license: http://creativecommons.org/licenses/by-sa/4.0/
     quote1: make the world better
@@ -100,16 +100,18 @@
     r1#
     r1#show platform
     r1#show platform
-    freeRouter v22.2.5-cur, done by cs@nop.
+    freeRouter v22.3.10-cur, done by cs@nop.
     name: r1
-    hwid: tester-slot62
-    uptime: since 2022-02-05 15:26:43, for 00:00:00
-    reload: code#9=dual active, reloading because lost on priority
-    hwcfg: ../binTmp/zzz62r1-hw.txt
-    swcfg: ../binTmp/zzz62r1-sw.txt
+    hwid: tester-slot31
+    hwsn: null
+    uptime: since 2022-03-10 20:47:15, for 00:00:00
+    reload: code#11=user requested
+    rwpath: ../binTmp/
+    hwcfg: ../binTmp/zzz31r1-hw.txt
+    swcfg: ../binTmp/zzz31r1-sw.txt
     cpu: 40*amd64
     mem: free=162g, max=162g, used=162g
-    host: Linux v5.15.0-3-amd64
+    host: Linux v5.16.0-4-amd64
     java: Oracle Corporation v17.0.2 @ null
     jspec: Oracle Corporation (Java Platform API Specification) v17
     vm: Oracle Corporation (Substrate VM) vGraalVM 22.0.0.2 Java 17 CE

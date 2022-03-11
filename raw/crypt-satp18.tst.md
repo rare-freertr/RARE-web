@@ -14,7 +14,7 @@
     hostname r1
     buggy
     !
-    logging file debug ../binTmp/zzz92r1-log.run
+    logging file debug ../binTmp/zzz3r1-log.run
     !
     crypto ipsec ips
      cipher aes256cfb
@@ -95,7 +95,7 @@
     hostname r2
     buggy
     !
-    logging file debug ../binTmp/zzz92r2-log.run
+    logging file debug ../binTmp/zzz3r2-log.run
     !
     crypto ipsec ips
      cipher aes256cfb

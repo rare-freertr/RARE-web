@@ -14,7 +14,7 @@
     hostname r1
     buggy
     !
-    logging file debug ../binTmp/zzz54r1-log.run
+    logging file debug ../binTmp/zzz88r1-log.run
     !
     access-list test4
      sequence 10 deny 1 any all any all
@@ -113,7 +113,7 @@
     hostname r2
     buggy
     !
-    logging file debug ../binTmp/zzz54r2-log.run
+    logging file debug ../binTmp/zzz88r2-log.run
     !
     access-list test4
      sequence 10 deny 1 any all any all
@@ -217,12 +217,12 @@
      |~~~~~~~~|~~~~~~~~~~|~~~~~~~|~~~~~~|~~~~~~~~~~~~|~~~~~~~~~|~~~~~~~|
      | label  | vrf      | iface | hop  | label      | targets | bytes |
      |--------|----------|-------|------|------------|---------|-------|
-     | 61137  | v1:6     | null  | null | unlabelled | local   | 640   |
-     | 123769 | v1:4     | null  | null | unlabelled | local   | 0     |
-     | 129160 | v1:4     | null  | null | unlabelled | local   | 640   |
-     | 639622 | tester:4 | null  | null | unlabelled | local   | 0     |
-     | 921232 | v1:6     | null  | null | unlabelled | local   | 0     |
-     | 963866 | tester:6 | null  | null | unlabelled | local   | 0     |
+     | 85508  | v1:6     | null  | null | unlabelled | local   | 0     |
+     | 453854 | v1:4     | null  | null | unlabelled | local   | 0     |
+     | 474981 | v1:4     | null  | null | unlabelled | local   | 640   |
+     | 845737 | tester:4 | null  | null | unlabelled | local   | 0     |
+     | 885234 | tester:6 | null  | null | unlabelled | local   | 0     |
+     | 982807 | v1:6     | null  | null | unlabelled | local   | 640   |
      |________|__________|_______|______|____________|_________|_______|
     r1#
     r1#
@@ -233,12 +233,12 @@
     r1#
     r1#show ipv4 rsvp v1 sum
     r1#show ipv4 rsvp v1 sum
-     |~~~~~~~~~|~~~~~~~|~~~~~~~~~~|~~~~|~~~~~~~~~|~~~~~~~~~~~|~~~~~~~~~~~~~|
-     | source  | id    | subgroup | id | target  | id        | description |
-     |---------|-------|----------|----|---------|-----------|-------------|
-     | 1.1.1.2 | 8348  | ::       | 0  | 1.1.1.1 | 900667608 | r2:tunnel1  |
-     | 1.1.1.1 | 23891 | ::       | 0  | 1.1.1.2 | 16613445  | r1:tunnel1  |
-     |_________|_______|__________|____|_________|___________|_____________|
+     |~~~~~~~~~|~~~~~~~|~~~~~~~~~~|~~~~|~~~~~~~~~|~~~~~~~~~~~~|~~~~~~~~~~~~~|
+     | source  | id    | subgroup | id | target  | id         | description |
+     |---------|-------|----------|----|---------|------------|-------------|
+     | 1.1.1.1 | 17448 | ::       | 0  | 1.1.1.2 | 269924374  | r1:tunnel1  |
+     | 1.1.1.2 | 22188 | ::       | 0  | 1.1.1.1 | 1110429146 | r2:tunnel1  |
+     |_________|_______|__________|____|_________|____________|_____________|
     r1#
     r1#
     ```
@@ -248,12 +248,12 @@
     r1#
     r1#show ipv6 rsvp v1 sum
     r1#show ipv6 rsvp v1 sum
-     |~~~~~~~~~|~~~~~~~|~~~~~~~~~~|~~~~|~~~~~~~~~|~~~~~~~~~~~~|~~~~~~~~~~~~~|
-     | source  | id    | subgroup | id | target  | id         | description |
-     |---------|-------|----------|----|---------|------------|-------------|
-     | 1234::1 | 5743  | ::       | 0  | 1234::2 | 141363759  | r1:tunnel2  |
-     | 1234::2 | 27538 | ::       | 0  | 1234::1 | 1244906995 | r2:tunnel2  |
-     |_________|_______|__________|____|_________|____________|_____________|
+     |~~~~~~~~~|~~~~~~~|~~~~~~~~~~|~~~~|~~~~~~~~~|~~~~~~~~~~~|~~~~~~~~~~~~~|
+     | source  | id    | subgroup | id | target  | id        | description |
+     |---------|-------|----------|----|---------|-----------|-------------|
+     | 1234::2 | 4480  | ::       | 0  | 1234::1 | 90580888  | r2:tunnel2  |
+     | 1234::1 | 18196 | ::       | 0  | 1234::2 | 496543326 | r1:tunnel2  |
+     |_________|_______|__________|____|_________|___________|_____________|
     r1#
     r1#
     ```

@@ -14,7 +14,7 @@
     hostname r1
     buggy
     !
-    logging file debug ../binTmp/zzz40r1-log.run
+    logging file debug ../binTmp/zzz65r1-log.run
     !
     vrf definition tester
      exit
@@ -87,7 +87,7 @@
     hostname r2
     buggy
     !
-    logging file debug ../binTmp/zzz40r2-log.run
+    logging file debug ../binTmp/zzz65r2-log.run
     !
     vrf definition tester
      exit
@@ -171,7 +171,7 @@
     hostname r3
     buggy
     !
-    logging file debug ../binTmp/zzz40r3-log.run
+    logging file debug ../binTmp/zzz65r3-log.run
     !
     vrf definition tester
      exit
@@ -246,11 +246,11 @@
     r2#
     r2#show ipv4 flow v1 sess
     r2#show ipv4 flow v1 sess
-     |~~~~~|~~~~~|~~~~~|~~~~~~|~~~~~~|~~~~~~|~~~~~~|~~~~|~~~~|~~~~|~~~~|~~~~~~|
-     |                 | source      | target      | packet  | byte    |      |
-     | dir | prt | tos | addr | port | addr | port | rx | tx | rx | tx | time |
-     |-----|-----|-----|------|------|------|------|----|----|----|----|------|
-     |_____|_____|_____|______|______|______|______|____|____|____|____|______|
+     |~~~~~|~~~~~|~~~~~|~~~~~~|~~~~~~|~~~~~~|~~~~~~|~~~~~|~~~~|~~~~|~~~~|~~~~|~~~~~~|
+     |                 | source      | target      |     | packet  | byte    |      |
+     | dir | prt | tos | addr | port | addr | port | url | rx | tx | rx | tx | time |
+     |-----|-----|-----|------|------|------|------|-----|----|----|----|----|------|
+     |_____|_____|_____|______|______|______|______|_____|____|____|____|____|______|
     r2#
     r2#
     ```
@@ -260,11 +260,11 @@
     r2#
     r2#show ipv6 flow v1 sess
     r2#show ipv6 flow v1 sess
-     |~~~~~|~~~~~|~~~~~|~~~~~~|~~~~~~|~~~~~~|~~~~~~|~~~~|~~~~|~~~~|~~~~|~~~~~~|
-     |                 | source      | target      | packet  | byte    |      |
-     | dir | prt | tos | addr | port | addr | port | rx | tx | rx | tx | time |
-     |-----|-----|-----|------|------|------|------|----|----|----|----|------|
-     |_____|_____|_____|______|______|______|______|____|____|____|____|______|
+     |~~~~~|~~~~~|~~~~~|~~~~~~|~~~~~~|~~~~~~|~~~~~~|~~~~~|~~~~|~~~~|~~~~|~~~~|~~~~~~|
+     |                 | source      | target      |     | packet  | byte    |      |
+     | dir | prt | tos | addr | port | addr | port | url | rx | tx | rx | tx | time |
+     |-----|-----|-----|------|------|------|------|-----|----|----|----|----|------|
+     |_____|_____|_____|______|______|______|______|_____|____|____|____|____|______|
     r2#
     r2#
     ```

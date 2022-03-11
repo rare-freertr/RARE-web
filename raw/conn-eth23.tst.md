@@ -14,7 +14,7 @@
     hostname r1
     buggy
     !
-    logging file debug ../binTmp/zzz27r1-log.run
+    logging file debug ../binTmp/zzz55r1-log.run
     !
     vrf definition tester
      exit
@@ -80,7 +80,7 @@
     hostname r2
     buggy
     !
-    logging file debug ../binTmp/zzz27r2-log.run
+    logging file debug ../binTmp/zzz55r2-log.run
     !
     vrf definition tester
      exit
@@ -145,18 +145,18 @@
     ethernet1 is promisc, up (since 00:00:16, 3 changes)
      description:
      type is ethernet, hwaddr=0000.0000.1111, mtu=1500, bw=100mbps, vrf=v1
-     ip4 address=1.1.1.1/24, netmask=255.255.255.0, ifcid=394110240
-     ip6 address=1234::1/16, netmask=ffff::, ifcid=1032273739
+     ip4 address=1.1.1.1/24, netmask=255.255.255.0, ifcid=314412781
+     ip6 address=1234::1/16, netmask=ffff::, ifcid=307762360
      received 88 packets (5768 bytes) dropped 0 packets (0 bytes)
-     transmitted 91 packets (5834 bytes) promisc=true macsec=false
-     |~~~~~~~|~~~~|~~~~|~~~~~~|~~~~|~~~~|~~~~~~|
-     |       | packet         | byte           |
-     | time  | tx | rx | drop | tx | rx | drop |
-     |-------|----|----|------|----|----|------|
-     | 1sec  | 0  | 0  | 0    | 0  | 0  | 0    |
-     | 1min  | 0  | 0  | 0    | 0  | 0  | 0    |
-     | 1hour | 0  | 0  | 0    | 0  | 0  | 0    |
-     |_______|____|____|______|____|____|______|
+     transmitted 91 packets (5834 bytes) promisc=true macsec=false sgt=false
+     |~~~~~~~|~~~~|~~~~|~~~~~~|~~~~~|~~~~~|~~~~~~|
+     |       | packet         | byte             |
+     | time  | tx | rx | drop | tx  | rx  | drop |
+     |-------|----|----|------|-----|-----|------|
+     | 1sec  | 4  | 4  | 0    | 264 | 264 | 0    |
+     | 1min  | 0  | 0  | 0    | 0   | 0   | 0    |
+     | 1hour | 0  | 0  | 0    | 0   | 0   | 0    |
+     |_______|____|____|______|_____|_____|______|
      |~~~~~~~~|~~~~~~~|~~~~~~~~~|~~~~|~~~~|~~~~~~|~~~~~~|~~~~~~|~~~~~~|
      |                          | packet         | byte               |
      | type   | value | handler | tx | rx | drop | tx   | rx   | drop |
@@ -203,17 +203,17 @@
      | 6     | 0   | 0   | 0    | 0    | 0    | 0    |
      | 7     | 0   | 0   | 0    | 0    | 0    | 0    |
      |_______|_____|_____|______|______|______|______|
-             15k|
-             14k|             #
-             12k|             #
-             11k|             #
-            9504|             #
-            7920|             #
-            6336|  # # #      #
-            4752|  # # # # # ## #
-            3168| ###############
-            1584| ###############
-               0| ###############
+             21k|
+             19k|            #
+             17k|            #
+             15k|            #
+             12k|            #
+             10k|            #
+            8659|            #
+            6494|            #
+            4329| # # #  # # # #
+            2164|####### #######
+               0|###############
              bps|0---------10--------20--------30--------40--------50-------- seconds
                1|
                0|
@@ -265,8 +265,8 @@
      |~~~~~~~~~~~~~~~~|~~~~~~~~~~~~~~~~~~~~~~~~|~~~~~~~~~~|~~~~~~~~|~~~~~~~~|
      | mac            | address                | time     | static | router |
      |----------------|------------------------|----------|--------|--------|
-     | 0000.0000.2222 | 1234::2                | 00:00:16 | false  | false  |
-     | 0000.0000.2222 | fe80::200:ff:fe00:2222 | 00:00:16 | false  | false  |
+     | 0000.0000.2222 | 1234::2                | 00:00:15 | false  | false  |
+     | 0000.0000.2222 | fe80::200:ff:fe00:2222 | 00:00:15 | false  | false  |
      |________________|________________________|__________|________|________|
     r1#
     r1#

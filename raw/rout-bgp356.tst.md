@@ -14,7 +14,7 @@
     hostname r1
     buggy
     !
-    logging file debug ../binTmp/zzz51r1-log.run
+    logging file debug ../binTmp/zzz90r1-log.run
     !
     bridge 1
      rd 1:1
@@ -82,6 +82,7 @@
      vrf v1
      local-as 1
      router-id 4.4.4.1
+     no safe-ebgp
      address-family evpn
      neighbor 1.1.1.2 remote-as 2
      no neighbor 1.1.1.2 description
@@ -93,7 +94,7 @@
      neighbor 1.1.1.2 send-community standard extended
      afi-evpn 101 bridge-group 1
      afi-evpn 101 srv6 tunnel1
-     afi-evpn 101 bmac 0043.0b36.730a
+     afi-evpn 101 bmac 002f.2319.4667
      afi-evpn 101 encapsulation pbb
      afi-evpn 101 update-source ethernet1
      exit
@@ -102,6 +103,7 @@
      vrf v1
      local-as 1
      router-id 6.6.6.1
+     no safe-ebgp
      address-family evpn
      neighbor 1234::2 remote-as 2
      no neighbor 1234::2 description
@@ -113,7 +115,7 @@
      neighbor 1234::2 send-community standard extended
      afi-evpn 102 bridge-group 2
      afi-evpn 102 srv6 tunnel1
-     afi-evpn 102 bmac 0009.1d19.5179
+     afi-evpn 102 bmac 0052.3d2c.7b3e
      afi-evpn 102 encapsulation pbb
      afi-evpn 102 update-source ethernet1
      exit
@@ -161,7 +163,7 @@
     hostname r2
     buggy
     !
-    logging file debug ../binTmp/zzz51r2-log.run
+    logging file debug ../binTmp/zzz90r2-log.run
     !
     bridge 1
      rd 1:1
@@ -229,6 +231,7 @@
      vrf v1
      local-as 2
      router-id 4.4.4.2
+     no safe-ebgp
      address-family evpn
      neighbor 1.1.1.1 remote-as 1
      no neighbor 1.1.1.1 description
@@ -240,7 +243,7 @@
      neighbor 1.1.1.1 send-community standard extended
      afi-evpn 101 bridge-group 1
      afi-evpn 101 srv6 tunnel1
-     afi-evpn 101 bmac 002e.445f.681b
+     afi-evpn 101 bmac 000f.6456.0f26
      afi-evpn 101 encapsulation pbb
      afi-evpn 101 update-source ethernet1
      exit
@@ -249,6 +252,7 @@
      vrf v1
      local-as 2
      router-id 6.6.6.2
+     no safe-ebgp
      address-family evpn
      neighbor 1234::1 remote-as 1
      no neighbor 1234::1 description
@@ -260,7 +264,7 @@
      neighbor 1234::1 send-community standard extended
      afi-evpn 102 bridge-group 2
      afi-evpn 102 srv6 tunnel1
-     afi-evpn 102 bmac 003f.0132.7040
+     afi-evpn 102 bmac 004c.6108.4865
      afi-evpn 102 encapsulation pbb
      afi-evpn 102 update-source ethernet1
      exit

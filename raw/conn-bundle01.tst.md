@@ -14,7 +14,7 @@
     hostname r1
     buggy
     !
-    logging file debug ../binTmp/zzz8r1-log.run
+    logging file debug ../binTmp/zzz67r1-log.run
     !
     bundle 1
      exit
@@ -84,7 +84,7 @@
     hostname r2
     buggy
     !
-    logging file debug ../binTmp/zzz8r2-log.run
+    logging file debug ../binTmp/zzz67r2-log.run
     !
     vrf definition tester
      exit
@@ -173,19 +173,19 @@
     r1#show inter bun1 full
     bundle1 is up (since 00:00:03, 3 changes)
      description:
-     type is bundle, hwaddr=0032.7250.7b4c, mtu=1500, bw=100mbps, vrf=v1
-     ip4 address=1.1.1.1/24, netmask=255.255.255.0, ifcid=967192273
-     ip6 address=1234::1/16, netmask=ffff::, ifcid=376890425
+     type is bundle, hwaddr=005d.556f.156f, mtu=1500, bw=100mbps, vrf=v1
+     ip4 address=1.1.1.1/24, netmask=255.255.255.0, ifcid=446363586
+     ip6 address=1234::1/16, netmask=ffff::, ifcid=187265078
      received 28 packets (1874 bytes) dropped 0 packets (0 bytes)
-     transmitted 28 packets (1868 bytes) promisc=false macsec=false
-     |~~~~~~~|~~~~|~~~~|~~~~~~|~~~~~|~~~~~|~~~~~~|
-     |       | packet         | byte             |
-     | time  | tx | rx | drop | tx  | rx  | drop |
-     |-------|----|----|------|-----|-----|------|
-     | 1sec  | 4  | 4  | 0    | 264 | 264 | 0    |
-     | 1min  | 0  | 0  | 0    | 0   | 0   | 0    |
-     | 1hour | 0  | 0  | 0    | 0   | 0   | 0    |
-     |_______|____|____|______|_____|_____|______|
+     transmitted 28 packets (1868 bytes) promisc=false macsec=false sgt=false
+     |~~~~~~~|~~~~|~~~~|~~~~~~|~~~~~~|~~~~~~|~~~~~~|
+     |       | packet         | byte               |
+     | time  | tx | rx | drop | tx   | rx   | drop |
+     |-------|----|----|------|------|------|------|
+     | 1sec  | 20 | 20 | 0    | 1320 | 1320 | 0    |
+     | 1min  | 0  | 0  | 0    | 0    | 0    | 0    |
+     | 1hour | 0  | 0  | 0    | 0    | 0    | 0    |
+     |_______|____|____|______|______|______|______|
      |~~~~~~~~|~~~~~~~|~~~~~~~~~|~~~~|~~~~|~~~~~~|~~~~~|~~~~~|~~~~~~|
      |                          | packet         | byte             |
      | type   | value | handler | tx | rx | drop | tx  | rx  | drop |
@@ -280,7 +280,7 @@
      |~~~~~~~~~~~~~~~~|~~~~~~~~~|~~~~~~~~~~|~~~~~~~~|
      | mac            | address | time     | static |
      |----------------|---------|----------|--------|
-     | 0000.0000.2222 | 1.1.1.2 | 00:00:02 | false  |
+     | 0000.0000.2222 | 1.1.1.2 | 00:00:03 | false  |
      |________________|_________|__________|________|
     r1#
     r1#
@@ -294,7 +294,7 @@
      |~~~~~~~~~~~~~~~~|~~~~~~~~~~~~~~~~~~~~~~~~|~~~~~~~~~~|~~~~~~~~|~~~~~~~~|
      | mac            | address                | time     | static | router |
      |----------------|------------------------|----------|--------|--------|
-     | 0000.0000.2222 | 1234::2                | 00:00:02 | false  | false  |
+     | 0000.0000.2222 | 1234::2                | 00:00:03 | false  | false  |
      | 0000.0000.2222 | fe80::200:ff:fe00:2222 | 00:00:03 | false  | true   |
      |________________|________________________|__________|________|________|
     r1#

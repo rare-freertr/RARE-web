@@ -14,7 +14,7 @@
     hostname r1
     buggy
     !
-    logging file debug ../binTmp/zzz48r1-log.run
+    logging file debug ../binTmp/zzz27r1-log.run
     !
     vrf definition tester
      exit
@@ -48,7 +48,7 @@
     interface pwether1
      no description
      mtu 1500
-     macaddr 006b.2b4d.1934
+     macaddr 001b.4d67.592e
      vrf forwarding v1
      ipv4 address 3.3.3.1 255.255.255.0
      pseudowire v1 loopback0 pweompls 2.2.2.2 1234
@@ -100,7 +100,7 @@
     hostname r2
     buggy
     !
-    logging file debug ../binTmp/zzz48r2-log.run
+    logging file debug ../binTmp/zzz27r2-log.run
     !
     vrf definition tester
      exit
@@ -134,7 +134,7 @@
     interface pwether1
      no description
      mtu 1500
-     macaddr 0004.4465.1f39
+     macaddr 002c.5415.1843
      vrf forwarding v1
      ipv4 address 3.3.3.2 255.255.255.0
      pseudowire v1 loopback0 pweompls 2.2.2.1 1234

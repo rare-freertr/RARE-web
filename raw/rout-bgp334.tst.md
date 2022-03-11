@@ -14,7 +14,7 @@
     hostname r1
     buggy
     !
-    logging file debug ../binTmp/zzz50r1-log.run
+    logging file debug ../binTmp/zzz1r1-log.run
     !
     vrf definition tester
      exit
@@ -64,6 +64,7 @@
      vrf v1
      local-as 1
      router-id 4.4.4.1
+     no safe-ebgp
      address-family vpnuni ovpnuni
      neighbor 2.2.2.2 remote-as 1
      no neighbor 2.2.2.2 description
@@ -82,6 +83,7 @@
      vrf v1
      local-as 1
      router-id 6.6.6.1
+     no safe-ebgp
      address-family vpnuni ovpnuni
      neighbor 4321::2 remote-as 1
      no neighbor 4321::2 description
@@ -157,7 +159,7 @@
     hostname r2
     buggy
     !
-    logging file debug ../binTmp/zzz50r2-log.run
+    logging file debug ../binTmp/zzz1r2-log.run
     !
     vrf definition tester
      exit
@@ -219,6 +221,7 @@
      vrf v1
      local-as 1
      router-id 4.4.4.2
+     no safe-ebgp
      address-family vpnuni ovpnuni
      neighbor 2.2.2.1 remote-as 1
      no neighbor 2.2.2.1 description
@@ -256,6 +259,7 @@
      vrf v1
      local-as 1
      router-id 6.6.6.2
+     no safe-ebgp
      address-family vpnuni ovpnuni
      neighbor 4321::1 remote-as 1
      no neighbor 4321::1 description
@@ -350,7 +354,7 @@
     hostname r3
     buggy
     !
-    logging file debug ../binTmp/zzz50r3-log.run
+    logging file debug ../binTmp/zzz1r3-log.run
     !
     vrf definition tester
      exit
@@ -410,6 +414,7 @@
      vrf v1
      local-as 1
      router-id 4.4.4.3
+     no safe-ebgp
      address-family vpnuni ovpnuni
      neighbor 2.2.2.2 remote-as 1
      no neighbor 2.2.2.2 description
@@ -428,6 +433,7 @@
      vrf v1
      local-as 1
      router-id 4.4.4.3
+     no safe-ebgp
      address-family labeled
      neighbor 1.1.1.10 remote-as 2
      no neighbor 1.1.1.10 description
@@ -442,6 +448,7 @@
      vrf v1
      local-as 1
      router-id 6.6.6.3
+     no safe-ebgp
      address-family vpnuni ovpnuni
      neighbor 4321::2 remote-as 1
      no neighbor 4321::2 description
@@ -456,6 +463,7 @@
      vrf v1
      local-as 1
      router-id 6.6.6.3
+     no safe-ebgp
      address-family labeled
      neighbor 1234:3::2 remote-as 2
      no neighbor 1234:3::2 description
@@ -525,7 +533,7 @@
     hostname r4
     buggy
     !
-    logging file debug ../binTmp/zzz50r4-log.run
+    logging file debug ../binTmp/zzz1r4-log.run
     !
     vrf definition tester
      exit
@@ -585,6 +593,7 @@
      vrf v1
      local-as 2
      router-id 4.4.4.3
+     no safe-ebgp
      address-family labeled
      neighbor 1.1.1.9 remote-as 1
      no neighbor 1.1.1.9 description
@@ -599,6 +608,7 @@
      vrf v1
      local-as 2
      router-id 4.4.4.4
+     no safe-ebgp
      address-family vpnuni ovpnuni
      neighbor 2.2.2.5 remote-as 2
      no neighbor 2.2.2.5 description
@@ -617,6 +627,7 @@
      vrf v1
      local-as 2
      router-id 6.6.6.3
+     no safe-ebgp
      address-family labeled
      neighbor 1234:3::1 remote-as 1
      no neighbor 1234:3::1 description
@@ -631,6 +642,7 @@
      vrf v1
      local-as 2
      router-id 6.6.6.4
+     no safe-ebgp
      address-family vpnuni ovpnuni
      neighbor 4321::5 remote-as 2
      no neighbor 4321::5 description
@@ -700,7 +712,7 @@
     hostname r5
     buggy
     !
-    logging file debug ../binTmp/zzz50r5-log.run
+    logging file debug ../binTmp/zzz1r5-log.run
     !
     vrf definition tester
      exit
@@ -762,6 +774,7 @@
      vrf v1
      local-as 2
      router-id 4.4.4.5
+     no safe-ebgp
      address-family vpnuni ovpnuni
      neighbor 2.2.2.2 remote-as 1
      no neighbor 2.2.2.2 description
@@ -799,6 +812,7 @@
      vrf v1
      local-as 2
      router-id 6.6.6.5
+     no safe-ebgp
      address-family vpnuni ovpnuni
      neighbor 4321::2 remote-as 1
      no neighbor 4321::2 description
@@ -893,7 +907,7 @@
     hostname r6
     buggy
     !
-    logging file debug ../binTmp/zzz50r6-log.run
+    logging file debug ../binTmp/zzz1r6-log.run
     !
     vrf definition tester
      exit
@@ -943,6 +957,7 @@
      vrf v1
      local-as 2
      router-id 4.4.4.6
+     no safe-ebgp
      address-family vpnuni ovpnuni
      neighbor 2.2.2.5 remote-as 2
      no neighbor 2.2.2.5 description
@@ -961,6 +976,7 @@
      vrf v1
      local-as 2
      router-id 6.6.6.6
+     no safe-ebgp
      address-family vpnuni ovpnuni
      neighbor 4321::5 remote-as 2
      no neighbor 4321::5 description

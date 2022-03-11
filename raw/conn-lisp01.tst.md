@@ -14,7 +14,7 @@
     hostname r1
     buggy
     !
-    logging file debug ../binTmp/zzz22r1-log.run
+    logging file debug ../binTmp/zzz36r1-log.run
     !
     vrf definition tester
      exit
@@ -88,7 +88,7 @@
     hostname r2
     buggy
     !
-    logging file debug ../binTmp/zzz22r2-log.run
+    logging file debug ../binTmp/zzz36r2-log.run
     !
     vrf definition tester
      exit
@@ -164,13 +164,13 @@
     r1#
     r1#show inter tun1 full
     r1#show inter tun1 full
-    tunnel1 is up (since 00:00:06, 13 changes)
+    tunnel1 is up (since 00:00:05, 13 changes)
      description:
      type is lisp, hwaddr=none, mtu=1400, bw=4000kbps, vrf=v1
-     ip4 address=2.2.2.1/24, netmask=255.255.255.0, ifcid=759674524
-     ip6 address=4321::1/16, netmask=ffff::, ifcid=56504400
-     received 21 packets (1386 bytes) dropped 0 packets (0 bytes)
-     transmitted 28 packets (1880 bytes) promisc=false macsec=false
+     ip4 address=2.2.2.1/24, netmask=255.255.255.0, ifcid=1046315585
+     ip6 address=4321::1/16, netmask=ffff::, ifcid=923432187
+     received 22 packets (1452 bytes) dropped 0 packets (0 bytes)
+     transmitted 28 packets (1880 bytes) promisc=false macsec=false sgt=false
      |~~~~~~~|~~~~|~~~~|~~~~~~|~~~~~|~~~~~|~~~~~~|
      |       | packet         | byte             |
      | time  | tx | rx | drop | tx  | rx  | drop |
@@ -184,7 +184,7 @@
      | type   | value | handler | tx | rx | drop | tx  | rx  | drop |
      |--------|-------|---------|----|----|------|-----|-----|------|
      | ethtyp | 0000  | null    | 0  | 0  | 0    | 0   | 0   | 0    |
-     | ethtyp | 0800  | ip4     | 15 | 11 | 0    | 990 | 726 | 0    |
+     | ethtyp | 0800  | ip4     | 15 | 12 | 0    | 990 | 792 | 0    |
      | ethtyp | 86dd  | ip6     | 13 | 10 | 0    | 890 | 660 | 0    |
      |________|_______|_________|____|____|______|_____|_____|______|
      |~~~~~|~~~~|~~~~|
@@ -201,7 +201,7 @@
      |            | packet         | byte               |
      | size       | tx | rx | drop | tx   | rx   | drop |
      |------------|----|----|------|------|------|------|
-     | 0-255      | 28 | 21 | 0    | 1880 | 1386 | 0    |
+     | 0-255      | 28 | 22 | 0    | 1880 | 1452 | 0    |
      | 256-511    | 0  | 0  | 0    | 0    | 0    | 0    |
      | 512-767    | 0  | 0  | 0    | 0    | 0    | 0    |
      | 768-1023   | 0  | 0  | 0    | 0    | 0    | 0    |
@@ -223,17 +223,17 @@
      | 6     | 0   | 0   | 0    | 0    | 0    | 0    |
      | 7     | 0   | 0   | 0    | 0    | 0    | 0    |
      |_______|_____|_____|______|______|______|______|
-            2368|
-            2131|     #
-            1894|#    #
-            1657|#    #
-            1420|#    #
-            1184|#    #
-             947|##   #
-             710|##   #
-             473|######
-             236|######
-               0|######
+            2112|
+            1900|#
+            1689|#   #
+            1478|#   #
+            1267|#   #
+            1056|#   #
+             844|#   #
+             633|#   #
+             422|#####
+             211|#####
+               0|#####
              bps|0---------10--------20--------30--------40--------50-------- seconds
                1|
                0|

@@ -122,6 +122,7 @@
      vrf v1
      local-as 1
      router-id 4.4.4.1
+     no safe-ebgp
      address-family unicast evpn
      neighbor 2.2.2.2 remote-as 2
      no neighbor 2.2.2.2 description
@@ -134,11 +135,11 @@
      neighbor 2.2.2.2 pmsitun
      neighbor 2.2.2.2 send-community standard extended
      afi-evpn 101 bridge-group 1
-     afi-evpn 101 bmac 002e.7006.5535
+     afi-evpn 101 bmac 000d.3562.0739
      afi-evpn 101 encapsulation vpws
      afi-evpn 101 update-source loopback0
      afi-evpn 102 bridge-group 3
-     afi-evpn 102 bmac 0056.3651.430f
+     afi-evpn 102 bmac 0049.022f.701c
      afi-evpn 102 encapsulation vpws
      afi-evpn 102 update-source loopback0
      redistribute connected
@@ -148,6 +149,7 @@
      vrf v1
      local-as 1
      router-id 6.6.6.1
+     no safe-ebgp
      address-family unicast evpn
      neighbor 4321::2 remote-as 2
      no neighbor 4321::2 description
@@ -160,11 +162,11 @@
      neighbor 4321::2 pmsitun
      neighbor 4321::2 send-community standard extended
      afi-evpn 101 bridge-group 2
-     afi-evpn 101 bmac 007a.1c1f.182b
+     afi-evpn 101 bmac 0067.1429.6465
      afi-evpn 101 encapsulation vpws
      afi-evpn 101 update-source loopback0
      afi-evpn 102 bridge-group 4
-     afi-evpn 102 bmac 007c.572c.0558
+     afi-evpn 102 bmac 0004.106b.7a06
      afi-evpn 102 encapsulation vpws
      afi-evpn 102 update-source loopback0
      redistribute connected
@@ -322,6 +324,7 @@
      vrf v1
      local-as 2
      router-id 4.4.4.2
+     no safe-ebgp
      address-family unicast evpn
      neighbor 2.2.2.1 remote-as 1
      no neighbor 2.2.2.1 description
@@ -334,11 +337,11 @@
      neighbor 2.2.2.1 pmsitun
      neighbor 2.2.2.1 send-community standard extended
      afi-evpn 101 bridge-group 1
-     afi-evpn 101 bmac 006a.747e.5c1d
+     afi-evpn 101 bmac 0002.7275.583f
      afi-evpn 101 encapsulation vpws
      afi-evpn 101 update-source loopback0
      afi-evpn 102 bridge-group 3
-     afi-evpn 102 bmac 0069.323f.2c77
+     afi-evpn 102 bmac 0035.6c01.0675
      afi-evpn 102 encapsulation vpws
      afi-evpn 102 update-source loopback0
      redistribute connected
@@ -348,6 +351,7 @@
      vrf v1
      local-as 2
      router-id 6.6.6.2
+     no safe-ebgp
      address-family unicast evpn
      neighbor 4321::1 remote-as 1
      no neighbor 4321::1 description
@@ -360,11 +364,11 @@
      neighbor 4321::1 pmsitun
      neighbor 4321::1 send-community standard extended
      afi-evpn 101 bridge-group 2
-     afi-evpn 101 bmac 0018.2346.0449
+     afi-evpn 101 bmac 001b.6207.062c
      afi-evpn 101 encapsulation vpws
      afi-evpn 101 update-source loopback0
      afi-evpn 102 bridge-group 4
-     afi-evpn 102 bmac 0057.2d53.025d
+     afi-evpn 102 bmac 003a.2336.4438
      afi-evpn 102 encapsulation vpws
      afi-evpn 102 update-source loopback0
      redistribute connected

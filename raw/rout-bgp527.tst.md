@@ -14,7 +14,7 @@
     hostname r1
     buggy
     !
-    logging file debug ../binTmp/zzz67r1-log.run
+    logging file debug ../binTmp/zzz73r1-log.run
     !
     vrf definition tester
      exit
@@ -73,6 +73,7 @@
      vrf v1
      local-as 1
      router-id 4.4.4.1
+     no safe-ebgp
      address-family unicast
      segrout 10 1
      neighbor 1.1.1.2 remote-as 2
@@ -88,6 +89,7 @@
      vrf v1
      local-as 1
      router-id 6.6.6.1
+     no safe-ebgp
      address-family unicast
      segrout 10 1
      neighbor 1234:1::2 remote-as 2
@@ -141,7 +143,7 @@
     hostname r2
     buggy
     !
-    logging file debug ../binTmp/zzz67r2-log.run
+    logging file debug ../binTmp/zzz73r2-log.run
     !
     vrf definition tester
      exit
@@ -185,6 +187,7 @@
      vrf v1
      local-as 2
      router-id 4.4.4.2
+     no safe-ebgp
      address-family unicast
      segrout 10 2
      neighbor 1.1.1.1 remote-as 1
@@ -206,6 +209,7 @@
      vrf v1
      local-as 2
      router-id 6.6.6.2
+     no safe-ebgp
      address-family unicast
      segrout 10 2
      neighbor 1234:1::1 remote-as 1
@@ -265,7 +269,7 @@
     hostname r3
     buggy
     !
-    logging file debug ../binTmp/zzz67r3-log.run
+    logging file debug ../binTmp/zzz73r3-log.run
     !
     vrf definition tester
      exit
@@ -309,6 +313,7 @@
      vrf v1
      local-as 3
      router-id 4.4.4.3
+     no safe-ebgp
      address-family unicast
      segrout 10 3
      neighbor 1.1.1.5 remote-as 2
@@ -330,6 +335,7 @@
      vrf v1
      local-as 3
      router-id 6.6.6.3
+     no safe-ebgp
      address-family unicast
      segrout 10 3
      neighbor 1234:2::1 remote-as 2
@@ -389,7 +395,7 @@
     hostname r4
     buggy
     !
-    logging file debug ../binTmp/zzz67r4-log.run
+    logging file debug ../binTmp/zzz73r4-log.run
     !
     vrf definition tester
      exit
@@ -448,6 +454,7 @@
      vrf v1
      local-as 4
      router-id 4.4.4.4
+     no safe-ebgp
      address-family unicast
      segrout 10 4
      neighbor 1.1.1.9 remote-as 3
@@ -463,6 +470,7 @@
      vrf v1
      local-as 4
      router-id 6.6.6.4
+     no safe-ebgp
      address-family unicast
      segrout 10 4
      neighbor 1234:3::1 remote-as 3

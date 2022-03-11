@@ -14,7 +14,7 @@
     hostname r1
     buggy
     !
-    logging file debug ../binTmp/zzz34r1-log.run
+    logging file debug ../binTmp/zzz96r1-log.run
     !
     bridge 1
      exit
@@ -84,7 +84,7 @@
     hostname r2
     buggy
     !
-    logging file debug ../binTmp/zzz34r2-log.run
+    logging file debug ../binTmp/zzz96r2-log.run
     !
     bridge 1
      mac-learn
@@ -162,7 +162,7 @@
     hostname r3
     buggy
     !
-    logging file debug ../binTmp/zzz34r3-log.run
+    logging file debug ../binTmp/zzz96r3-log.run
     !
     bridge 1
      mac-learn
@@ -240,7 +240,7 @@
     hostname r4
     buggy
     !
-    logging file debug ../binTmp/zzz34r4-log.run
+    logging file debug ../binTmp/zzz96r4-log.run
     !
     vrf definition tester
      exit
@@ -306,7 +306,7 @@
      |                         | packet           | byte               |     |
      | iface     | fwd  | phys | tx  | rx  | drop | tx   | rx   | drop | grp |
      |-----------|------|------|-----|-----|------|------|------|------|-----|
-     | bvi       | true | true | 0   | 0   | 0    | 0    | 0    | 0    |     |
+     | brprt bvi |      |      |     |     |      |      |      |      |     |
      | ethernet1 | true | true | 87  | 78  | 0    | 5712 | 5114 | 0    |     |
      | ethernet2 | true | true | 107 | 107 | 0    | 7012 | 7024 | 0    |     |
      |___________|______|______|_____|_____|______|______|______|______|_____|
@@ -315,9 +315,9 @@
      | addr           | iface     | static | time     | tx | rx | drop | tx   | rx   | drop |
      |----------------|-----------|--------|----------|----|----|------|------|------|------|
      | 0000.0000.4444 | ethernet2 | false  | 00:00:16 | 48 | 53 | 0    | 3168 | 3494 | 0    |
-     | 0030.4949.610c | bvi       | false  | 00:00:16 | 74 | 78 | 0    | 4824 | 5096 | 0    |
-     | 0044.1a75.1823 | ethernet2 | false  | 00:00:16 | 48 | 54 | 0    | 3168 | 3530 | 0    |
-     | 0075.421e.0d66 | ethernet1 | false  | 00:00:16 | 75 | 78 | 0    | 4854 | 5114 | 0    |
+     | 0013.6746.3d29 | bvi       | false  | 00:00:16 | 74 | 78 | 0    | 4824 | 5096 | 0    |
+     | 005a.1f6d.7a78 | ethernet1 | false  | 00:00:16 | 75 | 78 | 0    | 4854 | 5114 | 0    |
+     | 006c.261d.7826 | ethernet2 | false  | 00:00:16 | 48 | 54 | 0    | 3168 | 3530 | 0    |
      |________________|___________|________|__________|____|____|______|______|______|______|
     r2#
     r2#
@@ -330,11 +330,11 @@
     r2#show inter bvi1 full
     bvi1 is up (since 00:00:16, 3 changes)
      description:
-     type is bridged, hwaddr=0030.4949.610c, mtu=1500, bw=100mbps, vrf=v1
-     ip4 address=1.1.1.2/24, netmask=255.255.255.0, ifcid=1048131845
-     ip6 address=1234::2/16, netmask=ffff::, ifcid=903638387
+     type is bridged, hwaddr=0013.6746.3d29, mtu=1500, bw=100mbps, vrf=v1
+     ip4 address=1.1.1.2/24, netmask=255.255.255.0, ifcid=613152601
+     ip6 address=1234::2/16, netmask=ffff::, ifcid=1021797668
      received 87 packets (5730 bytes) dropped 0 packets (0 bytes)
-     transmitted 78 packets (5096 bytes) promisc=false macsec=false
+     transmitted 78 packets (5096 bytes) promisc=false macsec=false sgt=false
      |~~~~~~~|~~~~|~~~~|~~~~~~|~~~~~|~~~~~|~~~~~~|
      |       | packet         | byte             |
      | time  | tx | rx | drop | tx  | rx  | drop |
@@ -390,16 +390,16 @@
      | 7     | 0   | 0   | 0    | 0    | 0    | 0    |
      |_______|_____|_____|______|______|______|______|
              26k|
-             24k|   #
+             23k|   #
              21k|   #
              18k|   #
-             16k|   #
+             15k|   #
              13k|#  #
-             10k|#  #    #
-            8006|#  #    #      #
-            5337|#  # #  #   #  #
-            2668|#  ### ##   ## #
-               0|#  ### ## # ####
+             10k|#  #
+            7920|#  #    #      #
+            5280|#  # #  #   #  #
+            2640|#  #### #   ## #
+               0|# ####### # ####
              bps|0---------10--------20--------30--------40--------50-------- seconds
                1|
                0|
@@ -437,8 +437,8 @@
      |~~~~~~~~~~~~~~~~|~~~~~~~~~|~~~~~~~~~~|~~~~~~~~|
      | mac            | address | time     | static |
      |----------------|---------|----------|--------|
-     | 0075.421e.0d66 | 1.1.1.1 | 00:00:15 | false  |
-     | 0044.1a75.1823 | 1.1.1.3 | 00:00:15 | false  |
+     | 005a.1f6d.7a78 | 1.1.1.1 | 00:00:15 | false  |
+     | 006c.261d.7826 | 1.1.1.3 | 00:00:15 | false  |
      | 0000.0000.4444 | 1.1.1.4 | 00:00:15 | false  |
      |________________|_________|__________|________|
     r2#
@@ -453,12 +453,12 @@
      |~~~~~~~~~~~~~~~~|~~~~~~~~~~~~~~~~~~~~~~~~~~|~~~~~~~~~~|~~~~~~~~|~~~~~~~~|
      | mac            | address                  | time     | static | router |
      |----------------|--------------------------|----------|--------|--------|
-     | 0075.421e.0d66 | 1234::1                  | 00:00:16 | false  | false  |
-     | 0044.1a75.1823 | 1234::3                  | 00:00:16 | false  | false  |
+     | 005a.1f6d.7a78 | 1234::1                  | 00:00:16 | false  | false  |
+     | 006c.261d.7826 | 1234::3                  | 00:00:16 | false  | false  |
      | 0000.0000.4444 | 1234::4                  | 00:00:16 | false  | false  |
      | 0000.0000.4444 | fe80::200:ff:fe00:4444   | 00:00:16 | false  | true   |
-     | 0044.1a75.1823 | fe80::244:1aff:fe75:1823 | 00:00:16 | false  | true   |
-     | 0075.421e.0d66 | fe80::275:42ff:fe1e:d66  | 00:00:16 | false  | true   |
+     | 005a.1f6d.7a78 | fe80::25a:1fff:fe6d:7a78 | 00:00:16 | false  | true   |
+     | 006c.261d.7826 | fe80::26c:26ff:fe1d:7826 | 00:00:16 | false  | true   |
      |________________|__________________________|__________|________|________|
     r2#
     r2#

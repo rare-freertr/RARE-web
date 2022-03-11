@@ -14,7 +14,7 @@
     hostname r1
     buggy
     !
-    logging file debug ../binTmp/zzz72r1-log.run
+    logging file debug ../binTmp/zzz39r1-log.run
     !
     aaa userlist usr
      username c
@@ -88,7 +88,7 @@
     hostname r2
     buggy
     !
-    logging file debug ../binTmp/zzz72r2-log.run
+    logging file debug ../binTmp/zzz39r2-log.run
     !
     vrf definition tester
      exit
@@ -107,7 +107,7 @@
      ppp ip6cp open
      vrf forwarding v1
      ipv4 address 3.3.3.3 255.255.255.255
-     ipv6 address fe80::231:54ff:fe0f:5915 ffff:ffff:ffff:ffff::
+     ipv6 address fe80::268:2eff:fe4f:7711 ffff:ffff:ffff:ffff::
      ipv6 slaac
      no shutdown
      no log-link-change

@@ -14,7 +14,7 @@
     hostname r1
     buggy
     !
-    logging file debug ../binTmp/zzz47r1-log.run
+    logging file debug ../binTmp/zzz93r1-log.run
     !
     vrf definition tester
      exit
@@ -64,7 +64,7 @@
     interface pwether1
      no description
      mtu 1500
-     macaddr 0012.2742.5b29
+     macaddr 0000.1e00.5475
      vrf forwarding v1
      ipv4 address 4.4.4.1 255.255.255.0
      pseudowire v2 loopback1 pweompls 3.3.3.6 1234
@@ -75,7 +75,7 @@
     interface pwether2
      no description
      mtu 1500
-     macaddr 0054.361c.2269
+     macaddr 0058.4737.7246
      vrf forwarding v1
      ipv4 address 5.5.5.1 255.255.255.0
      pseudowire v2 loopback1 pweompls 3333::6 1234
@@ -87,6 +87,7 @@
      vrf v1
      local-as 1
      router-id 4.4.4.1
+     no safe-ebgp
      address-family vpnuni
      neighbor 2.2.2.2 remote-as 1
      no neighbor 2.2.2.2 description
@@ -103,6 +104,7 @@
      vrf v1
      local-as 1
      router-id 6.6.6.1
+     no safe-ebgp
      address-family vpnuni
      neighbor 4321::2 remote-as 1
      no neighbor 4321::2 description
@@ -180,7 +182,7 @@
     hostname r2
     buggy
     !
-    logging file debug ../binTmp/zzz47r2-log.run
+    logging file debug ../binTmp/zzz93r2-log.run
     !
     vrf definition tester
      exit
@@ -243,6 +245,7 @@
      vrf v1
      local-as 1
      router-id 4.4.4.2
+     no safe-ebgp
      address-family vpnuni
      neighbor 2.2.2.1 remote-as 1
      no neighbor 2.2.2.1 description
@@ -278,6 +281,7 @@
      vrf v1
      local-as 1
      router-id 6.6.6.2
+     no safe-ebgp
      address-family vpnuni
      neighbor 4321::1 remote-as 1
      no neighbor 4321::1 description
@@ -374,7 +378,7 @@
     hostname r3
     buggy
     !
-    logging file debug ../binTmp/zzz47r3-log.run
+    logging file debug ../binTmp/zzz93r3-log.run
     !
     vrf definition tester
      exit
@@ -435,6 +439,7 @@
      vrf v1
      local-as 1
      router-id 4.4.4.3
+     no safe-ebgp
      address-family vpnuni
      neighbor 2.2.2.2 remote-as 1
      no neighbor 2.2.2.2 description
@@ -451,6 +456,7 @@
      vrf v1
      local-as 1
      router-id 4.4.4.3
+     no safe-ebgp
      address-family labeled
      neighbor 1.1.1.10 remote-as 2
      no neighbor 1.1.1.10 description
@@ -465,6 +471,7 @@
      vrf v1
      local-as 1
      router-id 6.6.6.3
+     no safe-ebgp
      address-family vpnuni
      neighbor 4321::2 remote-as 1
      no neighbor 4321::2 description
@@ -481,6 +488,7 @@
      vrf v1
      local-as 1
      router-id 6.6.6.3
+     no safe-ebgp
      address-family labeled
      neighbor 1234:3::2 remote-as 2
      no neighbor 1234:3::2 description
@@ -550,7 +558,7 @@
     hostname r4
     buggy
     !
-    logging file debug ../binTmp/zzz47r4-log.run
+    logging file debug ../binTmp/zzz93r4-log.run
     !
     vrf definition tester
      exit
@@ -611,6 +619,7 @@
      vrf v1
      local-as 2
      router-id 4.4.4.3
+     no safe-ebgp
      address-family labeled
      neighbor 1.1.1.9 remote-as 1
      no neighbor 1.1.1.9 description
@@ -625,6 +634,7 @@
      vrf v1
      local-as 2
      router-id 4.4.4.4
+     no safe-ebgp
      address-family vpnuni
      neighbor 2.2.2.5 remote-as 2
      no neighbor 2.2.2.5 description
@@ -641,6 +651,7 @@
      vrf v1
      local-as 2
      router-id 6.6.6.3
+     no safe-ebgp
      address-family labeled
      neighbor 1234:3::1 remote-as 1
      no neighbor 1234:3::1 description
@@ -655,6 +666,7 @@
      vrf v1
      local-as 2
      router-id 6.6.6.4
+     no safe-ebgp
      address-family vpnuni
      neighbor 4321::5 remote-as 2
      no neighbor 4321::5 description
@@ -726,7 +738,7 @@
     hostname r5
     buggy
     !
-    logging file debug ../binTmp/zzz47r5-log.run
+    logging file debug ../binTmp/zzz93r5-log.run
     !
     vrf definition tester
      exit
@@ -789,6 +801,7 @@
      vrf v1
      local-as 2
      router-id 4.4.4.5
+     no safe-ebgp
      address-family vpnuni
      neighbor 2.2.2.2 remote-as 1
      no neighbor 2.2.2.2 description
@@ -824,6 +837,7 @@
      vrf v1
      local-as 2
      router-id 6.6.6.5
+     no safe-ebgp
      address-family vpnuni
      neighbor 4321::2 remote-as 1
      no neighbor 4321::2 description
@@ -920,7 +934,7 @@
     hostname r6
     buggy
     !
-    logging file debug ../binTmp/zzz47r6-log.run
+    logging file debug ../binTmp/zzz93r6-log.run
     !
     vrf definition tester
      exit
@@ -970,7 +984,7 @@
     interface pwether1
      no description
      mtu 1500
-     macaddr 005a.086f.5f59
+     macaddr 002d.5a32.3b48
      vrf forwarding v1
      ipv4 address 4.4.4.6 255.255.255.0
      pseudowire v2 loopback1 pweompls 3.3.3.1 1234
@@ -981,7 +995,7 @@
     interface pwether2
      no description
      mtu 1500
-     macaddr 0008.7b5c.5e63
+     macaddr 006b.4a61.493e
      vrf forwarding v1
      ipv4 address 5.5.5.6 255.255.255.0
      pseudowire v2 loopback1 pweompls 3333::1 1234
@@ -993,6 +1007,7 @@
      vrf v1
      local-as 2
      router-id 4.4.4.6
+     no safe-ebgp
      address-family vpnuni
      neighbor 2.2.2.5 remote-as 2
      no neighbor 2.2.2.5 description
@@ -1009,6 +1024,7 @@
      vrf v1
      local-as 2
      router-id 6.6.6.6
+     no safe-ebgp
      address-family vpnuni
      neighbor 4321::5 remote-as 2
      no neighbor 4321::5 description

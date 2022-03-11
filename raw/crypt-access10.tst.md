@@ -14,7 +14,7 @@
     hostname r1
     buggy
     !
-    logging file debug ../binTmp/zzz88r1-log.run
+    logging file debug ../binTmp/zzz16r1-log.run
     !
     scheduler f
      time 1000
@@ -131,7 +131,7 @@
     hostname r2
     buggy
     !
-    logging file debug ../binTmp/zzz88r2-log.run
+    logging file debug ../binTmp/zzz16r2-log.run
     !
     vrf definition tester
      exit
@@ -200,7 +200,7 @@
     hostname r3
     buggy
     !
-    logging file debug ../binTmp/zzz88r3-log.run
+    logging file debug ../binTmp/zzz16r3-log.run
     !
     vrf definition tester
      exit
@@ -269,7 +269,7 @@
     hostname r4
     buggy
     !
-    logging file debug ../binTmp/zzz88r4-log.run
+    logging file debug ../binTmp/zzz16r4-log.run
     !
     vrf definition tester
      exit

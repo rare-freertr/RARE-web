@@ -14,7 +14,7 @@
     hostname r1
     buggy
     !
-    logging file debug ../binTmp/zzz5r1-log.run
+    logging file debug ../binTmp/zzz51r1-log.run
     !
     ipv4 pool p4 2.2.2.1 0.0.0.1 254
     !
@@ -101,7 +101,7 @@
     hostname r2
     buggy
     !
-    logging file debug ../binTmp/zzz5r2-log.run
+    logging file debug ../binTmp/zzz51r2-log.run
     !
     prefix-list p1
      sequence 10 permit 0.0.0.0/0 ge 0 le 0
@@ -195,9 +195,9 @@
     dialer1 is up (since 00:00:00, 3 changes)
      description:
      type is dialer, hwaddr=none, mtu=1396, bw=4000kbps, vrf=v1
-     ip4 address=2.2.2.181/25, netmask=255.255.255.128, ifcid=491835476
+     ip4 address=2.2.2.9/25, netmask=255.255.255.128, ifcid=941543959
      received 10 packets (660 bytes) dropped 0 packets (0 bytes)
-     transmitted 10 packets (660 bytes) promisc=false macsec=false
+     transmitted 10 packets (660 bytes) promisc=false macsec=false sgt=false
      |~~~~~~~|~~~~|~~~~|~~~~~~|~~~~|~~~~|~~~~~~|
      |       | packet         | byte           |
      | time  | tx | rx | drop | tx | rx | drop |

@@ -14,7 +14,7 @@
     hostname r1
     buggy
     !
-    logging file debug ../binTmp/zzz53r1-log.run
+    logging file debug ../binTmp/zzz49r1-log.run
     !
     bridge 1
      rd 1:1
@@ -80,6 +80,7 @@
      vrf v1
      local-as 1
      router-id 4.4.4.1
+     no safe-ebgp
      address-family evpn
      neighbor 2.2.2.2 remote-as 2
      no neighbor 2.2.2.2 description
@@ -91,7 +92,7 @@
      neighbor 2.2.2.2 confederation-peer
      neighbor 2.2.2.2 send-community standard extended
      afi-evpn 101 bridge-group 1
-     afi-evpn 101 bmac 0025.2a1a.1a31
+     afi-evpn 101 bmac 0056.743f.172e
      afi-evpn 101 encapsulation vxlan
      afi-evpn 101 update-source loopback0
      exit
@@ -100,6 +101,7 @@
      vrf v1
      local-as 1
      router-id 6.6.6.1
+     no safe-ebgp
      address-family evpn
      neighbor 4321::2 remote-as 2
      no neighbor 4321::2 description
@@ -111,7 +113,7 @@
      neighbor 4321::2 confederation-peer
      neighbor 4321::2 send-community standard extended
      afi-evpn 101 bridge-group 2
-     afi-evpn 101 bmac 0015.0a3e.6901
+     afi-evpn 101 bmac 005f.1f5e.5337
      afi-evpn 101 encapsulation vxlan
      afi-evpn 101 update-source loopback0
      exit
@@ -160,7 +162,7 @@
     hostname r2
     buggy
     !
-    logging file debug ../binTmp/zzz53r2-log.run
+    logging file debug ../binTmp/zzz49r2-log.run
     !
     bridge 1
      rd 1:1
@@ -226,6 +228,7 @@
      vrf v1
      local-as 2
      router-id 4.4.4.2
+     no safe-ebgp
      address-family evpn
      neighbor 2.2.2.1 remote-as 1
      no neighbor 2.2.2.1 description
@@ -237,7 +240,7 @@
      neighbor 2.2.2.1 confederation-peer
      neighbor 2.2.2.1 send-community standard extended
      afi-evpn 101 bridge-group 1
-     afi-evpn 101 bmac 004b.0265.7d25
+     afi-evpn 101 bmac 000d.586b.3c7c
      afi-evpn 101 encapsulation vxlan
      afi-evpn 101 update-source loopback0
      exit
@@ -246,6 +249,7 @@
      vrf v1
      local-as 2
      router-id 6.6.6.2
+     no safe-ebgp
      address-family evpn
      neighbor 4321::1 remote-as 1
      no neighbor 4321::1 description
@@ -257,7 +261,7 @@
      neighbor 4321::1 confederation-peer
      neighbor 4321::1 send-community standard extended
      afi-evpn 101 bridge-group 2
-     afi-evpn 101 bmac 0072.7921.0a55
+     afi-evpn 101 bmac 0045.3040.4929
      afi-evpn 101 encapsulation vxlan
      afi-evpn 101 update-source loopback0
      exit

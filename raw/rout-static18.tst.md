@@ -14,7 +14,7 @@
     hostname r1
     buggy
     !
-    logging file debug ../binTmp/zzz87r1-log.run
+    logging file debug ../binTmp/zzz51r1-log.run
     !
     vrf definition tester
      exit
@@ -50,13 +50,10 @@
      no log-link-change
      exit
     !
-    proxy-profile p1
-     vrf v1
-     exit
-    !
     tracker t1
      mode nrpe
      target 2.2.2.101/c1
+     vrf v1
      interval 1000
      timeout 500
      start
@@ -111,7 +108,6 @@
      vrf v1
      exit
     !
-    client proxy p1
     !
     end
     ```
@@ -121,7 +117,7 @@
     hostname r2
     buggy
     !
-    logging file debug ../binTmp/zzz87r2-log.run
+    logging file debug ../binTmp/zzz51r2-log.run
     !
     vrf definition tester
      exit
@@ -157,13 +153,10 @@
      no log-link-change
      exit
     !
-    proxy-profile p1
-     vrf v1
-     exit
-    !
     tracker t1
      mode nrpe
      target 2.2.2.201/c1
+     vrf v1
      interval 1000
      timeout 500
      start
@@ -218,7 +211,6 @@
      vrf v1
      exit
     !
-    client proxy p1
     !
     end
     ```

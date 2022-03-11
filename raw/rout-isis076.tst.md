@@ -14,7 +14,7 @@
     hostname r1
     buggy
     !
-    logging file debug ../binTmp/zzz97r1-log.run
+    logging file debug ../binTmp/zzz6r1-log.run
     !
     vrf definition tester
      exit
@@ -105,7 +105,7 @@
     hostname r2
     buggy
     !
-    logging file debug ../binTmp/zzz97r2-log.run
+    logging file debug ../binTmp/zzz6r2-log.run
     !
     prefix-list p4
      sequence 10 deny 2.2.2.8/29 ge 29 le 32
@@ -222,7 +222,7 @@
     hostname r3
     buggy
     !
-    logging file debug ../binTmp/zzz97r3-log.run
+    logging file debug ../binTmp/zzz6r3-log.run
     !
     vrf definition tester
      exit
@@ -329,7 +329,7 @@
      | interface | mac address    | level | routerid       | ip address | other address | state | uptime   |
      |-----------|----------------|-------|----------------|------------|---------------|-------|----------|
      | ethernet1 | 0000.0000.0000 | 2     | 4444.0000.1111 | 1234:1::1  | 1.1.1.1       | up    | 00:00:08 |
-     | ethernet2 | 0000.0000.0000 | 1     | 4444.0000.3333 | 1234:2::2  | 1.1.1.6       | up    | 00:00:08 |
+     | ethernet2 | 0000.0000.0000 | 1     | 4444.0000.3333 | 1234:2::2  | 1.1.1.6       | up    | 00:00:07 |
      |___________|________________|_______|________________|____________|_______________|_______|__________|
     r2#
     r2#
@@ -353,8 +353,8 @@
      |~~~~~~~~~~~~~~~~~~~~~~|~~~~~~~~~~|~~~~~~~|~~~~~|~~~~~~~~~~|
      | lspid                | sequence | flags | len | time     |
      |----------------------|----------|-------|-----|----------|
-     | 4444.0000.1111.00-00 | 0000000d | apo   | 118 | 00:19:51 |
-     | 6666.0000.2222.00-00 | 0000000f | apo   | 141 | 00:19:51 |
+     | 4444.0000.1111.00-00 | 0000000c | apo   | 118 | 00:19:50 |
+     | 6666.0000.2222.00-00 | 0000000f | apo   | 141 | 00:19:52 |
      |______________________|__________|_______|_____|__________|
     r2#
     r2#

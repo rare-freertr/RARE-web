@@ -14,7 +14,7 @@
     hostname r1
     buggy
     !
-    logging file debug ../binTmp/zzz58r1-log.run
+    logging file debug ../binTmp/zzz68r1-log.run
     !
     prefix-list all
      sequence 10 permit 0.0.0.0/0 ge 0 le 32
@@ -120,6 +120,7 @@
      vrf v1
      local-as 1
      router-id 4.4.4.1
+     no safe-ebgp
      address-family evpn
      neighbor 2.2.2.2 remote-as 2
      no neighbor 2.2.2.2 description
@@ -130,11 +131,11 @@
      neighbor 2.2.2.2 pmsitun
      neighbor 2.2.2.2 send-community standard extended
      afi-evpn 101 bridge-group 1
-     afi-evpn 101 bmac 005d.4669.1756
+     afi-evpn 101 bmac 0005.7d56.0007
      afi-evpn 101 encapsulation cmac
      afi-evpn 101 update-source loopback0
      afi-evpn 102 bridge-group 3
-     afi-evpn 102 bmac 0079.0c33.0d3d
+     afi-evpn 102 bmac 0003.064a.6b07
      afi-evpn 102 encapsulation cmac
      afi-evpn 102 update-source loopback0
      automesh all
@@ -144,6 +145,7 @@
      vrf v1
      local-as 1
      router-id 6.6.6.1
+     no safe-ebgp
      address-family evpn
      neighbor 4321::2 remote-as 2
      no neighbor 4321::2 description
@@ -154,11 +156,11 @@
      neighbor 4321::2 pmsitun
      neighbor 4321::2 send-community standard extended
      afi-evpn 101 bridge-group 2
-     afi-evpn 101 bmac 0014.2678.1b3c
+     afi-evpn 101 bmac 0050.5b26.534d
      afi-evpn 101 encapsulation cmac
      afi-evpn 101 update-source loopback0
      afi-evpn 102 bridge-group 4
-     afi-evpn 102 bmac 0017.4375.1a66
+     afi-evpn 102 bmac 005f.1170.5b41
      afi-evpn 102 encapsulation cmac
      afi-evpn 102 update-source loopback0
      automesh all
@@ -208,7 +210,7 @@
     hostname r2
     buggy
     !
-    logging file debug ../binTmp/zzz58r2-log.run
+    logging file debug ../binTmp/zzz68r2-log.run
     !
     prefix-list all
      sequence 10 permit 0.0.0.0/0 ge 0 le 32
@@ -314,6 +316,7 @@
      vrf v1
      local-as 2
      router-id 4.4.4.2
+     no safe-ebgp
      address-family evpn
      neighbor 2.2.2.1 remote-as 1
      no neighbor 2.2.2.1 description
@@ -324,11 +327,11 @@
      neighbor 2.2.2.1 pmsitun
      neighbor 2.2.2.1 send-community standard extended
      afi-evpn 101 bridge-group 1
-     afi-evpn 101 bmac 000f.1d45.4751
+     afi-evpn 101 bmac 0075.4d09.663a
      afi-evpn 101 encapsulation cmac
      afi-evpn 101 update-source loopback0
      afi-evpn 102 bridge-group 3
-     afi-evpn 102 bmac 0072.1c45.225c
+     afi-evpn 102 bmac 0024.4928.795a
      afi-evpn 102 encapsulation cmac
      afi-evpn 102 update-source loopback0
      automesh all
@@ -338,6 +341,7 @@
      vrf v1
      local-as 2
      router-id 6.6.6.2
+     no safe-ebgp
      address-family evpn
      neighbor 4321::1 remote-as 1
      no neighbor 4321::1 description
@@ -348,11 +352,11 @@
      neighbor 4321::1 pmsitun
      neighbor 4321::1 send-community standard extended
      afi-evpn 101 bridge-group 2
-     afi-evpn 101 bmac 0055.2a6c.776c
+     afi-evpn 101 bmac 000c.061e.536e
      afi-evpn 101 encapsulation cmac
      afi-evpn 101 update-source loopback0
      afi-evpn 102 bridge-group 4
-     afi-evpn 102 bmac 0003.703f.5d5d
+     afi-evpn 102 bmac 0074.5d4c.4428
      afi-evpn 102 encapsulation cmac
      afi-evpn 102 update-source loopback0
      automesh all

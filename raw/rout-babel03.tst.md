@@ -14,7 +14,7 @@
     hostname r1
     buggy
     !
-    logging file debug ../binTmp/zzz74r1-log.run
+    logging file debug ../binTmp/zzz50r1-log.run
     !
     prefix-list p4
      sequence 10 deny 2.2.2.12/32 ge 32 le 32
@@ -127,7 +127,7 @@
     hostname r2
     buggy
     !
-    logging file debug ../binTmp/zzz74r2-log.run
+    logging file debug ../binTmp/zzz50r2-log.run
     !
     vrf definition tester
      exit
@@ -298,7 +298,7 @@
      | C   | 1.1.1.0/30  | 0/0     | ethernet1 | null    | 00:00:24 |
      | LOC | 1.1.1.2/32  | 0/1     | ethernet1 | null    | 00:00:24 |
      | A   | 2.2.2.1/32  | 130/100 | ethernet1 | 1.1.1.1 | 00:00:04 |
-     | C   | 2.2.2.2/32  | 0/0     | loopback0 | null    | 00:00:24 |
+     | C   | 2.2.2.2/32  | 0/0     | loopback0 | null    | 00:00:25 |
      | A   | 2.2.2.11/32 | 130/100 | ethernet1 | 1.1.1.1 | 00:00:04 |
      | C   | 2.2.2.12/32 | 0/0     | loopback1 | null    | 00:00:24 |
      | A   | 2.2.2.21/32 | 130/100 | ethernet1 | 1.1.1.1 | 00:00:04 |
@@ -319,9 +319,9 @@
      | C   | 1234:1::/32   | 0/0     | ethernet1 | null      | 00:00:24 |
      | LOC | 1234:1::2/128 | 0/1     | ethernet1 | null      | 00:00:24 |
      | A   | 4321::1/128   | 130/100 | ethernet1 | 1234:1::1 | 00:00:04 |
-     | C   | 4321::2/128   | 0/0     | loopback0 | null      | 00:00:24 |
+     | C   | 4321::2/128   | 0/0     | loopback0 | null      | 00:00:25 |
      | A   | 4321::11/128  | 130/100 | ethernet1 | 1234:1::1 | 00:00:04 |
-     | C   | 4321::12/128  | 0/0     | loopback1 | null      | 00:00:24 |
+     | C   | 4321::12/128  | 0/0     | loopback1 | null      | 00:00:25 |
      | A   | 4321::21/128  | 130/100 | ethernet1 | 1234:1::1 | 00:00:04 |
      | C   | 4321::22/128  | 0/0     | loopback2 | null      | 00:00:24 |
      |_____|_______________|_________|___________|___________|__________|

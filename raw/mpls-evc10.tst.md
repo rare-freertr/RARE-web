@@ -14,7 +14,7 @@
     hostname r1
     buggy
     !
-    logging file debug ../binTmp/zzz30r1-log.run
+    logging file debug ../binTmp/zzz81r1-log.run
     !
     vrf definition tester
      exit
@@ -98,7 +98,7 @@
     hostname r2
     buggy
     !
-    logging file debug ../binTmp/zzz30r2-log.run
+    logging file debug ../binTmp/zzz81r2-log.run
     !
     vrf definition tester
      exit
@@ -165,7 +165,7 @@
     hostname r3
     buggy
     !
-    logging file debug ../binTmp/zzz30r3-log.run
+    logging file debug ../binTmp/zzz81r3-log.run
     !
     vrf definition tester
      exit
@@ -195,7 +195,7 @@
     interface pwether1
      no description
      mtu 1500
-     macaddr 0012.7322.695d
+     macaddr 007d.461d.773d
      service-instance 11 xconnect v1 ethernet2 vxlan 3.3.3.2 123
      service-instance 12 xconnect v1 ethernet2 geneve 3.3.3.2 123
      service-instance 13 xconnect v1 ethernet2 etherip 3.3.3.2 123
@@ -246,7 +246,7 @@
     hostname r4
     buggy
     !
-    logging file debug ../binTmp/zzz30r4-log.run
+    logging file debug ../binTmp/zzz81r4-log.run
     !
     vrf definition tester
      exit
@@ -267,7 +267,7 @@
     interface pwether11
      no description
      mtu 1500
-     macaddr 0002.6436.7525
+     macaddr 004e.5d32.5e65
      vrf forwarding v1
      ipv4 address 1.1.1.2 255.255.255.0
      ipv6 address 1111::2 ffff::
@@ -279,7 +279,7 @@
     interface pwether12
      no description
      mtu 1500
-     macaddr 0059.1b59.4532
+     macaddr 0003.1d4b.013f
      vrf forwarding v1
      ipv4 address 1.1.2.2 255.255.255.0
      ipv6 address 1112::2 ffff::
@@ -291,7 +291,7 @@
     interface pwether13
      no description
      mtu 1500
-     macaddr 004d.425f.3a2c
+     macaddr 0045.1f5a.512f
      vrf forwarding v1
      ipv4 address 1.1.3.2 255.255.255.0
      ipv6 address 1113::2 ffff::

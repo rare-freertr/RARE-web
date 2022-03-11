@@ -14,7 +14,7 @@
     hostname r1
     buggy
     !
-    logging file debug ../binTmp/zzz96r1-log.run
+    logging file debug ../binTmp/zzz85r1-log.run
     !
     prefix-list p4
      sequence 10 permit 0.0.0.0/0 ge 0 le 0
@@ -99,7 +99,7 @@
     hostname r2
     buggy
     !
-    logging file debug ../binTmp/zzz96r2-log.run
+    logging file debug ../binTmp/zzz85r2-log.run
     !
     aaa radius usr
      secret $v10$Yw==
@@ -190,7 +190,7 @@
     hostname r3
     buggy
     !
-    logging file debug ../binTmp/zzz96r3-log.run
+    logging file debug ../binTmp/zzz85r3-log.run
     !
     aaa userlist usr
      username c

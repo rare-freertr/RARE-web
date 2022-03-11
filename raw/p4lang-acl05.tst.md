@@ -12,7 +12,7 @@
     **r1:**
     ```
     hostname r1
-    logging file debug ../binTmp/zzz86r1-log.run
+    logging file debug ../binTmp/zzz2r1-log.run
     vrf definition tester
      exit
     server telnet tester
@@ -91,7 +91,6 @@
      export-vrf v1 1
      export-port sdn1 1
      export-port sdn2 2
-     export-port sdn2.111 111
      export-port sdn3 3
      export-port sdn4 4
      vrf v9

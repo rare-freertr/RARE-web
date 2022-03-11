@@ -14,7 +14,7 @@
     hostname r1
     buggy
     !
-    logging file debug ../binTmp/zzz34r1-log.run
+    logging file debug ../binTmp/zzz75r1-log.run
     !
     bridge 1
      mac-learn
@@ -147,7 +147,7 @@
     hostname r2
     buggy
     !
-    logging file debug ../binTmp/zzz34r2-log.run
+    logging file debug ../binTmp/zzz75r2-log.run
     !
     bridge 1
      exit
@@ -248,7 +248,7 @@
     hostname r3
     buggy
     !
-    logging file debug ../binTmp/zzz34r3-log.run
+    logging file debug ../binTmp/zzz75r3-log.run
     !
     bridge 1
      exit
@@ -348,7 +348,7 @@
     hostname r4
     buggy
     !
-    logging file debug ../binTmp/zzz34r4-log.run
+    logging file debug ../binTmp/zzz75r4-log.run
     !
     vrf definition tester
      exit

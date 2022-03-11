@@ -14,7 +14,7 @@
     hostname r1
     buggy
     !
-    logging file debug ../binTmp/zzz65r1-log.run
+    logging file debug ../binTmp/zzz17r1-log.run
     !
     bridge 1
      mac-learn
@@ -63,6 +63,7 @@
      vrf v1
      local-as 1
      router-id 4.4.4.1
+     no safe-ebgp
      address-family unicast
      neighbor 1.1.1.2 remote-as 1
      no neighbor 1.1.1.2 description
@@ -83,6 +84,7 @@
      vrf v1
      local-as 1
      router-id 6.6.6.1
+     no safe-ebgp
      address-family unicast
      neighbor 1234:1::2 remote-as 1
      no neighbor 1234:1::2 description
@@ -141,7 +143,7 @@
     hostname r2
     buggy
     !
-    logging file debug ../binTmp/zzz65r2-log.run
+    logging file debug ../binTmp/zzz17r2-log.run
     !
     route-policy rm1
      sequence 10 set aspath 1234
@@ -177,6 +179,7 @@
      vrf v1
      local-as 1
      router-id 4.4.4.2
+     no safe-ebgp
      address-family unicast
      neighbor 1.1.1.1 remote-as 1
      no neighbor 1.1.1.1 description
@@ -190,6 +193,7 @@
      vrf v1
      local-as 1
      router-id 6.6.6.2
+     no safe-ebgp
      address-family unicast
      neighbor 1234:1::1 remote-as 1
      no neighbor 1234:1::1 description
@@ -241,7 +245,7 @@
     hostname r3
     buggy
     !
-    logging file debug ../binTmp/zzz65r3-log.run
+    logging file debug ../binTmp/zzz17r3-log.run
     !
     route-policy rm1
      sequence 10 if aspath 1234
@@ -280,6 +284,7 @@
      vrf v1
      local-as 1
      router-id 4.4.4.3
+     no safe-ebgp
      address-family unicast
      neighbor 1.1.1.1 remote-as 1
      no neighbor 1.1.1.1 description
@@ -294,6 +299,7 @@
      vrf v1
      local-as 1
      router-id 6.6.6.3
+     no safe-ebgp
      address-family unicast
      neighbor 1234:1::1 remote-as 1
      no neighbor 1234:1::1 description

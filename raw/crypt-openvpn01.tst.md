@@ -14,7 +14,7 @@
     hostname r1
     buggy
     !
-    logging file debug ../binTmp/zzz4r1-log.run
+    logging file debug ../binTmp/zzz13r1-log.run
     !
     crypto ipsec ips
      cipher des
@@ -95,7 +95,7 @@
     hostname r2
     buggy
     !
-    logging file debug ../binTmp/zzz4r2-log.run
+    logging file debug ../binTmp/zzz13r2-log.run
     !
     crypto ipsec ips
      cipher des
@@ -178,18 +178,18 @@
     r1#
     r1#show inter tun1 full
     r1#show inter tun1 full
-    tunnel1 is up (since 00:00:05, 15 changes)
+    tunnel1 is up (since 00:00:06, 15 changes)
      description:
      type is openvpn, hwaddr=none, mtu=1400, bw=8000kbps, vrf=v1
-     ip4 address=2.2.2.1/24, netmask=255.255.255.0, ifcid=315376672
-     ip6 address=4321::1/16, netmask=ffff::, ifcid=602333394
-     received 22 packets (1628 bytes) dropped 0 packets (0 bytes)
-     transmitted 28 packets (1880 bytes) promisc=false macsec=false
+     ip4 address=2.2.2.1/24, netmask=255.255.255.0, ifcid=16434330
+     ip6 address=4321::1/16, netmask=ffff::, ifcid=723071988
+     received 21 packets (1554 bytes) dropped 0 packets (0 bytes)
+     transmitted 28 packets (1880 bytes) promisc=false macsec=false sgt=false
      |~~~~~~~|~~~~|~~~~|~~~~~~|~~~~~|~~~~~|~~~~~~|
      |       | packet         | byte             |
      | time  | tx | rx | drop | tx  | rx  | drop |
      |-------|----|----|------|-----|-----|------|
-     | 1sec  | 2  | 2  | 0    | 132 | 148 | 0    |
+     | 1sec  | 5  | 5  | 0    | 330 | 370 | 0    |
      | 1min  | 0  | 0  | 0    | 0   | 0   | 0    |
      | 1hour | 0  | 0  | 0    | 0   | 0   | 0    |
      |_______|____|____|______|_____|_____|______|
@@ -198,7 +198,7 @@
      | type   | value | handler | tx | rx | drop | tx  | rx  | drop |
      |--------|-------|---------|----|----|------|-----|-----|------|
      | ethtyp | 0000  | null    | 0  | 0  | 0    | 0   | 0   | 0    |
-     | ethtyp | 0800  | ip4     | 15 | 12 | 0    | 990 | 888 | 0    |
+     | ethtyp | 0800  | ip4     | 15 | 11 | 0    | 990 | 814 | 0    |
      | ethtyp | 86dd  | ip6     | 13 | 10 | 0    | 890 | 740 | 0    |
      |________|_______|_________|____|____|______|_____|_____|______|
      |~~~~~|~~~~|~~~~|
@@ -215,7 +215,7 @@
      |            | packet         | byte               |
      | size       | tx | rx | drop | tx   | rx   | drop |
      |------------|----|----|------|------|------|------|
-     | 0-255      | 28 | 22 | 0    | 1880 | 1628 | 0    |
+     | 0-255      | 28 | 21 | 0    | 1880 | 1554 | 0    |
      | 256-511    | 0  | 0  | 0    | 0    | 0    | 0    |
      | 512-767    | 0  | 0  | 0    | 0    | 0    | 0    |
      | 768-1023   | 0  | 0  | 0    | 0    | 0    | 0    |
@@ -237,17 +237,17 @@
      | 6     | 0   | 0   | 0    | 0    | 0    | 0    |
      | 7     | 0   | 0   | 0    | 0    | 0    | 0    |
      |_______|_____|_____|______|______|______|______|
-            2240|
-            2016|#
-            1792|#   #
-            1568|#   #
-            1344|#   #
-            1120|#   #
-             896|#   #
-             672|#   #
-             448|#####
-             224|#####
-               0|#####
+            5600|
+            5040|#
+            4480|#
+            3920|#
+            3360|#
+            2800|#
+            2240|#    #
+            1680|#    #
+            1120|#    #
+             560|##   #
+               0|######
              bps|0---------10--------20--------30--------40--------50-------- seconds
                1|
                0|

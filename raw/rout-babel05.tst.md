@@ -14,7 +14,7 @@
     hostname r1
     buggy
     !
-    logging file debug ../binTmp/zzz71r1-log.run
+    logging file debug ../binTmp/zzz62r1-log.run
     !
     route-map p4
      sequence 10 action deny
@@ -135,7 +135,7 @@
     hostname r2
     buggy
     !
-    logging file debug ../binTmp/zzz71r2-log.run
+    logging file debug ../binTmp/zzz62r2-log.run
     !
     vrf definition tester
      exit
@@ -269,7 +269,7 @@
      |~~~~~|~~~~~~~~~~~~~|~~~~~~~~~|~~~~~~~~~~~|~~~~~~~~~|~~~~~~~~~~|
      | typ | prefix      | metric  | iface     | hop     | time     |
      |-----|-------------|---------|-----------|---------|----------|
-     | A   | 1.1.1.0/30  | 1/0     | ethernet1 | null    | 00:00:23 |
+     | A   | 1.1.1.0/30  | 1/0     | ethernet1 | null    | 00:00:24 |
      | A   | 2.2.2.1/32  | 130/100 | ethernet1 | 1.1.1.1 | 00:00:03 |
      | A   | 2.2.2.11/32 | 130/100 | ethernet1 | 1.1.1.1 | 00:00:03 |
      | A   | 2.2.2.21/32 | 130/100 | ethernet1 | 1.1.1.1 | 00:00:03 |
@@ -287,9 +287,9 @@
      | typ | prefix       | metric  | iface     | hop       | time     |
      |-----|--------------|---------|-----------|-----------|----------|
      | A   | 1234:1::/32  | 1/0     | ethernet1 | null      | 00:00:24 |
-     | A   | 4321::1/128  | 130/100 | ethernet1 | 1234:1::1 | 00:00:04 |
-     | A   | 4321::11/128 | 130/100 | ethernet1 | 1234:1::1 | 00:00:04 |
-     | A   | 4321::21/128 | 130/100 | ethernet1 | 1234:1::1 | 00:00:04 |
+     | A   | 4321::1/128  | 130/100 | ethernet1 | 1234:1::1 | 00:00:03 |
+     | A   | 4321::11/128 | 130/100 | ethernet1 | 1234:1::1 | 00:00:03 |
+     | A   | 4321::21/128 | 130/100 | ethernet1 | 1234:1::1 | 00:00:03 |
      |_____|______________|_________|___________|___________|__________|
     r2#
     r2#

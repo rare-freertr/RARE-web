@@ -14,7 +14,7 @@
     hostname r1
     buggy
     !
-    logging file debug ../binTmp/zzz26r1-log.run
+    logging file debug ../binTmp/zzz28r1-log.run
     !
     bridge 1
      rd 1:1
@@ -82,6 +82,7 @@
      vrf v1
      local-as 1
      router-id 4.4.4.1
+     no safe-ebgp
      address-family evpn
      neighbor 1.1.1.3 remote-as 3
      no neighbor 1.1.1.3 description
@@ -93,7 +94,7 @@
      neighbor 1.1.1.3 send-community standard extended
      afi-evpn 101 bridge-group 1
      afi-evpn 101 srv6 tunnel1
-     afi-evpn 101 bmac 007d.0a53.0452
+     afi-evpn 101 bmac 0063.202f.7040
      afi-evpn 101 encapsulation pbb
      afi-evpn 101 update-source ethernet1
      exit
@@ -102,6 +103,7 @@
      vrf v1
      local-as 1
      router-id 6.6.6.1
+     no safe-ebgp
      address-family evpn
      neighbor 1234::3 remote-as 3
      no neighbor 1234::3 description
@@ -113,7 +115,7 @@
      neighbor 1234::3 send-community standard extended
      afi-evpn 102 bridge-group 2
      afi-evpn 102 srv6 tunnel1
-     afi-evpn 102 bmac 0072.526b.1667
+     afi-evpn 102 bmac 0007.7660.2539
      afi-evpn 102 encapsulation pbb
      afi-evpn 102 update-source ethernet1
      exit
@@ -161,7 +163,7 @@
     hostname r2
     buggy
     !
-    logging file debug ../binTmp/zzz26r2-log.run
+    logging file debug ../binTmp/zzz28r2-log.run
     !
     bridge 1
      rd 1:1
@@ -229,6 +231,7 @@
      vrf v1
      local-as 2
      router-id 4.4.4.2
+     no safe-ebgp
      address-family evpn
      neighbor 1.1.1.3 remote-as 3
      no neighbor 1.1.1.3 description
@@ -240,7 +243,7 @@
      neighbor 1.1.1.3 send-community standard extended
      afi-evpn 101 bridge-group 1
      afi-evpn 101 srv6 tunnel1
-     afi-evpn 101 bmac 0035.2c1d.3f31
+     afi-evpn 101 bmac 005c.1773.7967
      afi-evpn 101 encapsulation pbb
      afi-evpn 101 update-source ethernet1
      exit
@@ -249,6 +252,7 @@
      vrf v1
      local-as 2
      router-id 6.6.6.2
+     no safe-ebgp
      address-family evpn
      neighbor 1234::3 remote-as 3
      no neighbor 1234::3 description
@@ -260,7 +264,7 @@
      neighbor 1234::3 send-community standard extended
      afi-evpn 102 bridge-group 2
      afi-evpn 102 srv6 tunnel1
-     afi-evpn 102 bmac 0054.2c12.2e74
+     afi-evpn 102 bmac 0053.2f07.3229
      afi-evpn 102 encapsulation pbb
      afi-evpn 102 update-source ethernet1
      exit
@@ -308,7 +312,7 @@
     hostname r3
     buggy
     !
-    logging file debug ../binTmp/zzz26r3-log.run
+    logging file debug ../binTmp/zzz28r3-log.run
     !
     bridge 1
      mac-learn
@@ -348,6 +352,7 @@
      vrf v1
      local-as 3
      router-id 4.4.4.3
+     no safe-ebgp
      address-family evpn
      neighbor 1.1.1.1 remote-as 1
      no neighbor 1.1.1.1 description
@@ -373,6 +378,7 @@
      vrf v1
      local-as 3
      router-id 4.4.4.3
+     no safe-ebgp
      address-family evpn
      neighbor 1234::1 remote-as 1
      no neighbor 1234::1 description

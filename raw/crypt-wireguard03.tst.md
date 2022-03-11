@@ -14,7 +14,7 @@
     hostname r1
     buggy
     !
-    logging file debug ../binTmp/zzz88r1-log.run
+    logging file debug ../binTmp/zzz22r1-log.run
     !
     crypto ipsec ips1
      key $v10$RUZ3MnJKRWRxRkdEZ0M4MHVtM2Z3TW1BYWZ3cVhubytQc2JNSFBaMHVtTT1NNnZEVjhRZGlXRFFwcFZLaktmOHhqb0t0eUdBZVJLL1VlNDhrd0tJNVNzPQ==
@@ -108,7 +108,7 @@
     hostname r2
     buggy
     !
-    logging file debug ../binTmp/zzz88r2-log.run
+    logging file debug ../binTmp/zzz22r2-log.run
     !
     crypto ipsec ips1
      key $v10$NkpoeXZLUHV0UTlETkx1cE9QbURuUUxSV3RVV2xVakk2UFRKL0laOWwxdz1iUU1tcENhR1Z5cTlmK3Y0OFhHbWZINURNTHl0a3F6aUlEK3JCSCtxUWljPQ==

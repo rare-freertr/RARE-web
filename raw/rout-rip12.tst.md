@@ -14,7 +14,7 @@
     hostname r1
     buggy
     !
-    logging file debug ../binTmp/zzz22r1-log.run
+    logging file debug ../binTmp/zzz64r1-log.run
     !
     vrf definition tester
      exit
@@ -113,7 +113,7 @@
     hostname r2
     buggy
     !
-    logging file debug ../binTmp/zzz22r2-log.run
+    logging file debug ../binTmp/zzz64r2-log.run
     !
     vrf definition tester
      exit
@@ -245,7 +245,7 @@
      |~~~~~|~~~~~~~~~~~~|~~~~~~~~|~~~~~~~~~~~|~~~~~~~~~|~~~~~~~~~~|
      | typ | prefix     | metric | iface     | hop     | time     |
      |-----|------------|--------|-----------|---------|----------|
-     | R   | 0.0.0.0/0  | 120/1  | ethernet1 | 1.1.1.1 | 00:00:05 |
+     | R   | 0.0.0.0/0  | 120/1  | ethernet1 | 1.1.1.1 | 00:00:04 |
      | R   | 1.1.1.0/30 | 1/0    | ethernet1 | null    | 00:00:34 |
      |_____|____________|________|___________|_________|__________|
     r2#
@@ -260,7 +260,7 @@
      |~~~~~|~~~~~~~~~~~~~|~~~~~~~~|~~~~~~~~~~~|~~~~~~~~~~~|~~~~~~~~~~|
      | typ | prefix      | metric | iface     | hop       | time     |
      |-----|-------------|--------|-----------|-----------|----------|
-     | R   | ::/0        | 120/1  | ethernet1 | 1234:1::1 | 00:00:05 |
+     | R   | ::/0        | 120/1  | ethernet1 | 1234:1::1 | 00:00:04 |
      | R   | 1234:1::/32 | 1/0    | ethernet1 | null      | 00:00:34 |
      |_____|_____________|________|___________|___________|__________|
     r2#
@@ -276,8 +276,8 @@
      | typ | prefix      | metric | iface     | hop     | time     |
      |-----|-------------|--------|-----------|---------|----------|
      | R   | 0.0.0.0/0   | 120/1  | ethernet1 | 1.1.1.1 | 00:00:05 |
-     | C   | 1.1.1.0/30  | 0/0    | ethernet1 | null    | 00:00:35 |
-     | LOC | 1.1.1.2/32  | 0/1    | ethernet1 | null    | 00:00:35 |
+     | C   | 1.1.1.0/30  | 0/0    | ethernet1 | null    | 00:00:34 |
+     | LOC | 1.1.1.2/32  | 0/1    | ethernet1 | null    | 00:00:34 |
      | C   | 2.2.2.2/32  | 0/0    | loopback0 | null    | 00:00:35 |
      | C   | 2.2.2.12/32 | 0/0    | loopback1 | null    | 00:00:35 |
      | C   | 2.2.2.22/32 | 0/0    | loopback2 | null    | 00:00:35 |

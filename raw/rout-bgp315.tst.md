@@ -14,7 +14,7 @@
     hostname r1
     buggy
     !
-    logging file debug ../binTmp/zzz8r1-log.run
+    logging file debug ../binTmp/zzz21r1-log.run
     !
     route-policy rm1
      sequence 10 if rd 1:3
@@ -102,6 +102,7 @@
      vrf v1
      local-as 1
      router-id 4.4.4.1
+     no safe-ebgp
      address-family vpnuni
      neighbor 2.2.2.3 remote-as 1
      no neighbor 2.2.2.3 description
@@ -123,6 +124,7 @@
      vrf v1
      local-as 1
      router-id 6.6.6.1
+     no safe-ebgp
      address-family vpnuni
      neighbor 4321::3 remote-as 1
      no neighbor 4321::3 description
@@ -225,7 +227,7 @@
     hostname r2
     buggy
     !
-    logging file debug ../binTmp/zzz8r2-log.run
+    logging file debug ../binTmp/zzz21r2-log.run
     !
     vrf definition tester
      exit
@@ -314,7 +316,7 @@
     hostname r3
     buggy
     !
-    logging file debug ../binTmp/zzz8r3-log.run
+    logging file debug ../binTmp/zzz21r3-log.run
     !
     vrf definition tester
      exit
@@ -394,6 +396,7 @@
      vrf v1
      local-as 1
      router-id 4.4.4.3
+     no safe-ebgp
      address-family vpnuni
      neighbor 2.2.2.1 remote-as 1
      no neighbor 2.2.2.1 description
@@ -414,6 +417,7 @@
      vrf v1
      local-as 1
      router-id 6.6.6.3
+     no safe-ebgp
      address-family vpnuni
      neighbor 4321::1 remote-as 1
      no neighbor 4321::1 description

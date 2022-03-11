@@ -14,7 +14,7 @@
     hostname r1
     buggy
     !
-    logging file debug ../binTmp/zzz48r1-log.run
+    logging file debug ../binTmp/zzz98r1-log.run
     !
     ipv4 pool p4 2.2.2.1 0.0.0.1 254
     !
@@ -94,7 +94,7 @@
     hostname r2
     buggy
     !
-    logging file debug ../binTmp/zzz48r2-log.run
+    logging file debug ../binTmp/zzz98r2-log.run
     !
     prefix-list p1
      sequence 10 permit 0.0.0.0/0 ge 0 le 0
@@ -173,14 +173,14 @@
     dialer1 is up (since 00:00:01, 3 changes)
      description:
      type is dialer, hwaddr=none, mtu=1488, bw=100mbps, vrf=v1
-     ip4 address=2.2.2.253/25, netmask=255.255.255.128, ifcid=75817381
+     ip4 address=2.2.2.102/25, netmask=255.255.255.128, ifcid=25593331
      received 10 packets (660 bytes) dropped 0 packets (0 bytes)
-     transmitted 10 packets (660 bytes) promisc=false macsec=false
+     transmitted 10 packets (660 bytes) promisc=false macsec=false sgt=false
      |~~~~~~~|~~~~|~~~~|~~~~~~|~~~~~|~~~~~|~~~~~~|
      |       | packet         | byte             |
      | time  | tx | rx | drop | tx  | rx  | drop |
      |-------|----|----|------|-----|-----|------|
-     | 1sec  | 10 | 10 | 0    | 660 | 660 | 0    |
+     | 1sec  | 5  | 5  | 0    | 330 | 330 | 0    |
      | 1min  | 0  | 0  | 0    | 0   | 0   | 0    |
      | 1hour | 0  | 0  | 0    | 0   | 0   | 0    |
      |_______|____|____|______|_____|_____|______|
@@ -226,16 +226,16 @@
      | 6     | 0   | 0   | 0    | 0   | 0   | 0    |
      | 7     | 0   | 0   | 0    | 0   | 0   | 0    |
      |_______|_____|_____|______|_____|_____|______|
-             10k|
-            9504|#
-            8448|#
-            7392|#
-            6336|#
-            5280|#
+            5280|
+            4752|#
             4224|#
+            3696|#
             3168|#
+            2640|#
             2112|#
+            1584|#
             1056|#
+             528|#
                0|#
              bps|0---------10--------20--------30--------40--------50-------- seconds
                1|

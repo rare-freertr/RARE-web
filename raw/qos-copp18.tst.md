@@ -14,7 +14,7 @@
     hostname r1
     buggy
     !
-    logging file debug ../binTmp/zzz41r1-log.run
+    logging file debug ../binTmp/zzz11r1-log.run
     !
     vrf definition tester
      exit
@@ -74,7 +74,7 @@
     hostname r2
     buggy
     !
-    logging file debug ../binTmp/zzz41r2-log.run
+    logging file debug ../binTmp/zzz11r2-log.run
     !
     access-list a4
      sequence 10 permit 1 any all any all
@@ -118,6 +118,7 @@
      vrf v1
      local-as 0
      router-id 0.0.0.0
+     no safe-ebgp
      address-family unicast
      afi-other enable
      no afi-other vpn-mode
@@ -129,6 +130,7 @@
      vrf v1
      local-as 0
      router-id 0.0.0.0
+     no safe-ebgp
      address-family unicast
      afi-other enable
      no afi-other vpn-mode

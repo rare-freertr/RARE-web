@@ -14,7 +14,7 @@
     hostname r1
     buggy
     !
-    logging file debug ../binTmp/zzz31r1-log.run
+    logging file debug ../binTmp/zzz28r1-log.run
     !
     aaa userlist usr
      username c
@@ -109,7 +109,7 @@
     hostname r2
     buggy
     !
-    logging file debug ../binTmp/zzz31r2-log.run
+    logging file debug ../binTmp/zzz28r2-log.run
     !
     chat-script login
      sequence 10 recv 5000 .*ser
@@ -210,12 +210,12 @@
     r2#
     r2#show inter dia1 full
     r2#show inter dia1 full
-    dialer1 is up (since 00:00:01, 3 changes)
+    dialer1 is up (since 00:00:00, 3 changes)
      description:
      type is dialer, hwaddr=none, mtu=1500, bw=128kbps, vrf=v1
-     ip4 address=2.2.2.161/25, netmask=255.255.255.128, ifcid=482393768
+     ip4 address=2.2.2.134/25, netmask=255.255.255.128, ifcid=907879380
      received 10 packets (660 bytes) dropped 0 packets (0 bytes)
-     transmitted 10 packets (660 bytes) promisc=false macsec=false
+     transmitted 10 packets (660 bytes) promisc=false macsec=false sgt=false
      |~~~~~~~|~~~~|~~~~|~~~~~~|~~~~|~~~~|~~~~~~|
      |       | packet         | byte           |
      | time  | tx | rx | drop | tx | rx | drop |

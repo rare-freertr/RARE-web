@@ -14,7 +14,7 @@
     hostname r1
     buggy
     !
-    logging file debug ../binTmp/zzz51r1-log.run
+    logging file debug ../binTmp/zzz66r1-log.run
     !
     ipv4 pool p4 2.2.2.1 0.0.0.1 254
     !
@@ -104,7 +104,7 @@
     hostname r2
     buggy
     !
-    logging file debug ../binTmp/zzz51r2-log.run
+    logging file debug ../binTmp/zzz66r2-log.run
     !
     prefix-list p1
      sequence 10 permit 0.0.0.0/0 ge 0 le 0

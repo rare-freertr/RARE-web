@@ -14,7 +14,7 @@
     hostname r1
     buggy
     !
-    logging file debug ../binTmp/zzz98r1-log.run
+    logging file debug ../binTmp/zzz14r1-log.run
     !
     vrf definition tester
      exit
@@ -74,7 +74,7 @@
     hostname r2
     buggy
     !
-    logging file debug ../binTmp/zzz98r2-log.run
+    logging file debug ../binTmp/zzz14r2-log.run
     !
     access-list a4
      sequence 10 permit 1 any all any all
@@ -118,6 +118,7 @@
      vrf v1
      local-as 0
      router-id 0.0.0.0
+     no safe-ebgp
      address-family unicast
      flowspec-install
      flowspec-advert p4
@@ -127,6 +128,7 @@
      vrf v1
      local-as 0
      router-id 0.0.0.0
+     no safe-ebgp
      address-family unicast
      flowspec-install
      flowspec-advert p6

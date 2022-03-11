@@ -14,7 +14,7 @@
     hostname r1
     buggy
     !
-    logging file debug ../binTmp/zzz56r1-log.run
+    logging file debug ../binTmp/zzz62r1-log.run
     !
     access-list a2b4
      sequence 10 permit all 2.2.2.101 255.255.255.255 all 2.2.2.201 255.255.255.255 all
@@ -93,7 +93,7 @@
     hostname r2
     buggy
     !
-    logging file debug ../binTmp/zzz56r2-log.run
+    logging file debug ../binTmp/zzz62r2-log.run
     !
     access-list a2b4
      sequence 10 permit all 2.2.2.101 255.255.255.255 all 2.2.2.201 255.255.255.255 all
@@ -182,7 +182,7 @@
     hostname r3
     buggy
     !
-    logging file debug ../binTmp/zzz56r3-log.run
+    logging file debug ../binTmp/zzz62r3-log.run
     !
     access-list b2a4
      sequence 10 permit all 2.2.2.201 255.255.255.255 all 2.2.2.101 255.255.255.255 all
@@ -277,9 +277,9 @@
     r2#show ipv6 pbr v1
     r2#show ipv6 pbr v1
      sequence 10 a2b6 v1 nexthop 1234:2::1
-      match=tx=0(0) rx=960(15) drp=0(0) accessed=00:00:00 ago, 00:00:00 timeout
+      match=tx=0(0) rx=640(10) drp=0(0) accessed=00:00:00 ago, 00:00:00 timeout
      sequence 20 b2a6 v1 nexthop 1234:1::1
-      match=tx=0(0) rx=896(14) drp=0(0) accessed=00:00:00 ago, 00:00:00 timeout
+      match=tx=0(0) rx=640(10) drp=0(0) accessed=00:00:00 ago, 00:00:00 timeout
     r2#
     r2#
     ```

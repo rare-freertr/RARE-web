@@ -14,7 +14,7 @@
     hostname r1
     buggy
     !
-    logging file debug ../binTmp/zzz85r1-log.run
+    logging file debug ../binTmp/zzz66r1-log.run
     !
     vrf definition tester
      exit
@@ -77,7 +77,7 @@
     hostname r2
     buggy
     !
-    logging file debug ../binTmp/zzz85r2-log.run
+    logging file debug ../binTmp/zzz66r2-log.run
     !
     vrf definition tester
      exit
@@ -93,7 +93,6 @@
      ipv4 address 1.1.1.2 255.255.255.0
      ipv4 host-static 1.1.1.1 0000.0000.1111
      ipv6 address 1234::2 ffff::
-     ipv6 host-static 1234::1 0000.0000.1111
      no shutdown
      no log-link-change
      exit

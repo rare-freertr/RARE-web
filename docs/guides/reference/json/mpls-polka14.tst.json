@@ -1,0 +1,56 @@
+{
+    "nodes": [
+        {
+            "id": 0,
+            "name": "R1",
+            "lo0@v1": "2.2.2.1/32 - 4321::1/128"
+        },
+        {
+            "id": 1,
+            "name": "R2",
+            "lo0@v1": "2.2.2.2/32 - 4321::2/128"
+        },
+        {
+            "id": 2,
+            "name": "R3",
+            "lo0@v1": "2.2.2.3/32 - 4321::3/128"
+        },
+        {
+            "id": 3,
+            "name": "R4",
+            "lo0@v1": "2.2.2.4/32 - 4321::4/128"
+        }
+    ],
+    "links": [
+        {
+            "id": "R1 -- R2",
+            "source": "R1",
+            "target": "R2",
+            "midlabel": "",
+            "taillabel": "eth1",
+            "headlabel": "eth1",
+            "tailtooltip": "eth1",
+            "headtooltip": "eth1"
+        },
+        {
+            "id": "R2 -- R3",
+            "source": "R2",
+            "target": "R3",
+            "midlabel": "",
+            "taillabel": "eth2",
+            "headlabel": "eth1",
+            "tailtooltip": "eth2",
+            "headtooltip": "eth1"
+        },
+        {
+            "id": "R2 -- R4",
+            "source": "R2",
+            "target": "R4",
+            "midlabel": "",
+            "taillabel": "eth3",
+            "headlabel": "eth1",
+            "tailtooltip": "eth3",
+            "headtooltip": "eth1"
+        }
+    ]
+}

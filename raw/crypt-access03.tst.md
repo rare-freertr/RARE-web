@@ -14,7 +14,7 @@
     hostname r1
     buggy
     !
-    logging file debug ../binTmp/zzz60r1-log.run
+    logging file debug ../binTmp/zzz87r1-log.run
     !
     route-policy test
      sequence 10 if network 2.2.2.3/32 ge 32 le 32
@@ -138,7 +138,7 @@
     hostname r2
     buggy
     !
-    logging file debug ../binTmp/zzz60r2-log.run
+    logging file debug ../binTmp/zzz87r2-log.run
     !
     vrf definition tester
      exit
@@ -221,7 +221,7 @@
     hostname r3
     buggy
     !
-    logging file debug ../binTmp/zzz60r3-log.run
+    logging file debug ../binTmp/zzz87r3-log.run
     !
     vrf definition tester
      exit
@@ -304,7 +304,7 @@
     hostname r4
     buggy
     !
-    logging file debug ../binTmp/zzz60r4-log.run
+    logging file debug ../binTmp/zzz87r4-log.run
     !
     vrf definition tester
      exit

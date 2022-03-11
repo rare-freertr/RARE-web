@@ -14,7 +14,7 @@
     hostname r1
     buggy
     !
-    logging file debug ../binTmp/zzz32r1-log.run
+    logging file debug ../binTmp/zzz70r1-log.run
     !
     bridge 1
      rd 1:1
@@ -101,6 +101,7 @@
      vrf v1
      local-as 1
      router-id 4.4.4.1
+     no safe-ebgp
      address-family vpls
      neighbor 2.2.2.2 remote-as 1
      no neighbor 2.2.2.2 description
@@ -118,6 +119,7 @@
      vrf v1
      local-as 1
      router-id 6.6.6.1
+     no safe-ebgp
      address-family vpls
      neighbor 4321::2 remote-as 1
      no neighbor 4321::2 description
@@ -175,7 +177,7 @@
     hostname r2
     buggy
     !
-    logging file debug ../binTmp/zzz32r2-log.run
+    logging file debug ../binTmp/zzz70r2-log.run
     !
     bridge 1
      rd 1:1
@@ -262,6 +264,7 @@
      vrf v1
      local-as 1
      router-id 4.4.4.2
+     no safe-ebgp
      address-family vpls
      neighbor 2.2.2.1 remote-as 1
      no neighbor 2.2.2.1 description
@@ -279,6 +282,7 @@
      vrf v1
      local-as 1
      router-id 6.6.6.2
+     no safe-ebgp
      address-family vpls
      neighbor 4321::1 remote-as 1
      no neighbor 4321::1 description
@@ -336,7 +340,7 @@
     hostname r3
     buggy
     !
-    logging file debug ../binTmp/zzz32r3-log.run
+    logging file debug ../binTmp/zzz70r3-log.run
     !
     vrf definition tester
      exit
@@ -411,7 +415,7 @@
     hostname r4
     buggy
     !
-    logging file debug ../binTmp/zzz32r4-log.run
+    logging file debug ../binTmp/zzz70r4-log.run
     !
     vrf definition tester
      exit

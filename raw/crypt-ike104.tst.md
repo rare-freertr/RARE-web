@@ -14,7 +14,7 @@
     hostname r1
     buggy
     !
-    logging file debug ../binTmp/zzz66r1-log.run
+    logging file debug ../binTmp/zzz34r1-log.run
     !
     crypto ipsec ips
      group 02
@@ -99,7 +99,7 @@
     hostname r2
     buggy
     !
-    logging file debug ../binTmp/zzz66r2-log.run
+    logging file debug ../binTmp/zzz34r2-log.run
     !
     crypto ipsec ips
      group 02

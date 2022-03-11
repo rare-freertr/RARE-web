@@ -14,7 +14,7 @@
     hostname r1
     buggy
     !
-    logging file debug ../binTmp/zzz30r1-log.run
+    logging file debug ../binTmp/zzz80r1-log.run
     !
     access-list test4
      sequence 10 deny 1 any all any all
@@ -130,7 +130,7 @@
     hostname r2
     buggy
     !
-    logging file debug ../binTmp/zzz30r2-log.run
+    logging file debug ../binTmp/zzz80r2-log.run
     !
     access-list test4
      sequence 10 deny 1 any all any all
@@ -282,7 +282,7 @@
      | N   | 2.2.2.1/32  | 140/1  | serial1 | 9.9.9.1 | 00:00:22 |
      | N   | 2.2.2.11/32 | 140/1  | serial1 | 9.9.9.1 | 00:00:22 |
      | N   | 9.9.8.0/24  | 140/1  | serial1 | 9.9.9.1 | 00:00:22 |
-     | N   | 9.9.9.0/24  | 1/0    | serial1 | null    | 00:00:47 |
+     | N   | 9.9.9.0/24  | 1/0    | serial1 | null    | 00:00:48 |
      |_____|_____________|________|_________|_________|__________|
     r2#
     r2#

@@ -14,7 +14,7 @@
     hostname r1
     buggy
     !
-    logging file debug ../binTmp/zzz39r1-log.run
+    logging file debug ../binTmp/zzz5r1-log.run
     !
     access-list all
      sequence 10 permit all any all any all
@@ -106,7 +106,7 @@
     hostname r2
     buggy
     !
-    logging file debug ../binTmp/zzz39r2-log.run
+    logging file debug ../binTmp/zzz5r2-log.run
     !
     access-list all
      sequence 10 permit all any all any all
@@ -183,7 +183,7 @@
     hostname r3
     buggy
     !
-    logging file debug ../binTmp/zzz39r3-log.run
+    logging file debug ../binTmp/zzz5r3-log.run
     !
     access-list all
      sequence 10 permit all any all any all

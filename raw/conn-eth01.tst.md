@@ -14,7 +14,7 @@
     hostname r1
     buggy
     !
-    logging file debug ../binTmp/zzz48r1-log.run
+    logging file debug ../binTmp/zzz55r1-log.run
     !
     vrf definition tester
      exit
@@ -74,7 +74,7 @@
     hostname r2
     buggy
     !
-    logging file debug ../binTmp/zzz48r2-log.run
+    logging file debug ../binTmp/zzz55r2-log.run
     !
     vrf definition tester
      exit
@@ -139,10 +139,10 @@
     ethernet1 is up (since 00:00:03, 3 changes)
      description:
      type is ethernet, hwaddr=0000.0000.1111, mtu=1500, bw=100mbps, vrf=v1
-     ip4 address=1.1.1.1/24, netmask=255.255.255.0, ifcid=17529301
-     ip6 address=1234::1/16, netmask=ffff::, ifcid=823922988
+     ip4 address=1.1.1.1/24, netmask=255.255.255.0, ifcid=115989023
+     ip6 address=1234::1/16, netmask=ffff::, ifcid=185213840
      received 28 packets (1874 bytes) dropped 0 packets (0 bytes)
-     transmitted 28 packets (1868 bytes) promisc=false macsec=false
+     transmitted 28 packets (1868 bytes) promisc=false macsec=false sgt=false
      |~~~~~~~|~~~~|~~~~|~~~~~~|~~~~~|~~~~~|~~~~~~|
      |       | packet         | byte             |
      | time  | tx | rx | drop | tx  | rx  | drop |
@@ -260,7 +260,7 @@
      | mac            | address                | time     | static | router |
      |----------------|------------------------|----------|--------|--------|
      | 0000.0000.2222 | 1234::2                | 00:00:02 | false  | false  |
-     | 0000.0000.2222 | fe80::200:ff:fe00:2222 | 00:00:03 | false  | true   |
+     | 0000.0000.2222 | fe80::200:ff:fe00:2222 | 00:00:02 | false  | true   |
      |________________|________________________|__________|________|________|
     r1#
     r1#

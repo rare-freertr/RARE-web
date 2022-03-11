@@ -14,7 +14,7 @@
     hostname r1
     buggy
     !
-    logging file debug ../binTmp/zzz5r1-log.run
+    logging file debug ../binTmp/zzz26r1-log.run
     !
     vrf definition tester
      exit
@@ -74,7 +74,7 @@
     hostname r2
     buggy
     !
-    logging file debug ../binTmp/zzz5r2-log.run
+    logging file debug ../binTmp/zzz26r2-log.run
     !
     vrf definition tester
      exit
@@ -139,10 +139,10 @@
     arcnet1 is up (since 00:00:01, 3 changes)
      description:
      type is arcnet, hwaddr=00, mtu=1497, bw=2000kbps, vrf=v1
-     ip4 address=1.1.1.1/24, netmask=255.255.255.0, ifcid=720007276
-     ip6 address=1234::1/16, netmask=ffff::, ifcid=171773142
+     ip4 address=1.1.1.1/24, netmask=255.255.255.0, ifcid=544224043
+     ip6 address=1234::1/16, netmask=ffff::, ifcid=824307236
      received 23 packets (1559 bytes) dropped 0 packets (0 bytes)
-     transmitted 23 packets (1559 bytes) promisc=false macsec=false
+     transmitted 23 packets (1559 bytes) promisc=false macsec=false sgt=false
      |~~~~~~~|~~~~|~~~~|~~~~~~|~~~~|~~~~|~~~~~~|
      |       | packet         | byte           |
      | time  | tx | rx | drop | tx | rx | drop |

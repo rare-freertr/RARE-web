@@ -14,7 +14,7 @@
     hostname r1
     buggy
     !
-    logging file debug ../binTmp/zzz39r1-log.run
+    logging file debug ../binTmp/zzz40r1-log.run
     !
     vrf definition tester
      exit
@@ -63,6 +63,7 @@
      vrf v1
      local-as 1
      router-id 4.4.4.1
+     no safe-ebgp
      address-family labeled
      neighbor 1.1.1.2 remote-as 2
      no neighbor 1.1.1.2 description
@@ -76,6 +77,7 @@
      vrf v1
      local-as 4
      router-id 4.4.4.1
+     no safe-ebgp
      address-family vpnuni
      neighbor 2.2.2.4 remote-as 4
      no neighbor 2.2.2.4 description
@@ -92,6 +94,7 @@
      vrf v1
      local-as 1
      router-id 6.6.6.1
+     no safe-ebgp
      address-family labeled
      neighbor 1234:1::2 remote-as 2
      no neighbor 1234:1::2 description
@@ -105,6 +108,7 @@
      vrf v1
      local-as 4
      router-id 6.6.6.1
+     no safe-ebgp
      address-family vpnuni
      neighbor 4321::4 remote-as 4
      no neighbor 4321::4 description
@@ -172,7 +176,7 @@
     hostname r2
     buggy
     !
-    logging file debug ../binTmp/zzz39r2-log.run
+    logging file debug ../binTmp/zzz40r2-log.run
     !
     access-list test4
      sequence 10 deny 1 any all any all
@@ -247,6 +251,7 @@
      vrf v2
      local-as 2
      router-id 4.4.4.2
+     no safe-ebgp
      address-family labeled
      neighbor 1.1.1.1 remote-as 1
      no neighbor 1.1.1.1 description
@@ -261,6 +266,7 @@
      vrf v1
      local-as 2
      router-id 4.4.4.1
+     no safe-ebgp
      address-family vpnuni
      neighbor 3.3.3.102 remote-as 2
      no neighbor 3.3.3.102 description
@@ -278,6 +284,7 @@
      vrf v2
      local-as 2
      router-id 6.6.6.2
+     no safe-ebgp
      address-family labeled
      neighbor 1234:1::1 remote-as 1
      no neighbor 1234:1::1 description
@@ -292,6 +299,7 @@
      vrf v1
      local-as 2
      router-id 6.6.6.1
+     no safe-ebgp
      address-family vpnuni
      neighbor 3333::102 remote-as 2
      no neighbor 3333::102 description
@@ -362,7 +370,7 @@
     hostname r3
     buggy
     !
-    logging file debug ../binTmp/zzz39r3-log.run
+    logging file debug ../binTmp/zzz40r3-log.run
     !
     access-list test4
      sequence 10 deny 1 any all any all
@@ -456,7 +464,7 @@
     hostname r4
     buggy
     !
-    logging file debug ../binTmp/zzz39r4-log.run
+    logging file debug ../binTmp/zzz40r4-log.run
     !
     access-list test4
      sequence 10 deny 1 any all any all
@@ -531,6 +539,7 @@
      vrf v2
      local-as 2
      router-id 4.4.4.2
+     no safe-ebgp
      address-family labeled
      neighbor 1.1.1.6 remote-as 3
      no neighbor 1.1.1.6 description
@@ -545,6 +554,7 @@
      vrf v1
      local-as 2
      router-id 4.4.4.2
+     no safe-ebgp
      address-family vpnuni
      neighbor 3.3.3.101 remote-as 2
      no neighbor 3.3.3.101 description
@@ -562,6 +572,7 @@
      vrf v2
      local-as 2
      router-id 6.6.6.2
+     no safe-ebgp
      address-family labeled
      neighbor 1234:2::2 remote-as 3
      no neighbor 1234:2::2 description
@@ -576,6 +587,7 @@
      vrf v1
      local-as 2
      router-id 6.6.6.2
+     no safe-ebgp
      address-family vpnuni
      neighbor 3333::101 remote-as 2
      no neighbor 3333::101 description
@@ -646,7 +658,7 @@
     hostname r5
     buggy
     !
-    logging file debug ../binTmp/zzz39r5-log.run
+    logging file debug ../binTmp/zzz40r5-log.run
     !
     vrf definition tester
      exit
@@ -695,6 +707,7 @@
      vrf v1
      local-as 3
      router-id 4.4.4.3
+     no safe-ebgp
      address-family labeled
      neighbor 1.1.1.5 remote-as 2
      no neighbor 1.1.1.5 description
@@ -708,6 +721,7 @@
      vrf v1
      local-as 4
      router-id 4.4.4.2
+     no safe-ebgp
      address-family vpnuni
      neighbor 2.2.2.1 remote-as 4
      no neighbor 2.2.2.1 description
@@ -724,6 +738,7 @@
      vrf v1
      local-as 3
      router-id 6.6.6.3
+     no safe-ebgp
      address-family labeled
      neighbor 1234:2::1 remote-as 2
      no neighbor 1234:2::1 description
@@ -737,6 +752,7 @@
      vrf v1
      local-as 4
      router-id 6.6.6.2
+     no safe-ebgp
      address-family vpnuni
      neighbor 4321::1 remote-as 4
      no neighbor 4321::1 description

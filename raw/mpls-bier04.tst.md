@@ -14,7 +14,7 @@
     hostname r1
     buggy
     !
-    logging file debug ../binTmp/zzz50r1-log.run
+    logging file debug ../binTmp/zzz94r1-log.run
     !
     access-list test4
      sequence 10 permit all 2.2.2.1 255.255.255.255 all any all
@@ -164,7 +164,7 @@
     hostname r2
     buggy
     !
-    logging file debug ../binTmp/zzz50r2-log.run
+    logging file debug ../binTmp/zzz94r2-log.run
     !
     access-list test4
      sequence 10 permit all 2.2.2.2 255.255.255.255 all any all
@@ -290,7 +290,7 @@
     hostname r3
     buggy
     !
-    logging file debug ../binTmp/zzz50r3-log.run
+    logging file debug ../binTmp/zzz94r3-log.run
     !
     access-list test4
      sequence 10 permit all 2.2.2.3 255.255.255.255 all any all
@@ -416,7 +416,7 @@
     hostname r4
     buggy
     !
-    logging file debug ../binTmp/zzz50r4-log.run
+    logging file debug ../binTmp/zzz94r4-log.run
     !
     access-list test4
      sequence 10 permit all 2.2.2.4 255.255.255.255 all any all

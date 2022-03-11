@@ -14,7 +14,7 @@
     hostname r1
     buggy
     !
-    logging file debug ../binTmp/zzz29r1-log.run
+    logging file debug ../binTmp/zzz14r1-log.run
     !
     route-policy rm1
      sequence 10 pass
@@ -63,6 +63,7 @@
      vrf v1
      local-as 1
      router-id 4.4.4.1
+     no safe-ebgp
      address-family unicast
      nexthop route-policy rm1
      neighbor 1.1.1.2 remote-as 1
@@ -85,6 +86,7 @@
      vrf v1
      local-as 1
      router-id 6.6.6.1
+     no safe-ebgp
      address-family unicast
      nexthop route-policy rm1
      neighbor 1234:1::2 remote-as 1
@@ -145,7 +147,7 @@
     hostname r2
     buggy
     !
-    logging file debug ../binTmp/zzz29r2-log.run
+    logging file debug ../binTmp/zzz14r2-log.run
     !
     route-policy rm1
      sequence 10 pass
@@ -189,6 +191,7 @@
      vrf v1
      local-as 1
      router-id 4.4.4.2
+     no safe-ebgp
      address-family unicast
      nexthop route-policy rm1
      neighbor 1.1.1.1 remote-as 1
@@ -209,6 +212,7 @@
      vrf v1
      local-as 1
      router-id 6.6.6.2
+     no safe-ebgp
      address-family unicast
      nexthop route-policy rm1
      neighbor 1234:1::1 remote-as 1

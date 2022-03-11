@@ -14,7 +14,7 @@
     hostname r1
     buggy
     !
-    logging file debug ../binTmp/zzz28r1-log.run
+    logging file debug ../binTmp/zzz39r1-log.run
     !
     bridge 1
      mac-learn
@@ -63,6 +63,7 @@
      vrf v1
      local-as 1
      router-id 4.4.4.1
+     no safe-ebgp
      address-family unicast
      neighbor 1.1.1.2 remote-as 1
      no neighbor 1.1.1.2 description
@@ -85,6 +86,7 @@
      vrf v1
      local-as 1
      router-id 6.6.6.1
+     no safe-ebgp
      address-family unicast
      neighbor 1234:1::2 remote-as 1
      no neighbor 1234:1::2 description
@@ -145,7 +147,7 @@
     hostname r2
     buggy
     !
-    logging file debug ../binTmp/zzz28r2-log.run
+    logging file debug ../binTmp/zzz39r2-log.run
     !
     route-map rm1
      sequence 10 action permit
@@ -182,6 +184,7 @@
      vrf v1
      local-as 1
      router-id 4.4.4.2
+     no safe-ebgp
      address-family unicast
      neighbor 1.1.1.1 remote-as 1
      no neighbor 1.1.1.1 description
@@ -196,6 +199,7 @@
      vrf v1
      local-as 1
      router-id 6.6.6.2
+     no safe-ebgp
      address-family unicast
      neighbor 1234:1::1 remote-as 1
      no neighbor 1234:1::1 description
@@ -248,7 +252,7 @@
     hostname r3
     buggy
     !
-    logging file debug ../binTmp/zzz28r3-log.run
+    logging file debug ../binTmp/zzz39r3-log.run
     !
     route-map rm1
      sequence 10 action deny
@@ -287,6 +291,7 @@
      vrf v1
      local-as 1
      router-id 4.4.4.3
+     no safe-ebgp
      address-family unicast
      neighbor 1.1.1.1 remote-as 1
      no neighbor 1.1.1.1 description
@@ -302,6 +307,7 @@
      vrf v1
      local-as 1
      router-id 6.6.6.3
+     no safe-ebgp
      address-family unicast
      neighbor 1234:1::1 remote-as 1
      no neighbor 1234:1::1 description

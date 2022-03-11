@@ -12,7 +12,7 @@
     **r1:**
     ```
     hostname r1
-    logging file debug ../binTmp/zzz64r1-log.run
+    logging file debug ../binTmp/zzz44r1-log.run
     vrf definition tester
      exit
     server telnet tester
@@ -109,10 +109,6 @@
      export-port sdn2 2
      export-port sdn3 3
      export-port sdn4 4
-     export-port sdn1.111 111
-     export-port sdn2.222 222
-     export-port sdn3.333 333
-     export-port sdn4.444 444
      vrf v9
      exit
     ipv4 route v1 2.2.2.103 255.255.255.255 1.1.1.2

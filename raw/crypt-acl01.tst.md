@@ -14,7 +14,7 @@
     hostname r1
     buggy
     !
-    logging file debug ../binTmp/zzz72r1-log.run
+    logging file debug ../binTmp/zzz13r1-log.run
     !
     access-list test4
      sequence 10 deny 1 any all any all
@@ -86,7 +86,7 @@
     hostname r2
     buggy
     !
-    logging file debug ../binTmp/zzz72r2-log.run
+    logging file debug ../binTmp/zzz13r2-log.run
     !
     vrf definition tester
      exit
@@ -162,7 +162,7 @@
     r1#show access-list test6
     r1#show access-list test6
      sequence 10 deny 58 any all any all
-      match=tx=0(0) rx=608(8) drp=0(0) accessed=00:00:01 ago, 00:00:00 timeout
+      match=tx=0(0) rx=360(5) drp=0(0) accessed=00:00:01 ago, 00:00:00 timeout
      sequence 20 permit all any all any all
       match=tx=0(0) rx=0(0) drp=0(0) accessed=never ago, 00:00:00 timeout
     r1#

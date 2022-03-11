@@ -1,4 +1,4 @@
-# Example: ingress destination matching hibryd access list
+# Example: ingress destination matching hybrid access list
     
 === "Topology"
     
@@ -14,7 +14,7 @@
     hostname r1
     buggy
     !
-    logging file debug ../binTmp/zzz56r1-log.run
+    logging file debug ../binTmp/zzz94r1-log.run
     !
     object-group network test4
      sequence 10 2.2.2.102 255.255.255.255
@@ -116,7 +116,7 @@
     hostname r2
     buggy
     !
-    logging file debug ../binTmp/zzz56r2-log.run
+    logging file debug ../binTmp/zzz94r2-log.run
     !
     vrf definition tester
      exit

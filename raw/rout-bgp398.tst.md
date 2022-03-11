@@ -14,7 +14,7 @@
     hostname r1
     buggy
     !
-    logging file debug ../binTmp/zzz35r1-log.run
+    logging file debug ../binTmp/zzz22r1-log.run
     !
     vrf definition tester
      exit
@@ -48,7 +48,7 @@
     interface pwether1
      no description
      mtu 1500
-     macaddr 000b.7206.4e76
+     macaddr 0002.4f39.0860
      vrf forwarding v1
      ipv4 address 3.3.3.1 255.255.255.0
      pseudowire v1 loopback0 pweompls 2.2.2.6 1234
@@ -59,7 +59,7 @@
     interface pwether2
      no description
      mtu 1500
-     macaddr 0028.4501.5b52
+     macaddr 000b.6506.6f53
      vrf forwarding v1
      ipv4 address 3.3.4.1 255.255.255.0
      pseudowire v1 loopback0 pweompls 4321::6 1234
@@ -71,6 +71,7 @@
      vrf v1
      local-as 1
      router-id 4.4.4.1
+     no safe-ebgp
      address-family labeled
      neighbor 2.2.2.3 remote-as 1
      no neighbor 2.2.2.3 description
@@ -85,6 +86,7 @@
      vrf v1
      local-as 1
      router-id 6.6.6.1
+     no safe-ebgp
      address-family labeled
      neighbor 4321::3 remote-as 1
      no neighbor 4321::3 description
@@ -141,7 +143,7 @@
     hostname r2
     buggy
     !
-    logging file debug ../binTmp/zzz35r2-log.run
+    logging file debug ../binTmp/zzz22r2-log.run
     !
     vrf definition tester
      exit
@@ -230,7 +232,7 @@
     hostname r3
     buggy
     !
-    logging file debug ../binTmp/zzz35r3-log.run
+    logging file debug ../binTmp/zzz22r3-log.run
     !
     vrf definition tester
      exit
@@ -275,6 +277,7 @@
      vrf v1
      local-as 1
      router-id 4.4.4.3
+     no safe-ebgp
      address-family labeled
      neighbor 1.1.1.10 remote-as 1
      no neighbor 1.1.1.10 description
@@ -297,6 +300,7 @@
      vrf v1
      local-as 1
      router-id 6.6.6.3
+     no safe-ebgp
      address-family labeled
      neighbor 1234:3::2 remote-as 1
      no neighbor 1234:3::2 description
@@ -361,7 +365,7 @@
     hostname r4
     buggy
     !
-    logging file debug ../binTmp/zzz35r4-log.run
+    logging file debug ../binTmp/zzz22r4-log.run
     !
     vrf definition tester
      exit
@@ -406,6 +410,7 @@
      vrf v1
      local-as 1
      router-id 4.4.4.4
+     no safe-ebgp
      address-family labeled
      neighbor 1.1.1.9 remote-as 1
      no neighbor 1.1.1.9 description
@@ -428,6 +433,7 @@
      vrf v1
      local-as 1
      router-id 6.6.6.4
+     no safe-ebgp
      address-family labeled
      neighbor 1234:3::1 remote-as 1
      no neighbor 1234:3::1 description
@@ -492,7 +498,7 @@
     hostname r5
     buggy
     !
-    logging file debug ../binTmp/zzz35r5-log.run
+    logging file debug ../binTmp/zzz22r5-log.run
     !
     vrf definition tester
      exit
@@ -581,7 +587,7 @@
     hostname r6
     buggy
     !
-    logging file debug ../binTmp/zzz35r6-log.run
+    logging file debug ../binTmp/zzz22r6-log.run
     !
     vrf definition tester
      exit
@@ -615,7 +621,7 @@
     interface pwether1
      no description
      mtu 1500
-     macaddr 006a.4d7d.617a
+     macaddr 0077.5477.1d64
      vrf forwarding v1
      ipv4 address 3.3.3.2 255.255.255.0
      pseudowire v1 loopback0 pweompls 2.2.2.1 1234
@@ -626,7 +632,7 @@
     interface pwether2
      no description
      mtu 1500
-     macaddr 003a.3179.7054
+     macaddr 0023.6738.2d67
      vrf forwarding v1
      ipv4 address 3.3.4.2 255.255.255.0
      pseudowire v1 loopback0 pweompls 4321::1 1234
@@ -638,6 +644,7 @@
      vrf v1
      local-as 1
      router-id 4.4.4.6
+     no safe-ebgp
      address-family labeled
      neighbor 2.2.2.4 remote-as 1
      no neighbor 2.2.2.4 description
@@ -652,6 +659,7 @@
      vrf v1
      local-as 1
      router-id 6.6.6.6
+     no safe-ebgp
      address-family labeled
      neighbor 4321::4 remote-as 1
      no neighbor 4321::4 description

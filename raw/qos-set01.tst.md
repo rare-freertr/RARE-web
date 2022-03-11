@@ -14,7 +14,7 @@
     hostname r1
     buggy
     !
-    logging file debug ../binTmp/zzz6r1-log.run
+    logging file debug ../binTmp/zzz66r1-log.run
     !
     vrf definition tester
      exit
@@ -76,7 +76,7 @@
     hostname r2
     buggy
     !
-    logging file debug ../binTmp/zzz6r2-log.run
+    logging file debug ../binTmp/zzz66r2-log.run
     !
     policy-map p1
      sequence 10 action transit
@@ -166,7 +166,7 @@
     hostname r3
     buggy
     !
-    logging file debug ../binTmp/zzz6r3-log.run
+    logging file debug ../binTmp/zzz66r3-log.run
     !
     vrf definition tester
      exit

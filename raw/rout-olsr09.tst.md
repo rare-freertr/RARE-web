@@ -14,7 +14,7 @@
     hostname r1
     buggy
     !
-    logging file debug ../binTmp/zzz4r1-log.run
+    logging file debug ../binTmp/zzz17r1-log.run
     !
     vrf definition tester
      exit
@@ -95,7 +95,7 @@
     hostname r2
     buggy
     !
-    logging file debug ../binTmp/zzz4r2-log.run
+    logging file debug ../binTmp/zzz17r2-log.run
     !
     route-map rm1
      sequence 10 action permit
@@ -201,7 +201,7 @@
     hostname r3
     buggy
     !
-    logging file debug ../binTmp/zzz4r3-log.run
+    logging file debug ../binTmp/zzz17r3-log.run
     !
     vrf definition tester
      exit
@@ -351,12 +351,12 @@
      |~~~~~|~~~~~~~~~~~~|~~~~~~~~~|~~~~~~~~~~~|~~~~~~~~~|~~~~~~~~~~|
      | typ | prefix     | metric  | iface     | hop     | time     |
      |-----|------------|---------|-----------|---------|----------|
-     | C   | 1.1.1.0/30 | 0/0     | ethernet1 | null    | 00:00:36 |
-     | LOC | 1.1.1.2/32 | 0/1     | ethernet1 | null    | 00:00:36 |
-     | C   | 1.1.1.4/30 | 0/0     | ethernet2 | null    | 00:00:36 |
-     | LOC | 1.1.1.5/32 | 0/1     | ethernet2 | null    | 00:00:36 |
+     | C   | 1.1.1.0/30 | 0/0     | ethernet1 | null    | 00:00:37 |
+     | LOC | 1.1.1.2/32 | 0/1     | ethernet1 | null    | 00:00:37 |
+     | C   | 1.1.1.4/30 | 0/0     | ethernet2 | null    | 00:00:37 |
+     | LOC | 1.1.1.5/32 | 0/1     | ethernet2 | null    | 00:00:37 |
      | N   | 2.2.2.1/32 | 140/201 | ethernet1 | 1.1.1.1 | 00:00:06 |
-     | C   | 2.2.2.2/32 | 0/0     | loopback0 | null    | 00:00:36 |
+     | C   | 2.2.2.2/32 | 0/0     | loopback0 | null    | 00:00:37 |
      | N   | 2.2.2.3/32 | 140/201 | ethernet2 | 1.1.1.6 | 00:00:06 |
      |_____|____________|_________|___________|_________|__________|
     r2#
@@ -371,13 +371,13 @@
      |~~~~~|~~~~~~~~~~~~~~~|~~~~~~~~~|~~~~~~~~~~~|~~~~~~~~~~~|~~~~~~~~~~|
      | typ | prefix        | metric  | iface     | hop       | time     |
      |-----|---------------|---------|-----------|-----------|----------|
-     | C   | 1234:1::/32   | 0/0     | ethernet1 | null      | 00:00:36 |
-     | LOC | 1234:1::2/128 | 0/1     | ethernet1 | null      | 00:00:36 |
-     | C   | 1234:2::/32   | 0/0     | ethernet2 | null      | 00:00:36 |
-     | LOC | 1234:2::1/128 | 0/1     | ethernet2 | null      | 00:00:36 |
-     | N   | 4321::1/128   | 140/201 | ethernet1 | 1234:1::1 | 00:00:06 |
-     | C   | 4321::2/128   | 0/0     | loopback0 | null      | 00:00:36 |
-     | N   | 4321::3/128   | 140/201 | ethernet2 | 1234:2::2 | 00:00:06 |
+     | C   | 1234:1::/32   | 0/0     | ethernet1 | null      | 00:00:37 |
+     | LOC | 1234:1::2/128 | 0/1     | ethernet1 | null      | 00:00:37 |
+     | C   | 1234:2::/32   | 0/0     | ethernet2 | null      | 00:00:37 |
+     | LOC | 1234:2::1/128 | 0/1     | ethernet2 | null      | 00:00:37 |
+     | N   | 4321::1/128   | 140/201 | ethernet1 | 1234:1::1 | 00:00:07 |
+     | C   | 4321::2/128   | 0/0     | loopback0 | null      | 00:00:37 |
+     | N   | 4321::3/128   | 140/201 | ethernet2 | 1234:2::2 | 00:00:07 |
      |_____|_______________|_________|___________|___________|__________|
     r2#
     r2#

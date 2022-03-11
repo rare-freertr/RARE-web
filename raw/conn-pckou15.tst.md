@@ -14,7 +14,7 @@
     hostname r1
     buggy
     !
-    logging file debug ../binTmp/zzz44r1-log.run
+    logging file debug ../binTmp/zzz96r1-log.run
     !
     bridge 1
      exit
@@ -92,7 +92,7 @@
     hostname r2
     buggy
     !
-    logging file debug ../binTmp/zzz44r2-log.run
+    logging file debug ../binTmp/zzz96r2-log.run
     !
     vrf definition tester
      exit
@@ -113,7 +113,7 @@
     interface pwether1
      no description
      mtu 1500
-     macaddr 0022.4f27.0f6f
+     macaddr 004d.2844.0e3a
      vrf forwarding v1
      ipv4 address 2.2.2.2 255.255.255.0
      ipv6 address 4321::2 ffff:ffff::

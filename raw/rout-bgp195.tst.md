@@ -14,7 +14,7 @@
     hostname r1
     buggy
     !
-    logging file debug ../binTmp/zzz55r1-log.run
+    logging file debug ../binTmp/zzz27r1-log.run
     !
     bridge 1
      rd 1:1
@@ -80,6 +80,7 @@
      vrf v1
      local-as 1
      router-id 4.4.4.1
+     no safe-ebgp
      address-family evpn
      neighbor 1.1.1.4 remote-as 1
      no neighbor 1.1.1.4 description
@@ -90,7 +91,7 @@
      neighbor 1.1.1.4 pmsitun
      neighbor 1.1.1.4 send-community standard extended
      afi-evpn 101 bridge-group 1
-     afi-evpn 101 bmac 000b.6c23.4922
+     afi-evpn 101 bmac 0037.3248.5f02
      afi-evpn 101 encapsulation vxlan
      afi-evpn 101 update-source loopback0
      exit
@@ -99,6 +100,7 @@
      vrf v1
      local-as 1
      router-id 6.6.6.1
+     no safe-ebgp
      address-family evpn
      neighbor 1234:1::4 remote-as 1
      no neighbor 1234:1::4 description
@@ -109,7 +111,7 @@
      neighbor 1234:1::4 pmsitun
      neighbor 1234:1::4 send-community standard extended
      afi-evpn 101 bridge-group 2
-     afi-evpn 101 bmac 001b.210f.284c
+     afi-evpn 101 bmac 004b.0b37.3320
      afi-evpn 101 encapsulation vxlan
      afi-evpn 101 update-source loopback0
      exit
@@ -160,7 +162,7 @@
     hostname r2
     buggy
     !
-    logging file debug ../binTmp/zzz55r2-log.run
+    logging file debug ../binTmp/zzz27r2-log.run
     !
     bridge 1
      rd 1:1
@@ -226,6 +228,7 @@
      vrf v1
      local-as 1
      router-id 4.4.4.2
+     no safe-ebgp
      address-family evpn
      neighbor 1.1.1.4 remote-as 1
      no neighbor 1.1.1.4 description
@@ -236,7 +239,7 @@
      neighbor 1.1.1.4 pmsitun
      neighbor 1.1.1.4 send-community standard extended
      afi-evpn 101 bridge-group 1
-     afi-evpn 101 bmac 007a.5021.1318
+     afi-evpn 101 bmac 0050.084c.112f
      afi-evpn 101 encapsulation vxlan
      afi-evpn 101 update-source loopback0
      exit
@@ -245,6 +248,7 @@
      vrf v1
      local-as 1
      router-id 6.6.6.2
+     no safe-ebgp
      address-family evpn
      neighbor 1234:1::4 remote-as 1
      no neighbor 1234:1::4 description
@@ -255,7 +259,7 @@
      neighbor 1234:1::4 pmsitun
      neighbor 1234:1::4 send-community standard extended
      afi-evpn 101 bridge-group 2
-     afi-evpn 101 bmac 006b.2424.2e54
+     afi-evpn 101 bmac 0060.6a7b.2836
      afi-evpn 101 encapsulation vxlan
      afi-evpn 101 update-source loopback0
      exit
@@ -306,7 +310,7 @@
     hostname r3
     buggy
     !
-    logging file debug ../binTmp/zzz55r3-log.run
+    logging file debug ../binTmp/zzz27r3-log.run
     !
     bridge 1
      rd 1:1
@@ -372,6 +376,7 @@
      vrf v1
      local-as 1
      router-id 4.4.4.3
+     no safe-ebgp
      address-family evpn
      neighbor 1.1.1.4 remote-as 1
      no neighbor 1.1.1.4 description
@@ -382,7 +387,7 @@
      neighbor 1.1.1.4 pmsitun
      neighbor 1.1.1.4 send-community standard extended
      afi-evpn 101 bridge-group 1
-     afi-evpn 101 bmac 0025.602c.7043
+     afi-evpn 101 bmac 0059.5d2a.2805
      afi-evpn 101 encapsulation vxlan
      afi-evpn 101 update-source loopback0
      exit
@@ -391,6 +396,7 @@
      vrf v1
      local-as 1
      router-id 6.6.6.3
+     no safe-ebgp
      address-family evpn
      neighbor 1234:1::4 remote-as 1
      no neighbor 1234:1::4 description
@@ -401,7 +407,7 @@
      neighbor 1234:1::4 pmsitun
      neighbor 1234:1::4 send-community standard extended
      afi-evpn 101 bridge-group 2
-     afi-evpn 101 bmac 0077.362a.0975
+     afi-evpn 101 bmac 0033.5f01.6261
      afi-evpn 101 encapsulation vxlan
      afi-evpn 101 update-source loopback0
      exit
@@ -452,7 +458,7 @@
     hostname r4
     buggy
     !
-    logging file debug ../binTmp/zzz55r4-log.run
+    logging file debug ../binTmp/zzz27r4-log.run
     !
     bridge 1
      mac-learn
@@ -499,6 +505,7 @@
      vrf v1
      local-as 1
      router-id 4.4.4.4
+     no safe-ebgp
      address-family evpn
      neighbor 2.2.2.1 remote-as 1
      no neighbor 2.2.2.1 description
@@ -530,6 +537,7 @@
      vrf v1
      local-as 1
      router-id 6.6.6.4
+     no safe-ebgp
      address-family evpn
      neighbor 4321::1 remote-as 1
      no neighbor 4321::1 description

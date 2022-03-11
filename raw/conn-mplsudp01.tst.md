@@ -14,7 +14,7 @@
     hostname r1
     buggy
     !
-    logging file debug ../binTmp/zzz56r1-log.run
+    logging file debug ../binTmp/zzz30r1-log.run
     !
     vrf definition tester
      exit
@@ -88,7 +88,7 @@
     hostname r2
     buggy
     !
-    logging file debug ../binTmp/zzz56r2-log.run
+    logging file debug ../binTmp/zzz30r2-log.run
     !
     vrf definition tester
      exit
@@ -167,18 +167,18 @@
     tunnel1 is up (since 00:00:06, 13 changes)
      description:
      type is mplsudp, hwaddr=none, mtu=1400, bw=4000kbps, vrf=v1
-     ip4 address=2.2.2.1/24, netmask=255.255.255.0, ifcid=449849739
-     ip6 address=4321::1/16, netmask=ffff::, ifcid=277162289
+     ip4 address=2.2.2.1/24, netmask=255.255.255.0, ifcid=109498554
+     ip6 address=4321::1/16, netmask=ffff::, ifcid=770384647
      received 21 packets (1386 bytes) dropped 0 packets (0 bytes)
-     transmitted 28 packets (1880 bytes) promisc=false macsec=false
-     |~~~~~~~|~~~~|~~~~|~~~~~~|~~~~~|~~~~~|~~~~~~|
-     |       | packet         | byte             |
-     | time  | tx | rx | drop | tx  | rx  | drop |
-     |-------|----|----|------|-----|-----|------|
-     | 1sec  | 11 | 10 | 0    | 726 | 660 | 0    |
-     | 1min  | 0  | 0  | 0    | 0   | 0   | 0    |
-     | 1hour | 0  | 0  | 0    | 0   | 0   | 0    |
-     |_______|____|____|______|_____|_____|______|
+     transmitted 28 packets (1880 bytes) promisc=false macsec=false sgt=false
+     |~~~~~~~|~~~~|~~~~|~~~~~~|~~~~~~|~~~~~~|~~~~~~|
+     |       | packet         | byte               |
+     | time  | tx | rx | drop | tx   | rx   | drop |
+     |-------|----|----|------|------|------|------|
+     | 1sec  | 20 | 20 | 0    | 1320 | 1320 | 0    |
+     | 1min  | 0  | 0  | 0    | 0    | 0    | 0    |
+     | 1hour | 0  | 0  | 0    | 0    | 0    | 0    |
+     |_______|____|____|______|______|______|______|
      |~~~~~~~~|~~~~~~~|~~~~~~~~~|~~~~|~~~~|~~~~~~|~~~~~|~~~~~|~~~~~~|
      |                          | packet         | byte             |
      | type   | value | handler | tx | rx | drop | tx  | rx  | drop |
@@ -223,16 +223,16 @@
      | 6     | 0   | 0   | 0    | 0    | 0    | 0    |
      | 7     | 0   | 0   | 0    | 0    | 0    | 0    |
      |_______|_____|_____|______|______|______|______|
-             11k|
-            9979|#
-            8870|#
-            7761|#
-            6652|#
-            5544|#
-            4435|#
-            3326|#
-            2217|#    #
-            1108|#    #
+             21k|
+             19k|#
+             16k|#
+             14k|#
+             12k|#
+             10k|#
+            8448|#
+            6336|#
+            4224|#
+            2112|#    #
                0|######
              bps|0---------10--------20--------30--------40--------50-------- seconds
                1|

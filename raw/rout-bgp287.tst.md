@@ -14,7 +14,7 @@
     hostname r1
     buggy
     !
-    logging file debug ../binTmp/zzz79r1-log.run
+    logging file debug ../binTmp/zzz29r1-log.run
     !
     vrf definition tester
      exit
@@ -45,6 +45,7 @@
      vrf v1
      local-as 1
      router-id 4.4.4.1
+     no safe-ebgp
      address-family unicast
      conquer
      neighbor 1.1.1.2 remote-as 1
@@ -72,6 +73,7 @@
      vrf v1
      local-as 1
      router-id 6.6.6.1
+     no safe-ebgp
      address-family unicast
      conquer
      neighbor 1234:1::2 remote-as 1
@@ -137,7 +139,7 @@
     hostname r2
     buggy
     !
-    logging file debug ../binTmp/zzz79r2-log.run
+    logging file debug ../binTmp/zzz29r2-log.run
     !
     route-map rm1
      sequence 10 action permit
@@ -210,6 +212,7 @@
      vrf v1
      local-as 1
      router-id 4.4.4.2
+     no safe-ebgp
      address-family unicast
      neighbor 1.1.1.1 remote-as 1
      no neighbor 1.1.1.1 description
@@ -224,6 +227,7 @@
      vrf v1
      local-as 1
      router-id 6.6.6.2
+     no safe-ebgp
      address-family unicast
      neighbor 1234:1::1 remote-as 1
      no neighbor 1234:1::1 description
@@ -283,7 +287,7 @@
     hostname r3
     buggy
     !
-    logging file debug ../binTmp/zzz79r3-log.run
+    logging file debug ../binTmp/zzz29r3-log.run
     !
     route-map rm1
      sequence 10 action permit
@@ -356,6 +360,7 @@
      vrf v1
      local-as 1
      router-id 4.4.4.3
+     no safe-ebgp
      address-family unicast
      neighbor 1.1.1.1 remote-as 1
      no neighbor 1.1.1.1 description
@@ -370,6 +375,7 @@
      vrf v1
      local-as 1
      router-id 6.6.6.3
+     no safe-ebgp
      address-family unicast
      neighbor 1234:1::1 remote-as 1
      no neighbor 1234:1::1 description
@@ -429,7 +435,7 @@
     hostname r4
     buggy
     !
-    logging file debug ../binTmp/zzz79r4-log.run
+    logging file debug ../binTmp/zzz29r4-log.run
     !
     vrf definition tester
      exit
@@ -460,6 +466,7 @@
      vrf v1
      local-as 1
      router-id 4.4.4.4
+     no safe-ebgp
      address-family unicast
      neighbor 1.1.1.1 remote-as 1
      no neighbor 1.1.1.1 description
@@ -473,6 +480,7 @@
      vrf v1
      local-as 1
      router-id 6.6.6.4
+     no safe-ebgp
      address-family unicast
      neighbor 1234:1::1 remote-as 1
      no neighbor 1234:1::1 description

@@ -14,7 +14,7 @@
     hostname r1
     buggy
     !
-    logging file debug ../binTmp/zzz66r1-log.run
+    logging file debug ../binTmp/zzz40r1-log.run
     !
     prefix-list p4
      sequence 10 permit 0.0.0.0/0 ge 0 le 0
@@ -99,7 +99,7 @@
     hostname r2
     buggy
     !
-    logging file debug ../binTmp/zzz66r2-log.run
+    logging file debug ../binTmp/zzz40r2-log.run
     !
     aaa userlist usr
      username c

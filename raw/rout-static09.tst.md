@@ -14,7 +14,7 @@
     hostname r1
     buggy
     !
-    logging file debug ../binTmp/zzz47r1-log.run
+    logging file debug ../binTmp/zzz60r1-log.run
     !
     vrf definition tester
      exit
@@ -94,7 +94,7 @@
     hostname r2
     buggy
     !
-    logging file debug ../binTmp/zzz47r2-log.run
+    logging file debug ../binTmp/zzz60r2-log.run
     !
     vrf definition tester
      exit
@@ -171,7 +171,7 @@
     hostname r3
     buggy
     !
-    logging file debug ../binTmp/zzz47r3-log.run
+    logging file debug ../binTmp/zzz60r3-log.run
     !
     vrf definition tester
      exit
@@ -256,10 +256,10 @@
      |~~~~~|~~~~~~~~~~~~~~|~~~~~~~~|~~~~~~~~~~~|~~~~~~~~~|~~~~~~~~~~|
      | typ | prefix       | metric | iface     | hop     | time     |
      |-----|--------------|--------|-----------|---------|----------|
-     | C   | 1.1.1.0/30   | 0/0    | ethernet1 | null    | 00:00:06 |
-     | LOC | 1.1.1.2/32   | 0/1    | ethernet1 | null    | 00:00:06 |
-     | C   | 1.1.1.4/30   | 0/0    | ethernet2 | null    | 00:00:06 |
-     | LOC | 1.1.1.6/32   | 0/1    | ethernet2 | null    | 00:00:06 |
+     | C   | 1.1.1.0/30   | 0/0    | ethernet1 | null    | 00:00:07 |
+     | LOC | 1.1.1.2/32   | 0/1    | ethernet1 | null    | 00:00:07 |
+     | C   | 1.1.1.4/30   | 0/0    | ethernet2 | null    | 00:00:07 |
+     | LOC | 1.1.1.6/32   | 0/1    | ethernet2 | null    | 00:00:07 |
      | S   | 2.2.2.101/32 | 1/0    | ethernet1 | 1.1.1.1 | 00:00:06 |
      | S   | 2.2.2.102/32 | 1/0    | ethernet1 | 1.1.1.1 | 00:00:06 |
      | S   | 2.2.2.201/32 | 1/0    | ethernet2 | 1.1.1.5 | 00:00:06 |
@@ -277,14 +277,14 @@
      |~~~~~|~~~~~~~~~~~~~~~|~~~~~~~~|~~~~~~~~~~~|~~~~~~~~~~~|~~~~~~~~~~|
      | typ | prefix        | metric | iface     | hop       | time     |
      |-----|---------------|--------|-----------|-----------|----------|
-     | C   | 1234:1::/32   | 0/0    | ethernet1 | null      | 00:00:06 |
-     | LOC | 1234:1::2/128 | 0/1    | ethernet1 | null      | 00:00:06 |
-     | C   | 1234:2::/32   | 0/0    | ethernet2 | null      | 00:00:06 |
-     | LOC | 1234:2::2/128 | 0/1    | ethernet2 | null      | 00:00:06 |
-     | S   | 4321::101/128 | 1/0    | ethernet1 | 1234:1::1 | 00:00:06 |
-     | S   | 4321::102/128 | 1/0    | ethernet1 | 1234:1::1 | 00:00:06 |
-     | S   | 4321::201/128 | 1/0    | ethernet2 | 1234:2::1 | 00:00:06 |
-     | S   | 4321::202/128 | 1/0    | ethernet2 | 1234:2::1 | 00:00:06 |
+     | C   | 1234:1::/32   | 0/0    | ethernet1 | null      | 00:00:07 |
+     | LOC | 1234:1::2/128 | 0/1    | ethernet1 | null      | 00:00:07 |
+     | C   | 1234:2::/32   | 0/0    | ethernet2 | null      | 00:00:07 |
+     | LOC | 1234:2::2/128 | 0/1    | ethernet2 | null      | 00:00:07 |
+     | S   | 4321::101/128 | 1/0    | ethernet1 | 1234:1::1 | 00:00:07 |
+     | S   | 4321::102/128 | 1/0    | ethernet1 | 1234:1::1 | 00:00:07 |
+     | S   | 4321::201/128 | 1/0    | ethernet2 | 1234:2::1 | 00:00:07 |
+     | S   | 4321::202/128 | 1/0    | ethernet2 | 1234:2::1 | 00:00:07 |
      |_____|_______________|________|___________|___________|__________|
     r2#
     r2#

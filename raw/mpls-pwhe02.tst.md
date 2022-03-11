@@ -14,7 +14,7 @@
     hostname r1
     buggy
     !
-    logging file debug ../binTmp/zzz99r1-log.run
+    logging file debug ../binTmp/zzz43r1-log.run
     !
     vrf definition tester
      exit
@@ -44,7 +44,7 @@
     interface pwether1
      no description
      mtu 1500
-     macaddr 0001.6f40.0b06
+     macaddr 006b.4200.3722
      vrf forwarding v1
      ipv4 address 3.3.3.1 255.255.255.0
      pseudowire v1 loopback0 pckoudp 2.2.2.2 1234
@@ -96,7 +96,7 @@
     hostname r2
     buggy
     !
-    logging file debug ../binTmp/zzz99r2-log.run
+    logging file debug ../binTmp/zzz43r2-log.run
     !
     vrf definition tester
      exit
@@ -126,7 +126,7 @@
     interface pwether1
      no description
      mtu 1500
-     macaddr 006a.0c2a.3b68
+     macaddr 0017.1e1a.5945
      vrf forwarding v1
      ipv4 address 3.3.3.2 255.255.255.0
      pseudowire v1 loopback0 pckoudp 2.2.2.1 1234
@@ -180,20 +180,20 @@
     r1#
     r1#show inter pweth1 full
     r1#show inter pweth1 full
-    pwether1 is up (since 00:00:06, 3 changes)
+    pwether1 is up (since 00:00:08, 3 changes)
      description:
-     type is pwether, hwaddr=0001.6f40.0b06, mtu=1500, bw=4000kbps, vrf=v1
-     ip4 address=3.3.3.1/24, netmask=255.255.255.0, ifcid=397917535
+     type is pwether, hwaddr=006b.4200.3722, mtu=1500, bw=4000kbps, vrf=v1
+     ip4 address=3.3.3.1/24, netmask=255.255.255.0, ifcid=669202876
      received 15 packets (954 bytes) dropped 0 packets (0 bytes)
-     transmitted 15 packets (954 bytes) promisc=false macsec=false
-     |~~~~~~~|~~~~|~~~~|~~~~~~|~~~~~|~~~~~|~~~~~~|
-     |       | packet         | byte             |
-     | time  | tx | rx | drop | tx  | rx  | drop |
-     |-------|----|----|------|-----|-----|------|
-     | 1sec  | 4  | 4  | 0    | 264 | 264 | 0    |
-     | 1min  | 0  | 0  | 0    | 0   | 0   | 0    |
-     | 1hour | 0  | 0  | 0    | 0   | 0   | 0    |
-     |_______|____|____|______|_____|_____|______|
+     transmitted 15 packets (954 bytes) promisc=false macsec=false sgt=false
+     |~~~~~~~|~~~~|~~~~|~~~~~~|~~~~|~~~~|~~~~~~|
+     |       | packet         | byte           |
+     | time  | tx | rx | drop | tx | rx | drop |
+     |-------|----|----|------|----|----|------|
+     | 1sec  | 0  | 0  | 0    | 0  | 0  | 0    |
+     | 1min  | 0  | 0  | 0    | 0  | 0  | 0    |
+     | 1hour | 0  | 0  | 0    | 0  | 0  | 0    |
+     |_______|____|____|______|____|____|______|
      |~~~~~~~~|~~~~~~~|~~~~~~~~~|~~~~|~~~~|~~~~~~|~~~~~|~~~~~|~~~~~~|
      |                          | packet         | byte             |
      | type   | value | handler | tx | rx | drop | tx  | rx  | drop |
@@ -239,16 +239,16 @@
      | 7     | 0   | 0   | 0    | 0   | 0   | 0    |
      |_______|_____|_____|______|_____|_____|______|
             4224|
-            3801|#
-            3379|#
-            2956|#
-            2534|#
-            2112|#
-            1689|#
-            1267|#
-             844|#
-             422|##
-               0|##
+            3801| #
+            3379| #
+            2956| #
+            2534| #
+            2112| #
+            1689| #
+            1267| #
+             844| #
+             422| ##
+               0| ##
              bps|0---------10--------20--------30--------40--------50-------- seconds
                1|
                0|
@@ -286,7 +286,7 @@
      |~~~~~~~~~~~~~~~~|~~~~~~~~~|~~~~~~~~~~|~~~~~~~~|
      | mac            | address | time     | static |
      |----------------|---------|----------|--------|
-     | 006a.0c2a.3b68 | 3.3.3.2 | 00:00:06 | false  |
+     | 0017.1e1a.5945 | 3.3.3.2 | 00:00:07 | false  |
      |________________|_________|__________|________|
     r1#
     r1#

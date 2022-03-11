@@ -167,18 +167,18 @@
     tunnel1 is up (since 00:00:06, 13 changes)
      description:
      type is icmp, hwaddr=none, mtu=1470, bw=2000kbps, vrf=v1
-     ip4 address=2.2.2.1/24, netmask=255.255.255.0, ifcid=900124142
-     ip6 address=4321::1/16, netmask=ffff::, ifcid=292605981
+     ip4 address=2.2.2.1/24, netmask=255.255.255.0, ifcid=965808222
+     ip6 address=4321::1/16, netmask=ffff::, ifcid=503067546
      received 21 packets (1386 bytes) dropped 0 packets (0 bytes)
-     transmitted 28 packets (1880 bytes) promisc=false macsec=false
-     |~~~~~~~|~~~~|~~~~|~~~~~~|~~~~~~|~~~~~~|~~~~~~|
-     |       | packet         | byte               |
-     | time  | tx | rx | drop | tx   | rx   | drop |
-     |-------|----|----|------|------|------|------|
-     | 1sec  | 20 | 20 | 0    | 1320 | 1320 | 0    |
-     | 1min  | 0  | 0  | 0    | 0    | 0    | 0    |
-     | 1hour | 0  | 0  | 0    | 0    | 0    | 0    |
-     |_______|____|____|______|______|______|______|
+     transmitted 28 packets (1880 bytes) promisc=false macsec=false sgt=false
+     |~~~~~~~|~~~~|~~~~|~~~~~~|~~~~|~~~~|~~~~~~|
+     |       | packet         | byte           |
+     | time  | tx | rx | drop | tx | rx | drop |
+     |-------|----|----|------|----|----|------|
+     | 1sec  | 1  | 1  | 0    | 66 | 66 | 0    |
+     | 1min  | 0  | 0  | 0    | 0  | 0  | 0    |
+     | 1hour | 0  | 0  | 0    | 0  | 0  | 0    |
+     |_______|____|____|______|____|____|______|
      |~~~~~~~~|~~~~~~~|~~~~~~~~~|~~~~|~~~~|~~~~~~|~~~~~|~~~~~|~~~~~~|
      |                          | packet         | byte             |
      | type   | value | handler | tx | rx | drop | tx  | rx  | drop |
@@ -223,16 +223,16 @@
      | 6     | 0   | 0   | 0    | 0    | 0    | 0    |
      | 7     | 0   | 0   | 0    | 0    | 0    | 0    |
      |_______|_____|_____|______|______|______|______|
-             21k|
-             19k|#
-             16k|#
-             14k|#
-             12k|#
-             10k|#
-            8448|#
-            6336|#
-            4224|#
-            2112|#    #
+            1840|
+            1656|     #
+            1472|     #
+            1288|     #
+            1104|     #
+             920|#    #
+             736|#    #
+             552|#    #
+             368|######
+             184|######
                0|######
              bps|0---------10--------20--------30--------40--------50-------- seconds
                1|

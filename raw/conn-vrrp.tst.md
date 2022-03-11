@@ -14,7 +14,7 @@
     hostname r1
     buggy
     !
-    logging file debug ../binTmp/zzz45r1-log.run
+    logging file debug ../binTmp/zzz79r1-log.run
     !
     bridge 1
      mac-learn
@@ -94,7 +94,7 @@
     hostname r2
     buggy
     !
-    logging file debug ../binTmp/zzz45r2-log.run
+    logging file debug ../binTmp/zzz79r2-log.run
     !
     bridge 1
      mac-learn
@@ -179,7 +179,7 @@
     hostname r3
     buggy
     !
-    logging file debug ../binTmp/zzz45r3-log.run
+    logging file debug ../binTmp/zzz79r3-log.run
     !
     bridge 1
      mac-learn

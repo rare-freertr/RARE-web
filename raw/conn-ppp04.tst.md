@@ -14,7 +14,7 @@
     hostname r1
     buggy
     !
-    logging file debug ../binTmp/zzz74r1-log.run
+    logging file debug ../binTmp/zzz91r1-log.run
     !
     vrf definition tester
      exit
@@ -79,7 +79,7 @@
     hostname r2
     buggy
     !
-    logging file debug ../binTmp/zzz74r2-log.run
+    logging file debug ../binTmp/zzz91r2-log.run
     !
     aaa tacacs usr
      secret $v10$Yw==
@@ -163,7 +163,7 @@
     hostname r3
     buggy
     !
-    logging file debug ../binTmp/zzz74r3-log.run
+    logging file debug ../binTmp/zzz91r3-log.run
     !
     aaa userlist usr
      username c

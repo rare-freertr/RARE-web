@@ -14,7 +14,7 @@
     hostname r1
     buggy
     !
-    logging file debug ../binTmp/zzz50r1-log.run
+    logging file debug ../binTmp/zzz46r1-log.run
     !
     vrf definition tester
      exit
@@ -95,7 +95,7 @@
     hostname r2
     buggy
     !
-    logging file debug ../binTmp/zzz50r2-log.run
+    logging file debug ../binTmp/zzz46r2-log.run
     !
     route-map rm1
      sequence 10 action permit
@@ -201,7 +201,7 @@
     hostname r3
     buggy
     !
-    logging file debug ../binTmp/zzz50r3-log.run
+    logging file debug ../binTmp/zzz46r3-log.run
     !
     vrf definition tester
      exit
@@ -287,7 +287,7 @@
      |~~~~~~~~~~~|~~~~~~~|~~~~~~~~~~|~~~~~~~~~~|
      | interface | learn | neighbor | uptime   |
      |-----------|-------|----------|----------|
-     | ethernet1 | 2     | 1.1.1.1  | 00:00:06 |
+     | ethernet1 | 2     | 1.1.1.1  | 00:00:05 |
      | ethernet2 | 2     | 1.1.1.6  | 00:00:05 |
      |___________|_______|__________|__________|
     r2#
@@ -302,7 +302,7 @@
      |~~~~~~~~~~~|~~~~~~~|~~~~~~~~~~~|~~~~~~~~~~|
      | interface | learn | neighbor  | uptime   |
      |-----------|-------|-----------|----------|
-     | ethernet1 | 2     | 1234:1::1 | 00:00:06 |
+     | ethernet1 | 2     | 1234:1::1 | 00:00:05 |
      | ethernet2 | 2     | 1234:2::2 | 00:00:05 |
      |___________|_______|___________|__________|
     r2#
@@ -318,9 +318,9 @@
      | typ | prefix     | metric | iface     | hop     | time     |
      |-----|------------|--------|-----------|---------|----------|
      | R   | 1.1.1.0/30 | 1/0    | ethernet1 | null    | 00:00:36 |
-     | R   | 1.1.1.4/30 | 1/0    | ethernet2 | null    | 00:00:36 |
+     | R   | 1.1.1.4/30 | 1/0    | ethernet2 | null    | 00:00:35 |
      | R   | 2.2.2.1/32 | 120/10 | ethernet1 | 1.1.1.1 | 00:00:06 |
-     | R   | 2.2.2.3/32 | 120/10 | ethernet2 | 1.1.1.6 | 00:00:06 |
+     | R   | 2.2.2.3/32 | 120/10 | ethernet2 | 1.1.1.6 | 00:00:05 |
      |_____|____________|________|___________|_________|__________|
     r2#
     r2#

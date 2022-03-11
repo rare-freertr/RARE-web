@@ -141,6 +141,7 @@
      vrf v1
      local-as 1
      router-id 4.4.4.1
+     no safe-ebgp
      address-family vpnuni vpnmlt
      neighbor 2.2.2.3 remote-as 1
      no neighbor 2.2.2.3 description
@@ -157,6 +158,7 @@
      vrf v1
      local-as 1
      router-id 6.6.6.1
+     no safe-ebgp
      address-family vpnuni vpnmlt
      neighbor 4321::3 remote-as 1
      no neighbor 4321::3 description
@@ -378,6 +380,7 @@
      vrf v1
      local-as 1
      router-id 4.4.4.3
+     no safe-ebgp
      address-family vpnuni vpnmlt
      neighbor 2.2.2.1 remote-as 1
      no neighbor 2.2.2.1 description
@@ -394,6 +397,7 @@
      vrf v1
      local-as 1
      router-id 6.6.6.3
+     no safe-ebgp
      address-family vpnuni vpnmlt
      neighbor 4321::1 remote-as 1
      no neighbor 4321::1 description

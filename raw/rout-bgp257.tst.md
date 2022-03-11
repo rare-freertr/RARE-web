@@ -14,7 +14,7 @@
     hostname r1
     buggy
     !
-    logging file debug ../binTmp/zzz29r1-log.run
+    logging file debug ../binTmp/zzz70r1-log.run
     !
     vrf definition tester
      exit
@@ -94,6 +94,7 @@
      vrf v1
      local-as 1
      router-id 4.4.4.1
+     no safe-ebgp
      address-family ovpnuni
      neighbor 1.1.1.4 remote-as 1
      no neighbor 1.1.1.4 description
@@ -114,6 +115,7 @@
      vrf v1
      local-as 1
      router-id 6.6.6.1
+     no safe-ebgp
      address-family ovpnuni
      neighbor 1234:1::4 remote-as 1
      no neighbor 1234:1::4 description
@@ -215,7 +217,7 @@
     hostname r2
     buggy
     !
-    logging file debug ../binTmp/zzz29r2-log.run
+    logging file debug ../binTmp/zzz70r2-log.run
     !
     vrf definition tester
      exit
@@ -295,6 +297,7 @@
      vrf v1
      local-as 1
      router-id 4.4.4.2
+     no safe-ebgp
      address-family ovpnuni
      neighbor 1.1.1.4 remote-as 1
      no neighbor 1.1.1.4 description
@@ -315,6 +318,7 @@
      vrf v1
      local-as 1
      router-id 6.6.6.2
+     no safe-ebgp
      address-family ovpnuni
      neighbor 1234:1::4 remote-as 1
      no neighbor 1234:1::4 description
@@ -416,7 +420,7 @@
     hostname r3
     buggy
     !
-    logging file debug ../binTmp/zzz29r3-log.run
+    logging file debug ../binTmp/zzz70r3-log.run
     !
     vrf definition tester
      exit
@@ -496,6 +500,7 @@
      vrf v1
      local-as 1
      router-id 4.4.4.3
+     no safe-ebgp
      address-family ovpnuni
      neighbor 1.1.1.4 remote-as 1
      no neighbor 1.1.1.4 description
@@ -516,6 +521,7 @@
      vrf v1
      local-as 1
      router-id 6.6.6.3
+     no safe-ebgp
      address-family ovpnuni
      neighbor 1234:1::4 remote-as 1
      no neighbor 1234:1::4 description
@@ -617,7 +623,7 @@
     hostname r4
     buggy
     !
-    logging file debug ../binTmp/zzz29r4-log.run
+    logging file debug ../binTmp/zzz70r4-log.run
     !
     bridge 1
      mac-learn
@@ -664,6 +670,7 @@
      vrf v1
      local-as 1
      router-id 4.4.4.4
+     no safe-ebgp
      address-family ovpnuni
      neighbor 2.2.2.1 remote-as 1
      no neighbor 2.2.2.1 description
@@ -692,6 +699,7 @@
      vrf v1
      local-as 1
      router-id 6.6.6.4
+     no safe-ebgp
      address-family ovpnuni
      neighbor 4321::1 remote-as 1
      no neighbor 4321::1 description

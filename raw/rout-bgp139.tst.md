@@ -14,7 +14,7 @@
     hostname r1
     buggy
     !
-    logging file debug ../binTmp/zzz67r1-log.run
+    logging file debug ../binTmp/zzz100r1-log.run
     !
     bridge 1
      rd 1:1
@@ -113,6 +113,7 @@
      vrf v1
      local-as 1
      router-id 4.4.4.1
+     no safe-ebgp
      address-family evpn
      neighbor 1.1.1.4 remote-as 1
      no neighbor 1.1.1.4 description
@@ -123,11 +124,11 @@
      neighbor 1.1.1.4 pmsitun
      neighbor 1.1.1.4 send-community standard extended
      afi-evpn 101 bridge-group 1
-     afi-evpn 101 bmac 0034.3e2d.324c
+     afi-evpn 101 bmac 0068.6342.0270
      afi-evpn 101 encapsulation pbb
      afi-evpn 101 update-source loopback0
      afi-evpn 102 bridge-group 3
-     afi-evpn 102 bmac 005d.790e.181e
+     afi-evpn 102 bmac 0018.0c68.2776
      afi-evpn 102 encapsulation pbb
      afi-evpn 102 update-source loopback0
      exit
@@ -136,6 +137,7 @@
      vrf v1
      local-as 1
      router-id 6.6.6.1
+     no safe-ebgp
      address-family evpn
      neighbor 1234:1::4 remote-as 1
      no neighbor 1234:1::4 description
@@ -146,11 +148,11 @@
      neighbor 1234:1::4 pmsitun
      neighbor 1234:1::4 send-community standard extended
      afi-evpn 101 bridge-group 2
-     afi-evpn 101 bmac 006a.0f17.035b
+     afi-evpn 101 bmac 0004.196e.5769
      afi-evpn 101 encapsulation pbb
      afi-evpn 101 update-source loopback0
      afi-evpn 102 bridge-group 4
-     afi-evpn 102 bmac 002d.5a4a.7445
+     afi-evpn 102 bmac 0064.7e2c.1b4e
      afi-evpn 102 encapsulation pbb
      afi-evpn 102 update-source loopback0
      exit
@@ -201,7 +203,7 @@
     hostname r2
     buggy
     !
-    logging file debug ../binTmp/zzz67r2-log.run
+    logging file debug ../binTmp/zzz100r2-log.run
     !
     bridge 1
      rd 1:1
@@ -300,6 +302,7 @@
      vrf v1
      local-as 1
      router-id 4.4.4.2
+     no safe-ebgp
      address-family evpn
      neighbor 1.1.1.4 remote-as 1
      no neighbor 1.1.1.4 description
@@ -310,11 +313,11 @@
      neighbor 1.1.1.4 pmsitun
      neighbor 1.1.1.4 send-community standard extended
      afi-evpn 101 bridge-group 1
-     afi-evpn 101 bmac 0032.4d25.6742
+     afi-evpn 101 bmac 0014.5c4b.4e5a
      afi-evpn 101 encapsulation pbb
      afi-evpn 101 update-source loopback0
      afi-evpn 102 bridge-group 3
-     afi-evpn 102 bmac 0042.5e1e.0908
+     afi-evpn 102 bmac 0001.1a00.4e61
      afi-evpn 102 encapsulation pbb
      afi-evpn 102 update-source loopback0
      exit
@@ -323,6 +326,7 @@
      vrf v1
      local-as 1
      router-id 6.6.6.2
+     no safe-ebgp
      address-family evpn
      neighbor 1234:1::4 remote-as 1
      no neighbor 1234:1::4 description
@@ -333,11 +337,11 @@
      neighbor 1234:1::4 pmsitun
      neighbor 1234:1::4 send-community standard extended
      afi-evpn 101 bridge-group 2
-     afi-evpn 101 bmac 0020.7c78.6020
+     afi-evpn 101 bmac 0045.142b.0476
      afi-evpn 101 encapsulation pbb
      afi-evpn 101 update-source loopback0
      afi-evpn 102 bridge-group 4
-     afi-evpn 102 bmac 000f.624b.3965
+     afi-evpn 102 bmac 0007.2506.6479
      afi-evpn 102 encapsulation pbb
      afi-evpn 102 update-source loopback0
      exit
@@ -388,7 +392,7 @@
     hostname r3
     buggy
     !
-    logging file debug ../binTmp/zzz67r3-log.run
+    logging file debug ../binTmp/zzz100r3-log.run
     !
     bridge 1
      rd 1:1
@@ -487,6 +491,7 @@
      vrf v1
      local-as 1
      router-id 4.4.4.3
+     no safe-ebgp
      address-family evpn
      neighbor 1.1.1.4 remote-as 1
      no neighbor 1.1.1.4 description
@@ -497,11 +502,11 @@
      neighbor 1.1.1.4 pmsitun
      neighbor 1.1.1.4 send-community standard extended
      afi-evpn 101 bridge-group 1
-     afi-evpn 101 bmac 0065.1566.4e1e
+     afi-evpn 101 bmac 0055.2b51.4a6e
      afi-evpn 101 encapsulation pbb
      afi-evpn 101 update-source loopback0
      afi-evpn 102 bridge-group 3
-     afi-evpn 102 bmac 0002.710b.0221
+     afi-evpn 102 bmac 0044.1d7d.225c
      afi-evpn 102 encapsulation pbb
      afi-evpn 102 update-source loopback0
      exit
@@ -510,6 +515,7 @@
      vrf v1
      local-as 1
      router-id 6.6.6.3
+     no safe-ebgp
      address-family evpn
      neighbor 1234:1::4 remote-as 1
      no neighbor 1234:1::4 description
@@ -520,11 +526,11 @@
      neighbor 1234:1::4 pmsitun
      neighbor 1234:1::4 send-community standard extended
      afi-evpn 101 bridge-group 2
-     afi-evpn 101 bmac 0044.2212.1562
+     afi-evpn 101 bmac 0053.1059.6852
      afi-evpn 101 encapsulation pbb
      afi-evpn 101 update-source loopback0
      afi-evpn 102 bridge-group 4
-     afi-evpn 102 bmac 0067.3242.1379
+     afi-evpn 102 bmac 0057.4f7b.615e
      afi-evpn 102 encapsulation pbb
      afi-evpn 102 update-source loopback0
      exit
@@ -575,7 +581,7 @@
     hostname r4
     buggy
     !
-    logging file debug ../binTmp/zzz67r4-log.run
+    logging file debug ../binTmp/zzz100r4-log.run
     !
     bridge 1
      mac-learn
@@ -622,6 +628,7 @@
      vrf v1
      local-as 1
      router-id 4.4.4.4
+     no safe-ebgp
      address-family evpn
      neighbor 2.2.2.1 remote-as 1
      no neighbor 2.2.2.1 description
@@ -653,6 +660,7 @@
      vrf v1
      local-as 1
      router-id 6.6.6.4
+     no safe-ebgp
      address-family evpn
      neighbor 4321::1 remote-as 1
      no neighbor 4321::1 description

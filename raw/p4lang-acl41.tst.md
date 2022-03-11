@@ -1,4 +1,4 @@
-# Example: p4lang: ingress hibryd access list
+# Example: p4lang: ingress hybrid access list
     
 === "Topology"
     
@@ -12,7 +12,7 @@
     **r1:**
     ```
     hostname r1
-    logging file debug ../binTmp/zzz76r1-log.run
+    logging file debug ../binTmp/zzz92r1-log.run
     vrf definition tester
      exit
     server telnet tester

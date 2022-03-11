@@ -14,7 +14,7 @@
     hostname r1
     buggy
     !
-    logging file debug ../binTmp/zzz14r1-log.run
+    logging file debug ../binTmp/zzz85r1-log.run
     !
     bridge 1
      exit
@@ -143,7 +143,7 @@
     hostname r2
     buggy
     !
-    logging file debug ../binTmp/zzz14r2-log.run
+    logging file debug ../binTmp/zzz85r2-log.run
     !
     bridge 1
      exit
@@ -265,7 +265,7 @@
     hostname r3
     buggy
     !
-    logging file debug ../binTmp/zzz14r3-log.run
+    logging file debug ../binTmp/zzz85r3-log.run
     !
     bridge 1
      exit

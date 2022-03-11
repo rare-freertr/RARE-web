@@ -14,7 +14,7 @@
     hostname r1
     buggy
     !
-    logging file debug ../binTmp/zzz83r1-log.run
+    logging file debug ../binTmp/zzz26r1-log.run
     !
     bridge 1
      rd 1:1
@@ -89,6 +89,7 @@
      vrf v1
      local-as 1
      router-id 4.4.4.1
+     no safe-ebgp
      address-family unicast evpn
      neighbor 2.2.2.2 remote-as 2
      no neighbor 2.2.2.2 description
@@ -100,7 +101,7 @@
      neighbor 2.2.2.2 pmsitun
      neighbor 2.2.2.2 send-community standard extended
      afi-evpn 101 bridge-group 1
-     afi-evpn 101 bmac 0016.5744.721e
+     afi-evpn 101 bmac 001f.340f.1234
      afi-evpn 101 encapsulation vxlan
      afi-evpn 101 update-source loopback0
      redistribute connected
@@ -110,6 +111,7 @@
      vrf v1
      local-as 1
      router-id 6.6.6.1
+     no safe-ebgp
      address-family unicast evpn
      neighbor 4321::2 remote-as 2
      no neighbor 4321::2 description
@@ -121,7 +123,7 @@
      neighbor 4321::2 pmsitun
      neighbor 4321::2 send-community standard extended
      afi-evpn 101 bridge-group 2
-     afi-evpn 101 bmac 0048.7540.0e57
+     afi-evpn 101 bmac 0033.244e.2725
      afi-evpn 101 encapsulation vxlan
      afi-evpn 101 update-source loopback0
      redistribute connected
@@ -171,7 +173,7 @@
     hostname r2
     buggy
     !
-    logging file debug ../binTmp/zzz83r2-log.run
+    logging file debug ../binTmp/zzz26r2-log.run
     !
     bridge 1
      rd 1:1
@@ -246,6 +248,7 @@
      vrf v1
      local-as 2
      router-id 4.4.4.2
+     no safe-ebgp
      address-family unicast evpn
      neighbor 2.2.2.1 remote-as 1
      no neighbor 2.2.2.1 description
@@ -257,7 +260,7 @@
      neighbor 2.2.2.1 pmsitun
      neighbor 2.2.2.1 send-community standard extended
      afi-evpn 101 bridge-group 1
-     afi-evpn 101 bmac 003a.4d6d.1b1d
+     afi-evpn 101 bmac 0055.3171.6f45
      afi-evpn 101 encapsulation vxlan
      afi-evpn 101 update-source loopback0
      redistribute connected
@@ -267,6 +270,7 @@
      vrf v1
      local-as 2
      router-id 6.6.6.2
+     no safe-ebgp
      address-family unicast evpn
      neighbor 4321::1 remote-as 1
      no neighbor 4321::1 description
@@ -278,7 +282,7 @@
      neighbor 4321::1 pmsitun
      neighbor 4321::1 send-community standard extended
      afi-evpn 101 bridge-group 2
-     afi-evpn 101 bmac 003b.6f08.6147
+     afi-evpn 101 bmac 006d.665c.1044
      afi-evpn 101 encapsulation vxlan
      afi-evpn 101 update-source loopback0
      redistribute connected

@@ -14,7 +14,7 @@
     hostname r1
     buggy
     !
-    logging file debug ../binTmp/zzz98r1-log.run
+    logging file debug ../binTmp/zzz18r1-log.run
     !
     access-list a2b4
      sequence 10 permit all 2.2.2.101 255.255.255.255 all 2.2.2.201 255.255.255.255 all
@@ -93,7 +93,7 @@
     hostname r2
     buggy
     !
-    logging file debug ../binTmp/zzz98r2-log.run
+    logging file debug ../binTmp/zzz18r2-log.run
     !
     access-list a2b4
      sequence 10 permit all 2.2.2.101 255.255.255.255 all 2.2.2.201 255.255.255.255 all
@@ -199,7 +199,7 @@
     hostname r3
     buggy
     !
-    logging file debug ../binTmp/zzz98r3-log.run
+    logging file debug ../binTmp/zzz18r3-log.run
     !
     access-list b2a4
      sequence 10 permit all 2.2.2.201 255.255.255.255 all 2.2.2.101 255.255.255.255 all

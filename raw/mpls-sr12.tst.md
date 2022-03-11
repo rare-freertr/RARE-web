@@ -14,7 +14,7 @@
     hostname r1
     buggy
     !
-    logging file debug ../binTmp/zzz5r1-log.run
+    logging file debug ../binTmp/zzz92r1-log.run
     !
     vrf definition tester
      exit
@@ -70,7 +70,7 @@
     interface pwether1
      no description
      mtu 1500
-     macaddr 0054.2271.2f6b
+     macaddr 001a.5b2c.3712
      vrf forwarding v1
      ipv4 address 3.3.3.1 255.255.255.0
      pseudowire v1 loopback2 pweompls 2.2.2.13 1234
@@ -81,7 +81,7 @@
     interface pwether2
      no description
      mtu 1500
-     macaddr 0071.3e41.5d62
+     macaddr 0049.5622.2a70
      vrf forwarding v1
      ipv4 address 3.3.4.1 255.255.255.0
      pseudowire v1 loopback2 pweompls 4321::13 1234
@@ -93,6 +93,7 @@
      vrf v1
      local-as 1
      router-id 4.4.4.1
+     no safe-ebgp
      address-family labeled
      neighbor 2.2.2.3 remote-as 1
      no neighbor 2.2.2.3 description
@@ -108,6 +109,7 @@
      vrf v1
      local-as 1
      router-id 6.6.6.1
+     no safe-ebgp
      address-family labeled
      neighbor 4321::3 remote-as 1
      no neighbor 4321::3 description
@@ -161,7 +163,7 @@
     hostname r2
     buggy
     !
-    logging file debug ../binTmp/zzz5r2-log.run
+    logging file debug ../binTmp/zzz92r2-log.run
     !
     vrf definition tester
      exit
@@ -259,7 +261,7 @@
     hostname r3
     buggy
     !
-    logging file debug ../binTmp/zzz5r3-log.run
+    logging file debug ../binTmp/zzz92r3-log.run
     !
     vrf definition tester
      exit
@@ -315,7 +317,7 @@
     interface pwether1
      no description
      mtu 1500
-     macaddr 0009.5932.2934
+     macaddr 000b.0807.2a68
      vrf forwarding v1
      ipv4 address 3.3.3.2 255.255.255.0
      pseudowire v1 loopback2 pweompls 2.2.2.11 1234
@@ -326,7 +328,7 @@
     interface pwether2
      no description
      mtu 1500
-     macaddr 0007.4d42.2b20
+     macaddr 0023.4553.2e69
      vrf forwarding v1
      ipv4 address 3.3.4.2 255.255.255.0
      pseudowire v1 loopback2 pweompls 4321::11 1234
@@ -338,6 +340,7 @@
      vrf v1
      local-as 1
      router-id 4.4.4.3
+     no safe-ebgp
      address-family labeled
      neighbor 2.2.2.1 remote-as 1
      no neighbor 2.2.2.1 description
@@ -353,6 +356,7 @@
      vrf v1
      local-as 1
      router-id 6.6.6.3
+     no safe-ebgp
      address-family labeled
      neighbor 4321::1 remote-as 1
      no neighbor 4321::1 description

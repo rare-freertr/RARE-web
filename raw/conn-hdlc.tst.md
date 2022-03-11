@@ -14,7 +14,7 @@
     hostname r1
     buggy
     !
-    logging file debug ../binTmp/zzz93r1-log.run
+    logging file debug ../binTmp/zzz57r1-log.run
     !
     vrf definition tester
      exit
@@ -75,7 +75,7 @@
     hostname r2
     buggy
     !
-    logging file debug ../binTmp/zzz93r2-log.run
+    logging file debug ../binTmp/zzz57r2-log.run
     !
     vrf definition tester
      exit
@@ -141,18 +141,18 @@
     serial1 is up (since 00:00:01, 3 changes)
      description:
      type is serial, hwaddr=none, mtu=1498, bw=2000kbps, vrf=v1
-     ip4 address=1.1.1.1/24, netmask=255.255.255.0, ifcid=194169948
-     ip6 address=1234::1/16, netmask=ffff::, ifcid=420953892
+     ip4 address=1.1.1.1/24, netmask=255.255.255.0, ifcid=18328604
+     ip6 address=1234::1/16, netmask=ffff::, ifcid=87506153
      received 23 packets (1550 bytes) dropped 0 packets (0 bytes)
-     transmitted 23 packets (1550 bytes) promisc=false macsec=false
-     |~~~~~~~|~~~~|~~~~|~~~~~~|~~~~~|~~~~~|~~~~~~|
-     |       | packet         | byte             |
-     | time  | tx | rx | drop | tx  | rx  | drop |
-     |-------|----|----|------|-----|-----|------|
-     | 1sec  | 3  | 3  | 0    | 230 | 230 | 0    |
-     | 1min  | 0  | 0  | 0    | 0   | 0   | 0    |
-     | 1hour | 0  | 0  | 0    | 0   | 0   | 0    |
-     |_______|____|____|______|_____|_____|______|
+     transmitted 23 packets (1550 bytes) promisc=false macsec=false sgt=false
+     |~~~~~~~|~~~~|~~~~|~~~~~~|~~~~~~|~~~~~~|~~~~~~|
+     |       | packet         | byte               |
+     | time  | tx | rx | drop | tx   | rx   | drop |
+     |-------|----|----|------|------|------|------|
+     | 1sec  | 23 | 20 | 0    | 1550 | 1320 | 0    |
+     | 1min  | 0  | 0  | 0    | 0    | 0    | 0    |
+     | 1hour | 0  | 0  | 0    | 0    | 0    | 0    |
+     |_______|____|____|______|______|______|______|
      |~~~~~~~~|~~~~~~~|~~~~~~~~~|~~~~|~~~~|~~~~~~|~~~~~|~~~~~|~~~~~~|
      |                          | packet         | byte             |
      | type   | value | handler | tx | rx | drop | tx  | rx  | drop |
@@ -197,17 +197,17 @@
      | 6     | 0   | 0   | 0    | 0    | 0    | 0    |
      | 7     | 0   | 0   | 0    | 0    | 0    | 0    |
      |_______|_____|_____|______|______|______|______|
-            3680|
-            3312|#
-            2944|#
-            2576|#
-            2208|#
-            1840|#
-            1472|#
-            1104|#
-             736|#
-             368|#
-               0|#
+             22k|
+             20k|#
+             18k|#
+             16k|#
+             13k|#
+             11k|#
+            9184|#
+            6888|#
+            4592|#
+            2296|#
+               0|###
              bps|0---------10--------20--------30--------40--------50-------- seconds
                1|
                0|

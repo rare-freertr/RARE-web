@@ -14,7 +14,7 @@
     hostname r1
     buggy
     !
-    logging file debug ../binTmp/zzz88r1-log.run
+    logging file debug ../binTmp/zzz15r1-log.run
     !
     vrf definition tester
      exit
@@ -58,6 +58,7 @@
      vrf v1
      local-as 1
      router-id 4.4.4.1
+     no safe-ebgp
      address-family unicast
      neighbor 2.2.2.3 remote-as 1
      no neighbor 2.2.2.3 description
@@ -72,6 +73,7 @@
      vrf v1
      local-as 1
      router-id 6.6.6.1
+     no safe-ebgp
      address-family unicast
      neighbor 4321::3 remote-as 1
      no neighbor 4321::3 description
@@ -128,7 +130,7 @@
     hostname r2
     buggy
     !
-    logging file debug ../binTmp/zzz88r2-log.run
+    logging file debug ../binTmp/zzz15r2-log.run
     !
     vrf definition tester
      exit
@@ -217,7 +219,7 @@
     hostname r3
     buggy
     !
-    logging file debug ../binTmp/zzz88r3-log.run
+    logging file debug ../binTmp/zzz15r3-log.run
     !
     vrf definition tester
      exit
@@ -261,6 +263,7 @@
      vrf v1
      local-as 1
      router-id 4.4.4.3
+     no safe-ebgp
      address-family unicast
      neighbor 2.2.2.1 remote-as 1
      no neighbor 2.2.2.1 description
@@ -275,6 +278,7 @@
      vrf v1
      local-as 1
      router-id 6.6.6.3
+     no safe-ebgp
      address-family unicast
      neighbor 4321::1 remote-as 1
      no neighbor 4321::1 description

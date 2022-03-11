@@ -14,7 +14,7 @@
     hostname r1
     buggy
     !
-    logging file debug ../binTmp/zzz45r1-log.run
+    logging file debug ../binTmp/zzz50r1-log.run
     !
     vrf definition tester
      exit
@@ -97,7 +97,7 @@
     hostname r2
     buggy
     !
-    logging file debug ../binTmp/zzz45r2-log.run
+    logging file debug ../binTmp/zzz50r2-log.run
     !
     ipv4 pool p4 3.3.3.1 0.0.0.1 254
     !

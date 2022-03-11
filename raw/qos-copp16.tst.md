@@ -116,6 +116,7 @@
      vrf v1
      local-as 0
      router-id 0.0.0.0
+     no safe-ebgp
      address-family unicast
      afi-other enable
      no afi-other vpn-mode
@@ -127,6 +128,7 @@
      vrf v1
      local-as 0
      router-id 0.0.0.0
+     no safe-ebgp
      address-family unicast
      afi-other enable
      no afi-other vpn-mode

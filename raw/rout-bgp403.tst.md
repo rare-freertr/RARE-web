@@ -14,7 +14,7 @@
     hostname r1
     buggy
     !
-    logging file debug ../binTmp/zzz74r1-log.run
+    logging file debug ../binTmp/zzz42r1-log.run
     !
     vrf definition tester
      exit
@@ -54,7 +54,7 @@
     interface pwether1
      no description
      mtu 1500
-     macaddr 0004.147b.2b23
+     macaddr 0070.000f.2d47
      vrf forwarding v1
      ipv4 address 3.3.3.1 255.255.255.0
      pseudowire v1 loopback1 pweompls 2.2.2.12 1234
@@ -65,7 +65,7 @@
     interface pwether2
      no description
      mtu 1500
-     macaddr 0078.6a09.4f1d
+     macaddr 0040.0333.2f65
      vrf forwarding v1
      ipv4 address 3.3.4.1 255.255.255.0
      pseudowire v1 loopback1 pweompls 4321::12 1234
@@ -77,6 +77,7 @@
      vrf v1
      local-as 1
      router-id 4.4.4.1
+     no safe-ebgp
      address-family labeled
      neighbor 1.1.1.3 remote-as 1
      no neighbor 1.1.1.3 description
@@ -90,6 +91,7 @@
      vrf v1
      local-as 1
      router-id 6.6.6.1
+     no safe-ebgp
      address-family labeled
      neighbor 1234::3 remote-as 1
      no neighbor 1234::3 description
@@ -141,7 +143,7 @@
     hostname r2
     buggy
     !
-    logging file debug ../binTmp/zzz74r2-log.run
+    logging file debug ../binTmp/zzz42r2-log.run
     !
     vrf definition tester
      exit
@@ -181,7 +183,7 @@
     interface pwether1
      no description
      mtu 1500
-     macaddr 0036.6b0a.7d2d
+     macaddr 005f.3849.7a5e
      vrf forwarding v1
      ipv4 address 3.3.3.2 255.255.255.0
      pseudowire v1 loopback1 pweompls 2.2.2.11 1234
@@ -192,7 +194,7 @@
     interface pwether2
      no description
      mtu 1500
-     macaddr 0054.1325.2c0c
+     macaddr 0075.612a.4611
      vrf forwarding v1
      ipv4 address 3.3.4.2 255.255.255.0
      pseudowire v1 loopback1 pweompls 4321::11 1234
@@ -204,6 +206,7 @@
      vrf v1
      local-as 1
      router-id 4.4.4.2
+     no safe-ebgp
      address-family labeled
      neighbor 1.1.1.3 remote-as 1
      no neighbor 1.1.1.3 description
@@ -217,6 +220,7 @@
      vrf v1
      local-as 1
      router-id 6.6.6.2
+     no safe-ebgp
      address-family labeled
      neighbor 1234::3 remote-as 1
      no neighbor 1234::3 description
@@ -268,7 +272,7 @@
     hostname r3
     buggy
     !
-    logging file debug ../binTmp/zzz74r3-log.run
+    logging file debug ../binTmp/zzz42r3-log.run
     !
     bridge 1
      mac-learn
@@ -327,6 +331,7 @@
      vrf v1
      local-as 1
      router-id 4.4.4.3
+     no safe-ebgp
      address-family labeled
      neighbor 1.1.1.1 remote-as 1
      no neighbor 1.1.1.1 description
@@ -347,6 +352,7 @@
      vrf v1
      local-as 1
      router-id 6.6.6.3
+     no safe-ebgp
      address-family labeled
      neighbor 1234::1 remote-as 1
      no neighbor 1234::1 description

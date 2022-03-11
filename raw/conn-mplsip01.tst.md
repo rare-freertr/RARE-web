@@ -14,7 +14,7 @@
     hostname r1
     buggy
     !
-    logging file debug ../binTmp/zzz47r1-log.run
+    logging file debug ../binTmp/zzz12r1-log.run
     !
     vrf definition tester
      exit
@@ -88,7 +88,7 @@
     hostname r2
     buggy
     !
-    logging file debug ../binTmp/zzz47r2-log.run
+    logging file debug ../binTmp/zzz12r2-log.run
     !
     vrf definition tester
      exit
@@ -166,19 +166,19 @@
     r1#show inter tun1 full
     tunnel1 is up (since 00:00:06, 13 changes)
      description:
-     type is mplsip, hwaddr=0019.7c23.4959, mtu=1478, bw=2000kbps, vrf=v1
-     ip4 address=2.2.2.1/24, netmask=255.255.255.0, ifcid=727485467
-     ip6 address=4321::1/16, netmask=ffff::, ifcid=685135995
+     type is mplsip, hwaddr=0038.261e.4f06, mtu=1478, bw=2000kbps, vrf=v1
+     ip4 address=2.2.2.1/24, netmask=255.255.255.0, ifcid=805220324
+     ip6 address=4321::1/16, netmask=ffff::, ifcid=1034380175
      received 21 packets (1386 bytes) dropped 0 packets (0 bytes)
-     transmitted 28 packets (1904 bytes) promisc=false macsec=false
-     |~~~~~~~|~~~~|~~~~|~~~~~~|~~~~~~|~~~~~~|~~~~~~|
-     |       | packet         | byte               |
-     | time  | tx | rx | drop | tx   | rx   | drop |
-     |-------|----|----|------|------|------|------|
-     | 1sec  | 20 | 20 | 0    | 1320 | 1320 | 0    |
-     | 1min  | 0  | 0  | 0    | 0    | 0    | 0    |
-     | 1hour | 0  | 0  | 0    | 0    | 0    | 0    |
-     |_______|____|____|______|______|______|______|
+     transmitted 28 packets (1904 bytes) promisc=false macsec=false sgt=false
+     |~~~~~~~|~~~~|~~~~|~~~~~~|~~~~|~~~~|~~~~~~|
+     |       | packet         | byte           |
+     | time  | tx | rx | drop | tx | rx | drop |
+     |-------|----|----|------|----|----|------|
+     | 1sec  | 1  | 1  | 0    | 66 | 66 | 0    |
+     | 1min  | 0  | 0  | 0    | 0  | 0  | 0    |
+     | 1hour | 0  | 0  | 0    | 0  | 0  | 0    |
+     |_______|____|____|______|____|____|______|
      |~~~~~~~~|~~~~~~~|~~~~~~~~~|~~~~|~~~~|~~~~~~|~~~~~|~~~~~|~~~~~~|
      |                          | packet         | byte             |
      | type   | value | handler | tx | rx | drop | tx  | rx  | drop |
@@ -223,16 +223,16 @@
      | 6     | 0   | 0   | 0    | 0    | 0    | 0    |
      | 7     | 0   | 0   | 0    | 0    | 0    | 0    |
      |_______|_____|_____|______|______|______|______|
-             21k|
-             19k|#
-             16k|#
-             14k|#
-             12k|#
-             10k|#
-            8448|#
-            6336|#
-            4224|#
-            2112|#    #
+            2032|
+            1828|     #
+            1625|     #
+            1422|     #
+            1219|     #
+            1016|#    #
+             812|#    #
+             609|#    #
+             406|######
+             203|######
                0|######
              bps|0---------10--------20--------30--------40--------50-------- seconds
                1|

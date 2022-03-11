@@ -14,7 +14,7 @@
     hostname r1
     buggy
     !
-    logging file debug ../binTmp/zzz21r1-log.run
+    logging file debug ../binTmp/zzz61r1-log.run
     !
     vrf definition tester
      exit
@@ -45,7 +45,7 @@
     interface pwether1
      no description
      mtu 1500
-     macaddr 0028.1d16.655b
+     macaddr 006a.441f.1672
      vrf forwarding v1
      ipv4 address 3.3.3.1 255.255.255.0
      pseudowire v1 loopback0 pweompls 2.2.2.2 1234
@@ -56,7 +56,7 @@
     interface pwether2
      no description
      mtu 1500
-     macaddr 0054.6e30.794b
+     macaddr 000b.7b4a.3e6a
      vrf forwarding v1
      ipv4 address 3.3.4.1 255.255.255.0
      pseudowire v1 loopback0 pweompls 4321::2 1234
@@ -68,6 +68,7 @@
      vrf v1
      local-as 1
      router-id 4.4.4.1
+     no safe-ebgp
      address-family unicast olab
      neighbor 1.1.1.2 remote-as 2
      no neighbor 1.1.1.2 description
@@ -84,6 +85,7 @@
      vrf v1
      local-as 1
      router-id 6.6.6.1
+     no safe-ebgp
      address-family unicast olab
      neighbor 1234:1::2 remote-as 2
      no neighbor 1234:1::2 description
@@ -138,7 +140,7 @@
     hostname r2
     buggy
     !
-    logging file debug ../binTmp/zzz21r2-log.run
+    logging file debug ../binTmp/zzz61r2-log.run
     !
     vrf definition tester
      exit
@@ -169,7 +171,7 @@
     interface pwether1
      no description
      mtu 1500
-     macaddr 000c.0f68.2c3c
+     macaddr 000b.5458.2f70
      vrf forwarding v1
      ipv4 address 3.3.3.2 255.255.255.0
      pseudowire v1 loopback0 pweompls 2.2.2.1 1234
@@ -180,7 +182,7 @@
     interface pwether2
      no description
      mtu 1500
-     macaddr 0058.0b22.4b59
+     macaddr 002f.7661.2c30
      vrf forwarding v1
      ipv4 address 3.3.4.2 255.255.255.0
      pseudowire v1 loopback0 pweompls 4321::1 1234
@@ -192,6 +194,7 @@
      vrf v1
      local-as 2
      router-id 4.4.4.2
+     no safe-ebgp
      address-family unicast olab
      neighbor 1.1.1.1 remote-as 1
      no neighbor 1.1.1.1 description
@@ -208,6 +211,7 @@
      vrf v1
      local-as 2
      router-id 6.6.6.2
+     no safe-ebgp
      address-family unicast olab
      neighbor 1234:1::1 remote-as 1
      no neighbor 1234:1::1 description

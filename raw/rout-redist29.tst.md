@@ -14,7 +14,7 @@
     hostname r1
     buggy
     !
-    logging file debug ../binTmp/zzz35r1-log.run
+    logging file debug ../binTmp/zzz32r1-log.run
     !
     vrf definition tester
      exit
@@ -134,7 +134,7 @@
     hostname r2
     buggy
     !
-    logging file debug ../binTmp/zzz35r2-log.run
+    logging file debug ../binTmp/zzz32r2-log.run
     !
     vrf definition tester
      exit
@@ -227,6 +227,7 @@
      vrf v1
      local-as 1
      router-id 4.4.4.2
+     no safe-ebgp
      address-family ouni
      neighbor 1.1.1.6 remote-as 2
      no neighbor 1.1.1.6 description
@@ -243,6 +244,7 @@
      vrf v1
      local-as 1
      router-id 6.6.6.2
+     no safe-ebgp
      address-family ouni
      neighbor 1234:2::2 remote-as 2
      no neighbor 1234:2::2 description
@@ -297,7 +299,7 @@
     hostname r3
     buggy
     !
-    logging file debug ../binTmp/zzz35r3-log.run
+    logging file debug ../binTmp/zzz32r3-log.run
     !
     vrf definition tester
      exit
@@ -346,6 +348,7 @@
      vrf v1
      local-as 2
      router-id 4.4.4.3
+     no safe-ebgp
      address-family ouni
      neighbor 1.1.1.5 remote-as 1
      no neighbor 1.1.1.5 description
@@ -361,6 +364,7 @@
      vrf v1
      local-as 2
      router-id 6.6.6.3
+     no safe-ebgp
      address-family ouni
      neighbor 1234:2::1 remote-as 1
      no neighbor 1234:2::1 description

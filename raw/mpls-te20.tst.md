@@ -14,7 +14,7 @@
     hostname r1
     buggy
     !
-    logging file debug ../binTmp/zzz62r1-log.run
+    logging file debug ../binTmp/zzz22r1-log.run
     !
     access-list test4
      sequence 10 deny 1 any all any all
@@ -84,6 +84,7 @@
      vrf v1
      local-as 1
      router-id 4.4.4.1
+     no safe-ebgp
      address-family unicast
      neighbor 2.2.2.2 remote-as 1
      no neighbor 2.2.2.2 description
@@ -97,6 +98,7 @@
      vrf v1
      local-as 1
      router-id 6.6.6.1
+     no safe-ebgp
      address-family unicast
      neighbor 4321::2 remote-as 1
      no neighbor 4321::2 description
@@ -150,7 +152,7 @@
     hostname r2
     buggy
     !
-    logging file debug ../binTmp/zzz62r2-log.run
+    logging file debug ../binTmp/zzz22r2-log.run
     !
     access-list test4
      sequence 10 deny 1 any all any all
@@ -239,7 +241,7 @@
     hostname r3
     buggy
     !
-    logging file debug ../binTmp/zzz62r3-log.run
+    logging file debug ../binTmp/zzz22r3-log.run
     !
     access-list test4
      sequence 10 deny 1 any all any all
@@ -309,6 +311,7 @@
      vrf v1
      local-as 1
      router-id 4.4.4.3
+     no safe-ebgp
      address-family unicast
      neighbor 2.2.2.1 remote-as 1
      no neighbor 2.2.2.1 description
@@ -322,6 +325,7 @@
      vrf v1
      local-as 1
      router-id 6.6.6.3
+     no safe-ebgp
      address-family unicast
      neighbor 4321::1 remote-as 1
      no neighbor 4321::1 description
