@@ -12,6 +12,10 @@ nav:
   - References:
      - 'All features in one page': 'guides/reference/index.md'
      - 'Features category': 'guides/reference/tabbed.md'
+  - Installation:
+    - Overview: 'guides/installation/index.md'
+    - Wedge100bf32:
+      - RARE NOS install: 'guides/installation/wedge100bf32/onie-nos-install.md'
   - License: license.md
   - Contacts: contacts.md
   - About: about.md
