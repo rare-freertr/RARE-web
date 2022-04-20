@@ -108,7 +108,9 @@ The interesting part is `server p4lang p4` configuration stanza
 
     How do we get this value without `bf_shell` ?
 
-    Let's introduce you to: `show p4lang <SERVER_P4_ID>`
+    There is 2 possibilities:
+
+    `-1-` `show p4lang <SERVER_P4_ID>`
     ```
     FREERTR# show p4lang p4
     ...
@@ -125,8 +127,22 @@ The interesting part is `server p4lang p4` configuration stanza
     143    frontpanel-2/3
     ...
     ```
+    `-2-` Use freeRtr configuration auto-completion
+    ```
+    conf t
+    FREERTR(cfg)#server p4lang p4
+    FREERTR(cfg-server)#export-port sdn4 ?
+      <num>           - port number
+      dynamic         - dynamic port number
+      frontpanel-1/0  - port number
+      frontpanel-1/1  - port number
+      frontpanel-1/2  - port number
+      frontpanel-1/3  - port number
+    ...
+    ```
+    If `-2-` is used then `frontpanel-1/0` will be translated to its corresponding TOFINO identifier (i.e `132`).
 
-The final configuration s:
+The final configuration is:
 
 ```
 conf t
