@@ -36,7 +36,7 @@ freeRtr identifies dataplane port as `sdn<index>` interface. `<index>` is an int
 !!! Note
     As a rule of thumb, when no breakout cable is used, `<index>` is the `front panel` port identifier: `<fp_port_id>`. If a breakout cable is used `<index>` can be the concatenation of [`<fp_port_id>` & `00` & `<lane_id>`]
 
-For example, if a module is inserted into front panel port `1`, then freeRtr interface name is interface `sdn1`. If a 4x25GE breakout cable is plugged into port 1, then interface name should be: interface `sdn1001`, `sdn1002`,`sdn1003`, `sdn1004`
+For example, if a module is inserted into front panel port `1`, then freeRtr interface name is interface `sdn1`. If a 4x25GE breakout cable is plugged into port `1`, then interface name should be: interface `sdn1001`, `sdn1002`,`sdn1003`, `sdn1004`
 
 
 # Interface configuration
