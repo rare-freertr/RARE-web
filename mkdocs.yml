@@ -3,19 +3,20 @@ site_dir: ../frederic-loui.github.io/
 nav:
   - Home: index.md
   - Getting started:
-    - 'Hello freeRtr !': 'guides/getting-started/001-hello-world.md'
-    - 'Topology example': 'guides/getting-started/002-topology-example.md'
-    - 'Unleash freeRtr !': 'guides/getting-started/003-unleash.md'
-    - "Intra domain routing": 'guides/getting-started/004-igp.md'
-    - "MPLS forwarding core": 'guides/getting-started/005-mpls.md'
-    - "iBGP": 'guides/getting-started/006-ibgp.md'
+    - Hello freeRtr !: 'guides/getting-started/001-hello-world.md'
+    - Topology example: 'guides/getting-started/002-topology-example.md'
+    - Unleash freeRtr !: 'guides/getting-started/003-unleash.md'
+    - Intra domain routing: 'guides/getting-started/004-igp.md'
+    - MPLS forwarding core: 'guides/getting-started/005-mpls.md'
+    - iBGP: 'guides/getting-started/006-ibgp.md'
   - References:
-     - 'All features in one page': 'guides/reference/index.md'
-     - 'Features category': 'guides/reference/tabbed.md'
+     - All features in one page: 'guides/reference/index.md'
+     - Features category: 'guides/reference/tabbed.md'
   - Installation:
     - Overview: 'guides/installation/index.md'
     - Wedge100bf32:
       - RARE NOS install: 'guides/installation/wedge100bf32/onie-nos-install.md'
+      - Interfaces configuration: 'guides/installation/wedge100bf32/interface.md'
   - License: license.md
   - Contacts: contacts.md
   - About: about.md
