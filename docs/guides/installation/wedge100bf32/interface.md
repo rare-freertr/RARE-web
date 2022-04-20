@@ -52,7 +52,7 @@ bridge <BRIDGE_ID>
  mac-learn
  exit
 ```
-* and bind to either one of them to an interface.
+* and bind each of them to an interface.
 ```
 conf t
 interface sdn1
@@ -108,7 +108,7 @@ The interesting part is `server p4lang p4` configuration stanza
 
     How do we get this value without `bf_shell` ?
 
-    There is 2 possibilities:
+    * 2 possibilities:
 
     `-1-` `show p4lang <SERVER_P4_ID>`
     ```
