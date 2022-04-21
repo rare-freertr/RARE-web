@@ -8,8 +8,9 @@ There are 3 major steps:
 
 !!! info
     Assuming you are familiar with ONIE, the installation process should last 5 minutes
+
 # Prerequisites
-* Wedge100bf32 hardware
+* Wedge100bf32 hardware with **ONIE partition pre-installed**
     * Wedge100bf32x
     * Wedge100bf32qs
 
