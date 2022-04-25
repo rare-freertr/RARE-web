@@ -84,7 +84,7 @@ scp ./onie-installer.bin root@<mbc_ip>:~/
 ```
 ssh root@<mbc_ip>
 ```
-    * Launch  RARE/freeRtr ONIE install from local file system
+    * Launch RARE/freeRtr ONIE install from local file system
 ```
 onie# onie-nos-install /root/onie-installer.bin
 ```
