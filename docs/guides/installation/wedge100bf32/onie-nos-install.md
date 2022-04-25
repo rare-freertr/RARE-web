@@ -2,9 +2,9 @@
 
 There are 3 major steps:
 
-* Prerequisites
-* Boot into ONIE environment
-* RARE/freeRtr NOS image installation via ONIE
+* Check prerequisites
+* Boot into the ONIE environment
+* Install the RARE/freeRtr NOS image via ONIE
 
 !!! info
     Assuming you are familiar with ONIE, the installation process should last 5 minutes
@@ -33,7 +33,7 @@ There are 3 major steps:
 
 # Boot into ONIE environment
 
-* Access to BMC via Serial or SSH
+* Access the BMC via Serial or SSH
 ```
 ssh root@<bmc_ip>
 root@<bmc_ip>'s password:
@@ -46,7 +46,7 @@ root@bmc:~#
 wedge_power.sh reset
 ```
 
-* Access to MBC from BMC
+* Access the MBC from BMC
 ```
 root@bmc:~# sol.sh
 You are in SOL session.
@@ -63,7 +63,7 @@ Use ctrl-x to quit.
 * Choose **`ONIE rescue mode`** from Grub menu
 
 # RARE/freeRtr NOS image installation via ONIE
-Now that you have rebooted MBC into **`ONIE rescue mode`**, there are 2 possible ways to install RARE/freeRtrt NOS
+Now that you have rebooted MBC into **`ONIE rescue mode`**, there are 2 possible ways to install RARE/freeRtrt NOS:
 
 * Internet access is available from MBC
     * Launch RARE/freeRtr ONIE net-install
