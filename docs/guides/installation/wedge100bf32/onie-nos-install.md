@@ -7,7 +7,7 @@ There are 3 major steps:
 * Install the RARE/freeRtr NOS image via ONIE
 
 !!! info
-    Assuming you are familiar with ONIE, the installation process should last 5 minutes
+    Assuming you are familiar with ONIE, the installation process should take about five minutes.
 
 # Prerequisites
 * Wedge 100BF-32 hardware with **ONIE partition pre-installed**
