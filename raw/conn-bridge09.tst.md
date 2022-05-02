@@ -1,244 +1,233 @@
 # Example: bridged ethernet over gre
-    
-=== "Topology"
-    
-     <div class="nextWrapper">
-         <iframe src="/guides/reference/snippets/next-diagram.html" style="border:none;"></iframe>
-     </div>
 
-    
-=== "Configuration"
-    
-    **r1:**
-    ```
-    hostname r1
-    buggy
-    !
-    logging file debug ../binTmp/zzz65r1-log.run
-    !
-    vrf definition tester
-     exit
-    !
-    vrf definition v1
-     rd 1:1
-     exit
-    !
-    interface ethernet1
-     no description
-     vrf forwarding v1
-     ipv4 address 1.1.1.1 255.255.255.0
-     ipv6 address 1234::1 ffff::
-     no shutdown
-     no log-link-change
-     exit
-    !
-    !
-    !
-    !
-    !
-    !
-    !
-    !
-    !
-    !
-    !
-    !
-    !
-    !
-    !
-    !
-    !
-    !
-    !
-    !
-    !
-    !
-    !
-    !
-    !
-    !
-    !
-    server telnet tester
-     security protocol telnet
-     no exec authorization
-     no login authentication
-     vrf tester
-     exit
-    !
-    !
-    end
-    ```
-    
-    **r2:**
-    ```
-    hostname r2
-    buggy
-    !
-    logging file debug ../binTmp/zzz65r2-log.run
-    !
-    bridge 1
-     mac-learn
-     exit
-    !
-    vrf definition tester
-     exit
-    !
-    vrf definition v1
-     rd 1:1
-     exit
-    !
-    interface bvi1
-     no description
-     vrf forwarding v1
-     ipv4 address 1.1.1.2 255.255.255.0
-     ipv6 address 1234::2 ffff::
-     no shutdown
-     no log-link-change
-     exit
-    !
-    interface ethernet1
-     no description
-     bridge-group 1
-     no shutdown
-     no log-link-change
-     exit
-    !
-    interface ethernet2
-     no description
-     vrf forwarding v1
-     ipv4 address 9.9.9.1 255.255.255.252
-     ipv6 address 9999::1 ffff::
-     no shutdown
-     no log-link-change
-     exit
-    !
-    interface tunnel1
-     no description
-     tunnel vrf v1
-     tunnel source ethernet2
-     tunnel destination 9999::2
-     tunnel mode gre
-     bridge-group 1
-     no shutdown
-     no log-link-change
-     exit
-    !
-    !
-    !
-    !
-    !
-    !
-    !
-    !
-    !
-    !
-    !
-    !
-    !
-    !
-    !
-    !
-    !
-    !
-    !
-    !
-    !
-    !
-    !
-    !
-    !
-    !
-    !
-    server telnet tester
-     security protocol telnet
-     no exec authorization
-     no login authentication
-     vrf tester
-     exit
-    !
-    !
-    end
-    ```
-    
-    **r3:**
-    ```
-    hostname r3
-    buggy
-    !
-    logging file debug ../binTmp/zzz65r3-log.run
-    !
-    bridge 1
-     exit
-    !
-    vrf definition tester
-     exit
-    !
-    vrf definition v1
-     rd 1:1
-     exit
-    !
-    interface bvi1
-     no description
-     vrf forwarding v1
-     ipv4 address 1.1.1.3 255.255.255.0
-     ipv6 address 1234::3 ffff::
-     no shutdown
-     no log-link-change
-     exit
-    !
-    interface ethernet1
-     no description
-     vrf forwarding v1
-     ipv4 address 9.9.9.2 255.255.255.252
-     ipv6 address 9999::2 ffff::
-     no shutdown
-     no log-link-change
-     exit
-    !
-    interface tunnel1
-     no description
-     tunnel vrf v1
-     tunnel source ethernet1
-     tunnel destination 9999::1
-     tunnel mode gre
-     bridge-group 1
-     no shutdown
-     no log-link-change
-     exit
-    !
-    !
-    !
-    !
-    !
-    !
-    !
-    !
-    !
-    !
-    !
-    !
-    !
-    !
-    !
-    !
-    !
-    !
-    !
-    !
-    !
-    !
-    !
-    !
-    !
-    !
-    !
-    server telnet tester
-     security protocol telnet
-     no exec authorization
-     no login authentication
-     vrf tester
-     exit
-    !
-    !
-    end
-    ```
+## **Topology diagram**
+
+![topology](/img/conn-bridge09.tst.png)
+
+## **Configuration**
+
+**r1:**
+```
+hostname r1
+buggy
+!
+logging file debug ../binTmp/zzz12r1-log.run
+!
+vrf definition tester
+ exit
+!
+vrf definition v1
+ rd 1:1
+ exit
+!
+interface ethernet1
+ vrf forwarding v1
+ ipv4 address 1.1.1.1 255.255.255.0
+ ipv6 address 1234::1 ffff::
+ no shutdown
+ no log-link-change
+ exit
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+server telnet tester
+ security protocol telnet
+ no exec authorization
+ no login authentication
+ vrf tester
+ exit
+!
+!
+end
+```
+
+**r2:**
+```
+hostname r2
+buggy
+!
+logging file debug ../binTmp/zzz12r2-log.run
+!
+bridge 1
+ mac-learn
+ exit
+!
+vrf definition tester
+ exit
+!
+vrf definition v1
+ rd 1:1
+ exit
+!
+interface bvi1
+ vrf forwarding v1
+ ipv4 address 1.1.1.2 255.255.255.0
+ ipv6 address 1234::2 ffff::
+ no shutdown
+ no log-link-change
+ exit
+!
+interface ethernet1
+ bridge-group 1
+ no shutdown
+ no log-link-change
+ exit
+!
+interface ethernet2
+ vrf forwarding v1
+ ipv4 address 9.9.9.1 255.255.255.252
+ ipv6 address 9999::1 ffff::
+ no shutdown
+ no log-link-change
+ exit
+!
+interface tunnel1
+ tunnel vrf v1
+ tunnel source ethernet2
+ tunnel destination 9999::2
+ tunnel mode gre
+ bridge-group 1
+ no shutdown
+ no log-link-change
+ exit
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+server telnet tester
+ security protocol telnet
+ no exec authorization
+ no login authentication
+ vrf tester
+ exit
+!
+!
+end
+```
+
+**r3:**
+```
+hostname r3
+buggy
+!
+logging file debug ../binTmp/zzz12r3-log.run
+!
+bridge 1
+ exit
+!
+vrf definition tester
+ exit
+!
+vrf definition v1
+ rd 1:1
+ exit
+!
+interface bvi1
+ vrf forwarding v1
+ ipv4 address 1.1.1.3 255.255.255.0
+ ipv6 address 1234::3 ffff::
+ no shutdown
+ no log-link-change
+ exit
+!
+interface ethernet1
+ vrf forwarding v1
+ ipv4 address 9.9.9.2 255.255.255.252
+ ipv6 address 9999::2 ffff::
+ no shutdown
+ no log-link-change
+ exit
+!
+interface tunnel1
+ tunnel vrf v1
+ tunnel source ethernet1
+ tunnel destination 9999::1
+ tunnel mode gre
+ bridge-group 1
+ no shutdown
+ no log-link-change
+ exit
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+server telnet tester
+ security protocol telnet
+ no exec authorization
+ no login authentication
+ vrf tester
+ exit
+!
+!
+end
+```

@@ -1,32 +1,29 @@
 # Example: interop2: verify source
-    
-=== "Topology"
-    
-     <div class="nextWrapper">
-         <iframe src="/guides/reference/snippets/next-diagram.html" style="border:none;"></iframe>
-     </div>
 
-    
-=== "Configuration"
-    
-    **r1:**
-    ```
-    hostname r1
-    logging file debug ../binTmp/zzz50r1-log.run
-    vrf definition tester
-     exit
-    server telnet tester
-     security protocol telnet
-     vrf tester
-     exit
-    vrf def v1
-     rd 1:1
-     exit
-    int eth1
-     vrf for v1
-     ipv4 addr 1.1.1.1 255.255.255.0
-     ipv6 addr 1234::1 ffff::
-     ipv4 verify rx
-     ipv6 verify rx
-     exit
-    ```
+## **Topology diagram**
+
+![topology](/img/intop2-eth07.tst.png)
+
+## **Configuration**
+
+**r1:**
+```
+hostname r1
+logging file debug ../binTmp/zzz58r1-log.run
+vrf definition tester
+ exit
+server telnet tester
+ security protocol telnet
+ vrf tester
+ exit
+vrf def v1
+ rd 1:1
+ exit
+int eth1
+ vrf for v1
+ ipv4 addr 1.1.1.1 255.255.255.0
+ ipv6 addr 1234::1 ffff::
+ ipv4 verify rx
+ ipv6 verify rx
+ exit
+```

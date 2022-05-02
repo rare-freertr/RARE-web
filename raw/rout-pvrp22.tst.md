@@ -1,300 +1,293 @@
 # Example: pvrp tls encryption
-    
-=== "Topology"
-    
-     <div class="nextWrapper">
-         <iframe src="/guides/reference/snippets/next-diagram.html" style="border:none;"></iframe>
-     </div>
 
-    
-=== "Configuration"
-    
-    **r1:**
-    ```
-    hostname r1
-    buggy
-    !
-    logging file debug ../binTmp/zzz99r1-log.run
-    !
-    crypto rsakey rsa import $v10$TUlJRW9nSUJBQUtDQVFFQXYzQ293amFTcDJzY0JQQ1IrZXQyY1RSQUsvWGdES1N3d1JlU3RvSXZVUlpFa1F6RWZaZm9DNXBXMFVOYi9ZOUwwRXFBR2xmdE9IeUFPNGV3ZkVzbHBGUnMybkVqRUhFUVkzcC9FaTlaUU1TZzVVaTZkNWhWN2xyVU9UTjFRVnpZNm91NHFqcUhXTncrTnRSMVBHNlc3enFFVHhTT1g3aHloYjZVOVR5VzJJWVZ2KzkrSW9DRmVPOXNHREk2VFdXem9GZHdaV2F0S0lWNjN0VjdsL2M1UzlMYXpDcUtDR1R2RmhYV0lzTUFaU0VrQ2ZFM2JqUnhZS0xBdTN4cnpsVjB5M2M3RlJqVC9KeTlIUzAybHBsL0IzUDhldTMxOUNNL3MwT0JWSEpycURUR1lNSUZidVdFOVgvODQzZ1JVbTlHSkxIWC9QL3RCYytENTBBV1NoQXVpUUlEQVFBQkFvSUJBRW5xWGI1ZkE5RFFja2tWK2NiZE95WUtYcHlhbXA5SEYxZjJtaGNOdk9jNkNjOVhkcVpuZUpqQ1JyTVZwdmNIMU9YZlhnYk4zREhySURmYjlEQ0pjMGMzc2EvRjd4dnlDN25kR2lNVFZRckU0THFta2hpTElPS2UvMEgydEZkQVdpQjFRaCszNlhwTnoxZXNRSGZNMjBvUzlmTHlwT1lnZVZkYWRua1pvOFNGbExGM3p0ek95Q3p0WGZVY3lkTWE4M3ludThEeFBPaFhOcjlRRkhnQ0t5cFRTWGRQYXFKb2ZiVzNQZCtGbTlpOWRFUGd6QXlJTFQ3TW95ZEh6WmxNZVorM0drYWMwN1R2bFEyc1RvS2xLUkRVQXVzTnJ3TU5EbVdEaWhETWJhdHQ4djFkWWVNenZROTFxUHhSZjdhWWlWdytKdDdnUHhWd0NXTWdlcjdxYjRFQ2dZRUErbFFXT0N5bGFmc1ZaUFVnWXFkOEdET2hLMGN6ZmNtUzY0T0lFWDJ5dldQT2JLTW9BNzJvc2NKSHlqQlZmMFBtOC91cTdLcjdYWFpreTMxTWlocDJQdVFiVHNhSER3NFRiR3k2WlZHV0p2czZ4VEVRNlF4QmxSeU9VMys5NHgwWDA3VkpndllLZG5GdVJ0Z0lQM3pwSXdvMitRak4wak54YUVnNDVuQ2ZDOVVDZ1lFQXc4Y0VraE1FUU5pdndBemRrWThLVWNic1FBTWQ2N0ZNYUhFQlMrbWpqUzVkdnI3NW1ocE4xNGM2M25rN1NrV2lvQTYxZjZRRkdWa2E1SnlIUGpOOG1lWGxGdEpDMVZnTEhibzZYT1Q4YlVYMTF1ZEhEakY5OEZSU0hpcVg1Y2h0QW1zME5SZHUxOFZiVzdORnhlK0FlTmpZa0NjSVNCYWErOGdMTEo0NXRlVUNnWUIzeDhxR0FKNzU4a0hQZUJlUi9UQTg2RitETk9Pbm1jOXFVQnJJdTh2T0liYkJkdVNMdmJHOXRRZmk4SFBJbkxZakl0WXJ2cmplaE90QUQybVRYNHdiRmMwWFNabVFrNXlwc2ZFUzBCSTMvdGlsU0pBZDQxWnlRaUs4UTVDWjN1N3F4NEV3WUFpcm1pVTVVdC9IZVQ2WkhLY25USlluc2FQZlVVZWd4RnptTFFLQmdEdnJPM0RodFJtTHVDNlZRWEw5VG5FODZxMmt4cEdPVUE1ZkY4QitIM3BrU0hqS3htWHR5d2s5OER5SzZpU1BMM2pCUjdkckljeGlReUxZN1dPU0tuNkhxQmZWL25LQllkV1ZXNnQyd2ZOSHlEZ2Z6TldCUEVSRDZtWWxMeHc2dlhKU0VVWjJoNHd1Y1FtZDBxc0Q1RlFZT2gvVWNtcHQwTDFpdWxqTGpHb3BBb0dBRGN2amZ3bVN5T1ZucjIxMWp6UmNZNEpxVHdlSTZYbkR1Sk1ETGRtOTZGSmlPWmFla2EzcnBSMjNtbnQ5NlkwcHJidkdDc1FZR2IwbHVONzI4aGhSYzkycDlHbFNGOWhFSnEzYnZpWmpYait5YXRzUDBHdlRPMUFNeTJUSUU0dFNRVVRWZWJMOWZNRUVxNGJ4eDlpQ2lvbzQrRkJLclRsa25iT3FlU3lRdE9BPQ==
-    !
-    crypto dsakey dsa import $v10$TUlJQnVnSUJBQUtCZ0doSVVUNER0QTV1QjI0bWVFQW5LZGtpblB6aFZ5TktmZVorbDkyRFAyaHg0empQQWM4V1hwOUp2RS81WnF3RE0zTmtJZXlpZUpHYmVVcjJaWGRaaHFHcDlzZW4vOW9lNUs3UzFDOUJDSkxmc1BpZ01QdWtQQjhLclBMVXhxRkdPdmRhZjFyMm9vTm10UlkxREFGeWl6SG9IQWhvRmpzakQyTHluUVRkSWpObkFoVUF3aldyeTM3Z1NnTDJhNXprdEZqeWMxcTdKUU1DZ1lBSjN0MHljdGFVZXB1a3VLUUFxYnlXUStoZEdVZDRmKzRUTkJrY0o5OVlhQ2JqN29ZdWdIeVY5RnNNL3JuVkg2SU5YdWVUY2hJYm5hUWh0VGdoVXRRVk1ibnllN09FU3ZDUlNvVG1KUGlkR0hLeWFzUEdpaWNGN09kMlNFTy9hTW5yV0V4b3Y3Nldybmxtd3ZNQU9HeXFnYmVYbzk4SnA3d1VZRGprZiszcmhRS0JnRWU3dE9xT01UL1dPWlVXTEV3amgyamJ6Zys5OHp5b05zVkFzZU5KSEYxUDZXR3lWWHBsMWFhd0I2ZWlQczBPcEJEalhqRnZXZ1MvUzJxeWwvVmpqWWdXRUhQaVVWQ2F3bGlHNDVHbjdXQ1BIKys1TkJ5UmRRc09ZNXI3MmZnSy9jTUlLSHZ6NFRGUjVZc29SZW1KNnI5dG9JR1FjT3huZ1Vnb1JtUnVzSlAvQWhVQTJBTDhGRzREeDZrUnhYQ05JMDkrYXJMY0RVYz0=
-    !
-    crypto ecdsakey ecdsa import $v10$TUhRQ0FRRUVJQURKdlhxSHFjOE9KNk9vM1ZnWS95em0rQ3BUYVQzOEh1akF6V2ZUT2VnVG9BY0dCU3VCQkFBS29VUURRZ0FFL0NNR29XOGhjYkhyYkQzVUZZYjRpZEdZNFN4aUoxVGgrajZrNkI5T2J5K3A4Q2c4c01nbWVVOGhGTFQvZ0pCTDMzZWlxUitGcWF3OGNFbmp4ZUZnSlE9PQ==
-    !
-    crypto certificate dsa import dsa dsa $v10$TUlJQ1V6Q0NBZytnQXdJQkFnSUVEbzZvY3pBTEJnY3Foa2pPT0FRREJRQXdEVEVMTUFrR0ExVUVBeE1DY2pFd0hoY05Nakl3TXpFd01qQTBOVE16V2hjTk16SXdNekEzTWpBME5UTXpXakFOTVFzd0NRWURWUVFERXdKeU1UQ0NBYlV3Z2dFcUJnY3Foa2pPT0FRQk1JSUJIUUtCZ0doSVVUNER0QTV1QjI0bWVFQW5LZGtpblB6aFZ5TktmZVorbDkyRFAyaHg0empQQWM4V1hwOUp2RS81WnF3RE0zTmtJZXlpZUpHYmVVcjJaWGRaaHFHcDlzZW4vOW9lNUs3UzFDOUJDSkxmc1BpZ01QdWtQQjhLclBMVXhxRkdPdmRhZjFyMm9vTm10UlkxREFGeWl6SG9IQWhvRmpzakQyTHluUVRkSWpObkFoVUF3aldyeTM3Z1NnTDJhNXprdEZqeWMxcTdKUU1DZ1lBSjN0MHljdGFVZXB1a3VLUUFxYnlXUStoZEdVZDRmKzRUTkJrY0o5OVlhQ2JqN29ZdWdIeVY5RnNNL3JuVkg2SU5YdWVUY2hJYm5hUWh0VGdoVXRRVk1ibnllN09FU3ZDUlNvVG1KUGlkR0hLeWFzUEdpaWNGN09kMlNFTy9hTW5yV0V4b3Y3Nldybmxtd3ZNQU9HeXFnYmVYbzk4SnA3d1VZRGprZiszcmhRT0JoQUFDZ1lCSHU3VHFqakUvMWptVkZpeE1JNGRvMjg0UHZmTThxRGJGUUxIalNSeGRUK2xoc2xWNlpkV21zQWVub2o3TkRxUVE0MTR4YjFvRXYwdHFzcGYxWTQySUZoQno0bEZRbXNKWWh1T1JwKzFnangvdnVUUWNrWFVMRG1PYSs5bjRDdjNEQ0NoNzgrRXhVZVdMS0VYcGllcS9iYUNCa0hEc1o0RklLRVprYnJDVC96QUxCZ2NxaGtqT09BUURCUUFETVFBQU1DMENGUURBSERJMU5WK3VEQkdxcG1ra1NUWWYySER4a0FJVVI5Wk5oa3VYa1ArdzdTL1A5QmhhWnRYSUtlaz0=
-    !
-    crypto certificate ecdsa import ecdsa ecdsa $v10$TUlJQlREQ0JzS0FEQWdFQ0FnUWFGVFp4TUF3R0NDcUdTTTQ5QkFNQ0JRQXdEVEVMTUFrR0ExVUVBeE1DY2pFd0hoY05Nakl3TXpFd01qQTBOVE16V2hjTk16SXdNekEzTWpBME5UTXpXakFOTVFzd0NRWURWUVFERXdKeU1UQlhNQkFHQnlxR1NNNDlBZ0VHQlN1QkJBQUtBME1BQUFUOEl3YWhieUZ4c2V0c1BkUVZodmlKMFpqaExHSW5WT0g2UHFUb0gwNXZMNm53S0R5d3lDWjVUeUVVdFArQWtFdmZkNktwSDRXcHJEeHdTZVBGNFdBbE1Bd0dDQ3FHU000OUJBTUNCUUFEZ1lnQUFEQ0Jnd0lnVXpCVXZwRHVMK0pud0VvM0Z3empWZFVvQnRxY3oyMk5OUkoweERhNjBFTUNYd2VzREFodGlZL3ZPcms1L3lYRElIRWdwYjRKSWgzaUNlVUFEelJjcXZNd3BxejFsekNaS3VVeldLWWlRT3VUSVZRNUxodHhXem1kSWVVdTNxUjZjeTNwRnJTd3pOeTM2dlowenhqQm5UejdQcyt6Q3dWN2Z4cUdiL1kxWXFQbQ==
-    !
-    crypto certificate rsa import rsa rsa $v10$TUlJQ2xqQ0NBWDZnQXdJQkFnSUVEci90VFRBTkJna3Foa2lHOXcwQkFRc0ZBREFOTVFzd0NRWURWUVFERXdKeU1UQWVGdzB5TWpBek1UQXlNRFExTXpOYUZ3MHpNakF6TURjeU1EUTFNek5hTUEweEN6QUpCZ05WQkFNVEFuSXhNSUlCSWpBTkJna3Foa2lHOXcwQkFRRUZBQU9DQVE4QU1JSUJDZ0tDQVFFQXYzQ293amFTcDJzY0JQQ1IrZXQyY1RSQUsvWGdES1N3d1JlU3RvSXZVUlpFa1F6RWZaZm9DNXBXMFVOYi9ZOUwwRXFBR2xmdE9IeUFPNGV3ZkVzbHBGUnMybkVqRUhFUVkzcC9FaTlaUU1TZzVVaTZkNWhWN2xyVU9UTjFRVnpZNm91NHFqcUhXTncrTnRSMVBHNlc3enFFVHhTT1g3aHloYjZVOVR5VzJJWVZ2KzkrSW9DRmVPOXNHREk2VFdXem9GZHdaV2F0S0lWNjN0VjdsL2M1UzlMYXpDcUtDR1R2RmhYV0lzTUFaU0VrQ2ZFM2JqUnhZS0xBdTN4cnpsVjB5M2M3RlJqVC9KeTlIUzAybHBsL0IzUDhldTMxOUNNL3MwT0JWSEpycURUR1lNSUZidVdFOVgvODQzZ1JVbTlHSkxIWC9QL3RCYytENTBBV1NoQXVpUUlEQVFBQk1BMEdDU3FHU0liM0RRRUJDd1VBQTRJQkFRQUR6bUZzQTZ4QzdhNkYxTktnN1M5ZEpOVUtQRGQ1NGZ6TVFzTWdQR3JWcVBIK2h2dWpQQWNKSE5neS9sRWJOTm1LNDFoZlBTVUltbU13YUVSYTJQZG5YNVJtQWkvazkrRkxVMVhtQlVuUk9sNjNHbllRQmhvaStaanBpQjBuSWl0b2VGQzZsY1daZDR1VTBYSFd3RUJvQTBZTlllYU02d3RjMklxZnRoY3JDT3hpVENsbHZlb3R0NDNYN0xXZ2xLZnJLWVRzK25wd254bWJuSEJFTk9qQjk3MFY4UjBhdjZrTUg5N2Q3KzlodCtWTDFSbVpudjBBTjFiMzNkVzNNeS9SVWhzMFhENS9JcTdGb3dGSkRsQXRLKzZTN3cxTStWTWNVOTltWXhKcUhLdGgwSmRGdE1qS3BXMHl6R3dydHBqY0hqM0JQV3JlMFpKMHdaM1ovbUVL
-    !
-    vrf definition tester
-     exit
-    !
-    vrf definition v1
-     rd 1:1
-     exit
-    !
-    router pvrp4 1
-     vrf v1
-     router-id 4.4.4.1
-     redistribute connected
-     exit
-    !
-    router pvrp6 1
-     vrf v1
-     router-id 6.6.6.1
-     redistribute connected
-     exit
-    !
-    interface loopback1
-     no description
-     vrf forwarding v1
-     ipv4 address 2.2.2.1 255.255.255.255
-     ipv6 address 4321::1 ffff:ffff:ffff:ffff:ffff:ffff:ffff:ffff
-     no shutdown
-     no log-link-change
-     exit
-    !
-    interface ethernet1
-     no description
-     vrf forwarding v1
-     ipv4 address 1.1.1.1 255.255.255.252
-     ipv6 address 1234:1::1 ffff:ffff::
-     router pvrp4 1 enable
-     router pvrp4 1 encryption tls rsa dsa ecdsa rsa dsa ecdsa
-     router pvrp6 1 enable
-     router pvrp6 1 encryption tls rsa dsa ecdsa rsa dsa ecdsa
-     no shutdown
-     no log-link-change
-     exit
-    !
-    !
-    !
-    !
-    !
-    !
-    !
-    !
-    !
-    !
-    !
-    !
-    !
-    !
-    !
-    !
-    !
-    !
-    !
-    !
-    !
-    !
-    !
-    !
-    !
-    !
-    !
-    server telnet tester
-     security protocol telnet
-     no exec authorization
-     no login authentication
-     vrf tester
-     exit
-    !
-    !
-    end
-    ```
-    
-    **r2:**
-    ```
-    hostname r2
-    buggy
-    !
-    logging file debug ../binTmp/zzz99r2-log.run
-    !
-    crypto rsakey rsa import $v10$TUlJRXBRSUJBQUtDQVFFQXBqZEtya1pndzVYYnJxOEtXTDJuUHZFSlZHcmlhL0w0dVRLU1pwdWVDMHU2M3JGcW1QYkx4cFkzRTAvdnhXd2d6eVc1b1lnQnZURGFMeXZXZnhqb245YU5sZGpKY2tXb1MwSjh2aHIzNmFCMnpoSHVhcVh0K0NIRktWK2d0SW4vUXd5RXpVempQQjFyREVyN2o4SHNDSTRIclFqaVNtV1JRaHdqSXN3RCtXM1VhUUhwdENINEhNeGttaXd3UmV6cTJyK3JBVGNvMkJTT290MmxId0pla1dRV2xXTmZmUW1jaWJBVXhkLzZ6NWJ2VXRhUmxRT0RLTmMwT2FrODh3ME9mMko2d2dGTGZjZys4SWN0UVNqcTR6OXgvRU1yRmtqbTVSWXozOWFFY3JZNUlscDVjeVZSNk1nejFiQWpDUzR5TWkzRy9iVm9tTDdCTmxGSDlZMDJWd0lEQVFBQkFvSUJBUUNRODgwaitHb3dod0xpN3ZHRi9EYmJGQmMvMEVxUE80QWUrZlJrbVRlVndFQkNMdFM0ZXhtd29KVjlPUXZ2em1FNlpUcmluSnB2cENmU1ZWZWsxVk1nK1ZuV0lRMWtvMHlsL1dDTjVUVG9RREQ3ZXZYQmVkenl0SGlkb1RDajRXaUR6Mm9OSkExVEFwQzFVcnJaWHBONXptcnhRcnNkaUQvS09JR0h1Z1dKUWc2SnpQelpYeGlJOGI0c0k5MFJlTjZXUXF4UlRyRlEwcmIvMlliNE9vTHNuRi8rSXU3TDIyNWpTWUhrUVhxSVlsT0NWdUV2QVZ4L1dWdW03eFVhTTNYR3lxYVJ3bFlZTmtTODRnSnVuSlpzN3Jab2lxcEtobGpPMHpBenRIdDJ1b1pTOHU4WEVRcTEzV0pxTU4wWjJONTd5RDhNOGNvYTFNcGdHTzdNYUpKSkFvR0JBT0RQNlVYYm1MRjh5MzhHbjh4YiszQ2s0TUlLZks3NEVWclhsQ01QZVJNK0lEVzdBOEJXUWxmdUQ1Q0Z4YTBSL0FDOVQ0QzlkT214dGNUcUIxSi9YVWRBYlBXZDdpZDNRZ3haZEFhNUlrbHp2U281bHpiRzZubzFCTTZRUGpEYmpnbXBOdGdsOHZpalIyVDRVa3h0RGF4K0x1ZVRlVkV2ajJYTU1qNlowQm5iQW9HQkFMMUdYaEc3aWNGdFBVczZXN291akF1bmRBaVp1Z1ZZb2dTTzc3dHVjdEVncFBISlh1eFkxMmp5NzZlR2M1UmtTbDF2M0RlMVpwRUtrSFRWSmxveGY5ZUtSNHFxbW9laTFWbVJSNlFTWEpCaGcrZWMrRXRQREVkb0ZTbWlpLzF6TGhmaERSVGpMcWlxYzFqSUJac0t6dTZjdEhjRWJYY3JSUGZrUHRFbHRGUTFBb0dCQU5sZ0QvWXRUS3FwdVhhODUvekpJQW9lVXZrcy9MeU9Qdkd3cTV0dkZhcEdrd3lCSlRKdjlieGlBd2pDWUk1bGFsOG9yZHdVMVJ3MmFrVFo2WFNhbEk0VnZJV09UTDQ2Y1ZIUm1QLzdPU3orelhVcnRJd1JzSjJ6OEU3dmFFTUR1SWFjNk52OWJiOSsyY1RHMjRUc21hRWxiYU1ibE4yc2VDSjlYRVB0cEN1ckFvR0FKbWNObFFsNDlMN21UY29rYkUwZmF3bnB1QWtBdmk3eWlIdzcxY3FlRHlKUmRTRkhXaXJZWWRuUW1Ddm1iWGcvd2w5OHplekhSNnhlRE9abVpxeGVaT3dRZ2VrRmUzbWxVZ3Z3L2pBZmljZlBUSUlEdXJ2cUlON1VWR00vaGdnRmxTQzdWNzZVYS9KUmZ2VHVkanVtS3JHdXgrc2xEcVcvMDVBQzBzcVVvUFVDZ1lFQXBzbURvQUVsSHpxeVFqS1FPbzcxVGs3N0p4QkhhSG90V3ZuWGZqN3BvY216OG9mQ1JlUkdtRVBpektkTTVJSnlJajVEWSt6UVB2Mmk5V3hVNWlpamd5TElOUi8yc0JORnBwR1hjYUhodjBqZGh1b2k5S0tjVURnN0I3Z0VTcElDaXI4S1RSTHZQczVaZkE5ZlBaOHVZdEsyMjFaR1djQUNGQlBrYXFjd1phZz0=
-    !
-    crypto dsakey dsa import $v10$TUlJQnVnSUJBQUtCZ0dBbjFLS3RIcHQ5ZUt2N3NRWk0rMjZCcm05L21FNGIvYjNqY3ZLUEUzeVR2RCsrMEYyVmZhQ3JkSEpNTEhnSjA4RloxR3pTQXVxNTdTMmM0b1JOZkhyQTRwR3liZnVnR0VaQlh3djQ5anQvK2k3MFFvS2Z3R2hlZjMvK1lFaHl2aGVtVExmditJUXZ1RDZ3bEpaRSs0MnY0VW1OOTdLc3htLzVuMXFqYnBRMUFoVUE3N2ZTUkVaR2gzNlE4RkhrLy9iOHYrQ3JpTXNDZ1lCWEJBM3N3N3NEeTlONVZpd2VoM2JpS0tJcGJ2YnFQdjZVSEdVZkhCcGV4anU0MGpIWmpxa3R5NFpWVVdqQlpZMFIrT3pqSXJlUVEzV2dkOVZQeURrZGZjT2dWTGg0RnhhT3pCamhMK2tEaThuR3llTmdRTVNLYnJUc3ZVRlMyNHdHNm91QmtRTEY4QlNhd25QMDBYMHZkZ0Z3bjBkdVEvMGFJUkNkNjgrbTd3S0JnRXh6b1NDUW5nOHgzcVZLWWZXUFpjVmplMEU3dURkSWNZYnhQOVA5TE5zRHVvR3IrYU1Jd0N1TkxWYVlYaUJvOTZHVXA3a1FGUHowNXY3dW1zQUpVbCtoLzdkb1p4UFF4aE5wYUtPR1F2QjN1dTcxdTVwRm5pTkVucW1YMUZmOENod01xOWRyZVllcTJteUtWSVI4T2p3RE9tM3NRTGt2dnlYSTVoSldYKzEyQWhVQTF2T0dQcE05Qk56bkYyV0NtV25adTNoVW1xST0=
-    !
-    crypto ecdsakey ecdsa import $v10$TUhNQ0FRRUVIMmVkMXBlZkVUVFpkeFJUVUw1am9FYUhFSk1BWHo1K2VsNEtvcXc1TWxlZ0J3WUZLNEVFQUFxaFJBTkNBQVF6M3ZoNE5zY1VJSit5dUVnMmZGdlEvT2hpNXhmV29vOGhLOGF0cDJPaEY3RlNsbElRbUVFZ3ZZODZsTW5ycEpKUzBVcHYzR2JTRjlGdjBtQjVhcThZ
-    !
-    crypto certificate dsa import dsa dsa $v10$TUlJQ1VqQ0NBZytnQXdJQkFnSUVOaWxYNnpBTEJnY3Foa2pPT0FRREJRQXdEVEVMTUFrR0ExVUVBeE1DY2pJd0hoY05Nakl3TXpFd01qQTBOVFV6V2hjTk16SXdNekEzTWpBME5UVXpXakFOTVFzd0NRWURWUVFERXdKeU1qQ0NBYlV3Z2dFcUJnY3Foa2pPT0FRQk1JSUJIUUtCZ0dBbjFLS3RIcHQ5ZUt2N3NRWk0rMjZCcm05L21FNGIvYjNqY3ZLUEUzeVR2RCsrMEYyVmZhQ3JkSEpNTEhnSjA4RloxR3pTQXVxNTdTMmM0b1JOZkhyQTRwR3liZnVnR0VaQlh3djQ5anQvK2k3MFFvS2Z3R2hlZjMvK1lFaHl2aGVtVExmditJUXZ1RDZ3bEpaRSs0MnY0VW1OOTdLc3htLzVuMXFqYnBRMUFoVUE3N2ZTUkVaR2gzNlE4RkhrLy9iOHYrQ3JpTXNDZ1lCWEJBM3N3N3NEeTlONVZpd2VoM2JpS0tJcGJ2YnFQdjZVSEdVZkhCcGV4anU0MGpIWmpxa3R5NFpWVVdqQlpZMFIrT3pqSXJlUVEzV2dkOVZQeURrZGZjT2dWTGg0RnhhT3pCamhMK2tEaThuR3llTmdRTVNLYnJUc3ZVRlMyNHdHNm91QmtRTEY4QlNhd25QMDBYMHZkZ0Z3bjBkdVEvMGFJUkNkNjgrbTd3T0JoQUFDZ1lCTWM2RWdrSjRQTWQ2bFNtSDFqMlhGWTN0Qk83ZzNTSEdHOFQvVC9TemJBN3FCcS9takNNQXJqUzFXbUY0Z2FQZWhsS2U1RUJUODlPYis3cHJBQ1ZKZm9mKzNhR2NUME1ZVGFXaWpoa0x3ZDdydTlidWFSWjRqUko2cGw5UlgvQW9jREt2WGEzbUhxdHBzaWxTRWZEbzhBenB0N0VDNUw3OGx5T1lTVmwvdGRqQUxCZ2NxaGtqT09BUURCUUFETUFBQU1Dd0NGQjBwSWdlV1VTeGRlM3I5QmMyNVpzZlR1czJBQWhRY0xBMUQvcDZXTzlyN1RHYTBvRGdpWnljN2pRPT0=
-    !
-    crypto certificate ecdsa import ecdsa ecdsa $v10$TUlJQlREQ0JzS0FEQWdFQ0FnUjF3Vm5FTUF3R0NDcUdTTTQ5QkFNQ0JRQXdEVEVMTUFrR0ExVUVBeE1DY2pJd0hoY05Nakl3TXpFd01qQTBOVFV6V2hjTk16SXdNekEzTWpBME5UVXpXakFOTVFzd0NRWURWUVFERXdKeU1qQlhNQkFHQnlxR1NNNDlBZ0VHQlN1QkJBQUtBME1BQUFRejN2aDROc2NVSUoreXVFZzJmRnZRL09oaTV4ZldvbzhoSzhhdHAyT2hGN0ZTbGxJUW1FRWd2WTg2bE1ucnBKSlMwVXB2M0diU0Y5RnYwbUI1YXE4WU1Bd0dDQ3FHU000OUJBTUNCUUFEZ1lnQUFEQ0Jnd0lnR3VpTzdxZlN0RVFENWZUU1dLUEw2NC9yUmdUeVUxNlRQUVdPT3MrN1pBUUNYd2ZtdFNEbVlSUmF4bmJxVE5zby8wcUxPd0xlNldtSVhWdXRHbS9YUDNUT1U2S1ZxMmw3azZ4NnBGMFNaVGNWQjZuZUhLWVlodktzWlFqNjZJa3F6Um9rSTBZZEhCSm83YjdNdU4rdE1nT1B4VmhzeW9uUlBvcHhkVnFNMFlSeA==
-    !
-    crypto certificate rsa import rsa rsa $v10$TUlJQ2xqQ0NBWDZnQXdJQkFnSUVDcDhwd0RBTkJna3Foa2lHOXcwQkFRc0ZBREFOTVFzd0NRWURWUVFERXdKeU1qQWVGdzB5TWpBek1UQXlNRFExTlROYUZ3MHpNakF6TURjeU1EUTFOVE5hTUEweEN6QUpCZ05WQkFNVEFuSXlNSUlCSWpBTkJna3Foa2lHOXcwQkFRRUZBQU9DQVE4QU1JSUJDZ0tDQVFFQXBqZEtya1pndzVYYnJxOEtXTDJuUHZFSlZHcmlhL0w0dVRLU1pwdWVDMHU2M3JGcW1QYkx4cFkzRTAvdnhXd2d6eVc1b1lnQnZURGFMeXZXZnhqb245YU5sZGpKY2tXb1MwSjh2aHIzNmFCMnpoSHVhcVh0K0NIRktWK2d0SW4vUXd5RXpVempQQjFyREVyN2o4SHNDSTRIclFqaVNtV1JRaHdqSXN3RCtXM1VhUUhwdENINEhNeGttaXd3UmV6cTJyK3JBVGNvMkJTT290MmxId0pla1dRV2xXTmZmUW1jaWJBVXhkLzZ6NWJ2VXRhUmxRT0RLTmMwT2FrODh3ME9mMko2d2dGTGZjZys4SWN0UVNqcTR6OXgvRU1yRmtqbTVSWXozOWFFY3JZNUlscDVjeVZSNk1nejFiQWpDUzR5TWkzRy9iVm9tTDdCTmxGSDlZMDJWd0lEQVFBQk1BMEdDU3FHU0liM0RRRUJDd1VBQTRJQkFRQTc3R2RyWkZoYVpSN0VpL1RHWGFMcFZFMEF6SjBxMmw0cmpZSE9FOEpYUlB4UE9BYzFBazBlVmQ5MExvYzRjSDJVVE1ZMzE3YlEvNmdBQU5RQ0pMTHJEckNtNDU0bjRFbGs4WEt3ek5qcVUyUFdsWitMZGlEbjkzeWN5d044dmFJSGRqR0RvcXFtTHNzb3d1ZFluWU01MXhOUjlVZVE1R2NYaExTQ3RIeFRGeGoxdWU3aC9QMEJVc005MTN4K3ErdjZ4QU90YmU0VHFnbHFweU9XTXZlVVRwcnlKVGFzTVZJRFBNN0JQalh3c3RYT1VxVi9rSncrSjFacGtuYlJSVDE0M0dFcldabGJqeWoybUxXU1Q2eDdack1nWnJxSEF1emtXZmZEU3N4T1plamVkRTNPRGVhMng4OURwMlF2WC82QnFoUVF6enVuY3Z2b0dyVjVCN3dw
-    !
-    vrf definition tester
-     exit
-    !
-    vrf definition v1
-     rd 1:1
-     exit
-    !
-    router pvrp4 1
-     vrf v1
-     router-id 4.4.4.2
-     redistribute connected
-     exit
-    !
-    router pvrp6 1
-     vrf v1
-     router-id 6.6.6.2
-     redistribute connected
-     exit
-    !
-    interface loopback1
-     no description
-     vrf forwarding v1
-     ipv4 address 2.2.2.2 255.255.255.255
-     ipv6 address 4321::2 ffff:ffff:ffff:ffff:ffff:ffff:ffff:ffff
-     no shutdown
-     no log-link-change
-     exit
-    !
-    interface ethernet1
-     no description
-     vrf forwarding v1
-     ipv4 address 1.1.1.2 255.255.255.252
-     ipv6 address 1234:1::2 ffff:ffff::
-     router pvrp4 1 enable
-     router pvrp4 1 encryption tls rsa dsa ecdsa rsa dsa ecdsa
-     router pvrp6 1 enable
-     router pvrp6 1 encryption tls rsa dsa ecdsa rsa dsa ecdsa
-     no shutdown
-     no log-link-change
-     exit
-    !
-    !
-    !
-    !
-    !
-    !
-    !
-    !
-    !
-    !
-    !
-    !
-    !
-    !
-    !
-    !
-    !
-    !
-    !
-    !
-    !
-    !
-    !
-    !
-    !
-    !
-    !
-    server telnet tester
-     security protocol telnet
-     no exec authorization
-     no login authentication
-     vrf tester
-     exit
-    !
-    !
-    end
-    ```
-    
-=== "Verification"
-    
-    ```
-    r2#
-    r2#
-    r2#show ipv4 pvrp 1 sum
-    r2#show ipv4 pvrp 1 sum
-     |~~~~~~~~~~~|~~~~~~~~~|~~~~~~|~~~~~~~~~~~|~~~~~~~~~|~~~~~~~~~|~~~~~~~~~~|~~~~~~~~~~|
-     | iface     | router  | name | peerif    | peer    | learned | adverted | uptime   |
-     |-----------|---------|------|-----------|---------|---------|----------|----------|
-     | ethernet1 | 4.4.4.1 | r1   | ethernet1 | 1.1.1.1 | 1       | 1        | 00:00:04 |
-     |___________|_________|______|___________|_________|_________|__________|__________|
-    r2#
-    r2#
-    ```
-    
-    ```
-    r2#
-    r2#
-    r2#show ipv6 pvrp 1 sum
-    r2#show ipv6 pvrp 1 sum
-     |~~~~~~~~~~~|~~~~~~~~~|~~~~~~|~~~~~~~~~~~|~~~~~~~~~~~|~~~~~~~~~|~~~~~~~~~~|~~~~~~~~~~|
-     | iface     | router  | name | peerif    | peer      | learned | adverted | uptime   |
-     |-----------|---------|------|-----------|-----------|---------|----------|----------|
-     | ethernet1 | 6.6.6.1 | r1   | ethernet1 | 1234:1::1 | 1       | 1        | 00:00:04 |
-     |___________|_________|______|___________|___________|_________|__________|__________|
-    r2#
-    r2#
-    ```
-    
-    ```
-    r2#
-    r2#
-    r2#show ipv4 pvrp 1 rou
-    r2#show ipv4 pvrp 1 rou
-     |~~~~~~|~~~~~~~~~~~~|~~~~~~~~|~~~~~~~~~~~|~~~~~~~~~|~~~~~~~~~~|
-     | typ  | prefix     | metric | iface     | hop     | time     |
-     |------|------------|--------|-----------|---------|----------|
-     | C    | 1.1.1.0/30 | 1/0    | ethernet1 | null    | 00:00:01 |
-     | null | 2.2.2.1/32 | 80/10  | ethernet1 | 1.1.1.1 | 00:00:01 |
-     | C    | 2.2.2.2/32 | 2/0    | loopback1 | null    | 00:00:05 |
-     |______|____________|________|___________|_________|__________|
-    r2#
-    r2#
-    ```
-    
-    ```
-    r2#
-    r2#
-    r2#show ipv6 pvrp 1 rou
-    r2#show ipv6 pvrp 1 rou
-     |~~~~~~|~~~~~~~~~~~~~|~~~~~~~~|~~~~~~~~~~~|~~~~~~~~~~~|~~~~~~~~~~|
-     | typ  | prefix      | metric | iface     | hop       | time     |
-     |------|-------------|--------|-----------|-----------|----------|
-     | C    | 1234:1::/32 | 1/0    | ethernet1 | null      | 00:00:01 |
-     | null | 4321::1/128 | 80/10  | ethernet1 | 1234:1::1 | 00:00:01 |
-     | C    | 4321::2/128 | 2/0    | loopback1 | null      | 00:00:05 |
-     |______|_____________|________|___________|___________|__________|
-    r2#
-    r2#
-    ```
-    
-    ```
-    r2#
-    r2#
-    r2#show ipv4 route v1
-    r2#show ipv4 route v1
-     |~~~~~~|~~~~~~~~~~~~|~~~~~~~~|~~~~~~~~~~~|~~~~~~~~~|~~~~~~~~~~|
-     | typ  | prefix     | metric | iface     | hop     | time     |
-     |------|------------|--------|-----------|---------|----------|
-     | C    | 1.1.1.0/30 | 0/0    | ethernet1 | null    | 00:00:05 |
-     | LOC  | 1.1.1.2/32 | 0/1    | ethernet1 | null    | 00:00:05 |
-     | P EX | 2.2.2.1/32 | 80/10  | ethernet1 | 1.1.1.1 | 00:00:02 |
-     | C    | 2.2.2.2/32 | 0/0    | loopback1 | null    | 00:00:05 |
-     |______|____________|________|___________|_________|__________|
-    r2#
-    r2#
-    ```
-    
-    ```
-    r2#
-    r2#
-    r2#show ipv6 route v1
-    r2#show ipv6 route v1
-     |~~~~~~|~~~~~~~~~~~~~~~|~~~~~~~~|~~~~~~~~~~~|~~~~~~~~~~~|~~~~~~~~~~|
-     | typ  | prefix        | metric | iface     | hop       | time     |
-     |------|---------------|--------|-----------|-----------|----------|
-     | C    | 1234:1::/32   | 0/0    | ethernet1 | null      | 00:00:05 |
-     | LOC  | 1234:1::2/128 | 0/1    | ethernet1 | null      | 00:00:05 |
-     | P EX | 4321::1/128   | 80/10  | ethernet1 | 1234:1::1 | 00:00:01 |
-     | C    | 4321::2/128   | 0/0    | loopback1 | null      | 00:00:05 |
-     |______|_______________|________|___________|___________|__________|
-    r2#
-    r2#
-    ```
+## **Topology diagram**
+
+![topology](/img/rout-pvrp22.tst.png)
+
+## **Configuration**
+
+**r1:**
+```
+hostname r1
+buggy
+!
+logging file debug ../binTmp/zzz13r1-log.run
+!
+crypto rsakey rsa import $v10$TUlJRW9RSUJBQUtDQVFCb204YXpFU1BjYU5aRUtGTERob1VaTmY5aGp4ZHhtME5MandoR2RnOHF0ek4yd0JPaXpoeXFYSmwrV3Z0VUMxSmtwNkVhN1ArRkNnZTgxeXVnaDg0KzRMRUpuSDBrK0FiZjNLLzF6aVhFcU1iODdBbnBYWFBMTnZUS3pwMmlyT1VSbVNCSVJaR0FjQit5dU5EeDlmRlN3RUUzOXYrcWNWQXh1czc3dGhDd2RGdElQaUZONkV6d240cUM0V3NsY3hvZ1BJZEdXWSs5ZUtYdVd6d1c0cU10RmxMRjB4dXFuUmU0SkhOdGxqZy9QTmVvdkg5Vm1OT00yZkVVWStud3ZBZFJrTUFiQVNydzJMRFR2cW1oeXZpYmlFU25NM0MzMG1OYSsrcXFoVHRCUnFGU21zV0xxKzlSTnFkdm1ISVhtcW5INzhSTWZuRFpqN0NCWFZjblZvR2ZBZ01CQUFFQ2dnRUFCYlRScnZ6MVh0V2RNcFNjaHl2MFlMNndVcXNTbFZEcDU5cENrazFvWUdVaitvdFp4dHpGZFltZG1lWHVwZFFFUjVkWlUzV3dMcHF3ZDEycGRKVlQ2OXduN0NWTU1sTVJWTzdkN21PemJibmpPUExMUzU2Y2JXNXZCZzBsVGpWdVBYcUQ1MDFjTll4b1BrQ1VyVTVFUHNaY0NHaUI0OU5RazVYa0twanc2aDhzNmkxdHV1VXo2S2cyaVVYeWNBTm5zZU5Nb2duQ0pPaGRvYkFYbUZ0d01uZFVtdnhXaWtmZEJJSmUzaEJoWkNjUjJzc3pKcGpCV0lxZnUvSjI1dnkwanI0TkxsNSszRklCVFhaWk83cWJkRW5Md0N6V2d5MkpjTWdxemhGNWFDN3NvMVZ5RU41bjNYSmVOMVpjayt3UHFiUlJCMGF5SktIQXZiKy9SNURLNFFLQmdRQ3BnTjg1MFdjS0poS3ExclN6YVkrSEdSY2lXUGE3QmJtRFBWQUhwV0NrTVhER3pDbVdSdVVxZERGM0g3ajNwQ0R3SXN6WXMvbzdGZStlUVRlK1orU2UyVWdrMVkvcFA3RkRJTy9Iejk1RENZOHRKS3VDWFMyaVRyWEZVem5KWk5CNjUwbU1EVTVBVmYwbkFyeTBOUUlzTFJCSmRDNkJ5RElUdGN2TjJza0JjUUtCZ1FDZC9WYS9YTW1ISFp0M3pqbkZhZnJ3aHdvQXBzQ05vbkZDTWdlL1ZOeXZKWC95ZnUzdzVxbE1IcTljT25ETi9vcEFuU0lqaCtzNGZPNitWdjFHLy9STWdySGdWOTV4WlhrN2Q2OUF4R2J1Z2FEZUZQL2x3b3MzbTg0bzU1RE1uUkI2bkxpWk5pYWl2ek01YVNvN0NVcEFuSVY4dkdlYk1PRjlDV2MydGxBc0R3S0JnRG03QTh4Y2JyeTlKT1I4eGdUSk1qSXdNSG5wVlBkenhyQlZSSm1tRU5rN1lZN0Q0SEluYVV2aFVTdWlhVXdtNFhVSVZUNkZaZmVUekEzWlpwUDZMSnFScEltdkZ4bTVNTFdOVlQxM3BkcXRPYytGU3NqVzFZRVBUOGVLUmdjNngrcmtOVjkyOUt6aTNKclp5czJSdEZDNWRHK2dHMnJtZFcvVEhqdlpoVlp4QW9HQVZ2UW1HSENUSW1CelByOHNJTEV4d2N3dy95Ykg5NndlTmRhZldQajE5UmZva2FpMmdNNFRBNmduejlVQ1hQM3BUYUt1Tld3TFZDMitvTmZ6MG0zeElXTVZUMnBOTFpBeDV6NzZIK1Y0MlhCUy82Z0RKNHVwWDlQSzVjeDliNEJLbjVFK01HVVRZcU5sS0FYdmprcVFxWHI4SlNqMHhQOWtPNU0vVVdlS1BKVUNnWUJyck9zMFV4eWNLVU5JanRCclFkajl5VXVUTisxaE1TWkFFZ0d5c1p2SnVHcVpSRU1UaVp3WUs3QXExMGlBZUxyZ20vYXJxblpsOTA3eC9ob0Mybjg0c3FmU0luSFlmNzdTa2FOaVZRYk1LYlRQR3NWb3J2bGdVbmpuaThSV1F5cjJ1ZXdzOUxGQXg0bFhCMkdKVlMrUEF0WE96RHRBZFprK2dyNkRyVDA1cWc9PQ==
+!
+crypto dsakey dsa import $v10$TUlJQnVnSUJBQUtCZ0U5NldqZ09DQWdDWHhNeUNqSS9uVzVCM0QvSGVvUGgwUUp5Qm11UWk5S3BRTEx3YmdCZnUvbCtRdUxJUjFydG1SUGk4VW41UHVBVjI4a0E5aHdmN0pOWU9Cem5MZVVEZktocG5meVFmd3Y1eVIzbU55NzJzTFFIYzJSMnRXLzJQSlArajhHOTY5ZVlLQ1RkT2pMbU81Y0JEbTdjNlBCQllqUkdJVFo2UE9rL0FoVUFtSTNlWmZYVFlsUStpdHJyZlhpMkNUNENlS2tDZ1lBUzlGNVNuQkZWODV5dmVYbWZ6cG1VSXZ4bm5YL0VCTVVna1pHNTEzYWJFYmlYQzJPaWxqVVRQY3lmcVBmQTh2U3pITDRGMGZkQmkyT1dMUzQ2TGNzamhhajh5cEFXYm5lbHRLUVpWdS9nUzZLNEN2WnFlK2FsUzFhV1NNTFZTbnN3Q1FCWnd4WTlJdXFpVFJBZ3M3ayt1QklVUEU0MjE5VTBwYzcyZUY3NHhnS0JnQWJJcmtyYWZoWmNaSWRjakRrem5QSm9RZ3VtQ3JXaGhjdFFydWtPMDBva3BrYzBjYWwydFE1a0tzdHlHYnJlbUtmZjBDTVdML1I1SUlMam9BLzlIc3NoZjJFQ3FoRjhCTWlTYkNPZGloMTN4MXB1alVRWGtTcWhVRVNtNmRhN2tEK2NmR2orazZKZWYzdFhLOEJFTW5CTE5hU1FhTGVVbWpSYkVZd0hOcEFqQWhVQTNOUVp0WlY4UTh3STVUSmhETkhLdDBlQVNKOD0=
+!
+crypto ecdsakey ecdsa import $v10$TUhNQ0FRRUVIMlJGS2NqVDBCcFI3c1AzNDhka3JXUW5yTmZHSU5HVjRtZjQzdFBKSGgrZ0J3WUZLNEVFQUFxaFJBTkNBQVI3L0wyTEV0TU9tZ2JPSmpkdW83WkRmSlNQaXNpM3BGcHdyaUF3UXNnbHRaUUNWVDNteE51Y2lWZ0VvNzZyTDdJWFRKdkZMcFk2WnJTQ0pValJrVlYx
+!
+crypto certificate dsa import dsa dsa $v10$TUlJQ1VqQ0NBZytnQXdJQkFnSUVESU5URURBTEJnY3Foa2pPT0FRREJRQXdEVEVMTUFrR0ExVUVBeE1DY2pFd0hoY05Nakl3TlRBeU1qRXhNVFF3V2hjTk16SXdOREk1TWpFeE1UUXdXakFOTVFzd0NRWURWUVFERXdKeU1UQ0NBYlV3Z2dFcUJnY3Foa2pPT0FRQk1JSUJIUUtCZ0U5NldqZ09DQWdDWHhNeUNqSS9uVzVCM0QvSGVvUGgwUUp5Qm11UWk5S3BRTEx3YmdCZnUvbCtRdUxJUjFydG1SUGk4VW41UHVBVjI4a0E5aHdmN0pOWU9Cem5MZVVEZktocG5meVFmd3Y1eVIzbU55NzJzTFFIYzJSMnRXLzJQSlArajhHOTY5ZVlLQ1RkT2pMbU81Y0JEbTdjNlBCQllqUkdJVFo2UE9rL0FoVUFtSTNlWmZYVFlsUStpdHJyZlhpMkNUNENlS2tDZ1lBUzlGNVNuQkZWODV5dmVYbWZ6cG1VSXZ4bm5YL0VCTVVna1pHNTEzYWJFYmlYQzJPaWxqVVRQY3lmcVBmQTh2U3pITDRGMGZkQmkyT1dMUzQ2TGNzamhhajh5cEFXYm5lbHRLUVpWdS9nUzZLNEN2WnFlK2FsUzFhV1NNTFZTbnN3Q1FCWnd4WTlJdXFpVFJBZ3M3ayt1QklVUEU0MjE5VTBwYzcyZUY3NHhnT0JoQUFDZ1lBR3lLNUsybjRXWEdTSFhJdzVNNXp5YUVJTHBncTFvWVhMVUs3cER0TktKS1pITkhHcGRyVU9aQ3JMY2htNjNwaW4zOUFqRmkvMGVTQ0M0NkFQL1I3TElYOWhBcW9SZkFUSWttd2puWW9kZDhkYWJvMUVGNUVxb1ZCRXB1bld1NUEvbkh4by9wT2lYbjk3Vnl2QVJESndTeldra0dpM2xKbzBXeEdNQnphUUl6QUxCZ2NxaGtqT09BUURCUUFETUFBQU1Dd0NGQ0RyMnN0WGFwTHliNEl4RmJ1MXdqY2h1aTlkQWhRc2duOEdUT1ErYnlMckR3NFN1a205K2pMa1VnPT0=
+!
+crypto certificate ecdsa import ecdsa ecdsa $v10$TUlJQlREQ0JzS0FEQWdFQ0FnUWs1QmczTUF3R0NDcUdTTTQ5QkFNQ0JRQXdEVEVMTUFrR0ExVUVBeE1DY2pFd0hoY05Nakl3TlRBeU1qRXhNVFF4V2hjTk16SXdOREk1TWpFeE1UUXhXakFOTVFzd0NRWURWUVFERXdKeU1UQlhNQkFHQnlxR1NNNDlBZ0VHQlN1QkJBQUtBME1BQUFSNy9MMkxFdE1PbWdiT0pqZHVvN1pEZkpTUGlzaTNwRnB3cmlBd1FzZ2x0WlFDVlQzbXhOdWNpVmdFbzc2ckw3SVhUSnZGTHBZNlpyU0NKVWpSa1ZWMU1Bd0dDQ3FHU000OUJBTUNCUUFEZ1lnQUFEQ0Jnd0lnTy8zdXdOeWpxRjZpVm1vd3QyQWU4R3F0K2Mybm41bE51djltMDBtL3Vud0NYd3hJQzdnWThNcWN1RXpPV1l1WGMzOWJGcG5RVlNCbTRwT1NscGVCbXJTcDVrTHJDMTdIbUgwMTVmd3A0YXJNd29VSE9BcjNmc3FxVzIzenV1eXVxK3dRS3ZkSmRzWm5sTGM0NDJrbVpXQ1JodzRwUmhyckVHeW50ME9idVNRZw==
+!
+crypto certificate rsa import rsa rsa $v10$TUlJQ2xUQ0NBWDJnQXdJQkFnSUVFZ1RZWHpBTkJna3Foa2lHOXcwQkFRc0ZBREFOTVFzd0NRWURWUVFERXdKeU1UQWVGdzB5TWpBMU1ESXlNVEV4TkRCYUZ3MHpNakEwTWpreU1URXhOREJhTUEweEN6QUpCZ05WQkFNVEFuSXhNSUlCSVRBTkJna3Foa2lHOXcwQkFRRUZBQU9DQVE0QU1JSUJDUUtDQVFCb204YXpFU1BjYU5aRUtGTERob1VaTmY5aGp4ZHhtME5MandoR2RnOHF0ek4yd0JPaXpoeXFYSmwrV3Z0VUMxSmtwNkVhN1ArRkNnZTgxeXVnaDg0KzRMRUpuSDBrK0FiZjNLLzF6aVhFcU1iODdBbnBYWFBMTnZUS3pwMmlyT1VSbVNCSVJaR0FjQit5dU5EeDlmRlN3RUUzOXYrcWNWQXh1czc3dGhDd2RGdElQaUZONkV6d240cUM0V3NsY3hvZ1BJZEdXWSs5ZUtYdVd6d1c0cU10RmxMRjB4dXFuUmU0SkhOdGxqZy9QTmVvdkg5Vm1OT00yZkVVWStud3ZBZFJrTUFiQVNydzJMRFR2cW1oeXZpYmlFU25NM0MzMG1OYSsrcXFoVHRCUnFGU21zV0xxKzlSTnFkdm1ISVhtcW5INzhSTWZuRFpqN0NCWFZjblZvR2ZBZ01CQUFFd0RRWUpLb1pJaHZjTkFRRUxCUUFEZ2dFQkFFUndkMEMzZ2xINnRPVUlVd2t3Tlo5blBWVE9jQWpVb0lzc1RwQlh6d1poZzNRY1MraUN6S0IwNlZjbmQ1dWtHby95QjhyMjhPcDRMN1VOVDdnM2l5UHJydzV1alpMNnhLbFU5VG0zcVQveFlmSnhWUGpLNFBqb3BNa0JjVkpRSmVLTlAyNzRIN2xJRlE4SU9GRDlWdHB2c3FCMFpvSXBhRjRrNkMzU21ZNHVyQUswY3pDVlVlRnAwUzFLb2lRY1dOaFZ3RHpJOEdlMVNCYnNId0M3em5YZkY0eERsMklmS2wyTVVPVkNBWWZJTFV3TTRyQzhuaTYvT0VseDFyOXRNRWlUY3lWTlQzYTNZVGplUUVJckhBRmttT0ZXeVlWRTFyYitnN1E4QWJ4OXJseDhURk91djkyWFR0cExGRWhEeklYbEQxbDVzZ1Fqc3F2TXVvTEs0TzA9
+!
+vrf definition tester
+ exit
+!
+vrf definition v1
+ rd 1:1
+ exit
+!
+router pvrp4 1
+ vrf v1
+ router-id 4.4.4.1
+ redistribute connected
+ exit
+!
+router pvrp6 1
+ vrf v1
+ router-id 6.6.6.1
+ redistribute connected
+ exit
+!
+interface loopback1
+ vrf forwarding v1
+ ipv4 address 2.2.2.1 255.255.255.255
+ ipv6 address 4321::1 ffff:ffff:ffff:ffff:ffff:ffff:ffff:ffff
+ no shutdown
+ no log-link-change
+ exit
+!
+interface ethernet1
+ vrf forwarding v1
+ ipv4 address 1.1.1.1 255.255.255.252
+ ipv6 address 1234:1::1 ffff:ffff::
+ router pvrp4 1 enable
+ router pvrp4 1 encryption tls rsa dsa ecdsa rsa dsa ecdsa
+ router pvrp6 1 enable
+ router pvrp6 1 encryption tls rsa dsa ecdsa rsa dsa ecdsa
+ no shutdown
+ no log-link-change
+ exit
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+server telnet tester
+ security protocol telnet
+ no exec authorization
+ no login authentication
+ vrf tester
+ exit
+!
+!
+end
+```
+
+**r2:**
+```
+hostname r2
+buggy
+!
+logging file debug ../binTmp/zzz13r2-log.run
+!
+crypto rsakey rsa import $v10$TUlJRW93SUJBQUtDQVFFQWxKTUVlcGtJMklHOEZXZklwQzJPa241dkNVckc1M281cnpXRFNCZy9GT2tnZVYvUXd2U2FueWlUQlNmYVFlUXdsUkNuMEtCQW5NdDFqZFo2YTExUDllVUtWZWo0Smw2TVp6MGo0ZDVCNExuak1jQWJmb3h6WE93RXF5NWZ6SFBOeG04UE1iK1N0aW5VV1QvckY0L3dOSFY5NVVjOCs1OTYySWZjWGdQV2lIUldNSXo3RU5Pcm9ycTFaekU5VEs5T0Z1TlNIQjN5d01qTVYySHVaYWhYRlZEaFhlNUo2YWVTaVdsTUQ2R3VIQjZvaWZodnlGUTY1QURoSkp1dEhaSGhrN2Jvc1dKcWhxek95VUJnclo2TFNIZmU4K2R6eUwyQjhMWlorYnJqSG9UY0xkMXVnT3NRanhhOHJKOXNIN3RxRWZTUXBzMHpZK2JnMk9oZVFzdnNaUUlEQVFBQkFvSUJBQmI1WE5ud1RCUGVpOHpyalhVRnJtUXN0TkxGQTFqTDU1dVdOTVN6S3gzNnBwRGVKaFBmYXdGdGJyNS9XUnFUUklmb1dXckRQUHFCNDUyWktyanJadS9wQ040YjlqTklyNEZQVFBzaU9TR2MzT3JXZituam9mc2VhK0prZTEvTUVHZTh5S2F5cnVjSU5OUFFOSFFpUjh4MDFwRGJvU3h2anJsbzJNU1k1MVdXR2hFZnJLT1BqbGZuV3UxT2JNcWYyZi9odDkxWUtoSVRsNGkvbThCM2dtZzlvcWRlRU1pV2wreFdjdUdwcFo2WDhocS8zVG1GMHYzQ25KdVZ1Y2RRWUFXRGR3cThrZk9GK1ExTzNEVDczRmxuUWNjYlVtNkVoNndhTmk5ZWlreXNjbUNHL2xrdURMK05WREl6R0J3ZWZnSm02cTVSYnRZOGM3N0tRNVNWRzRrQ2dZRUE4SHM5eDJCaHlSbDhxZ2ZoMEV6bDF2Z2ovQm9Wa0hrUUJrY2ZzRWtHeG9wdmx2UzZEeHNzeGpFLzVaUThMR3lFZU9DNkVJMkJYNmY1Rjlma3Y5UUhsZ3poWTFhOUxyc04vM0d0aXNSU29VQnFRay9acHg2UUs1c1dkNXFmdjgxM1RKOUN2MHB0eEw4M1FxKzh4UmhrbmxwSDljQUVOTWJJMnIrOVl0YjFQLzhDZ1lFQW5pbDM0UUNlczROSnk1aDMxM21oMXVzZXV0TXllLzJERTl3OTRvL3hlRXc2L3pVWXZjdlJWTWlRNUNGQUNXSjI5RHAvZnkwQkgxbVlyVTRSL0VRdVR6ZTZZRVBlajA2NnZBOTZ2NVdIRit6SDNEMTI1aUhrYllJd1VuNGIyb2hvUmdXQU1ER1VJbVNwUlk2UG9xY3R0Nk1qZFZUc0lTRVo3cExncDBkeDA1c0NnWUVBa29NRFNJMDRCa1U0NW42VzNVbDhYbFFmMkdBcjh6Rk95Z1JiRWhQcnhOcGkwaDJYbmN4NG91Y3VmcmlwVUlkc3poaGNRK2x5Z016ZHZlRVN4S3h4VXNIV0w2ZVE2diticjUyYWxZaTJydmVIeFk3UWxEalNyVDUzbWJiaXpRQnBSbzFoSlJvN2RqcnBkLytKaXFzcDRqQXUxMUo5UFlvK3BNZGNvdk5EeUJFQ2dZQisyQ01jZ0xMR3BYUjVwRDM0d2NQWjZaY3JubFhPdXZKMDZ4MTJwcHF5TC9EZzNHU0xVdnIvVkJ0ZjJvclErL2NLeUIrWWp5OW5SU1A5V2E5eThmdHg3Tys4WkxJSm5NcUdLS1A1SXFMRnZWQk1nYjdwc2lUUTdxaHlnRkUyWWsrK1dJc0dHNzBDR0ZqcFAveFNKbUd6OVZKcXQwRHBFUE1MTXlDWkIrTnlJUUtCZ0dYcVUvNlhwRWNwWWxPZThIYi9pZ2hTZTg1UGw1dElJb1orNjNFN0V4MncyL2tiUnNRZHpHS1FTK1RSc2U2UVpmbTNpNmlmcU1zZisyejFNbG1TdmtqVnVJUWJlRTZVblYwK09Ta0JLTWZEbngvTHpOd1pnamQrK1dGZ3Y5WEZOTkNOWHczTUdNaDdmL0VySUdRdkFhM0pRWkFkWmFrZ3RwZ09HQ2ZOZWQ2aQ==
+!
+crypto dsakey dsa import $v10$TUlJQnVnSUJBQUtCZ1FDQ3Nwczk0MW8vR0tKQTRpR1ZpbVBRU1NxMy9RWnNEeDRpZFhaK2hBTjdDQ1d3QXRQaGJvRXliNUFXTHNaWi9nTXZBUmw3WmpuK2JCb3QxbUgvenpEVWxOcEdXR0J0L3BWN0lUZ0IvUmlpY212NlFTSktXV2JxN1dBRXhDcXhTaTZSYXp6OFhyUjlKL1hLaVZwNDNGVzgxOVlNbWtwZGJ2U280OEExUWI0Q293SVZBS2k2VUNORjlIb1lHR0tYOGlLc21JVW9VT1FGQW9HQU1QZTlpT3lnU2pTMFhSREI4eGM4MHpVMFZ3emZwT1BkL3JmUktzcnBKZkV4L3Y5K25hZFpTVjREQy9majFrK25OSjk1c2cwclF4R3RUSlUyeGRHNmFtMGZZRXlsalV2eFpyR2lWa0FSMFN0K1dLbmdvSk5WVG5EWDFwZ3llME1uK1o2QzN5RmNQOUhNaWpzZDhuSWxnc3VXeHNSdm5NZ3dVQzhuNTVpQ2N4a0NnWUFwMnlLeXQxcEl6cjZCeFpFcCtzdlMxbTFBSjhvU3VJUzJSUTNxNDVOdDdSUktkS09xM05GQ2pQVmJ0RVIzdklzMGFyVi9QN1pqTkhWbmJaejNxSEJTVFdtUU5pekoxS24zRlBOUUVwY3RFTFRNQVlpREQvdGI1c0UwYkd3Y2luUUxncERzR0QvcVQ2elV6QUJUczNKYVJBZVV0eDNncGkyZy9YTlNiVWliSWdJVUxzVHd6WkR5cVBma1NMTmxBVWQ5alRqVDBRdz0=
+!
+crypto ecdsakey ecdsa import $v10$TUhNQ0FRRUVIM3d5L1VhMDREbGkxdXNoYlhyZE5wRlNHUUI3dm5CalZRQUdBU05ZaU9xZ0J3WUZLNEVFQUFxaFJBTkNBQVR0bFJSSzIvTHVjWnY5Z2pua0pvRUZ5THhFUXBLMmdzK1dvYWdqcFluOHA5Z3dQTElEQWZId2lOWXJPN3plK1Q3WHNHRUV5b0pRdWNEMmt4OEZwenN5
+!
+crypto certificate dsa import dsa dsa $v10$TUlJQ1V6Q0NBaENnQXdJQkFnSUVZWWt3TVRBTEJnY3Foa2pPT0FRREJRQXdEVEVMTUFrR0ExVUVBeE1DY2pJd0hoY05Nakl3TlRBeU1qRXhNVFF6V2hjTk16SXdOREk1TWpFeE1UUXpXakFOTVFzd0NRWURWUVFERXdKeU1qQ0NBYll3Z2dFckJnY3Foa2pPT0FRQk1JSUJIZ0tCZ1FDQ3Nwczk0MW8vR0tKQTRpR1ZpbVBRU1NxMy9RWnNEeDRpZFhaK2hBTjdDQ1d3QXRQaGJvRXliNUFXTHNaWi9nTXZBUmw3WmpuK2JCb3QxbUgvenpEVWxOcEdXR0J0L3BWN0lUZ0IvUmlpY212NlFTSktXV2JxN1dBRXhDcXhTaTZSYXp6OFhyUjlKL1hLaVZwNDNGVzgxOVlNbWtwZGJ2U280OEExUWI0Q293SVZBS2k2VUNORjlIb1lHR0tYOGlLc21JVW9VT1FGQW9HQU1QZTlpT3lnU2pTMFhSREI4eGM4MHpVMFZ3emZwT1BkL3JmUktzcnBKZkV4L3Y5K25hZFpTVjREQy9majFrK25OSjk1c2cwclF4R3RUSlUyeGRHNmFtMGZZRXlsalV2eFpyR2lWa0FSMFN0K1dLbmdvSk5WVG5EWDFwZ3llME1uK1o2QzN5RmNQOUhNaWpzZDhuSWxnc3VXeHNSdm5NZ3dVQzhuNTVpQ2N4a0RnWVFBQW9HQUtkc2lzcmRhU002K2djV1JLZnJMMHRadFFDZktFcmlFdGtVTjZ1T1RiZTBVU25TanF0elJRb3oxVzdSRWQ3eUxOR3ExZnorMll6UjFaMjJjOTZod1VrMXBrRFlzeWRTcDl4VHpVQktYTFJDMHpBR0lndy83VytiQk5HeHNISXAwQzRLUTdCZy82aytzMU13QVU3TnlXa1FIbExjZDRLWXRvUDF6VW0xSW15SXdDd1lIS29aSXpqZ0VBd1VBQXpBQUFEQXNBaFF3NUdQMGhna3ZxWVJaVjF3eGtVL3l0R0NMY3dJVVpuaEdQZFA4RWNLcVUyc0RBVkJGNzl0UEVxRT0=
+!
+crypto certificate ecdsa import ecdsa ecdsa $v10$TUlJQlREQ0JzS0FEQWdFQ0FnUnF3U0ZoTUF3R0NDcUdTTTQ5QkFNQ0JRQXdEVEVMTUFrR0ExVUVBeE1DY2pJd0hoY05Nakl3TlRBeU1qRXhNVFF6V2hjTk16SXdOREk1TWpFeE1UUXpXakFOTVFzd0NRWURWUVFERXdKeU1qQlhNQkFHQnlxR1NNNDlBZ0VHQlN1QkJBQUtBME1BQUFUdGxSUksyL0x1Y1p2OWdqbmtKb0VGeUx4RVFwSzJncytXb2FnanBZbjhwOWd3UExJREFmSHdpTllyTzd6ZStUN1hzR0VFeW9KUXVjRDJreDhGcHpzeU1Bd0dDQ3FHU000OUJBTUNCUUFEZ1lnQUFEQ0Jnd0lnV2J4d0pQeHdjcEtJSC81NitzbDlqVHJiczJBS1M2OGFmY2dsamM1cmFhUUNYeEoyMHlBZzFoL09UYTlqWmUxYkRHQ09hSUFtUE5DUy9scEhOVVNDeFBsQWVXRzlxZndmenRxN0szdHljSG1MeE9hZG9CNEQzVkxQdWpIdzFGWEJMRzNON1IyaVc4eW1GNEtMMHhqUW15bk9HSExXdGtnUnFvUDViaDloZEVORQ==
+!
+crypto certificate rsa import rsa rsa $v10$TUlJQ2xqQ0NBWDZnQXdJQkFnSUVCN010UERBTkJna3Foa2lHOXcwQkFRc0ZBREFOTVFzd0NRWURWUVFERXdKeU1qQWVGdzB5TWpBMU1ESXlNVEV4TkROYUZ3MHpNakEwTWpreU1URXhORE5hTUEweEN6QUpCZ05WQkFNVEFuSXlNSUlCSWpBTkJna3Foa2lHOXcwQkFRRUZBQU9DQVE4QU1JSUJDZ0tDQVFFQWxKTUVlcGtJMklHOEZXZklwQzJPa241dkNVckc1M281cnpXRFNCZy9GT2tnZVYvUXd2U2FueWlUQlNmYVFlUXdsUkNuMEtCQW5NdDFqZFo2YTExUDllVUtWZWo0Smw2TVp6MGo0ZDVCNExuak1jQWJmb3h6WE93RXF5NWZ6SFBOeG04UE1iK1N0aW5VV1QvckY0L3dOSFY5NVVjOCs1OTYySWZjWGdQV2lIUldNSXo3RU5Pcm9ycTFaekU5VEs5T0Z1TlNIQjN5d01qTVYySHVaYWhYRlZEaFhlNUo2YWVTaVdsTUQ2R3VIQjZvaWZodnlGUTY1QURoSkp1dEhaSGhrN2Jvc1dKcWhxek95VUJnclo2TFNIZmU4K2R6eUwyQjhMWlorYnJqSG9UY0xkMXVnT3NRanhhOHJKOXNIN3RxRWZTUXBzMHpZK2JnMk9oZVFzdnNaUUlEQVFBQk1BMEdDU3FHU0liM0RRRUJDd1VBQTRJQkFRQnVHOThXRXVBeElEK1hodnE3eVpFa0k0L01vNjNSRXk5MGNnSTN1eWtlVURUN1NKMFNpSWkzZVRGd3VIckZpbTJna0FoYlA3cDdITGNQenNoL1FxRW9YK2RBYlRuTHEvN0pDUXFOVVBOaU94TVFSQXZtd1htcmJFbWFabi95bGQvYUh1bG5PcnBRNlp6bDNYNXNEU20wV0FOY215bU85TkR2RS9oVXRSVUd1Y3RtM2FoUTZvbHRLRjd1NXlzYUxkMXlKMFFsN09lVDdxbUpXdU9saFpCQVhaRGY5REhBS1preHN4OXZEVHVvWCtRQ3RjUGI4UHJiZ2Vsb252MDVVNnZjd0Jtb2xOR2FjSkU5RzVSNytpN2l1NDFYYzN6WlZVTHJTbE1kenZmODZKekJ2Y1BYUTVjcDREVWcvSTRodnBYUXVGTEJBOEJTa2V5NDZwTEVrZFdx
+!
+vrf definition tester
+ exit
+!
+vrf definition v1
+ rd 1:1
+ exit
+!
+router pvrp4 1
+ vrf v1
+ router-id 4.4.4.2
+ redistribute connected
+ exit
+!
+router pvrp6 1
+ vrf v1
+ router-id 6.6.6.2
+ redistribute connected
+ exit
+!
+interface loopback1
+ vrf forwarding v1
+ ipv4 address 2.2.2.2 255.255.255.255
+ ipv6 address 4321::2 ffff:ffff:ffff:ffff:ffff:ffff:ffff:ffff
+ no shutdown
+ no log-link-change
+ exit
+!
+interface ethernet1
+ vrf forwarding v1
+ ipv4 address 1.1.1.2 255.255.255.252
+ ipv6 address 1234:1::2 ffff:ffff::
+ router pvrp4 1 enable
+ router pvrp4 1 encryption tls rsa dsa ecdsa rsa dsa ecdsa
+ router pvrp6 1 enable
+ router pvrp6 1 encryption tls rsa dsa ecdsa rsa dsa ecdsa
+ no shutdown
+ no log-link-change
+ exit
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+server telnet tester
+ security protocol telnet
+ no exec authorization
+ no login authentication
+ vrf tester
+ exit
+!
+!
+end
+```
+
+## **Verification**
+
+```
+r2#
+r2#
+r2#show ipv4 pvrp 1 sum
+r2#show ipv4 pvrp 1 sum
+ |~~~~~~~~~~~|~~~~~~~~~|~~~~~~|~~~~~~~~~~~|~~~~~~~~~|~~~~~~~~~|~~~~~~~~~~|~~~~~~~~~~|
+ | iface     | router  | name | peerif    | peer    | learned | adverted | uptime   |
+ |-----------|---------|------|-----------|---------|---------|----------|----------|
+ | ethernet1 | 4.4.4.1 | r1   | ethernet1 | 1.1.1.1 | 1       | 1        | 00:00:06 |
+ |___________|_________|______|___________|_________|_________|__________|__________|
+r2#
+r2#
+```
+
+```
+r2#
+r2#
+r2#show ipv6 pvrp 1 sum
+r2#show ipv6 pvrp 1 sum
+ |~~~~~~~~~~~|~~~~~~~~~|~~~~~~|~~~~~~~~~~~|~~~~~~~~~~~|~~~~~~~~~|~~~~~~~~~~|~~~~~~~~~~|
+ | iface     | router  | name | peerif    | peer      | learned | adverted | uptime   |
+ |-----------|---------|------|-----------|-----------|---------|----------|----------|
+ | ethernet1 | 6.6.6.1 | r1   | ethernet1 | 1234:1::1 | 1       | 1        | 00:00:06 |
+ |___________|_________|______|___________|___________|_________|__________|__________|
+r2#
+r2#
+```
+
+```
+r2#
+r2#
+r2#show ipv4 pvrp 1 rou
+r2#show ipv4 pvrp 1 rou
+ |~~~~~~|~~~~~~~~~~~~|~~~~~~~~|~~~~~~~~~~~|~~~~~~~~~|~~~~~~~~~~|
+ | typ  | prefix     | metric | iface     | hop     | time     |
+ |------|------------|--------|-----------|---------|----------|
+ | C    | 1.1.1.0/30 | 1/0    | ethernet1 | null    | 00:00:03 |
+ | null | 2.2.2.1/32 | 80/10  | ethernet1 | 1.1.1.1 | 00:00:03 |
+ | C    | 2.2.2.2/32 | 2/0    | loopback1 | null    | 00:00:08 |
+ |______|____________|________|___________|_________|__________|
+r2#
+r2#
+```
+
+```
+r2#
+r2#
+r2#show ipv6 pvrp 1 rou
+r2#show ipv6 pvrp 1 rou
+ |~~~~~~|~~~~~~~~~~~~~|~~~~~~~~|~~~~~~~~~~~|~~~~~~~~~~~|~~~~~~~~~~|
+ | typ  | prefix      | metric | iface     | hop       | time     |
+ |------|-------------|--------|-----------|-----------|----------|
+ | C    | 1234:1::/32 | 1/0    | ethernet1 | null      | 00:00:00 |
+ | null | 4321::1/128 | 80/10  | ethernet1 | 1234:1::1 | 00:00:00 |
+ | C    | 4321::2/128 | 2/0    | loopback1 | null      | 00:00:08 |
+ |______|_____________|________|___________|___________|__________|
+r2#
+r2#
+```
+
+```
+r2#
+r2#
+r2#show ipv4 route v1
+r2#show ipv4 route v1
+ |~~~~~~|~~~~~~~~~~~~|~~~~~~~~|~~~~~~~~~~~|~~~~~~~~~|~~~~~~~~~~|
+ | typ  | prefix     | metric | iface     | hop     | time     |
+ |------|------------|--------|-----------|---------|----------|
+ | C    | 1.1.1.0/30 | 0/0    | ethernet1 | null    | 00:00:09 |
+ | LOC  | 1.1.1.2/32 | 0/1    | ethernet1 | null    | 00:00:09 |
+ | P EX | 2.2.2.1/32 | 80/10  | ethernet1 | 1.1.1.1 | 00:00:03 |
+ | C    | 2.2.2.2/32 | 0/0    | loopback1 | null    | 00:00:09 |
+ |______|____________|________|___________|_________|__________|
+r2#
+r2#
+```
+
+```
+r2#
+r2#
+r2#show ipv6 route v1
+r2#show ipv6 route v1
+ |~~~~~~|~~~~~~~~~~~~~~~|~~~~~~~~|~~~~~~~~~~~|~~~~~~~~~~~|~~~~~~~~~~|
+ | typ  | prefix        | metric | iface     | hop       | time     |
+ |------|---------------|--------|-----------|-----------|----------|
+ | C    | 1234:1::/32   | 0/0    | ethernet1 | null      | 00:00:09 |
+ | LOC  | 1234:1::2/128 | 0/1    | ethernet1 | null      | 00:00:09 |
+ | P EX | 4321::1/128   | 80/10  | ethernet1 | 1234:1::1 | 00:00:00 |
+ | C    | 4321::2/128   | 0/0    | loopback1 | null      | 00:00:09 |
+ |______|_______________|________|___________|___________|__________|
+r2#
+r2#
+```

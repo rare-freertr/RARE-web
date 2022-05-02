@@ -1,10 +1,7 @@
 # Example: vdc peer connect
-    
-=== "Topology"
-    
-     <div class="nextWrapper">
-         <iframe src="/guides/reference/snippets/next-diagram.html" style="border:none;"></iframe>
-     </div>
 
-    
-=== "Configuration"
+## **Topology diagram**
+
+![topology](/img/conn-vdc03.tst.png)
+
+## **Configuration**

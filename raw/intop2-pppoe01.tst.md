@@ -1,10 +1,7 @@
 # Example: interop2: pppoe with pap
-    
-=== "Topology"
-    
-     <div class="nextWrapper">
-         <iframe src="/guides/reference/snippets/next-diagram.html" style="border:none;"></iframe>
-     </div>
 
-    
-=== "Configuration"
+## **Topology diagram**
+
+![topology](/img/intop2-pppoe01.tst.png)
+
+## **Configuration**
