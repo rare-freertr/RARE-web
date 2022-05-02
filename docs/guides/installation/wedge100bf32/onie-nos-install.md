@@ -1,31 +1,31 @@
-# **Installation on Wedge100bf32(x or qs)**
+# **Installation on Wedge 100BF-32(X or QS)**
 
 There are 3 major steps:
 
-* Prerequisites
-* Boot into ONIE environment
-* RARE/freeRtr NOS image installation via ONIE
+* Check prerequisites
+* Boot into the ONIE environment
+* Install the RARE/freeRtr NOS image via ONIE
 
 !!! info
-    Assuming you are familiar with ONIE, the installation process should last 5 minutes
+    Assuming you are familiar with ONIE, the installation process should take about five minutes.
 
 # Prerequisites
-* Wedge100bf32 hardware with **ONIE partition pre-installed**
-    * Wedge100bf32x
-    * Wedge100bf32qs
+* Wedge 100BF-32 hardware with **ONIE partition pre-installed**
+    * Wedge 100BF-32X
+    * Wedge 100BF-32QS
 
 !!! info
-    Wedge100bf32x and Wedge100bf32qs are almost similar platform. They both have 32 QSFP28 ports able to run at 10/25/40/100GE line rate. The first equipped with INTEL/TOFINO ASIC T32D model with two pipes or core if it helps to picture the difference. The latter is powered by INTEL/TOFINO ASIC T32Q which has 4 pipes. Each pipe is able to handle 16 interface ports. Wedge100bf32qs has 2 additional pipes that are not tied to specific front panel port. They can be leveraged to provide additional stages for packet processing.
+    Wedge 100BF-32X and Wedge 100BF-32QS are very similar platforms. They both have 32 QSFP28 ports able to run at 10/25/40/100GE line rate. The first is equipped with the Intel Tofino T32D ASIC model with two pipelines (or cores if it helps to picture the difference). The latter is powered by the Intel Tofino T32Q ASIC which has 4 pipelines. Each pipeline is able to handle 16 interface ports. The Wedge 100BF-32QS has 2 additional pipes that are not tied to specific front panel ports. They can be leveraged to provide additional stages for packet processing.
 
-* DHCP server
-    * that serves IP addresses to [BMC](https://en.wikipedia.org/wiki/Baseboard_Management_Controller)
-    * and Main Board CPU (or MBC): Where the Network Operating System will be effectively installed
+* DHCP server that serves IP addresses to
+    * the [BMC](https://en.wikipedia.org/wiki/Baseboard_Management_Controller)
+    * and the Main Board CPU (or MBC): Where the Network Operating System will be effectively installed
 
 !!! note
-    If you have access to BMC through the Wedge100bf32 serial console, the DHCP server and Internet connectivity is optional. However, the installation process requires at least an IP connectivity and that you can get SSH access to Main Board CPU. Connectivity to MBC will have to be enabled from BMC.
+    If you can access the BMC through the Wedge 100BF-32 serial console, the DHCP server and Internet connectivity are optional. However, the installation process requires at least IP connectivity and that you can get SSH access to Main Board CPU. Connectivity to MBC will have to be enabled from BMC.
 
-* Wedge100bf32 BMC access either
-    * via Serial console port
+* Wedge 100BF-32 BMC access either
+    * via serial console port
     * or via BMC SSH
 
 !!! note
@@ -33,7 +33,7 @@ There are 3 major steps:
 
 # Boot into ONIE environment
 
-* Access to BMC via Serial or SSH
+* Access the BMC via Serial or SSH
 ```
 ssh root@<bmc_ip>
 root@<bmc_ip>'s password:
@@ -46,7 +46,7 @@ root@bmc:~#
 wedge_power.sh reset
 ```
 
-* Access to MBC from BMC
+* Access the MBC from BMC
 ```
 root@bmc:~# sol.sh
 You are in SOL session.
@@ -63,7 +63,7 @@ Use ctrl-x to quit.
 * Choose **`ONIE rescue mode`** from Grub menu
 
 # RARE/freeRtr NOS image installation via ONIE
-Now that you have rebooted MBC into **`ONIE rescue mode`**, there are 2 possible ways to install RARE/freeRtrt NOS
+Now that you have rebooted MBC into **`ONIE rescue mode`**, there are 2 possible ways to install RARE/freeRtrt NOS:
 
 * Internet access is available from MBC
     * Launch RARE/freeRtr ONIE net-install
@@ -84,14 +84,14 @@ scp ./onie-installer.bin root@<mbc_ip>:~/
 ```
 ssh root@<mbc_ip>
 ```
-    * Launch  RARE/freeRtr ONIE install from local file system
+    * Launch RARE/freeRtr ONIE install from local file system
 ```
 onie# onie-nos-install /root/onie-installer.bin
 ```
-You should observe RARE/freeRtr installation work in progress. Once finished, the Wedge100bf32 will reboots.
+You should observe RARE/freeRtr installation work in progress. Once finished, the Wedge 100BF-32 will reboot.
 
-And, "voilà !"
+And, «voilà !»
 
-Congratulation you have just installed RARE/freeRtr on Wedge100bf32 !
+Congratulations, you have just installed RARE/freeRtr on your Wedge 100BF-32!
 
-Happy networking !
+Happy networking!
