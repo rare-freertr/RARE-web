@@ -1,7 +1,10 @@
 # Example: vdc parent interface
+    
+=== "Topology"
+    
+     <div class="nextWrapper">
+         <iframe src="/guides/reference/snippets/next-diagram.html" style="border:none;"></iframe>
+     </div>
 
-## **Topology diagram**
-
-![topology](/img/conn-vdc01.tst.png)
-
-## **Configuration**
+    
+=== "Configuration"

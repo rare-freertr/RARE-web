@@ -1,7 +1,10 @@
 # Example: ike2 with group18
+    
+=== "Topology"
+    
+     <div class="nextWrapper">
+         <iframe src="/guides/reference/snippets/next-diagram.html" style="border:none;"></iframe>
+     </div>
 
-## **Topology diagram**
-
-![topology](/img/crypt-ike222.tst.png)
-
-## **Configuration**
+    
+=== "Configuration"

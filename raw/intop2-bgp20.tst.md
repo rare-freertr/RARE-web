@@ -1,7 +1,10 @@
 # Example: interop2: bgp vpnv6 over srv6
+    
+=== "Topology"
+    
+     <div class="nextWrapper">
+         <iframe src="/guides/reference/snippets/next-diagram.html" style="border:none;"></iframe>
+     </div>
 
-## **Topology diagram**
-
-![topology](/img/intop2-bgp20.tst.png)
-
-## **Configuration**
+    
+=== "Configuration"

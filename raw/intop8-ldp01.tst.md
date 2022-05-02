@@ -1,7 +1,10 @@
 # Example: interop8: ldp lsp
+    
+=== "Topology"
+    
+     <div class="nextWrapper">
+         <iframe src="/guides/reference/snippets/next-diagram.html" style="border:none;"></iframe>
+     </div>
 
-## **Topology diagram**
-
-![topology](/img/intop8-ldp01.tst.png)
-
-## **Configuration**
+    
+=== "Configuration"
