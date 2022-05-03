@@ -1,4 +1,4 @@
-# **Interface configuration on Wedge100bf32**
+# **Interface configuration on Wedge 100BF-32**
 
 This section describes how to configure interface via RARE/freeRtr OS. Interfaces can be seen from 3 perspectives:
 
@@ -18,7 +18,7 @@ For example, if you have a 4x25GE breakout cable inserted in `FRONT PANEL PORT 1
 # INTEL/TOFINO ASIC
 Internally, INTEL/TOFINO ASIC allocates to each interface (i.e `$PORT/$LANE` pair) a specific identifier. The output from `bf_shell` utility below shows an example of interface mapping.
 
-```
+``` linenums="0"
 -----+----+---+----+-------+----+--+--+---+---+---+--------+----------------+----------------+-
 PORT |MAC |D_P|P/PT|SPEED  |FEC |AN|KR|RDY|ADM|OPR|LPBK    |FRAMES RX       |FRAMES TX       |E
 -----+----+---+----+-------+----+--+--+---+---+---+--------+----------------+----------------+-
@@ -43,24 +43,24 @@ For example, if a module is inserted into front panel port `1`, then freeRtr int
 In freeRtr philosophy, each interface belongs to either a `vrf` or a `bridge`. It is therefore mandatory:
 
 * to configure a `vrf` or a `bridge`
-```
+``` linenums="0"
 vrf definition <MY_VRF>
  exit
 ```
-```
+``` linenums="0"
 bridge <BRIDGE_ID>
  mac-learn
  exit
 ```
 * and bind each of them to an interface.
-```
+``` linenums="0"
 conf t
 interface sdn1
  vrf forwarding  <MY_VRF_ID>
  exit
 end
 ```
-```
+``` linenums="0"
 conf t
 interface sdn2
  bridge-group <MY_BRIDGE_ID>
@@ -69,7 +69,7 @@ end
 ```
 
 * Declare `vrf` or `bridge` and interfaces at the dataplane level
-```
+``` linenums="0"
 server p4lang <SERVER_P4_ID>
  export-vrf <MY_VRF_ID> 1
  export-bridge <MY_BRIDGE_ID> 1
@@ -111,7 +111,7 @@ The interesting part is `server p4lang p4` configuration stanza
     * 2 possibilities:
 
     `-1-` `show p4lang <SERVER_P4_ID>`
-    ```
+    ``` linenums="0"
     FREERTR# show p4lang p4
     ...
     front  name
@@ -128,7 +128,7 @@ The interesting part is `server p4lang p4` configuration stanza
     ...
     ```
     `-2-` Use freeRtr configuration auto-completion
-    ```
+    ``` linenums="0"
     conf t
     FREERTR(cfg)#server p4lang p4
     FREERTR(cfg-server)#export-port sdn4 ?
@@ -144,7 +144,7 @@ The interesting part is `server p4lang p4` configuration stanza
 
 The final configuration is:
 
-```
+``` linenums="0"
 conf t
 !
 vrf definition my_vrf

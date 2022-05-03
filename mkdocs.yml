@@ -14,9 +14,13 @@ nav:
      - Features category: 'guides/reference/tabbed.md'
   - Installation:
     - Overview: 'guides/installation/index.md'
-    - Wedge100bf32:
+    - Wedge 100BF-32:
       - RARE NOS install: 'guides/installation/wedge100bf32/onie-nos-install.md'
       - Interfaces configuration: 'guides/installation/wedge100bf32/interface.md'
+      - Software operation CLI: 'guides/installation/wedge100bf32/rare-nos-lcm-cli.md'
+      - RARE NOS update: 'guides/installation/wedge100bf32/rare-nos-upgrade.md'
+      - RARE NOS experimental: 'guides/installation/wedge100bf32/rare-nos-exp-upgrade.md'
+      - RARE NOS switch profile: 'guides/installation/wedge100bf32/rare-nos-switch-profile.md'
   - License: license.md
   - Contacts: contacts.md
   - About: about.md
