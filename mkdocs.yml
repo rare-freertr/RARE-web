@@ -21,6 +21,9 @@ nav:
       - RARE NOS update: 'guides/installation/wedge100bf32/rare-nos-upgrade.md'
       - RARE NOS experimental: 'guides/installation/wedge100bf32/rare-nos-exp-upgrade.md'
       - RARE NOS switch profile: 'guides/installation/wedge100bf32/rare-nos-switch-profile.md'
+  - Recipes:
+      - Basics: 'guides/recipes/basics.md'
+      - Bridge and VRF: 'guides/recipes/vrf.md'
   - License: license.md
   - Contacts: contacts.md
   - About: about.md
