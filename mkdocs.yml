@@ -9,6 +9,7 @@ nav:
     - Intra domain routing: 'guides/getting-started/004-igp.md'
     - MPLS forwarding core: 'guides/getting-started/005-mpls.md'
     - iBGP: 'guides/getting-started/006-ibgp.md'
+    - Polka: 'guides/getting-started/007-polka.md'
   - References:
      - All features in one page: 'guides/reference/index.md'
      - Features category: 'guides/reference/tabbed.md'
