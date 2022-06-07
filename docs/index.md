@@ -33,11 +33,11 @@ This section encompasses documents that would guide one to deploy **RARE/freeRtr
 -->
 
 ### **Getting started**
-This section will introduce you to [freeRtr](http://www.freertr.net) open source control plane. It will guide you in learning how to install, configure and run freeRtr in a basic scenario.
+This section will introduce you to [freeRtr](http://www.freertr.org) open source control plane. It will guide you in learning how to install, configure and run freeRtr in a basic scenario.
 
 <!--
 ### **Reference guides**
-This section will guide you in configuring freeRtr control plane. In essence, it is similar to [freeRtr test cases](http://www.freertr.net/tests.html). While the [freeRtr test cases](http://www.freertr.net/tests.html) is convenient as it provides an extensive list of all the features in one page, this section will provide a navigation structure that helps you to find your way among the incredible freeRtr feature list. You'll find the sub-categories below (by order of importance):
+This section will guide you in configuring freeRtr control plane. In essence, it is similar to [freeRtr test cases](http://www.freertr.org/tests.html). While the [freeRtr test cases](http://www.freertr.org/tests.html) is convenient as it provides an extensive list of all the features in one page, this section will provide a navigation structure that helps you to find your way among the incredible freeRtr feature list. You'll find the sub-categories below (by order of importance):
 
 * Routing configuration reference guide
 * MPLS configuration reference guide
@@ -46,7 +46,7 @@ This section will guide you in configuring freeRtr control plane. In essence, it
 
 <!--
 ### **Validated design guides**
-You'll find here specific design document that have been deployed and validated in real/production environment. These use cases are [numerous](http://www.freertr.net/usage.html).
+You'll find here specific design document that have been deployed and validated in real/production environment. These use cases are [numerous](http://www.freertr.org/usage.html).
 The list below is obviously not exhaustive, but you'll be able to learn how to:
 
 * build a BGP Route Reflector for a Internet service provider backbone

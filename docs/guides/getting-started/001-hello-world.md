@@ -32,10 +32,10 @@ For simplicity's sake we will use `/rtr` folder.
 sudo mkdir /rtr
 ```
 ### 2.3 Download freeRtr binary
-The freeRtr homepage is at `freertr.net`. Starting from this page, you'll find various resources such as source code (there is also a GitHub mirror), binaries, and other images that might be of your interest. From there we just download the freeRtr `jar` files.
+The freeRtr homepage is at `freertr.org`. Starting from this page, you'll find various resources such as source code (there is also a GitHub mirror), binaries, and other images that might be of your interest. From there we just download the freeRtr `jar` files.
 ```
 cd /rtr
-wget http://www.freertr.net/rtr.jar
+wget http://www.freertr.org/rtr.jar
 ```
 
 ## 3 Configuration
@@ -146,7 +146,7 @@ sudo java -jar rtr.jar routersc r1-hw.txt r1-sw.txt
 
 freeRouter v21.8.21-cur, done by cs@nop.
 
-place on the web: http://www.freertr.net/
+place on the web: http://www.freertr.org/
 license: http://creativecommons.org/licenses/by-sa/4.0/
 quote1: make the world better
 quote2: if a machine can learn the value of human life, maybe we can too

@@ -574,7 +574,7 @@ This section demonstrated:
 You learned how to enable iBGP on top of the SP domain using RR paradigm. However, we saw that BGP database was empty. Which is totally normal as we don't have any customer yet. BGP is used to signal external networks reachability within the SP backbone between SP autonomous system border router. This will be discussed in a subsequent article.
 
 !!! note
-    Before jumping to next article, let's take 5 minutes and contemplate `rr4` BGP configuration. From this stanza, you notice nitty gritty details that demonstrates all the attention and craftmanship :-) that [mc36](http://mc36.nop.hu/) brought to [freeRtr](http://www.freertr.net/) CLI:
+    Before jumping to next article, let's take 5 minutes and contemplate `rr4` BGP configuration. From this stanza, you notice nitty gritty details that demonstrates all the attention and craftmanship :-) that [mc36](http://mc36.nop.hu/) brought to [freeRtr](http://www.freertr.org/) CLI:
 
 - `object-group` very useful to simplify access list writing/reading
 - BGP `nexthop tracking` feature

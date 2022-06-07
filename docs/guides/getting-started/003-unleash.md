@@ -80,7 +80,7 @@ Let's first install freeRtr addtional tools bundle.
 
 ```
 cd /rtr
-wget freertr.net/rtr.tar
+wget freertr.org/rtr.tar
 tar xf rtr.tar -C /rtr/
 ```
 These tools are basically tools used to ensure freeRtr packet forwarding in different context and dataplane.
@@ -221,7 +221,7 @@ java -jar rtr.jar routersc r1-hw.txt r1-sw.txt
 
 freeRouter v21.8.21-cur, done by cs@nop.
 
-place on the web: http://www.freertr.net/
+place on the web: http://www.freertr.org/
 license: http://creativecommons.org/licenses/by-sa/4.0/
 quote1: make the world better
 quote2: if a machine can learn the value of human life, maybe we can too

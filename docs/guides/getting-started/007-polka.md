@@ -893,7 +893,7 @@ https://ieeexplore.ieee.org/document/9165501
 
 https://github.com/nerds-ufes/polka
 
-http://www.freertr.net/
+http://www.freertr.org/
 
 https://github.com/eversonscherrer/freertr/tree/main/polKa
 

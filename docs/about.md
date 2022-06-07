@@ -2,9 +2,9 @@
 
 ## Useful links
 
-- [freeRtr open source control plane](http://freertr.net)
-- [RARE/freeRtr project page](http://rare.freertr.net)
-- [A team's member journey with RARE/freeRtr](http://blog.freertr.net)
+- [freeRtr open source control plane](http://freertr.org)
+- [RARE/freeRtr project page](http://rare.freertr.org)
+- [A team's member journey with RARE/freeRtr](http://blog.freertr.org)
 
 ## Project members
 ![rare-members](img/rare-members.png)
