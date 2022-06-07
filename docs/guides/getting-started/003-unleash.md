@@ -80,8 +80,8 @@ Let's first install freeRtr addtional tools bundle.
 
 ```
 cd /rtr
-wget freertr.org/rtr.tar
-tar xf rtr.tar -C /rtr/
+wget freertr.org/rtr-x86_64.tar
+tar xf rtr-x86_64.tar -C /rtr/
 ```
 These tools are basically tools used to ensure freeRtr packet forwarding in different context and dataplane.
 
