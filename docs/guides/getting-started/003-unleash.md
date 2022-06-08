@@ -396,7 +396,7 @@ ethernet3 is up (since 00:02:29, 1 changes)
 External connectitivy verification (ping Cloudfarre DNS)
 
 ```
-r1#ping 1.1.1.1 /vrf v1
+r1#ping 1.1.1.1 vrf v1
 pinging 1.1.1.1, src=null, vrf=v1, cnt=5, len=64, tim=1000, gap=0, ttl=255, tos=0, fill=0, sweep=false, multi=false, detail=false
 !!!!!
 result=100%, recv/sent/lost/err=5/5/0/0, rtt min/avg/max/total=5/5/7/33
@@ -405,12 +405,12 @@ r1#
 
 Check my LAN OpenWRT wifi router
 ```
-r1#ping 192.168.136.2 /vrf v1
+r1#ping 192.168.136.2 vrf v1
 pinging 192.168.136.2, src=null, vrf=v1, cnt=5, len=64, tim=1000, gap=0, ttl=255, tos=0, fill=0, sweep=false, multi=false, detail=false
 .!!!!
 result=80%, recv/sent/lost/err=4/5/1/0, rtt min/avg/max/total=0/1/2/1004
 r1#
-r1#ssh 192.168.136.2 /user root /vrf v1
+r1#ssh 192.168.136.2 /user root vrf v1
  - connecting to 192.168.136.2 22
 password:
 

@@ -757,7 +757,7 @@ For verification on router `R6`, just connect and set the commands above.
 
 - **Shortest Path tunnel1 ipv4**
 
-`R5#ping 30.30.30.2 /vrf v1`
+`R5#ping 30.30.30.2 vrf v1`
 ```
 pinging 30.30.30.2, src=null, vrf=v1, cnt=5, len=64, tim=1000, gap=0, ttl=255, tos=0, sgt=0, flow=0, fill=0, sweep=false, multi=false, detail=false
 !!!!!
@@ -767,7 +767,7 @@ result=100%, recv/sent/lost/err=5/5/0/0, rtt min/avg/max/sum=0/0/3/8, ttl min/av
 
 - **Longest Path tunnel2 ipv4**
 
-`R5#ping 40.40.40.2 /vrf v1`
+`R5#ping 40.40.40.2 vrf v1`
 ```
 pinging 40.40.40.2, src=null, vrf=v1, cnt=5, len=64, tim=1000, gap=0, ttl=255, tos=0, sgt=0, flow=0, fill=0, sweep=false, multi=false, detail=false
 !!!!!
@@ -778,7 +778,7 @@ result=100%, recv/sent/lost/err=5/5/0/0, rtt min/avg/max/sum=3/4/6/23, ttl min/a
 
 - **Shortest Path tunnel3 ipv6**
 
-`R5#ping 3030::2 /vrf v1`
+`R5#ping 3030::2 vrf v1`
 ```
 pinging 3030::2, src=null, vrf=v1, cnt=5, len=64, tim=1000, gap=0, ttl=255, tos=0, sgt=0, flow=0, fill=0, sweep=false, multi=false, detail=false
 !!!!!
@@ -788,7 +788,7 @@ result=100%, recv/sent/lost/err=5/5/0/0, rtt min/avg/max/sum=0/0/1/2, ttl min/av
 
 - **Longest Path tunnel4 ipv6**
 
-`R5#ping 4040::2 /vrf v1`
+`R5#ping 4040::2 vrf v1`
 
 ```
 pinging 4040::2, src=null, vrf=v1, cnt=5, len=64, tim=1000, gap=0, ttl=255, tos=0, sgt=0, flow=0, fill=0, sweep=false, multi=false, detail=false

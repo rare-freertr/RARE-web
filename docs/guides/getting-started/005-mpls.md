@@ -112,14 +112,14 @@ ethernet3  false   false   false  false  false  false
 ping from `r1@eth1`
 
 ```
-r1#ping 1.1.1.2 /vrf v1
+r1#ping 1.1.1.2 vrf v1
 pinging 1.1.1.2, src=null, vrf=v1, cnt=5, len=64, tim=1000, gap=0, ttl=255, tos=0, fill=0, sweep=false, multi=false, detail=false
 !!!!!
 result=100%, recv/sent/lost/err=5/5/0/0, rtt min/avg/max/total=1/2/5/12
 ```
 
 ```
-r1#ping 1234:1::2 /vrf v1
+r1#ping 1234:1::2 vrf v1
 pinging 1234:1::2, src=null, vrf=v1, cnt=5, len=64, tim=1000, gap=0, ttl=255, tos=0, fill=0, sweep=false, multi=false, detail=false
 !!!!!
 result=100%, recv/sent/lost/err=5/5/0/0, rtt min/avg/max/total=0/0/3/16
@@ -129,14 +129,14 @@ result=100%, recv/sent/lost/err=5/5/0/0, rtt min/avg/max/total=0/0/3/16
 ping from `r1@eth2`
 
 ```
-r1#ping 1.1.1.6 /vrf v1
+r1#ping 1.1.1.6 vrf v1
 pinging 1.1.1.6, src=null, vrf=v1, cnt=5, len=64, tim=1000, gap=0, ttl=255, tos=0, fill=0, sweep=false, multi=false, detail=false
 !!!!!
 result=100%, recv/sent/lost/err=5/5/0/0, rtt min/avg/max/total=0/1/2/10
 ```
 
 ```
-r1#ping 1234:2::2 /vrf v1
+r1#ping 1234:2::2 vrf v1
 pinging 1234:2::2, src=null, vrf=v1, cnt=5, len=64, tim=1000, gap=0, ttl=255, tos=0, fill=0, sweep=false, multi=false, detail=false
 !!!!!
 result=100%, recv/sent/lost/err=5/5/0/0, rtt min/avg/max/total=0/1/4/16
@@ -314,13 +314,13 @@ LOC  fe80::200:11ff:fe11:3/128  0/1     ethernet3  null       01:58:50
 traceroute to `r1@lo0`
 
 ```
-r1#traceroute 2.2.2.1 /vrf v1
+r1#traceroute 2.2.2.1 vrf v1
 tracing 2.2.2.1, src=null, vrf=v1, prt=0/33440, tim=1000, tos=0, len=64
 1 2.2.2.1 time=1
 ```
 
 ```
-r1#traceroute 4321::1 /vrf v1
+r1#traceroute 4321::1 vrf v1
 tracing 4321::1, src=null, vrf=v1, prt=0/33440, tim=1000, tos=0, len=64
 1 4321::1 time=0
 ```
@@ -328,15 +328,15 @@ tracing 4321::1, src=null, vrf=v1, prt=0/33440, tim=1000, tos=0, len=64
 traceroute to `r2@lo0`
 
 ```
-traceroute 2.2.2.2 /vrf v1
+traceroute 2.2.2.2 vrf v1
 
 tracing 2.2.2.1, src=null, vrf=v1, prt=0/33440, tim=1000, tos=0, len=64
 1 2.2.2.1 time=1
-r1#traceroute 2.2.2.2 /vrf v1
+r1#traceroute 2.2.2.2 vrf v1
 ```
 
 ```
-r1#traceroute 4321::2 /vrf v1
+r1#traceroute 4321::2 vrf v1
 tracing 4321::2, src=null, vrf=v1, prt=0/33440, tim=1000, tos=0, len=64
 1 1234:1::1 time=0
 2 4321::2 time=1, mpls=596028
@@ -345,14 +345,14 @@ tracing 4321::2, src=null, vrf=v1, prt=0/33440, tim=1000, tos=0, len=64
 traceroute to `r3@lo0`
 
 ```
-traceroute 2.2.2.3 /vrf v1
+traceroute 2.2.2.3 vrf v1
 tracing 2.2.2.3, src=null, vrf=v1, prt=0/33440, tim=1000, tos=0, len=64
 1 1.1.1.5 time=0
 2 2.2.2.3 time=2, mpls=785657
 ```
 
 ```
-r1#traceroute 4321::3 /vrf v1
+r1#traceroute 4321::3 vrf v1
 tracing 4321::3, src=null, vrf=v1, prt=0/33440, tim=1000, tos=0, len=64
 1 1234:2::1 time=0
 2 4321::3 time=0, mpls=383223
@@ -361,7 +361,7 @@ tracing 4321::3, src=null, vrf=v1, prt=0/33440, tim=1000, tos=0, len=64
 traceroute to `r4@lo0`
 
 ```
-r1#traceroute 2.2.2.4 /vrf v1
+r1#traceroute 2.2.2.4 vrf v1
 tracing 2.2.2.4, src=null, vrf=v1, prt=0/33440, tim=1000, tos=0, len=64
 1 1.1.1.1 time=0
 2 1.1.1.9 time=0, mpls=452135
@@ -369,7 +369,7 @@ tracing 2.2.2.4, src=null, vrf=v1, prt=0/33440, tim=1000, tos=0, len=64
 ```
 
 ```
-r1#traceroute 4321::4 /vrf v1
+r1#traceroute 4321::4 vrf v1
 tracing 4321::4, src=null, vrf=v1, prt=0/33440, tim=1000, tos=0, len=64
 1 1234:1::1 time=0
 2 1234:3::1 time=1, mpls=739648

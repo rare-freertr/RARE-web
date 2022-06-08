@@ -253,12 +253,12 @@ ethernet2  r3        ethernet2  1.1.1.6  1234:2::2
 ```
 ping from `r1@eth1`
 ```
-r1#ping 1.1.1.2 /vrf v1
+r1#ping 1.1.1.2 vrf v1
 pinging 1.1.1.2, src=null, vrf=v1, cnt=5, len=64, tim=1000, gap=0, ttl=255, tos=0, fill=0, sweep=false, multi=false, detail=false
 !!!!!
 result=100%, recv/sent/lost/err=5/5/0/0, rtt min/avg/max/total=1/2/5/12
 
-r1#ping 1234:1::2 /vrf v1
+r1#ping 1234:1::2 vrf v1
 pinging 1234:1::2, src=null, vrf=v1, cnt=5, len=64, tim=1000, gap=0, ttl=255, tos=0, fill=0, sweep=false, multi=false, detail=false
 !!!!!
 result=100%, recv/sent/lost/err=5/5/0/0, rtt min/avg/max/total=0/0/3/16
@@ -266,12 +266,12 @@ result=100%, recv/sent/lost/err=5/5/0/0, rtt min/avg/max/total=0/0/3/16
 ping from `r1@eth2`
 
 ```
-r1#ping 1.1.1.6 /vrf v1
+r1#ping 1.1.1.6 vrf v1
 pinging 1.1.1.6, src=null, vrf=v1, cnt=5, len=64, tim=1000, gap=0, ttl=255, tos=0, fill=0, sweep=false, multi=false, detail=false
 !!!!!
 result=100%, recv/sent/lost/err=5/5/0/0, rtt min/avg/max/total=0/1/2/10
 
-r1#ping 1234:2::2 /vrf v1
+r1#ping 1234:2::2 vrf v1
 pinging 1234:2::2, src=null, vrf=v1, cnt=5, len=64, tim=1000, gap=0, ttl=255, tos=0, fill=0, sweep=false, multi=false, detail=false
 !!!!!
 result=100%, recv/sent/lost/err=5/5/0/0, rtt min/avg/max/total=0/1/4/16
@@ -286,24 +286,24 @@ ethernet2  r4        ethernet2  1.1.1.10  1234:3::2
 ```
 ping from `r2@eth1`
 ```
-r2#ping 1.1.1.1 /vrf v1
+r2#ping 1.1.1.1 vrf v1
 pinging 1.1.1.1, src=null, vrf=v1, cnt=5, len=64, tim=1000, gap=0, ttl=255, tos=0, fill=0, sweep=false, multi=false, detail=false
 !!!!!
 result=100%, recv/sent/lost/err=5/5/0/0, rtt min/avg/max/total=0/1/3/8
 
-r2#ping 1234:1::1 /vrf v1
+r2#ping 1234:1::1 vrf v1
 pinging 1234:1::1, src=null, vrf=v1, cnt=5, len=64, tim=1000, gap=0, ttl=255, tos=0, fill=0, sweep=false, multi=false, detail=false
 !!!!!
 result=100%, recv/sent/lost/err=5/5/0/0, rtt min/avg/max/total=0/1/8/22
 ```
 ping from `r2@eth2`
 ```
-r2#ping 1.1.1.10 /vrf v1
+r2#ping 1.1.1.10 vrf v1
 pinging 1.1.1.10, src=null, vrf=v1, cnt=5, len=64, tim=1000, gap=0, ttl=255, tos=0, fill=0, sweep=false, multi=false, detail=false
 !!!!!
 result=100%, recv/sent/lost/err=5/5/0/0, rtt min/avg/max/total=0/1/3/6
 
-r2#ping 1234:3::2 /vrf v1
+r2#ping 1234:3::2 vrf v1
 pinging 1234:3::2, src=null, vrf=v1, cnt=5, len=64, tim=1000, gap=0, ttl=255, tos=0, fill=0, sweep=false, multi=false, detail=false
 !!!!!
 result=100%, recv/sent/lost/err=5/5/0/0, rtt min/avg/max/total=0/2/4/14
@@ -318,25 +318,25 @@ ethernet2  r1        ethernet2  1.1.1.5   1234:2::1
 ```
 ping from `r3@eth1`
 ```
-r3#ping 1.1.1.14 /vrf v1
+r3#ping 1.1.1.14 vrf v1
 pinging 1.1.1.14, src=null, vrf=v1, cnt=5, len=64, tim=1000, gap=0, ttl=255, tos=0, fill=0, sweep=false, multi=false, detail=false
 !!!!!
 result=100%, recv/sent/lost/err=5/5/0/0, rtt min/avg/max/total=0/1/5/10
-r3#ping 1234:4::2 /vrf v1
-r3#ping 1234:4::2 /vrf v1
+r3#ping 1234:4::2 vrf v1
+r3#ping 1234:4::2 vrf v1
 pinging 1234:4::2, src=null, vrf=v1, cnt=5, len=64, tim=1000, gap=0, ttl=255, tos=0, fill=0, sweep=false, multi=false, detail=false
 !!!!!
 result=100%, recv/sent/lost/err=5/5/0/0, rtt min/avg/max/total=0/0/1/9
 ```
 ping from `r3@eth2`
 ```
-r3#ping 1.1.1.5 /vrf v1
-r3#ping 1.1.1.5 /vrf v1
+r3#ping 1.1.1.5 vrf v1
+r3#ping 1.1.1.5 vrf v1
 pinging 1.1.1.5, src=null, vrf=v1, cnt=5, len=64, tim=1000, gap=0, ttl=255, tos=0, fill=0, sweep=false, multi=false, detail=false
 !!!!!
 result=100%, recv/sent/lost/err=5/5/0/0, rtt min/avg/max/total=0/2/9/15
-r3#ping 1234:2::1 /vrf v1
-r3#ping 1234:2::1 /vrf v1
+r3#ping 1234:2::1 vrf v1
+r3#ping 1234:2::1 vrf v1
 pinging 1234:2::1, src=null, vrf=v1, cnt=5, len=64, tim=1000, gap=0, ttl=255, tos=0, fill=0, sweep=false, multi=false, detail=false
 !!!!!
 result=100%, recv/sent/lost/err=5/5/0/0, rtt min/avg/max/total=0/1/4/12
@@ -353,12 +353,12 @@ ethernet2  r2        ethernet2  1.1.1.9   1234:3::1
 ping from `r4@eth1`
 
 ```
-r4#ping 1.1.1.13 /vrf v1
+r4#ping 1.1.1.13 vrf v1
 pinging 1.1.1.13, src=null, vrf=v1, cnt=5, len=64, tim=1000, gap=0, ttl=255, tos=0, fill=0, sweep=false, multi=false, detail=false
 !!!!!
 result=100%, recv/sent/lost/err=5/5/0/0, rtt min/avg/max/total=0/0/1/17
 
-r4#ping 1234:4::1 /vrf v1
+r4#ping 1234:4::1 vrf v1
 pinging 1234:4::1, src=null, vrf=v1, cnt=5, len=64, tim=1000, gap=0, ttl=255, tos=0, fill=0, sweep=false, multi=false, detail=false
 !!!!!
 result=100%, recv/sent/lost/err=5/5/0/0, rtt min/avg/max/total=0/1/4/17
@@ -366,12 +366,12 @@ result=100%, recv/sent/lost/err=5/5/0/0, rtt min/avg/max/total=0/1/4/17
 ping from `r4@eth2`
 
 ```
-r4#ping 1.1.1.9 /vrf v1
+r4#ping 1.1.1.9 vrf v1
 pinging 1.1.1.9, src=null, vrf=v1, cnt=5, len=64, tim=1000, gap=0, ttl=255, tos=0, fill=0, sweep=false, multi=false, detail=false
 !!!!!
 result=100%, recv/sent/lost/err=5/5/0/0, rtt min/avg/max/total=0/0/1/5
 
-r4#ping 1234:3::1 /vrf v1
+r4#ping 1234:3::1 vrf v1
 pinging 1234:3::1, src=null, vrf=v1, cnt=5, len=64, tim=1000, gap=0, ttl=255, tos=0, fill=0, sweep=false, multi=false, detail=false
 !!!!!
 result=100%, recv/sent/lost/err=5/5/0/0, rtt min/avg/max/total=0/1/3/12

@@ -306,14 +306,14 @@ hardware counter = null
     Pay attention to MPLS `local label = 471761` and `remote label = 527160`, this is the first segment of the MPLS LSP path toward `r4`
 
 ```
-r1#ping 2.2.2.4 /vrf v1
+r1#ping 2.2.2.4 vrf v1
 pinging 2.2.2.4, src=null, vrf=v1, cnt=5, len=64, tim=1000, gap=0, ttl=255, tos=0, fill=0, sweep=false, multi=false, detail=false
 !!!!!
 result=100%, recv/sent/lost/err=5/5/0/0, rtt min/avg/max/total=0/0/1/7
 ```
 
 ```
-r1#traceroute 2.2.2.4 /vrf v1
+r1#traceroute 2.2.2.4 vrf v1
 tracing 2.2.2.4, src=null, vrf=v1, prt=0/33440, tim=1000, tos=0, len=64
 1 1.1.1.1 time=0
 2 1.1.1.9 time=1, mpls=527160
@@ -469,8 +469,8 @@ r1#sh ipv4 bgp 1 sum
 as     learn  sent  ready  neighbor  uptime
 65535  0      0     true   2.2.2.4   01:40:44
 
-r1#traceroute 2.2.2.4 /vrf v1
-r1#traceroute 2.2.2.4 /vrf v1 /interface lo0
+r1#traceroute 2.2.2.4 vrf v1
+r1#traceroute 2.2.2.4 vrf v1 /interface lo0
 tracing 2.2.2.4, src=2.2.2.1, vrf=v1, prt=0/33440, tim=1000, tos=0, len=64
 1 2.2.2.1 time=0
 2 1.1.1.9 time=3, mpls=527160
@@ -482,7 +482,7 @@ r1#sh ipv6 bgp 1 sum
 as     learn  sent  ready  neighbor  uptime
 65535  0      0     true   4321::4   01:39:58
 
-r1#traceroute 4321::4 /vrf v1 /interface lo0
+r1#traceroute 4321::4 vrf v1 /interface lo0
 tracing 4321::4, src=4321::1, vrf=v1, prt=0/33440, tim=1000, tos=0, len=64
 1 4321::1 time=0
 2 1234:4::1 time=2, mpls=76040
@@ -496,7 +496,7 @@ r2#show ipv4 bgp 1 sum
 as     learn  sent  ready  neighbor  uptime
 65535  0      0     true   2.2.2.4   01:41:33
 
-r2#traceroute 2.2.2.4 /vrf v1 /interface lo0
+r2#traceroute 2.2.2.4 vrf v1 /interface lo0
 tracing 2.2.2.4, src=2.2.2.2, vrf=v1, prt=0/33440, tim=1000, tos=0, len=64
 1 2.2.2.2 time=0
 2 2.2.2.4 time=0, mpls=95859
@@ -507,8 +507,8 @@ r2#show ipv6 bgp 1 sum
 as     learn  sent  ready  neighbor  uptime
 65535  0      0     true   4321::4   01:44:26
 
-r2#traceroute 4321::4 /vrf v1
-r2#traceroute 4321::4 /vrf v1 /interface lo0
+r2#traceroute 4321::4 vrf v1
+r2#traceroute 4321::4 vrf v1 /interface lo0
 tracing 4321::4, src=4321::2, vrf=v1, prt=0/33440, tim=1000, tos=0, len=64
 1 4321::2 time=0
 2 1234:2::1 time=2, mpls=46041
@@ -523,7 +523,7 @@ r3#show ipv4 bgp 1 sum
 as     learn  sent  ready  neighbor  uptime
 65535  0      0     true   2.2.2.4   01:42:54
 
-r3#traceroute 2.2.2.4 /vrf v1 /interface lo0
+r3#traceroute 2.2.2.4 vrf v1 /interface lo0
 tracing 2.2.2.4, src=2.2.2.3, vrf=v1, prt=0/33440, tim=1000, tos=0, len=64
 1 2.2.2.3 time=0
 2 2.2.2.4 time=1, mpls=95859
@@ -534,7 +534,7 @@ r3#show ipv6 bgp 1 sum
 as     learn  sent  ready  neighbor  uptime
 65535  0      0     true   4321::4   01:46:06
 
-r3#traceroute 4321::4 /vrf v1 /interface lo0
+r3#traceroute 4321::4 vrf v1 /interface lo0
 tracing 4321::4, src=4321::3, vrf=v1, prt=0/33440, tim=1000, tos=0, len=64
 1 4321::3 time=0
 2 4321::4 time=1, mpls=463804
@@ -542,7 +542,7 @@ tracing 4321::4, src=4321::3, vrf=v1, prt=0/33440, tim=1000, tos=0, len=64
 From **RR** `r4@lo0`
 
 ```
-r1#traceroute 2.2.2.4 /vrf v1
+r1#traceroute 2.2.2.4 vrf v1
 tracing 2.2.2.4, src=null, vrf=v1, prt=0/33440, tim=1000, tos=0, len=64
 1 1.1.1.1 time=0
 2 1.1.1.9 time=0, mpls=452135
@@ -550,7 +550,7 @@ tracing 2.2.2.4, src=null, vrf=v1, prt=0/33440, tim=1000, tos=0, len=64
 ```
 
 ```
-r1#traceroute 4321::4 /vrf v1
+r1#traceroute 4321::4 vrf v1
 tracing 4321::4, src=null, vrf=v1, prt=0/33440, tim=1000, tos=0, len=64
 1 1234:1::1 time=0
 2 1234:3::1 time=1, mpls=739648
