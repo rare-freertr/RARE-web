@@ -1,5 +1,5 @@
 site_name: RARE/freeRtr documentation
-site_dir: ~/testvojdan/docs.freertr.org/
+site_dir: ~/docs.freertr.org/
 nav:
   - Home: index.md
   - Getting started:
