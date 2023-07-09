@@ -14,7 +14,7 @@
     hostname r1
     buggy
     !
-    logging file debug ../binTmp/zzz65r1-log.run
+    logging file debug ../binTmp/zzz66r1-log.run
     !
     crypto ipsec ips
      key $v10$RUZ3MnJKRWRxRkdEZ0M4MHVtM2Z3TW1BYWZ3cVhubytQc2JNSFBaMHVtTT1NNnZEVjhRZGlXRFFwcFZLaktmOHhqb0t0eUdBZVJLL1VlNDhrd0tJNVNzPQ==
@@ -28,7 +28,6 @@
      exit
     !
     interface loopback0
-     no description
      vrf forwarding v1
      ipv4 address 1.1.1.101 255.255.255.255
      no shutdown
@@ -36,7 +35,6 @@
      exit
     !
     interface ethernet1
-     no description
      vrf forwarding v1
      ipv4 address 1.1.1.1 255.255.255.252
      no shutdown
@@ -44,7 +42,6 @@
      exit
     !
     interface tunnel1
-     no description
      tunnel vrf v1
      tunnel protection ips
      tunnel source loopback0
@@ -100,7 +97,7 @@
     hostname r2
     buggy
     !
-    logging file debug ../binTmp/zzz65r2-log.run
+    logging file debug ../binTmp/zzz66r2-log.run
     !
     crypto ipsec ips
      key $v10$NkpoeXZLUHV0UTlETkx1cE9QbURuUUxSV3RVV2xVakk2UFRKL0laOWwxdz1iUU1tcENhR1Z5cTlmK3Y0OFhHbWZINURNTHl0a3F6aUlEK3JCSCtxUWljPQ==
@@ -114,7 +111,6 @@
      exit
     !
     interface loopback0
-     no description
      vrf forwarding v1
      ipv4 address 1.1.1.102 255.255.255.255
      no shutdown
@@ -122,7 +118,6 @@
      exit
     !
     interface ethernet1
-     no description
      vrf forwarding v1
      ipv4 address 1.1.1.2 255.255.255.252
      no shutdown
@@ -130,7 +125,6 @@
      exit
     !
     interface tunnel1
-     no description
      tunnel vrf v1
      tunnel protection ips
      tunnel source loopback0

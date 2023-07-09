@@ -14,7 +14,7 @@
     hostname r1
     buggy
     !
-    logging file debug ../binTmp/zzz65r1-log.run
+    logging file debug ../binTmp/zzz53r1-log.run
     !
     policy-map p1
      sequence 10 action drop
@@ -32,7 +32,6 @@
      exit
     !
     interface ethernet1
-     no description
      sgt enable
      service-policy-in p1
      vrf forwarding v1
@@ -86,7 +85,7 @@
     hostname r2
     buggy
     !
-    logging file debug ../binTmp/zzz65r2-log.run
+    logging file debug ../binTmp/zzz53r2-log.run
     !
     vrf definition tester
      exit
@@ -96,7 +95,6 @@
      exit
     !
     interface ethernet1
-     no description
      sgt enable
      vrf forwarding v1
      ipv4 address 1.1.1.2 255.255.255.0
@@ -106,7 +104,6 @@
      exit
     !
     interface ethernet2
-     no description
      sgt assign 123
      vrf forwarding v1
      ipv4 address 2.2.2.1 255.255.255.0
@@ -157,7 +154,7 @@
     hostname r3
     buggy
     !
-    logging file debug ../binTmp/zzz65r3-log.run
+    logging file debug ../binTmp/zzz53r3-log.run
     !
     vrf definition tester
      exit
@@ -167,7 +164,6 @@
      exit
     !
     interface ethernet1
-     no description
      vrf forwarding v1
      ipv4 address 2.2.2.2 255.255.255.0
      ipv6 address 4321::2 ffff::

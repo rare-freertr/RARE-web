@@ -14,7 +14,7 @@
     hostname r1
     buggy
     !
-    logging file debug ../binTmp/zzz59r1-log.run
+    logging file debug ../binTmp/zzz28r1-log.run
     !
     crypto ipsec ips
      group 02
@@ -39,7 +39,6 @@
      exit
     !
     interface ethernet1
-     no description
      macsec ips
      sgt enable
      service-policy-in p1
@@ -94,7 +93,7 @@
     hostname r2
     buggy
     !
-    logging file debug ../binTmp/zzz59r2-log.run
+    logging file debug ../binTmp/zzz28r2-log.run
     !
     crypto ipsec ips
      group 02
@@ -111,7 +110,6 @@
      exit
     !
     interface ethernet1
-     no description
      macsec ips
      sgt enable
      vrf forwarding v1
@@ -122,7 +120,6 @@
      exit
     !
     interface ethernet2
-     no description
      sgt enable
      vrf forwarding v1
      ipv4 address 2.2.2.1 255.255.255.0
@@ -173,7 +170,7 @@
     hostname r3
     buggy
     !
-    logging file debug ../binTmp/zzz59r3-log.run
+    logging file debug ../binTmp/zzz28r3-log.run
     !
     policy-map p1
      sequence 10 action transit
@@ -193,7 +190,6 @@
      exit
     !
     interface ethernet1
-     no description
      sgt enable
      service-policy-out p1
      vrf forwarding v1

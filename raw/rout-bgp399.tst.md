@@ -14,14 +14,15 @@
     hostname r1
     buggy
     !
-    logging file debug ../binTmp/zzz43r1-log.run
+    logging file debug ../binTmp/zzz42r1-log.run
     !
     vrf definition tester
      exit
     !
     vrf definition v1
      rd 1:1
-     label-mode per-prefix
+     label4mode per-prefix
+     label6mode per-prefix
      exit
     !
     router lsrp4 1
@@ -39,7 +40,6 @@
      exit
     !
     interface loopback0
-     no description
      vrf forwarding v1
      ipv4 address 2.2.2.1 255.255.255.255
      ipv6 address 4321::1 ffff:ffff:ffff:ffff:ffff:ffff:ffff:ffff
@@ -48,7 +48,6 @@
      exit
     !
     interface ethernet1
-     no description
      vrf forwarding v1
      ipv4 address 1.1.1.1 255.255.255.252
      ipv6 address 1234:1::1 ffff:ffff::
@@ -60,9 +59,8 @@
      exit
     !
     interface pwether1
-     no description
      mtu 1500
-     macaddr 005e.6561.0373
+     macaddr 002a.3602.690b
      vrf forwarding v1
      ipv4 address 3.3.3.1 255.255.255.0
      pseudowire v1 loopback0 pweompls 2.2.2.6 1234
@@ -71,9 +69,8 @@
      exit
     !
     interface pwether2
-     no description
      mtu 1500
-     macaddr 0079.6318.422f
+     macaddr 0035.1a06.5943
      vrf forwarding v1
      ipv4 address 3.3.4.1 255.255.255.0
      pseudowire v1 loopback0 pweompls 4321::6 1234
@@ -85,10 +82,8 @@
      vrf v1
      local-as 1
      router-id 4.4.4.1
-     no safe-ebgp
      address-family labeled
      neighbor 2.2.2.3 remote-as 1
-     no neighbor 2.2.2.3 description
      neighbor 2.2.2.3 local-as 1
      neighbor 2.2.2.3 address-family labeled
      neighbor 2.2.2.3 distance 200
@@ -100,10 +95,8 @@
      vrf v1
      local-as 1
      router-id 6.6.6.1
-     no safe-ebgp
      address-family labeled
      neighbor 4321::3 remote-as 1
-     no neighbor 4321::3 description
      neighbor 4321::3 local-as 1
      neighbor 4321::3 address-family labeled
      neighbor 4321::3 distance 200
@@ -153,14 +146,15 @@
     hostname r2
     buggy
     !
-    logging file debug ../binTmp/zzz43r2-log.run
+    logging file debug ../binTmp/zzz42r2-log.run
     !
     vrf definition tester
      exit
     !
     vrf definition v1
      rd 1:1
-     label-mode per-prefix
+     label4mode per-prefix
+     label6mode per-prefix
      exit
     !
     router lsrp4 1
@@ -178,7 +172,6 @@
      exit
     !
     interface loopback0
-     no description
      vrf forwarding v1
      ipv4 address 2.2.2.2 255.255.255.255
      ipv6 address 4321::2 ffff:ffff:ffff:ffff:ffff:ffff:ffff:ffff
@@ -187,7 +180,6 @@
      exit
     !
     interface ethernet1
-     no description
      vrf forwarding v1
      ipv4 address 1.1.1.2 255.255.255.252
      ipv6 address 1234:1::2 ffff:ffff::
@@ -199,7 +191,6 @@
      exit
     !
     interface ethernet2
-     no description
      vrf forwarding v1
      ipv4 address 1.1.1.5 255.255.255.252
      ipv6 address 1234:2::1 ffff:ffff::
@@ -252,14 +243,15 @@
     hostname r3
     buggy
     !
-    logging file debug ../binTmp/zzz43r3-log.run
+    logging file debug ../binTmp/zzz42r3-log.run
     !
     vrf definition tester
      exit
     !
     vrf definition v1
      rd 1:1
-     label-mode per-prefix
+     label4mode per-prefix
+     label6mode per-prefix
      exit
     !
     router lsrp4 1
@@ -277,7 +269,6 @@
      exit
     !
     interface loopback0
-     no description
      vrf forwarding v1
      ipv4 address 2.2.2.3 255.255.255.255
      ipv6 address 4321::3 ffff:ffff:ffff:ffff:ffff:ffff:ffff:ffff
@@ -286,7 +277,6 @@
      exit
     !
     interface ethernet1
-     no description
      vrf forwarding v1
      ipv4 address 1.1.1.6 255.255.255.252
      ipv6 address 1234:2::2 ffff:ffff::
@@ -298,7 +288,6 @@
      exit
     !
     interface ethernet2
-     no description
      vrf forwarding v1
      ipv4 address 1.1.1.9 255.255.255.252
      ipv6 address 1234:3::1 ffff:ffff::
@@ -311,17 +300,14 @@
      vrf v1
      local-as 1
      router-id 4.4.4.3
-     no safe-ebgp
      address-family labeled
      neighbor 1.1.1.10 remote-as 1
-     no neighbor 1.1.1.10 description
      neighbor 1.1.1.10 local-as 1
      neighbor 1.1.1.10 address-family labeled
      neighbor 1.1.1.10 distance 200
      neighbor 1.1.1.10 route-reflector-client
      neighbor 1.1.1.10 next-hop-self
      neighbor 2.2.2.1 remote-as 1
-     no neighbor 2.2.2.1 description
      neighbor 2.2.2.1 local-as 1
      neighbor 2.2.2.1 address-family labeled
      neighbor 2.2.2.1 distance 200
@@ -334,17 +320,14 @@
      vrf v1
      local-as 1
      router-id 6.6.6.3
-     no safe-ebgp
      address-family labeled
      neighbor 1234:3::2 remote-as 1
-     no neighbor 1234:3::2 description
      neighbor 1234:3::2 local-as 1
      neighbor 1234:3::2 address-family labeled
      neighbor 1234:3::2 distance 200
      neighbor 1234:3::2 route-reflector-client
      neighbor 1234:3::2 next-hop-self
      neighbor 4321::1 remote-as 1
-     no neighbor 4321::1 description
      neighbor 4321::1 local-as 1
      neighbor 4321::1 address-family labeled
      neighbor 4321::1 distance 200
@@ -395,14 +378,15 @@
     hostname r4
     buggy
     !
-    logging file debug ../binTmp/zzz43r4-log.run
+    logging file debug ../binTmp/zzz42r4-log.run
     !
     vrf definition tester
      exit
     !
     vrf definition v1
      rd 1:1
-     label-mode per-prefix
+     label4mode per-prefix
+     label6mode per-prefix
      exit
     !
     router lsrp4 1
@@ -420,7 +404,6 @@
      exit
     !
     interface loopback0
-     no description
      vrf forwarding v1
      ipv4 address 2.2.2.4 255.255.255.255
      ipv6 address 4321::4 ffff:ffff:ffff:ffff:ffff:ffff:ffff:ffff
@@ -429,7 +412,6 @@
      exit
     !
     interface ethernet1
-     no description
      vrf forwarding v1
      ipv4 address 1.1.1.10 255.255.255.252
      ipv6 address 1234:3::2 ffff:ffff::
@@ -439,7 +421,6 @@
      exit
     !
     interface ethernet2
-     no description
      vrf forwarding v1
      ipv4 address 1.1.1.13 255.255.255.252
      ipv6 address 1234:4::1 ffff:ffff::
@@ -454,17 +435,14 @@
      vrf v1
      local-as 1
      router-id 4.4.4.4
-     no safe-ebgp
      address-family labeled
      neighbor 1.1.1.9 remote-as 1
-     no neighbor 1.1.1.9 description
      neighbor 1.1.1.9 local-as 1
      neighbor 1.1.1.9 address-family labeled
      neighbor 1.1.1.9 distance 200
      neighbor 1.1.1.9 route-reflector-client
      neighbor 1.1.1.9 next-hop-self
      neighbor 2.2.2.6 remote-as 1
-     no neighbor 2.2.2.6 description
      neighbor 2.2.2.6 local-as 1
      neighbor 2.2.2.6 address-family labeled
      neighbor 2.2.2.6 distance 200
@@ -477,17 +455,14 @@
      vrf v1
      local-as 1
      router-id 6.6.6.4
-     no safe-ebgp
      address-family labeled
      neighbor 1234:3::1 remote-as 1
-     no neighbor 1234:3::1 description
      neighbor 1234:3::1 local-as 1
      neighbor 1234:3::1 address-family labeled
      neighbor 1234:3::1 distance 200
      neighbor 1234:3::1 route-reflector-client
      neighbor 1234:3::1 next-hop-self
      neighbor 4321::6 remote-as 1
-     no neighbor 4321::6 description
      neighbor 4321::6 local-as 1
      neighbor 4321::6 address-family labeled
      neighbor 4321::6 distance 200
@@ -538,14 +513,15 @@
     hostname r5
     buggy
     !
-    logging file debug ../binTmp/zzz43r5-log.run
+    logging file debug ../binTmp/zzz42r5-log.run
     !
     vrf definition tester
      exit
     !
     vrf definition v1
      rd 1:1
-     label-mode per-prefix
+     label4mode per-prefix
+     label6mode per-prefix
      exit
     !
     router lsrp4 1
@@ -563,7 +539,6 @@
      exit
     !
     interface loopback0
-     no description
      vrf forwarding v1
      ipv4 address 2.2.2.5 255.255.255.255
      ipv6 address 4321::5 ffff:ffff:ffff:ffff:ffff:ffff:ffff:ffff
@@ -572,7 +547,6 @@
      exit
     !
     interface ethernet1
-     no description
      vrf forwarding v1
      ipv4 address 1.1.1.14 255.255.255.252
      ipv6 address 1234:4::2 ffff:ffff::
@@ -584,7 +558,6 @@
      exit
     !
     interface ethernet2
-     no description
      vrf forwarding v1
      ipv4 address 1.1.1.17 255.255.255.252
      ipv6 address 1234:5::1 ffff:ffff::
@@ -637,14 +610,15 @@
     hostname r6
     buggy
     !
-    logging file debug ../binTmp/zzz43r6-log.run
+    logging file debug ../binTmp/zzz42r6-log.run
     !
     vrf definition tester
      exit
     !
     vrf definition v1
      rd 1:1
-     label-mode per-prefix
+     label4mode per-prefix
+     label6mode per-prefix
      exit
     !
     router lsrp4 1
@@ -662,7 +636,6 @@
      exit
     !
     interface loopback0
-     no description
      vrf forwarding v1
      ipv4 address 2.2.2.6 255.255.255.255
      ipv6 address 4321::6 ffff:ffff:ffff:ffff:ffff:ffff:ffff:ffff
@@ -671,7 +644,6 @@
      exit
     !
     interface ethernet1
-     no description
      vrf forwarding v1
      ipv4 address 1.1.1.18 255.255.255.252
      ipv6 address 1234:5::2 ffff:ffff::
@@ -683,9 +655,8 @@
      exit
     !
     interface pwether1
-     no description
      mtu 1500
-     macaddr 0059.607e.5540
+     macaddr 0026.2552.1d61
      vrf forwarding v1
      ipv4 address 3.3.3.2 255.255.255.0
      pseudowire v1 loopback0 pweompls 2.2.2.1 1234
@@ -694,9 +665,8 @@
      exit
     !
     interface pwether2
-     no description
      mtu 1500
-     macaddr 0004.2202.0147
+     macaddr 0053.027e.5877
      vrf forwarding v1
      ipv4 address 3.3.4.2 255.255.255.0
      pseudowire v1 loopback0 pweompls 4321::1 1234
@@ -708,10 +678,8 @@
      vrf v1
      local-as 1
      router-id 4.4.4.6
-     no safe-ebgp
      address-family labeled
      neighbor 2.2.2.4 remote-as 1
-     no neighbor 2.2.2.4 description
      neighbor 2.2.2.4 local-as 1
      neighbor 2.2.2.4 address-family labeled
      neighbor 2.2.2.4 distance 200
@@ -723,10 +691,8 @@
      vrf v1
      local-as 1
      router-id 6.6.6.6
-     no safe-ebgp
      address-family labeled
      neighbor 4321::4 remote-as 1
-     no neighbor 4321::4 description
      neighbor 4321::4 local-as 1
      neighbor 4321::4 address-family labeled
      neighbor 4321::4 distance 200

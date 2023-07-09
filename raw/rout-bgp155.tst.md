@@ -14,7 +14,7 @@
     hostname r1
     buggy
     !
-    logging file debug ../binTmp/zzz70r1-log.run
+    logging file debug ../binTmp/zzz5r1-log.run
     !
     access-list test4
      sequence 10 deny 1 any all any all
@@ -39,7 +39,6 @@
      exit
     !
     interface loopback0
-     no description
      vrf forwarding v1
      ipv4 address 2.2.2.1 255.255.255.255
      ipv6 address 4321::1 ffff:ffff:ffff:ffff:ffff:ffff:ffff:ffff
@@ -48,7 +47,6 @@
      exit
     !
     interface serial1
-     no description
      encapsulation hdlc
      vrf forwarding v1
      ipv4 address 9.9.9.1 255.255.255.0
@@ -69,7 +67,6 @@
      no safe-ebgp
      address-family unicast
      neighbor 9.9.9.2 remote-as 2
-     no neighbor 9.9.9.2 description
      neighbor 9.9.9.2 local-as 1
      neighbor 9.9.9.2 address-family unicast
      neighbor 9.9.9.2 distance 20
@@ -84,7 +81,6 @@
      no safe-ebgp
      address-family unicast
      neighbor 9999::2 remote-as 2
-     no neighbor 9999::2 description
      neighbor 9999::2 local-as 1
      neighbor 9999::2 address-family unicast
      neighbor 9999::2 distance 20
@@ -134,7 +130,7 @@
     hostname r2
     buggy
     !
-    logging file debug ../binTmp/zzz70r2-log.run
+    logging file debug ../binTmp/zzz5r2-log.run
     !
     access-list test4
      sequence 10 deny 1 any all any all
@@ -159,7 +155,6 @@
      exit
     !
     interface loopback0
-     no description
      vrf forwarding v1
      ipv4 address 2.2.2.2 255.255.255.255
      ipv6 address 4321::2 ffff:ffff:ffff:ffff:ffff:ffff:ffff:ffff
@@ -168,7 +163,6 @@
      exit
     !
     interface serial1
-     no description
      encapsulation hdlc
      vrf forwarding v1
      ipv4 address 9.9.9.2 255.255.255.0
@@ -189,7 +183,6 @@
      no safe-ebgp
      address-family unicast
      neighbor 9.9.9.1 remote-as 1
-     no neighbor 9.9.9.1 description
      neighbor 9.9.9.1 local-as 2
      neighbor 9.9.9.1 address-family unicast
      neighbor 9.9.9.1 distance 20
@@ -204,7 +197,6 @@
      no safe-ebgp
      address-family unicast
      neighbor 9999::1 remote-as 1
-     no neighbor 9999::1 description
      neighbor 9999::1 local-as 2
      neighbor 9999::1 address-family unicast
      neighbor 9999::1 distance 20
@@ -259,7 +251,7 @@
      |~~~~~~~~~~|~~~~|~~~~~~~|~~~~~~~|~~~~~~|~~~~~~~~~~|
      | neighbor | as | ready | learn | sent | uptime   |
      |----------|----|-------|-------|------|----------|
-     | 9.9.9.2  | 2  | true  | 2     | 3    | 00:00:06 |
+     | 9.9.9.2  | 2  | true  | 2     | 3    | 00:00:07 |
      |__________|____|_______|_______|______|__________|
     r1#
     r1#
@@ -273,7 +265,7 @@
      |~~~~~~~~~~|~~~~|~~~~~~~|~~~~~~~|~~~~~~|~~~~~~~~~~|
      | neighbor | as | ready | learn | sent | uptime   |
      |----------|----|-------|-------|------|----------|
-     | 9999::2  | 2  | true  | 2     | 3    | 00:00:06 |
+     | 9999::2  | 2  | true  | 2     | 3    | 00:00:07 |
      |__________|____|_______|_______|______|__________|
     r1#
     r1#
@@ -284,12 +276,12 @@
     r1#
     r1#show ipv4 rsvp v1 sum
     r1#show ipv4 rsvp v1 sum
-     |~~~~~~~~~|~~~~~~~|~~~~~~~~~~|~~~~|~~~~~~~~~|~~~~~~~~~~~|~~~~~~~~~~~~~|
-     | source  | id    | subgroup | id | target  | id        | description |
-     |---------|-------|----------|----|---------|-----------|-------------|
-     | 9.9.9.2 | 8984  | ::       | 0  | 9.9.9.1 | 463144232 | r2:automesh |
-     | 9.9.9.1 | 23671 | ::       | 0  | 9.9.9.2 | 691754    | r1:automesh |
-     |_________|_______|__________|____|_________|___________|_____________|
+     |~~~~~~~~~|~~~~~~~|~~~~~~~~~~|~~~~|~~~~~~~~~|~~~~~~~~~~~~|~~~~~~~~~~~~~|
+     | source  | id    | subgroup | id | target  | id         | description |
+     |---------|-------|----------|----|---------|------------|-------------|
+     | 9.9.9.2 | 6285  | ::       | 0  | 9.9.9.1 | 1309467705 | r2:automesh |
+     | 9.9.9.1 | 18979 | ::       | 0  | 9.9.9.2 | 1828230084 | r1:automesh |
+     |_________|_______|__________|____|_________|____________|_____________|
     r1#
     r1#
     ```
@@ -299,12 +291,12 @@
     r1#
     r1#show ipv6 rsvp v1 sum
     r1#show ipv6 rsvp v1 sum
-     |~~~~~~~~~|~~~~~~~|~~~~~~~~~~|~~~~|~~~~~~~~~|~~~~~~~~~~~|~~~~~~~~~~~~~|
-     | source  | id    | subgroup | id | target  | id        | description |
-     |---------|-------|----------|----|---------|-----------|-------------|
-     | 9999::1 | 5512  | ::       | 0  | 9999::2 | 886903623 | r1:automesh |
-     | 9999::2 | 28069 | ::       | 0  | 9999::1 | 580483059 | r2:automesh |
-     |_________|_______|__________|____|_________|___________|_____________|
+     |~~~~~~~~~|~~~~~~~|~~~~~~~~~~|~~~~|~~~~~~~~~|~~~~~~~~~~~~|~~~~~~~~~~~~~|
+     | source  | id    | subgroup | id | target  | id         | description |
+     |---------|-------|----------|----|---------|------------|-------------|
+     | 9999::1 | 6496  | ::       | 0  | 9999::2 | 1080033340 | r1:automesh |
+     | 9999::2 | 17509 | ::       | 0  | 9999::1 | 1678315638 | r2:automesh |
+     |_________|_______|__________|____|_________|____________|_____________|
     r1#
     r1#
     ```
@@ -317,10 +309,10 @@
      |~~~~~|~~~~~~~~~~~~|~~~~~~~~|~~~~~~~~~~~|~~~~~~~~~|~~~~~~~~~~|
      | typ | prefix     | metric | iface     | hop     | time     |
      |-----|------------|--------|-----------|---------|----------|
-     | C   | 2.2.2.1/32 | 0/0    | loopback0 | null    | 00:00:12 |
-     | B   | 2.2.2.2/32 | 20/0   | serial1   | 9.9.9.2 | 00:00:07 |
-     | C   | 9.9.9.0/24 | 0/0    | serial1   | null    | 00:00:08 |
-     | LOC | 9.9.9.1/32 | 0/1    | serial1   | null    | 00:00:08 |
+     | C   | 2.2.2.1/32 | 0/0    | loopback0 | null    | 00:00:13 |
+     | B   | 2.2.2.2/32 | 20/0   | serial1   | 9.9.9.2 | 00:00:08 |
+     | C   | 9.9.9.0/24 | 0/0    | serial1   | null    | 00:00:09 |
+     | LOC | 9.9.9.1/32 | 0/1    | serial1   | null    | 00:00:09 |
      | MSH | 9.9.9.2/32 | 0/3    | serial1   | 9.9.9.2 | never    |
      |_____|____________|________|___________|_________|__________|
     r1#
@@ -335,10 +327,10 @@
      |~~~~~|~~~~~~~~~~~~~|~~~~~~~~|~~~~~~~~~~~|~~~~~~~~~|~~~~~~~~~~|
      | typ | prefix      | metric | iface     | hop     | time     |
      |-----|-------------|--------|-----------|---------|----------|
-     | C   | 4321::1/128 | 0/0    | loopback0 | null    | 00:00:12 |
-     | B   | 4321::2/128 | 20/0   | serial1   | 9999::2 | 00:00:07 |
-     | C   | 9999::/16   | 0/0    | serial1   | null    | 00:00:08 |
-     | LOC | 9999::1/128 | 0/1    | serial1   | null    | 00:00:08 |
+     | C   | 4321::1/128 | 0/0    | loopback0 | null    | 00:00:13 |
+     | B   | 4321::2/128 | 20/0   | serial1   | 9999::2 | 00:00:08 |
+     | C   | 9999::/16   | 0/0    | serial1   | null    | 00:00:09 |
+     | LOC | 9999::1/128 | 0/1    | serial1   | null    | 00:00:09 |
      | MSH | 9999::2/128 | 0/3    | serial1   | 9999::2 | never    |
      |_____|_____________|________|___________|_________|__________|
     r1#

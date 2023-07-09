@@ -14,7 +14,7 @@
     hostname r1
     buggy
     !
-    logging file debug ../binTmp/zzz83r1-log.run
+    logging file debug ../binTmp/zzz45r1-log.run
     !
     bridge 1
      mac-learn
@@ -28,7 +28,6 @@
      exit
     !
     interface bvi1
-     no description
      vrf forwarding v1
      ipv4 address 2.2.2.1 255.255.255.0
      ipv6 address 4321::1 ffff::
@@ -37,7 +36,6 @@
      exit
     !
     interface ethernet1
-     no description
      vrf forwarding v1
      ipv4 address 1.1.1.1 255.255.255.0
      ipv6 address 1234::1 ffff::
@@ -99,7 +97,7 @@
     hostname r2
     buggy
     !
-    logging file debug ../binTmp/zzz83r2-log.run
+    logging file debug ../binTmp/zzz45r2-log.run
     !
     bridge 1
      mac-learn
@@ -113,7 +111,6 @@
      exit
     !
     interface bvi1
-     no description
      vrf forwarding v1
      ipv4 address 2.2.2.2 255.255.255.0
      ipv6 address 4321::2 ffff::
@@ -122,7 +119,6 @@
      exit
     !
     interface ethernet1
-     no description
      vrf forwarding v1
      ipv4 address 1.1.1.2 255.255.255.0
      ipv6 address 1234::2 ffff::
@@ -197,8 +193,8 @@
      |                                              | packet             | byte               |  |
      | addr           | iface              | static | time     | tx | rx | drop | tx   | rx   | drop |
      |----------------|--------------------|--------|----------|----|----|------|------|------|------|
-     | 0000.4570.3a09 | etherip to 1.1.1.1 | false  | 00:00:05 | 30 | 33 | 0    | 1952 | 2206 | 0    |
-     | 003f.5c27.043b | bvi                | false  | 00:00:05 | 28 | 33 | 0    | 1848 | 2206 | 0    |
+     | 0024.705b.441d | etherip to 1.1.1.1 | false  | 00:00:05 | 30 | 33 | 0    | 1952 | 2206 | 0    |
+     | 002b.6542.7c0f | bvi                | false  | 00:00:05 | 28 | 33 | 0    | 1848 | 2206 | 0    |
      |________________|____________________|________|__________|____|____|______|______|______|______|
     r2#
     r2#
@@ -209,18 +205,20 @@
     r2#
     r2#show inter bvi1 full
     r2#show inter bvi1 full
-    bvi1 is up (since 00:00:05, 3 changes)
+    bvi1 is up
      description:
-     type is bridged, hwaddr=003f.5c27.043b, mtu=1400, bw=10mbps, vrf=v1
-     ip4 address=2.2.2.2/24, netmask=255.255.255.0, ifcid=497846023
-     ip6 address=4321::2/16, netmask=ffff::, ifcid=1069073492
+     state changed 3 times, last at 2022-05-02 21:08:40, 00:00:05 ago
+     last packet input 00:00:00 ago, output 00:00:00 ago, drop never ago
+     type is bridged, hwaddr=002b.6542.7c0f, mtu=1400, bw=10.0mbps, vrf=v1
+     ipv4 address=2.2.2.2/24, mask=255.255.255.0, ifcid=956410636
+     ipv6 address=4321::2/16, mask=ffff::, ifcid=381170993
      received 33 packets (2206 bytes) dropped 0 packets (0 bytes)
-     transmitted 33 packets (2206 bytes) promisc=false macsec=false sgt=false
+     transmitted 33 packets (2206 bytes) macsec=false sgt=false
      |~~~~~~~|~~~~|~~~~|~~~~~~|~~~~~|~~~~~|~~~~~~|
      |       | packet         | byte             |
      | time  | tx | rx | drop | tx  | rx  | drop |
      |-------|----|----|------|-----|-----|------|
-     | 1sec  | 2  | 2  | 0    | 132 | 132 | 0    |
+     | 1sec  | 10 | 10 | 0    | 660 | 660 | 0    |
      | 1min  | 0  | 0  | 0    | 0   | 0   | 0    |
      | 1hour | 0  | 0  | 0    | 0   | 0   | 0    |
      |_______|____|____|______|_____|_____|______|
@@ -270,41 +268,41 @@
      | 6     | 0   | 0   | 0    | 0    | 0    | 0    |
      | 7     | 0   | 0   | 0    | 0    | 0    | 0    |
      |_______|_____|_____|______|______|______|______|
-             11k|
-             10k|  #
-            9395|  #
-            8220|  #
-            7046|  #
-            5872|  #
-            4697|  #
-            3523|  ###
-            2348|  ###
-            1174|#####
-               0|#####
+           11.7k|  #
+           10.9k|  #
+           10.2k|# #
+            9488|# #
+            8736|# #
+            7984|# #
+            7232|# #
+            6480|# #
+            5728|# #
+            4976|# #
+            4224|#####
              bps|0---------10--------20--------30--------40--------50-------- seconds
+              10|
+               9|
+               8|
+               7|
+               6|
+               5|
+               4|
+               3|
+               2|
                1|
-               0|
-               0|
-               0|
-               0|
-               0|
-               0|
-               0|
-               0|
-               0|
-               0|
+               0|############################################################
              bps|0---------10--------20--------30--------40--------50-------- minutes
+              10|
+               9|
+               8|
+               7|
+               6|
+               5|
+               4|
+               3|
+               2|
                1|
-               0|
-               0|
-               0|
-               0|
-               0|
-               0|
-               0|
-               0|
-               0|
-               0|
+               0|############################################################
              bps|0---------10--------20--------30--------40--------50-------- hours
     r2#
     r2#
@@ -318,7 +316,7 @@
      |~~~~~~~~~~~~~~~~|~~~~~~~~~|~~~~~~~~~~|~~~~~~~~|
      | mac            | address | time     | static |
      |----------------|---------|----------|--------|
-     | 0000.4570.3a09 | 2.2.2.1 | 00:00:05 | false  |
+     | 0024.705b.441d | 2.2.2.1 | 00:00:04 | false  |
      |________________|_________|__________|________|
     r2#
     r2#
@@ -332,8 +330,8 @@
      |~~~~~~~~~~~~~~~~|~~~~~~~~~~~~~~~~~~~~~~~~~~|~~~~~~~~~~|~~~~~~~~|~~~~~~~~|
      | mac            | address                  | time     | static | router |
      |----------------|--------------------------|----------|--------|--------|
-     | 0000.4570.3a09 | 4321::1                  | 00:00:05 | false  | false  |
-     | 0000.4570.3a09 | fe80::200:45ff:fe70:3a09 | 00:00:05 | false  | false  |
+     | 0024.705b.441d | 4321::1                  | 00:00:04 | false  | false  |
+     | 0024.705b.441d | fe80::224:70ff:fe5b:441d | 00:00:04 | false  | false  |
      |________________|__________________________|__________|________|________|
     r2#
     r2#

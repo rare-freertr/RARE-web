@@ -14,7 +14,7 @@
     hostname r1
     buggy
     !
-    logging file debug ../binTmp/zzz22r1-log.run
+    logging file debug ../binTmp/zzz38r1-log.run
     !
     vrf definition tester
      exit
@@ -24,7 +24,6 @@
      exit
     !
     interface serial1
-     no description
      encapsulation hdlc
      vrf forwarding v1
      ipv4 address 1.1.1.1 255.255.255.0
@@ -34,7 +33,6 @@
      exit
     !
     interface tunnel1
-     no description
      tunnel key 1234 4321
      tunnel vrf v1
      tunnel source serial1
@@ -89,7 +87,7 @@
     hostname r2
     buggy
     !
-    logging file debug ../binTmp/zzz22r2-log.run
+    logging file debug ../binTmp/zzz38r2-log.run
     !
     vrf definition tester
      exit
@@ -99,7 +97,6 @@
      exit
     !
     interface serial1
-     no description
      encapsulation hdlc
      vrf forwarding v1
      ipv4 address 1.1.1.2 255.255.255.0
@@ -109,7 +106,6 @@
      exit
     !
     interface tunnel1
-     no description
      tunnel key 4321 1234
      tunnel vrf v1
      tunnel source serial1

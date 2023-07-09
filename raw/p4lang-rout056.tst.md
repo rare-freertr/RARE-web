@@ -12,7 +12,7 @@
     **r1:**
     ```
     hostname r1
-    logging file debug ../binTmp/zzz12r1-log.run
+    logging file debug ../binTmp/zzz4r1-log.run
     vrf definition tester
      exit
     server telnet tester
@@ -65,20 +65,17 @@
      exit
     int hair12
      vrf for v3
-     ipv4 addr 9.9.9.11 255.255.255.0
-     ipv4 proxy-local
+     ipv4 addr 9.9.9.2 255.255.255.0
      exit
     int sdn1
      vrf for v3
-     ipv4 addr 9.9.9.22 255.255.255.0
-     ipv4 proxy-local
+     ipv4 addr 9.9.8.1 255.255.255.0
      exit
-    ipv4 route v3 9.9.9.1 255.255.255.255 9.9.9.1 int hair12
-    ipv4 route v3 9.9.9.2 255.255.255.255 9.9.9.2 int sdn1
+    ipv4 route v2 9.9.8.0 255.255.255.0 9.9.9.2
     int tun1
      tun vrf v2
      tun source hair11
-     tun destination 9.9.9.2
+     tun destination 9.9.8.2
      tun mode gre
      vrf for v1
      ipv4 addr 1.1.1.1 255.255.255.0
@@ -108,10 +105,10 @@
      export-vrf v1 1
      export-vrf v2 2
      export-vrf v3 3
-     export-port sdn1 1
-     export-port sdn2 2
-     export-port sdn3 3
-     export-port sdn4 4
+     export-port sdn1 1 10
+     export-port sdn2 2 10
+     export-port sdn3 3 10
+     export-port sdn4 4 10
      export-port hair11 dynamic
      export-port hair12 dynamic
      export-port tun1 dynamic

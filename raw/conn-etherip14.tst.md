@@ -14,7 +14,7 @@
     hostname r1
     buggy
     !
-    logging file debug ../binTmp/zzz90r1-log.run
+    logging file debug ../binTmp/zzz71r1-log.run
     !
     bridge 1
      mac-learn
@@ -28,7 +28,6 @@
      exit
     !
     interface bvi1
-     no description
      vrf forwarding v1
      ipv4 address 2.2.2.1 255.255.255.0
      ipv6 address 4321::1 ffff::
@@ -37,7 +36,6 @@
      exit
     !
     interface ethernet1
-     no description
      vrf forwarding v1
      ipv4 address 1.1.1.1 255.255.255.0
      ipv6 address 1234::1 ffff::
@@ -99,7 +97,7 @@
     hostname r2
     buggy
     !
-    logging file debug ../binTmp/zzz90r2-log.run
+    logging file debug ../binTmp/zzz71r2-log.run
     !
     bridge 1
      mac-learn
@@ -113,7 +111,6 @@
      exit
     !
     interface bvi1
-     no description
      vrf forwarding v1
      ipv4 address 2.2.2.2 255.255.255.0
      ipv6 address 4321::2 ffff::
@@ -122,7 +119,6 @@
      exit
     !
     interface ethernet1
-     no description
      vrf forwarding v1
      ipv4 address 1.1.1.2 255.255.255.0
      ipv6 address 1234::2 ffff::

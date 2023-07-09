@@ -14,7 +14,7 @@
     hostname r1
     buggy
     !
-    logging file debug ../binTmp/zzz92r1-log.run
+    logging file debug ../binTmp/zzz53r1-log.run
     !
     vrf definition tester
      exit
@@ -40,7 +40,6 @@
      exit
     !
     interface loopback1
-     no description
      vrf forwarding v1
      ipv4 address 2.2.2.1 255.255.255.255
      ipv6 address 4321::1 ffff:ffff:ffff:ffff:ffff:ffff:ffff:ffff
@@ -49,7 +48,6 @@
      exit
     !
     interface ethernet1
-     no description
      vrf forwarding v1
      ipv4 address 1.1.1.1 255.255.255.252
      ipv6 address 1234:1::1 ffff:ffff::
@@ -103,7 +101,7 @@
     hostname r2
     buggy
     !
-    logging file debug ../binTmp/zzz92r2-log.run
+    logging file debug ../binTmp/zzz53r2-log.run
     !
     vrf definition tester
      exit
@@ -131,7 +129,6 @@
      exit
     !
     interface loopback1
-     no description
      vrf forwarding v1
      ipv4 address 2.2.2.2 255.255.255.255
      ipv6 address 4321::2 ffff:ffff:ffff:ffff:ffff:ffff:ffff:ffff
@@ -140,7 +137,6 @@
      exit
     !
     interface ethernet1
-     no description
      vrf forwarding v1
      ipv4 address 1.1.1.2 255.255.255.252
      ipv6 address 1234:1::2 ffff:ffff::
@@ -153,7 +149,6 @@
      exit
     !
     interface ethernet2
-     no description
      vrf forwarding v1
      ipv4 address 1.1.1.5 255.255.255.252
      ipv6 address 1234:2::1 ffff:ffff::
@@ -207,7 +202,7 @@
     hostname r3
     buggy
     !
-    logging file debug ../binTmp/zzz92r3-log.run
+    logging file debug ../binTmp/zzz53r3-log.run
     !
     vrf definition tester
      exit
@@ -233,7 +228,6 @@
      exit
     !
     interface loopback1
-     no description
      vrf forwarding v1
      ipv4 address 2.2.2.3 255.255.255.255
      ipv6 address 4321::3 ffff:ffff:ffff:ffff:ffff:ffff:ffff:ffff
@@ -242,7 +236,6 @@
      exit
     !
     interface loopback2
-     no description
      vrf forwarding v1
      ipv4 address 2.2.2.33 255.255.255.255
      ipv6 address 4321::33 ffff:ffff:ffff:ffff:ffff:ffff:ffff:ffff
@@ -257,7 +250,6 @@
      exit
     !
     interface ethernet1
-     no description
      vrf forwarding v1
      ipv4 address 1.1.1.6 255.255.255.252
      ipv6 address 1234:2::2 ffff:ffff::
@@ -352,7 +344,7 @@
      | 4.4.4.2  | 2.2.2.3  | 80000001 | summaryNetwork | 8   | 00:00:02 |
      | 4.4.4.2  | 2.2.2.33 | 80000001 | summaryNetwork | 8   | 00:00:02 |
      | 4.4.4.1  | 0.0.0.0  | 80000002 | asExternal     | 16  | 01:00:07 |
-     | 4.4.4.2  | 0.0.0.0  | 80000006 | asExternal     | 16  | 01:00:06 |
+     | 4.4.4.2  | 0.0.0.0  | 80000004 | asExternal     | 16  | 01:00:06 |
      | 4.4.4.1  | 1.1.1.0  | 80000001 | asExternal     | 16  | 00:00:07 |
      | 4.4.4.2  | 1.1.1.0  | 80000001 | asExternal     | 16  | 00:00:06 |
      | 4.4.4.2  | 1.1.1.4  | 80000001 | asExternal     | 16  | 00:00:06 |
@@ -373,24 +365,22 @@
      |~~~~~~~~~~|~~~~~~~~~~~|~~~~~~~~~~|~~~~~~~~~~~~|~~~~~|~~~~~~~~~~|
      | routerid | lsaid     | sequence | type       | len | time     |
      |----------|-----------|----------|------------|-----|----------|
-     | 6.6.6.1  | 546616411 | 80000001 | link       | 24  | 00:00:07 |
-     | 6.6.6.2  | 891222953 | 80000001 | link       | 24  | 00:00:06 |
-     | 6.6.6.2  | 891222954 | 80000002 | link       | 24  | 01:00:06 |
+     | 6.6.6.2  | 166803149 | 80000001 | link       | 24  | 00:00:06 |
+     | 6.6.6.2  | 166803150 | 80000002 | link       | 24  | 01:00:06 |
+     | 6.6.6.1  | 264311384 | 80000001 | link       | 24  | 00:00:06 |
      | 6.6.6.1  | 0         | 80000003 | router     | 20  | 00:00:03 |
-     | 6.6.6.2  | 0         | 80000004 | router     | 20  | 00:00:03 |
+     | 6.6.6.2  | 0         | 80000003 | router     | 20  | 00:00:03 |
      | 6.6.6.2  | 0         | 80000001 | iaPrefix   | 12  | 00:00:06 |
-     | 6.6.6.2  | 1         | 80000001 | iaPrefix   | 24  | 00:00:03 |
-     | 6.6.6.2  | 2         | 80000001 | iaPrefix   | 24  | 00:00:03 |
-     | 6.6.6.1  | 546616411 | 80000001 | prefix     | 20  | 00:00:07 |
-     | 6.6.6.2  | 891222953 | 80000001 | prefix     | 20  | 00:00:06 |
-     | 6.6.6.2  | 891222954 | 80000002 | prefix     | 20  | 01:00:06 |
-     | 6.6.6.1  | 0         | 80000003 | asExternal | 16  | 00:00:07 |
-     | 6.6.6.2  | 0         | 80000006 | asExternal | 16  | 00:00:06 |
+     | 6.6.6.2  | 1         | 80000001 | iaPrefix   | 24  | 00:00:02 |
+     | 6.6.6.2  | 2         | 80000001 | iaPrefix   | 24  | 00:00:02 |
+     | 6.6.6.2  | 166803149 | 80000001 | prefix     | 20  | 00:00:06 |
+     | 6.6.6.2  | 166803150 | 80000002 | prefix     | 20  | 01:00:06 |
+     | 6.6.6.1  | 264311384 | 80000001 | prefix     | 20  | 00:00:06 |
+     | 6.6.6.1  | 0         | 80000004 | asExternal | 16  | 00:00:07 |
+     | 6.6.6.2  | 0         | 80000004 | asExternal | 16  | 00:00:06 |
      | 6.6.6.1  | 1         | 80000001 | asExternal | 28  | 00:00:07 |
-     | 6.6.6.2  | 1         | 80000003 | asExternal | 16  | 00:00:06 |
+     | 6.6.6.2  | 1         | 80000002 | asExternal | 16  | 00:00:06 |
      | 6.6.6.2  | 2         | 80000001 | asExternal | 28  | 00:00:06 |
-     | 6.6.6.1  | 0         | 80000001 | rtrInfo    | 16  | 00:00:07 |
-     | 6.6.6.2  | 0         | 80000001 | rtrInfo    | 16  | 00:00:06 |
      |__________|___________|__________|____________|_____|__________|
     r2#
     r2#
@@ -412,8 +402,8 @@
     r2#
     r2#show ipv6 ospf 1 tre 0
     r2#show ipv6 ospf 1 tre 0
-    `--r2
-       `--r1
+    `--6.6.6.2/00000000
+       `--6.6.6.1/00000000
     r2#
     r2#
     ```
@@ -432,8 +422,8 @@
      | LOC  | 1.1.1.5/32  | 0/1    | ethernet2 | null    | 00:00:06 |
      | O E2 | 2.2.2.1/32  | 110/0  | ethernet1 | 1.1.1.1 | 00:00:03 |
      | C    | 2.2.2.2/32  | 0/0    | loopback1 | null    | 00:00:07 |
-     | O E2 | 2.2.2.3/32  | 110/0  | ethernet2 | 1.1.1.6 | 00:00:03 |
-     | O    | 2.2.2.33/32 | 110/20 | ethernet2 | 1.1.1.6 | 00:00:03 |
+     | O E2 | 2.2.2.3/32  | 110/0  | ethernet2 | 1.1.1.6 | 00:00:02 |
+     | O    | 2.2.2.33/32 | 110/20 | ethernet2 | 1.1.1.6 | 00:00:02 |
      |______|_____________|________|___________|_________|__________|
     r2#
     r2#
@@ -453,8 +443,8 @@
      | LOC  | 1234:2::1/128 | 0/1    | ethernet2 | null      | 00:00:07 |
      | O E2 | 4321::1/128   | 110/0  | ethernet1 | 1234:1::1 | 00:00:03 |
      | C    | 4321::2/128   | 0/0    | loopback1 | null      | 00:00:07 |
-     | O E2 | 4321::3/128   | 110/0  | ethernet2 | 1234:2::2 | 00:00:03 |
-     | O    | 4321::33/128  | 110/20 | ethernet2 | 1234:2::2 | 00:00:03 |
+     | O E2 | 4321::3/128   | 110/0  | ethernet2 | 1234:2::2 | 00:00:02 |
+     | O    | 4321::33/128  | 110/20 | ethernet2 | 1234:2::2 | 00:00:02 |
      |______|_______________|________|___________|___________|__________|
     r2#
     r2#

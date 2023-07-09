@@ -14,7 +14,7 @@
     hostname r1
     buggy
     !
-    logging file debug ../binTmp/zzz40r1-log.run
+    logging file debug ../binTmp/zzz12r1-log.run
     !
     crypto ipsec ips
      group 02
@@ -31,7 +31,6 @@
      exit
     !
     interface serial1
-     no description
      encapsulation hdlc
      macsec ips
      vrf forwarding v1
@@ -83,7 +82,7 @@
     hostname r2
     buggy
     !
-    logging file debug ../binTmp/zzz40r2-log.run
+    logging file debug ../binTmp/zzz12r2-log.run
     !
     crypto ipsec ips
      group 02
@@ -100,7 +99,6 @@
      exit
     !
     interface serial1
-     no description
      encapsulation hdlc
      macsec ips
      vrf forwarding v1

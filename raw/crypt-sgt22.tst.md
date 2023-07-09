@@ -14,7 +14,7 @@
     hostname r1
     buggy
     !
-    logging file debug ../binTmp/zzz6r1-log.run
+    logging file debug ../binTmp/zzz77r1-log.run
     !
     vrf definition tester
      exit
@@ -24,7 +24,6 @@
      exit
     !
     interface ethernet1
-     no description
      sgt enable
      sgt forbid-in 1
      vrf forwarding v1
@@ -78,7 +77,7 @@
     hostname r2
     buggy
     !
-    logging file debug ../binTmp/zzz6r2-log.run
+    logging file debug ../binTmp/zzz77r2-log.run
     !
     vrf definition tester
      exit
@@ -88,7 +87,6 @@
      exit
     !
     interface ethernet1
-     no description
      sgt enable
      vrf forwarding v1
      ipv4 address 1.1.1.2 255.255.255.0
@@ -98,7 +96,6 @@
      exit
     !
     interface ethernet2
-     no description
      sgt enable
      vrf forwarding v1
      ipv4 address 2.2.2.1 255.255.255.0
@@ -149,7 +146,7 @@
     hostname r3
     buggy
     !
-    logging file debug ../binTmp/zzz6r3-log.run
+    logging file debug ../binTmp/zzz77r3-log.run
     !
     vrf definition tester
      exit
@@ -159,7 +156,6 @@
      exit
     !
     interface ethernet1
-     no description
      sgt enable
      vrf forwarding v1
      ipv4 address 2.2.2.2 255.255.255.0

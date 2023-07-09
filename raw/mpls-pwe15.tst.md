@@ -14,7 +14,7 @@
     hostname r1
     buggy
     !
-    logging file debug ../binTmp/zzz63r1-log.run
+    logging file debug ../binTmp/zzz74r1-log.run
     !
     vrf definition tester
      exit
@@ -24,7 +24,6 @@
      exit
     !
     interface serial1
-     no description
      encapsulation lapb
      lapb mode dce
      vrf forwarding v1
@@ -76,18 +75,18 @@
     hostname r2
     buggy
     !
-    logging file debug ../binTmp/zzz63r2-log.run
+    logging file debug ../binTmp/zzz74r2-log.run
     !
     vrf definition tester
      exit
     !
     vrf definition v1
      rd 1:1
-     label-mode per-prefix
+     label4mode per-prefix
+     label6mode per-prefix
      exit
     !
     interface loopback0
-     no description
      vrf forwarding v1
      ipv4 address 2.2.2.1 255.255.255.255
      ipv6 address 4321::1 ffff:ffff:ffff:ffff:ffff:ffff:ffff:ffff
@@ -96,7 +95,6 @@
      exit
     !
     interface ethernet1
-     no description
      vrf forwarding v1
      ipv4 address 1.1.1.1 255.255.255.0
      ipv6 address 1234::1 ffff::
@@ -108,7 +106,6 @@
      exit
     !
     interface serial1
-     no description
      encapsulation raw
      xconnect v1 loopback0 pweompls 2.2.2.2 1234 vlan
      no shutdown
@@ -159,18 +156,18 @@
     hostname r3
     buggy
     !
-    logging file debug ../binTmp/zzz63r3-log.run
+    logging file debug ../binTmp/zzz74r3-log.run
     !
     vrf definition tester
      exit
     !
     vrf definition v1
      rd 1:1
-     label-mode per-prefix
+     label4mode per-prefix
+     label6mode per-prefix
      exit
     !
     interface loopback0
-     no description
      vrf forwarding v1
      ipv4 address 2.2.2.2 255.255.255.255
      ipv6 address 4321::2 ffff:ffff:ffff:ffff:ffff:ffff:ffff:ffff
@@ -179,7 +176,6 @@
      exit
     !
     interface ethernet1
-     no description
      vrf forwarding v1
      ipv4 address 1.1.1.2 255.255.255.0
      ipv6 address 1234::2 ffff:ffff::
@@ -191,7 +187,6 @@
      exit
     !
     interface serial1
-     no description
      encapsulation raw
      xconnect v1 loopback0 pweompls 2.2.2.1 1234 vlan
      no shutdown
@@ -242,7 +237,7 @@
     hostname r4
     buggy
     !
-    logging file debug ../binTmp/zzz63r4-log.run
+    logging file debug ../binTmp/zzz74r4-log.run
     !
     vrf definition tester
      exit
@@ -252,7 +247,6 @@
      exit
     !
     interface serial1
-     no description
      encapsulation lapb
      lapb mode dte
      vrf forwarding v1

@@ -14,7 +14,7 @@
     hostname r1
     buggy
     !
-    logging file debug ../binTmp/zzz45r1-log.run
+    logging file debug ../binTmp/zzz25r1-log.run
     !
     vrf definition tester
      exit
@@ -24,7 +24,6 @@
      exit
     !
     interface loopback0
-     no description
      vrf forwarding v1
      ipv4 address 2.2.2.1 255.255.255.255
      ipv6 address 4321::1 ffff:ffff:ffff:ffff:ffff:ffff:ffff:ffff
@@ -33,7 +32,6 @@
      exit
     !
     interface ethernet1
-     no description
      vrf forwarding v1
      ipv4 address 1.1.1.1 255.255.255.0
      ipv6 address 1234:1::1 ffff:ffff::
@@ -87,24 +85,16 @@
     hostname r2
     buggy
     !
-    logging file debug ../binTmp/zzz45r2-log.run
-    !
-    route-map rm1
-     sequence 10 action permit
-     !
-     exit
+    logging file debug ../binTmp/zzz25r2-log.run
     !
     vrf definition tester
      exit
     !
     vrf definition v1
      rd 1:1
-     counter4map rm1
-     counter6map rm1
      exit
     !
     interface loopback0
-     no description
      vrf forwarding v1
      ipv4 address 2.2.2.2 255.255.255.255
      ipv6 address 4321::2 ffff:ffff:ffff:ffff:ffff:ffff:ffff:ffff
@@ -113,7 +103,6 @@
      exit
     !
     interface ethernet1
-     no description
      vrf forwarding v1
      ipv4 address 1.1.1.2 255.255.255.0
      ipv6 address 1234:1::2 ffff:ffff::
@@ -122,7 +111,6 @@
      exit
     !
     interface ethernet2
-     no description
      vrf forwarding v1
      ipv4 address 1.1.2.2 255.255.255.0
      ipv6 address 1234:2::2 ffff:ffff::
@@ -176,7 +164,7 @@
     hostname r3
     buggy
     !
-    logging file debug ../binTmp/zzz45r3-log.run
+    logging file debug ../binTmp/zzz25r3-log.run
     !
     vrf definition tester
      exit
@@ -186,7 +174,6 @@
      exit
     !
     interface loopback0
-     no description
      vrf forwarding v1
      ipv4 address 2.2.2.3 255.255.255.255
      ipv6 address 4321::3 ffff:ffff:ffff:ffff:ffff:ffff:ffff:ffff
@@ -195,7 +182,6 @@
      exit
     !
     interface ethernet1
-     no description
      vrf forwarding v1
      ipv4 address 1.1.2.3 255.255.255.0
      ipv6 address 1234:2::3 ffff:ffff::
@@ -249,21 +235,20 @@
     ```
     r2#
     r2#
-    r2#show ipv4 c
-    r2#show ipv4 c
     r2#show ipv4 counter v1
     r2#show ipv4 counter v1
-     |~~~~~~~~~~~~|~~~~~~|~~~~~~|~~~~~~~~~~|
-     | prefix     | pack | byte | time     |
-     |------------|------|------|----------|
-     | 1.1.1.0/24 | 0    | 0    | 00:00:06 |
-     | 1.1.1.2/32 | 0    | 0    | 00:00:06 |
-     | 1.1.2.0/24 | 0    | 0    | 00:00:06 |
-     | 1.1.2.2/32 | 0    | 0    | 00:00:06 |
-     | 2.2.2.1/32 | 28   | 1792 | 00:00:06 |
-     | 2.2.2.2/32 | 24   | 1536 | 00:00:06 |
-     | 2.2.2.3/32 | 25   | 1600 | 00:00:06 |
-     |____________|______|______|__________|
+     |~~~~~~~~~~~~|~~~~~~|~~~~~~|~~~~~~|~~~~~~|~~~~~~~~~~|
+     |            | transmit    | receive     |          |
+     | prefix     | pack | byte | pack | byte | time     |
+     |------------|------|------|------|------|----------|
+     | 1.1.1.0/24 | 0    | 0    | 0    | 0    | 00:00:06 |
+     | 1.1.1.2/32 | 0    | 0    | 0    | 0    | 00:00:06 |
+     | 1.1.2.0/24 | 0    | 0    | 0    | 0    | 00:00:06 |
+     | 1.1.2.2/32 | 0    | 0    | 0    | 0    | 00:00:06 |
+     | 2.2.2.1/32 | 28   | 1792 | 0    | 0    | 00:00:06 |
+     | 2.2.2.2/32 | 24   | 1536 | 0    | 0    | 00:00:06 |
+     | 2.2.2.3/32 | 25   | 1600 | 0    | 0    | 00:00:06 |
+     |____________|______|______|______|______|__________|
     r2#
     r2#
     ```
@@ -273,17 +258,18 @@
     r2#
     r2#show ipv6 counter v1
     r2#show ipv6 counter v1
-     |~~~~~~~~~~~~~~~|~~~~~~|~~~~~~|~~~~~~~~~~|
-     | prefix        | pack | byte | time     |
-     |---------------|------|------|----------|
-     | 1234:1::/32   | 0    | 0    | 00:00:06 |
-     | 1234:1::2/128 | 0    | 0    | 00:00:06 |
-     | 1234:2::/32   | 0    | 0    | 00:00:06 |
-     | 1234:2::2/128 | 0    | 0    | 00:00:06 |
-     | 4321::1/128   | 20   | 1280 | 00:00:06 |
-     | 4321::2/128   | 20   | 1280 | 00:00:06 |
-     | 4321::3/128   | 20   | 1280 | 00:00:06 |
-     |_______________|______|______|__________|
+     |~~~~~~~~~~~~~~~|~~~~~~|~~~~~~|~~~~~~|~~~~~~|~~~~~~~~~~|
+     |               | transmit    | receive     |          |
+     | prefix        | pack | byte | pack | byte | time     |
+     |---------------|------|------|------|------|----------|
+     | 1234:1::/32   | 0    | 0    | 0    | 0    | 00:00:06 |
+     | 1234:1::2/128 | 0    | 0    | 0    | 0    | 00:00:06 |
+     | 1234:2::/32   | 0    | 0    | 0    | 0    | 00:00:06 |
+     | 1234:2::2/128 | 0    | 0    | 0    | 0    | 00:00:06 |
+     | 4321::1/128   | 20   | 1280 | 0    | 0    | 00:00:06 |
+     | 4321::2/128   | 20   | 1280 | 0    | 0    | 00:00:06 |
+     | 4321::3/128   | 20   | 1280 | 0    | 0    | 00:00:06 |
+     |_______________|______|______|______|______|__________|
     r2#
     r2#
     ```

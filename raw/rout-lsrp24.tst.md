@@ -14,7 +14,7 @@
     hostname r1
     buggy
     !
-    logging file debug ../binTmp/zzz61r1-log.run
+    logging file debug ../binTmp/zzz10r1-log.run
     !
     access-list test4
      sequence 10 deny 1 any all any all
@@ -31,7 +31,8 @@
     !
     vrf definition v1
      rd 1:1
-     label-mode per-prefix
+     label4mode per-prefix
+     label6mode per-prefix
      exit
     !
     router lsrp4 1
@@ -47,7 +48,6 @@
      exit
     !
     interface loopback0
-     no description
      vrf forwarding v1
      ipv4 address 2.2.2.1 255.255.255.255
      ipv6 address 4321::1 ffff:ffff:ffff:ffff:ffff:ffff:ffff:ffff
@@ -56,7 +56,6 @@
      exit
     !
     interface loopback1
-     no description
      vrf forwarding v1
      ipv4 address 2.2.2.11 255.255.255.255
      ipv6 address 4321::11 ffff:ffff:ffff:ffff:ffff:ffff:ffff:ffff
@@ -65,7 +64,6 @@
      exit
     !
     interface serial1
-     no description
      encapsulation hdlc
      vrf forwarding v1
      ipv4 address 9.9.9.1 255.255.255.0
@@ -79,7 +77,6 @@
      exit
     !
     interface serial2
-     no description
      encapsulation hdlc
      vrf forwarding v1
      ipv4 address 9.9.8.1 255.255.255.0
@@ -132,7 +129,7 @@
     hostname r2
     buggy
     !
-    logging file debug ../binTmp/zzz61r2-log.run
+    logging file debug ../binTmp/zzz10r2-log.run
     !
     access-list test4
      sequence 10 deny 1 any all any all
@@ -149,7 +146,8 @@
     !
     vrf definition v1
      rd 1:1
-     label-mode per-prefix
+     label4mode per-prefix
+     label6mode per-prefix
      exit
     !
     router lsrp4 1
@@ -165,7 +163,6 @@
      exit
     !
     interface loopback0
-     no description
      vrf forwarding v1
      ipv4 address 2.2.2.2 255.255.255.255
      ipv6 address 4321::2 ffff:ffff:ffff:ffff:ffff:ffff:ffff:ffff
@@ -174,7 +171,6 @@
      exit
     !
     interface loopback1
-     no description
      vrf forwarding v1
      ipv4 address 2.2.2.12 255.255.255.255
      ipv6 address 4321::12 ffff:ffff:ffff:ffff:ffff:ffff:ffff:ffff
@@ -183,7 +179,6 @@
      exit
     !
     interface serial1
-     no description
      encapsulation hdlc
      vrf forwarding v1
      ipv4 address 9.9.9.2 255.255.255.0
@@ -197,7 +192,6 @@
      exit
     !
     interface serial2
-     no description
      encapsulation hdlc
      vrf forwarding v1
      ipv4 address 9.9.8.2 255.255.255.0
@@ -283,8 +277,8 @@
      |~~~~~~~~~|~~~~~~|~~~~~|~~~~~|~~~~~|~~~~~~~~~~|~~~~~~~~~~|
      | id      | name | nei | net | seq | topo     | left     |
      |---------|------|-----|-----|-----|----------|----------|
-     | 4.4.4.1 | r1   | 1   | 4   | 11  | 49510c26 | 00:59:34 |
-     | 4.4.4.2 | r2   | 1   | 4   | 10  | b8c7b5af | 00:59:34 |
+     | 4.4.4.1 | r1   | 1   | 4   | 6   | 49510c26 | 00:59:36 |
+     | 4.4.4.2 | r2   | 1   | 4   | 8   | b8c7b5af | 00:59:36 |
      |_________|______|_____|_____|_____|__________|__________|
     r2#
     r2#
@@ -298,8 +292,8 @@
      |~~~~~~~~~|~~~~~~|~~~~~|~~~~~|~~~~~|~~~~~~~~~~|~~~~~~~~~~|
      | id      | name | nei | net | seq | topo     | left     |
      |---------|------|-----|-----|-----|----------|----------|
-     | 6.6.6.1 | r1   | 1   | 4   | 13  | 49510c26 | 00:59:37 |
-     | 6.6.6.2 | r2   | 1   | 4   | 12  | b8c7b5af | 00:59:37 |
+     | 6.6.6.1 | r1   | 1   | 4   | 9   | 567bc1c1 | 00:59:31 |
+     | 6.6.6.2 | r2   | 1   | 4   | 11  | bd4c7ac2 | 00:59:31 |
      |_________|______|_____|_____|_____|__________|__________|
     r2#
     r2#
@@ -335,10 +329,10 @@
      |~~~~~~|~~~~~~~~~~~~~|~~~~~~~~|~~~~~~~~~~~|~~~~~~~~~|~~~~~~~~~~|
      | typ  | prefix      | metric | iface     | hop     | time     |
      |------|-------------|--------|-----------|---------|----------|
-     | L EX | 2.2.2.1/32  | 70/10  | serial2   | 9.9.8.1 | 00:00:25 |
-     | C    | 2.2.2.2/32  | 0/0    | loopback0 | null    | 00:00:34 |
-     | L EX | 2.2.2.11/32 | 70/10  | serial2   | 9.9.8.1 | 00:00:25 |
-     | C    | 2.2.2.12/32 | 0/0    | loopback1 | null    | 00:00:34 |
+     | L EX | 2.2.2.1/32  | 70/10  | serial2   | 9.9.8.1 | 00:00:23 |
+     | C    | 2.2.2.2/32  | 0/0    | loopback0 | null    | 00:00:35 |
+     | L EX | 2.2.2.11/32 | 70/10  | serial2   | 9.9.8.1 | 00:00:23 |
+     | C    | 2.2.2.12/32 | 0/0    | loopback1 | null    | 00:00:35 |
      | C    | 9.9.8.0/24  | 0/0    | serial2   | null    | 00:00:30 |
      | LOC  | 9.9.8.2/32  | 0/1    | serial2   | null    | 00:00:30 |
      | C    | 9.9.9.0/24  | 0/0    | serial1   | null    | 00:00:30 |
@@ -356,10 +350,10 @@
      |~~~~~~|~~~~~~~~~~~~~~|~~~~~~~~|~~~~~~~~~~~|~~~~~~~~~|~~~~~~~~~~|
      | typ  | prefix       | metric | iface     | hop     | time     |
      |------|--------------|--------|-----------|---------|----------|
-     | L EX | 4321::1/128  | 70/10  | serial2   | 9998::1 | 00:00:22 |
-     | C    | 4321::2/128  | 0/0    | loopback0 | null    | 00:00:34 |
-     | L EX | 4321::11/128 | 70/10  | serial2   | 9998::1 | 00:00:22 |
-     | C    | 4321::12/128 | 0/0    | loopback1 | null    | 00:00:34 |
+     | L EX | 4321::1/128  | 70/10  | serial2   | 9998::1 | 00:00:28 |
+     | C    | 4321::2/128  | 0/0    | loopback0 | null    | 00:00:35 |
+     | L EX | 4321::11/128 | 70/10  | serial2   | 9998::1 | 00:00:28 |
+     | C    | 4321::12/128 | 0/0    | loopback1 | null    | 00:00:35 |
      | C    | 9998::/16    | 0/0    | serial2   | null    | 00:00:30 |
      | LOC  | 9998::2/128  | 0/1    | serial2   | null    | 00:00:30 |
      | C    | 9999::/16    | 0/0    | serial1   | null    | 00:00:30 |

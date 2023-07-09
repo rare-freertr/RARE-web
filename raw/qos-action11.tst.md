@@ -14,7 +14,7 @@
     hostname r1
     buggy
     !
-    logging file debug ../binTmp/zzz30r1-log.run
+    logging file debug ../binTmp/zzz43r1-log.run
     !
     policy-map p1
      sequence 10 action shape
@@ -30,7 +30,6 @@
      exit
     !
     interface ethernet1
-     no description
      service-policy-in p1
      vrf forwarding v1
      ipv4 address 1.1.1.1 255.255.255.0
@@ -81,7 +80,7 @@
     hostname r2
     buggy
     !
-    logging file debug ../binTmp/zzz30r2-log.run
+    logging file debug ../binTmp/zzz43r2-log.run
     !
     policy-map p1
      sequence 10 action police
@@ -97,7 +96,6 @@
      exit
     !
     interface ethernet1
-     no description
      service-policy-in p1
      vrf forwarding v1
      ipv4 address 1.1.1.2 255.255.255.0
@@ -150,10 +148,11 @@
     r2#
     r2#show policy int eth1 in
     r2#show policy int eth1 in
-    description=
-      childs=0, queues=0/128, interval=100, bytes/interval=1024
-      match=tx=0(0) rx=62414(618) drp=0(0)
-      transmit=tx=62210(616) rx=62414(618) drp=0(0)
+     |~~~~~|~~~~~~|~~~~~~~|~~~~~~~~|~~~~~~~~~|~~~~~~~|~~~~~|~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~|
+     | seq | chld | queue | intrvl | byt/int | rxb   | rxp | trnsmt                               |
+     |-----|------|-------|--------|---------|-------|-----|--------------------------------------|
+     | 10  | 0    | 0/128 | 100    | 1024    | 52214 | 518 | tx=52112(517) rx=52214(518) drp=0(0) |
+     |_____|______|_______|________|_________|_______|_____|______________________________________|
     r2#
     r2#
     ```

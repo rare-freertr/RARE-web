@@ -24,7 +24,6 @@
      exit
     !
     interface serial1
-     no description
      encapsulation hdlc
      vrf forwarding v1
      ipv4 address 2.2.2.1 255.255.255.0
@@ -85,7 +84,6 @@
      exit
     !
     interface ethernet1
-     no description
      vrf forwarding v1
      ipv4 address 1.1.1.1 255.255.255.0
      ipv6 address 1234::1 ffff::
@@ -94,7 +92,6 @@
      exit
     !
     interface serial1
-     no description
      encapsulation hdlc
      xconnect v1 ethernet1 etherip 1.1.1.2 123
      no shutdown
@@ -153,7 +150,6 @@
      exit
     !
     interface ethernet1
-     no description
      vrf forwarding v1
      ipv4 address 1.1.1.2 255.255.255.0
      ipv6 address 1234::2 ffff:ffff::
@@ -162,7 +158,6 @@
      exit
     !
     interface serial1
-     no description
      encapsulation hdlc
      xconnect v1 ethernet1 etherip 1.1.1.1 123
      no shutdown
@@ -221,7 +216,6 @@
      exit
     !
     interface serial1
-     no description
      encapsulation hdlc
      vrf forwarding v1
      ipv4 address 2.2.2.2 255.255.255.0

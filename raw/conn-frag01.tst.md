@@ -14,7 +14,7 @@
     hostname r1
     buggy
     !
-    logging file debug ../binTmp/zzz87r1-log.run
+    logging file debug ../binTmp/zzz58r1-log.run
     !
     vrf definition tester
      exit
@@ -24,7 +24,6 @@
      exit
     !
     interface serial1
-     no description
      mtu 1500
      encapsulation hdlc
      enforce-mtu both
@@ -81,7 +80,7 @@
     hostname r2
     buggy
     !
-    logging file debug ../binTmp/zzz87r2-log.run
+    logging file debug ../binTmp/zzz58r2-log.run
     !
     vrf definition tester
      exit
@@ -91,7 +90,6 @@
      exit
     !
     interface serial1
-     no description
      mtu 1500
      encapsulation hdlc
      enforce-mtu both

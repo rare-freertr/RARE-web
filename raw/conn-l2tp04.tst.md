@@ -14,7 +14,7 @@
     hostname r1
     buggy
     !
-    logging file debug ../binTmp/zzz3r1-log.run
+    logging file debug ../binTmp/zzz24r1-log.run
     !
     vrf definition tester
      exit
@@ -24,7 +24,6 @@
      exit
     !
     interface dialer1
-     no description
      encapsulation hdlc
      vrf forwarding v1
      ipv4 address 2.2.2.1 255.255.255.252
@@ -33,7 +32,6 @@
      exit
     !
     interface ethernet1
-     no description
      vrf forwarding v1
      ipv4 address 1.1.1.1 255.255.255.0
      ipv6 address 1234::1 ffff::
@@ -96,7 +94,7 @@
     hostname r2
     buggy
     !
-    logging file debug ../binTmp/zzz3r2-log.run
+    logging file debug ../binTmp/zzz24r2-log.run
     !
     vrf definition tester
      exit
@@ -106,7 +104,6 @@
      exit
     !
     interface dialer1
-     no description
      encapsulation hdlc
      vrf forwarding v1
      ipv4 address 2.2.2.2 255.255.255.252
@@ -115,7 +112,6 @@
      exit
     !
     interface ethernet1
-     no description
      vrf forwarding v1
      ipv4 address 1.1.1.2 255.255.255.0
      ipv6 address 1234::2 ffff::

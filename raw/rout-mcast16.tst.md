@@ -14,7 +14,7 @@
     hostname r1
     buggy
     !
-    logging file debug ../binTmp/zzz71r1-log.run
+    logging file debug ../binTmp/zzz39r1-log.run
     !
     vrf definition tester
      exit
@@ -24,7 +24,6 @@
      exit
     !
     interface ethernet1
-     no description
      vrf forwarding v1
      ipv4 address 1.1.1.1 255.255.255.252
      ipv4 multicast host-enable
@@ -78,7 +77,7 @@
     hostname r2
     buggy
     !
-    logging file debug ../binTmp/zzz71r2-log.run
+    logging file debug ../binTmp/zzz39r2-log.run
     !
     bridge 1
      mac-learn
@@ -90,20 +89,17 @@
      exit
     !
     interface bvi1
-     no description
      no shutdown
      no log-link-change
      exit
     !
     interface ethernet1
-     no description
      bridge-group 1
      no shutdown
      no log-link-change
      exit
     !
     interface ethernet2
-     no description
      bridge-group 1
      no shutdown
      no log-link-change
@@ -138,7 +134,7 @@
     hostname r3
     buggy
     !
-    logging file debug ../binTmp/zzz71r3-log.run
+    logging file debug ../binTmp/zzz39r3-log.run
     !
     vrf definition tester
      exit
@@ -148,7 +144,6 @@
      exit
     !
     interface ethernet1
-     no description
      vrf forwarding v1
      ipv4 address 1.1.1.2 255.255.255.252
      ipv4 multicast host-enable
@@ -161,7 +156,6 @@
      exit
     !
     interface ethernet2
-     no description
      vrf forwarding v1
      ipv4 address 1.1.1.6 255.255.255.252
      ipv4 multicast host-enable
@@ -215,7 +209,7 @@
     hostname r4
     buggy
     !
-    logging file debug ../binTmp/zzz71r4-log.run
+    logging file debug ../binTmp/zzz39r4-log.run
     !
     vrf definition tester
      exit
@@ -225,7 +219,6 @@
      exit
     !
     interface ethernet1
-     no description
      vrf forwarding v1
      ipv4 address 1.1.1.5 255.255.255.252
      ipv4 multicast host-enable

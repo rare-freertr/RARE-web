@@ -14,7 +14,7 @@
     hostname r1
     buggy
     !
-    logging file debug ../binTmp/zzz26r1-log.run
+    logging file debug ../binTmp/zzz78r1-log.run
     !
     access-list a2b4
      sequence 10 permit all 2.2.2.101 255.255.255.255 all 2.2.2.201 255.255.255.255 all
@@ -32,7 +32,6 @@
      exit
     !
     interface loopback0
-     no description
      vrf forwarding v1
      ipv4 address 2.2.2.101 255.255.255.255
      ipv6 address 4321::101 ffff:ffff:ffff:ffff:ffff:ffff:ffff:ffff
@@ -41,7 +40,6 @@
      exit
     !
     interface ethernet1
-     no description
      vrf forwarding v1
      ipv4 address 1.1.1.1 255.255.255.252
      ipv6 address 1234:1::1 ffff:ffff::
@@ -93,7 +91,7 @@
     hostname r2
     buggy
     !
-    logging file debug ../binTmp/zzz26r2-log.run
+    logging file debug ../binTmp/zzz78r2-log.run
     !
     access-list a2b4
      sequence 10 permit all 2.2.2.101 255.255.255.255 all 2.2.2.201 255.255.255.255 all
@@ -119,7 +117,6 @@
      exit
     !
     interface ethernet1
-     no description
      vrf forwarding v1
      ipv4 address 1.1.1.2 255.255.255.252
      ipv4 pbr sequence 10 a2b4 v1 nexthop 1.1.1.5
@@ -130,7 +127,6 @@
      exit
     !
     interface ethernet2
-     no description
      vrf forwarding v1
      ipv4 address 1.1.1.6 255.255.255.252
      ipv4 pbr sequence 10 b2a4 v1 nexthop 1.1.1.1
@@ -182,7 +178,7 @@
     hostname r3
     buggy
     !
-    logging file debug ../binTmp/zzz26r3-log.run
+    logging file debug ../binTmp/zzz78r3-log.run
     !
     access-list b2a4
      sequence 10 permit all 2.2.2.201 255.255.255.255 all 2.2.2.101 255.255.255.255 all
@@ -200,7 +196,6 @@
      exit
     !
     interface loopback0
-     no description
      vrf forwarding v1
      ipv4 address 2.2.2.201 255.255.255.255
      ipv6 address 4321::201 ffff:ffff:ffff:ffff:ffff:ffff:ffff:ffff
@@ -209,7 +204,6 @@
      exit
     !
     interface ethernet1
-     no description
      vrf forwarding v1
      ipv4 address 1.1.1.5 255.255.255.252
      ipv6 address 1234:2::1 ffff:ffff::

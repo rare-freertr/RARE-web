@@ -14,7 +14,7 @@
     hostname r1
     buggy
     !
-    logging file debug ../binTmp/zzz14r1-log.run
+    logging file debug ../binTmp/zzz36r1-log.run
     !
     access-list test4
      sequence 10 deny 1 any all any all
@@ -36,7 +36,8 @@
     !
     vrf definition v1
      rd 1:1
-     label-mode per-prefix
+     label4mode per-prefix
+     label6mode per-prefix
      exit
     !
     router olsr4 1
@@ -52,7 +53,6 @@
      exit
     !
     interface loopback0
-     no description
      vrf forwarding v1
      ipv4 address 2.2.2.1 255.255.255.255
      ipv6 address 4321::1 ffff:ffff:ffff:ffff:ffff:ffff:ffff:ffff
@@ -61,7 +61,6 @@
      exit
     !
     interface serial1
-     no description
      encapsulation hdlc
      vrf forwarding v1
      ipv4 address 9.9.9.1 255.255.255.0
@@ -119,7 +118,7 @@
     hostname r2
     buggy
     !
-    logging file debug ../binTmp/zzz14r2-log.run
+    logging file debug ../binTmp/zzz36r2-log.run
     !
     access-list test4
      sequence 10 deny 1 any all any all
@@ -141,7 +140,8 @@
     !
     vrf definition v1
      rd 1:1
-     label-mode per-prefix
+     label4mode per-prefix
+     label6mode per-prefix
      exit
     !
     router olsr4 1
@@ -157,7 +157,6 @@
      exit
     !
     interface loopback0
-     no description
      vrf forwarding v1
      ipv4 address 2.2.2.2 255.255.255.255
      ipv6 address 4321::2 ffff:ffff:ffff:ffff:ffff:ffff:ffff:ffff
@@ -166,7 +165,6 @@
      exit
     !
     interface serial1
-     no description
      encapsulation hdlc
      vrf forwarding v1
      ipv4 address 9.9.9.2 255.255.255.0
@@ -229,7 +227,7 @@
      |~~~~~~~~~~~|~~~~~~~|~~~~~~~~~~|~~~~~~~~~~|
      | interface | learn | neighbor | uptime   |
      |-----------|-------|----------|----------|
-     | serial1   | 0     | 9.9.9.1  | 00:00:02 |
+     | serial1   | 2     | 9.9.9.1  | 00:00:27 |
      |___________|_______|__________|__________|
     r2#
     r2#
@@ -243,7 +241,7 @@
      |~~~~~~~~~~~|~~~~~~~|~~~~~~~~~~|~~~~~~~~~~|
      | interface | learn | neighbor | uptime   |
      |-----------|-------|----------|----------|
-     | serial1   | 0     | 9999::1  | 00:00:02 |
+     | serial1   | 2     | 9999::1  | 00:00:27 |
      |___________|_______|__________|__________|
     r2#
     r2#
@@ -254,11 +252,12 @@
     r2#
     r2#show ipv4 olsr 1 dat
     r2#show ipv4 olsr 1 dat
-     |~~~~~|~~~~~~~~~~~~|~~~~~~~~|~~~~~~~~~|~~~~~~|~~~~~~~~~~|
-     | typ | prefix     | metric | iface   | hop  | time     |
-     |-----|------------|--------|---------|------|----------|
-     | N   | 9.9.9.0/24 | 1/0    | serial1 | null | 00:00:03 |
-     |_____|____________|________|_________|______|__________|
+     |~~~~~|~~~~~~~~~~~~|~~~~~~~~|~~~~~~~~~|~~~~~~~~~|~~~~~~~~~~|
+     | typ | prefix     | metric | iface   | hop     | time     |
+     |-----|------------|--------|---------|---------|----------|
+     | N   | 2.2.2.1/32 | 140/1  | serial1 | 9.9.9.1 | 00:00:02 |
+     | N   | 9.9.9.0/24 | 1/0    | serial1 | null    | 00:00:28 |
+     |_____|____________|________|_________|_________|__________|
     r2#
     r2#
     ```
@@ -268,11 +267,12 @@
     r2#
     r2#show ipv6 olsr 1 dat
     r2#show ipv6 olsr 1 dat
-     |~~~~~|~~~~~~~~~~~|~~~~~~~~|~~~~~~~~~|~~~~~~|~~~~~~~~~~|
-     | typ | prefix    | metric | iface   | hop  | time     |
-     |-----|-----------|--------|---------|------|----------|
-     | N   | 9999::/16 | 1/0    | serial1 | null | 00:00:04 |
-     |_____|___________|________|_________|______|__________|
+     |~~~~~|~~~~~~~~~~~~~|~~~~~~~~|~~~~~~~~~|~~~~~~~~~|~~~~~~~~~~|
+     | typ | prefix      | metric | iface   | hop     | time     |
+     |-----|-------------|--------|---------|---------|----------|
+     | N   | 4321::1/128 | 140/1  | serial1 | 9999::1 | 00:00:03 |
+     | N   | 9999::/16   | 1/0    | serial1 | null    | 00:00:28 |
+     |_____|_____________|________|_________|_________|__________|
     r2#
     r2#
     ```
@@ -285,10 +285,11 @@
      |~~~~~|~~~~~~~~~~~~|~~~~~~~~|~~~~~~~~~~~|~~~~~~~~~|~~~~~~~~~~|
      | typ | prefix     | metric | iface     | hop     | time     |
      |-----|------------|--------|-----------|---------|----------|
-     | C   | 2.2.2.2/32 | 0/0    | loopback0 | null    | 00:00:08 |
-     | C   | 9.9.9.0/24 | 0/0    | serial1   | null    | 00:00:04 |
+     | N   | 2.2.2.1/32 | 140/1  | serial1   | 9.9.9.1 | 00:00:03 |
+     | C   | 2.2.2.2/32 | 0/0    | loopback0 | null    | 00:00:33 |
+     | C   | 9.9.9.0/24 | 0/0    | serial1   | null    | 00:00:29 |
      | MSH | 9.9.9.1/32 | 0/3    | serial1   | 9.9.9.1 | never    |
-     | LOC | 9.9.9.2/32 | 0/1    | serial1   | null    | 00:00:04 |
+     | LOC | 9.9.9.2/32 | 0/1    | serial1   | null    | 00:00:29 |
      |_____|____________|________|___________|_________|__________|
     r2#
     r2#
@@ -302,10 +303,11 @@
      |~~~~~|~~~~~~~~~~~~~|~~~~~~~~|~~~~~~~~~~~|~~~~~~~~~|~~~~~~~~~~|
      | typ | prefix      | metric | iface     | hop     | time     |
      |-----|-------------|--------|-----------|---------|----------|
-     | C   | 4321::2/128 | 0/0    | loopback0 | null    | 00:00:09 |
-     | C   | 9999::/16   | 0/0    | serial1   | null    | 00:00:04 |
+     | N   | 4321::1/128 | 140/1  | serial1   | 9999::1 | 00:00:03 |
+     | C   | 4321::2/128 | 0/0    | loopback0 | null    | 00:00:33 |
+     | C   | 9999::/16   | 0/0    | serial1   | null    | 00:00:29 |
      | MSH | 9999::1/128 | 0/3    | serial1   | 9999::1 | never    |
-     | LOC | 9999::2/128 | 0/1    | serial1   | null    | 00:00:04 |
+     | LOC | 9999::2/128 | 0/1    | serial1   | null    | 00:00:29 |
      |_____|_____________|________|___________|_________|__________|
     r2#
     r2#

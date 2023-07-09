@@ -14,7 +14,7 @@
     hostname r1
     buggy
     !
-    logging file debug ../binTmp/zzz55r1-log.run
+    logging file debug ../binTmp/zzz77r1-log.run
     !
     vrf definition tester
      exit
@@ -24,7 +24,6 @@
      exit
     !
     interface ethernet1
-     no description
      vrf forwarding v1
      ipv4 address 1.1.1.1 255.255.255.0
      ipv4 secondary-address 1.1.1.111
@@ -80,7 +79,7 @@
     hostname r2
     buggy
     !
-    logging file debug ../binTmp/zzz55r2-log.run
+    logging file debug ../binTmp/zzz77r2-log.run
     !
     vrf definition tester
      exit
@@ -90,7 +89,6 @@
      exit
     !
     interface ethernet1
-     no description
      vrf forwarding v1
      ipv4 address 1.1.1.2 255.255.255.0
      ipv6 address 1234::2 ffff::
@@ -142,13 +140,15 @@
     r1#
     r1#show inter eth1 full
     r1#show inter eth1 full
-    ethernet1 is promisc, up (since 00:00:16, 3 changes)
+    ethernet1 is up, promisc
      description:
+     state changed 3 times, last at 2022-05-02 21:09:23, 00:00:16 ago
+     last packet input 00:00:00 ago, output 00:00:00 ago, drop never ago
      type is ethernet, hwaddr=0000.0000.1111, mtu=1500, bw=100mbps, vrf=v1
-     ip4 address=1.1.1.1/24, netmask=255.255.255.0, ifcid=314412781
-     ip6 address=1234::1/16, netmask=ffff::, ifcid=307762360
+     ipv4 address=1.1.1.1/24, mask=255.255.255.0, ifcid=310728230
+     ipv6 address=1234::1/16, mask=ffff::, ifcid=323139041
      received 88 packets (5768 bytes) dropped 0 packets (0 bytes)
-     transmitted 91 packets (5834 bytes) promisc=true macsec=false sgt=false
+     transmitted 91 packets (5834 bytes) macsec=false sgt=false
      |~~~~~~~|~~~~|~~~~|~~~~~~|~~~~~|~~~~~|~~~~~~|
      |       | packet         | byte             |
      | time  | tx | rx | drop | tx  | rx  | drop |
@@ -203,41 +203,41 @@
      | 6     | 0   | 0   | 0    | 0    | 0    | 0    |
      | 7     | 0   | 0   | 0    | 0    | 0    | 0    |
      |_______|_____|_____|______|______|______|______|
-             21k|
-             19k|            #
-             17k|            #
-             15k|            #
-             12k|            #
-             10k|            #
-            8659|            #
-            6494|            #
-            4329| # # #  # # # #
-            2164|####### #######
-               0|###############
+           21.6k|            #
+           19.5k|            #
+           17.4k|            #
+           15.3k|            #
+           13.2k|            #
+           11.0k|            #
+            8976|            #
+            6864|            #
+            4752| # # #  # # # #
+            2640|####### #######
+             528|###############
              bps|0---------10--------20--------30--------40--------50-------- seconds
+              10|
+               9|
+               8|
+               7|
+               6|
+               5|
+               4|
+               3|
+               2|
                1|
-               0|
-               0|
-               0|
-               0|
-               0|
-               0|
-               0|
-               0|
-               0|
-               0|
+               0|############################################################
              bps|0---------10--------20--------30--------40--------50-------- minutes
+              10|
+               9|
+               8|
+               7|
+               6|
+               5|
+               4|
+               3|
+               2|
                1|
-               0|
-               0|
-               0|
-               0|
-               0|
-               0|
-               0|
-               0|
-               0|
-               0|
+               0|############################################################
              bps|0---------10--------20--------30--------40--------50-------- hours
     r1#
     r1#

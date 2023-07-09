@@ -14,7 +14,7 @@
     hostname r1
     buggy
     !
-    logging file debug ../binTmp/zzz5r1-log.run
+    logging file debug ../binTmp/zzz67r1-log.run
     !
     access-list all
      sequence 10 permit all any all any all
@@ -28,7 +28,6 @@
      exit
     !
     interface ethernet1
-     no description
      vrf forwarding v1
      ipv4 address 1.1.1.1 255.255.255.0
      ipv4 srh enable
@@ -39,7 +38,6 @@
      exit
     !
     interface tunnel1
-     no description
      tunnel vrf v1
      tunnel source ethernet1
      tunnel destination 1.1.2.3
@@ -52,7 +50,6 @@
      exit
     !
     interface tunnel2
-     no description
      tunnel vrf v1
      tunnel source ethernet1
      tunnel destination 1235::3
@@ -106,7 +103,7 @@
     hostname r2
     buggy
     !
-    logging file debug ../binTmp/zzz5r2-log.run
+    logging file debug ../binTmp/zzz67r2-log.run
     !
     access-list all
      sequence 10 permit all any all any all
@@ -120,7 +117,6 @@
      exit
     !
     interface ethernet1
-     no description
      vrf forwarding v1
      ipv4 address 1.1.1.2 255.255.255.0
      ipv4 srh enable
@@ -131,7 +127,6 @@
      exit
     !
     interface ethernet2
-     no description
      vrf forwarding v1
      ipv4 address 1.1.2.2 255.255.255.0
      ipv4 srh enable
@@ -183,7 +178,7 @@
     hostname r3
     buggy
     !
-    logging file debug ../binTmp/zzz5r3-log.run
+    logging file debug ../binTmp/zzz67r3-log.run
     !
     access-list all
      sequence 10 permit all any all any all
@@ -197,7 +192,6 @@
      exit
     !
     interface ethernet1
-     no description
      vrf forwarding v1
      ipv4 address 1.1.2.3 255.255.255.0
      ipv4 srh enable
@@ -208,7 +202,6 @@
      exit
     !
     interface tunnel1
-     no description
      tunnel vrf v1
      tunnel source ethernet1
      tunnel destination 1.1.1.1
@@ -221,7 +214,6 @@
      exit
     !
     interface tunnel2
-     no description
      tunnel vrf v1
      tunnel source ethernet1
      tunnel destination 1234::1

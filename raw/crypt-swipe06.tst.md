@@ -14,7 +14,7 @@
     hostname r1
     buggy
     !
-    logging file debug ../binTmp/zzz80r1-log.run
+    logging file debug ../binTmp/zzz44r1-log.run
     !
     crypto ipsec ips
      cipher blowfish
@@ -30,7 +30,6 @@
      exit
     !
     interface serial1
-     no description
      encapsulation hdlc
      vrf forwarding v1
      ipv4 address 1.1.1.1 255.255.255.0
@@ -40,7 +39,6 @@
      exit
     !
     interface tunnel1
-     no description
      tunnel vrf v1
      tunnel protection ips
      tunnel source serial1
@@ -95,7 +93,7 @@
     hostname r2
     buggy
     !
-    logging file debug ../binTmp/zzz80r2-log.run
+    logging file debug ../binTmp/zzz44r2-log.run
     !
     crypto ipsec ips
      cipher blowfish
@@ -111,7 +109,6 @@
      exit
     !
     interface serial1
-     no description
      encapsulation hdlc
      vrf forwarding v1
      ipv4 address 1.1.1.2 255.255.255.0
@@ -121,7 +118,6 @@
      exit
     !
     interface tunnel1
-     no description
      tunnel vrf v1
      tunnel protection ips
      tunnel source serial1

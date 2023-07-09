@@ -14,7 +14,7 @@
     hostname r1
     buggy
     !
-    logging file debug ../binTmp/zzz24r1-log.run
+    logging file debug ../binTmp/zzz47r1-log.run
     !
     bundle 1
      replicate
@@ -30,7 +30,6 @@
      exit
     !
     interface bundle1
-     no description
      vrf forwarding v1
      ipv4 address 1.1.1.1 255.255.255.0
      ipv6 address 1234::1 ffff::
@@ -39,14 +38,12 @@
      exit
     !
     interface ethernet1
-     no description
      bundle-group 1
      no shutdown
      no log-link-change
      exit
     !
     interface ethernet2
-     no description
      bundle-group 1
      no shutdown
      no log-link-change
@@ -94,7 +91,7 @@
     hostname r2
     buggy
     !
-    logging file debug ../binTmp/zzz24r2-log.run
+    logging file debug ../binTmp/zzz47r2-log.run
     !
     bundle 1
      replicate
@@ -110,7 +107,6 @@
      exit
     !
     interface bundle1
-     no description
      vrf forwarding v1
      ipv4 address 1.1.1.2 255.255.255.0
      ipv6 address 1234::2 ffff::
@@ -119,14 +115,12 @@
      exit
     !
     interface ethernet1
-     no description
      bundle-group 1
      no shutdown
      no log-link-change
      exit
     !
     interface ethernet2
-     no description
      bundle-group 1
      no shutdown
      no log-link-change

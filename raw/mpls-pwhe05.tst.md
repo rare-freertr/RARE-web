@@ -14,7 +14,7 @@
     hostname r1
     buggy
     !
-    logging file debug ../binTmp/zzz50r1-log.run
+    logging file debug ../binTmp/zzz45r1-log.run
     !
     vrf definition tester
      exit
@@ -24,7 +24,6 @@
      exit
     !
     interface loopback0
-     no description
      vrf forwarding v1
      ipv4 address 2.2.2.1 255.255.255.255
      ipv6 address 4321::1 ffff:ffff:ffff:ffff:ffff:ffff:ffff:ffff
@@ -33,7 +32,6 @@
      exit
     !
     interface ethernet1
-     no description
      vrf forwarding v1
      ipv4 address 1.1.1.1 255.255.255.0
      ipv6 address 1234::1 ffff::
@@ -42,9 +40,8 @@
      exit
     !
     interface pwether1
-     no description
      mtu 1500
-     macaddr 0048.1513.054b
+     macaddr 0010.726c.7976
      vrf forwarding v1
      ipv4 address 3.3.3.1 255.255.255.0
      pseudowire v1 loopback0 erspan 2.2.2.2 123
@@ -96,7 +93,7 @@
     hostname r2
     buggy
     !
-    logging file debug ../binTmp/zzz50r2-log.run
+    logging file debug ../binTmp/zzz45r2-log.run
     !
     vrf definition tester
      exit
@@ -106,7 +103,6 @@
      exit
     !
     interface loopback0
-     no description
      vrf forwarding v1
      ipv4 address 2.2.2.2 255.255.255.255
      ipv6 address 4321::2 ffff:ffff:ffff:ffff:ffff:ffff:ffff:ffff
@@ -115,7 +111,6 @@
      exit
     !
     interface ethernet1
-     no description
      vrf forwarding v1
      ipv4 address 1.1.1.2 255.255.255.0
      ipv6 address 1234::2 ffff::
@@ -124,9 +119,8 @@
      exit
     !
     interface pwether1
-     no description
      mtu 1500
-     macaddr 001f.7b40.4b0e
+     macaddr 0075.256e.034d
      vrf forwarding v1
      ipv4 address 3.3.3.2 255.255.255.0
      pseudowire v1 loopback0 erspan 2.2.2.1 123

@@ -14,7 +14,7 @@
     hostname r1
     buggy
     !
-    logging file debug ../binTmp/zzz81r1-log.run
+    logging file debug ../binTmp/zzz54r1-log.run
     !
     policy-map p1
      sequence 10 action drop
@@ -32,7 +32,6 @@
      exit
     !
     interface ethernet1
-     no description
      sgt enable
      service-policy-in p1
      vrf forwarding v1
@@ -86,7 +85,7 @@
     hostname r2
     buggy
     !
-    logging file debug ../binTmp/zzz81r2-log.run
+    logging file debug ../binTmp/zzz54r2-log.run
     !
     policy-map p1
      sequence 10 action transit
@@ -106,7 +105,6 @@
      exit
     !
     interface ethernet1
-     no description
      sgt enable
      service-policy-in p1
      vrf forwarding v1
@@ -117,7 +115,6 @@
      exit
     !
     interface ethernet2
-     no description
      sgt enable
      service-policy-in p1
      vrf forwarding v1
@@ -169,7 +166,7 @@
     hostname r3
     buggy
     !
-    logging file debug ../binTmp/zzz81r3-log.run
+    logging file debug ../binTmp/zzz54r3-log.run
     !
     policy-map p1
      sequence 10 action drop
@@ -187,7 +184,6 @@
      exit
     !
     interface ethernet1
-     no description
      sgt enable
      service-policy-in p1
      vrf forwarding v1

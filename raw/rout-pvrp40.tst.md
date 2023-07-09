@@ -14,14 +14,15 @@
     hostname r1
     buggy
     !
-    logging file debug ../binTmp/zzz12r1-log.run
+    logging file debug ../binTmp/zzz48r1-log.run
     !
     vrf definition tester
      exit
     !
     vrf definition v1
      rd 1:1
-     label-mode per-prefix
+     label4mode per-prefix
+     label6mode per-prefix
      exit
     !
     router pvrp4 1
@@ -39,7 +40,6 @@
      exit
     !
     interface loopback1
-     no description
      vrf forwarding v1
      ipv4 address 2.2.2.1 255.255.255.255
      ipv6 address 4321::1 ffff:ffff:ffff:ffff:ffff:ffff:ffff:ffff
@@ -48,7 +48,6 @@
      exit
     !
     interface ethernet1
-     no description
      vrf forwarding v1
      ipv4 address 1.1.1.1 255.255.255.0
      ipv6 address 1234::1 ffff::
@@ -61,7 +60,6 @@
      exit
     !
     interface ethernet2
-     no description
      vrf forwarding v1
      ipv4 address 1.1.2.1 255.255.255.0
      ipv6 address 1235::1 ffff::
@@ -116,14 +114,15 @@
     hostname r2
     buggy
     !
-    logging file debug ../binTmp/zzz12r2-log.run
+    logging file debug ../binTmp/zzz48r2-log.run
     !
     vrf definition tester
      exit
     !
     vrf definition v1
      rd 1:1
-     label-mode per-prefix
+     label4mode per-prefix
+     label6mode per-prefix
      exit
     !
     router pvrp4 1
@@ -141,7 +140,6 @@
      exit
     !
     interface loopback1
-     no description
      vrf forwarding v1
      ipv4 address 2.2.2.2 255.255.255.255
      ipv6 address 4321::2 ffff:ffff:ffff:ffff:ffff:ffff:ffff:ffff
@@ -150,7 +148,6 @@
      exit
     !
     interface ethernet1
-     no description
      vrf forwarding v1
      ipv4 address 1.1.1.2 255.255.255.0
      ipv6 address 1234::2 ffff::
@@ -166,7 +163,6 @@
      exit
     !
     interface ethernet2
-     no description
      vrf forwarding v1
      ipv4 address 1.1.2.2 255.255.255.0
      ipv6 address 1235::2 ffff::
@@ -275,9 +271,9 @@
      |~~~~~~|~~~~~~~~~~~~~|~~~~~~~~|~~~~~~~~~~~|~~~~~~~~~|~~~~~~~~~~|
      | typ  | prefix      | metric | iface     | hop     | time     |
      |------|-------------|--------|-----------|---------|----------|
-     | C    | 1234::/16   | 1/0    | ethernet1 | null    | 00:00:01 |
-     | C    | 1235::/16   | 1/0    | ethernet2 | null    | 00:00:01 |
-     | null | 4321::1/128 | 80/1   | ethernet2 | 1235::1 | 00:00:01 |
+     | C    | 1234::/16   | 1/0    | ethernet1 | null    | 00:00:04 |
+     | C    | 1235::/16   | 1/0    | ethernet2 | null    | 00:00:04 |
+     | null | 4321::1/128 | 80/1   | ethernet2 | 1235::1 | 00:00:05 |
      | C    | 4321::2/128 | 2/0    | loopback1 | null    | 00:00:13 |
      |______|_____________|________|___________|_________|__________|
     r2#
@@ -294,8 +290,8 @@
      |------|------------|--------|-----------|---------|----------|
      | C    | 1.1.1.0/24 | 0/0    | ethernet1 | null    | 00:00:14 |
      | LOC  | 1.1.1.2/32 | 0/1    | ethernet1 | null    | 00:00:14 |
-     | C    | 1.1.2.0/24 | 0/0    | ethernet2 | null    | 00:00:14 |
-     | LOC  | 1.1.2.2/32 | 0/1    | ethernet2 | null    | 00:00:14 |
+     | C    | 1.1.2.0/24 | 0/0    | ethernet2 | null    | 00:00:13 |
+     | LOC  | 1.1.2.2/32 | 0/1    | ethernet2 | null    | 00:00:13 |
      | P EX | 2.2.2.1/32 | 80/1   | ethernet2 | 1.1.2.1 | 00:00:03 |
      | C    | 2.2.2.2/32 | 0/0    | loopback1 | null    | 00:00:14 |
      |______|____________|________|___________|_________|__________|
@@ -313,9 +309,9 @@
      |------|-------------|--------|-----------|---------|----------|
      | C    | 1234::/16   | 0/0    | ethernet1 | null    | 00:00:14 |
      | LOC  | 1234::2/128 | 0/1    | ethernet1 | null    | 00:00:14 |
-     | C    | 1235::/16   | 0/0    | ethernet2 | null    | 00:00:14 |
-     | LOC  | 1235::2/128 | 0/1    | ethernet2 | null    | 00:00:14 |
-     | P EX | 4321::1/128 | 80/1   | ethernet2 | 1235::1 | 00:00:01 |
+     | C    | 1235::/16   | 0/0    | ethernet2 | null    | 00:00:13 |
+     | LOC  | 1235::2/128 | 0/1    | ethernet2 | null    | 00:00:13 |
+     | P EX | 4321::1/128 | 80/1   | ethernet2 | 1235::1 | 00:00:05 |
      | C    | 4321::2/128 | 0/0    | loopback1 | null    | 00:00:14 |
      |______|_____________|________|___________|_________|__________|
     r2#

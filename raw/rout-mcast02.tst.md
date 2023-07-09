@@ -14,7 +14,7 @@
     hostname r1
     buggy
     !
-    logging file debug ../binTmp/zzz7r1-log.run
+    logging file debug ../binTmp/zzz59r1-log.run
     !
     vrf definition tester
      exit
@@ -24,7 +24,6 @@
      exit
     !
     interface ethernet1
-     no description
      vrf forwarding v1
      ipv4 address 1.1.1.1 255.255.255.252
      ipv4 pim enable
@@ -78,7 +77,7 @@
     hostname r2
     buggy
     !
-    logging file debug ../binTmp/zzz7r2-log.run
+    logging file debug ../binTmp/zzz59r2-log.run
     !
     vrf definition tester
      exit
@@ -88,7 +87,6 @@
      exit
     !
     interface ethernet1
-     no description
      vrf forwarding v1
      ipv4 address 1.1.1.2 255.255.255.252
      ipv4 pim enable
@@ -99,7 +97,6 @@
      exit
     !
     interface ethernet2
-     no description
      vrf forwarding v1
      ipv4 address 1.1.1.6 255.255.255.252
      ipv4 pim enable
@@ -110,7 +107,6 @@
      exit
     !
     interface ethernet3
-     no description
      vrf forwarding v1
      ipv4 address 1.1.1.10 255.255.255.252
      ipv4 pim enable
@@ -162,7 +158,7 @@
     hostname r3
     buggy
     !
-    logging file debug ../binTmp/zzz7r3-log.run
+    logging file debug ../binTmp/zzz59r3-log.run
     !
     vrf definition tester
      exit
@@ -172,7 +168,6 @@
      exit
     !
     interface ethernet1
-     no description
      vrf forwarding v1
      ipv4 address 1.1.1.5 255.255.255.252
      ipv4 pim enable
@@ -230,7 +225,7 @@
     hostname r4
     buggy
     !
-    logging file debug ../binTmp/zzz7r4-log.run
+    logging file debug ../binTmp/zzz59r4-log.run
     !
     vrf definition tester
      exit
@@ -240,7 +235,6 @@
      exit
     !
     interface ethernet1
-     no description
      vrf forwarding v1
      ipv4 address 1.1.1.9 255.255.255.252
      ipv4 pim enable

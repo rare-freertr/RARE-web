@@ -14,7 +14,7 @@
     hostname r1
     buggy
     !
-    logging file debug ../binTmp/zzz58r1-log.run
+    logging file debug ../binTmp/zzz47r1-log.run
     !
     bundle 1
      no ethernet
@@ -28,7 +28,6 @@
      exit
     !
     interface bundle1
-     no description
      vrf forwarding v1
      ipv4 address 1.1.1.1 255.255.255.0
      ipv6 address 1234::1 ffff::
@@ -37,7 +36,6 @@
      exit
     !
     interface serial1
-     no description
      encapsulation hdlc
      bundle-group 1
      no shutdown
@@ -45,7 +43,6 @@
      exit
     !
     interface serial2
-     no description
      encapsulation hdlc
      bundle-group 1
      no shutdown
@@ -94,7 +91,7 @@
     hostname r2
     buggy
     !
-    logging file debug ../binTmp/zzz58r2-log.run
+    logging file debug ../binTmp/zzz47r2-log.run
     !
     bundle 1
      no ethernet
@@ -109,7 +106,6 @@
      exit
     !
     interface loopback0
-     no description
      vrf forwarding v1
      ipv4 address 2.2.2.1 255.255.255.255
      ipv6 address 4321::1 ffff:ffff:ffff:ffff:ffff:ffff:ffff:ffff
@@ -118,7 +114,6 @@
      exit
     !
     interface bundle1
-     no description
      vrf forwarding v1
      ipv4 address 1.1.1.2 255.255.255.0
      ipv6 address 1234::2 ffff::
@@ -127,13 +122,11 @@
      exit
     !
     interface ethernet1
-     no description
      no shutdown
      no log-link-change
      exit
     !
     interface serial1
-     no description
      encapsulation hdlc
      bundle-group 1
      no shutdown
@@ -188,7 +181,7 @@
     hostname r3
     buggy
     !
-    logging file debug ../binTmp/zzz58r3-log.run
+    logging file debug ../binTmp/zzz47r3-log.run
     !
     bundle 1
      no ethernet
@@ -203,7 +196,6 @@
      exit
     !
     interface loopback0
-     no description
      vrf forwarding v1
      ipv4 address 2.2.2.1 255.255.255.255
      ipv6 address 4321::1 ffff:ffff:ffff:ffff:ffff:ffff:ffff:ffff
@@ -212,7 +204,6 @@
      exit
     !
     interface bundle1
-     no description
      vrf forwarding v1
      ipv4 address 1.1.1.2 255.255.255.0
      ipv6 address 1234::2 ffff::
@@ -221,13 +212,11 @@
      exit
     !
     interface ethernet1
-     no description
      no shutdown
      no log-link-change
      exit
     !
     interface serial1
-     no description
      encapsulation hdlc
      bundle-group 1
      no shutdown

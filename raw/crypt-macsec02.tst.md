@@ -14,7 +14,7 @@
     hostname r1
     buggy
     !
-    logging file debug ../binTmp/zzz26r1-log.run
+    logging file debug ../binTmp/zzz27r1-log.run
     !
     crypto ipsec ips
      group 02
@@ -31,13 +31,11 @@
      exit
     !
     interface ethernet1
-     no description
      no shutdown
      no log-link-change
      exit
     !
     interface ethernet1.11
-     no description
      macsec ips
      vrf forwarding v1
      ipv4 address 1.1.1.1 255.255.255.0
@@ -88,7 +86,7 @@
     hostname r2
     buggy
     !
-    logging file debug ../binTmp/zzz26r2-log.run
+    logging file debug ../binTmp/zzz27r2-log.run
     !
     crypto ipsec ips
      group 02
@@ -105,13 +103,11 @@
      exit
     !
     interface ethernet1
-     no description
      no shutdown
      no log-link-change
      exit
     !
     interface ethernet1.11
-     no description
      macsec ips
      vrf forwarding v1
      ipv4 address 1.1.1.2 255.255.255.0

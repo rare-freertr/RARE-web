@@ -14,7 +14,7 @@
     hostname r1
     buggy
     !
-    logging file debug ../binTmp/zzz15r1-log.run
+    logging file debug ../binTmp/zzz53r1-log.run
     !
     ipv4 pool p4 2.2.2.1 0.0.0.1 254
     !
@@ -26,7 +26,6 @@
      exit
     !
     interface loopback0
-     no description
      vrf forwarding v1
      ipv4 address 4.4.4.4 255.255.255.255
      ipv6 address 4444::4 ffff::
@@ -35,7 +34,6 @@
      exit
     !
     interface dialer1
-     no description
      encapsulation ppp
      ppp ip4cp open
      ppp ip4cp local 2.2.2.0
@@ -48,7 +46,6 @@
      exit
     !
     interface ethernet1
-     no description
      vrf forwarding v1
      ipv4 address 1.1.1.1 255.255.255.0
      ipv6 address 1234::1 ffff::
@@ -103,7 +100,7 @@
     hostname r2
     buggy
     !
-    logging file debug ../binTmp/zzz15r2-log.run
+    logging file debug ../binTmp/zzz53r2-log.run
     !
     prefix-list p1
      sequence 10 permit 0.0.0.0/0 ge 0 le 0
@@ -117,7 +114,6 @@
      exit
     !
     interface dialer1
-     no description
      encapsulation ppp
      ppp ip4cp open
      ppp ip4cp local 0.0.0.0
@@ -130,7 +126,6 @@
      exit
     !
     interface ethernet1
-     no description
      vrf forwarding v1
      ipv4 address 1.1.1.2 255.255.255.0
      ipv6 address 1234::2 ffff::
@@ -196,18 +191,20 @@
     r2#
     r2#show inter dia1 full
     r2#show inter dia1 full
-    dialer1 is up (since 00:00:00, 3 changes)
+    dialer1 is up
      description:
+     state changed 3 times, last at 2022-05-02 21:14:40, 00:00:00 ago
+     last packet input 00:00:00 ago, output 00:00:00 ago, drop never ago
      type is dialer, hwaddr=none, mtu=1396, bw=4000kbps, vrf=v1
-     ip4 address=2.2.2.123/25, netmask=255.255.255.128, ifcid=1024501693
-     ip6 address=4321::2/16, netmask=ffff::, ifcid=871421276
+     ipv4 address=2.2.2.157/25, mask=255.255.255.128, ifcid=700593377
+     ipv6 address=4321::2/16, mask=ffff::, ifcid=1008785867
      received 18 packets (1220 bytes) dropped 0 packets (0 bytes)
-     transmitted 18 packets (1220 bytes) promisc=false macsec=false sgt=false
+     transmitted 18 packets (1220 bytes) macsec=false sgt=false
      |~~~~~~~|~~~~|~~~~|~~~~~~|~~~~~|~~~~~|~~~~~~|
      |       | packet         | byte             |
      | time  | tx | rx | drop | tx  | rx  | drop |
      |-------|----|----|------|-----|-----|------|
-     | 1sec  | 15 | 15 | 0    | 990 | 990 | 0    |
+     | 1sec  | 5  | 5  | 0    | 330 | 330 | 0    |
      | 1min  | 0  | 0  | 0    | 0   | 0   | 0    |
      | 1hour | 0  | 0  | 0    | 0   | 0   | 0    |
      |_______|____|____|______|_____|_____|______|
@@ -255,41 +252,41 @@
      | 6     | 0   | 0   | 0    | 0    | 0    | 0    |
      | 7     | 0   | 0   | 0    | 0    | 0    | 0    |
      |_______|_____|_____|______|______|______|______|
-             15k|
-             14k|#
-             12k|#
-             11k|#
-            9504|#
-            7920|#
-            6336|#
+            5280|#
             4752|#
+            4224|#
+            3696|#
             3168|#
+            2640|#
+            2112|#
             1584|#
-               0|#
+            1056|#
+             528|#
+               0|############################################################
              bps|0---------10--------20--------30--------40--------50-------- seconds
+              10|
+               9|
+               8|
+               7|
+               6|
+               5|
+               4|
+               3|
+               2|
                1|
-               0|
-               0|
-               0|
-               0|
-               0|
-               0|
-               0|
-               0|
-               0|
-               0|
+               0|############################################################
              bps|0---------10--------20--------30--------40--------50-------- minutes
+              10|
+               9|
+               8|
+               7|
+               6|
+               5|
+               4|
+               3|
+               2|
                1|
-               0|
-               0|
-               0|
-               0|
-               0|
-               0|
-               0|
-               0|
-               0|
-               0|
+               0|############################################################
              bps|0---------10--------20--------30--------40--------50-------- hours
     r2#
     r2#

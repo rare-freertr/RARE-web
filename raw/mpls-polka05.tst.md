@@ -14,7 +14,7 @@
     hostname r1
     buggy
     !
-    logging file debug ../binTmp/zzz73r1-log.run
+    logging file debug ../binTmp/zzz76r1-log.run
     !
     vrf definition tester
      exit
@@ -38,7 +38,6 @@
      exit
     !
     interface loopback0
-     no description
      vrf forwarding v1
      ipv4 address 2.2.2.1 255.255.255.255
      ipv6 address 4321::1 ffff:ffff:ffff:ffff:ffff:ffff:ffff:ffff
@@ -47,7 +46,6 @@
      exit
     !
     interface serial1
-     no description
      encapsulation ppp
      vrf forwarding v1
      ipv4 address 1.1.1.1 255.255.255.0
@@ -61,7 +59,6 @@
      exit
     !
     interface tunnel1
-     no description
      tunnel vrf v1
      tunnel source loopback0
      tunnel destination 2.2.2.3
@@ -74,7 +71,6 @@
      exit
     !
     interface tunnel2
-     no description
      tunnel vrf v1
      tunnel source loopback0
      tunnel destination 4321::3
@@ -128,7 +124,7 @@
     hostname r2
     buggy
     !
-    logging file debug ../binTmp/zzz73r2-log.run
+    logging file debug ../binTmp/zzz76r2-log.run
     !
     vrf definition tester
      exit
@@ -152,7 +148,6 @@
      exit
     !
     interface loopback0
-     no description
      vrf forwarding v1
      ipv4 address 2.2.2.2 255.255.255.255
      ipv6 address 4321::2 ffff:ffff:ffff:ffff:ffff:ffff:ffff:ffff
@@ -161,7 +156,6 @@
      exit
     !
     interface serial1
-     no description
      encapsulation ppp
      vrf forwarding v1
      ipv4 address 1.1.1.2 255.255.255.0
@@ -175,7 +169,6 @@
      exit
     !
     interface serial2
-     no description
      encapsulation ppp
      vrf forwarding v1
      ipv4 address 1.1.2.5 255.255.255.0
@@ -230,7 +223,7 @@
     hostname r3
     buggy
     !
-    logging file debug ../binTmp/zzz73r3-log.run
+    logging file debug ../binTmp/zzz76r3-log.run
     !
     vrf definition tester
      exit
@@ -254,7 +247,6 @@
      exit
     !
     interface loopback0
-     no description
      vrf forwarding v1
      ipv4 address 2.2.2.3 255.255.255.255
      ipv6 address 4321::3 ffff:ffff:ffff:ffff:ffff:ffff:ffff:ffff
@@ -263,7 +255,6 @@
      exit
     !
     interface serial1
-     no description
      encapsulation ppp
      vrf forwarding v1
      ipv4 address 1.1.2.6 255.255.255.0
@@ -277,7 +268,6 @@
      exit
     !
     interface tunnel1
-     no description
      tunnel vrf v1
      tunnel source loopback0
      tunnel destination 2.2.2.1
@@ -290,7 +280,6 @@
      exit
     !
     interface tunnel2
-     no description
      tunnel vrf v1
      tunnel source loopback0
      tunnel destination 4321::1

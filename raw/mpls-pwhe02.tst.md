@@ -14,7 +14,7 @@
     hostname r1
     buggy
     !
-    logging file debug ../binTmp/zzz43r1-log.run
+    logging file debug ../binTmp/zzz45r1-log.run
     !
     vrf definition tester
      exit
@@ -24,7 +24,6 @@
      exit
     !
     interface loopback0
-     no description
      vrf forwarding v1
      ipv4 address 2.2.2.1 255.255.255.255
      ipv6 address 4321::1 ffff:ffff:ffff:ffff:ffff:ffff:ffff:ffff
@@ -33,7 +32,6 @@
      exit
     !
     interface ethernet1
-     no description
      vrf forwarding v1
      ipv4 address 1.1.1.1 255.255.255.0
      ipv6 address 1234::1 ffff::
@@ -42,9 +40,8 @@
      exit
     !
     interface pwether1
-     no description
      mtu 1500
-     macaddr 006b.4200.3722
+     macaddr 002f.120c.6970
      vrf forwarding v1
      ipv4 address 3.3.3.1 255.255.255.0
      pseudowire v1 loopback0 pckoudp 2.2.2.2 1234
@@ -96,7 +93,7 @@
     hostname r2
     buggy
     !
-    logging file debug ../binTmp/zzz43r2-log.run
+    logging file debug ../binTmp/zzz45r2-log.run
     !
     vrf definition tester
      exit
@@ -106,7 +103,6 @@
      exit
     !
     interface loopback0
-     no description
      vrf forwarding v1
      ipv4 address 2.2.2.2 255.255.255.255
      ipv6 address 4321::2 ffff:ffff:ffff:ffff:ffff:ffff:ffff:ffff
@@ -115,7 +111,6 @@
      exit
     !
     interface ethernet1
-     no description
      vrf forwarding v1
      ipv4 address 1.1.1.2 255.255.255.0
      ipv6 address 1234::2 ffff::
@@ -124,9 +119,8 @@
      exit
     !
     interface pwether1
-     no description
      mtu 1500
-     macaddr 0017.1e1a.5945
+     macaddr 003b.765f.2803
      vrf forwarding v1
      ipv4 address 3.3.3.2 255.255.255.0
      pseudowire v1 loopback0 pckoudp 2.2.2.1 1234
@@ -180,20 +174,22 @@
     r1#
     r1#show inter pweth1 full
     r1#show inter pweth1 full
-    pwether1 is up (since 00:00:08, 3 changes)
+    pwether1 is up
      description:
-     type is pwether, hwaddr=006b.4200.3722, mtu=1500, bw=4000kbps, vrf=v1
-     ip4 address=3.3.3.1/24, netmask=255.255.255.0, ifcid=669202876
+     state changed 3 times, last at 2022-05-02 21:11:29, 00:00:06 ago
+     last packet input 00:00:00 ago, output 00:00:00 ago, drop never ago
+     type is pwether, hwaddr=002f.120c.6970, mtu=1500, bw=4000kbps, vrf=v1
+     ipv4 address=3.3.3.1/24, mask=255.255.255.0, ifcid=52569511
      received 15 packets (954 bytes) dropped 0 packets (0 bytes)
-     transmitted 15 packets (954 bytes) promisc=false macsec=false sgt=false
-     |~~~~~~~|~~~~|~~~~|~~~~~~|~~~~|~~~~|~~~~~~|
-     |       | packet         | byte           |
-     | time  | tx | rx | drop | tx | rx | drop |
-     |-------|----|----|------|----|----|------|
-     | 1sec  | 0  | 0  | 0    | 0  | 0  | 0    |
-     | 1min  | 0  | 0  | 0    | 0  | 0  | 0    |
-     | 1hour | 0  | 0  | 0    | 0  | 0  | 0    |
-     |_______|____|____|______|____|____|______|
+     transmitted 15 packets (954 bytes) macsec=false sgt=false
+     |~~~~~~~|~~~~|~~~~|~~~~~~|~~~~~|~~~~~|~~~~~~|
+     |       | packet         | byte             |
+     | time  | tx | rx | drop | tx  | rx  | drop |
+     |-------|----|----|------|-----|-----|------|
+     | 1sec  | 10 | 10 | 0    | 660 | 660 | 0    |
+     | 1min  | 0  | 0  | 0    | 0   | 0   | 0    |
+     | 1hour | 0  | 0  | 0    | 0   | 0   | 0    |
+     |_______|____|____|______|_____|_____|______|
      |~~~~~~~~|~~~~~~~|~~~~~~~~~|~~~~|~~~~|~~~~~~|~~~~~|~~~~~|~~~~~~|
      |                          | packet         | byte             |
      | type   | value | handler | tx | rx | drop | tx  | rx  | drop |
@@ -238,41 +234,41 @@
      | 6     | 0   | 0   | 0    | 0   | 0   | 0    |
      | 7     | 0   | 0   | 0    | 0   | 0   | 0    |
      |_______|_____|_____|______|_____|_____|______|
-            4224|
-            3801| #
-            3379| #
-            2956| #
-            2534| #
-            2112| #
-            1689| #
-            1267| #
-             844| #
-             422| ##
-               0| ##
+           10.5k|#
+            9504|#
+            8448|#
+            7392|#
+            6336|#
+            5280|#
+            4224|##
+            3168|##
+            2112|##
+            1056|##
+               0|############################################################
              bps|0---------10--------20--------30--------40--------50-------- seconds
+              10|
+               9|
+               8|
+               7|
+               6|
+               5|
+               4|
+               3|
+               2|
                1|
-               0|
-               0|
-               0|
-               0|
-               0|
-               0|
-               0|
-               0|
-               0|
-               0|
+               0|############################################################
              bps|0---------10--------20--------30--------40--------50-------- minutes
+              10|
+               9|
+               8|
+               7|
+               6|
+               5|
+               4|
+               3|
+               2|
                1|
-               0|
-               0|
-               0|
-               0|
-               0|
-               0|
-               0|
-               0|
-               0|
-               0|
+               0|############################################################
              bps|0---------10--------20--------30--------40--------50-------- hours
     r1#
     r1#
@@ -286,7 +282,7 @@
      |~~~~~~~~~~~~~~~~|~~~~~~~~~|~~~~~~~~~~|~~~~~~~~|
      | mac            | address | time     | static |
      |----------------|---------|----------|--------|
-     | 0017.1e1a.5945 | 3.3.3.2 | 00:00:07 | false  |
+     | 003b.765f.2803 | 3.3.3.2 | 00:00:05 | false  |
      |________________|_________|__________|________|
     r1#
     r1#

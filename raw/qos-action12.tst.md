@@ -14,7 +14,7 @@
     hostname r1
     buggy
     !
-    logging file debug ../binTmp/zzz14r1-log.run
+    logging file debug ../binTmp/zzz75r1-log.run
     !
     policy-map p1
      sequence 10 action shape
@@ -30,7 +30,6 @@
      exit
     !
     interface ethernet1
-     no description
      service-policy-out p1
      vrf forwarding v1
      ipv4 address 1.1.1.1 255.255.255.0
@@ -81,7 +80,7 @@
     hostname r2
     buggy
     !
-    logging file debug ../binTmp/zzz14r2-log.run
+    logging file debug ../binTmp/zzz75r2-log.run
     !
     policy-map p1
      sequence 10 action police
@@ -97,7 +96,6 @@
      exit
     !
     interface ethernet1
-     no description
      service-policy-in p1
      vrf forwarding v1
      ipv4 address 1.1.1.2 255.255.255.0

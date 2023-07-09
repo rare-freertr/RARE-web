@@ -14,7 +14,7 @@
     hostname r1
     buggy
     !
-    logging file debug ../binTmp/zzz99r1-log.run
+    logging file debug ../binTmp/zzz46r1-log.run
     !
     access-list test4
      sequence 10 deny 1 any all any all
@@ -31,11 +31,11 @@
     !
     vrf definition v1
      rd 1:1
-     label-mode per-prefix
+     label4mode per-prefix
+     label6mode per-prefix
      exit
     !
     interface loopback0
-     no description
      vrf forwarding v1
      ipv4 address 2.2.2.1 255.255.255.255
      ipv6 address 4321::1 ffff:ffff:ffff:ffff:ffff:ffff:ffff:ffff
@@ -44,7 +44,6 @@
      exit
     !
     interface ethernet1
-     no description
      vrf forwarding v1
      ipv4 address 1.1.1.1 255.255.255.252
      ipv4 access-group-in test4
@@ -56,9 +55,8 @@
      exit
     !
     interface pwether1
-     no description
      mtu 1500
-     macaddr 0050.5f0b.4e4c
+     macaddr 002b.540b.5352
      vrf forwarding v1
      ipv4 address 3.3.3.1 255.255.255.0
      pseudowire v1 loopback0 pweompls 2.2.2.3 1234
@@ -67,9 +65,8 @@
      exit
     !
     interface pwether2
-     no description
      mtu 1500
-     macaddr 0079.3957.2504
+     macaddr 005a.5879.1127
      vrf forwarding v1
      ipv4 address 3.3.4.1 255.255.255.0
      pseudowire v1 loopback0 pweompls 4321::3 1234
@@ -84,7 +81,6 @@
      no safe-ebgp
      address-family labeled
      neighbor 1.1.1.2 remote-as 2
-     no neighbor 1.1.1.2 description
      neighbor 1.1.1.2 local-as 1
      neighbor 1.1.1.2 address-family labeled
      neighbor 1.1.1.2 distance 20
@@ -99,7 +95,6 @@
      no safe-ebgp
      address-family labeled
      neighbor 1234:1::2 remote-as 2
-     no neighbor 1234:1::2 description
      neighbor 1234:1::2 local-as 1
      neighbor 1234:1::2 address-family labeled
      neighbor 1234:1::2 distance 20
@@ -149,7 +144,7 @@
     hostname r2
     buggy
     !
-    logging file debug ../binTmp/zzz99r2-log.run
+    logging file debug ../binTmp/zzz46r2-log.run
     !
     access-list test4
      sequence 10 deny 1 any all any all
@@ -166,11 +161,11 @@
     !
     vrf definition v1
      rd 1:1
-     label-mode per-prefix
+     label4mode per-prefix
+     label6mode per-prefix
      exit
     !
     interface loopback0
-     no description
      vrf forwarding v1
      ipv4 address 2.2.2.2 255.255.255.255
      ipv6 address 4321::2 ffff:ffff:ffff:ffff:ffff:ffff:ffff:ffff
@@ -179,7 +174,6 @@
      exit
     !
     interface ethernet1
-     no description
      vrf forwarding v1
      ipv4 address 1.1.1.2 255.255.255.252
      ipv4 access-group-in test4
@@ -191,7 +185,6 @@
      exit
     !
     interface ethernet2
-     no description
      vrf forwarding v1
      ipv4 address 1.1.1.5 255.255.255.252
      ipv4 access-group-in test4
@@ -209,13 +202,11 @@
      no safe-ebgp
      address-family labeled
      neighbor 1.1.1.1 remote-as 1
-     no neighbor 1.1.1.1 description
      neighbor 1.1.1.1 local-as 2
      neighbor 1.1.1.1 address-family labeled
      neighbor 1.1.1.1 distance 20
      neighbor 1.1.1.1 label-pop
      neighbor 1.1.1.6 remote-as 3
-     no neighbor 1.1.1.6 description
      neighbor 1.1.1.6 local-as 2
      neighbor 1.1.1.6 address-family labeled
      neighbor 1.1.1.6 distance 20
@@ -230,13 +221,11 @@
      no safe-ebgp
      address-family labeled
      neighbor 1234:1::1 remote-as 1
-     no neighbor 1234:1::1 description
      neighbor 1234:1::1 local-as 2
      neighbor 1234:1::1 address-family labeled
      neighbor 1234:1::1 distance 20
      neighbor 1234:1::1 label-pop
      neighbor 1234:2::2 remote-as 3
-     no neighbor 1234:2::2 description
      neighbor 1234:2::2 local-as 2
      neighbor 1234:2::2 address-family labeled
      neighbor 1234:2::2 distance 20
@@ -286,7 +275,7 @@
     hostname r3
     buggy
     !
-    logging file debug ../binTmp/zzz99r3-log.run
+    logging file debug ../binTmp/zzz46r3-log.run
     !
     access-list test4
      sequence 10 deny 1 any all any all
@@ -303,11 +292,11 @@
     !
     vrf definition v1
      rd 1:1
-     label-mode per-prefix
+     label4mode per-prefix
+     label6mode per-prefix
      exit
     !
     interface loopback0
-     no description
      vrf forwarding v1
      ipv4 address 2.2.2.3 255.255.255.255
      ipv6 address 4321::3 ffff:ffff:ffff:ffff:ffff:ffff:ffff:ffff
@@ -316,7 +305,6 @@
      exit
     !
     interface ethernet1
-     no description
      vrf forwarding v1
      ipv4 address 1.1.1.6 255.255.255.252
      ipv4 access-group-in test4
@@ -328,9 +316,8 @@
      exit
     !
     interface pwether1
-     no description
      mtu 1500
-     macaddr 0049.013e.4958
+     macaddr 000b.6c03.0d1b
      vrf forwarding v1
      ipv4 address 3.3.3.2 255.255.255.0
      pseudowire v1 loopback0 pweompls 2.2.2.1 1234
@@ -339,9 +326,8 @@
      exit
     !
     interface pwether2
-     no description
      mtu 1500
-     macaddr 0002.2031.7b70
+     macaddr 007c.3a2e.0951
      vrf forwarding v1
      ipv4 address 3.3.4.2 255.255.255.0
      pseudowire v1 loopback0 pweompls 4321::1 1234
@@ -356,7 +342,6 @@
      no safe-ebgp
      address-family labeled
      neighbor 1.1.1.5 remote-as 2
-     no neighbor 1.1.1.5 description
      neighbor 1.1.1.5 local-as 3
      neighbor 1.1.1.5 address-family labeled
      neighbor 1.1.1.5 distance 20
@@ -371,7 +356,6 @@
      no safe-ebgp
      address-family labeled
      neighbor 1234:2::1 remote-as 2
-     no neighbor 1234:2::1 description
      neighbor 1234:2::1 local-as 3
      neighbor 1234:2::1 address-family labeled
      neighbor 1234:2::1 distance 20

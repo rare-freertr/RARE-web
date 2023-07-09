@@ -12,7 +12,7 @@
     **r1:**
     ```
     hostname r1
-    logging file debug ../binTmp/zzz63r1-log.run
+    logging file debug ../binTmp/zzz4r1-log.run
     vrf definition tester
      exit
     server telnet tester
@@ -32,7 +32,7 @@
     **r2:**
     ```
     hostname r2
-    logging file debug ../binTmp/zzz63r2-log.run
+    logging file debug ../binTmp/zzz4r2-log.run
     vrf definition tester
      exit
     server telnet tester
@@ -52,7 +52,7 @@
     **r3:**
     ```
     hostname r3
-    logging file debug ../binTmp/zzz63r3-log.run
+    logging file debug ../binTmp/zzz4r3-log.run
     vrf definition tester
      exit
     server telnet tester
@@ -72,19 +72,47 @@
     **r4:**
     ```
     hostname r4
-    logging file debug ../binTmp/zzz63r4-log.run
+    buggy
+    !
+    logging file debug ../binTmp/zzz4r4-log.run
+    !
     vrf definition tester
      exit
+    !
+    interface ethernet1
+     description r3 e1
+     lldp enable
+     no shutdown
+     no log-link-change
+     exit
+    !
+    interface ethernet2
+     description r2 e2
+     lldp enable
+     no shutdown
+     no log-link-change
+     exit
+    !
+    !
+    !
+    !
+    !
+    !
+    !
+    !
+    !
+    !
+    !
+    !
+    !
+    !
     server telnet tester
      security protocol telnet
+     no exec authorization
+     no login authentication
      vrf tester
      exit
-    int eth1
-     desc r3 e1
-     lldp ena
-     exit
-    int eth2
-     desc r2 e2
-     lldp ena
-     exit
+    !
+    !
+    end
     ```

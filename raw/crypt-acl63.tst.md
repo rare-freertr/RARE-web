@@ -14,7 +14,7 @@
     hostname r1
     buggy
     !
-    logging file debug ../binTmp/zzz61r1-log.run
+    logging file debug ../binTmp/zzz27r1-log.run
     !
     access-list dyn4i
      hidden
@@ -66,7 +66,6 @@
      exit
     !
     interface ethernet1
-     no description
      vrf forwarding v1
      ipv4 address 1.1.1.1 255.255.255.252
      ipv4 access-group-in test4i
@@ -120,7 +119,7 @@
     hostname r2
     buggy
     !
-    logging file debug ../binTmp/zzz61r2-log.run
+    logging file debug ../binTmp/zzz27r2-log.run
     !
     vrf definition tester
      exit
@@ -130,7 +129,6 @@
      exit
     !
     interface ethernet1
-     no description
      vrf forwarding v1
      ipv4 address 1.1.1.2 255.255.255.252
      ipv6 address 1234::2 ffff:ffff::

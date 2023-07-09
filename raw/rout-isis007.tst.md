@@ -14,7 +14,7 @@
     hostname r1
     buggy
     !
-    logging file debug ../binTmp/zzz55r1-log.run
+    logging file debug ../binTmp/zzz50r1-log.run
     !
     vrf definition tester
      exit
@@ -40,7 +40,6 @@
      exit
     !
     interface loopback1
-     no description
      vrf forwarding v1
      ipv4 address 2.2.2.1 255.255.255.255
      ipv6 address 4321::1 ffff:ffff:ffff:ffff:ffff:ffff:ffff:ffff
@@ -49,7 +48,6 @@
      exit
     !
     interface serial1
-     no description
      encapsulation atmdxi
      atmdxi vpi 1
      atmdxi vci 2
@@ -63,7 +61,6 @@
      exit
     !
     interface serial2
-     no description
      encapsulation atmdxi
      atmdxi vpi 1
      atmdxi vci 2
@@ -118,7 +115,7 @@
     hostname r2
     buggy
     !
-    logging file debug ../binTmp/zzz55r2-log.run
+    logging file debug ../binTmp/zzz50r2-log.run
     !
     vrf definition tester
      exit
@@ -144,7 +141,6 @@
      exit
     !
     interface loopback1
-     no description
      vrf forwarding v1
      ipv4 address 2.2.2.2 255.255.255.255
      ipv6 address 4321::2 ffff:ffff:ffff:ffff:ffff:ffff:ffff:ffff
@@ -153,7 +149,6 @@
      exit
     !
     interface serial1
-     no description
      encapsulation atmdxi
      atmdxi vpi 1
      atmdxi vci 2
@@ -167,7 +162,6 @@
      exit
     !
     interface serial2
-     no description
      encapsulation atmdxi
      atmdxi vpi 1
      atmdxi vci 2
@@ -241,7 +235,7 @@
      |~~~~~~~~~~~|~~~~~~~~~~~~~~~~|~~~~~~~|~~~~~~~~~~~~~~~~|~~~~~~~~~~~~|~~~~~~~~~~~~~~~|~~~~~~~|~~~~~~~~~~|
      | interface | mac address    | level | routerid       | ip address | other address | state | uptime   |
      |-----------|----------------|-------|----------------|------------|---------------|-------|----------|
-     | serial2   | 0000.0000.0000 | 2     | 6666.0000.1111 | 1234::1    | ::            | up    | 00:00:02 |
+     | serial2   | 0000.0000.0000 | 2     | 6666.0000.1111 | 1234::1    | ::            | up    | 00:00:01 |
      |___________|________________|_______|________________|____________|_______________|_______|__________|
     r2#
     r2#
@@ -255,8 +249,9 @@
      |~~~~~~~~~~~~~~~~~~~~~~|~~~~~~~~~~|~~~~~~~|~~~~~|~~~~~~~~~~|
      | lspid                | sequence | flags | len | time     |
      |----------------------|----------|-------|-----|----------|
-     | 4444.0000.1111.00-00 | 00000005 | apo   | 45  | 00:19:57 |
-     | 4444.0000.2222.00-00 | 00000005 | apo   | 45  | 00:19:57 |
+     | 0000.0000.0000.00-00 | 00000001 | apo   | 10  | 00:19:57 |
+     | 4444.0000.1111.00-00 | 00000005 | apo   | 45  | 00:19:58 |
+     | 4444.0000.2222.00-00 | 00000005 | apo   | 45  | 00:19:58 |
      |______________________|__________|_______|_____|__________|
     r2#
     r2#
@@ -270,8 +265,8 @@
      |~~~~~~~~~~~~~~~~~~~~~~|~~~~~~~~~~|~~~~~~~|~~~~~|~~~~~~~~~~|
      | lspid                | sequence | flags | len | time     |
      |----------------------|----------|-------|-----|----------|
-     | 6666.0000.1111.00-00 | 00000005 | apo   | 58  | 00:19:57 |
-     | 6666.0000.2222.00-00 | 00000005 | apo   | 58  | 00:19:57 |
+     | 6666.0000.1111.00-00 | 00000006 | apo   | 58  | 00:19:58 |
+     | 6666.0000.2222.00-00 | 00000005 | apo   | 58  | 00:19:58 |
      |______________________|__________|_______|_____|__________|
     r2#
     r2#
@@ -307,10 +302,10 @@
      |~~~~~|~~~~~~~~~~~~|~~~~~~~~|~~~~~~~~~~~|~~~~~~~~~|~~~~~~~~~~|
      | typ | prefix     | metric | iface     | hop     | time     |
      |-----|------------|--------|-----------|---------|----------|
-     | C   | 1.1.1.0/24 | 0/0    | serial1   | null    | 00:00:03 |
-     | LOC | 1.1.1.2/32 | 0/1    | serial1   | null    | 00:00:03 |
-     | I   | 2.2.2.1/32 | 115/10 | serial1   | 1.1.1.1 | 00:00:03 |
-     | C   | 2.2.2.2/32 | 0/0    | loopback1 | null    | 00:00:03 |
+     | C   | 1.1.1.0/24 | 0/0    | serial1   | null    | 00:00:02 |
+     | LOC | 1.1.1.2/32 | 0/1    | serial1   | null    | 00:00:02 |
+     | I   | 2.2.2.1/32 | 115/10 | serial1   | 1.1.1.1 | 00:00:01 |
+     | C   | 2.2.2.2/32 | 0/0    | loopback1 | null    | 00:00:02 |
      |_____|____________|________|___________|_________|__________|
     r2#
     r2#
@@ -324,10 +319,10 @@
      |~~~~~~|~~~~~~~~~~~~~|~~~~~~~~|~~~~~~~~~~~|~~~~~~~~~|~~~~~~~~~~|
      | typ  | prefix      | metric | iface     | hop     | time     |
      |------|-------------|--------|-----------|---------|----------|
-     | C    | 1234::/16   | 0/0    | serial2   | null    | 00:00:03 |
-     | LOC  | 1234::2/128 | 0/1    | serial2   | null    | 00:00:03 |
-     | I EX | 4321::1/128 | 115/10 | serial2   | 1234::1 | 00:00:03 |
-     | C    | 4321::2/128 | 0/0    | loopback1 | null    | 00:00:03 |
+     | C    | 1234::/16   | 0/0    | serial2   | null    | 00:00:02 |
+     | LOC  | 1234::2/128 | 0/1    | serial2   | null    | 00:00:02 |
+     | I EX | 4321::1/128 | 115/10 | serial2   | 1234::1 | 00:00:01 |
+     | C    | 4321::2/128 | 0/0    | loopback1 | null    | 00:00:02 |
      |______|_____________|________|___________|_________|__________|
     r2#
     r2#

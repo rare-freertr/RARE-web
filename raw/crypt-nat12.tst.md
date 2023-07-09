@@ -14,7 +14,7 @@
     hostname r1
     buggy
     !
-    logging file debug ../binTmp/zzz74r1-log.run
+    logging file debug ../binTmp/zzz21r1-log.run
     !
     vrf definition tester
      exit
@@ -24,7 +24,6 @@
      exit
     !
     interface ethernet1
-     no description
      vrf forwarding v1
      ipv4 address 1.1.1.1 255.255.255.252
      ipv6 address 1234:1::1 ffff:ffff::
@@ -74,7 +73,7 @@
     hostname r2
     buggy
     !
-    logging file debug ../binTmp/zzz74r2-log.run
+    logging file debug ../binTmp/zzz21r2-log.run
     !
     access-list test4
      sequence 10 permit all 1.1.1.4 255.255.255.252 all 1.1.1.0 255.255.255.252 all
@@ -92,7 +91,6 @@
      exit
     !
     interface ethernet1
-     no description
      vrf forwarding v1
      ipv4 address 1.1.1.2 255.255.255.252
      ipv6 address 1234:1::2 ffff:ffff::
@@ -101,7 +99,6 @@
      exit
     !
     interface ethernet2
-     no description
      vrf forwarding v1
      ipv4 address 1.1.1.5 255.255.255.252
      ipv6 address 1234:2::1 ffff:ffff::
@@ -155,7 +152,7 @@
     hostname r3
     buggy
     !
-    logging file debug ../binTmp/zzz74r3-log.run
+    logging file debug ../binTmp/zzz21r3-log.run
     !
     vrf definition tester
      exit
@@ -165,7 +162,6 @@
      exit
     !
     interface loopback1
-     no description
      vrf forwarding v1
      ipv4 address 8.8.8.8 255.255.255.255
      ipv6 address 8888::8 ffff:ffff:ffff:ffff:ffff:ffff:ffff:ffff
@@ -174,7 +170,6 @@
      exit
     !
     interface ethernet1
-     no description
      vrf forwarding v1
      ipv4 address 1.1.1.6 255.255.255.252
      ipv6 address 1234:2::2 ffff:ffff::

@@ -14,18 +14,18 @@
     hostname r1
     buggy
     !
-    logging file debug ../binTmp/zzz13r1-log.run
+    logging file debug ../binTmp/zzz65r1-log.run
     !
     vrf definition tester
      exit
     !
     vrf definition v1
      rd 1:1
-     label-mode per-prefix
+     label4mode per-prefix
+     label6mode per-prefix
      exit
     !
     interface loopback0
-     no description
      vrf forwarding v1
      ipv4 address 2.2.2.1 255.255.255.255
      ipv6 address 4321::1 ffff:ffff:ffff:ffff:ffff:ffff:ffff:ffff
@@ -34,7 +34,6 @@
      exit
     !
     interface loopback1
-     no description
      vrf forwarding v1
      ipv4 address 2.2.2.11 255.255.255.255
      ipv6 address 4321::11 ffff:ffff:ffff:ffff:ffff:ffff:ffff:ffff
@@ -43,7 +42,6 @@
      exit
     !
     interface ethernet1
-     no description
      vrf forwarding v1
      ipv4 address 1.1.1.1 255.255.255.252
      ipv6 address 1234:1::1 ffff:ffff::
@@ -55,9 +53,8 @@
      exit
     !
     interface pwether1
-     no description
      mtu 1500
-     macaddr 0052.353e.6506
+     macaddr 0079.7170.6961
      vrf forwarding v1
      ipv4 address 3.3.3.1 255.255.255.0
      pseudowire v1 loopback1 pweompls 2.2.2.13 1234
@@ -66,9 +63,8 @@
      exit
     !
     interface pwether2
-     no description
      mtu 1500
-     macaddr 004e.0852.5c09
+     macaddr 0012.313f.3d75
      vrf forwarding v1
      ipv4 address 3.3.4.1 255.255.255.0
      pseudowire v1 loopback1 pweompls 4321::13 1234
@@ -80,10 +76,8 @@
      vrf v1
      local-as 1
      router-id 4.4.4.1
-     no safe-ebgp
      address-family labeled
      neighbor 2.2.2.3 remote-as 1
-     no neighbor 2.2.2.3 description
      neighbor 2.2.2.3 local-as 1
      neighbor 2.2.2.3 address-family labeled
      neighbor 2.2.2.3 distance 200
@@ -96,10 +90,8 @@
      vrf v1
      local-as 1
      router-id 6.6.6.1
-     no safe-ebgp
      address-family labeled
      neighbor 4321::3 remote-as 1
-     no neighbor 4321::3 description
      neighbor 4321::3 local-as 1
      neighbor 4321::3 address-family labeled
      neighbor 4321::3 distance 200
@@ -154,18 +146,18 @@
     hostname r2
     buggy
     !
-    logging file debug ../binTmp/zzz13r2-log.run
+    logging file debug ../binTmp/zzz65r2-log.run
     !
     vrf definition tester
      exit
     !
     vrf definition v1
      rd 1:1
-     label-mode per-prefix
+     label4mode per-prefix
+     label6mode per-prefix
      exit
     !
     interface loopback0
-     no description
      vrf forwarding v1
      ipv4 address 2.2.2.2 255.255.255.255
      ipv6 address 4321::2 ffff:ffff:ffff:ffff:ffff:ffff:ffff:ffff
@@ -174,7 +166,6 @@
      exit
     !
     interface ethernet1
-     no description
      vrf forwarding v1
      ipv4 address 1.1.1.2 255.255.255.252
      ipv6 address 1234:1::2 ffff:ffff::
@@ -186,7 +177,6 @@
      exit
     !
     interface ethernet2
-     no description
      vrf forwarding v1
      ipv4 address 1.1.1.5 255.255.255.252
      ipv6 address 1234:2::1 ffff:ffff::
@@ -243,18 +233,18 @@
     hostname r3
     buggy
     !
-    logging file debug ../binTmp/zzz13r3-log.run
+    logging file debug ../binTmp/zzz65r3-log.run
     !
     vrf definition tester
      exit
     !
     vrf definition v1
      rd 1:1
-     label-mode per-prefix
+     label4mode per-prefix
+     label6mode per-prefix
      exit
     !
     interface loopback0
-     no description
      vrf forwarding v1
      ipv4 address 2.2.2.3 255.255.255.255
      ipv6 address 4321::3 ffff:ffff:ffff:ffff:ffff:ffff:ffff:ffff
@@ -263,7 +253,6 @@
      exit
     !
     interface loopback1
-     no description
      vrf forwarding v1
      ipv4 address 2.2.2.13 255.255.255.255
      ipv6 address 4321::13 ffff:ffff:ffff:ffff:ffff:ffff:ffff:ffff
@@ -272,7 +261,6 @@
      exit
     !
     interface ethernet1
-     no description
      vrf forwarding v1
      ipv4 address 1.1.1.6 255.255.255.252
      ipv6 address 1234:2::2 ffff:ffff::
@@ -284,9 +272,8 @@
      exit
     !
     interface pwether1
-     no description
      mtu 1500
-     macaddr 004f.4c6b.1a66
+     macaddr 005f.5c6b.4f26
      vrf forwarding v1
      ipv4 address 3.3.3.2 255.255.255.0
      pseudowire v1 loopback1 pweompls 2.2.2.11 1234
@@ -295,9 +282,8 @@
      exit
     !
     interface pwether2
-     no description
      mtu 1500
-     macaddr 003b.2f7a.7d4b
+     macaddr 001a.2738.5817
      vrf forwarding v1
      ipv4 address 3.3.4.2 255.255.255.0
      pseudowire v1 loopback1 pweompls 4321::11 1234
@@ -309,10 +295,8 @@
      vrf v1
      local-as 1
      router-id 4.4.4.3
-     no safe-ebgp
      address-family labeled
      neighbor 2.2.2.1 remote-as 1
-     no neighbor 2.2.2.1 description
      neighbor 2.2.2.1 local-as 1
      neighbor 2.2.2.1 address-family labeled
      neighbor 2.2.2.1 distance 200
@@ -325,10 +309,8 @@
      vrf v1
      local-as 1
      router-id 6.6.6.3
-     no safe-ebgp
      address-family labeled
      neighbor 4321::1 remote-as 1
-     no neighbor 4321::1 description
      neighbor 4321::1 local-as 1
      neighbor 4321::1 address-family labeled
      neighbor 4321::1 distance 200

@@ -14,7 +14,7 @@
     hostname r1
     buggy
     !
-    logging file debug ../binTmp/zzz96r1-log.run
+    logging file debug ../binTmp/zzz20r1-log.run
     !
     access-list test4
      sequence 10 deny 1 any all any all
@@ -36,7 +36,8 @@
     !
     vrf definition v1
      rd 1:1
-     label-mode per-prefix
+     label4mode per-prefix
+     label6mode per-prefix
      exit
     !
     router pvrp4 1
@@ -54,7 +55,6 @@
      exit
     !
     interface loopback0
-     no description
      vrf forwarding v1
      ipv4 address 2.2.2.1 255.255.255.255
      ipv6 address 4321::1 ffff:ffff:ffff:ffff:ffff:ffff:ffff:ffff
@@ -63,7 +63,6 @@
      exit
     !
     interface serial1
-     no description
      encapsulation hdlc
      vrf forwarding v1
      ipv4 address 9.9.9.1 255.255.255.0
@@ -121,7 +120,7 @@
     hostname r2
     buggy
     !
-    logging file debug ../binTmp/zzz96r2-log.run
+    logging file debug ../binTmp/zzz20r2-log.run
     !
     access-list test4
      sequence 10 deny 1 any all any all
@@ -143,7 +142,8 @@
     !
     vrf definition v1
      rd 1:1
-     label-mode per-prefix
+     label4mode per-prefix
+     label6mode per-prefix
      exit
     !
     router pvrp4 1
@@ -161,7 +161,6 @@
      exit
     !
     interface loopback0
-     no description
      vrf forwarding v1
      ipv4 address 2.2.2.2 255.255.255.255
      ipv6 address 4321::2 ffff:ffff:ffff:ffff:ffff:ffff:ffff:ffff
@@ -170,7 +169,6 @@
      exit
     !
     interface serial1
-     no description
      encapsulation hdlc
      vrf forwarding v1
      ipv4 address 9.9.9.2 255.255.255.0
@@ -233,7 +231,7 @@
      |~~~~~~~~~|~~~~~~~~~|~~~~~~|~~~~~~~~~|~~~~~~~~~|~~~~~~~~~|~~~~~~~~~~|~~~~~~~~~~|
      | iface   | router  | name | peerif  | peer    | learned | adverted | uptime   |
      |---------|---------|------|---------|---------|---------|----------|----------|
-     | serial1 | 4.4.4.1 | r1   | serial1 | 9.9.9.1 | 1       | 1        | 00:00:08 |
+     | serial1 | 4.4.4.1 | r1   | serial1 | 9.9.9.1 | 1       | 1        | 00:00:07 |
      |_________|_________|______|_________|_________|_________|__________|__________|
     r2#
     r2#
@@ -247,7 +245,7 @@
      |~~~~~~~~~|~~~~~~~~~|~~~~~~|~~~~~~~~~|~~~~~~~~~|~~~~~~~~~|~~~~~~~~~~|~~~~~~~~~~|
      | iface   | router  | name | peerif  | peer    | learned | adverted | uptime   |
      |---------|---------|------|---------|---------|---------|----------|----------|
-     | serial1 | 6.6.6.1 | r1   | serial1 | 9999::1 | 1       | 1        | 00:00:08 |
+     | serial1 | 6.6.6.1 | r1   | serial1 | 9999::1 | 1       | 1        | 00:00:07 |
      |_________|_________|______|_________|_________|_________|__________|__________|
     r2#
     r2#
@@ -261,9 +259,9 @@
      |~~~~~~|~~~~~~~~~~~~|~~~~~~~~|~~~~~~~~~~~|~~~~~~~~~|~~~~~~~~~~|
      | typ  | prefix     | metric | iface     | hop     | time     |
      |------|------------|--------|-----------|---------|----------|
-     | null | 2.2.2.1/32 | 80/10  | serial1   | 9.9.9.1 | 00:00:03 |
-     | C    | 2.2.2.2/32 | 2/0    | loopback0 | null    | 00:00:09 |
-     | C    | 9.9.9.0/24 | 1/0    | serial1   | null    | 00:00:03 |
+     | null | 2.2.2.1/32 | 80/10  | serial1   | 9.9.9.1 | 00:00:02 |
+     | C    | 2.2.2.2/32 | 2/0    | loopback0 | null    | 00:00:08 |
+     | C    | 9.9.9.0/24 | 1/0    | serial1   | null    | 00:00:02 |
      |______|____________|________|___________|_________|__________|
     r2#
     r2#
@@ -277,9 +275,9 @@
      |~~~~~~|~~~~~~~~~~~~~|~~~~~~~~|~~~~~~~~~~~|~~~~~~~~~|~~~~~~~~~~|
      | typ  | prefix      | metric | iface     | hop     | time     |
      |------|-------------|--------|-----------|---------|----------|
-     | null | 4321::1/128 | 80/10  | serial1   | 9999::1 | 00:00:03 |
-     | C    | 4321::2/128 | 2/0    | loopback0 | null    | 00:00:09 |
-     | C    | 9999::/16   | 1/0    | serial1   | null    | 00:00:03 |
+     | null | 4321::1/128 | 80/10  | serial1   | 9999::1 | 00:00:02 |
+     | C    | 4321::2/128 | 2/0    | loopback0 | null    | 00:00:08 |
+     | C    | 9999::/16   | 1/0    | serial1   | null    | 00:00:02 |
      |______|_____________|________|___________|_________|__________|
     r2#
     r2#
@@ -294,10 +292,10 @@
      | typ  | prefix     | metric | iface     | hop     | time     |
      |------|------------|--------|-----------|---------|----------|
      | P EX | 2.2.2.1/32 | 80/10  | serial1   | 9.9.9.1 | 00:00:03 |
-     | C    | 2.2.2.2/32 | 0/0    | loopback0 | null    | 00:00:14 |
-     | C    | 9.9.9.0/24 | 0/0    | serial1   | null    | 00:00:10 |
+     | C    | 2.2.2.2/32 | 0/0    | loopback0 | null    | 00:00:13 |
+     | C    | 9.9.9.0/24 | 0/0    | serial1   | null    | 00:00:08 |
      | MSH  | 9.9.9.1/32 | 0/3    | serial1   | 9.9.9.1 | never    |
-     | LOC  | 9.9.9.2/32 | 0/1    | serial1   | null    | 00:00:10 |
+     | LOC  | 9.9.9.2/32 | 0/1    | serial1   | null    | 00:00:08 |
      |______|____________|________|___________|_________|__________|
     r2#
     r2#
@@ -311,11 +309,11 @@
      |~~~~~~|~~~~~~~~~~~~~|~~~~~~~~|~~~~~~~~~~~|~~~~~~~~~|~~~~~~~~~~|
      | typ  | prefix      | metric | iface     | hop     | time     |
      |------|-------------|--------|-----------|---------|----------|
-     | P EX | 4321::1/128 | 80/10  | serial1   | 9999::1 | 00:00:04 |
-     | C    | 4321::2/128 | 0/0    | loopback0 | null    | 00:00:14 |
-     | C    | 9999::/16   | 0/0    | serial1   | null    | 00:00:10 |
+     | P EX | 4321::1/128 | 80/10  | serial1   | 9999::1 | 00:00:02 |
+     | C    | 4321::2/128 | 0/0    | loopback0 | null    | 00:00:13 |
+     | C    | 9999::/16   | 0/0    | serial1   | null    | 00:00:08 |
      | MSH  | 9999::1/128 | 0/3    | serial1   | 9999::1 | never    |
-     | LOC  | 9999::2/128 | 0/1    | serial1   | null    | 00:00:10 |
+     | LOC  | 9999::2/128 | 0/1    | serial1   | null    | 00:00:08 |
      |______|_____________|________|___________|_________|__________|
     r2#
     r2#

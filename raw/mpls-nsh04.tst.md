@@ -14,7 +14,7 @@
     hostname r1
     buggy
     !
-    logging file debug ../binTmp/zzz98r1-log.run
+    logging file debug ../binTmp/zzz43r1-log.run
     !
     vrf definition tester
      exit
@@ -24,7 +24,6 @@
      exit
     !
     interface ethernet1
-     no description
      vrf forwarding v1
      ipv4 address 1.1.1.1 255.255.255.0
      ipv6 address 1111::1 ffff::
@@ -74,13 +73,12 @@
     hostname r2
     buggy
     !
-    logging file debug ../binTmp/zzz98r2-log.run
+    logging file debug ../binTmp/zzz43r2-log.run
     !
     vrf definition tester
      exit
     !
     interface ethernet1
-     no description
      nsh enable
      nsh xconnect 2 255
      no shutdown
@@ -88,7 +86,6 @@
      exit
     !
     interface serial1
-     no description
      encapsulation hdlc
      nsh enable
      no shutdown
@@ -128,13 +125,12 @@
     hostname r3
     buggy
     !
-    logging file debug ../binTmp/zzz98r3-log.run
+    logging file debug ../binTmp/zzz43r3-log.run
     !
     vrf definition tester
      exit
     !
     interface ethernet1
-     no description
      nsh enable
      nsh xconnect 3 255
      no shutdown
@@ -142,7 +138,6 @@
      exit
     !
     interface serial1
-     no description
      encapsulation hdlc
      nsh enable
      no shutdown
@@ -182,7 +177,7 @@
     hostname r4
     buggy
     !
-    logging file debug ../binTmp/zzz98r4-log.run
+    logging file debug ../binTmp/zzz43r4-log.run
     !
     vrf definition tester
      exit
@@ -192,7 +187,6 @@
      exit
     !
     interface ethernet1
-     no description
      vrf forwarding v1
      ipv4 address 1.1.1.2 255.255.255.0
      ipv6 address 1111::2 ffff::

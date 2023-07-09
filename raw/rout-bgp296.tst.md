@@ -14,7 +14,7 @@
     hostname r1
     buggy
     !
-    logging file debug ../binTmp/zzz95r1-log.run
+    logging file debug ../binTmp/zzz63r1-log.run
     !
     bridge 1
      mac-learn
@@ -28,7 +28,6 @@
      exit
     !
     interface loopback0
-     no description
      vrf forwarding v1
      ipv4 address 2.2.2.1 255.255.255.255
      ipv6 address 2222::1 ffff:ffff:ffff:ffff:ffff:ffff:ffff:ffff
@@ -37,7 +36,6 @@
      exit
     !
     interface loopback1
-     no description
      vrf forwarding v1
      ipv4 address 4.4.4.1 255.255.255.255
      ipv6 address 4444::1 ffff:ffff:ffff:ffff:ffff:ffff:ffff:ffff
@@ -46,7 +44,6 @@
      exit
     !
     interface bvi1
-     no description
      vrf forwarding v1
      ipv4 address 1.1.1.1 255.255.255.0
      ipv6 address 1234:1::1 ffff:ffff::
@@ -55,35 +52,30 @@
      exit
     !
     interface ethernet1
-     no description
      bridge-group 1
      no shutdown
      no log-link-change
      exit
     !
     interface ethernet2
-     no description
      bridge-group 1
      no shutdown
      no log-link-change
      exit
     !
     interface ethernet3
-     no description
      bridge-group 1
      no shutdown
      no log-link-change
      exit
     !
     interface ethernet4
-     no description
      bridge-group 1
      no shutdown
      no log-link-change
      exit
     !
     interface ethernet5
-     no description
      bridge-group 1
      no shutdown
      no log-link-change
@@ -93,28 +85,23 @@
      vrf v1
      local-as 1
      router-id 4.4.4.1
-     no safe-ebgp
      address-family unicast
      neighbor 1.1.1.2 remote-as 1
-     no neighbor 1.1.1.2 description
      neighbor 1.1.1.2 local-as 1
      neighbor 1.1.1.2 address-family unicast
      neighbor 1.1.1.2 distance 200
      neighbor 1.1.1.2 route-reflector-client
      neighbor 1.1.1.3 remote-as 1
-     no neighbor 1.1.1.3 description
      neighbor 1.1.1.3 local-as 1
      neighbor 1.1.1.3 address-family unicast
      neighbor 1.1.1.3 distance 200
      neighbor 1.1.1.3 route-reflector-client
      neighbor 1.1.1.4 remote-as 1
-     no neighbor 1.1.1.4 description
      neighbor 1.1.1.4 local-as 1
      neighbor 1.1.1.4 address-family unicast
      neighbor 1.1.1.4 distance 200
      neighbor 1.1.1.4 route-reflector-client
      neighbor 1.1.1.5 remote-as 1
-     no neighbor 1.1.1.5 description
      neighbor 1.1.1.5 local-as 1
      neighbor 1.1.1.5 address-family unicast
      neighbor 1.1.1.5 distance 200
@@ -126,28 +113,23 @@
      vrf v1
      local-as 1
      router-id 6.6.6.1
-     no safe-ebgp
      address-family unicast
      neighbor 1234:1::2 remote-as 1
-     no neighbor 1234:1::2 description
      neighbor 1234:1::2 local-as 1
      neighbor 1234:1::2 address-family unicast
      neighbor 1234:1::2 distance 200
      neighbor 1234:1::2 route-reflector-client
      neighbor 1234:1::3 remote-as 1
-     no neighbor 1234:1::3 description
      neighbor 1234:1::3 local-as 1
      neighbor 1234:1::3 address-family unicast
      neighbor 1234:1::3 distance 200
      neighbor 1234:1::3 route-reflector-client
      neighbor 1234:1::4 remote-as 1
-     no neighbor 1234:1::4 description
      neighbor 1234:1::4 local-as 1
      neighbor 1234:1::4 address-family unicast
      neighbor 1234:1::4 distance 200
      neighbor 1234:1::4 route-reflector-client
      neighbor 1234:1::6 remote-as 1
-     no neighbor 1234:1::6 description
      neighbor 1234:1::6 local-as 1
      neighbor 1234:1::6 address-family unicast
      neighbor 1234:1::6 distance 200
@@ -197,7 +179,7 @@
     hostname r2
     buggy
     !
-    logging file debug ../binTmp/zzz95r2-log.run
+    logging file debug ../binTmp/zzz63r2-log.run
     !
     vrf definition tester
      exit
@@ -207,7 +189,6 @@
      exit
     !
     interface loopback0
-     no description
      vrf forwarding v1
      ipv4 address 2.2.2.2 255.255.255.255
      ipv6 address 2222::2 ffff:ffff:ffff:ffff:ffff:ffff:ffff:ffff
@@ -216,7 +197,6 @@
      exit
     !
     interface loopback1
-     no description
      vrf forwarding v1
      ipv4 address 4.4.4.2 255.255.255.255
      ipv6 address 4444::2 ffff:ffff:ffff:ffff:ffff:ffff:ffff:ffff
@@ -225,7 +205,6 @@
      exit
     !
     interface ethernet1
-     no description
      vrf forwarding v1
      ipv4 address 1.1.1.2 255.255.255.0
      ipv6 address 1234:1::2 ffff:ffff::
@@ -237,10 +216,8 @@
      vrf v1
      local-as 1
      router-id 4.4.4.2
-     no safe-ebgp
      address-family unicast
      neighbor 1.1.1.1 remote-as 1
-     no neighbor 1.1.1.1 description
      neighbor 1.1.1.1 local-as 1
      neighbor 1.1.1.1 address-family unicast
      neighbor 1.1.1.1 distance 200
@@ -251,10 +228,8 @@
      vrf v1
      local-as 1
      router-id 6.6.6.2
-     no safe-ebgp
      address-family unicast
      neighbor 1234:1::1 remote-as 1
-     no neighbor 1234:1::1 description
      neighbor 1234:1::1 local-as 1
      neighbor 1234:1::1 address-family unicast
      neighbor 1234:1::1 distance 200
@@ -303,7 +278,7 @@
     hostname r3
     buggy
     !
-    logging file debug ../binTmp/zzz95r3-log.run
+    logging file debug ../binTmp/zzz63r3-log.run
     !
     vrf definition tester
      exit
@@ -313,7 +288,6 @@
      exit
     !
     interface loopback0
-     no description
      vrf forwarding v1
      ipv4 address 2.2.2.3 255.255.255.255
      ipv6 address 2222::3 ffff:ffff:ffff:ffff:ffff:ffff:ffff:ffff
@@ -322,7 +296,6 @@
      exit
     !
     interface loopback1
-     no description
      vrf forwarding v1
      ipv4 address 4.4.4.3 255.255.255.255
      ipv6 address 4444::3 ffff:ffff:ffff:ffff:ffff:ffff:ffff:ffff
@@ -331,7 +304,6 @@
      exit
     !
     interface ethernet1
-     no description
      vrf forwarding v1
      ipv4 address 1.1.1.3 255.255.255.0
      ipv6 address 1234:1::3 ffff:ffff::
@@ -343,10 +315,8 @@
      vrf v1
      local-as 1
      router-id 4.4.4.3
-     no safe-ebgp
      address-family unicast
      neighbor 1.1.1.1 remote-as 1
-     no neighbor 1.1.1.1 description
      neighbor 1.1.1.1 local-as 1
      neighbor 1.1.1.1 address-family unicast
      neighbor 1.1.1.1 distance 200
@@ -357,10 +327,8 @@
      vrf v1
      local-as 1
      router-id 6.6.6.3
-     no safe-ebgp
      address-family unicast
      neighbor 1234:1::1 remote-as 1
-     no neighbor 1234:1::1 description
      neighbor 1234:1::1 local-as 1
      neighbor 1234:1::1 address-family unicast
      neighbor 1234:1::1 distance 200
@@ -409,7 +377,7 @@
     hostname r4
     buggy
     !
-    logging file debug ../binTmp/zzz95r4-log.run
+    logging file debug ../binTmp/zzz63r4-log.run
     !
     vrf definition tester
      exit
@@ -419,7 +387,6 @@
      exit
     !
     interface loopback0
-     no description
      vrf forwarding v1
      ipv4 address 2.2.2.4 255.255.255.255
      ipv6 address 2222::4 ffff:ffff:ffff:ffff:ffff:ffff:ffff:ffff
@@ -428,7 +395,6 @@
      exit
     !
     interface loopback1
-     no description
      vrf forwarding v1
      ipv4 address 4.4.4.4 255.255.255.255
      ipv6 address 4444::4 ffff:ffff:ffff:ffff:ffff:ffff:ffff:ffff
@@ -437,7 +403,6 @@
      exit
     !
     interface ethernet1
-     no description
      vrf forwarding v1
      ipv4 address 1.1.1.4 255.255.255.0
      ipv6 address 1234:1::4 ffff:ffff::
@@ -449,10 +414,8 @@
      vrf v1
      local-as 1
      router-id 4.4.4.4
-     no safe-ebgp
      address-family unicast
      neighbor 1.1.1.1 remote-as 1
-     no neighbor 1.1.1.1 description
      neighbor 1.1.1.1 local-as 1
      neighbor 1.1.1.1 address-family unicast
      neighbor 1.1.1.1 distance 200
@@ -463,10 +426,8 @@
      vrf v1
      local-as 1
      router-id 6.6.6.4
-     no safe-ebgp
      address-family unicast
      neighbor 1234:1::1 remote-as 1
-     no neighbor 1234:1::1 description
      neighbor 1234:1::1 local-as 1
      neighbor 1234:1::1 address-family unicast
      neighbor 1234:1::1 distance 200
@@ -515,7 +476,7 @@
     hostname r5
     buggy
     !
-    logging file debug ../binTmp/zzz95r5-log.run
+    logging file debug ../binTmp/zzz63r5-log.run
     !
     route-map all
      sequence 10 action permit
@@ -530,7 +491,6 @@
      exit
     !
     interface ethernet1
-     no description
      vrf forwarding v1
      ipv4 address 1.1.1.5 255.255.255.0
      ipv6 address 1234:1::5 ffff:ffff::
@@ -580,7 +540,7 @@
     hostname r6
     buggy
     !
-    logging file debug ../binTmp/zzz95r6-log.run
+    logging file debug ../binTmp/zzz63r6-log.run
     !
     route-map all
      sequence 10 action permit
@@ -595,7 +555,6 @@
      exit
     !
     interface ethernet1
-     no description
      vrf forwarding v1
      ipv4 address 1.1.1.6 255.255.255.0
      ipv6 address 1234:1::6 ffff:ffff::

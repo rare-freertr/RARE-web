@@ -14,7 +14,7 @@
     hostname r1
     buggy
     !
-    logging file debug ../binTmp/zzz18r1-log.run
+    logging file debug ../binTmp/zzz31r1-log.run
     !
     access-list test4a
      sequence 10 permit all any all any 123
@@ -42,7 +42,6 @@
      exit
     !
     interface ethernet1
-     no description
      vrf forwarding v1
      ipv4 address 1.1.1.1 255.255.255.252
      ipv4 access-group-out test4b
@@ -53,7 +52,6 @@
      exit
     !
     interface tunnel1
-     no description
      tunnel key 123
      tunnel vrf v1
      tunnel source ethernet1
@@ -66,7 +64,6 @@
      exit
     !
     interface tunnel2
-     no description
      tunnel key 123
      tunnel vrf v1
      tunnel source ethernet1
@@ -79,7 +76,6 @@
      exit
     !
     interface tunnel3
-     no description
      tunnel key 321
      tunnel vrf v1
      tunnel source ethernet1
@@ -92,7 +88,6 @@
      exit
     !
     interface tunnel4
-     no description
      tunnel key 321
      tunnel vrf v1
      tunnel source ethernet1
@@ -146,7 +141,7 @@
     hostname r2
     buggy
     !
-    logging file debug ../binTmp/zzz18r2-log.run
+    logging file debug ../binTmp/zzz31r2-log.run
     !
     vrf definition tester
      exit
@@ -156,7 +151,6 @@
      exit
     !
     interface ethernet1
-     no description
      vrf forwarding v1
      ipv4 address 1.1.1.2 255.255.255.252
      ipv6 address 1234::2 ffff:ffff::
@@ -165,7 +159,6 @@
      exit
     !
     interface tunnel1
-     no description
      tunnel key 123
      tunnel vrf v1
      tunnel source ethernet1
@@ -178,7 +171,6 @@
      exit
     !
     interface tunnel2
-     no description
      tunnel key 123
      tunnel vrf v1
      tunnel source ethernet1
@@ -191,7 +183,6 @@
      exit
     !
     interface tunnel3
-     no description
      tunnel key 321
      tunnel vrf v1
      tunnel source ethernet1
@@ -204,7 +195,6 @@
      exit
     !
     interface tunnel4
-     no description
      tunnel key 321
      tunnel vrf v1
      tunnel source ethernet1

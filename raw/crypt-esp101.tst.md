@@ -14,7 +14,7 @@
     hostname r1
     buggy
     !
-    logging file debug ../binTmp/zzz66r1-log.run
+    logging file debug ../binTmp/zzz36r1-log.run
     !
     crypto ipsec ips
      group 02
@@ -33,7 +33,6 @@
      exit
     !
     interface ethernet1
-     no description
      vrf forwarding v1
      ipv4 address 1.1.1.1 255.255.255.0
      ipv6 address 1234::1 ffff::
@@ -42,7 +41,6 @@
      exit
     !
     interface tunnel1
-     no description
      tunnel vrf v1
      tunnel protection ips
      tunnel source ethernet1
@@ -97,7 +95,7 @@
     hostname r2
     buggy
     !
-    logging file debug ../binTmp/zzz66r2-log.run
+    logging file debug ../binTmp/zzz36r2-log.run
     !
     crypto ipsec ips
      group 02
@@ -116,7 +114,6 @@
      exit
     !
     interface ethernet1
-     no description
      vrf forwarding v1
      ipv4 address 1.1.1.2 255.255.255.0
      ipv6 address 1234::2 ffff::
@@ -125,7 +122,6 @@
      exit
     !
     interface tunnel1
-     no description
      tunnel vrf v1
      tunnel protection ips
      tunnel source ethernet1
@@ -182,13 +178,15 @@
     r1#
     r1#show inter tun1 full
     r1#show inter tun1 full
-    tunnel1 is up (since 00:00:13, 15 changes)
+    tunnel1 is up
      description:
+     state changed 15 times, last at 2022-05-02 21:15:41, 00:00:13 ago
+     last packet input 00:00:10 ago, output 00:00:06 ago, drop never ago
      type is ipsec, hwaddr=none, mtu=1444, bw=100mbps, vrf=v1
-     ip4 address=2.2.2.1/24, netmask=255.255.255.0, ifcid=26137198
-     ip6 address=4321::1/16, netmask=ffff::, ifcid=484323319
+     ipv4 address=2.2.2.1/24, mask=255.255.255.0, ifcid=315322563
+     ipv6 address=4321::1/16, mask=ffff::, ifcid=826470629
      received 14 packets (924 bytes) dropped 0 packets (0 bytes)
-     transmitted 23 packets (1550 bytes) promisc=false macsec=false sgt=false
+     transmitted 23 packets (1550 bytes) macsec=false sgt=false
      |~~~~~~~|~~~~|~~~~|~~~~~~|~~~~|~~~~|~~~~~~|
      |       | packet         | byte           |
      | time  | tx | rx | drop | tx | rx | drop |
@@ -241,41 +239,41 @@
      | 6     | 0   | 0   | 0    | 0    | 0    | 0    |
      | 7     | 0   | 0   | 0    | 0    | 0    | 0    |
      |_______|_____|_____|______|______|______|______|
-             11k|
-            9979|         #
-            8870|         #
-            7761|         #
-            6652|         #
-            5544|         #
-            4435|         #
-            3326|         ##
-            2217|         ##
-            1108|         ## #
-               0|     ########
+           11.0k|          #
+            9972|          #
+            8864|          #
+            7756|          #
+            6648|          #
+            5540|          #
+            4432|          #
+            3324|          ##
+            2216|          ###
+            1108|          ###
+               0|############################################################
              bps|0---------10--------20--------30--------40--------50-------- seconds
+              10|
+               9|
+               8|
+               7|
+               6|
+               5|
+               4|
+               3|
+               2|
                1|
-               0|
-               0|
-               0|
-               0|
-               0|
-               0|
-               0|
-               0|
-               0|
-               0|
+               0|############################################################
              bps|0---------10--------20--------30--------40--------50-------- minutes
+              10|
+               9|
+               8|
+               7|
+               6|
+               5|
+               4|
+               3|
+               2|
                1|
-               0|
-               0|
-               0|
-               0|
-               0|
-               0|
-               0|
-               0|
-               0|
-               0|
+               0|############################################################
              bps|0---------10--------20--------30--------40--------50-------- hours
     r1#
     r1#

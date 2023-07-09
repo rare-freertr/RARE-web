@@ -14,7 +14,7 @@
     hostname r1
     buggy
     !
-    logging file debug ../binTmp/zzz58r1-log.run
+    logging file debug ../binTmp/zzz46r1-log.run
     !
     access-list test4
      sequence 10 deny 1 any all any all
@@ -36,7 +36,8 @@
     !
     vrf definition v1
      rd 1:1
-     label-mode per-prefix
+     label4mode per-prefix
+     label6mode per-prefix
      exit
     !
     router lsrp4 1
@@ -54,7 +55,6 @@
      exit
     !
     interface loopback0
-     no description
      vrf forwarding v1
      ipv4 address 2.2.2.1 255.255.255.255
      ipv6 address 4321::1 ffff:ffff:ffff:ffff:ffff:ffff:ffff:ffff
@@ -63,7 +63,6 @@
      exit
     !
     interface serial1
-     no description
      encapsulation hdlc
      vrf forwarding v1
      ipv4 address 9.9.9.1 255.255.255.0
@@ -121,7 +120,7 @@
     hostname r2
     buggy
     !
-    logging file debug ../binTmp/zzz58r2-log.run
+    logging file debug ../binTmp/zzz46r2-log.run
     !
     access-list test4
      sequence 10 deny 1 any all any all
@@ -143,7 +142,8 @@
     !
     vrf definition v1
      rd 1:1
-     label-mode per-prefix
+     label4mode per-prefix
+     label6mode per-prefix
      exit
     !
     router lsrp4 1
@@ -161,7 +161,6 @@
      exit
     !
     interface loopback0
-     no description
      vrf forwarding v1
      ipv4 address 2.2.2.2 255.255.255.255
      ipv6 address 4321::2 ffff:ffff:ffff:ffff:ffff:ffff:ffff:ffff
@@ -170,7 +169,6 @@
      exit
     !
     interface serial1
-     no description
      encapsulation hdlc
      vrf forwarding v1
      ipv4 address 9.9.9.2 255.255.255.0
@@ -228,6 +226,8 @@
     ```
     r2#
     r2#
+    r2#show ipv4 lsrp 1
+    r2#show ipv4 lsrp 1
     r2#show ipv4 lsrp 1 nei
     r2#show ipv4 lsrp 1 nei
      |~~~~~~~~~|~~~~~~~~~|~~~~~~|~~~~~~~~~|~~~~~~~~~|~~~~~~~|~~~~~~~~~~|
@@ -261,8 +261,8 @@
      |~~~~~~~~~|~~~~~~|~~~~~|~~~~~|~~~~~|~~~~~~~~~~|~~~~~~~~~~|
      | id      | name | nei | net | seq | topo     | left     |
      |---------|------|-----|-----|-----|----------|----------|
-     | 4.4.4.1 | r1   | 1   | 2   | 8   | bf1864f4 | 00:59:57 |
-     | 4.4.4.2 | r2   | 1   | 2   | 8   | f141cf47 | 00:59:57 |
+     | 4.4.4.1 | r1   | 1   | 2   | 4   | 58f0e2a5 | 00:59:56 |
+     | 4.4.4.2 | r2   | 1   | 2   | 4   | f141cf47 | 00:59:56 |
      |_________|______|_____|_____|_____|__________|__________|
     r2#
     r2#
@@ -276,8 +276,8 @@
      |~~~~~~~~~|~~~~~~|~~~~~|~~~~~|~~~~~|~~~~~~~~~~|~~~~~~~~~~|
      | id      | name | nei | net | seq | topo     | left     |
      |---------|------|-----|-----|-----|----------|----------|
-     | 6.6.6.1 | r1   | 1   | 2   | 8   | bf1864f4 | 00:59:55 |
-     | 6.6.6.2 | r2   | 1   | 2   | 8   | 542fdff7 | 00:59:55 |
+     | 6.6.6.1 | r1   | 1   | 2   | 6   | 58f0e2a5 | 00:59:53 |
+     | 6.6.6.2 | r2   | 1   | 2   | 6   | f141cf47 | 00:59:53 |
      |_________|______|_____|_____|_____|__________|__________|
     r2#
     r2#
@@ -313,11 +313,11 @@
      |~~~~~~|~~~~~~~~~~~~|~~~~~~~~|~~~~~~~~~~~|~~~~~~~~~|~~~~~~~~~~|
      | typ  | prefix     | metric | iface     | hop     | time     |
      |------|------------|--------|-----------|---------|----------|
-     | L EX | 2.2.2.1/32 | 70/10  | serial1   | 9.9.9.1 | 00:00:03 |
+     | L EX | 2.2.2.1/32 | 70/10  | serial1   | 9.9.9.1 | 00:00:04 |
      | C    | 2.2.2.2/32 | 0/0    | loopback0 | null    | 00:00:16 |
-     | C    | 9.9.9.0/24 | 0/0    | serial1   | null    | 00:00:11 |
+     | C    | 9.9.9.0/24 | 0/0    | serial1   | null    | 00:00:12 |
      | MSH  | 9.9.9.1/32 | 0/3    | serial1   | 9.9.9.1 | never    |
-     | LOC  | 9.9.9.2/32 | 0/1    | serial1   | null    | 00:00:11 |
+     | LOC  | 9.9.9.2/32 | 0/1    | serial1   | null    | 00:00:12 |
      |______|____________|________|___________|_________|__________|
     r2#
     r2#
@@ -331,11 +331,11 @@
      |~~~~~~|~~~~~~~~~~~~~|~~~~~~~~|~~~~~~~~~~~|~~~~~~~~~|~~~~~~~~~~|
      | typ  | prefix      | metric | iface     | hop     | time     |
      |------|-------------|--------|-----------|---------|----------|
-     | L EX | 4321::1/128 | 70/10  | serial1   | 9999::1 | 00:00:05 |
+     | L EX | 4321::1/128 | 70/10  | serial1   | 9999::1 | 00:00:07 |
      | C    | 4321::2/128 | 0/0    | loopback0 | null    | 00:00:16 |
-     | C    | 9999::/16   | 0/0    | serial1   | null    | 00:00:11 |
+     | C    | 9999::/16   | 0/0    | serial1   | null    | 00:00:12 |
      | MSH  | 9999::1/128 | 0/3    | serial1   | 9999::1 | never    |
-     | LOC  | 9999::2/128 | 0/1    | serial1   | null    | 00:00:11 |
+     | LOC  | 9999::2/128 | 0/1    | serial1   | null    | 00:00:12 |
      |______|_____________|________|___________|_________|__________|
     r2#
     r2#

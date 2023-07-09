@@ -14,7 +14,7 @@
     hostname r1
     buggy
     !
-    logging file debug ../binTmp/zzz82r1-log.run
+    logging file debug ../binTmp/zzz22r1-log.run
     !
     vrf definition tester
      exit
@@ -24,7 +24,6 @@
      exit
     !
     interface loopback1
-     no description
      vrf forwarding v1
      ipv4 address 2.2.2.2 255.255.255.255
      no shutdown
@@ -32,7 +31,6 @@
      exit
     !
     interface ethernet1
-     no description
      vrf forwarding v1
      ipv4 address 1.1.1.1 255.255.255.252
      no shutdown
@@ -82,7 +80,7 @@
     hostname r2
     buggy
     !
-    logging file debug ../binTmp/zzz82r2-log.run
+    logging file debug ../binTmp/zzz22r2-log.run
     !
     access-list nat
      sequence 10 deny all fe80:: ffff:: all any all
@@ -100,7 +98,6 @@
      exit
     !
     interface ethernet1
-     no description
      vrf forwarding v1
      ipv4 address 1.1.1.2 255.255.255.252
      no shutdown
@@ -108,7 +105,6 @@
      exit
     !
     interface ethernet2
-     no description
      vrf forwarding v1
      ipv6 address 1234::1 ffff:ffff::
      no shutdown
@@ -116,7 +112,6 @@
      exit
     !
     interface tunnel1
-     no description
      tunnel key 96
      tunnel vrf v1
      tunnel source ethernet2
@@ -174,7 +169,7 @@
     hostname r3
     buggy
     !
-    logging file debug ../binTmp/zzz82r3-log.run
+    logging file debug ../binTmp/zzz22r3-log.run
     !
     vrf definition tester
      exit
@@ -184,7 +179,6 @@
      exit
     !
     interface loopback1
-     no description
      vrf forwarding v1
      ipv6 address 8888::8 ffff:ffff:ffff:ffff:ffff:ffff:ffff:ffff
      no shutdown
@@ -192,7 +186,6 @@
      exit
     !
     interface ethernet1
-     no description
      vrf forwarding v1
      ipv6 address 1234::2 ffff:ffff::
      no shutdown

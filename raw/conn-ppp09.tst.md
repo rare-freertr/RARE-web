@@ -14,7 +14,7 @@
     hostname r1
     buggy
     !
-    logging file debug ../binTmp/zzz85r1-log.run
+    logging file debug ../binTmp/zzz40r1-log.run
     !
     prefix-list p4
      sequence 10 permit 0.0.0.0/0 ge 0 le 0
@@ -32,7 +32,6 @@
      exit
     !
     interface loopback1
-     no description
      vrf forwarding v1
      ipv4 address 2.2.2.1 255.255.255.255
      ipv6 address 4321::1 ffff:ffff:ffff:ffff:ffff:ffff:ffff:ffff
@@ -41,7 +40,6 @@
      exit
     !
     interface serial1
-     no description
      encapsulation ppp
      ppp username c
      ppp password $v10$Yw==
@@ -99,7 +97,7 @@
     hostname r2
     buggy
     !
-    logging file debug ../binTmp/zzz85r2-log.run
+    logging file debug ../binTmp/zzz40r2-log.run
     !
     aaa radius usr
      secret $v10$Yw==
@@ -114,7 +112,6 @@
      exit
     !
     interface loopback1
-     no description
      vrf forwarding v1
      ipv4 address 2.2.2.2 255.255.255.255
      ipv6 address 4321::2 ffff:ffff:ffff:ffff:ffff:ffff:ffff:ffff
@@ -123,7 +120,6 @@
      exit
     !
     interface ethernet1
-     no description
      vrf forwarding v1
      ipv4 address 3.3.3.2 255.255.255.0
      no shutdown
@@ -131,7 +127,6 @@
      exit
     !
     interface serial1
-     no description
      encapsulation ppp
      ppp authentication usr
      ppp ip4cp local 1.1.1.2
@@ -190,7 +185,7 @@
     hostname r3
     buggy
     !
-    logging file debug ../binTmp/zzz85r3-log.run
+    logging file debug ../binTmp/zzz40r3-log.run
     !
     aaa userlist usr
      username c
@@ -210,7 +205,6 @@
      exit
     !
     interface ethernet1
-     no description
      vrf forwarding v1
      ipv4 address 3.3.3.3 255.255.255.0
      no shutdown

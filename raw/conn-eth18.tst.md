@@ -14,7 +14,7 @@
     hostname r1
     buggy
     !
-    logging file debug ../binTmp/zzz100r1-log.run
+    logging file debug ../binTmp/zzz76r1-log.run
     !
     vrf definition tester
      exit
@@ -24,7 +24,6 @@
      exit
     !
     interface ethernet1
-     no description
      lacp 0000.0000.1234 12345 1
      vrf forwarding v1
      ipv4 address 1.1.1.1 255.255.255.0
@@ -75,7 +74,7 @@
     hostname r2
     buggy
     !
-    logging file debug ../binTmp/zzz100r2-log.run
+    logging file debug ../binTmp/zzz76r2-log.run
     !
     vrf definition tester
      exit
@@ -85,7 +84,6 @@
      exit
     !
     interface ethernet1
-     no description
      lacp 0000.0000.4321 12345 2
      vrf forwarding v1
      ipv4 address 1.1.1.2 255.255.255.0

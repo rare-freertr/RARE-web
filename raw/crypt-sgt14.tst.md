@@ -14,7 +14,7 @@
     hostname r1
     buggy
     !
-    logging file debug ../binTmp/zzz17r1-log.run
+    logging file debug ../binTmp/zzz24r1-log.run
     !
     policy-map p1
      sequence 10 action drop
@@ -32,13 +32,11 @@
      exit
     !
     interface ethernet1
-     no description
      no shutdown
      no log-link-change
      exit
     !
     interface ethernet1.123
-     no description
      sgt enable
      service-policy-in p1
      vrf forwarding v1
@@ -92,7 +90,7 @@
     hostname r2
     buggy
     !
-    logging file debug ../binTmp/zzz17r2-log.run
+    logging file debug ../binTmp/zzz24r2-log.run
     !
     vrf definition tester
      exit
@@ -102,13 +100,11 @@
      exit
     !
     interface ethernet1
-     no description
      no shutdown
      no log-link-change
      exit
     !
     interface ethernet1.123
-     no description
      sgt enable
      vrf forwarding v1
      ipv4 address 1.1.1.2 255.255.255.0
@@ -118,14 +114,12 @@
      exit
     !
     interface ethernet2
-     no description
      sgt enable
      no shutdown
      no log-link-change
      exit
     !
     interface ethernet2.123
-     no description
      vrf forwarding v1
      ipv4 address 2.2.2.1 255.255.255.0
      ipv6 address 4321::1 ffff::
@@ -175,7 +169,7 @@
     hostname r3
     buggy
     !
-    logging file debug ../binTmp/zzz17r3-log.run
+    logging file debug ../binTmp/zzz24r3-log.run
     !
     policy-map p1
      sequence 10 action transit
@@ -195,14 +189,12 @@
      exit
     !
     interface ethernet1
-     no description
      sgt enable
      no shutdown
      no log-link-change
      exit
     !
     interface ethernet1.123
-     no description
      service-policy-out p1
      vrf forwarding v1
      ipv4 address 2.2.2.2 255.255.255.0

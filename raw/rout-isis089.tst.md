@@ -14,7 +14,7 @@
     hostname r1
     buggy
     !
-    logging file debug ../binTmp/zzz4r1-log.run
+    logging file debug ../binTmp/zzz19r1-log.run
     !
     route-map rm1
      sequence 10 action permit
@@ -42,7 +42,6 @@
      exit
     !
     interface loopback1
-     no description
      vrf forwarding v1
      ipv4 address 2.2.2.1 255.255.255.255
      ipv6 address 4321::1 ffff:ffff:ffff:ffff:ffff:ffff:ffff:ffff
@@ -51,7 +50,6 @@
      exit
     !
     interface loopback2
-     no description
      vrf forwarding v1
      ipv4 address 2.2.2.222 255.255.255.255
      ipv6 address 4321::222 ffff:ffff:ffff:ffff:ffff:ffff:ffff:ffff
@@ -60,7 +58,6 @@
      exit
     !
     interface loopback3
-     no description
      vrf forwarding v1
      ipv4 address 2.2.2.101 255.255.255.255
      ipv6 address 4321::101 ffff:ffff:ffff:ffff:ffff:ffff:ffff:ffff
@@ -69,7 +66,6 @@
      exit
     !
     interface ethernet1
-     no description
      vrf forwarding v1
      ipv4 address 1.1.1.1 255.255.255.252
      ipv6 address 1234:1::1 ffff:ffff::
@@ -129,7 +125,7 @@
     hostname r2
     buggy
     !
-    logging file debug ../binTmp/zzz4r2-log.run
+    logging file debug ../binTmp/zzz19r2-log.run
     !
     vrf definition tester
      exit
@@ -149,7 +145,6 @@
      exit
     !
     interface loopback1
-     no description
      vrf forwarding v1
      ipv4 address 2.2.2.2 255.255.255.255
      ipv6 address 4321::2 ffff:ffff:ffff:ffff:ffff:ffff:ffff:ffff
@@ -161,7 +156,6 @@
      exit
     !
     interface ethernet1
-     no description
      vrf forwarding v1
      ipv4 address 1.1.1.2 255.255.255.252
      ipv6 address 1234:1::2 ffff:ffff::
@@ -173,7 +167,6 @@
      exit
     !
     interface ethernet2
-     no description
      vrf forwarding v1
      ipv4 address 1.1.1.5 255.255.255.252
      ipv6 address 1234:2::1 ffff:ffff::
@@ -226,7 +219,7 @@
     hostname r3
     buggy
     !
-    logging file debug ../binTmp/zzz4r3-log.run
+    logging file debug ../binTmp/zzz19r3-log.run
     !
     route-map rm1
      sequence 10 action permit
@@ -254,7 +247,6 @@
      exit
     !
     interface loopback1
-     no description
      vrf forwarding v1
      ipv4 address 2.2.2.3 255.255.255.255
      ipv6 address 4321::3 ffff:ffff:ffff:ffff:ffff:ffff:ffff:ffff
@@ -263,7 +255,6 @@
      exit
     !
     interface loopback2
-     no description
      vrf forwarding v1
      ipv4 address 2.2.2.222 255.255.255.255
      ipv6 address 4321::222 ffff:ffff:ffff:ffff:ffff:ffff:ffff:ffff
@@ -272,7 +263,6 @@
      exit
     !
     interface loopback3
-     no description
      vrf forwarding v1
      ipv4 address 2.2.2.103 255.255.255.255
      ipv6 address 4321::103 ffff:ffff:ffff:ffff:ffff:ffff:ffff:ffff
@@ -281,7 +271,6 @@
      exit
     !
     interface ethernet1
-     no description
      vrf forwarding v1
      ipv4 address 1.1.1.6 255.255.255.252
      ipv6 address 1234:2::2 ffff:ffff::
@@ -356,8 +345,8 @@
      |~~~~~~~~~~~|~~~~~~~~~~~~~~~~|~~~~~~~|~~~~~~~~~~~~~~~~|~~~~~~~~~~~~|~~~~~~~~~~~~~~~|~~~~~~~|~~~~~~~~~~|
      | interface | mac address    | level | routerid       | ip address | other address | state | uptime   |
      |-----------|----------------|-------|----------------|------------|---------------|-------|----------|
-     | ethernet1 | 0000.0000.0000 | 2     | 4444.0000.1111 | 1234:1::1  | 1.1.1.1       | up    | 00:00:25 |
-     | ethernet2 | 0000.0000.0000 | 2     | 4444.0000.3333 | 1234:2::2  | 1.1.1.6       | up    | 00:00:26 |
+     | ethernet1 | 0000.0000.0000 | 2     | 4444.0000.1111 | 1234:1::1  | 1.1.1.1       | up    | 00:00:27 |
+     | ethernet2 | 0000.0000.0000 | 2     | 4444.0000.3333 | 1234:2::2  | 1.1.1.6       | up    | 00:00:27 |
      |___________|________________|_______|________________|____________|_______________|_______|__________|
     r2#
     r2#
@@ -381,9 +370,10 @@
      |~~~~~~~~~~~~~~~~~~~~~~|~~~~~~~~~~|~~~~~~~|~~~~~|~~~~~~~~~~|
      | lspid                | sequence | flags | len | time     |
      |----------------------|----------|-------|-----|----------|
-     | 4444.0000.1111.00-00 | 0000000c | apo   | 118 | 00:19:51 |
+     | 0000.0000.0000.00-00 | 00000001 | apo   | 10  | 00:19:31 |
+     | 4444.0000.1111.00-00 | 0000000d | apo   | 118 | 00:19:50 |
      | 4444.0000.3333.00-00 | 00000009 | apo   | 118 | 00:19:32 |
-     | 6666.0000.2222.00-00 | 0000000b | apo   | 119 | 00:19:33 |
+     | 6666.0000.2222.00-00 | 0000000b | apo   | 119 | 00:19:32 |
      |______________________|__________|_______|_____|__________|
     r2#
     r2#
@@ -419,14 +409,14 @@
      |~~~~~|~~~~~~~~~~~~~~|~~~~~~~~|~~~~~~~~~~~|~~~~~~~~~|~~~~~~~~~~|
      | typ | prefix       | metric | iface     | hop     | time     |
      |-----|--------------|--------|-----------|---------|----------|
-     | C   | 1.1.1.0/30   | 0/0    | ethernet1 | null    | 00:00:27 |
-     | LOC | 1.1.1.2/32   | 0/1    | ethernet1 | null    | 00:00:27 |
-     | C   | 1.1.1.4/30   | 0/0    | ethernet2 | null    | 00:00:27 |
-     | LOC | 1.1.1.5/32   | 0/1    | ethernet2 | null    | 00:00:27 |
-     | I   | 2.2.2.1/32   | 115/20 | ethernet1 | 1.1.1.1 | 00:00:08 |
-     | C   | 2.2.2.2/32   | 0/0    | loopback1 | null    | 00:00:27 |
-     | I   | 2.2.2.3/32   | 115/30 | ethernet2 | 1.1.1.6 | 00:00:26 |
-     | I   | 2.2.2.222/32 | 115/20 | ethernet1 | 1.1.1.1 | 00:00:08 |
+     | C   | 1.1.1.0/30   | 0/0    | ethernet1 | null    | 00:00:28 |
+     | LOC | 1.1.1.2/32   | 0/1    | ethernet1 | null    | 00:00:28 |
+     | C   | 1.1.1.4/30   | 0/0    | ethernet2 | null    | 00:00:28 |
+     | LOC | 1.1.1.5/32   | 0/1    | ethernet2 | null    | 00:00:28 |
+     | I   | 2.2.2.1/32   | 115/20 | ethernet1 | 1.1.1.1 | 00:00:09 |
+     | C   | 2.2.2.2/32   | 0/0    | loopback1 | null    | 00:00:29 |
+     | I   | 2.2.2.3/32   | 115/30 | ethernet2 | 1.1.1.6 | 00:00:28 |
+     | I   | 2.2.2.222/32 | 115/20 | ethernet1 | 1.1.1.1 | 00:00:09 |
      |_____|______________|________|___________|_________|__________|
     r2#
     r2#
@@ -440,14 +430,14 @@
      |~~~~~~|~~~~~~~~~~~~~~~|~~~~~~~~|~~~~~~~~~~~|~~~~~~~~~~~|~~~~~~~~~~|
      | typ  | prefix        | metric | iface     | hop       | time     |
      |------|---------------|--------|-----------|-----------|----------|
-     | C    | 1234:1::/32   | 0/0    | ethernet1 | null      | 00:00:27 |
-     | LOC  | 1234:1::2/128 | 0/1    | ethernet1 | null      | 00:00:27 |
-     | C    | 1234:2::/32   | 0/0    | ethernet2 | null      | 00:00:27 |
-     | LOC  | 1234:2::1/128 | 0/1    | ethernet2 | null      | 00:00:27 |
-     | I EX | 4321::1/128   | 115/20 | ethernet1 | 1234:1::1 | 00:00:05 |
-     | C    | 4321::2/128   | 0/0    | loopback1 | null      | 00:00:27 |
-     | I EX | 4321::3/128   | 115/30 | ethernet2 | 1234:2::2 | 00:00:27 |
-     | I EX | 4321::222/128 | 115/20 | ethernet1 | 1234:1::1 | 00:00:05 |
+     | C    | 1234:1::/32   | 0/0    | ethernet1 | null      | 00:00:29 |
+     | LOC  | 1234:1::2/128 | 0/1    | ethernet1 | null      | 00:00:29 |
+     | C    | 1234:2::/32   | 0/0    | ethernet2 | null      | 00:00:29 |
+     | LOC  | 1234:2::1/128 | 0/1    | ethernet2 | null      | 00:00:29 |
+     | I EX | 4321::1/128   | 115/20 | ethernet1 | 1234:1::1 | 00:00:06 |
+     | C    | 4321::2/128   | 0/0    | loopback1 | null      | 00:00:29 |
+     | I EX | 4321::3/128   | 115/30 | ethernet2 | 1234:2::2 | 00:00:28 |
+     | I EX | 4321::222/128 | 115/20 | ethernet1 | 1234:1::1 | 00:00:06 |
      |______|_______________|________|___________|___________|__________|
     r2#
     r2#

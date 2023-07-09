@@ -14,20 +14,23 @@
     hostname r1
     buggy
     !
-    logging file debug ../binTmp/zzz68r1-log.run
+    logging file debug ../binTmp/zzz52r1-log.run
     !
     vrf definition tester
      exit
     !
     vrf definition v1
      rd 1:1
-     rt-import 1:2
-     rt-export 1:2
+     rt4import 1:2
+     rt4export 1:2
+     rt6import 1:2
+     rt6export 1:2
      exit
     !
     vrf definition v2
      rd 1:2
-     label-mode per-prefix
+     label4mode per-prefix
+     label6mode per-prefix
      exit
     !
     router rip4 1
@@ -277,7 +280,6 @@
      exit
     !
     interface loopback1
-     no description
      vrf forwarding v1
      ipv4 address 2.2.2.1 255.255.255.255
      ipv6 address 4321::1 ffff:ffff:ffff:ffff:ffff:ffff:ffff:ffff
@@ -286,13 +288,11 @@
      exit
     !
     interface ethernet1
-     no description
      no shutdown
      no log-link-change
      exit
     !
     interface ethernet1.11
-     no description
      vrf forwarding v1
      ipv4 address 1.1.1.1 255.255.255.252
      router isis4 1 enable
@@ -302,7 +302,6 @@
      exit
     !
     interface ethernet1.12
-     no description
      vrf forwarding v1
      ipv6 address 1234:1::1 ffff:ffff::
      router isis6 1 enable
@@ -312,13 +311,11 @@
      exit
     !
     interface ethernet10
-     no description
      no shutdown
      no log-link-change
      exit
     !
     interface ethernet10.11
-     no description
      vrf forwarding v1
      ipv4 address 1.1.1.37 255.255.255.252
      router olsr4 1 enable
@@ -327,7 +324,6 @@
      exit
     !
     interface ethernet10.12
-     no description
      vrf forwarding v1
      ipv6 address 1234:10::1 ffff:ffff::
      router olsr6 1 enable
@@ -336,13 +332,11 @@
      exit
     !
     interface ethernet2
-     no description
      no shutdown
      no log-link-change
      exit
     !
     interface ethernet2.11
-     no description
      vrf forwarding v1
      ipv4 address 1.1.1.5 255.255.255.252
      router ospf4 1 enable
@@ -352,7 +346,6 @@
      exit
     !
     interface ethernet2.12
-     no description
      vrf forwarding v1
      ipv6 address 1234:2::1 ffff:ffff::
      router ospf6 1 enable
@@ -362,13 +355,11 @@
      exit
     !
     interface ethernet3
-     no description
      no shutdown
      no log-link-change
      exit
     !
     interface ethernet3.11
-     no description
      vrf forwarding v1
      ipv4 address 1.1.1.9 255.255.255.252
      router rip4 1 enable
@@ -377,7 +368,6 @@
      exit
     !
     interface ethernet3.12
-     no description
      vrf forwarding v1
      ipv6 address 1234:3::1 ffff:ffff::
      router rip6 1 enable
@@ -386,13 +376,11 @@
      exit
     !
     interface ethernet4
-     no description
      no shutdown
      no log-link-change
      exit
     !
     interface ethernet4.11
-     no description
      vrf forwarding v1
      ipv4 address 1.1.1.13 255.255.255.252
      no shutdown
@@ -400,7 +388,6 @@
      exit
     !
     interface ethernet4.12
-     no description
      vrf forwarding v1
      ipv6 address 1234:4::1 ffff:ffff::
      no shutdown
@@ -408,13 +395,11 @@
      exit
     !
     interface ethernet5
-     no description
      no shutdown
      no log-link-change
      exit
     !
     interface ethernet5.11
-     no description
      vrf forwarding v2
      ipv4 address 1.1.1.17 255.255.255.252
      mpls enable
@@ -423,7 +408,6 @@
      exit
     !
     interface ethernet5.12
-     no description
      vrf forwarding v2
      ipv6 address 1234:5::1 ffff:ffff::
      mpls enable
@@ -432,13 +416,11 @@
      exit
     !
     interface ethernet6
-     no description
      no shutdown
      no log-link-change
      exit
     !
     interface ethernet6.11
-     no description
      vrf forwarding v1
      ipv4 address 1.1.1.21 255.255.255.252
      router pvrp4 1 enable
@@ -447,7 +429,6 @@
      exit
     !
     interface ethernet6.12
-     no description
      vrf forwarding v1
      ipv6 address 1234:6::1 ffff:ffff::
      router pvrp6 1 enable
@@ -456,13 +437,11 @@
      exit
     !
     interface ethernet7
-     no description
      no shutdown
      no log-link-change
      exit
     !
     interface ethernet7.11
-     no description
      vrf forwarding v1
      ipv4 address 1.1.1.25 255.255.255.252
      router eigrp4 1 enable
@@ -471,7 +450,6 @@
      exit
     !
     interface ethernet7.12
-     no description
      vrf forwarding v1
      ipv6 address 1234:7::1 ffff:ffff::
      router eigrp6 1 enable
@@ -480,13 +458,11 @@
      exit
     !
     interface ethernet8
-     no description
      no shutdown
      no log-link-change
      exit
     !
     interface ethernet8.11
-     no description
      vrf forwarding v1
      ipv4 address 1.1.1.29 255.255.255.252
      router babel4 1 enable
@@ -495,7 +471,6 @@
      exit
     !
     interface ethernet8.12
-     no description
      vrf forwarding v1
      ipv6 address 1234:8::1 ffff:ffff::
      router babel6 1 enable
@@ -504,13 +479,11 @@
      exit
     !
     interface ethernet9
-     no description
      no shutdown
      no log-link-change
      exit
     !
     interface ethernet9.11
-     no description
      vrf forwarding v1
      ipv4 address 1.1.1.33 255.255.255.252
      router lsrp4 1 enable
@@ -519,7 +492,6 @@
      exit
     !
     interface ethernet9.12
-     no description
      vrf forwarding v1
      ipv6 address 1234:9::1 ffff:ffff::
      router lsrp6 1 enable
@@ -534,7 +506,6 @@
      no safe-ebgp
      address-family unicast
      neighbor 1.1.1.14 remote-as 2
-     no neighbor 1.1.1.14 description
      neighbor 1.1.1.14 local-as 1
      neighbor 1.1.1.14 address-family unicast
      neighbor 1.1.1.14 distance 20
@@ -557,7 +528,6 @@
      no safe-ebgp
      address-family vpnuni
      neighbor 1.1.1.18 remote-as 3
-     no neighbor 1.1.1.18 description
      neighbor 1.1.1.18 local-as 1
      neighbor 1.1.1.18 address-family vpnuni
      neighbor 1.1.1.18 distance 20
@@ -582,7 +552,6 @@
      no safe-ebgp
      address-family unicast
      neighbor 1234:4::2 remote-as 2
-     no neighbor 1234:4::2 description
      neighbor 1234:4::2 local-as 1
      neighbor 1234:4::2 address-family unicast
      neighbor 1234:4::2 distance 20
@@ -605,7 +574,6 @@
      no safe-ebgp
      address-family vpnuni
      neighbor 1234:5::2 remote-as 3
-     no neighbor 1234:5::2 description
      neighbor 1234:5::2 local-as 1
      neighbor 1234:5::2 address-family vpnuni
      neighbor 1234:5::2 distance 20
@@ -678,7 +646,7 @@
     hostname r2
     buggy
     !
-    logging file debug ../binTmp/zzz68r2-log.run
+    logging file debug ../binTmp/zzz52r2-log.run
     !
     vrf definition tester
      exit
@@ -706,7 +674,6 @@
      exit
     !
     interface loopback1
-     no description
      vrf forwarding v1
      ipv4 address 2.2.2.2 255.255.255.255
      ipv6 address 4321::2 ffff:ffff:ffff:ffff:ffff:ffff:ffff:ffff
@@ -715,13 +682,11 @@
      exit
     !
     interface ethernet1
-     no description
      no shutdown
      no log-link-change
      exit
     !
     interface ethernet1.11
-     no description
      vrf forwarding v1
      ipv4 address 1.1.1.2 255.255.255.252
      router isis4 1 enable
@@ -731,7 +696,6 @@
      exit
     !
     interface ethernet1.12
-     no description
      vrf forwarding v1
      ipv6 address 1234:1::2 ffff:ffff::
      router isis6 1 enable
@@ -782,7 +746,7 @@
     hostname r3
     buggy
     !
-    logging file debug ../binTmp/zzz68r3-log.run
+    logging file debug ../binTmp/zzz52r3-log.run
     !
     vrf definition tester
      exit
@@ -808,7 +772,6 @@
      exit
     !
     interface loopback1
-     no description
      vrf forwarding v1
      ipv4 address 2.2.2.3 255.255.255.255
      ipv6 address 4321::3 ffff:ffff:ffff:ffff:ffff:ffff:ffff:ffff
@@ -817,13 +780,11 @@
      exit
     !
     interface ethernet1
-     no description
      no shutdown
      no log-link-change
      exit
     !
     interface ethernet1.11
-     no description
      vrf forwarding v1
      ipv4 address 1.1.1.6 255.255.255.252
      router ospf4 1 enable
@@ -833,7 +794,6 @@
      exit
     !
     interface ethernet1.12
-     no description
      vrf forwarding v1
      ipv6 address 1234:2::2 ffff:ffff::
      router ospf6 1 enable
@@ -884,7 +844,7 @@
     hostname r4
     buggy
     !
-    logging file debug ../binTmp/zzz68r4-log.run
+    logging file debug ../binTmp/zzz52r4-log.run
     !
     vrf definition tester
      exit
@@ -904,7 +864,6 @@
      exit
     !
     interface loopback1
-     no description
      vrf forwarding v1
      ipv4 address 2.2.2.4 255.255.255.255
      ipv6 address 4321::4 ffff:ffff:ffff:ffff:ffff:ffff:ffff:ffff
@@ -913,13 +872,11 @@
      exit
     !
     interface ethernet1
-     no description
      no shutdown
      no log-link-change
      exit
     !
     interface ethernet1.11
-     no description
      vrf forwarding v1
      ipv4 address 1.1.1.10 255.255.255.252
      router rip4 1 enable
@@ -928,7 +885,6 @@
      exit
     !
     interface ethernet1.12
-     no description
      vrf forwarding v1
      ipv6 address 1234:3::2 ffff:ffff::
      router rip6 1 enable
@@ -978,7 +934,7 @@
     hostname r5
     buggy
     !
-    logging file debug ../binTmp/zzz68r5-log.run
+    logging file debug ../binTmp/zzz52r5-log.run
     !
     vrf definition tester
      exit
@@ -988,7 +944,6 @@
      exit
     !
     interface loopback1
-     no description
      vrf forwarding v1
      ipv4 address 2.2.2.5 255.255.255.255
      ipv6 address 4321::5 ffff:ffff:ffff:ffff:ffff:ffff:ffff:ffff
@@ -997,13 +952,11 @@
      exit
     !
     interface ethernet1
-     no description
      no shutdown
      no log-link-change
      exit
     !
     interface ethernet1.11
-     no description
      vrf forwarding v1
      ipv4 address 1.1.1.14 255.255.255.252
      no shutdown
@@ -1011,7 +964,6 @@
      exit
     !
     interface ethernet1.12
-     no description
      vrf forwarding v1
      ipv6 address 1234:4::2 ffff:ffff::
      no shutdown
@@ -1025,7 +977,6 @@
      no safe-ebgp
      address-family unicast
      neighbor 1.1.1.13 remote-as 1
-     no neighbor 1.1.1.13 description
      neighbor 1.1.1.13 local-as 2
      neighbor 1.1.1.13 address-family unicast
      neighbor 1.1.1.13 distance 20
@@ -1039,7 +990,6 @@
      no safe-ebgp
      address-family unicast
      neighbor 1234:4::1 remote-as 1
-     no neighbor 1234:4::1 description
      neighbor 1234:4::1 local-as 2
      neighbor 1234:4::1 address-family unicast
      neighbor 1234:4::1 distance 20
@@ -1088,24 +1038,26 @@
     hostname r6
     buggy
     !
-    logging file debug ../binTmp/zzz68r6-log.run
+    logging file debug ../binTmp/zzz52r6-log.run
     !
     vrf definition tester
      exit
     !
     vrf definition v1
      rd 1:1
-     rt-import 1:2
-     rt-export 1:2
+     rt4import 1:2
+     rt4export 1:2
+     rt6import 1:2
+     rt6export 1:2
      exit
     !
     vrf definition v2
      rd 1:2
-     label-mode per-prefix
+     label4mode per-prefix
+     label6mode per-prefix
      exit
     !
     interface loopback1
-     no description
      vrf forwarding v1
      ipv4 address 2.2.2.6 255.255.255.255
      ipv6 address 4321::6 ffff:ffff:ffff:ffff:ffff:ffff:ffff:ffff
@@ -1114,13 +1066,11 @@
      exit
     !
     interface ethernet1
-     no description
      no shutdown
      no log-link-change
      exit
     !
     interface ethernet1.11
-     no description
      vrf forwarding v2
      ipv4 address 1.1.1.18 255.255.255.252
      mpls enable
@@ -1129,7 +1079,6 @@
      exit
     !
     interface ethernet1.12
-     no description
      vrf forwarding v2
      ipv6 address 1234:5::2 ffff:ffff::
      mpls enable
@@ -1144,7 +1093,6 @@
      no safe-ebgp
      address-family vpnuni
      neighbor 1.1.1.17 remote-as 1
-     no neighbor 1.1.1.17 description
      neighbor 1.1.1.17 local-as 3
      neighbor 1.1.1.17 address-family vpnuni
      neighbor 1.1.1.17 distance 20
@@ -1160,7 +1108,6 @@
      no safe-ebgp
      address-family vpnuni
      neighbor 1234:5::1 remote-as 1
-     no neighbor 1234:5::1 description
      neighbor 1234:5::1 local-as 3
      neighbor 1234:5::1 address-family vpnuni
      neighbor 1234:5::1 distance 20
@@ -1224,7 +1171,7 @@
     hostname r7
     buggy
     !
-    logging file debug ../binTmp/zzz68r7-log.run
+    logging file debug ../binTmp/zzz52r7-log.run
     !
     vrf definition tester
      exit
@@ -1246,7 +1193,6 @@
      exit
     !
     interface loopback1
-     no description
      vrf forwarding v1
      ipv4 address 2.2.2.7 255.255.255.255
      ipv6 address 4321::7 ffff:ffff:ffff:ffff:ffff:ffff:ffff:ffff
@@ -1255,13 +1201,11 @@
      exit
     !
     interface ethernet1
-     no description
      no shutdown
      no log-link-change
      exit
     !
     interface ethernet1.11
-     no description
      vrf forwarding v1
      ipv4 address 1.1.1.22 255.255.255.252
      router pvrp4 1 enable
@@ -1270,7 +1214,6 @@
      exit
     !
     interface ethernet1.12
-     no description
      vrf forwarding v1
      ipv6 address 1234:6::2 ffff:ffff::
      router pvrp6 1 enable
@@ -1320,7 +1263,7 @@
     hostname r8
     buggy
     !
-    logging file debug ../binTmp/zzz68r8-log.run
+    logging file debug ../binTmp/zzz52r8-log.run
     !
     vrf definition tester
      exit
@@ -1344,7 +1287,6 @@
      exit
     !
     interface loopback1
-     no description
      vrf forwarding v1
      ipv4 address 2.2.2.8 255.255.255.255
      ipv6 address 4321::8 ffff:ffff:ffff:ffff:ffff:ffff:ffff:ffff
@@ -1353,13 +1295,11 @@
      exit
     !
     interface ethernet1
-     no description
      no shutdown
      no log-link-change
      exit
     !
     interface ethernet1.11
-     no description
      vrf forwarding v1
      ipv4 address 1.1.1.26 255.255.255.252
      router eigrp4 1 enable
@@ -1368,7 +1308,6 @@
      exit
     !
     interface ethernet1.12
-     no description
      vrf forwarding v1
      ipv6 address 1234:7::2 ffff:ffff::
      router eigrp6 1 enable
@@ -1418,7 +1357,7 @@
     hostname r9
     buggy
     !
-    logging file debug ../binTmp/zzz68r9-log.run
+    logging file debug ../binTmp/zzz52r9-log.run
     !
     vrf definition tester
      exit
@@ -1440,7 +1379,6 @@
      exit
     !
     interface loopback1
-     no description
      vrf forwarding v1
      ipv4 address 2.2.2.9 255.255.255.255
      ipv6 address 4321::9 ffff:ffff:ffff:ffff:ffff:ffff:ffff:ffff
@@ -1449,13 +1387,11 @@
      exit
     !
     interface ethernet1
-     no description
      no shutdown
      no log-link-change
      exit
     !
     interface ethernet1.11
-     no description
      vrf forwarding v1
      ipv4 address 1.1.1.30 255.255.255.252
      router babel4 1 enable
@@ -1464,7 +1400,6 @@
      exit
     !
     interface ethernet1.12
-     no description
      vrf forwarding v1
      ipv6 address 1234:8::2 ffff:ffff::
      router babel6 1 enable
@@ -1514,7 +1449,7 @@
     hostname r10
     buggy
     !
-    logging file debug ../binTmp/zzz68r10-log.run
+    logging file debug ../binTmp/zzz52r10-log.run
     !
     vrf definition tester
      exit
@@ -1536,7 +1471,6 @@
      exit
     !
     interface loopback1
-     no description
      vrf forwarding v1
      ipv4 address 2.2.2.10 255.255.255.255
      ipv6 address 4321::10 ffff:ffff:ffff:ffff:ffff:ffff:ffff:ffff
@@ -1545,13 +1479,11 @@
      exit
     !
     interface ethernet1
-     no description
      no shutdown
      no log-link-change
      exit
     !
     interface ethernet1.11
-     no description
      vrf forwarding v1
      ipv4 address 1.1.1.34 255.255.255.252
      router lsrp4 1 enable
@@ -1560,7 +1492,6 @@
      exit
     !
     interface ethernet1.12
-     no description
      vrf forwarding v1
      ipv6 address 1234:9::2 ffff:ffff::
      router lsrp6 1 enable
@@ -1610,7 +1541,7 @@
     hostname r11
     buggy
     !
-    logging file debug ../binTmp/zzz68r11-log.run
+    logging file debug ../binTmp/zzz52r11-log.run
     !
     vrf definition tester
      exit
@@ -1630,7 +1561,6 @@
      exit
     !
     interface loopback1
-     no description
      vrf forwarding v1
      ipv4 address 2.2.2.11 255.255.255.255
      ipv6 address 4321::11 ffff:ffff:ffff:ffff:ffff:ffff:ffff:ffff
@@ -1639,13 +1569,11 @@
      exit
     !
     interface ethernet1
-     no description
      no shutdown
      no log-link-change
      exit
     !
     interface ethernet1.11
-     no description
      vrf forwarding v1
      ipv4 address 1.1.1.38 255.255.255.252
      router olsr4 1 enable
@@ -1654,7 +1582,6 @@
      exit
     !
     interface ethernet1.12
-     no description
      vrf forwarding v1
      ipv6 address 1234:10::2 ffff:ffff::
      router olsr6 1 enable

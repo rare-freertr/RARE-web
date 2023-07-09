@@ -14,7 +14,7 @@
     hostname r1
     buggy
     !
-    logging file debug ../binTmp/zzz43r1-log.run
+    logging file debug ../binTmp/zzz9r1-log.run
     !
     bridge 1
      rd 1:1
@@ -53,11 +53,11 @@
     !
     vrf definition v1
      rd 1:1
-     label-mode per-prefix
+     label4mode per-prefix
+     label6mode per-prefix
      exit
     !
     interface loopback0
-     no description
      vrf forwarding v1
      ipv4 address 2.2.2.1 255.255.255.255
      ipv6 address 4321::1 ffff:ffff:ffff:ffff:ffff:ffff:ffff:ffff
@@ -66,7 +66,6 @@
      exit
     !
     interface bvi1
-     no description
      vrf forwarding v1
      ipv4 address 3.3.3.1 255.255.255.252
      no shutdown
@@ -74,7 +73,6 @@
      exit
     !
     interface bvi2
-     no description
      vrf forwarding v1
      ipv6 address 4444::1 ffff::
      no shutdown
@@ -82,7 +80,6 @@
      exit
     !
     interface bvi3
-     no description
      vrf forwarding v1
      ipv6 address 3333::1 ffff::
      no shutdown
@@ -90,7 +87,6 @@
      exit
     !
     interface bvi4
-     no description
      vrf forwarding v1
      ipv4 address 4.4.4.1 255.255.255.252
      no shutdown
@@ -98,7 +94,6 @@
      exit
     !
     interface ethernet1
-     no description
      vrf forwarding v1
      ipv4 address 1.1.1.1 255.255.255.0
      ipv6 address 1234:1::1 ffff:ffff::
@@ -116,7 +111,6 @@
      no safe-ebgp
      address-family evpn
      neighbor 1.1.1.3 remote-as 3
-     no neighbor 1.1.1.3 description
      neighbor 1.1.1.3 local-as 1
      neighbor 1.1.1.3 address-family evpn
      neighbor 1.1.1.3 distance 20
@@ -124,11 +118,11 @@
      neighbor 1.1.1.3 pmsitun
      neighbor 1.1.1.3 send-community standard extended
      afi-evpn 101 bridge-group 1
-     afi-evpn 101 bmac 0028.0269.293c
+     afi-evpn 101 bmac 0069.2041.0d2f
      afi-evpn 101 encapsulation pbb
      afi-evpn 101 update-source loopback0
      afi-evpn 102 bridge-group 3
-     afi-evpn 102 bmac 002e.3f21.5f5c
+     afi-evpn 102 bmac 0026.382e.2a1d
      afi-evpn 102 encapsulation pbb
      afi-evpn 102 update-source loopback0
      exit
@@ -140,7 +134,6 @@
      no safe-ebgp
      address-family evpn
      neighbor 1234:1::3 remote-as 3
-     no neighbor 1234:1::3 description
      neighbor 1234:1::3 local-as 1
      neighbor 1234:1::3 address-family evpn
      neighbor 1234:1::3 distance 20
@@ -148,11 +141,11 @@
      neighbor 1234:1::3 pmsitun
      neighbor 1234:1::3 send-community standard extended
      afi-evpn 101 bridge-group 2
-     afi-evpn 101 bmac 0076.1b5d.2c05
+     afi-evpn 101 bmac 0058.5d49.3e63
      afi-evpn 101 encapsulation pbb
      afi-evpn 101 update-source loopback0
      afi-evpn 102 bridge-group 4
-     afi-evpn 102 bmac 001a.6c6e.2b6d
+     afi-evpn 102 bmac 0028.6641.722b
      afi-evpn 102 encapsulation pbb
      afi-evpn 102 update-source loopback0
      exit
@@ -201,7 +194,7 @@
     hostname r2
     buggy
     !
-    logging file debug ../binTmp/zzz43r2-log.run
+    logging file debug ../binTmp/zzz9r2-log.run
     !
     bridge 1
      rd 1:1
@@ -240,11 +233,11 @@
     !
     vrf definition v1
      rd 1:1
-     label-mode per-prefix
+     label4mode per-prefix
+     label6mode per-prefix
      exit
     !
     interface loopback0
-     no description
      vrf forwarding v1
      ipv4 address 2.2.2.2 255.255.255.255
      ipv6 address 4321::2 ffff:ffff:ffff:ffff:ffff:ffff:ffff:ffff
@@ -253,7 +246,6 @@
      exit
     !
     interface bvi1
-     no description
      vrf forwarding v1
      ipv4 address 3.3.3.2 255.255.255.252
      no shutdown
@@ -261,7 +253,6 @@
      exit
     !
     interface bvi2
-     no description
      vrf forwarding v1
      ipv6 address 4444::2 ffff::
      no shutdown
@@ -269,7 +260,6 @@
      exit
     !
     interface bvi3
-     no description
      vrf forwarding v1
      ipv6 address 3333::2 ffff::
      no shutdown
@@ -277,7 +267,6 @@
      exit
     !
     interface bvi4
-     no description
      vrf forwarding v1
      ipv4 address 4.4.4.2 255.255.255.252
      no shutdown
@@ -285,7 +274,6 @@
      exit
     !
     interface ethernet1
-     no description
      vrf forwarding v1
      ipv4 address 1.1.1.2 255.255.255.0
      ipv6 address 1234:1::2 ffff:ffff::
@@ -303,7 +291,6 @@
      no safe-ebgp
      address-family evpn
      neighbor 1.1.1.3 remote-as 3
-     no neighbor 1.1.1.3 description
      neighbor 1.1.1.3 local-as 2
      neighbor 1.1.1.3 address-family evpn
      neighbor 1.1.1.3 distance 20
@@ -311,11 +298,11 @@
      neighbor 1.1.1.3 pmsitun
      neighbor 1.1.1.3 send-community standard extended
      afi-evpn 101 bridge-group 1
-     afi-evpn 101 bmac 0063.1e21.4b1d
+     afi-evpn 101 bmac 002b.1210.4765
      afi-evpn 101 encapsulation pbb
      afi-evpn 101 update-source loopback0
      afi-evpn 102 bridge-group 3
-     afi-evpn 102 bmac 0005.1953.4b2d
+     afi-evpn 102 bmac 0030.3648.037a
      afi-evpn 102 encapsulation pbb
      afi-evpn 102 update-source loopback0
      exit
@@ -327,7 +314,6 @@
      no safe-ebgp
      address-family evpn
      neighbor 1234:1::3 remote-as 3
-     no neighbor 1234:1::3 description
      neighbor 1234:1::3 local-as 2
      neighbor 1234:1::3 address-family evpn
      neighbor 1234:1::3 distance 20
@@ -335,11 +321,11 @@
      neighbor 1234:1::3 pmsitun
      neighbor 1234:1::3 send-community standard extended
      afi-evpn 101 bridge-group 2
-     afi-evpn 101 bmac 001d.4e1a.6d05
+     afi-evpn 101 bmac 0005.692d.111c
      afi-evpn 101 encapsulation pbb
      afi-evpn 101 update-source loopback0
      afi-evpn 102 bridge-group 4
-     afi-evpn 102 bmac 0060.3e67.0233
+     afi-evpn 102 bmac 0009.6c2f.536a
      afi-evpn 102 encapsulation pbb
      afi-evpn 102 update-source loopback0
      exit
@@ -388,7 +374,7 @@
     hostname r3
     buggy
     !
-    logging file debug ../binTmp/zzz43r3-log.run
+    logging file debug ../binTmp/zzz9r3-log.run
     !
     bridge 1
      mac-learn
@@ -402,7 +388,6 @@
      exit
     !
     interface bvi1
-     no description
      vrf forwarding v1
      ipv4 address 1.1.1.3 255.255.255.0
      ipv6 address 1234:1::3 ffff:ffff::
@@ -411,14 +396,12 @@
      exit
     !
     interface ethernet1
-     no description
      bridge-group 1
      no shutdown
      no log-link-change
      exit
     !
     interface ethernet2
-     no description
      bridge-group 1
      no shutdown
      no log-link-change
@@ -431,7 +414,6 @@
      no safe-ebgp
      address-family evpn
      neighbor 2.2.2.1 remote-as 1
-     no neighbor 2.2.2.1 description
      neighbor 2.2.2.1 local-as 3
      neighbor 2.2.2.1 address-family evpn
      neighbor 2.2.2.1 distance 20
@@ -439,7 +421,6 @@
      neighbor 2.2.2.1 pmsitun
      neighbor 2.2.2.1 send-community standard extended
      neighbor 2.2.2.2 remote-as 2
-     no neighbor 2.2.2.2 description
      neighbor 2.2.2.2 local-as 3
      neighbor 2.2.2.2 address-family evpn
      neighbor 2.2.2.2 distance 20
@@ -455,7 +436,6 @@
      no safe-ebgp
      address-family evpn
      neighbor 4321::1 remote-as 1
-     no neighbor 4321::1 description
      neighbor 4321::1 local-as 3
      neighbor 4321::1 address-family evpn
      neighbor 4321::1 distance 20
@@ -463,7 +443,6 @@
      neighbor 4321::1 pmsitun
      neighbor 4321::1 send-community standard extended
      neighbor 4321::2 remote-as 2
-     no neighbor 4321::2 description
      neighbor 4321::2 local-as 3
      neighbor 4321::2 address-family evpn
      neighbor 4321::2 distance 20

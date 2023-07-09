@@ -14,7 +14,7 @@
     hostname r1
     buggy
     !
-    logging file debug ../binTmp/zzz88r1-log.run
+    logging file debug ../binTmp/zzz8r1-log.run
     !
     vrf definition tester
      exit
@@ -24,7 +24,6 @@
      exit
     !
     interface serial1
-     no description
      encapsulation ppp
      sgt enable
      vrf forwarding v1
@@ -76,7 +75,7 @@
     hostname r2
     buggy
     !
-    logging file debug ../binTmp/zzz88r2-log.run
+    logging file debug ../binTmp/zzz8r2-log.run
     !
     vrf definition tester
      exit
@@ -86,7 +85,6 @@
      exit
     !
     interface serial1
-     no description
      encapsulation ppp
      sgt enable
      vrf forwarding v1

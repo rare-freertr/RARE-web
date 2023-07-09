@@ -14,7 +14,7 @@
     hostname r1
     buggy
     !
-    logging file debug ../binTmp/zzz43r1-log.run
+    logging file debug ../binTmp/zzz7r1-log.run
     !
     access-list test4
      sequence 10 deny 1 any all any all
@@ -34,13 +34,11 @@
      exit
     !
     interface ethernet1
-     no description
      no shutdown
      no log-link-change
      exit
     !
     interface ethernet1.11
-     no description
      vrf forwarding v1
      ipv4 address 1.1.1.1 255.255.255.0
      ipv4 access-group-in test4
@@ -54,7 +52,6 @@
      exit
     !
     interface tunnel1
-     no description
      tunnel vrf v1
      tunnel source ethernet1.11
      tunnel destination 1.1.1.2
@@ -66,7 +63,6 @@
      exit
     !
     interface tunnel2
-     no description
      tunnel vrf v1
      tunnel source ethernet1.11
      tunnel destination 1234::2
@@ -119,7 +115,7 @@
     hostname r2
     buggy
     !
-    logging file debug ../binTmp/zzz43r2-log.run
+    logging file debug ../binTmp/zzz7r2-log.run
     !
     access-list test4
      sequence 10 deny 1 any all any all
@@ -139,13 +135,11 @@
      exit
     !
     interface ethernet1
-     no description
      no shutdown
      no log-link-change
      exit
     !
     interface ethernet1.11
-     no description
      vrf forwarding v1
      ipv4 address 1.1.1.2 255.255.255.0
      ipv4 access-group-in test4
@@ -159,7 +153,6 @@
      exit
     !
     interface tunnel1
-     no description
      tunnel vrf v1
      tunnel source ethernet1.11
      tunnel destination 1.1.1.1
@@ -171,7 +164,6 @@
      exit
     !
     interface tunnel2
-     no description
      tunnel vrf v1
      tunnel source ethernet1.11
      tunnel destination 1234::1

@@ -38,7 +38,6 @@
      exit
     !
     interface ethernet1
-     no description
      vrf forwarding v1
      ipv4 address 1.1.1.1 255.255.255.252
      ipv4 access-group-out test4
@@ -49,7 +48,6 @@
      exit
     !
     interface tunnel1
-     no description
      tunnel key 123
      tunnel vrf v1
      tunnel source ethernet1
@@ -62,7 +60,6 @@
      exit
     !
     interface tunnel2
-     no description
      tunnel key 123
      tunnel vrf v1
      tunnel source ethernet1
@@ -75,7 +72,6 @@
      exit
     !
     interface tunnel3
-     no description
      tunnel key 321
      tunnel vrf v1
      tunnel source ethernet1
@@ -88,7 +84,6 @@
      exit
     !
     interface tunnel4
-     no description
      tunnel key 321
      tunnel vrf v1
      tunnel source ethernet1
@@ -152,7 +147,6 @@
      exit
     !
     interface ethernet1
-     no description
      vrf forwarding v1
      ipv4 address 1.1.1.2 255.255.255.252
      ipv6 address 1234::2 ffff:ffff::
@@ -161,7 +155,6 @@
      exit
     !
     interface tunnel1
-     no description
      tunnel key 123
      tunnel vrf v1
      tunnel source ethernet1
@@ -174,7 +167,6 @@
      exit
     !
     interface tunnel2
-     no description
      tunnel key 123
      tunnel vrf v1
      tunnel source ethernet1
@@ -187,7 +179,6 @@
      exit
     !
     interface tunnel3
-     no description
      tunnel key 321
      tunnel vrf v1
      tunnel source ethernet1
@@ -200,7 +191,6 @@
      exit
     !
     interface tunnel4
-     no description
      tunnel key 321
      tunnel vrf v1
      tunnel source ethernet1

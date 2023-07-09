@@ -14,7 +14,7 @@
     hostname r1
     buggy
     !
-    logging file debug ../binTmp/zzz42r1-log.run
+    logging file debug ../binTmp/zzz13r1-log.run
     !
     bridge 1
      rd 1:1
@@ -53,11 +53,11 @@
     !
     vrf definition v1
      rd 1:1
-     label-mode per-prefix
+     label4mode per-prefix
+     label6mode per-prefix
      exit
     !
     interface loopback0
-     no description
      vrf forwarding v1
      ipv4 address 2.2.2.1 255.255.255.255
      ipv6 address 4321::1 ffff:ffff:ffff:ffff:ffff:ffff:ffff:ffff
@@ -66,7 +66,6 @@
      exit
     !
     interface bvi1
-     no description
      vrf forwarding v1
      ipv4 address 3.3.3.1 255.255.255.252
      no shutdown
@@ -74,7 +73,6 @@
      exit
     !
     interface bvi2
-     no description
      vrf forwarding v1
      ipv6 address 4444::1 ffff::
      no shutdown
@@ -82,7 +80,6 @@
      exit
     !
     interface bvi3
-     no description
      vrf forwarding v1
      ipv6 address 3333::1 ffff::
      no shutdown
@@ -90,7 +87,6 @@
      exit
     !
     interface bvi4
-     no description
      vrf forwarding v1
      ipv4 address 4.4.4.1 255.255.255.252
      no shutdown
@@ -98,7 +94,6 @@
      exit
     !
     interface ethernet1
-     no description
      vrf forwarding v1
      ipv4 address 1.1.1.1 255.255.255.0
      ipv6 address 1234:1::1 ffff:ffff::
@@ -116,7 +111,6 @@
      no safe-ebgp
      address-family vpls
      neighbor 1.1.1.3 remote-as 3
-     no neighbor 1.1.1.3 description
      neighbor 1.1.1.3 local-as 1
      neighbor 1.1.1.3 address-family vpls
      neighbor 1.1.1.3 distance 20
@@ -137,7 +131,6 @@
      no safe-ebgp
      address-family vpls
      neighbor 1234:1::3 remote-as 3
-     no neighbor 1234:1::3 description
      neighbor 1234:1::3 local-as 1
      neighbor 1234:1::3 address-family vpls
      neighbor 1234:1::3 distance 20
@@ -195,7 +188,7 @@
     hostname r2
     buggy
     !
-    logging file debug ../binTmp/zzz42r2-log.run
+    logging file debug ../binTmp/zzz13r2-log.run
     !
     bridge 1
      rd 1:1
@@ -234,11 +227,11 @@
     !
     vrf definition v1
      rd 1:1
-     label-mode per-prefix
+     label4mode per-prefix
+     label6mode per-prefix
      exit
     !
     interface loopback0
-     no description
      vrf forwarding v1
      ipv4 address 2.2.2.2 255.255.255.255
      ipv6 address 4321::2 ffff:ffff:ffff:ffff:ffff:ffff:ffff:ffff
@@ -247,7 +240,6 @@
      exit
     !
     interface bvi1
-     no description
      vrf forwarding v1
      ipv4 address 3.3.3.2 255.255.255.252
      no shutdown
@@ -255,7 +247,6 @@
      exit
     !
     interface bvi2
-     no description
      vrf forwarding v1
      ipv6 address 4444::2 ffff::
      no shutdown
@@ -263,7 +254,6 @@
      exit
     !
     interface bvi3
-     no description
      vrf forwarding v1
      ipv6 address 3333::2 ffff::
      no shutdown
@@ -271,7 +261,6 @@
      exit
     !
     interface bvi4
-     no description
      vrf forwarding v1
      ipv4 address 4.4.4.2 255.255.255.252
      no shutdown
@@ -279,7 +268,6 @@
      exit
     !
     interface ethernet1
-     no description
      vrf forwarding v1
      ipv4 address 1.1.1.2 255.255.255.0
      ipv6 address 1234:1::2 ffff:ffff::
@@ -297,7 +285,6 @@
      no safe-ebgp
      address-family vpls
      neighbor 1.1.1.3 remote-as 3
-     no neighbor 1.1.1.3 description
      neighbor 1.1.1.3 local-as 2
      neighbor 1.1.1.3 address-family vpls
      neighbor 1.1.1.3 distance 20
@@ -318,7 +305,6 @@
      no safe-ebgp
      address-family vpls
      neighbor 1234:1::3 remote-as 3
-     no neighbor 1234:1::3 description
      neighbor 1234:1::3 local-as 2
      neighbor 1234:1::3 address-family vpls
      neighbor 1234:1::3 distance 20
@@ -376,7 +362,7 @@
     hostname r3
     buggy
     !
-    logging file debug ../binTmp/zzz42r3-log.run
+    logging file debug ../binTmp/zzz13r3-log.run
     !
     bridge 1
      mac-learn
@@ -390,7 +376,6 @@
      exit
     !
     interface bvi1
-     no description
      vrf forwarding v1
      ipv4 address 1.1.1.3 255.255.255.0
      ipv6 address 1234:1::3 ffff:ffff::
@@ -399,14 +384,12 @@
      exit
     !
     interface ethernet1
-     no description
      bridge-group 1
      no shutdown
      no log-link-change
      exit
     !
     interface ethernet2
-     no description
      bridge-group 1
      no shutdown
      no log-link-change
@@ -419,14 +402,12 @@
      no safe-ebgp
      address-family vpls
      neighbor 2.2.2.1 remote-as 1
-     no neighbor 2.2.2.1 description
      neighbor 2.2.2.1 local-as 3
      neighbor 2.2.2.1 address-family vpls
      neighbor 2.2.2.1 distance 20
      neighbor 2.2.2.1 route-server-client
      neighbor 2.2.2.1 send-community standard extended
      neighbor 2.2.2.2 remote-as 2
-     no neighbor 2.2.2.2 description
      neighbor 2.2.2.2 local-as 3
      neighbor 2.2.2.2 address-family vpls
      neighbor 2.2.2.2 distance 20
@@ -441,14 +422,12 @@
      no safe-ebgp
      address-family vpls
      neighbor 4321::1 remote-as 1
-     no neighbor 4321::1 description
      neighbor 4321::1 local-as 3
      neighbor 4321::1 address-family vpls
      neighbor 4321::1 distance 20
      neighbor 4321::1 route-server-client
      neighbor 4321::1 send-community standard extended
      neighbor 4321::2 remote-as 2
-     no neighbor 4321::2 description
      neighbor 4321::2 local-as 3
      neighbor 4321::2 address-family vpls
      neighbor 4321::2 distance 20

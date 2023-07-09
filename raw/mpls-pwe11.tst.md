@@ -14,7 +14,7 @@
     hostname r1
     buggy
     !
-    logging file debug ../binTmp/zzz74r1-log.run
+    logging file debug ../binTmp/zzz37r1-log.run
     !
     bridge 1
      mac-learn
@@ -25,11 +25,11 @@
     !
     vrf definition v1
      rd 1:1
-     label-mode per-prefix
+     label4mode per-prefix
+     label6mode per-prefix
      exit
     !
     interface loopback0
-     no description
      vrf forwarding v1
      ipv4 address 2.2.2.1 255.255.255.255
      ipv6 address 4321::1 ffff:ffff:ffff:ffff:ffff:ffff:ffff:ffff
@@ -38,7 +38,6 @@
      exit
     !
     interface bvi1
-     no description
      vrf forwarding v1
      ipv4 address 3.3.3.1 255.255.255.0
      no shutdown
@@ -46,7 +45,6 @@
      exit
     !
     interface ethernet1
-     no description
      vrf forwarding v1
      ipv4 address 1.1.1.1 255.255.255.252
      ipv6 address 1234:1::1 ffff:ffff::
@@ -58,7 +56,6 @@
      exit
     !
     interface ethernet2
-     no description
      vrf forwarding v1
      ipv4 address 1.1.1.5 255.255.255.252
      ipv6 address 1234:2::1 ffff:ffff::
@@ -70,7 +67,6 @@
      exit
     !
     interface ethernet3
-     no description
      bridge-group 1
      no shutdown
      no log-link-change
@@ -147,7 +143,7 @@
     hostname r2
     buggy
     !
-    logging file debug ../binTmp/zzz74r2-log.run
+    logging file debug ../binTmp/zzz37r2-log.run
     !
     bridge 1
      exit
@@ -157,11 +153,11 @@
     !
     vrf definition v1
      rd 1:1
-     label-mode per-prefix
+     label4mode per-prefix
+     label6mode per-prefix
      exit
     !
     interface loopback0
-     no description
      vrf forwarding v1
      ipv4 address 2.2.2.2 255.255.255.255
      ipv6 address 4321::2 ffff:ffff:ffff:ffff:ffff:ffff:ffff:ffff
@@ -170,7 +166,6 @@
      exit
     !
     interface bvi1
-     no description
      vrf forwarding v1
      ipv4 address 3.3.3.2 255.255.255.0
      no shutdown
@@ -178,7 +173,6 @@
      exit
     !
     interface ethernet1
-     no description
      vrf forwarding v1
      ipv4 address 1.1.1.2 255.255.255.252
      ipv6 address 1234:1::2 ffff:ffff::
@@ -248,7 +242,7 @@
     hostname r3
     buggy
     !
-    logging file debug ../binTmp/zzz74r3-log.run
+    logging file debug ../binTmp/zzz37r3-log.run
     !
     bridge 1
      exit
@@ -258,11 +252,11 @@
     !
     vrf definition v1
      rd 1:1
-     label-mode per-prefix
+     label4mode per-prefix
+     label6mode per-prefix
      exit
     !
     interface loopback0
-     no description
      vrf forwarding v1
      ipv4 address 2.2.2.3 255.255.255.255
      ipv6 address 4321::3 ffff:ffff:ffff:ffff:ffff:ffff:ffff:ffff
@@ -271,7 +265,6 @@
      exit
     !
     interface bvi1
-     no description
      vrf forwarding v1
      ipv4 address 3.3.3.3 255.255.255.0
      no shutdown
@@ -279,7 +272,6 @@
      exit
     !
     interface ethernet1
-     no description
      vrf forwarding v1
      ipv4 address 1.1.1.6 255.255.255.252
      ipv6 address 1234:2::2 ffff:ffff::
@@ -349,7 +341,7 @@
     hostname r4
     buggy
     !
-    logging file debug ../binTmp/zzz74r4-log.run
+    logging file debug ../binTmp/zzz37r4-log.run
     !
     vrf definition tester
      exit
@@ -359,7 +351,6 @@
      exit
     !
     interface ethernet1
-     no description
      vrf forwarding v1
      ipv4 address 3.3.3.4 255.255.255.0
      no shutdown

@@ -14,7 +14,7 @@
     hostname r1
     buggy
     !
-    logging file debug ../binTmp/zzz74r1-log.run
+    logging file debug ../binTmp/zzz36r1-log.run
     !
     crypto ipsec ips
      group 22
@@ -34,7 +34,6 @@
      exit
     !
     interface ethernet1
-     no description
      vrf forwarding v1
      ipv4 address 1.1.1.1 255.255.255.0
      no shutdown
@@ -42,7 +41,6 @@
      exit
     !
     interface tunnel1
-     no description
      tunnel vrf v1
      tunnel protection ips
      tunnel source ethernet1
@@ -96,7 +94,7 @@
     hostname r2
     buggy
     !
-    logging file debug ../binTmp/zzz74r2-log.run
+    logging file debug ../binTmp/zzz36r2-log.run
     !
     crypto ipsec ips
      group 22
@@ -116,7 +114,6 @@
      exit
     !
     interface ethernet1
-     no description
      vrf forwarding v1
      ipv4 address 1.1.1.2 255.255.255.0
      no shutdown
@@ -124,7 +121,6 @@
      exit
     !
     interface tunnel1
-     no description
      tunnel vrf v1
      tunnel protection ips
      tunnel source ethernet1

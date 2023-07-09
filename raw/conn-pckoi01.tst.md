@@ -14,7 +14,7 @@
     hostname r1
     buggy
     !
-    logging file debug ../binTmp/zzz36r1-log.run
+    logging file debug ../binTmp/zzz23r1-log.run
     !
     vrf definition tester
      exit
@@ -24,7 +24,6 @@
      exit
     !
     interface ethernet1
-     no description
      vrf forwarding v1
      ipv4 address 1.1.1.1 255.255.255.0
      ipv6 address 1234::1 ffff::
@@ -33,7 +32,6 @@
      exit
     !
     interface tunnel1
-     no description
      tunnel key 123
      tunnel vrf v1
      tunnel source ethernet1
@@ -88,7 +86,7 @@
     hostname r2
     buggy
     !
-    logging file debug ../binTmp/zzz36r2-log.run
+    logging file debug ../binTmp/zzz23r2-log.run
     !
     vrf definition tester
      exit
@@ -98,7 +96,6 @@
      exit
     !
     interface ethernet1
-     no description
      vrf forwarding v1
      ipv4 address 1.1.1.2 255.255.255.0
      ipv6 address 1234::2 ffff::
@@ -107,7 +104,6 @@
      exit
     !
     interface tunnel1
-     no description
      tunnel key 123
      tunnel vrf v1
      tunnel source ethernet1
@@ -164,18 +160,20 @@
     r1#
     r1#show inter tun1 full
     r1#show inter tun1 full
-    tunnel1 is up (since 00:00:06, 15 changes)
+    tunnel1 is up
      description:
+     state changed 15 times, last at 2022-05-02 21:14:59, 00:00:01 ago
+     last packet input 00:00:00 ago, output 00:00:00 ago, drop never ago
      type is pckoip, hwaddr=none, mtu=1480, bw=100mbps, vrf=v1
-     ip4 address=2.2.2.1/24, netmask=255.255.255.0, ifcid=647241562
-     ip6 address=4321::1/16, netmask=ffff::, ifcid=130301519
+     ipv4 address=2.2.2.1/24, mask=255.255.255.0, ifcid=258954172
+     ipv6 address=4321::1/16, mask=ffff::, ifcid=873227272
      received 23 packets (1550 bytes) dropped 0 packets (0 bytes)
-     transmitted 23 packets (1550 bytes) promisc=false macsec=false sgt=false
+     transmitted 23 packets (1550 bytes) macsec=false sgt=false
      |~~~~~~~|~~~~|~~~~|~~~~~~|~~~~~|~~~~~|~~~~~~|
      |       | packet         | byte             |
      | time  | tx | rx | drop | tx  | rx  | drop |
      |-------|----|----|------|-----|-----|------|
-     | 1sec  | 5  | 5  | 0    | 330 | 330 | 0    |
+     | 1sec  | 3  | 3  | 0    | 230 | 230 | 0    |
      | 1min  | 0  | 0  | 0    | 0   | 0   | 0    |
      | 1hour | 0  | 0  | 0    | 0   | 0   | 0    |
      |_______|____|____|______|_____|_____|______|
@@ -223,41 +221,41 @@
      | 6     | 0   | 0   | 0    | 0    | 0    | 0    |
      | 7     | 0   | 0   | 0    | 0    | 0    | 0    |
      |_______|_____|_____|______|______|______|______|
-            8960|
-            8064|     #
-            7168|     #
-            6272|     #
-            5376|     #
-            4480|#  # #
-            3584|#  # #
-            2688|#  # #
-            1792|#  # #
-             896|#  # #
-               0|#  # #
+            3690|
+            3689|
+            3688|
+            3687|
+            3686|
+            3685|
+            3684|
+            3683|
+            3682|
+            3681|
+            3680|#
              bps|0---------10--------20--------30--------40--------50-------- seconds
+              10|
+               9|
+               8|
+               7|
+               6|
+               5|
+               4|
+               3|
+               2|
                1|
-               0|
-               0|
-               0|
-               0|
-               0|
-               0|
-               0|
-               0|
-               0|
-               0|
+               0|############################################################
              bps|0---------10--------20--------30--------40--------50-------- minutes
+              10|
+               9|
+               8|
+               7|
+               6|
+               5|
+               4|
+               3|
+               2|
                1|
-               0|
-               0|
-               0|
-               0|
-               0|
-               0|
-               0|
-               0|
-               0|
-               0|
+               0|############################################################
              bps|0---------10--------20--------30--------40--------50-------- hours
     r1#
     r1#

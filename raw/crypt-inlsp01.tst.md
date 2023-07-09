@@ -14,7 +14,7 @@
     hostname r1
     buggy
     !
-    logging file debug ../binTmp/zzz35r1-log.run
+    logging file debug ../binTmp/zzz57r1-log.run
     !
     crypto ipsec ips
      cipher des
@@ -30,7 +30,6 @@
      exit
     !
     interface serial1
-     no description
      encapsulation hdlc
      vrf forwarding v1
      ipv4 address 1.1.1.1 255.255.255.0
@@ -40,7 +39,6 @@
      exit
     !
     interface tunnel1
-     no description
      tunnel vrf v1
      tunnel protection ips
      tunnel source serial1
@@ -95,7 +93,7 @@
     hostname r2
     buggy
     !
-    logging file debug ../binTmp/zzz35r2-log.run
+    logging file debug ../binTmp/zzz57r2-log.run
     !
     crypto ipsec ips
      cipher des
@@ -111,7 +109,6 @@
      exit
     !
     interface serial1
-     no description
      encapsulation hdlc
      vrf forwarding v1
      ipv4 address 1.1.1.2 255.255.255.0
@@ -121,7 +118,6 @@
      exit
     !
     interface tunnel1
-     no description
      tunnel vrf v1
      tunnel protection ips
      tunnel source serial1
@@ -178,18 +174,20 @@
     r1#
     r1#show inter tun1 full
     r1#show inter tun1 full
-    tunnel1 is up (since 00:00:05, 15 changes)
+    tunnel1 is up
      description:
-     type is inlsp, hwaddr=0043.6317.470d, mtu=1470, bw=2000kbps, vrf=v1
-     ip4 address=2.2.2.1/24, netmask=255.255.255.0, ifcid=371566166
-     ip6 address=4321::1/16, netmask=ffff::, ifcid=784155082
-     received 22 packets (1452 bytes) dropped 0 packets (0 bytes)
-     transmitted 28 packets (1904 bytes) promisc=false macsec=false sgt=false
+     state changed 15 times, last at 2022-05-02 21:13:46, 00:00:07 ago
+     last packet input 00:00:00 ago, output 00:00:00 ago, drop never ago
+     type is inlsp, hwaddr=006b.3b76.3524, mtu=1470, bw=2000kbps, vrf=v1
+     ipv4 address=2.2.2.1/24, mask=255.255.255.0, ifcid=1016196269
+     ipv6 address=4321::1/16, mask=ffff::, ifcid=756216611
+     received 21 packets (1386 bytes) dropped 0 packets (0 bytes)
+     transmitted 28 packets (1904 bytes) macsec=false sgt=false
      |~~~~~~~|~~~~|~~~~|~~~~~~|~~~~~|~~~~~|~~~~~~|
      |       | packet         | byte             |
      | time  | tx | rx | drop | tx  | rx  | drop |
      |-------|----|----|------|-----|-----|------|
-     | 1sec  | 15 | 15 | 0    | 990 | 990 | 0    |
+     | 1sec  | 11 | 10 | 0    | 726 | 660 | 0    |
      | 1min  | 0  | 0  | 0    | 0   | 0   | 0    |
      | 1hour | 0  | 0  | 0    | 0   | 0   | 0    |
      |_______|____|____|______|_____|_____|______|
@@ -198,7 +196,7 @@
      | type   | value | handler | tx | rx | drop | tx  | rx  | drop |
      |--------|-------|---------|----|----|------|-----|-----|------|
      | ethtyp | 0000  | null    | 0  | 0  | 0    | 0   | 0   | 0    |
-     | ethtyp | 0800  | ip4     | 15 | 12 | 0    | 990 | 792 | 0    |
+     | ethtyp | 0800  | ip4     | 15 | 11 | 0    | 990 | 726 | 0    |
      | ethtyp | 86dd  | ip6     | 13 | 10 | 0    | 914 | 660 | 0    |
      |________|_______|_________|____|____|______|_____|_____|______|
      |~~~~~|~~~~|~~~~|
@@ -215,7 +213,7 @@
      |            | packet         | byte               |
      | size       | tx | rx | drop | tx   | rx   | drop |
      |------------|----|----|------|------|------|------|
-     | 0-255      | 28 | 22 | 0    | 1904 | 1452 | 0    |
+     | 0-255      | 28 | 21 | 0    | 1904 | 1386 | 0    |
      | 256-511    | 0  | 0  | 0    | 0    | 0    | 0    |
      | 512-767    | 0  | 0  | 0    | 0    | 0    | 0    |
      | 768-1023   | 0  | 0  | 0    | 0    | 0    | 0    |
@@ -237,41 +235,41 @@
      | 6     | 0   | 0   | 0    | 0    | 0    | 0    |
      | 7     | 0   | 0   | 0    | 0    | 0    | 0    |
      |_______|_____|_____|______|______|______|______|
-             15k|
-             14k|#
-             12k|#
-             11k|#
-            9504|#
+           11.0k|#
+           10.0k|#
+            8976|#
             7920|#
-            6336|#
+            6864|#
+            5808|#
             4752|#
-            3168|#
-            1584|##  #
-               0|#####
+            3696|#
+            2640|#
+            1584|#     #
+             528|#######
              bps|0---------10--------20--------30--------40--------50-------- seconds
+              10|
+               9|
+               8|
+               7|
+               6|
+               5|
+               4|
+               3|
+               2|
                1|
-               0|
-               0|
-               0|
-               0|
-               0|
-               0|
-               0|
-               0|
-               0|
-               0|
+               0|############################################################
              bps|0---------10--------20--------30--------40--------50-------- minutes
+              10|
+               9|
+               8|
+               7|
+               6|
+               5|
+               4|
+               3|
+               2|
                1|
-               0|
-               0|
-               0|
-               0|
-               0|
-               0|
-               0|
-               0|
-               0|
-               0|
+               0|############################################################
              bps|0---------10--------20--------30--------40--------50-------- hours
     r1#
     r1#

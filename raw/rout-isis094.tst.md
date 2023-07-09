@@ -14,7 +14,7 @@
     hostname r1
     buggy
     !
-    logging file debug ../binTmp/zzz33r1-log.run
+    logging file debug ../binTmp/zzz7r1-log.run
     !
     access-list test4
      sequence 10 deny 1 any all any all
@@ -47,7 +47,6 @@
      exit
     !
     interface loopback1
-     no description
      vrf forwarding v1
      ipv4 address 2.2.2.1 255.255.255.255
      ipv6 address 4321::1 ffff:ffff:ffff:ffff:ffff:ffff:ffff:ffff
@@ -63,7 +62,6 @@
      exit
     !
     interface ethernet1
-     no description
      vrf forwarding v1
      ipv4 address 1.1.1.1 255.255.255.252
      ipv4 access-group-in test4
@@ -78,9 +76,8 @@
      exit
     !
     interface pwether1
-     no description
      mtu 1500
-     macaddr 006a.4f6e.2d01
+     macaddr 0022.6750.5f1f
      vrf forwarding v1
      ipv4 address 3.3.3.1 255.255.255.0
      pseudowire v1 loopback1 pweompls 2.2.2.3 1234
@@ -89,9 +86,8 @@
      exit
     !
     interface pwether2
-     no description
      mtu 1500
-     macaddr 000e.6840.283b
+     macaddr 006e.6325.135a
      vrf forwarding v1
      ipv4 address 3.3.4.1 255.255.255.0
      pseudowire v1 loopback1 pweompls 4321::3 1234
@@ -141,7 +137,7 @@
     hostname r2
     buggy
     !
-    logging file debug ../binTmp/zzz33r2-log.run
+    logging file debug ../binTmp/zzz7r2-log.run
     !
     access-list test4
      sequence 10 deny 1 any all any all
@@ -174,7 +170,6 @@
      exit
     !
     interface loopback1
-     no description
      vrf forwarding v1
      ipv4 address 2.2.2.2 255.255.255.255
      ipv6 address 4321::2 ffff:ffff:ffff:ffff:ffff:ffff:ffff:ffff
@@ -190,7 +185,6 @@
      exit
     !
     interface ethernet1
-     no description
      vrf forwarding v1
      ipv4 address 1.1.1.2 255.255.255.252
      ipv4 access-group-in test4
@@ -205,7 +199,6 @@
      exit
     !
     interface ethernet2
-     no description
      vrf forwarding v1
      ipv4 address 1.1.1.5 255.255.255.252
      ipv4 access-group-in test4
@@ -261,7 +254,7 @@
     hostname r3
     buggy
     !
-    logging file debug ../binTmp/zzz33r3-log.run
+    logging file debug ../binTmp/zzz7r3-log.run
     !
     access-list test4
      sequence 10 deny 1 any all any all
@@ -294,7 +287,6 @@
      exit
     !
     interface loopback1
-     no description
      vrf forwarding v1
      ipv4 address 2.2.2.3 255.255.255.255
      ipv6 address 4321::3 ffff:ffff:ffff:ffff:ffff:ffff:ffff:ffff
@@ -310,7 +302,6 @@
      exit
     !
     interface ethernet1
-     no description
      vrf forwarding v1
      ipv4 address 1.1.1.6 255.255.255.252
      ipv4 access-group-in test4
@@ -325,9 +316,8 @@
      exit
     !
     interface pwether1
-     no description
      mtu 1500
-     macaddr 007c.766d.593b
+     macaddr 0064.153f.0c3e
      vrf forwarding v1
      ipv4 address 3.3.3.2 255.255.255.0
      pseudowire v1 loopback1 pweompls 2.2.2.1 1234
@@ -336,9 +326,8 @@
      exit
     !
     interface pwether2
-     no description
      mtu 1500
-     macaddr 0023.106e.4201
+     macaddr 0045.6a05.434d
      vrf forwarding v1
      ipv4 address 3.3.4.2 255.255.255.0
      pseudowire v1 loopback1 pweompls 4321::1 1234
@@ -403,8 +392,8 @@
      |~~~~~~~~~~~|~~~~~~~~~~~~~~~~|~~~~~~~|~~~~~~~~~~~~~~~~|~~~~~~~~~~~~|~~~~~~~~~~~~~~~|~~~~~~~|~~~~~~~~~~|
      | interface | mac address    | level | routerid       | ip address | other address | state | uptime   |
      |-----------|----------------|-------|----------------|------------|---------------|-------|----------|
-     | ethernet1 | 0000.0000.0000 | 2     | 4444.0000.1111 | 1234:1::1  | 1.1.1.1       | up    | 00:00:37 |
-     | ethernet2 | 0000.0000.0000 | 2     | 4444.0000.3333 | 1234:2::2  | 1.1.1.6       | up    | 00:00:37 |
+     | ethernet1 | 0000.0000.0000 | 2     | 4444.0000.1111 | 1234:1::1  | 1.1.1.1       | up    | 00:00:38 |
+     | ethernet2 | 0000.0000.0000 | 2     | 4444.0000.3333 | 1234:2::2  | 1.1.1.6       | up    | 00:00:38 |
      |___________|________________|_______|________________|____________|_______________|_______|__________|
     r2#
     r2#
@@ -428,9 +417,10 @@
      |~~~~~~~~~~~~~~~~~~~~~~|~~~~~~~~~~|~~~~~~~|~~~~~|~~~~~~~~~~|
      | lspid                | sequence | flags | len | time     |
      |----------------------|----------|-------|-----|----------|
-     | 4444.0000.1111.00-00 | 00000018 | apo   | 153 | 00:19:22 |
-     | 4444.0000.3333.00-00 | 0000001c | apo   | 153 | 00:19:21 |
-     | 6666.0000.2222.00-00 | 00000018 | apo   | 183 | 00:19:22 |
+     | 0000.0000.0000.00-00 | 00000001 | apo   | 10  | 00:19:20 |
+     | 4444.0000.1111.00-00 | 0000001b | apo   | 153 | 00:19:20 |
+     | 4444.0000.3333.00-00 | 0000001b | apo   | 153 | 00:19:20 |
+     | 6666.0000.2222.00-00 | 0000001a | apo   | 183 | 00:19:21 |
      |______________________|__________|_______|_____|__________|
     r2#
     r2#
@@ -466,15 +456,15 @@
      |~~~~~|~~~~~~~~~~~~|~~~~~~~~|~~~~~~~~~~~|~~~~~~~~~|~~~~~~~~~~|
      | typ | prefix     | metric | iface     | hop     | time     |
      |-----|------------|--------|-----------|---------|----------|
-     | C   | 1.1.1.0/30 | 0/0    | ethernet1 | null    | 00:00:38 |
-     | LOC | 1.1.1.2/32 | 0/1    | ethernet1 | null    | 00:00:38 |
-     | C   | 1.1.1.4/30 | 0/0    | ethernet2 | null    | 00:00:38 |
-     | LOC | 1.1.1.5/32 | 0/1    | ethernet2 | null    | 00:00:38 |
-     | I   | 2.2.2.1/32 | 115/20 | ethernet1 | 1.1.1.1 | 00:00:38 |
-     | C   | 2.2.2.2/32 | 0/0    | loopback1 | null    | 00:00:38 |
-     | I   | 2.2.2.3/32 | 115/20 | ethernet2 | 1.1.1.6 | 00:00:37 |
-     | I   | 3.3.3.0/24 | 115/10 | ethernet2 | 1.1.1.6 | 00:00:37 |
-     | I   | 3.3.4.0/24 | 115/10 | ethernet1 | 1.1.1.1 | 00:00:38 |
+     | C   | 1.1.1.0/30 | 0/0    | ethernet1 | null    | 00:00:40 |
+     | LOC | 1.1.1.2/32 | 0/1    | ethernet1 | null    | 00:00:40 |
+     | C   | 1.1.1.4/30 | 0/0    | ethernet2 | null    | 00:00:40 |
+     | LOC | 1.1.1.5/32 | 0/1    | ethernet2 | null    | 00:00:40 |
+     | I   | 2.2.2.1/32 | 115/20 | ethernet1 | 1.1.1.1 | 00:00:40 |
+     | C   | 2.2.2.2/32 | 0/0    | loopback1 | null    | 00:00:40 |
+     | I   | 2.2.2.3/32 | 115/20 | ethernet2 | 1.1.1.6 | 00:00:39 |
+     | I   | 3.3.3.0/24 | 115/10 | ethernet2 | 1.1.1.6 | 00:00:39 |
+     | I   | 3.3.4.0/24 | 115/10 | ethernet1 | 1.1.1.1 | 00:00:40 |
      |_____|____________|________|___________|_________|__________|
     r2#
     r2#
@@ -488,13 +478,13 @@
      |~~~~~|~~~~~~~~~~~~~~~|~~~~~~~~|~~~~~~~~~~~|~~~~~~~~~~~|~~~~~~~~~~|
      | typ | prefix        | metric | iface     | hop       | time     |
      |-----|---------------|--------|-----------|-----------|----------|
-     | C   | 1234:1::/32   | 0/0    | ethernet1 | null      | 00:00:38 |
-     | LOC | 1234:1::2/128 | 0/1    | ethernet1 | null      | 00:00:38 |
-     | C   | 1234:2::/32   | 0/0    | ethernet2 | null      | 00:00:38 |
-     | LOC | 1234:2::1/128 | 0/1    | ethernet2 | null      | 00:00:38 |
-     | I   | 4321::1/128   | 115/20 | ethernet1 | 1234:1::1 | 00:00:38 |
-     | C   | 4321::2/128   | 0/0    | loopback1 | null      | 00:00:38 |
-     | I   | 4321::3/128   | 115/20 | ethernet2 | 1234:2::2 | 00:00:38 |
+     | C   | 1234:1::/32   | 0/0    | ethernet1 | null      | 00:00:40 |
+     | LOC | 1234:1::2/128 | 0/1    | ethernet1 | null      | 00:00:40 |
+     | C   | 1234:2::/32   | 0/0    | ethernet2 | null      | 00:00:40 |
+     | LOC | 1234:2::1/128 | 0/1    | ethernet2 | null      | 00:00:40 |
+     | I   | 4321::1/128   | 115/20 | ethernet1 | 1234:1::1 | 00:00:40 |
+     | C   | 4321::2/128   | 0/0    | loopback1 | null      | 00:00:40 |
+     | I   | 4321::3/128   | 115/20 | ethernet2 | 1234:2::2 | 00:00:40 |
      |_____|_______________|________|___________|___________|__________|
     r2#
     r2#
@@ -508,8 +498,8 @@
      |~~~~~~~~~~~~|~~~~~~~|~~~~~~~~|~~~~~~~~~|
      | prefix     | index | base   | oldbase |
      |------------|-------|--------|---------|
-     | 2.2.2.1/32 | 1     | 127400 | 127400  |
-     | 2.2.2.3/32 | 5     | 393    | 393     |
+     | 2.2.2.1/32 | 1     | 143419 | 143419  |
+     | 2.2.2.3/32 | 5     | 896239 | 896239  |
      |____________|_______|________|_________|
     r2#
     r2#
@@ -523,8 +513,8 @@
      |~~~~~~~~~~~~~|~~~~~~~|~~~~~~~~|~~~~~~~~~|
      | prefix      | index | base   | oldbase |
      |-------------|-------|--------|---------|
-     | 4321::1/128 | 2     | 127400 | 127400  |
-     | 4321::3/128 | 6     | 393    | 393     |
+     | 4321::1/128 | 2     | 143419 | 143419  |
+     | 4321::3/128 | 6     | 896239 | 896239  |
      |_____________|_______|________|_________|
     r2#
     r2#

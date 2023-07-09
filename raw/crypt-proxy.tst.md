@@ -14,7 +14,7 @@
     hostname r1
     buggy
     !
-    logging file debug ../binTmp/zzz53r1-log.run
+    logging file debug ../binTmp/zzz6r1-log.run
     !
     vrf definition tester
      exit
@@ -24,7 +24,6 @@
      exit
     !
     interface serial1
-     no description
      encapsulation hdlc
      vrf forwarding v1
      ipv4 address 1.1.1.1 255.255.255.0
@@ -81,7 +80,7 @@
     hostname r2
     buggy
     !
-    logging file debug ../binTmp/zzz53r2-log.run
+    logging file debug ../binTmp/zzz6r2-log.run
     !
     vrf definition tester
      exit
@@ -91,7 +90,6 @@
      exit
     !
     interface serial1
-     no description
      encapsulation hdlc
      transproxy p1
      no shutdown
@@ -99,7 +97,6 @@
      exit
     !
     interface serial2
-     no description
      encapsulation hdlc
      vrf forwarding v1
      ipv4 address 2.2.2.2 255.255.255.0
@@ -154,7 +151,7 @@
     hostname r3
     buggy
     !
-    logging file debug ../binTmp/zzz53r3-log.run
+    logging file debug ../binTmp/zzz6r3-log.run
     !
     vrf definition tester
      exit
@@ -164,7 +161,6 @@
      exit
     !
     interface loopback0
-     no description
      vrf forwarding v1
      ipv4 address 3.3.3.3 255.255.255.255
      ipv6 address 3333::3 ffff::
@@ -173,7 +169,6 @@
      exit
     !
     interface serial1
-     no description
      encapsulation hdlc
      vrf forwarding v1
      ipv4 address 2.2.2.3 255.255.255.0

@@ -14,7 +14,7 @@
     hostname r1
     buggy
     !
-    logging file debug ../binTmp/zzz32r1-log.run
+    logging file debug ../binTmp/zzz16r1-log.run
     !
     vrf definition tester
      exit
@@ -40,7 +40,6 @@
      exit
     !
     interface loopback1
-     no description
      vrf forwarding v1
      ipv4 address 2.2.2.1 255.255.255.255
      ipv6 address 4321::1 ffff:ffff:ffff:ffff:ffff:ffff:ffff:ffff
@@ -49,7 +48,6 @@
      exit
     !
     interface loopback2
-     no description
      vrf forwarding v1
      ipv4 address 2.2.2.11 255.255.255.255
      ipv6 address 4321::11 ffff:ffff:ffff:ffff:ffff:ffff:ffff:ffff
@@ -58,7 +56,6 @@
      exit
     !
     interface loopback3
-     no description
      vrf forwarding v1
      ipv4 address 2.2.2.21 255.255.255.255
      ipv6 address 4321::21 ffff:ffff:ffff:ffff:ffff:ffff:ffff:ffff
@@ -67,13 +64,11 @@
      exit
     !
     interface ethernet1
-     no description
      no shutdown
      no log-link-change
      exit
     !
     interface ethernet1.11
-     no description
      vrf forwarding v1
      ipv4 address 1.1.1.1 255.255.255.252
      router isis4 1 enable
@@ -83,7 +78,6 @@
      exit
     !
     interface ethernet1.12
-     no description
      vrf forwarding v1
      ipv6 address 1234:1::1 ffff:ffff::
      router isis6 1 enable
@@ -134,7 +128,7 @@
     hostname r2
     buggy
     !
-    logging file debug ../binTmp/zzz32r2-log.run
+    logging file debug ../binTmp/zzz16r2-log.run
     !
     vrf definition tester
      exit
@@ -162,7 +156,6 @@
      exit
     !
     interface loopback1
-     no description
      vrf forwarding v1
      ipv4 address 2.2.2.2 255.255.255.255
      ipv6 address 4321::2 ffff:ffff:ffff:ffff:ffff:ffff:ffff:ffff
@@ -171,7 +164,6 @@
      exit
     !
     interface loopback2
-     no description
      vrf forwarding v1
      ipv4 address 2.2.2.12 255.255.255.255
      ipv6 address 4321::12 ffff:ffff:ffff:ffff:ffff:ffff:ffff:ffff
@@ -180,7 +172,6 @@
      exit
     !
     interface loopback3
-     no description
      vrf forwarding v1
      ipv4 address 2.2.2.22 255.255.255.255
      ipv6 address 4321::22 ffff:ffff:ffff:ffff:ffff:ffff:ffff:ffff
@@ -189,13 +180,11 @@
      exit
     !
     interface ethernet1
-     no description
      no shutdown
      no log-link-change
      exit
     !
     interface ethernet1.11
-     no description
      vrf forwarding v1
      ipv4 address 1.1.1.2 255.255.255.252
      router isis4 1 enable
@@ -205,7 +194,6 @@
      exit
     !
     interface ethernet1.12
-     no description
      vrf forwarding v1
      ipv6 address 1234:1::2 ffff:ffff::
      router isis6 1 enable
@@ -215,7 +203,6 @@
      exit
     !
     interface ethernet2
-     no description
      vrf forwarding v1
      ipv4 address 1.1.1.5 255.255.255.252
      ipv6 address 1234:2::1 ffff:ffff::
@@ -230,7 +217,6 @@
      no safe-ebgp
      address-family ouni
      neighbor 1.1.1.6 remote-as 2
-     no neighbor 1.1.1.6 description
      neighbor 1.1.1.6 local-as 1
      neighbor 1.1.1.6 address-family ouni
      neighbor 1.1.1.6 distance 20
@@ -247,7 +233,6 @@
      no safe-ebgp
      address-family ouni
      neighbor 1234:2::2 remote-as 2
-     no neighbor 1234:2::2 description
      neighbor 1234:2::2 local-as 1
      neighbor 1234:2::2 address-family ouni
      neighbor 1234:2::2 distance 20
@@ -299,7 +284,7 @@
     hostname r3
     buggy
     !
-    logging file debug ../binTmp/zzz32r3-log.run
+    logging file debug ../binTmp/zzz16r3-log.run
     !
     vrf definition tester
      exit
@@ -309,7 +294,6 @@
      exit
     !
     interface loopback1
-     no description
      vrf forwarding v1
      ipv4 address 2.2.2.3 255.255.255.255
      ipv6 address 4321::3 ffff:ffff:ffff:ffff:ffff:ffff:ffff:ffff
@@ -318,7 +302,6 @@
      exit
     !
     interface loopback2
-     no description
      vrf forwarding v1
      ipv4 address 2.2.2.13 255.255.255.255
      ipv6 address 4321::13 ffff:ffff:ffff:ffff:ffff:ffff:ffff:ffff
@@ -327,7 +310,6 @@
      exit
     !
     interface loopback3
-     no description
      vrf forwarding v1
      ipv4 address 2.2.2.23 255.255.255.255
      ipv6 address 4321::23 ffff:ffff:ffff:ffff:ffff:ffff:ffff:ffff
@@ -336,7 +318,6 @@
      exit
     !
     interface ethernet1
-     no description
      vrf forwarding v1
      ipv4 address 1.1.1.6 255.255.255.252
      ipv6 address 1234:2::2 ffff:ffff::
@@ -351,7 +332,6 @@
      no safe-ebgp
      address-family ouni
      neighbor 1.1.1.5 remote-as 1
-     no neighbor 1.1.1.5 description
      neighbor 1.1.1.5 local-as 2
      neighbor 1.1.1.5 address-family ouni
      neighbor 1.1.1.5 distance 20
@@ -367,7 +347,6 @@
      no safe-ebgp
      address-family ouni
      neighbor 1234:2::1 remote-as 1
-     no neighbor 1234:2::1 description
      neighbor 1234:2::1 local-as 2
      neighbor 1234:2::1 address-family ouni
      neighbor 1234:2::1 distance 20

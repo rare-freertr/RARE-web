@@ -14,25 +14,28 @@
     hostname r1
     buggy
     !
-    logging file debug ../binTmp/zzz93r1-log.run
+    logging file debug ../binTmp/zzz66r1-log.run
     !
     vrf definition tester
      exit
     !
     vrf definition v1
      rd 1:1
-     label-mode per-prefix
+     label4mode per-prefix
+     label6mode per-prefix
      exit
     !
     vrf definition v2
      rd 1:2
-     rt-import 1:2
-     rt-export 1:2
-     label-mode per-prefix
+     rt4import 1:2
+     rt4export 1:2
+     rt6import 1:2
+     rt6export 1:2
+     label4mode per-prefix
+     label6mode per-prefix
      exit
     !
     interface loopback0
-     no description
      vrf forwarding v1
      ipv4 address 2.2.2.1 255.255.255.255
      ipv6 address 4321::1 ffff:ffff:ffff:ffff:ffff:ffff:ffff:ffff
@@ -41,7 +44,6 @@
      exit
     !
     interface loopback1
-     no description
      vrf forwarding v2
      ipv4 address 3.3.3.1 255.255.255.255
      ipv6 address 3333::1 ffff:ffff:ffff:ffff:ffff:ffff:ffff:ffff
@@ -50,7 +52,6 @@
      exit
     !
     interface ethernet1
-     no description
      vrf forwarding v1
      ipv4 address 1.1.1.1 255.255.255.252
      ipv6 address 1234:1::1 ffff:ffff::
@@ -62,9 +63,8 @@
      exit
     !
     interface pwether1
-     no description
      mtu 1500
-     macaddr 0000.1e00.5475
+     macaddr 002e.2839.2d56
      vrf forwarding v1
      ipv4 address 4.4.4.1 255.255.255.0
      pseudowire v2 loopback1 pweompls 3.3.3.6 1234
@@ -73,9 +73,8 @@
      exit
     !
     interface pwether2
-     no description
      mtu 1500
-     macaddr 0058.4737.7246
+     macaddr 0039.3638.105b
      vrf forwarding v1
      ipv4 address 5.5.5.1 255.255.255.0
      pseudowire v2 loopback1 pweompls 3333::6 1234
@@ -90,7 +89,6 @@
      no safe-ebgp
      address-family vpnuni
      neighbor 2.2.2.2 remote-as 1
-     no neighbor 2.2.2.2 description
      neighbor 2.2.2.2 local-as 1
      neighbor 2.2.2.2 address-family vpnuni
      neighbor 2.2.2.2 distance 200
@@ -107,7 +105,6 @@
      no safe-ebgp
      address-family vpnuni
      neighbor 4321::2 remote-as 1
-     no neighbor 4321::2 description
      neighbor 4321::2 local-as 1
      neighbor 4321::2 address-family vpnuni
      neighbor 4321::2 distance 200
@@ -182,25 +179,28 @@
     hostname r2
     buggy
     !
-    logging file debug ../binTmp/zzz93r2-log.run
+    logging file debug ../binTmp/zzz66r2-log.run
     !
     vrf definition tester
      exit
     !
     vrf definition v1
      rd 1:1
-     label-mode per-prefix
+     label4mode per-prefix
+     label6mode per-prefix
      exit
     !
     vrf definition v2
      rd 1:2
-     rt-import 1:2
-     rt-export 1:2
-     label-mode per-prefix
+     rt4import 1:2
+     rt4export 1:2
+     rt6import 1:2
+     rt6export 1:2
+     label4mode per-prefix
+     label6mode per-prefix
      exit
     !
     interface loopback0
-     no description
      vrf forwarding v1
      ipv4 address 2.2.2.2 255.255.255.255
      ipv6 address 4321::2 ffff:ffff:ffff:ffff:ffff:ffff:ffff:ffff
@@ -209,7 +209,6 @@
      exit
     !
     interface loopback1
-     no description
      vrf forwarding v2
      ipv4 address 3.3.3.2 255.255.255.255
      ipv6 address 3333::2 ffff:ffff:ffff:ffff:ffff:ffff:ffff:ffff
@@ -218,7 +217,6 @@
      exit
     !
     interface ethernet1
-     no description
      vrf forwarding v1
      ipv4 address 1.1.1.2 255.255.255.252
      ipv6 address 1234:1::2 ffff:ffff::
@@ -230,7 +228,6 @@
      exit
     !
     interface ethernet2
-     no description
      vrf forwarding v1
      ipv4 address 1.1.1.5 255.255.255.252
      ipv6 address 1234:2::1 ffff:ffff::
@@ -248,7 +245,6 @@
      no safe-ebgp
      address-family vpnuni
      neighbor 2.2.2.1 remote-as 1
-     no neighbor 2.2.2.1 description
      neighbor 2.2.2.1 local-as 1
      neighbor 2.2.2.1 address-family vpnuni
      neighbor 2.2.2.1 distance 200
@@ -257,7 +253,6 @@
      neighbor 2.2.2.1 next-hop-unchanged
      neighbor 2.2.2.1 send-community standard extended
      neighbor 2.2.2.3 remote-as 1
-     no neighbor 2.2.2.3 description
      neighbor 2.2.2.3 local-as 1
      neighbor 2.2.2.3 address-family vpnuni
      neighbor 2.2.2.3 distance 200
@@ -266,7 +261,6 @@
      neighbor 2.2.2.3 next-hop-unchanged
      neighbor 2.2.2.3 send-community standard extended
      neighbor 2.2.2.5 remote-as 2
-     no neighbor 2.2.2.5 description
      neighbor 2.2.2.5 local-as 1
      neighbor 2.2.2.5 address-family vpnuni
      neighbor 2.2.2.5 distance 20
@@ -284,7 +278,6 @@
      no safe-ebgp
      address-family vpnuni
      neighbor 4321::1 remote-as 1
-     no neighbor 4321::1 description
      neighbor 4321::1 local-as 1
      neighbor 4321::1 address-family vpnuni
      neighbor 4321::1 distance 200
@@ -293,7 +286,6 @@
      neighbor 4321::1 next-hop-unchanged
      neighbor 4321::1 send-community standard extended
      neighbor 4321::3 remote-as 1
-     no neighbor 4321::3 description
      neighbor 4321::3 local-as 1
      neighbor 4321::3 address-family vpnuni
      neighbor 4321::3 distance 200
@@ -302,7 +294,6 @@
      neighbor 4321::3 next-hop-unchanged
      neighbor 4321::3 send-community standard extended
      neighbor 4321::5 remote-as 2
-     no neighbor 4321::5 description
      neighbor 4321::5 local-as 1
      neighbor 4321::5 address-family vpnuni
      neighbor 4321::5 distance 20
@@ -378,25 +369,28 @@
     hostname r3
     buggy
     !
-    logging file debug ../binTmp/zzz93r3-log.run
+    logging file debug ../binTmp/zzz66r3-log.run
     !
     vrf definition tester
      exit
     !
     vrf definition v1
      rd 1:1
-     label-mode per-prefix
+     label4mode per-prefix
+     label6mode per-prefix
      exit
     !
     vrf definition v2
      rd 1:2
-     rt-import 1:2
-     rt-export 1:2
-     label-mode per-prefix
+     rt4import 1:2
+     rt4export 1:2
+     rt6import 1:2
+     rt6export 1:2
+     label4mode per-prefix
+     label6mode per-prefix
      exit
     !
     interface loopback0
-     no description
      vrf forwarding v1
      ipv4 address 2.2.2.3 255.255.255.255
      ipv6 address 4321::3 ffff:ffff:ffff:ffff:ffff:ffff:ffff:ffff
@@ -405,7 +399,6 @@
      exit
     !
     interface loopback1
-     no description
      vrf forwarding v2
      ipv4 address 3.3.3.3 255.255.255.255
      ipv6 address 3333::3 ffff:ffff:ffff:ffff:ffff:ffff:ffff:ffff
@@ -414,7 +407,6 @@
      exit
     !
     interface ethernet1
-     no description
      vrf forwarding v1
      ipv4 address 1.1.1.6 255.255.255.252
      ipv6 address 1234:2::2 ffff:ffff::
@@ -426,7 +418,6 @@
      exit
     !
     interface ethernet2
-     no description
      vrf forwarding v1
      ipv4 address 1.1.1.9 255.255.255.252
      ipv6 address 1234:3::1 ffff:ffff::
@@ -442,7 +433,6 @@
      no safe-ebgp
      address-family vpnuni
      neighbor 2.2.2.2 remote-as 1
-     no neighbor 2.2.2.2 description
      neighbor 2.2.2.2 local-as 1
      neighbor 2.2.2.2 address-family vpnuni
      neighbor 2.2.2.2 distance 200
@@ -459,7 +449,6 @@
      no safe-ebgp
      address-family labeled
      neighbor 1.1.1.10 remote-as 2
-     no neighbor 1.1.1.10 description
      neighbor 1.1.1.10 local-as 1
      neighbor 1.1.1.10 address-family labeled
      neighbor 1.1.1.10 distance 20
@@ -474,7 +463,6 @@
      no safe-ebgp
      address-family vpnuni
      neighbor 4321::2 remote-as 1
-     no neighbor 4321::2 description
      neighbor 4321::2 local-as 1
      neighbor 4321::2 address-family vpnuni
      neighbor 4321::2 distance 200
@@ -491,7 +479,6 @@
      no safe-ebgp
      address-family labeled
      neighbor 1234:3::2 remote-as 2
-     no neighbor 1234:3::2 description
      neighbor 1234:3::2 local-as 1
      neighbor 1234:3::2 address-family labeled
      neighbor 1234:3::2 distance 20
@@ -558,25 +545,28 @@
     hostname r4
     buggy
     !
-    logging file debug ../binTmp/zzz93r4-log.run
+    logging file debug ../binTmp/zzz66r4-log.run
     !
     vrf definition tester
      exit
     !
     vrf definition v1
      rd 1:1
-     label-mode per-prefix
+     label4mode per-prefix
+     label6mode per-prefix
      exit
     !
     vrf definition v2
      rd 1:2
-     rt-import 1:2
-     rt-export 1:2
-     label-mode per-prefix
+     rt4import 1:2
+     rt4export 1:2
+     rt6import 1:2
+     rt6export 1:2
+     label4mode per-prefix
+     label6mode per-prefix
      exit
     !
     interface loopback0
-     no description
      vrf forwarding v1
      ipv4 address 2.2.2.4 255.255.255.255
      ipv6 address 4321::4 ffff:ffff:ffff:ffff:ffff:ffff:ffff:ffff
@@ -585,7 +575,6 @@
      exit
     !
     interface loopback1
-     no description
      vrf forwarding v2
      ipv4 address 3.3.3.4 255.255.255.255
      ipv6 address 3333::4 ffff:ffff:ffff:ffff:ffff:ffff:ffff:ffff
@@ -594,7 +583,6 @@
      exit
     !
     interface ethernet1
-     no description
      vrf forwarding v1
      ipv4 address 1.1.1.10 255.255.255.252
      ipv6 address 1234:3::2 ffff:ffff::
@@ -604,7 +592,6 @@
      exit
     !
     interface ethernet2
-     no description
      vrf forwarding v1
      ipv4 address 1.1.1.13 255.255.255.252
      ipv6 address 1234:4::1 ffff:ffff::
@@ -622,7 +609,6 @@
      no safe-ebgp
      address-family labeled
      neighbor 1.1.1.9 remote-as 1
-     no neighbor 1.1.1.9 description
      neighbor 1.1.1.9 local-as 2
      neighbor 1.1.1.9 address-family labeled
      neighbor 1.1.1.9 distance 20
@@ -637,7 +623,6 @@
      no safe-ebgp
      address-family vpnuni
      neighbor 2.2.2.5 remote-as 2
-     no neighbor 2.2.2.5 description
      neighbor 2.2.2.5 local-as 2
      neighbor 2.2.2.5 address-family vpnuni
      neighbor 2.2.2.5 distance 200
@@ -654,7 +639,6 @@
      no safe-ebgp
      address-family labeled
      neighbor 1234:3::1 remote-as 1
-     no neighbor 1234:3::1 description
      neighbor 1234:3::1 local-as 2
      neighbor 1234:3::1 address-family labeled
      neighbor 1234:3::1 distance 20
@@ -669,7 +653,6 @@
      no safe-ebgp
      address-family vpnuni
      neighbor 4321::5 remote-as 2
-     no neighbor 4321::5 description
      neighbor 4321::5 local-as 2
      neighbor 4321::5 address-family vpnuni
      neighbor 4321::5 distance 200
@@ -738,25 +721,28 @@
     hostname r5
     buggy
     !
-    logging file debug ../binTmp/zzz93r5-log.run
+    logging file debug ../binTmp/zzz66r5-log.run
     !
     vrf definition tester
      exit
     !
     vrf definition v1
      rd 1:1
-     label-mode per-prefix
+     label4mode per-prefix
+     label6mode per-prefix
      exit
     !
     vrf definition v2
      rd 1:2
-     rt-import 1:2
-     rt-export 1:2
-     label-mode per-prefix
+     rt4import 1:2
+     rt4export 1:2
+     rt6import 1:2
+     rt6export 1:2
+     label4mode per-prefix
+     label6mode per-prefix
      exit
     !
     interface loopback0
-     no description
      vrf forwarding v1
      ipv4 address 2.2.2.5 255.255.255.255
      ipv6 address 4321::5 ffff:ffff:ffff:ffff:ffff:ffff:ffff:ffff
@@ -765,7 +751,6 @@
      exit
     !
     interface loopback1
-     no description
      vrf forwarding v2
      ipv4 address 3.3.3.5 255.255.255.255
      ipv6 address 3333::5 ffff:ffff:ffff:ffff:ffff:ffff:ffff:ffff
@@ -774,7 +759,6 @@
      exit
     !
     interface ethernet1
-     no description
      vrf forwarding v1
      ipv4 address 1.1.1.14 255.255.255.252
      ipv6 address 1234:4::2 ffff:ffff::
@@ -786,7 +770,6 @@
      exit
     !
     interface ethernet2
-     no description
      vrf forwarding v1
      ipv4 address 1.1.1.17 255.255.255.252
      ipv6 address 1234:5::1 ffff:ffff::
@@ -804,7 +787,6 @@
      no safe-ebgp
      address-family vpnuni
      neighbor 2.2.2.2 remote-as 1
-     no neighbor 2.2.2.2 description
      neighbor 2.2.2.2 local-as 2
      neighbor 2.2.2.2 address-family vpnuni
      neighbor 2.2.2.2 distance 20
@@ -812,7 +794,6 @@
      neighbor 2.2.2.2 next-hop-unchanged
      neighbor 2.2.2.2 send-community standard extended
      neighbor 2.2.2.4 remote-as 2
-     no neighbor 2.2.2.4 description
      neighbor 2.2.2.4 local-as 2
      neighbor 2.2.2.4 address-family vpnuni
      neighbor 2.2.2.4 distance 200
@@ -821,7 +802,6 @@
      neighbor 2.2.2.4 next-hop-unchanged
      neighbor 2.2.2.4 send-community standard extended
      neighbor 2.2.2.6 remote-as 2
-     no neighbor 2.2.2.6 description
      neighbor 2.2.2.6 local-as 2
      neighbor 2.2.2.6 address-family vpnuni
      neighbor 2.2.2.6 distance 200
@@ -840,7 +820,6 @@
      no safe-ebgp
      address-family vpnuni
      neighbor 4321::2 remote-as 1
-     no neighbor 4321::2 description
      neighbor 4321::2 local-as 2
      neighbor 4321::2 address-family vpnuni
      neighbor 4321::2 distance 20
@@ -848,7 +827,6 @@
      neighbor 4321::2 next-hop-unchanged
      neighbor 4321::2 send-community standard extended
      neighbor 4321::4 remote-as 2
-     no neighbor 4321::4 description
      neighbor 4321::4 local-as 2
      neighbor 4321::4 address-family vpnuni
      neighbor 4321::4 distance 200
@@ -857,7 +835,6 @@
      neighbor 4321::4 next-hop-unchanged
      neighbor 4321::4 send-community standard extended
      neighbor 4321::6 remote-as 2
-     no neighbor 4321::6 description
      neighbor 4321::6 local-as 2
      neighbor 4321::6 address-family vpnuni
      neighbor 4321::6 distance 200
@@ -934,25 +911,28 @@
     hostname r6
     buggy
     !
-    logging file debug ../binTmp/zzz93r6-log.run
+    logging file debug ../binTmp/zzz66r6-log.run
     !
     vrf definition tester
      exit
     !
     vrf definition v1
      rd 1:1
-     label-mode per-prefix
+     label4mode per-prefix
+     label6mode per-prefix
      exit
     !
     vrf definition v2
      rd 1:2
-     rt-import 1:2
-     rt-export 1:2
-     label-mode per-prefix
+     rt4import 1:2
+     rt4export 1:2
+     rt6import 1:2
+     rt6export 1:2
+     label4mode per-prefix
+     label6mode per-prefix
      exit
     !
     interface loopback0
-     no description
      vrf forwarding v1
      ipv4 address 2.2.2.6 255.255.255.255
      ipv6 address 4321::6 ffff:ffff:ffff:ffff:ffff:ffff:ffff:ffff
@@ -961,7 +941,6 @@
      exit
     !
     interface loopback1
-     no description
      vrf forwarding v2
      ipv4 address 3.3.3.6 255.255.255.255
      ipv6 address 3333::6 ffff:ffff:ffff:ffff:ffff:ffff:ffff:ffff
@@ -970,7 +949,6 @@
      exit
     !
     interface ethernet1
-     no description
      vrf forwarding v1
      ipv4 address 1.1.1.18 255.255.255.252
      ipv6 address 1234:5::2 ffff:ffff::
@@ -982,9 +960,8 @@
      exit
     !
     interface pwether1
-     no description
      mtu 1500
-     macaddr 002d.5a32.3b48
+     macaddr 002e.6771.5e18
      vrf forwarding v1
      ipv4 address 4.4.4.6 255.255.255.0
      pseudowire v2 loopback1 pweompls 3.3.3.1 1234
@@ -993,9 +970,8 @@
      exit
     !
     interface pwether2
-     no description
      mtu 1500
-     macaddr 006b.4a61.493e
+     macaddr 0067.302c.774e
      vrf forwarding v1
      ipv4 address 5.5.5.6 255.255.255.0
      pseudowire v2 loopback1 pweompls 3333::1 1234
@@ -1010,7 +986,6 @@
      no safe-ebgp
      address-family vpnuni
      neighbor 2.2.2.5 remote-as 2
-     no neighbor 2.2.2.5 description
      neighbor 2.2.2.5 local-as 2
      neighbor 2.2.2.5 address-family vpnuni
      neighbor 2.2.2.5 distance 200
@@ -1027,7 +1002,6 @@
      no safe-ebgp
      address-family vpnuni
      neighbor 4321::5 remote-as 2
-     no neighbor 4321::5 description
      neighbor 4321::5 local-as 2
      neighbor 4321::5 address-family vpnuni
      neighbor 4321::5 distance 200

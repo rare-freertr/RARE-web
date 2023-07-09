@@ -14,13 +14,13 @@
     hostname r1
     buggy
     !
-    logging file debug ../binTmp/zzz62r1-log.run
+    logging file debug ../binTmp/zzz2r1-log.run
     !
-    crypto rsakey rsa import $v10$TUlJRW93SUJBQUtDQVFFQXRyYmp1Q1owRzlKTmZkSnlsUW5BTERyYjF1dUQ0NDIvV29VdWxyS2daaXNhMm1WUEdBeCs1UHEzQ1U2M1hGbFIvM0hNUmszUlFzVVQ5R25IeXFNd05zRzBSdUlXM0JBa05NdXQ2dVRPZ0J1UFJkRVhxZk56VnE4M1JPaUFscHN4eENUVjlXU0RkKytoaWJabVZuc3N6bWJsQkpLL1BHY1laOXltVGl4bExndVJOOWVscmk5Sk5ZQWYrUVRhWlVadnZ1Ung0YmVwU1ZnMEk5SVFqaUVlcUZWRVdtSlBzOC9oSDRad0ZOTWZhcXRnaEhPdUpYd2tSM0lHRGFIYmo3MTliZ0QvbU1DbDJjZkZqQzBRWlg3cHJCVWJ2dndhSzhCSWFlcXhRTkIvVDVBWEw3dTZ2V216WmZxcmF5aDUrUDJhWlBLN0xzazV4c3U5Q3JuUm1OZkppUUlEQVFBQkFvSUJBRSsvSzB6b202eTQ4VkdGVkxWditBeFY5RFd0dlhiSUcwaXE4RmFkeUJ4UG0vek9VdU13TVFKSDJ6T1l3N2J1MVRja3QvL0hYeHBCWWlBL094QmFnV1NrenNaUlQ2RGsrcWlBYlh3a09XejRtbVBpaXUyR2NFVFpYTW9hb0dVYmYzRVlrcm4wRU4xOEhZazVyeGozMGVxVVJramtzOHJ0UkYyd2xIVnlNd2NSRDE2Z1EvY0t5SUNqZGlHOFBOb2lkSWpNNkNCSXpMS2Z2SVVLRHFZOHlMMzZRL3N6a2NOblRZd1JNUlVmbDFiZUlmOUd1Nk53RmpNZXJ1WXYrdTVxN25jSDI4WFlvSmVsVWNCL1MrNEpkUVk4SFFVbGxSWGZaQkxEaFJGNnI3K2ZEUzRUbnloa2UrR1lONUUweDJ0eWpKdS9JSGFYUlFvZGlhRklHRlluczhFQ2dZRUE4bkFBbjRiUWpXOWsxczRSakM1MStHTWVMc2dMamd5dkdTd1h3cTRTajdTZkJOMkk3VWtoSHJjZm10WUxvT25xVkNMUFVpUS9Gc0lSb3NLOTRrSklnNFQ5eHVHS3dydzJpVHNQRW9POGtoWUgxTk9qaXJtWE1ySk92SXdqMjJMZzFsaEJOUlpJcWlJM1lmMEI4Rm9WaFlXQmI3YmU2YTZIK280SDVtVkU0RDBDZ1lFQXdPK1VqcnZnVktROXFmNXVTZE5NZkk1WWg0QjZzZGxyM0UvcDlLazNzMmdhbklSRGZBN2lUVDRpVnI3NFd4eUEwUjhEWVZIS0ErOFZhQUtmT3JqV2ZEek1OWHA5MGx2cGsxUVVRQ0pkUU8yU0dVT2FlNEs3TXgvM3JNYTRLQnc4bE5FSER3T2pLZTVHQTl3V05TSHpKSnFhWS9DUG1kMVE3NlB6aGpFYWR6MENnWUVBcmdCZklpQURmUStQUTNDaFBZaDNHVEFpa0piNVhCbVVicStyMmdsUHZ4NTI1Mm9OQmFsd0FQaVQwWENBNWh3ZEdBZm4zdCt1L0NtTHVOS21zRWE4ZnRDcng5dEcyVjkya09YM2VtVmNxVWp3ay9yV0xSSHBCL1RiK0ExcEN1T2IxWnVBS1piMXprNUNpNnlvZ0paWFRmNjFHTFlhcFlPaml0djNwWS9YY0UwQ2dZQWRTZ0dXYllVUHRHTThGRWp2NGlqaFc4YXF3MkZjOEhIRVgwbFgvL3hadXZzWE9hajVBMVZ0Zm5vK0N2MnU3elBMQzFjN0JleVNEbENFbXFsTGc5WGp4R01IMTFHVWhxbDkyU3k5MDdtdWFxSmNQWHdOTmZwdk4zSWxBNEhmYlBIeGNZNE54SEtYb2ZsMUNvdEFnNmZpcmFtMGRFZUloeVdMUzZ0amVyN1d6UUtCZ0JTeHA5MVRicGFaUEg3c05wRmVabDFLMFFrdEVHOFNScm93TkN3dDZ1WFN6YnV1YWN2YUE3R3RoV1E3dHhsc0FtMlkrVjg1Z1Y0OHk5VlQ0ckVFd09ocXljRWhwaUVNYWJHUnY3eHZuNHJBUk1sY20wK0dIRFNoR1dqZzEraFJRYmlSUkt1Z1lVcTJMUnBtVnVjckhxMHcwOWNtN3dDOVNOWENaNmZaRWNZUg==
+    crypto rsakey rsa import $v10$TUlJRW93SUJBQUtDQVFFQWpRT0xWZlBYbnUrbStaUGRoVzRIckdVdlNRSWNFQ3MrVE50U2dmbWNEN3BJV2poRGFsVEtic24vVkNDNlZLWDR2YmZ4cHU0WktlL2g2Z256QzhXc1ZMTFdZL2QrdjRJMU1sKzkxNkR4Z3g5QzlIcG9TYkYxNUREbHVWKzFGdjlMQWRoR2FjQ0pHMFJEb09OeTB4VjlTMlp5dWVpUDI3RzNRYVorWEE3VjROSXJQVmdFeHZyVlp2L2Zld01xWTZHZi9mS3l6bXYwbGNKWjJuZGVQU3lVMXROK3JrSHlpRkdGekd0OHd2TEo3amQ0bHovZEVZTGlURUVrcEJwMXRDa1dWem1pcGhuQjVCRm92NTZ0NmthQUxsZmFjeHBONGpWdGpaaXFHTkNNTWNPTjhkWFcrK1V1YzV4OEpJV0hnSVpJN00vMkdkSWFENEhmUWtiTVhpUGltUUlEQVFBQkFvSUJBQ3NUQVJYeFZWVU1XWkgxTS82VkhLenhmNThxa00zemw2VThmWmlNV2JxSUtaKzlmZ0pXQWp3VFlmWWR4UzBrUWJZYUlTdmZvVG9wTjNZWk1lL1BveE9BU1hMaDRBcTV5R3dweU1DOFBlblN1ODRZTWhFSXJ6MVVIbWdncngxbVFGQkE4MGxNY2RVdFpnY1lVelBkWlplSnBOUGJFVTZIbTdYbkdNUWdGLzhEWHlSQXprQlZDcmYyMVRIaUswZHo2eHhPeldwczJkdU1wRENlYmM2KzBWVVlXK2VYK2ZpbGVSQ3U1ejBUTkN6VzNCVTRQWDhUaGFUdis3V25ucWtQdVplbVgrV1BmaG9LUzFtZ1FnVXRCWVk1TFhMTlRFd0g2OXl3cTdzRG5EMXJzTUtoRWVleWNZaERTUVNxSkhURjMyaFdiTHA3bktFUXhFMStjWkRLU1RFQ2dZRUExZHZJTVY4b042WGl2KzMvSHBCSklzSmo0UFRMK2puemhDOEExT3kyYVdGMlJuM3VrQ1hXemtGZ1Z5T0xKc3RNTlNOeE5GZThaMzJDQi9PeVNSN29Edm40aHJiNk01bFJCL3pLa1JsenhPUUYzRlJHLytDem14cXNiOWEzbTJJVk9Ya3FobUphbTVnSFEzOC9FTnM2b3FqNkUraVd4Tld2eWpGRHNPRXNFWVVDZ1lFQXFNMFI2UUNpUUg0U29wcTRRQ0g1d3lxZ3ZUSGUxdVNPQ3J4c3NuTmFCYy9uOUhPK3FzdFl5Mk5Nbnl2bU9KTWVnV0lITEJkYlNHRVZLb0V0VzluYkhUQTNSL05nYTQycVRSZ25kSnlQQmhWVXpDSUoxTEkwOUtZS3NoV2FxRXA3elllbFhKWEFhNTJXK0RpVzJLcG9ESW9lb2YrY1RVQVlLdlMzUXdtNXp3VUNnWUFibVpQS20yZExWME5lVmM3WkdQSDNaSE1UYzBSbjlOYXl0b1k2OUpuT0c5L3gxUXJXMjZ0UFR5eXAwbEtCSFRlbW0vNWVMUHlKdHE3emE4WVVuY0tCUEUyUXhVaWhKQ1pMQzVyeEF3SG41UzNFYzdQK0RmZmdDcDg2aDlHR1lqQXZESzRxVGNNMzFYVUtoditTbzFoNzZhYnNydFhXYldXVWlLc2R4dEd6S1FLQmdINjBWNUpIT0lNaVh3aVJER2FQV2pRR0JsdWRXSUNEVko5NGFqclUzU2pwczFuSm04QUdIU09sNkxpOXNmU2JjZFY2YUpuTyttVHRBbjlDTVhMMXAwUlVrZG8vTkF2bmJZS3E4OHJUVFlRcWROazVYNW01SG9qWkxjUVk5VnNIZGNDRDVqc0Y2VWFlSnRreFdRRlBnQVNSbEliVElGYllHb3Y3M3FmQ1lDZWxBb0dCQU1SS09SUVpkMVZXeDVwbUFqTWx2ME5zbEVOWGwxYmlnL0RmRythYnM0TWJNWkowazZNVjlyb3hUVzNUQlo0ZXN5dUpwbXR3TVlVeTdKY1dQTHpJK0lYTlo0NW8xeTF2amt6cEFIbHM4dFBPZFlVNjNteDd6YjdrTE4zaEJRTCtXZU5HOFI1Wlo1QkM1NGduME5GYVk3akRxRmkxT0hNQzNJZTY3S1BDUHZWYQ==
     !
-    crypto dsakey dsa import $v10$TUlJQnVRSUJBQUtCZ0ZFT3dMaWZFNi9mM2pwdmFwUVZ0LzNHVllpREpWa0V5eHFxa3EyN0JreVMyM21DWXdWVTZndHFjTEdkM3p2OSs2VnZpR1YxQWFhN1FvRXJzS3dWWlZWUEwwYndua29BdUt6YWNQL0JYVnljdEVWWG1Ud3JMbDN0UGVvanNRUjRQc2w2TnNlLzcxT24vaENObXlpTitYbGNJZjRiSHpuRmsxZVdhbDJkOENMTkFoVUE1SmpobDh6SkVOTTlVRzJCRjNoU2s4QmxwNGNDZ1lBTGR3cHBySlpQUllkSHNteS9LYWw3ZFFNYWxBbHBIT1BHQW5BbXl0aDlubk8rQTRJMk9kT1k3OEVjaXU5TllHYjlTc21ROVFJRk9tNWc0a2doZC8yalhqTFJTWGtzcHpKSWFhYVdSUUZoUW5HUm9ka2Z0V3BuUlhTQ0J1UnVkQWt4MG5FdWNjSzRnN0xWSnJReTR6VXlvanlzcVJLUG5WSnkvbWkyUElWSFVBS0JnRWVEbjA2Q1gxNklEbGh1akpiUzJhRjFyUHJjYjVYcE5JZno1R1gvMVExSkhLVit6YkhSVURqTzYxVDdTb0hFdStLbjdCREVPbWh2ZlVCOW9yejdvQmlCUmliTVpyeUJzS2FIek85MEJIRWxUSFZtRWpXSFcvSUVCeTFZeWhUUDIxNnJnM1UxZHkyQWJEcTZTeXhyU0tpamRJZHcybml2NHdpV3Q1cUNhRVNXQWhRTHVsSUxUamZHKzhhTkdKM29ScGdOWU94VklBPT0=
+    crypto dsakey dsa import $v10$TUlJQnVnSUJBQUtCZ0FvTTFEQXdvMXQ0OGQ0UkN2MWNnQVBZczhmdXZPcG1aMzB6ZkFQaElyNlVJUGxEQlIvVVlGRHo5M0tEMXBCSm9na1lXUE51Zmo2NW1aRW9rQVppaU1MaGV0bmVwS20vb3Z2RkZ2ckxZZ2dvbGZCS3R5S2dTTHJtdGZidkZ2NlNoUVRIa2M5RzJDOFRsbk9UVUFVK21hK1pMN1dUUlMwaTZocW81bTk1bjJKL0FoVUE0b0UwczJiaTFLOFdJMWFkZ1hrYm4yM1ZGYXNDZ1lBRi95R09qREJFVG1kZ0h4T1BTa0JJMk5PTFpid3VDVFM5a1hRZ2l6SkZsY1RwS3kvNmp6TFhFenc3YkVsQ3p6QzZyMWVtQUpnMWx6NmdodEdLNG1aajNoWHNDWW9INk1tYjhjTCs4NWV1eTQ3QW5kQjBLd3ZFMDZsbUxOaTN2Vk9xaDloT1RlcVY1VlRQOWNEZlhTSWVLZkc0aEdhZzd4aHVpdnpBcDZLQXl3S0JnQUhuYzJYMWprYkJxL2pCYzg2c0pEZUlpMndUN0x3bnRyN290VVpKYnVMTkkrUFI0QzhHcXV3cFdiS3kyTU4yeW95cldNNG0vSTRIWUFVQ0o1bzBZQ2c2NXRtR0locWh0dG5qaCt5cll5WVhCRStXRWJ1Tnc2VVBwUTZVVUZYQVdFYVhIZmkyVGFkL2FUTWNoQlpES1R2R0ZhTjI2OVNlSVRuSmlYMlk3dmtUQWhVQTZZUjhKanlDRHV6MDFNMGo3T1pmYjJ1RFdvVT0=
     !
-    crypto ecdsakey ecdsa import $v10$TUhRQ0FRRUVJQUQwRkZHaGhpTk9RdzZVbWtaT3ZLdFpvd1phbHRlc1A2UXJYMlZiQWRlcW9BY0dCU3VCQkFBS29VUURRZ0FFS1RzZFA2ZHlvYjVSZW5sNjZCS0UrcTU2Q0JZTk9vak5IeGM5L2JESTVUQnloZUo5aFM2ZEZkUWdMZi9ITy9ubE5CejI5dDJlWUVscVBGbnNucWpBZmc9PQ==
+    crypto ecdsakey ecdsa import $v10$TUhNQ0FRRUVIMXQ0M3p6UUVzaE10aTllMVdLcWxvSmRxV250MXloMmxIT2VRdkxMS2dXZ0J3WUZLNEVFQUFxaFJBTkNBQVMwQWJqOXkzM2ZIaVRycUUyS1BwNk5qdkpkMi8zWUlFcHRkblZPRG1vVVBBN09RMmdmV0FNamxmajg0YTlNdDA1bXp5cDFaek9mUDJ2aTNLWXhyWmJH
     !
     aaa userlist usr
      username u
@@ -38,7 +38,6 @@
      exit
     !
     interface loopback0
-     no description
      vrf forwarding v1
      ipv4 address 1.1.1.1 255.255.255.255
      no shutdown
@@ -46,7 +45,6 @@
      exit
     !
     interface dialer1
-     no description
      encapsulation ppp
      ppp ip4cp open
      ppp ip4cp local 2.2.2.0
@@ -58,7 +56,6 @@
      exit
     !
     interface ethernet1
-     no description
      vrf forwarding v1
      ipv4 address 3.3.3.1 255.255.255.252
      no shutdown
@@ -119,7 +116,7 @@
     hostname r2
     buggy
     !
-    logging file debug ../binTmp/zzz62r2-log.run
+    logging file debug ../binTmp/zzz2r2-log.run
     !
     chat-script login
      sequence 10 send ppp
@@ -138,7 +135,6 @@
      exit
     !
     interface dialer1
-     no description
      encapsulation ppp
      ppp ip4cp open
      ppp ip4cp local 0.0.0.0
@@ -150,7 +146,6 @@
      exit
     !
     interface ethernet1
-     no description
      vrf forwarding v1
      ipv4 address 3.3.3.2 255.255.255.252
      no shutdown
@@ -216,12 +211,14 @@
     r2#
     r2#show inter dia1 full
     r2#show inter dia1 full
-    dialer1 is up (since 00:00:01, 3 changes)
+    dialer1 is up
      description:
+     state changed 3 times, last at 2022-05-02 21:15:13, 00:00:00 ago
+     last packet input 00:00:00 ago, output 00:00:00 ago, drop never ago
      type is dialer, hwaddr=none, mtu=1500, bw=128kbps, vrf=v1
-     ip4 address=2.2.2.202/25, netmask=255.255.255.128, ifcid=634917650
+     ipv4 address=2.2.2.152/25, mask=255.255.255.128, ifcid=927532203
      received 10 packets (660 bytes) dropped 0 packets (0 bytes)
-     transmitted 10 packets (660 bytes) promisc=false macsec=false sgt=false
+     transmitted 10 packets (660 bytes) macsec=false sgt=false
      |~~~~~~~|~~~~|~~~~|~~~~~~|~~~~|~~~~|~~~~~~|
      |       | packet         | byte           |
      | time  | tx | rx | drop | tx | rx | drop |
@@ -272,41 +269,41 @@
      | 6     | 0   | 0   | 0    | 0   | 0   | 0    |
      | 7     | 0   | 0   | 0    | 0   | 0   | 0    |
      |_______|_____|_____|______|_____|_____|______|
+              10|
+               9|
+               8|
+               7|
+               6|
+               5|
+               4|
+               3|
+               2|
                1|
-               0|
-               0|
-               0|
-               0|
-               0|
-               0|
-               0|
-               0|
-               0|
-               0|
+               0|############################################################
              bps|0---------10--------20--------30--------40--------50-------- seconds
+              10|
+               9|
+               8|
+               7|
+               6|
+               5|
+               4|
+               3|
+               2|
                1|
-               0|
-               0|
-               0|
-               0|
-               0|
-               0|
-               0|
-               0|
-               0|
-               0|
+               0|############################################################
              bps|0---------10--------20--------30--------40--------50-------- minutes
+              10|
+               9|
+               8|
+               7|
+               6|
+               5|
+               4|
+               3|
+               2|
                1|
-               0|
-               0|
-               0|
-               0|
-               0|
-               0|
-               0|
-               0|
-               0|
-               0|
+               0|############################################################
              bps|0---------10--------20--------30--------40--------50-------- hours
     r2#
     r2#

@@ -14,7 +14,7 @@
     hostname r1
     buggy
     !
-    logging file debug ../binTmp/zzz31r1-log.run
+    logging file debug ../binTmp/zzz61r1-log.run
     !
     vrf definition tester
      exit
@@ -38,7 +38,6 @@
      exit
     !
     interface loopback1
-     no description
      vrf forwarding v1
      ipv4 address 2.2.2.1 255.255.255.255
      ipv6 address 4321::1 ffff:ffff:ffff:ffff:ffff:ffff:ffff:ffff
@@ -47,7 +46,6 @@
      exit
     !
     interface ethernet1
-     no description
      vrf forwarding v1
      ipv4 address 1.1.1.1 255.255.255.0
      ipv6 address 1234::1 ffff::
@@ -59,7 +57,6 @@
      exit
     !
     interface tunnel1
-     no description
      tunnel key 1
      tunnel vrf v1
      tunnel source loopback1
@@ -73,7 +70,6 @@
      exit
     !
     interface tunnel2
-     no description
      tunnel key 1
      tunnel vrf v1
      tunnel source loopback1
@@ -128,7 +124,7 @@
     hostname r2
     buggy
     !
-    logging file debug ../binTmp/zzz31r2-log.run
+    logging file debug ../binTmp/zzz61r2-log.run
     !
     vrf definition tester
      exit
@@ -152,7 +148,6 @@
      exit
     !
     interface loopback1
-     no description
      vrf forwarding v1
      ipv4 address 2.2.2.2 255.255.255.255
      ipv6 address 4321::2 ffff:ffff:ffff:ffff:ffff:ffff:ffff:ffff
@@ -161,7 +156,6 @@
      exit
     !
     interface ethernet1
-     no description
      vrf forwarding v1
      ipv4 address 1.1.1.2 255.255.255.0
      ipv6 address 1234::2 ffff::
@@ -173,7 +167,6 @@
      exit
     !
     interface ethernet2
-     no description
      vrf forwarding v1
      ipv4 address 1.1.2.2 255.255.255.0
      ipv6 address 1235::2 ffff::
@@ -226,7 +219,7 @@
     hostname r3
     buggy
     !
-    logging file debug ../binTmp/zzz31r3-log.run
+    logging file debug ../binTmp/zzz61r3-log.run
     !
     vrf definition tester
      exit
@@ -250,7 +243,6 @@
      exit
     !
     interface loopback1
-     no description
      vrf forwarding v1
      ipv4 address 2.2.2.3 255.255.255.255
      ipv6 address 4321::3 ffff:ffff:ffff:ffff:ffff:ffff:ffff:ffff
@@ -259,7 +251,6 @@
      exit
     !
     interface ethernet1
-     no description
      vrf forwarding v1
      ipv4 address 1.1.2.3 255.255.255.0
      ipv6 address 1235::3 ffff::
@@ -271,7 +262,6 @@
      exit
     !
     interface ethernet2
-     no description
      vrf forwarding v1
      ipv4 address 1.1.3.3 255.255.255.0
      ipv6 address 1236::3 ffff::
@@ -324,7 +314,7 @@
     hostname r4
     buggy
     !
-    logging file debug ../binTmp/zzz31r4-log.run
+    logging file debug ../binTmp/zzz61r4-log.run
     !
     vrf definition tester
      exit
@@ -348,7 +338,6 @@
      exit
     !
     interface loopback1
-     no description
      vrf forwarding v1
      ipv4 address 2.2.2.4 255.255.255.255
      ipv6 address 4321::4 ffff:ffff:ffff:ffff:ffff:ffff:ffff:ffff
@@ -357,7 +346,6 @@
      exit
     !
     interface ethernet1
-     no description
      vrf forwarding v1
      ipv4 address 1.1.3.4 255.255.255.0
      ipv6 address 1236::4 ffff::
@@ -369,7 +357,6 @@
      exit
     !
     interface tunnel1
-     no description
      tunnel key 4
      tunnel vrf v1
      tunnel source loopback1
@@ -383,7 +370,6 @@
      exit
     !
     interface tunnel2
-     no description
      tunnel key 4
      tunnel vrf v1
      tunnel source loopback1
@@ -443,12 +429,16 @@
      |~~~~~~~~|~~~~~~~~~~|~~~~~~~|~~~~~~|~~~~~~~~~~~~|~~~~~~~~~|~~~~~~~|
      | label  | vrf      | iface | hop  | label      | targets | bytes |
      |--------|----------|-------|------|------------|---------|-------|
-     | 5172   | v1:6     | null  | null | unlabelled | bier    | 520   |
-     | 132226 | tester:4 | null  | null | unlabelled | local   | 0     |
-     | 295846 | tester:6 | null  | null | unlabelled | local   | 0     |
-     | 568939 | v1:4     | null  | null | unlabelled | bier    | 520   |
-     | 701027 | v1:6     | null  | null | unlabelled | local   | 0     |
-     | 762096 | v1:4     | null  | null | unlabelled | local   | 0     |
+     | 35992  | tester:4 | null  | null | unlabelled | local   | 0     |
+     | 128055 | v1:4     | null  | null | unlabelled | local   | 0     |
+     | 176139 | tester:4 | null  | null | unlabelled | local   | 0     |
+     | 238573 | v1:6     | null  | null | unlabelled | local   | 0     |
+     | 263290 | v1:4     | null  | null | unlabelled | bier    | 520   |
+     | 356826 | v1:6     | null  | null | unlabelled | bier    | 520   |
+     | 370037 | tester:4 | null  | null | unlabelled | local   | 0     |
+     | 379283 | tester:6 | null  | null | unlabelled | local   | 0     |
+     | 419716 | tester:6 | null  | null | unlabelled | local   | 0     |
+     | 527864 | tester:6 | null  | null | unlabelled | local   | 0     |
      |________|__________|_______|______|____________|_________|_______|
     r1#
     r1#
@@ -462,12 +452,16 @@
      |~~~~~~~~|~~~~~~~~~~|~~~~~~~|~~~~~~|~~~~~~~~~~~~|~~~~~~~~~|~~~~~~~|
      | label  | vrf      | iface | hop  | label      | targets | bytes |
      |--------|----------|-------|------|------------|---------|-------|
-     | 165679 | v1:6     | null  | null | unlabelled | local   | 0     |
-     | 247620 | tester:6 | null  | null | unlabelled | local   | 0     |
-     | 433050 | tester:4 | null  | null | unlabelled | local   | 0     |
-     | 632008 | v1:4     | null  | null | unlabelled | bier    | 1040  |
-     | 703220 | v1:6     | null  | null | unlabelled | bier    | 1040  |
-     | 801658 | v1:4     | null  | null | unlabelled | local   | 0     |
+     | 24108  | v1:6     | null  | null | unlabelled | local   | 0     |
+     | 260465 | tester:6 | null  | null | unlabelled | local   | 0     |
+     | 434267 | tester:6 | null  | null | unlabelled | local   | 0     |
+     | 509604 | tester:4 | null  | null | unlabelled | local   | 0     |
+     | 555791 | tester:6 | null  | null | unlabelled | local   | 0     |
+     | 603242 | v1:6     | null  | null | unlabelled | bier    | 1040  |
+     | 662033 | tester:4 | null  | null | unlabelled | local   | 0     |
+     | 666861 | v1:4     | null  | null | unlabelled | local   | 0     |
+     | 702693 | v1:4     | null  | null | unlabelled | bier    | 1040  |
+     | 706436 | tester:4 | null  | null | unlabelled | local   | 0     |
      |________|__________|_______|______|____________|_________|_______|
     r2#
     r2#
@@ -478,16 +472,20 @@
     r3#
     r3#show mpls forw
     r3#show mpls forw
-     |~~~~~~~~|~~~~~~~~~~|~~~~~~~|~~~~~~|~~~~~~~~~~~~|~~~~~~~~~|~~~~~~~|
-     | label  | vrf      | iface | hop  | label      | targets | bytes |
-     |--------|----------|-------|------|------------|---------|-------|
-     | 176762 | v1:4     | null  | null | unlabelled | bier    | 1040  |
-     | 396616 | v1:6     | null  | null | unlabelled | bier    | 1040  |
-     | 548980 | tester:4 | null  | null | unlabelled | local   | 0     |
-     | 630417 | tester:6 | null  | null | unlabelled | local   | 0     |
-     | 804467 | v1:4     | null  | null | unlabelled | local   | 0     |
-     | 848047 | v1:6     | null  | null | unlabelled | local   | 0     |
-     |________|__________|_______|______|____________|_________|_______|
+     |~~~~~~~~~|~~~~~~~~~~|~~~~~~~|~~~~~~|~~~~~~~~~~~~|~~~~~~~~~|~~~~~~~|
+     | label   | vrf      | iface | hop  | label      | targets | bytes |
+     |---------|----------|-------|------|------------|---------|-------|
+     | 187148  | tester:4 | null  | null | unlabelled | local   | 0     |
+     | 317940  | v1:6     | null  | null | unlabelled | bier    | 1040  |
+     | 487076  | v1:6     | null  | null | unlabelled | local   | 0     |
+     | 488462  | v1:4     | null  | null | unlabelled | bier    | 1040  |
+     | 561544  | tester:6 | null  | null | unlabelled | local   | 0     |
+     | 639356  | tester:4 | null  | null | unlabelled | local   | 0     |
+     | 689261  | tester:6 | null  | null | unlabelled | local   | 0     |
+     | 716377  | tester:6 | null  | null | unlabelled | local   | 0     |
+     | 887679  | v1:4     | null  | null | unlabelled | local   | 0     |
+     | 1031613 | tester:4 | null  | null | unlabelled | local   | 0     |
+     |_________|__________|_______|______|____________|_________|_______|
     r3#
     r3#
     ```
@@ -497,16 +495,20 @@
     r4#
     r4#show mpls forw
     r4#show mpls forw
-     |~~~~~~~~|~~~~~~~~~~|~~~~~~~|~~~~~~|~~~~~~~~~~~~|~~~~~~~~~|~~~~~~~|
-     | label  | vrf      | iface | hop  | label      | targets | bytes |
-     |--------|----------|-------|------|------------|---------|-------|
-     | 130806 | tester:6 | null  | null | unlabelled | local   | 0     |
-     | 176702 | v1:6     | null  | null | unlabelled | bier    | 520   |
-     | 566725 | v1:4     | null  | null | unlabelled | local   | 0     |
-     | 592734 | v1:4     | null  | null | unlabelled | bier    | 520   |
-     | 604710 | tester:4 | null  | null | unlabelled | local   | 0     |
-     | 742934 | v1:6     | null  | null | unlabelled | local   | 0     |
-     |________|__________|_______|______|____________|_________|_______|
+     |~~~~~~~~~|~~~~~~~~~~|~~~~~~~|~~~~~~|~~~~~~~~~~~~|~~~~~~~~~|~~~~~~~|
+     | label   | vrf      | iface | hop  | label      | targets | bytes |
+     |---------|----------|-------|------|------------|---------|-------|
+     | 191699  | v1:4     | null  | null | unlabelled | local   | 0     |
+     | 239473  | v1:6     | null  | null | unlabelled | bier    | 520   |
+     | 263372  | v1:4     | null  | null | unlabelled | bier    | 520   |
+     | 503223  | tester:6 | null  | null | unlabelled | local   | 0     |
+     | 597052  | tester:4 | null  | null | unlabelled | local   | 0     |
+     | 683940  | v1:6     | null  | null | unlabelled | local   | 0     |
+     | 839929  | tester:6 | null  | null | unlabelled | local   | 0     |
+     | 972928  | tester:4 | null  | null | unlabelled | local   | 0     |
+     | 999767  | tester:4 | null  | null | unlabelled | local   | 0     |
+     | 1037574 | tester:6 | null  | null | unlabelled | local   | 0     |
+     |_________|__________|_______|______|____________|_________|_______|
     r4#
     r4#
     ```

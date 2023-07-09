@@ -14,7 +14,7 @@
     hostname r1
     buggy
     !
-    logging file debug ../binTmp/zzz83r1-log.run
+    logging file debug ../binTmp/zzz41r1-log.run
     !
     vrf definition tester
      exit
@@ -24,7 +24,6 @@
      exit
     !
     interface serial1
-     no description
      encapsulation ppp
      ppp ip4cp close
      ppp ip6cp close
@@ -77,20 +76,18 @@
     hostname r2
     buggy
     !
-    logging file debug ../binTmp/zzz83r2-log.run
+    logging file debug ../binTmp/zzz41r2-log.run
     !
     vrf definition tester
      exit
     !
     interface serial1
-     no description
      encapsulation ppp
      no shutdown
      no log-link-change
      exit
     !
     interface serial2
-     no description
      encapsulation ppp
      no shutdown
      no log-link-change
@@ -130,7 +127,7 @@
     hostname r3
     buggy
     !
-    logging file debug ../binTmp/zzz83r3-log.run
+    logging file debug ../binTmp/zzz41r3-log.run
     !
     vrf definition tester
      exit
@@ -140,7 +137,6 @@
      exit
     !
     interface serial1
-     no description
      encapsulation ppp
      ppp ip4cp close
      ppp ip6cp close

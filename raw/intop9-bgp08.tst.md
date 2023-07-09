@@ -12,7 +12,7 @@
     **r1:**
     ```
     hostname r1
-    logging file debug ../binTmp/zzz85r1-log.run
+    logging file debug ../binTmp/zzz29r1-log.run
     vrf definition tester
      exit
     server telnet tester
@@ -48,6 +48,7 @@
      exit
     router bgp4 1
      vrf v1
+     no safe-ebgp
      address lab
      local-as 1
      router-id 4.4.4.1
@@ -56,6 +57,7 @@
      exit
     router bgp6 1
      vrf v1
+     no safe-ebgp
      address lab
      local-as 1
      router-id 6.6.6.1

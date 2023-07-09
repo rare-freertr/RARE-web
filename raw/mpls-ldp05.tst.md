@@ -14,7 +14,7 @@
     hostname r1
     buggy
     !
-    logging file debug ../binTmp/zzz4r1-log.run
+    logging file debug ../binTmp/zzz1r1-log.run
     !
     access-list test4
      sequence 10 deny 1 any all any all
@@ -31,11 +31,11 @@
     !
     vrf definition v1
      rd 1:1
-     label-mode per-prefix
+     label4mode per-prefix
+     label6mode per-prefix
      exit
     !
     interface loopback0
-     no description
      vrf forwarding v1
      ipv4 address 2.2.2.1 255.255.255.255
      ipv6 address 4321::1 ffff:ffff:ffff:ffff:ffff:ffff:ffff:ffff
@@ -44,7 +44,6 @@
      exit
     !
     interface serial1
-     no description
      encapsulation ppp
      ppp ip4cp close
      ppp ip6cp close
@@ -106,7 +105,7 @@
     hostname r2
     buggy
     !
-    logging file debug ../binTmp/zzz4r2-log.run
+    logging file debug ../binTmp/zzz1r2-log.run
     !
     access-list test4
      sequence 10 deny 1 any all any all
@@ -123,11 +122,11 @@
     !
     vrf definition v1
      rd 1:1
-     label-mode per-prefix
+     label4mode per-prefix
+     label6mode per-prefix
      exit
     !
     interface loopback0
-     no description
      vrf forwarding v1
      ipv4 address 2.2.2.2 255.255.255.255
      ipv6 address 4321::2 ffff:ffff:ffff:ffff:ffff:ffff:ffff:ffff
@@ -136,7 +135,6 @@
      exit
     !
     interface serial1
-     no description
      encapsulation ppp
      ppp ip4cp close
      ppp ip6cp close

@@ -14,7 +14,7 @@
     hostname r1
     buggy
     !
-    logging file debug ../binTmp/zzz78r1-log.run
+    logging file debug ../binTmp/zzz25r1-log.run
     !
     vrf definition tester
      exit
@@ -24,7 +24,6 @@
      exit
     !
     interface ethernet1
-     no description
      vrf forwarding v1
      ipv4 address 1.1.1.1 255.255.255.0
      ipv6 address 1234::1 ffff::
@@ -74,7 +73,7 @@
     hostname r2
     buggy
     !
-    logging file debug ../binTmp/zzz78r2-log.run
+    logging file debug ../binTmp/zzz25r2-log.run
     !
     bridge 1
      mac-learn
@@ -88,7 +87,6 @@
      exit
     !
     interface bvi1
-     no description
      vrf forwarding v1
      ipv4 address 1.1.1.2 255.255.255.0
      ipv6 address 1234::2 ffff::
@@ -97,14 +95,12 @@
      exit
     !
     interface ethernet1
-     no description
      bridge-group 1
      no shutdown
      no log-link-change
      exit
     !
     interface serial1
-     no description
      encapsulation framerelay
      framerelay mode dce
      framerelay dlci 123
@@ -155,7 +151,7 @@
     hostname r3
     buggy
     !
-    logging file debug ../binTmp/zzz78r3-log.run
+    logging file debug ../binTmp/zzz25r3-log.run
     !
     bridge 1
      exit
@@ -168,7 +164,6 @@
      exit
     !
     interface bvi1
-     no description
      vrf forwarding v1
      ipv4 address 1.1.1.3 255.255.255.0
      ipv6 address 1234::3 ffff::
@@ -177,7 +172,6 @@
      exit
     !
     interface serial1
-     no description
      encapsulation framerelay
      framerelay mode dte
      framerelay dlci 123

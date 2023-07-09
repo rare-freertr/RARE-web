@@ -14,7 +14,7 @@
     hostname r1
     buggy
     !
-    logging file debug ../binTmp/zzz42r1-log.run
+    logging file debug ../binTmp/zzz64r1-log.run
     !
     bridge 1
      exit
@@ -37,7 +37,6 @@
      exit
     !
     interface loopback1
-     no description
      vrf forwarding v1
      ipv4 address 2.2.2.1 255.255.255.255
      ipv6 address 4321::1 ffff:ffff:ffff:ffff:ffff:ffff:ffff:ffff
@@ -46,7 +45,6 @@
      exit
     !
     interface bvi1
-     no description
      vrf forwarding v1
      ipv4 address 1.1.1.1 255.255.255.0
      ipv6 address 1234::1 ffff::
@@ -59,7 +57,6 @@
      exit
     !
     interface ethernet1
-     no description
      bridge-group 1
      no shutdown
      no log-link-change
@@ -107,7 +104,7 @@
     hostname r2
     buggy
     !
-    logging file debug ../binTmp/zzz42r2-log.run
+    logging file debug ../binTmp/zzz64r2-log.run
     !
     bridge 1
      mac-learn
@@ -131,7 +128,6 @@
      exit
     !
     interface loopback1
-     no description
      vrf forwarding v1
      ipv4 address 2.2.2.2 255.255.255.255
      ipv6 address 4321::2 ffff:ffff:ffff:ffff:ffff:ffff:ffff:ffff
@@ -140,7 +136,6 @@
      exit
     !
     interface bvi1
-     no description
      vrf forwarding v1
      ipv4 address 1.1.1.2 255.255.255.0
      ipv6 address 1234::2 ffff::
@@ -153,14 +148,12 @@
      exit
     !
     interface ethernet1
-     no description
      bridge-group 1
      no shutdown
      no log-link-change
      exit
     !
     interface ethernet2
-     no description
      bridge-group 1
      no shutdown
      no log-link-change
@@ -208,7 +201,7 @@
     hostname r3
     buggy
     !
-    logging file debug ../binTmp/zzz42r3-log.run
+    logging file debug ../binTmp/zzz64r3-log.run
     !
     bridge 1
      exit
@@ -231,7 +224,6 @@
      exit
     !
     interface loopback1
-     no description
      vrf forwarding v1
      ipv4 address 2.2.2.3 255.255.255.255
      ipv6 address 4321::3 ffff:ffff:ffff:ffff:ffff:ffff:ffff:ffff
@@ -240,7 +232,6 @@
      exit
     !
     interface bvi1
-     no description
      vrf forwarding v1
      ipv4 address 1.1.1.3 255.255.255.0
      ipv6 address 1234::3 ffff::
@@ -253,7 +244,6 @@
      exit
     !
     interface ethernet1
-     no description
      bridge-group 1
      no shutdown
      no log-link-change
@@ -316,8 +306,8 @@
      |~~~~~~~~~~~|~~~~~~~~~~~~~~~~|~~~~~~~|~~~~~~~~~~~~~~~~|~~~~~~~~~~~~|~~~~~~~~~~~~~~~|~~~~~~~|~~~~~~~~~~|
      | interface | mac address    | level | routerid       | ip address | other address | state | uptime   |
      |-----------|----------------|-------|----------------|------------|---------------|-------|----------|
-     | bvi1      | 0008.7d52.4437 | 2     | 4444.0000.3333 | 1234::3    | 1.1.1.3       | up    | 00:00:09 |
-     | bvi1      | 002d.3227.471d | 2     | 4444.0000.1111 | 1234::1    | 1.1.1.1       | up    | 00:00:09 |
+     | bvi1      | 0027.3c61.652e | 2     | 4444.0000.3333 | 1234::3    | 1.1.1.3       | up    | 00:00:09 |
+     | bvi1      | 0056.6c3e.5706 | 2     | 4444.0000.1111 | 1234::1    | 1.1.1.1       | up    | 00:00:09 |
      |___________|________________|_______|________________|____________|_______________|_______|__________|
     r2#
     r2#
@@ -338,15 +328,15 @@
     r2#
     r2#show ipv6 isis 1 dat 2
     r2#show ipv6 isis 1 dat 2
-     |~~~~~~~~~~~~~~~~~~~~~~|~~~~~~~~~~|~~~~~~~|~~~~~|~~~~~~~~~~~|
-     | lspid                | sequence | flags | len | time      |
-     |----------------------|----------|-------|-----|-----------|
-     | 4444.0000.1111.00-00 | 0000000c | apo   | 80  | 00:19:49  |
-     | 4444.0000.1111.7a-00 | 00000003 | apo   | 39  | 00:19:49  |
-     | 4444.0000.3333.00-00 | 0000000e | apo   | 80  | 00:19:49  |
-     | 6666.0000.2222.00-00 | 0000000b | apo   | 80  | 00:19:50  |
-     | 6666.0000.2222.23-00 | 00000002 | apo   | 13  | -00:00:09 |
-     |______________________|__________|_______|_____|___________|
+     |~~~~~~~~~~~~~~~~~~~~~~|~~~~~~~~~~|~~~~~~~|~~~~~|~~~~~~~~~~|
+     | lspid                | sequence | flags | len | time     |
+     |----------------------|----------|-------|-----|----------|
+     | 0000.0000.0000.00-00 | 00000001 | apo   | 10  | 00:19:49 |
+     | 4444.0000.1111.00-00 | 0000000c | apo   | 80  | 00:19:49 |
+     | 4444.0000.1111.30-00 | 00000003 | apo   | 39  | 00:19:50 |
+     | 4444.0000.3333.00-00 | 0000000c | apo   | 80  | 00:19:49 |
+     | 6666.0000.2222.00-00 | 0000000d | apo   | 80  | 00:19:50 |
+     |______________________|__________|_______|_____|__________|
     r2#
     r2#
     ```
@@ -367,7 +357,7 @@
     r2#show ipv6 isis 1 tre 2
     r2#show ipv6 isis 1 tre 2
     `--r2
-       `--4444.0000.1111.7a
+       `--4444.0000.1111.30
          |`--r1
           `--r3
     r2#

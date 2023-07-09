@@ -14,7 +14,7 @@
     hostname r1
     buggy
     !
-    logging file debug ../binTmp/zzz99r1-log.run
+    logging file debug ../binTmp/zzz76r1-log.run
     !
     vrf definition tester
      exit
@@ -24,7 +24,6 @@
      exit
     !
     interface serial1
-     no description
      encapsulation raw
      vrf forwarding v1
      ipv4 address 1.1.1.1 255.255.255.0
@@ -75,7 +74,7 @@
     hostname r2
     buggy
     !
-    logging file debug ../binTmp/zzz99r2-log.run
+    logging file debug ../binTmp/zzz76r2-log.run
     !
     vrf definition tester
      exit
@@ -85,7 +84,6 @@
      exit
     !
     interface serial1
-     no description
      encapsulation raw
      vrf forwarding v1
      ipv4 address 1.1.1.2 255.255.255.0
@@ -138,18 +136,20 @@
     r1#
     r1#show inter ser1 full
     r1#show inter ser1 full
-    serial1 is up (since 00:00:01, 3 changes)
+    serial1 is up
      description:
+     state changed 3 times, last at 2022-05-02 21:10:22, 00:00:01 ago
+     last packet input 00:00:00 ago, output 00:00:00 ago, drop never ago
      type is serial, hwaddr=none, mtu=1500, bw=2000kbps, vrf=v1
-     ip4 address=1.1.1.1/24, netmask=255.255.255.0, ifcid=764605479
-     ip6 address=1234::1/16, netmask=ffff::, ifcid=489075424
+     ipv4 address=1.1.1.1/24, mask=255.255.255.0, ifcid=901759301
+     ipv6 address=1234::1/16, mask=ffff::, ifcid=468782232
      received 23 packets (1550 bytes) dropped 0 packets (0 bytes)
-     transmitted 23 packets (1550 bytes) promisc=false macsec=false sgt=false
+     transmitted 23 packets (1550 bytes) macsec=false sgt=false
      |~~~~~~~|~~~~|~~~~|~~~~~~|~~~~~|~~~~~|~~~~~~|
      |       | packet         | byte             |
      | time  | tx | rx | drop | tx  | rx  | drop |
      |-------|----|----|------|-----|-----|------|
-     | 1sec  | 1  | 1  | 0    | 115 | 115 | 0    |
+     | 1sec  | 11 | 11 | 0    | 775 | 775 | 0    |
      | 1min  | 0  | 0  | 0    | 0   | 0   | 0    |
      | 1hour | 0  | 0  | 0    | 0   | 0   | 0    |
      |_______|____|____|______|_____|_____|______|
@@ -197,41 +197,41 @@
      | 6     | 0   | 0   | 0    | 0    | 0    | 0    |
      | 7     | 0   | 0   | 0    | 0    | 0    | 0    |
      |_______|_____|_____|______|______|______|______|
-            1840|
-            1656|##
-            1472|##
-            1288|##
-            1104|##
-             920|##
-             736|##
-             552|##
-             368|##
-             184|##
-               0|##
+           12.4k|
+           12.4k|
+           12.4k|
+           12.4k|
+           12.4k|
+           12.4k|
+           12.4k|
+           12.4k|
+           12.4k|
+           12.4k|
+           12.4k|##
              bps|0---------10--------20--------30--------40--------50-------- seconds
+              10|
+               9|
+               8|
+               7|
+               6|
+               5|
+               4|
+               3|
+               2|
                1|
-               0|
-               0|
-               0|
-               0|
-               0|
-               0|
-               0|
-               0|
-               0|
-               0|
+               0|############################################################
              bps|0---------10--------20--------30--------40--------50-------- minutes
+              10|
+               9|
+               8|
+               7|
+               6|
+               5|
+               4|
+               3|
+               2|
                1|
-               0|
-               0|
-               0|
-               0|
-               0|
-               0|
-               0|
-               0|
-               0|
-               0|
+               0|############################################################
              bps|0---------10--------20--------30--------40--------50-------- hours
     r1#
     r1#

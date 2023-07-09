@@ -14,7 +14,7 @@
     hostname r1
     buggy
     !
-    logging file debug ../binTmp/zzz88r1-log.run
+    logging file debug ../binTmp/zzz70r1-log.run
     !
     object-group network test4
      sequence 10 2.2.2.102 255.255.255.255
@@ -44,7 +44,6 @@
      exit
     !
     interface loopback0
-     no description
      vrf forwarding v1
      ipv4 address 2.2.2.101 255.255.255.255
      ipv6 address 4321::101 ffff:ffff:ffff:ffff:ffff:ffff:ffff:ffff
@@ -53,7 +52,6 @@
      exit
     !
     interface loopback1
-     no description
      vrf forwarding v1
      ipv4 address 2.2.2.102 255.255.255.255
      ipv6 address 4321::102 ffff:ffff:ffff:ffff:ffff:ffff:ffff:ffff
@@ -62,7 +60,6 @@
      exit
     !
     interface ethernet1
-     no description
      vrf forwarding v1
      ipv4 address 1.1.1.1 255.255.255.252
      ipv4 access-group-out test4
@@ -116,7 +113,7 @@
     hostname r2
     buggy
     !
-    logging file debug ../binTmp/zzz88r2-log.run
+    logging file debug ../binTmp/zzz70r2-log.run
     !
     vrf definition tester
      exit
@@ -126,7 +123,6 @@
      exit
     !
     interface loopback0
-     no description
      vrf forwarding v1
      ipv4 address 2.2.2.201 255.255.255.255
      ipv6 address 4321::201 ffff:ffff:ffff:ffff:ffff:ffff:ffff:ffff
@@ -135,7 +131,6 @@
      exit
     !
     interface loopback1
-     no description
      vrf forwarding v1
      ipv4 address 2.2.2.202 255.255.255.255
      ipv6 address 4321::202 ffff:ffff:ffff:ffff:ffff:ffff:ffff:ffff
@@ -144,7 +139,6 @@
      exit
     !
     interface ethernet1
-     no description
      vrf forwarding v1
      ipv4 address 1.1.1.2 255.255.255.252
      ipv6 address 1234::2 ffff:ffff::

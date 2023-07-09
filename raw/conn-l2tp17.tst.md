@@ -14,7 +14,7 @@
     hostname r1
     buggy
     !
-    logging file debug ../binTmp/zzz37r1-log.run
+    logging file debug ../binTmp/zzz73r1-log.run
     !
     vrf definition tester
      exit
@@ -24,7 +24,6 @@
      exit
     !
     interface serial1
-     no description
      encapsulation framerelay
      framerelay mode dce
      framerelay dlci 123
@@ -77,7 +76,7 @@
     hostname r2
     buggy
     !
-    logging file debug ../binTmp/zzz37r2-log.run
+    logging file debug ../binTmp/zzz73r2-log.run
     !
     vrf definition tester
      exit
@@ -87,7 +86,6 @@
      exit
     !
     interface ethernet1
-     no description
      vrf forwarding v1
      ipv4 address 1.1.1.1 255.255.255.0
      ipv6 address 1234::1 ffff::
@@ -96,7 +94,6 @@
      exit
     !
     interface serial1
-     no description
      encapsulation raw
      xconnect v1 ethernet1 l2tp3 1.1.1.2 1234 vlan
      no shutdown
@@ -145,7 +142,7 @@
     hostname r3
     buggy
     !
-    logging file debug ../binTmp/zzz37r3-log.run
+    logging file debug ../binTmp/zzz73r3-log.run
     !
     vrf definition tester
      exit
@@ -155,7 +152,6 @@
      exit
     !
     interface ethernet1
-     no description
      vrf forwarding v1
      ipv4 address 1.1.1.2 255.255.255.0
      ipv6 address 1234::2 ffff:ffff::
@@ -164,7 +160,6 @@
      exit
     !
     interface serial1
-     no description
      encapsulation raw
      xconnect v1 ethernet1 l2tp3 1.1.1.1 1234 vlan
      no shutdown
@@ -213,7 +208,7 @@
     hostname r4
     buggy
     !
-    logging file debug ../binTmp/zzz37r4-log.run
+    logging file debug ../binTmp/zzz73r4-log.run
     !
     vrf definition tester
      exit
@@ -223,7 +218,6 @@
      exit
     !
     interface serial1
-     no description
      encapsulation framerelay
      framerelay mode dte
      framerelay dlci 123

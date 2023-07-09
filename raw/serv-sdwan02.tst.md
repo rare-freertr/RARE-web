@@ -14,13 +14,13 @@
     hostname r1
     buggy
     !
-    logging file debug ../binTmp/zzz98r1-log.run
+    logging file debug ../binTmp/zzz79r1-log.run
     !
-    crypto rsakey rsa import $v10$TUlJRW9nSUJBQUtDQVFCZWJJNXo0OTQyVnI2TXliV0hTaXdYUitZZGxrK2ZHZFoxZ0JSUFJXVHBNckRLdXorN0x0YXF6cHdSd0c4Q0V3NFB3MTY4NDUwZDR2MmV1L0RyYkVadkxwTUJFeWZLc0hNbHJPUHFQRUdnbU9PbFMvbzdlazdPT3E2WkhLWm02OFNCS0RRZElIVEltUjdUTjZvZjd5VmxPYU9qM2wxT3QreCtOUFM5S0tEUVNCRVJkNGVxOHpjQVBVajRUbU1FbkdoLzFPMkRrZTk3VE9BMG90T1lzWWpqQUJJc2VvU3B6eVNoNjdoRXVBaUhGSUJRZ0tOUUxSZTZxc25kbmloRlRYQjZzcVh0ZjFTdVRBamo1QVBlSGNzWENheGN2Z0FXMWhyNlVCU1I5S2NNbGNvWVhTYUxrMXZKTXRhS3h1Qm1lbXFxT0JjM2k2WkJCb3FqMEtzMHRsZ3pBZ01CQUFFQ2dnRUFFRTZERTNTSXphMlJYdEwrN0l4Y3JQQ1h4d2hNVzlla2Q4cFV0NVB1WjI5L3BLTk4wRSs0ZHVzVGZPVlV4bkR2L3J6b3dZbzFlaEhYWnZCaUhPWW9DODlwUjhnOUdQMzhCTWVrM0xEblRJcmExWk1YZGVvYmJmWW9iUHpMcC82VGd4S2tYVnRiajhFUjE3eEhQeGlYeHJGN2x6TXh2Z1I1YlJwTUlkYkFYdmU4Nkp3dllSY2Fac3JJa0VNOFREWnlVUUxQQk5CRE5VcGZSTUlmblRCTzdQZk03RnozVHU2U21kTU1RbkFuTUZJT0l2Nm5CNGZVMzVReXdtR0lHa0NPMWlHYVc5eThjSFI4YTFQQnZQSURjR29hU0QvakVRK0tsaGNOSkJGMFpLQXlTMVNpM2JGRDlEVGN5TVczVXMybDNoMmpPR3gvYU1BRnpVQjBYeWQ5VVFLQmdRQ3pqN2ZwZXM1Vkw1RnNsOXltcERDcDU4aFVwbDNTVWh2aVhnelZlSTZHWjhNTWFHaE94a3BRenJoOXV0U2F4eDh3Rys2ZmV4alZxTFMrRk5QeFBpY0pQU3BMNHlLV1JrRmN5SCtBTkpCVHlucVhjdlpWWkZsK2NFU25TNDcwa2QyRjJzZUYvVUJWc1NyLzZsc2g5VXVwNVl5RGhpQlFqUGRPb0dEeUtSZkUxUUtCZ1FDR25yaWJPQUVuNUFHWnp2Ym5JNE9lTjA0OGYwNXhGajhNUGxSanZySlI3MlJ0VDYxV2dlWU53L2FFanlCcTQ1OWxpS1k4Vkg2RElxRXNLVklOZ1MreWx6cWZUN3RyWGt0dTBHNEpEV1hVUUxlTnZDMHlFbmVrc0xzbHVwbHdTM3B6ZXJtS203WXhXbUExM0RhNUl6ZFZQbDdxQVZDOUlqbmhqZkxJN3NMTTV3S0JnRmRqTDNkaXUvNDdTMFFWV0Y2RmMrV01sek9UVC8vbTFBbEVDbXp0NGpkSlVtUzhmMTh2SThYV0JYV3pNbnN0UTJGdmhwOTVFaW9Say8wYU45ZWxqdXZ4SjUrTktDMElmaEVBeHdTSEVHS25IU2lOMjVMTlpyeWhPTmhPYm9GYVovd1g4SmltR3VSWmQvcmFmSVczVXA2Wng5dk9yL1ZqMVl3ZmcyNzNUc2tOQW9HQVQrK0JpTkdKaGlsU2RnVTZBT2ZLcUxFSWFNM2pReTFGaEx5aUdaUkxpSEdRL1lPWlZzdk5VaEV4bVdidmhlamhaa1h0QjlmWVEzL1Zta1p5N1lmdlRhbVU2ckpLaEtlNlBQUFEwdGs4eFBza3d5bWc0S0dzbjRNOXJWcU83K294ck02THkrMUlFeWdxQnZGYklUWHpEay81eGhPLzRINnBSZkNtNEg4OTlyTUNnWUVBZzFzYVRKYmZCMDdWYnZIckFsNFQ4bzg0YUdyQWVQRTdOQWZyaU85TEpYVmM2SkRFR1VhZzhkcUFPYUNzdjhLM0hsc3VqcUNGMzgxb285VFZDWEcrN05oeENsYnAzSWxiWmZTZXNQUmt5WlBxeFJtS3pMR3BxTWRwTUczd0k3MzRwTXhIekdMNTI1SFpONHBwaUMvWEh6ZkQ5SUpLR1BkbkFyU0xkMkNEMnhNPQ==
+    crypto rsakey rsa import $v10$TUlJRW9nSUJBQUtDQVFCeElkSHU0M3RKSWRtUU5Dems1clJOaU13WldzV0Z1ZnEydW1vcEc4cVA4bENaQlpSUnZ2TjlxeVJESndlM1ljRnFhMVpSejRtT1hucnUyeFlObXhzdlpDK2Zkc21TMUZRcFFYVDl5Tnd3TGJvOEw5WTEzUlkzcUFHcmtueFYybTRlSXJVQUdWc0pucTlqNjdqN1F5WE1iM0c3Ylo2V2NLSGtZS0NoYmMrOFBMTVZmNTNFY051eWF4cXlxbWwxQm0vL1BEL1pwOGltdjNWT04rSHI0amdqK0JuZXlYeHlzYnczSnlGMlNMOEdoOU8zWkFvMWozQWdVdGQxdEN0TjdZZ0hQMDdQNFRlcjRXQmFEWFJrclpaTTZIc3N0RkFiVDVUMndDcXlWMWx3a0NVMVBpYnByUEZGWFhFSXpvRlNtTVB1WXp4a1EwNS96ZmJwek43TW9rRFZBZ01CQUFFQ2dnRUFJRWtsajBaT05jVzZRQ1FUdDlON0d6RnlCYjVZNWx2NEI5UFZYaHYzUi9OQU94dFRnNnk1OG1BMy9nNFNicXd3TlgyaWFjQ1BvaGltZnFuNWRqS1FwSXF6Nkk5TzRWOUZFVzBEeFRWZ1dVT0RoWStsVTBQZ0Jrd2xCZUROS1Bjb08rTnR3alI2UFptU3RqSmNYU0NCbGdFcjlQQkl0T2c1MjJJVUZWMndUaWlqeW1naTJpSDBqMHgwWHMrdDBjUnR2aG13S3NQYWlRbGNNeUxYQXIreDd0RWFSNkNKQ3RLS0c2VVFPN0E4WndrRVM2R2JhVzZPZ0JMSmF4RFBTOGIvbno3aFY5UmMzT2dRbyt6UkVHWkNheUNHMUJkUjJROEZvNmtkVjF2VUhHRTVMS0x4dldlbUtheDM5UmwrY2FDUFlxcXRrTEc1dWVNbnBYL1lnV0tmTlFLQmdRRGV2ZEpKeStQQ0ZOWHFlNldQNVlMS3ZaT0FuVHYzcXh3NVhsS0FTcFRVYm40U2VLZUoyWFRoNHNueXgyekk1T3hzcmtzR3ppMVRTTkk5ei9ScDB2bWNnb3oxZ0lmNE5VdW5PYUMydStrb1RGR3pSd0tvU0tlZElLTFJIQmxPL3lRbTVyTlE5dDMydU44S2kwUG54Ly9HYTQ0VDA1WmdPQ0Z3V0V5dTd6dVR3d0tCZ1FDQ0JqeVF6dzJKRWhCOXZQT3RTZVUrd1pQM0s5VFo2S2VBWGxkUXQ4RUtibHJ0NDQ0VnBkS0hOelQ3d1RVN0pBS2swNDJRSUQrK2NYVUFBWFFBMzVnU0NETmZ6VWRxeCtyMldnUWdXQjJDNldjaWdFQzRPcXVaZHVTZzJocDF6bHM3Ykk3Rnl0SlRESGJ1bERBeSttejArd1hpSDVrUWN4dEFXd0RrVGs4SGh3S0JnRm53cmh3TVQwQk1KNENTUXUwUzBMaEt5bWV4bGNoUStJbVZzNXlJQVFheVF3ZjBYanBFYTNUV25aTUJ3Y1J3NDZLUzBrckNMLzBrTjNpc0l0WWtVWlJJQnVFTzhGaGlOTlVtYU9YQWhNbzMzdm1VSDllUjF0U1VuQW54M2FwUFRlckRWdjdIWUNOQ3pSVTEzTXFYc0lrUFh3UlVlTEVMbVQwQytwdmNqK0wvQW9HQWVOMURQM2k0cEVuZWVvTkNJRHNvbGdWcmZiK0l4R2E0RFdPazFxdDVEakUyNVJzNTRIV2NGWVVFQTJHK0VaT1B3WmZGWjh3U2RQMFNQVWNjaGhOU1VMQyswTGNKUkFGQ01HM01tQ1JRaW5oY0huNEpxemNlZkRGQXBTVVlvNW1HeE41TWVSL29FcnJyY3lyZEF3WTJjaU5GZk1UU2k2LzBEUWFLOWE2MVY5RUNnWUVBdmlITnl6WDJjR3QzRk1BRkJZYnB0WjZrQWJqRWFqL0FGWGVtQXJ4L3VReHpEblhiWlJ6djdrNXhwTy9uaHdweWt4RU0wMDBtcmV4TUQrSEZxaXI1Q0RGdmQ4dWFJL1dvLzhhdmJneUxSUVhJMkdKakR5eU0reGZuV0JNazFKcmE3Yk00TjZpUUZZTlBGS1VOdGswMU1ENloxOGtaQU9rNkttS1hNREdzUm1zPQ==
     !
-    crypto dsakey dsa import $v10$TUlJQnVRSUJBQUtCZ0hyRDcyNXluYzBMY2lIdUFxU2JmdnVCbVdLb0FLSkpyMUZTbDZndnZ1V2xTaHNhOUJFMjFDK3BQVnUrY25UNFQ5YlZpbXhqQU1Wd1A1aThOeE5XbloxNkxVdklzVWlVNUNyRHJyL3hnSC9PaXRiOCtaY2NWL1V4TnNURjdGRmFoOTdiY3BWanZneDNMd29GS1owcWtTckt5TkZkMnErSkhndy9wZjZ6VTN6TkFoVUFsK0dHbmMrL2ViN25aWWtTU1E1c2R1SG4yL2NDZ1lBSHZEUmpxRG5DcVZBUERmOXNBMUc2SzJQdUd5L0NPOE9YMzgza2Q3WkdhOUlCeHBHYi9GY1BWSmovWFgzRk0vQzZCbXlCRXVsS1AxYTNoUUFGdmpHcVF0dTVWVEphTGRhSFVOQndGM1ZCSWlLQnJBaFNCc0FlWXN6anJnVENKZ3hPRG1qLzZTMzJtSUJEa3FSVXUwSFJsaEs2WmN0dmtqSGlHMkVzM3J2NVRRS0JnRjgyU0djUWF3cGFmZnJwM3ZHeHBXNlFybVFjUmJUQmk0UXVyKzAzQmMwbnZFSSswbnBwc01aZWU4RFJYdEtIU21jRXpVNlAvWmtBWm5NSTZRcmRjUTBVQmQ1eHdPandvYW9PSGdMSWNGbUxEVGJoaDl5YVVVWXZVdEgxdlpCRldXVk55eGZXVjNQU0VxQ0tsNHpRYzg4VDlmbGozMnN5ckwwM09veWVUVWZZQWhROGkzVVY2T1E3TC9sbExLdEJYd3Z4dHBEbGZBPT0=
+    crypto dsakey dsa import $v10$TUlJQnVnSUJBQUtCZ0FSby9yS0M4My9pRHREMlg2RXBlSlFuUE9QenptalNMTUUrWFBXWkpXS1RZZVlOdlNzdFIyL2tvSXhRRG1tdHh6UnhsQ1lQTTdGckdqRXdjRjdXdjFvVlpjZzFSM3E0cHR5NVhvVy83dllEdnc1RjlIWEp4QjJhRStkMG91SnU4NlEvV3Fhb1NOLzRqaHFvK29ZQWljb0djaG9mRTNCajZVdDNsRTB0OUVFZkFoVUEwSVA3SlRQQmp4TFdlQVVWMEpxbWJEd0ZLRk1DZ1lBQW5rNVN3RGtHaGJ3N0lQelM2N2VmMVc3UnhFY3ROa1ZVZWRGQWNTRWt5L0F6cnlWc3ZrSFc2WEI1Ti9JZWp5RTU2NnhLR2hac2tlK05FK2IvckN2MnhjMlk1YVA4M0hxNnJ5bExPaGtUUkI2WU1nd3M4YUFNU0pSMFJMejVxMVI5MmkyUDgwazNvb1U4akZBRzA3eHV1SU1lZnUvYUV1MjJUMlRDNVZrNHN3S0JnQUpVZ1QwMEtCalZSTlNLa2pwSk01RzhBT3VBN1ByRWk1a2pHSGlmVEVqUEhvZEpoekJUYXJKUDZjNzZlWERkejRUd3pJTXdwZFBTeHdtOWE0QjdZekFTd0szQVhQM2Rua2VzclVCTlVTdWtxcUh2RXVWWDZNVUg1anNiL05JYkl5OUxsSVRXQk1DbFZUNmd3ODduaGJYNXpPTHFXWUhLSkpVUDR5aTUrVzJ0QWhVQWdXaHFucWpISEp3Wkp0T0YyeW8xenlNMTU3az0=
     !
-    crypto ecdsakey ecdsa import $v10$TUhRQ0FRRUVJQUNBaXVIUkdTazAvZFpxMnRrcmc0Ujk2TmxRa0lzcWJFWlQ2UC9TbForUW9BY0dCU3VCQkFBS29VUURRZ0FFTWk4M1BvUmNXZDNhNGxnYW9xaTRSeUVmVXorTzk0TDBhK2NiSkIyVlErZlozMG5UenhySHliMGtEb0creTh5Ty9JOVdmUTA5akkranpJZldkMGhrSkE9PQ==
+    crypto ecdsakey ecdsa import $v10$TUhNQ0FRRUVIeXlvQ29STk1GeS96dkRWZU1mUUpYVzVVSVkySEovbFdHRER2dHg1aDcrZ0J3WUZLNEVFQUFxaFJBTkNBQVNFSm5mWW9UVE1VRmpjR0t5bnMrRG5qWmlZOXl4SndyRk1HYnhxcUMvdm8wTG1sdldHWTZKVFBTVVdSRXF4SjY3eWJtUnpxT29Yd0JJTU9Dek1XL0sx
     !
     aaa userlist usr
      username u
@@ -40,7 +40,6 @@
      exit
     !
     interface loopback0
-     no description
      vrf forwarding v1
      ipv4 address 1.1.1.99 255.255.255.255
      ipv6 address 1234::99 ffff:ffff::
@@ -49,7 +48,6 @@
      exit
     !
     interface ethernet1
-     no description
      vrf forwarding v1
      ipv4 address 1.1.1.1 255.255.255.252
      ipv6 address 1234:1::1 ffff:ffff::
@@ -58,7 +56,6 @@
      exit
     !
     interface ethernet2
-     no description
      vrf forwarding v1
      ipv4 address 1.1.1.5 255.255.255.252
      ipv6 address 1234:2::1 ffff:ffff::
@@ -67,7 +64,6 @@
      exit
     !
     interface ethernet3
-     no description
      vrf forwarding v1
      ipv4 address 1.1.1.9 255.255.255.252
      ipv6 address 1234:3::1 ffff:ffff::
@@ -127,7 +123,7 @@
     hostname r2
     buggy
     !
-    logging file debug ../binTmp/zzz98r2-log.run
+    logging file debug ../binTmp/zzz79r2-log.run
     !
     vrf definition tester
      exit
@@ -137,7 +133,6 @@
      exit
     !
     interface dialer1
-     no description
      encapsulation ppp
      vrf forwarding v1
      ipv4 address dynamic dynamic
@@ -147,7 +142,6 @@
      exit
     !
     interface ethernet1
-     no description
      vrf forwarding v1
      ipv4 address 1.1.1.2 255.255.255.252
      ipv6 address 1234:1::2 ffff:ffff::
@@ -214,7 +208,7 @@
     hostname r3
     buggy
     !
-    logging file debug ../binTmp/zzz98r3-log.run
+    logging file debug ../binTmp/zzz79r3-log.run
     !
     vrf definition tester
      exit
@@ -224,7 +218,6 @@
      exit
     !
     interface dialer1
-     no description
      encapsulation ppp
      vrf forwarding v1
      ipv4 address dynamic dynamic
@@ -234,7 +227,6 @@
      exit
     !
     interface ethernet1
-     no description
      vrf forwarding v1
      ipv4 address 1.1.1.6 255.255.255.252
      ipv6 address 1234:2::2 ffff:ffff::
@@ -301,7 +293,7 @@
     hostname r4
     buggy
     !
-    logging file debug ../binTmp/zzz98r4-log.run
+    logging file debug ../binTmp/zzz79r4-log.run
     !
     vrf definition tester
      exit
@@ -311,7 +303,6 @@
      exit
     !
     interface dialer1
-     no description
      encapsulation ppp
      vrf forwarding v1
      ipv4 address dynamic dynamic
@@ -321,7 +312,6 @@
      exit
     !
     interface ethernet1
-     no description
      vrf forwarding v1
      ipv4 address 1.1.1.10 255.255.255.252
      ipv6 address 1234:3::2 ffff:ffff::

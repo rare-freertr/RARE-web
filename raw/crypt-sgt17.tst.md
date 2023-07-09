@@ -14,7 +14,7 @@
     hostname r1
     buggy
     !
-    logging file debug ../binTmp/zzz67r1-log.run
+    logging file debug ../binTmp/zzz39r1-log.run
     !
     crypto ipsec ips
      group 02
@@ -39,14 +39,12 @@
      exit
     !
     interface ethernet1
-     no description
      macsec ips
      no shutdown
      no log-link-change
      exit
     !
     interface ethernet1.123
-     no description
      sgt enable
      service-policy-in p1
      vrf forwarding v1
@@ -100,7 +98,7 @@
     hostname r2
     buggy
     !
-    logging file debug ../binTmp/zzz67r2-log.run
+    logging file debug ../binTmp/zzz39r2-log.run
     !
     crypto ipsec ips
      group 02
@@ -117,14 +115,12 @@
      exit
     !
     interface ethernet1
-     no description
      macsec ips
      no shutdown
      no log-link-change
      exit
     !
     interface ethernet1.123
-     no description
      sgt enable
      vrf forwarding v1
      ipv4 address 1.1.1.2 255.255.255.0
@@ -134,7 +130,6 @@
      exit
     !
     interface ethernet2
-     no description
      sgt enable
      vrf forwarding v1
      ipv4 address 2.2.2.1 255.255.255.0
@@ -185,7 +180,7 @@
     hostname r3
     buggy
     !
-    logging file debug ../binTmp/zzz67r3-log.run
+    logging file debug ../binTmp/zzz39r3-log.run
     !
     policy-map p1
      sequence 10 action transit
@@ -205,7 +200,6 @@
      exit
     !
     interface ethernet1
-     no description
      sgt enable
      service-policy-out p1
      vrf forwarding v1

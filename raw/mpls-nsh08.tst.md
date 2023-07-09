@@ -14,7 +14,7 @@
     hostname r1
     buggy
     !
-    logging file debug ../binTmp/zzz76r1-log.run
+    logging file debug ../binTmp/zzz79r1-log.run
     !
     vrf definition tester
      exit
@@ -24,7 +24,6 @@
      exit
     !
     interface ethernet1
-     no description
      vrf forwarding v1
      ipv4 address 1.1.1.1 255.255.255.0
      ipv6 address 1111::1 ffff::
@@ -74,7 +73,7 @@
     hostname r2
     buggy
     !
-    logging file debug ../binTmp/zzz76r2-log.run
+    logging file debug ../binTmp/zzz79r2-log.run
     !
     vrf definition tester
      exit
@@ -84,7 +83,6 @@
      exit
     !
     interface ethernet1
-     no description
      nsh enable
      nsh xconnect 2 255
      no shutdown
@@ -92,7 +90,6 @@
      exit
     !
     interface ethernet2
-     no description
      vrf forwarding v1
      ipv6 address 1111::1 ffff::
      no shutdown
@@ -100,7 +97,6 @@
      exit
     !
     interface tunnel1
-     no description
      tunnel vrf v1
      tunnel source ethernet2
      tunnel destination 1111::2
@@ -156,7 +152,7 @@
     hostname r3
     buggy
     !
-    logging file debug ../binTmp/zzz76r3-log.run
+    logging file debug ../binTmp/zzz79r3-log.run
     !
     vrf definition tester
      exit
@@ -166,7 +162,6 @@
      exit
     !
     interface ethernet1
-     no description
      vrf forwarding v1
      ipv6 address 1111::2 ffff::
      no shutdown
@@ -174,7 +169,6 @@
      exit
     !
     interface ethernet2
-     no description
      nsh enable
      nsh xconnect 3 255
      no shutdown
@@ -182,7 +176,6 @@
      exit
     !
     interface tunnel1
-     no description
      tunnel vrf v1
      tunnel source ethernet1
      tunnel destination 1111::1
@@ -238,7 +231,7 @@
     hostname r4
     buggy
     !
-    logging file debug ../binTmp/zzz76r4-log.run
+    logging file debug ../binTmp/zzz79r4-log.run
     !
     vrf definition tester
      exit
@@ -248,7 +241,6 @@
      exit
     !
     interface ethernet1
-     no description
      vrf forwarding v1
      ipv4 address 1.1.1.2 255.255.255.0
      ipv6 address 1111::2 ffff::

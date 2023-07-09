@@ -14,7 +14,7 @@
     hostname r1
     buggy
     !
-    logging file debug ../binTmp/zzz43r1-log.run
+    logging file debug ../binTmp/zzz4r1-log.run
     !
     vrf definition tester
      exit
@@ -24,15 +24,13 @@
      exit
     !
     interface ethernet1
-     no description
      no shutdown
      no log-link-change
      exit
     !
     interface sdn1
-     no description
      mtu 1500
-     macaddr 0043.6e05.2240
+     macaddr 000e.0e3c.0e69
      vrf forwarding v1
      ipv4 address 1.1.1.1 255.255.255.0
      ipv6 address 1234::1 ffff::
@@ -41,9 +39,8 @@
      exit
     !
     interface sdn2
-     no description
      mtu 1500
-     macaddr 000e.3e71.6a4e
+     macaddr 000a.1a4c.3653
      vrf forwarding v1
      ipv4 address 2.2.2.1 255.255.255.0
      ipv6 address 4321::1 ffff::
@@ -101,7 +98,7 @@
     hostname r2
     buggy
     !
-    logging file debug ../binTmp/zzz43r2-log.run
+    logging file debug ../binTmp/zzz4r2-log.run
     !
     hairpin 1
      exit
@@ -117,19 +114,16 @@
      exit
     !
     interface ethernet1
-     no description
      no shutdown
      no log-link-change
      exit
     !
     interface hairpin11
-     no description
      no shutdown
      no log-link-change
      exit
     !
     interface hairpin12
-     no description
      vrf forwarding v1
      ipv4 address 1.1.1.2 255.255.255.0
      ipv6 address 1234::2 ffff::
@@ -138,13 +132,11 @@
      exit
     !
     interface hairpin21
-     no description
      no shutdown
      no log-link-change
      exit
     !
     interface hairpin22
-     no description
      vrf forwarding v1
      ipv4 address 2.2.2.2 255.255.255.0
      ipv6 address 4321::2 ffff::

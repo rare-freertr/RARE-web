@@ -14,7 +14,7 @@
     hostname r1
     buggy
     !
-    logging file debug ../binTmp/zzz33r1-log.run
+    logging file debug ../binTmp/zzz59r1-log.run
     !
     access-list test4
      sequence 10 deny 1 any all any all
@@ -47,7 +47,6 @@
      exit
     !
     interface loopback1
-     no description
      vrf forwarding v1
      ipv4 address 2.2.2.1 255.255.255.255
      ipv6 address 4321::1 ffff:ffff:ffff:ffff:ffff:ffff:ffff:ffff
@@ -62,7 +61,6 @@
      exit
     !
     interface ethernet1
-     no description
      vrf forwarding v1
      ipv4 address 1.1.1.1 255.255.255.252
      ipv4 access-group-in test4
@@ -118,7 +116,7 @@
     hostname r2
     buggy
     !
-    logging file debug ../binTmp/zzz33r2-log.run
+    logging file debug ../binTmp/zzz59r2-log.run
     !
     access-list test4
      sequence 10 deny 1 any all any all
@@ -151,7 +149,6 @@
      exit
     !
     interface loopback1
-     no description
      vrf forwarding v1
      ipv4 address 2.2.2.2 255.255.255.255
      ipv6 address 4321::2 ffff:ffff:ffff:ffff:ffff:ffff:ffff:ffff
@@ -166,7 +163,6 @@
      exit
     !
     interface ethernet1
-     no description
      vrf forwarding v1
      ipv4 address 1.1.1.2 255.255.255.252
      ipv4 access-group-in test4
@@ -181,7 +177,6 @@
      exit
     !
     interface ethernet2
-     no description
      vrf forwarding v1
      ipv4 address 1.1.1.5 255.255.255.252
      ipv4 access-group-in test4
@@ -237,7 +232,7 @@
     hostname r3
     buggy
     !
-    logging file debug ../binTmp/zzz33r3-log.run
+    logging file debug ../binTmp/zzz59r3-log.run
     !
     access-list test4
      sequence 10 deny 1 any all any all
@@ -270,7 +265,6 @@
      exit
     !
     interface loopback1
-     no description
      vrf forwarding v1
      ipv4 address 2.2.2.3 255.255.255.255
      ipv6 address 4321::3 ffff:ffff:ffff:ffff:ffff:ffff:ffff:ffff
@@ -285,7 +279,6 @@
      exit
     !
     interface ethernet1
-     no description
      vrf forwarding v1
      ipv4 address 1.1.1.6 255.255.255.252
      ipv4 access-group-in test4
@@ -381,8 +374,9 @@
      |~~~~~~~~~~~~~~~~~~~~~~|~~~~~~~~~~|~~~~~~~|~~~~~|~~~~~~~~~~|
      | lspid                | sequence | flags | len | time     |
      |----------------------|----------|-------|-----|----------|
+     | 0000.0000.0000.00-00 | 00000001 | apo   | 10  | 00:19:50 |
      | 4444.0000.1111.00-00 | 00000011 | apo   | 133 | 00:19:50 |
-     | 6666.0000.2222.00-00 | 0000001a | apo   | 209 | 00:19:52 |
+     | 6666.0000.2222.00-00 | 00000019 | apo   | 209 | 00:19:51 |
      |______________________|__________|_______|_____|__________|
     r2#
     r2#
@@ -417,13 +411,13 @@
      |~~~~~|~~~~~~~~~~~~|~~~~~~~~|~~~~~~~~~~~|~~~~~~~~~|~~~~~~~~~~|
      | typ | prefix     | metric | iface     | hop     | time     |
      |-----|------------|--------|-----------|---------|----------|
-     | C   | 1.1.1.0/30 | 0/0    | ethernet1 | null    | 00:00:08 |
-     | LOC | 1.1.1.2/32 | 0/1    | ethernet1 | null    | 00:00:08 |
-     | C   | 1.1.1.4/30 | 0/0    | ethernet2 | null    | 00:00:08 |
-     | LOC | 1.1.1.5/32 | 0/1    | ethernet2 | null    | 00:00:08 |
+     | C   | 1.1.1.0/30 | 0/0    | ethernet1 | null    | 00:00:09 |
+     | LOC | 1.1.1.2/32 | 0/1    | ethernet1 | null    | 00:00:09 |
+     | C   | 1.1.1.4/30 | 0/0    | ethernet2 | null    | 00:00:09 |
+     | LOC | 1.1.1.5/32 | 0/1    | ethernet2 | null    | 00:00:09 |
      | I   | 2.2.2.1/32 | 115/20 | ethernet1 | 1.1.1.1 | 00:00:08 |
      | C   | 2.2.2.2/32 | 0/0    | loopback1 | null    | 00:00:09 |
-     | I   | 2.2.2.3/32 | 115/20 | ethernet2 | 1.1.1.6 | 00:00:07 |
+     | I   | 2.2.2.3/32 | 115/20 | ethernet2 | 1.1.1.6 | 00:00:08 |
      |_____|____________|________|___________|_________|__________|
     r2#
     r2#
@@ -439,9 +433,9 @@
      |-----|---------------|--------|-----------|-----------|----------|
      | C   | 1234:1::/32   | 0/0    | ethernet1 | null      | 00:00:09 |
      | LOC | 1234:1::2/128 | 0/1    | ethernet1 | null      | 00:00:09 |
-     | C   | 1234:2::/32   | 0/0    | ethernet2 | null      | 00:00:08 |
-     | LOC | 1234:2::1/128 | 0/1    | ethernet2 | null      | 00:00:08 |
-     | I   | 4321::1/128   | 115/20 | ethernet1 | 1234:1::1 | 00:00:08 |
+     | C   | 1234:2::/32   | 0/0    | ethernet2 | null      | 00:00:09 |
+     | LOC | 1234:2::1/128 | 0/1    | ethernet2 | null      | 00:00:09 |
+     | I   | 4321::1/128   | 115/20 | ethernet1 | 1234:1::1 | 00:00:09 |
      | C   | 4321::2/128   | 0/0    | loopback1 | null      | 00:00:09 |
      | I   | 4321::3/128   | 115/20 | ethernet2 | 1234:2::2 | 00:00:08 |
      |_____|_______________|________|___________|___________|__________|
@@ -457,8 +451,8 @@
      |~~~~~~~~~~~~|~~~~~~~|~~~~~~~~|~~~~~~~~~|
      | prefix     | index | base   | oldbase |
      |------------|-------|--------|---------|
-     | 2.2.2.1/32 | 1     | 473140 | 473140  |
-     | 2.2.2.3/32 | 5     | 909332 | 909332  |
+     | 2.2.2.1/32 | 1     | 78193  | 78193   |
+     | 2.2.2.3/32 | 5     | 740326 | 740326  |
      |____________|_______|________|_________|
     r2#
     r2#
@@ -472,8 +466,8 @@
      |~~~~~~~~~~~~~|~~~~~~~|~~~~~~~~|~~~~~~~~~|
      | prefix      | index | base   | oldbase |
      |-------------|-------|--------|---------|
-     | 4321::1/128 | 2     | 473140 | 473140  |
-     | 4321::3/128 | 6     | 909332 | 909332  |
+     | 4321::1/128 | 2     | 78193  | 78193   |
+     | 4321::3/128 | 6     | 740326 | 740326  |
      |_____________|_______|________|_________|
     r2#
     r2#

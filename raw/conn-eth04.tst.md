@@ -14,7 +14,7 @@
     hostname r1
     buggy
     !
-    logging file debug ../binTmp/zzz34r1-log.run
+    logging file debug ../binTmp/zzz58r1-log.run
     !
     bridge 1
      exit
@@ -27,13 +27,11 @@
      exit
     !
     interface bvi1
-     no description
      no shutdown
      no log-link-change
      exit
     !
     interface bvi1.22
-     no description
      vrf forwarding v1
      ipv4 address 1.1.1.1 255.255.255.0
      ipv6 address 1234::1 ffff::
@@ -42,13 +40,11 @@
      exit
     !
     interface ethernet1
-     no description
      no shutdown
      no log-link-change
      exit
     !
     interface ethernet1.11
-     no description
      bridge-group 1
      no shutdown
      no log-link-change
@@ -96,7 +92,7 @@
     hostname r2
     buggy
     !
-    logging file debug ../binTmp/zzz34r2-log.run
+    logging file debug ../binTmp/zzz58r2-log.run
     !
     bridge 1
      exit
@@ -109,13 +105,11 @@
      exit
     !
     interface bvi1
-     no description
      no shutdown
      no log-link-change
      exit
     !
     interface bvi1.22
-     no description
      vrf forwarding v1
      ipv4 address 1.1.1.2 255.255.255.0
      ipv6 address 1234::2 ffff::
@@ -124,13 +118,11 @@
      exit
     !
     interface ethernet1
-     no description
      no shutdown
      no log-link-change
      exit
     !
     interface ethernet1.11
-     no description
      bridge-group 1
      no shutdown
      no log-link-change

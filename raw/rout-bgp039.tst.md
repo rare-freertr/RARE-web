@@ -14,18 +14,18 @@
     hostname r1
     buggy
     !
-    logging file debug ../binTmp/zzz12r1-log.run
+    logging file debug ../binTmp/zzz74r1-log.run
     !
     vrf definition tester
      exit
     !
     vrf definition v1
      rd 1:1
-     label-mode per-prefix
+     label4mode per-prefix
+     label6mode per-prefix
      exit
     !
     interface loopback0
-     no description
      vrf forwarding v1
      ipv4 address 2.2.2.1 255.255.255.255
      ipv6 address 4321::1 ffff:ffff:ffff:ffff:ffff:ffff:ffff:ffff
@@ -34,7 +34,6 @@
      exit
     !
     interface ethernet1
-     no description
      vrf forwarding v1
      ipv4 address 1.1.1.1 255.255.255.252
      ipv6 address 1234:1::1 ffff:ffff::
@@ -49,7 +48,6 @@
      no safe-ebgp
      address-family unicast
      neighbor 1.1.1.2 remote-as 1
-     no neighbor 1.1.1.2 description
      neighbor 1.1.1.2 local-as 65535
      neighbor 1.1.1.2 address-family unicast
      neighbor 1.1.1.2 distance 20
@@ -63,7 +61,6 @@
      no safe-ebgp
      address-family unicast
      neighbor 1234:1::2 remote-as 1
-     no neighbor 1234:1::2 description
      neighbor 1234:1::2 local-as 65535
      neighbor 1234:1::2 address-family unicast
      neighbor 1234:1::2 distance 20
@@ -112,18 +109,18 @@
     hostname r2
     buggy
     !
-    logging file debug ../binTmp/zzz12r2-log.run
+    logging file debug ../binTmp/zzz74r2-log.run
     !
     vrf definition tester
      exit
     !
     vrf definition v1
      rd 1:1
-     label-mode per-prefix
+     label4mode per-prefix
+     label6mode per-prefix
      exit
     !
     interface loopback0
-     no description
      vrf forwarding v1
      ipv4 address 2.2.2.2 255.255.255.255
      ipv6 address 4321::2 ffff:ffff:ffff:ffff:ffff:ffff:ffff:ffff
@@ -132,7 +129,6 @@
      exit
     !
     interface ethernet1
-     no description
      vrf forwarding v1
      ipv4 address 1.1.1.2 255.255.255.252
      ipv6 address 1234:1::2 ffff:ffff::
@@ -141,7 +137,6 @@
      exit
     !
     interface ethernet2
-     no description
      vrf forwarding v1
      ipv4 address 1.1.1.5 255.255.255.252
      ipv6 address 1234:2::1 ffff:ffff::
@@ -156,12 +151,10 @@
      no safe-ebgp
      address-family unicast
      neighbor 1.1.1.1 remote-as 65535
-     no neighbor 1.1.1.1 description
      neighbor 1.1.1.1 local-as 1
      neighbor 1.1.1.1 address-family unicast
      neighbor 1.1.1.1 distance 20
      neighbor 1.1.1.6 remote-as 65535
-     no neighbor 1.1.1.6 description
      neighbor 1.1.1.6 local-as 1
      neighbor 1.1.1.6 address-family unicast
      neighbor 1.1.1.6 distance 20
@@ -175,12 +168,10 @@
      no safe-ebgp
      address-family unicast
      neighbor 1234:1::1 remote-as 65535
-     no neighbor 1234:1::1 description
      neighbor 1234:1::1 local-as 1
      neighbor 1234:1::1 address-family unicast
      neighbor 1234:1::1 distance 20
      neighbor 1234:2::2 remote-as 65535
-     no neighbor 1234:2::2 description
      neighbor 1234:2::2 local-as 1
      neighbor 1234:2::2 address-family unicast
      neighbor 1234:2::2 distance 20
@@ -229,18 +220,18 @@
     hostname r3
     buggy
     !
-    logging file debug ../binTmp/zzz12r3-log.run
+    logging file debug ../binTmp/zzz74r3-log.run
     !
     vrf definition tester
      exit
     !
     vrf definition v1
      rd 1:1
-     label-mode per-prefix
+     label4mode per-prefix
+     label6mode per-prefix
      exit
     !
     interface loopback0
-     no description
      vrf forwarding v1
      ipv4 address 2.2.2.3 255.255.255.255
      ipv6 address 4321::3 ffff:ffff:ffff:ffff:ffff:ffff:ffff:ffff
@@ -249,7 +240,6 @@
      exit
     !
     interface ethernet1
-     no description
      vrf forwarding v1
      ipv4 address 1.1.1.6 255.255.255.252
      ipv6 address 1234:2::2 ffff:ffff::
@@ -264,7 +254,6 @@
      no safe-ebgp
      address-family unicast
      neighbor 1.1.1.5 remote-as 1
-     no neighbor 1.1.1.5 description
      neighbor 1.1.1.5 local-as 65535
      neighbor 1.1.1.5 address-family unicast
      neighbor 1.1.1.5 distance 20
@@ -278,7 +267,6 @@
      no safe-ebgp
      address-family unicast
      neighbor 1234:2::1 remote-as 1
-     no neighbor 1234:2::1 description
      neighbor 1234:2::1 local-as 65535
      neighbor 1234:2::1 address-family unicast
      neighbor 1234:2::1 distance 20

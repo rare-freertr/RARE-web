@@ -14,7 +14,7 @@
     hostname r1
     buggy
     !
-    logging file debug ../binTmp/zzz79r1-log.run
+    logging file debug ../binTmp/zzz49r1-log.run
     !
     vrf definition tester
      exit
@@ -24,13 +24,11 @@
      exit
     !
     interface ethernet1
-     no description
      no shutdown
      no log-link-change
      exit
     !
     interface ethernet1.11
-     no description
      vrf forwarding v1
      ipv4 address 1.1.1.1 255.255.255.0
      ipv6 address 1111::1 ffff::
@@ -39,7 +37,6 @@
      exit
     !
     interface ethernet1.12
-     no description
      vrf forwarding v1
      ipv4 address 1.1.2.1 255.255.255.0
      ipv6 address 1112::1 ffff::
@@ -48,7 +45,6 @@
      exit
     !
     interface ethernet1.13
-     no description
      vrf forwarding v1
      ipv4 address 1.1.3.1 255.255.255.0
      ipv6 address 1113::1 ffff::
@@ -98,7 +94,7 @@
     hostname r2
     buggy
     !
-    logging file debug ../binTmp/zzz79r2-log.run
+    logging file debug ../binTmp/zzz49r2-log.run
     !
     vrf definition tester
      exit
@@ -108,7 +104,6 @@
      exit
     !
     interface ethernet1
-     no description
      service-instance 11 xconnect v1 ethernet2 vxlan 2.2.2.2 123
      service-instance 12 xconnect v1 ethernet2 geneve 2.2.2.2 123
      service-instance 13 xconnect v1 ethernet2 etherip 2.2.2.2 123
@@ -117,7 +112,6 @@
      exit
     !
     interface ethernet2
-     no description
      vrf forwarding v1
      ipv4 address 2.2.2.1 255.255.255.0
      ipv6 address 2222::1 ffff::
@@ -167,7 +161,7 @@
     hostname r3
     buggy
     !
-    logging file debug ../binTmp/zzz79r3-log.run
+    logging file debug ../binTmp/zzz49r3-log.run
     !
     vrf definition tester
      exit
@@ -177,7 +171,6 @@
      exit
     !
     interface ethernet1
-     no description
      vrf forwarding v1
      ipv4 address 2.2.2.2 255.255.255.0
      ipv6 address 2222::2 ffff::
@@ -186,9 +179,8 @@
      exit
     !
     interface pwether11
-     no description
      mtu 1500
-     macaddr 005e.1228.6548
+     macaddr 0064.7a45.4132
      vrf forwarding v1
      ipv4 address 1.1.1.2 255.255.255.0
      ipv6 address 1111::2 ffff::
@@ -198,9 +190,8 @@
      exit
     !
     interface pwether12
-     no description
      mtu 1500
-     macaddr 001d.6e0c.7d1e
+     macaddr 0044.474e.262e
      vrf forwarding v1
      ipv4 address 1.1.2.2 255.255.255.0
      ipv6 address 1112::2 ffff::
@@ -210,9 +201,8 @@
      exit
     !
     interface pwether13
-     no description
      mtu 1500
-     macaddr 0075.6a1c.3479
+     macaddr 005d.702c.4475
      vrf forwarding v1
      ipv4 address 1.1.3.2 255.255.255.0
      ipv6 address 1113::2 ffff::

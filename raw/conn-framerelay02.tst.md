@@ -14,7 +14,7 @@
     hostname r1
     buggy
     !
-    logging file debug ../binTmp/zzz19r1-log.run
+    logging file debug ../binTmp/zzz17r1-log.run
     !
     vrf definition tester
      exit
@@ -24,7 +24,6 @@
      exit
     !
     interface serial1
-     no description
      encapsulation framerelay
      framerelay mode dce
      framerelay lmi cisco
@@ -78,7 +77,7 @@
     hostname r2
     buggy
     !
-    logging file debug ../binTmp/zzz19r2-log.run
+    logging file debug ../binTmp/zzz17r2-log.run
     !
     vrf definition tester
      exit
@@ -88,7 +87,6 @@
      exit
     !
     interface serial1
-     no description
      encapsulation framerelay
      framerelay mode dte
      framerelay lmi cisco

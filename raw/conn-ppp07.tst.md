@@ -14,7 +14,7 @@
     hostname r1
     buggy
     !
-    logging file debug ../binTmp/zzz3r1-log.run
+    logging file debug ../binTmp/zzz6r1-log.run
     !
     vrf definition tester
      exit
@@ -24,7 +24,6 @@
      exit
     !
     interface serial1
-     no description
      encapsulation ppp
      ppp username c
      ppp password $v10$Yw==
@@ -80,7 +79,7 @@
     hostname r2
     buggy
     !
-    logging file debug ../binTmp/zzz3r2-log.run
+    logging file debug ../binTmp/zzz6r2-log.run
     !
     aaa userlist usr
      username c
@@ -95,7 +94,6 @@
      exit
     !
     interface serial1
-     no description
      encapsulation ppp
      ppp authentication usr
      ppp refuseauth pap

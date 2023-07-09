@@ -31,7 +31,8 @@
     !
     vrf definition v1
      rd 1:1
-     label-mode per-prefix
+     label4mode per-prefix
+     label6mode per-prefix
      exit
     !
     router isis4 1
@@ -51,7 +52,6 @@
      exit
     !
     interface loopback0
-     no description
      vrf forwarding v1
      ipv4 address 2.2.2.1 255.255.255.255
      ipv6 address 4321::1 ffff:ffff:ffff:ffff:ffff:ffff:ffff:ffff
@@ -60,7 +60,6 @@
      exit
     !
     interface loopback1
-     no description
      vrf forwarding v1
      ipv4 address 2.2.2.11 255.255.255.255
      ipv6 address 4321::11 ffff:ffff:ffff:ffff:ffff:ffff:ffff:ffff
@@ -69,7 +68,6 @@
      exit
     !
     interface serial1
-     no description
      encapsulation hdlc
      vrf forwarding v1
      ipv4 address 9.9.9.1 255.255.255.0
@@ -81,7 +79,6 @@
      exit
     !
     interface serial2
-     no description
      encapsulation hdlc
      vrf forwarding v1
      ipv6 address 9999::1 ffff::
@@ -93,7 +90,6 @@
      exit
     !
     interface serial3
-     no description
      encapsulation hdlc
      vrf forwarding v1
      ipv4 address 9.9.8.1 255.255.255.0
@@ -103,7 +99,6 @@
      exit
     !
     interface serial4
-     no description
      encapsulation hdlc
      vrf forwarding v1
      ipv6 address 9998::1 ffff::
@@ -171,7 +166,8 @@
     !
     vrf definition v1
      rd 1:1
-     label-mode per-prefix
+     label4mode per-prefix
+     label6mode per-prefix
      exit
     !
     router isis4 1
@@ -191,7 +187,6 @@
      exit
     !
     interface loopback0
-     no description
      vrf forwarding v1
      ipv4 address 2.2.2.2 255.255.255.255
      ipv6 address 4321::2 ffff:ffff:ffff:ffff:ffff:ffff:ffff:ffff
@@ -200,7 +195,6 @@
      exit
     !
     interface loopback1
-     no description
      vrf forwarding v1
      ipv4 address 2.2.2.12 255.255.255.255
      ipv6 address 4321::12 ffff:ffff:ffff:ffff:ffff:ffff:ffff:ffff
@@ -209,7 +203,6 @@
      exit
     !
     interface serial1
-     no description
      encapsulation hdlc
      vrf forwarding v1
      ipv4 address 9.9.9.2 255.255.255.0
@@ -221,7 +214,6 @@
      exit
     !
     interface serial2
-     no description
      encapsulation hdlc
      vrf forwarding v1
      ipv6 address 9999::2 ffff::
@@ -233,7 +225,6 @@
      exit
     !
     interface serial3
-     no description
      encapsulation hdlc
      vrf forwarding v1
      ipv4 address 9.9.8.2 255.255.255.0
@@ -243,7 +234,6 @@
      exit
     !
     interface serial4
-     no description
      encapsulation hdlc
      vrf forwarding v1
      ipv6 address 9998::2 ffff::
@@ -327,8 +317,8 @@
      |~~~~~~~~~~~~~~~~~~~~~~|~~~~~~~~~~|~~~~~~~|~~~~~|~~~~~~~~~~|
      | lspid                | sequence | flags | len | time     |
      |----------------------|----------|-------|-----|----------|
-     | 0000.0000.0000.00-00 | 00000005 | apo   | 65  | 00:19:38 |
-     | 4444.0000.1111.00-00 | 00000008 | apo   | 66  | 00:19:37 |
+     | 0000.0000.0000.00-00 | 0000000a | apo   | 65  | 00:19:37 |
+     | 4444.0000.1111.00-00 | 00000007 | apo   | 66  | 00:19:37 |
      |______________________|__________|_______|_____|__________|
     r2#
     r2#
@@ -342,7 +332,7 @@
      |~~~~~~~~~~~~~~~~~~~~~~|~~~~~~~~~~|~~~~~~~|~~~~~|~~~~~~~~~~|
      | lspid                | sequence | flags | len | time     |
      |----------------------|----------|-------|-----|----------|
-     | 0000.0000.0000.00-00 | 00000009 | apo   | 91  | 00:19:37 |
+     | 0000.0000.0000.00-00 | 0000000e | apo   | 91  | 00:19:37 |
      | 6666.0000.1111.00-00 | 00000008 | apo   | 92  | 00:19:37 |
      |______________________|__________|_______|_____|__________|
     r2#
@@ -379,14 +369,14 @@
      |~~~~~|~~~~~~~~~~~~~|~~~~~~~~|~~~~~~~~~~~|~~~~~~~~~|~~~~~~~~~~|
      | typ | prefix      | metric | iface     | hop     | time     |
      |-----|-------------|--------|-----------|---------|----------|
-     | I   | 2.2.2.1/32  | 115/10 | serial3   | 9.9.8.1 | 00:00:22 |
+     | I   | 2.2.2.1/32  | 115/10 | serial3   | 9.9.8.1 | 00:00:23 |
      | C   | 2.2.2.2/32  | 0/0    | loopback0 | null    | 00:00:33 |
-     | I   | 2.2.2.11/32 | 115/10 | serial3   | 9.9.8.1 | 00:00:22 |
+     | I   | 2.2.2.11/32 | 115/10 | serial3   | 9.9.8.1 | 00:00:23 |
      | C   | 2.2.2.12/32 | 0/0    | loopback1 | null    | 00:00:33 |
-     | C   | 9.9.8.0/24  | 0/0    | serial3   | null    | 00:00:28 |
-     | LOC | 9.9.8.2/32  | 0/1    | serial3   | null    | 00:00:28 |
-     | C   | 9.9.9.0/24  | 0/0    | serial1   | null    | 00:00:28 |
-     | LOC | 9.9.9.2/32  | 0/1    | serial1   | null    | 00:00:28 |
+     | C   | 9.9.8.0/24  | 0/0    | serial3   | null    | 00:00:29 |
+     | LOC | 9.9.8.2/32  | 0/1    | serial3   | null    | 00:00:29 |
+     | C   | 9.9.9.0/24  | 0/0    | serial1   | null    | 00:00:29 |
+     | LOC | 9.9.9.2/32  | 0/1    | serial1   | null    | 00:00:29 |
      |_____|_____________|________|___________|_________|__________|
     r2#
     r2#
@@ -400,14 +390,14 @@
      |~~~~~~|~~~~~~~~~~~~~~|~~~~~~~~|~~~~~~~~~~~|~~~~~~~~~|~~~~~~~~~~|
      | typ  | prefix       | metric | iface     | hop     | time     |
      |------|--------------|--------|-----------|---------|----------|
-     | I EX | 4321::1/128  | 115/10 | serial4   | 9998::1 | 00:00:22 |
+     | I EX | 4321::1/128  | 115/10 | serial4   | 9998::1 | 00:00:23 |
      | C    | 4321::2/128  | 0/0    | loopback0 | null    | 00:00:33 |
-     | I EX | 4321::11/128 | 115/10 | serial4   | 9998::1 | 00:00:22 |
+     | I EX | 4321::11/128 | 115/10 | serial4   | 9998::1 | 00:00:23 |
      | C    | 4321::12/128 | 0/0    | loopback1 | null    | 00:00:33 |
-     | C    | 9998::/16    | 0/0    | serial4   | null    | 00:00:28 |
-     | LOC  | 9998::2/128  | 0/1    | serial4   | null    | 00:00:28 |
-     | C    | 9999::/16    | 0/0    | serial2   | null    | 00:00:28 |
-     | LOC  | 9999::2/128  | 0/1    | serial2   | null    | 00:00:28 |
+     | C    | 9998::/16    | 0/0    | serial4   | null    | 00:00:29 |
+     | LOC  | 9998::2/128  | 0/1    | serial4   | null    | 00:00:29 |
+     | C    | 9999::/16    | 0/0    | serial2   | null    | 00:00:29 |
+     | LOC  | 9999::2/128  | 0/1    | serial2   | null    | 00:00:29 |
      |______|______________|________|___________|_________|__________|
     r2#
     r2#

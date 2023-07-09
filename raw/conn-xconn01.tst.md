@@ -14,7 +14,7 @@
     hostname r1
     buggy
     !
-    logging file debug ../binTmp/zzz4r1-log.run
+    logging file debug ../binTmp/zzz41r1-log.run
     !
     vrf definition tester
      exit
@@ -24,7 +24,6 @@
      exit
     !
     interface serial1
-     no description
      encapsulation hdlc
      vrf forwarding v1
      ipv4 address 2.2.2.1 255.255.255.0
@@ -75,20 +74,18 @@
     hostname r2
     buggy
     !
-    logging file debug ../binTmp/zzz4r2-log.run
+    logging file debug ../binTmp/zzz41r2-log.run
     !
     vrf definition tester
      exit
     !
     interface serial1
-     no description
      encapsulation hdlc
      no shutdown
      no log-link-change
      exit
     !
     interface serial2
-     no description
      encapsulation hdlc
      no shutdown
      no log-link-change
@@ -128,7 +125,7 @@
     hostname r3
     buggy
     !
-    logging file debug ../binTmp/zzz4r3-log.run
+    logging file debug ../binTmp/zzz41r3-log.run
     !
     vrf definition tester
      exit
@@ -138,7 +135,6 @@
      exit
     !
     interface serial1
-     no description
      encapsulation hdlc
      vrf forwarding v1
      ipv4 address 2.2.2.2 255.255.255.0

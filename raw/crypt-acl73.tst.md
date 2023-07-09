@@ -14,7 +14,7 @@
     hostname r1
     buggy
     !
-    logging file debug ../binTmp/zzz22r1-log.run
+    logging file debug ../binTmp/zzz72r1-log.run
     !
     access-list test4a
      sequence 10 permit all any all any all flow 110-120
@@ -42,7 +42,6 @@
      exit
     !
     interface ethernet1
-     no description
      vrf forwarding v1
      ipv4 address 1.1.1.1 255.255.255.252
      ipv4 access-group-out test4b
@@ -94,7 +93,7 @@
     hostname r2
     buggy
     !
-    logging file debug ../binTmp/zzz22r2-log.run
+    logging file debug ../binTmp/zzz72r2-log.run
     !
     vrf definition tester
      exit
@@ -104,7 +103,6 @@
      exit
     !
     interface ethernet1
-     no description
      vrf forwarding v1
      ipv4 address 1.1.1.2 255.255.255.252
      ipv6 address 1234::2 ffff:ffff::

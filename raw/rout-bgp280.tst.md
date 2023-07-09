@@ -14,7 +14,7 @@
     hostname r1
     buggy
     !
-    logging file debug ../binTmp/zzz86r1-log.run
+    logging file debug ../binTmp/zzz61r1-log.run
     !
     vrf definition tester
      exit
@@ -24,7 +24,6 @@
      exit
     !
     interface loopback0
-     no description
      vrf forwarding v1
      ipv4 address 2.2.2.1 255.255.255.255
      ipv6 address 4321::1 ffff:ffff:ffff:ffff:ffff:ffff:ffff:ffff
@@ -33,7 +32,6 @@
      exit
     !
     interface ethernet1
-     no description
      vrf forwarding v1
      ipv4 address 1.1.1.1 255.255.255.252
      ipv6 address 1234:1::1 ffff:ffff::
@@ -43,9 +41,8 @@
      exit
     !
     interface pwether1
-     no description
      mtu 1500
-     macaddr 004c.533b.4e10
+     macaddr 0054.2116.6257
      vrf forwarding v1
      ipv4 address 3.3.3.1 255.255.255.0
      pseudowire v1 loopback0 pweompls 2.2.2.2 1234
@@ -54,9 +51,8 @@
      exit
     !
     interface pwether2
-     no description
      mtu 1500
-     macaddr 003c.5957.7b69
+     macaddr 0037.5f1c.2961
      vrf forwarding v1
      ipv4 address 3.3.4.1 255.255.255.0
      pseudowire v1 loopback0 pweompls 4321::2 1234
@@ -71,7 +67,6 @@
      no safe-ebgp
      address-family unicast olab
      neighbor 1.1.1.2 remote-as 2
-     no neighbor 1.1.1.2 description
      neighbor 1.1.1.2 local-as 1
      neighbor 1.1.1.2 address-family unicast olab
      neighbor 1.1.1.2 distance 20
@@ -86,7 +81,6 @@
      no safe-ebgp
      address-family unicast olab
      neighbor 1234:1::2 remote-as 2
-     no neighbor 1234:1::2 description
      neighbor 1234:1::2 local-as 1
      neighbor 1234:1::2 address-family unicast olab
      neighbor 1234:1::2 distance 20
@@ -136,7 +130,7 @@
     hostname r2
     buggy
     !
-    logging file debug ../binTmp/zzz86r2-log.run
+    logging file debug ../binTmp/zzz61r2-log.run
     !
     vrf definition tester
      exit
@@ -146,7 +140,6 @@
      exit
     !
     interface loopback0
-     no description
      vrf forwarding v1
      ipv4 address 2.2.2.2 255.255.255.255
      ipv6 address 4321::2 ffff:ffff:ffff:ffff:ffff:ffff:ffff:ffff
@@ -155,7 +148,6 @@
      exit
     !
     interface ethernet1
-     no description
      vrf forwarding v1
      ipv4 address 1.1.1.2 255.255.255.252
      ipv6 address 1234:1::2 ffff:ffff::
@@ -165,9 +157,8 @@
      exit
     !
     interface pwether1
-     no description
      mtu 1500
-     macaddr 004a.0c6e.3c76
+     macaddr 0071.5651.0b2f
      vrf forwarding v1
      ipv4 address 3.3.3.2 255.255.255.0
      pseudowire v1 loopback0 pweompls 2.2.2.1 1234
@@ -176,9 +167,8 @@
      exit
     !
     interface pwether2
-     no description
      mtu 1500
-     macaddr 0008.506d.7b5e
+     macaddr 0035.7756.577e
      vrf forwarding v1
      ipv4 address 3.3.4.2 255.255.255.0
      pseudowire v1 loopback0 pweompls 4321::1 1234
@@ -193,7 +183,6 @@
      no safe-ebgp
      address-family unicast olab
      neighbor 1.1.1.1 remote-as 1
-     no neighbor 1.1.1.1 description
      neighbor 1.1.1.1 local-as 2
      neighbor 1.1.1.1 address-family unicast olab
      neighbor 1.1.1.1 distance 20
@@ -208,7 +197,6 @@
      no safe-ebgp
      address-family unicast olab
      neighbor 1234:1::1 remote-as 1
-     no neighbor 1234:1::1 description
      neighbor 1234:1::1 local-as 2
      neighbor 1234:1::1 address-family unicast olab
      neighbor 1234:1::1 distance 20

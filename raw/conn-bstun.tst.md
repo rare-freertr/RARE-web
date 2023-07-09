@@ -14,7 +14,7 @@
     hostname r1
     buggy
     !
-    logging file debug ../binTmp/zzz28r1-log.run
+    logging file debug ../binTmp/zzz79r1-log.run
     !
     aaa userlist usr
      username c
@@ -32,7 +32,6 @@
      exit
     !
     interface loopback0
-     no description
      vrf forwarding v1
      ipv4 address 1.1.1.1 255.255.255.255
      no shutdown
@@ -40,7 +39,6 @@
      exit
     !
     interface dialer1
-     no description
      encapsulation ppp
      ppp ip4cp open
      ppp ip4cp local 2.2.2.0
@@ -52,7 +50,6 @@
      exit
     !
     interface ethernet1
-     no description
      vrf forwarding v1
      ipv4 address 3.3.3.1 255.255.255.252
      no shutdown
@@ -109,7 +106,7 @@
     hostname r2
     buggy
     !
-    logging file debug ../binTmp/zzz28r2-log.run
+    logging file debug ../binTmp/zzz79r2-log.run
     !
     chat-script login
      sequence 10 recv 5000 .*ser
@@ -134,7 +131,6 @@
      exit
     !
     interface dialer1
-     no description
      encapsulation ppp
      ppp ip4cp open
      ppp ip4cp local 0.0.0.0
@@ -146,7 +142,6 @@
      exit
     !
     interface ethernet1
-     no description
      vrf forwarding v1
      ipv4 address 3.3.3.2 255.255.255.252
      no shutdown
@@ -210,12 +205,14 @@
     r2#
     r2#show inter dia1 full
     r2#show inter dia1 full
-    dialer1 is up (since 00:00:00, 3 changes)
+    dialer1 is up
      description:
+     state changed 3 times, last at 2022-05-02 21:15:02, 00:00:00 ago
+     last packet input 00:00:00 ago, output 00:00:00 ago, drop never ago
      type is dialer, hwaddr=none, mtu=1500, bw=128kbps, vrf=v1
-     ip4 address=2.2.2.134/25, netmask=255.255.255.128, ifcid=907879380
+     ipv4 address=2.2.2.142/25, mask=255.255.255.128, ifcid=739348107
      received 10 packets (660 bytes) dropped 0 packets (0 bytes)
-     transmitted 10 packets (660 bytes) promisc=false macsec=false sgt=false
+     transmitted 10 packets (660 bytes) macsec=false sgt=false
      |~~~~~~~|~~~~|~~~~|~~~~~~|~~~~|~~~~|~~~~~~|
      |       | packet         | byte           |
      | time  | tx | rx | drop | tx | rx | drop |
@@ -266,41 +263,41 @@
      | 6     | 0   | 0   | 0    | 0   | 0   | 0    |
      | 7     | 0   | 0   | 0    | 0   | 0   | 0    |
      |_______|_____|_____|______|_____|_____|______|
+              10|
+               9|
+               8|
+               7|
+               6|
+               5|
+               4|
+               3|
+               2|
                1|
-               0|
-               0|
-               0|
-               0|
-               0|
-               0|
-               0|
-               0|
-               0|
-               0|
+               0|############################################################
              bps|0---------10--------20--------30--------40--------50-------- seconds
+              10|
+               9|
+               8|
+               7|
+               6|
+               5|
+               4|
+               3|
+               2|
                1|
-               0|
-               0|
-               0|
-               0|
-               0|
-               0|
-               0|
-               0|
-               0|
-               0|
+               0|############################################################
              bps|0---------10--------20--------30--------40--------50-------- minutes
+              10|
+               9|
+               8|
+               7|
+               6|
+               5|
+               4|
+               3|
+               2|
                1|
-               0|
-               0|
-               0|
-               0|
-               0|
-               0|
-               0|
-               0|
-               0|
-               0|
+               0|############################################################
              bps|0---------10--------20--------30--------40--------50-------- hours
     r2#
     r2#

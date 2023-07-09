@@ -14,7 +14,7 @@
     hostname r1
     buggy
     !
-    logging file debug ../binTmp/zzz52r1-log.run
+    logging file debug ../binTmp/zzz9r1-log.run
     !
     route-policy p4
      sequence 10 if network 2.2.2.11/32 ge 32 le 32
@@ -40,7 +40,6 @@
      exit
     !
     interface loopback0
-     no description
      vrf forwarding v1
      ipv4 address 2.2.2.1 255.255.255.255
      ipv6 address 4321::1 ffff:ffff:ffff:ffff:ffff:ffff:ffff:ffff
@@ -49,7 +48,6 @@
      exit
     !
     interface loopback1
-     no description
      vrf forwarding v1
      ipv4 address 2.2.2.11 255.255.255.255
      ipv6 address 4321::11 ffff:ffff:ffff:ffff:ffff:ffff:ffff:ffff
@@ -58,7 +56,6 @@
      exit
     !
     interface loopback2
-     no description
      vrf forwarding v1
      ipv4 address 2.2.2.21 255.255.255.255
      ipv6 address 4321::21 ffff:ffff:ffff:ffff:ffff:ffff:ffff:ffff
@@ -67,7 +64,6 @@
      exit
     !
     interface ethernet1
-     no description
      vrf forwarding v1
      ipv4 address 1.1.1.1 255.255.255.252
      ipv6 address 1234:1::1 ffff:ffff::
@@ -83,7 +79,6 @@
      no safe-ebgp
      address-family olab
      neighbor 1.1.1.2 remote-as 2
-     no neighbor 1.1.1.2 description
      neighbor 1.1.1.2 local-as 1
      neighbor 1.1.1.2 address-family olab
      neighbor 1.1.1.2 distance 20
@@ -100,7 +95,6 @@
      no safe-ebgp
      address-family olab
      neighbor 1234:1::2 remote-as 2
-     no neighbor 1234:1::2 description
      neighbor 1234:1::2 local-as 1
      neighbor 1234:1::2 address-family olab
      neighbor 1234:1::2 distance 20
@@ -152,7 +146,7 @@
     hostname r2
     buggy
     !
-    logging file debug ../binTmp/zzz52r2-log.run
+    logging file debug ../binTmp/zzz9r2-log.run
     !
     vrf definition tester
      exit
@@ -162,7 +156,6 @@
      exit
     !
     interface loopback0
-     no description
      vrf forwarding v1
      ipv4 address 2.2.2.2 255.255.255.255
      ipv6 address 4321::2 ffff:ffff:ffff:ffff:ffff:ffff:ffff:ffff
@@ -171,7 +164,6 @@
      exit
     !
     interface loopback1
-     no description
      vrf forwarding v1
      ipv4 address 2.2.2.12 255.255.255.255
      ipv6 address 4321::12 ffff:ffff:ffff:ffff:ffff:ffff:ffff:ffff
@@ -180,7 +172,6 @@
      exit
     !
     interface loopback2
-     no description
      vrf forwarding v1
      ipv4 address 2.2.2.22 255.255.255.255
      ipv6 address 4321::22 ffff:ffff:ffff:ffff:ffff:ffff:ffff:ffff
@@ -189,7 +180,6 @@
      exit
     !
     interface ethernet1
-     no description
      vrf forwarding v1
      ipv4 address 1.1.1.2 255.255.255.252
      ipv6 address 1234:1::2 ffff:ffff::
@@ -205,7 +195,6 @@
      no safe-ebgp
      address-family olab
      neighbor 1.1.1.1 remote-as 1
-     no neighbor 1.1.1.1 description
      neighbor 1.1.1.1 local-as 2
      neighbor 1.1.1.1 address-family olab
      neighbor 1.1.1.1 distance 20
@@ -221,7 +210,6 @@
      no safe-ebgp
      address-family olab
      neighbor 1234:1::1 remote-as 1
-     no neighbor 1234:1::1 description
      neighbor 1234:1::1 local-as 2
      neighbor 1234:1::1 address-family olab
      neighbor 1234:1::1 distance 20

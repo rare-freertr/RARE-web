@@ -14,7 +14,7 @@
     hostname r1
     buggy
     !
-    logging file debug ../binTmp/zzz86r1-log.run
+    logging file debug ../binTmp/zzz3r1-log.run
     !
     crypto ipsec ips
      cipher des
@@ -30,7 +30,6 @@
      exit
     !
     interface loopback0
-     no description
      vrf forwarding v1
      ipv4 address 1.1.1.101 255.255.255.255
      no shutdown
@@ -38,7 +37,6 @@
      exit
     !
     interface ethernet1
-     no description
      vrf forwarding v1
      ipv4 address 1.1.1.1 255.255.255.252
      no shutdown
@@ -46,7 +44,6 @@
      exit
     !
     interface tunnel1
-     no description
      tunnel vrf v1
      tunnel protection ips
      tunnel source loopback0
@@ -102,7 +99,7 @@
     hostname r2
     buggy
     !
-    logging file debug ../binTmp/zzz86r2-log.run
+    logging file debug ../binTmp/zzz3r2-log.run
     !
     crypto ipsec ips
      cipher des
@@ -118,7 +115,6 @@
      exit
     !
     interface loopback0
-     no description
      vrf forwarding v1
      ipv4 address 1.1.1.102 255.255.255.255
      no shutdown
@@ -126,7 +122,6 @@
      exit
     !
     interface ethernet1
-     no description
      vrf forwarding v1
      ipv4 address 1.1.1.2 255.255.255.252
      no shutdown
@@ -134,7 +129,6 @@
      exit
     !
     interface tunnel1
-     no description
      tunnel vrf v1
      tunnel protection ips
      tunnel source loopback0

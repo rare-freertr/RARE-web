@@ -14,7 +14,7 @@
     hostname r1
     buggy
     !
-    logging file debug ../binTmp/zzz49r1-log.run
+    logging file debug ../binTmp/zzz34r1-log.run
     !
     access-list test4
      sequence 10 deny 1 any all any all
@@ -48,7 +48,6 @@
      exit
     !
     interface loopback1
-     no description
      vrf forwarding v1
      ipv4 address 2.2.2.1 255.255.255.255
      ipv6 address 4321::1 ffff:ffff:ffff:ffff:ffff:ffff:ffff:ffff
@@ -57,7 +56,6 @@
      exit
     !
     interface ethernet1
-     no description
      vrf forwarding v1
      ipv4 address 1.1.1.1 255.255.255.0
      ipv4 access-group-in test4
@@ -112,7 +110,7 @@
     hostname r2
     buggy
     !
-    logging file debug ../binTmp/zzz49r2-log.run
+    logging file debug ../binTmp/zzz34r2-log.run
     !
     access-list test4
      sequence 10 deny 1 any all any all
@@ -146,7 +144,6 @@
      exit
     !
     interface loopback1
-     no description
      vrf forwarding v1
      ipv4 address 2.2.2.2 255.255.255.255
      ipv6 address 4321::2 ffff:ffff:ffff:ffff:ffff:ffff:ffff:ffff
@@ -155,7 +152,6 @@
      exit
     !
     interface ethernet1
-     no description
      vrf forwarding v1
      ipv4 address 1.1.1.2 255.255.255.0
      ipv4 access-group-in test4
@@ -169,7 +165,6 @@
      exit
     !
     interface ethernet2
-     no description
      vrf forwarding v1
      ipv4 address 1.1.2.2 255.255.255.0
      ipv4 access-group-in test4
@@ -224,7 +219,7 @@
     hostname r3
     buggy
     !
-    logging file debug ../binTmp/zzz49r3-log.run
+    logging file debug ../binTmp/zzz34r3-log.run
     !
     access-list test4
      sequence 10 deny 1 any all any all
@@ -258,7 +253,6 @@
      exit
     !
     interface loopback1
-     no description
      vrf forwarding v1
      ipv4 address 2.2.2.3 255.255.255.255
      ipv6 address 4321::3 ffff:ffff:ffff:ffff:ffff:ffff:ffff:ffff
@@ -267,7 +261,6 @@
      exit
     !
     interface ethernet1
-     no description
      vrf forwarding v1
      ipv4 address 1.1.2.3 255.255.255.0
      ipv4 access-group-in test4
@@ -328,7 +321,7 @@
      | iface     | router  | name | peerif    | peer    | ready | uptime   |
      |-----------|---------|------|-----------|---------|-------|----------|
      | ethernet1 | 4.4.4.1 | r1   | ethernet1 | 1.1.1.1 | true  | 00:00:07 |
-     | ethernet2 | 4.4.4.3 | r3   | ethernet1 | 1.1.2.3 | true  | 00:00:07 |
+     | ethernet2 | 4.4.4.3 | r3   | ethernet1 | 1.1.2.3 | true  | 00:00:06 |
      |___________|_________|______|___________|_________|_______|__________|
     r2#
     r2#
@@ -357,9 +350,9 @@
      |~~~~~~~~~|~~~~~~|~~~~~|~~~~~|~~~~~|~~~~~~~~~~|~~~~~~~~~~|
      | id      | name | nei | net | seq | topo     | left     |
      |---------|------|-----|-----|-----|----------|----------|
-     | 4.4.4.1 | r1   | 1   | 2   | 7   | b8f557ab | 00:59:57 |
-     | 4.4.4.2 | r2   | 2   | 3   | 10  | dc37d88d | 00:59:57 |
-     | 4.4.4.3 | r3   | 1   | 2   | 6   | bbedb4c9 | 00:59:56 |
+     | 4.4.4.1 | r1   | 1   | 2   | 8   | b8f557ab | 00:59:58 |
+     | 4.4.4.2 | r2   | 2   | 3   | 11  | dc37d88d | 00:59:58 |
+     | 4.4.4.3 | r3   | 1   | 2   | 7   | b5f044c1 | 00:59:57 |
      |_________|______|_____|_____|_____|__________|__________|
     r2#
     r2#
@@ -373,9 +366,9 @@
      |~~~~~~~~~|~~~~~~|~~~~~|~~~~~|~~~~~|~~~~~~~~~~|~~~~~~~~~~|
      | id      | name | nei | net | seq | topo     | left     |
      |---------|------|-----|-----|-----|----------|----------|
-     | 6.6.6.1 | r1   | 1   | 2   | 7   | 2ff7d233 | 00:59:54 |
-     | 6.6.6.2 | r2   | 2   | 3   | 11  | cc222f26 | 00:59:58 |
-     | 6.6.6.3 | r3   | 1   | 2   | 6   | eb663b5b | 00:59:58 |
+     | 6.6.6.1 | r1   | 1   | 2   | 7   | b8f557ab | 00:59:57 |
+     | 6.6.6.2 | r2   | 2   | 3   | 9   | dc37d88d | 00:59:57 |
+     | 6.6.6.3 | r3   | 1   | 2   | 8   | b5f044c1 | 00:59:55 |
      |_________|______|_____|_____|_____|__________|__________|
     r2#
     r2#
@@ -415,11 +408,11 @@
      |------|------------|--------|-----------|---------|----------|
      | C    | 1.1.1.0/24 | 0/0    | ethernet1 | null    | 00:00:13 |
      | LOC  | 1.1.1.2/32 | 0/1    | ethernet1 | null    | 00:00:13 |
-     | C    | 1.1.2.0/24 | 0/0    | ethernet2 | null    | 00:00:13 |
-     | LOC  | 1.1.2.2/32 | 0/1    | ethernet2 | null    | 00:00:13 |
-     | L EX | 2.2.2.1/32 | 70/10  | ethernet1 | 1.1.1.1 | 00:00:03 |
+     | C    | 1.1.2.0/24 | 0/0    | ethernet2 | null    | 00:00:12 |
+     | LOC  | 1.1.2.2/32 | 0/1    | ethernet2 | null    | 00:00:12 |
+     | L EX | 2.2.2.1/32 | 70/10  | ethernet1 | 1.1.1.1 | 00:00:02 |
      | C    | 2.2.2.2/32 | 0/0    | loopback1 | null    | 00:00:13 |
-     | L EX | 2.2.2.3/32 | 70/10  | ethernet2 | 1.1.2.3 | 00:00:03 |
+     | L EX | 2.2.2.3/32 | 70/10  | ethernet2 | 1.1.2.3 | 00:00:02 |
      |______|____________|________|___________|_________|__________|
     r2#
     r2#
@@ -437,9 +430,9 @@
      | LOC  | 1234::2/128 | 0/1    | ethernet1 | null    | 00:00:13 |
      | C    | 1235::/16   | 0/0    | ethernet2 | null    | 00:00:13 |
      | LOC  | 1235::2/128 | 0/1    | ethernet2 | null    | 00:00:13 |
-     | L EX | 4321::1/128 | 70/10  | ethernet1 | 1234::1 | 00:00:06 |
+     | L EX | 4321::1/128 | 70/10  | ethernet1 | 1234::1 | 00:00:02 |
      | C    | 4321::2/128 | 0/0    | loopback1 | null    | 00:00:13 |
-     | L EX | 4321::3/128 | 70/10  | ethernet2 | 1235::3 | 00:00:02 |
+     | L EX | 4321::3/128 | 70/10  | ethernet2 | 1235::3 | 00:00:04 |
      |______|_____________|________|___________|_________|__________|
     r2#
     r2#
@@ -453,8 +446,8 @@
      |~~~~~~~~~~~~|~~~~~~~|~~~~~~~~|~~~~~~~~~|
      | prefix     | index | base   | oldbase |
      |------------|-------|--------|---------|
-     | 2.2.2.1/32 | 1     | 377009 | 377009  |
-     | 2.2.2.3/32 | 3     | 740067 | 740067  |
+     | 2.2.2.1/32 | 1     | 872498 | 872498  |
+     | 2.2.2.3/32 | 3     | 894535 | 894535  |
      |____________|_______|________|_________|
     r2#
     r2#
@@ -468,8 +461,8 @@
      |~~~~~~~~~~~~~|~~~~~~~|~~~~~~~~|~~~~~~~~~|
      | prefix      | index | base   | oldbase |
      |-------------|-------|--------|---------|
-     | 4321::1/128 | 1     | 867478 | 867478  |
-     | 4321::3/128 | 3     | 17936  | 17936   |
+     | 4321::1/128 | 1     | 92572  | 92572   |
+     | 4321::3/128 | 3     | 364309 | 364309  |
      |_____________|_______|________|_________|
     r2#
     r2#

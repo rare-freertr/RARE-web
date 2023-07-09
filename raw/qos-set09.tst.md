@@ -14,7 +14,7 @@
     hostname r1
     buggy
     !
-    logging file debug ../binTmp/zzz37r1-log.run
+    logging file debug ../binTmp/zzz4r1-log.run
     !
     policy-map p1
      sequence 10 action drop
@@ -29,11 +29,11 @@
     !
     vrf definition v1
      rd 1:1
-     label-mode per-prefix
+     label4mode per-prefix
+     label6mode per-prefix
      exit
     !
     interface loopback0
-     no description
      vrf forwarding v1
      ipv4 address 3.3.3.1 255.255.255.255
      ipv6 address 3333::1 ffff:ffff:ffff:ffff:ffff:ffff:ffff:ffff
@@ -42,7 +42,6 @@
      exit
     !
     interface ethernet1
-     no description
      service-policy-in p1
      vrf forwarding v1
      ipv4 address 1.1.1.1 255.255.255.0
@@ -98,7 +97,7 @@
     hostname r2
     buggy
     !
-    logging file debug ../binTmp/zzz37r2-log.run
+    logging file debug ../binTmp/zzz4r2-log.run
     !
     policy-map p1
      sequence 10 action transit
@@ -115,11 +114,11 @@
     !
     vrf definition v1
      rd 1:1
-     label-mode per-prefix
+     label4mode per-prefix
+     label6mode per-prefix
      exit
     !
     interface ethernet1
-     no description
      service-policy-in p1
      vrf forwarding v1
      ipv4 address 1.1.1.2 255.255.255.0
@@ -132,7 +131,6 @@
      exit
     !
     interface ethernet2
-     no description
      service-policy-in p1
      vrf forwarding v1
      ipv4 address 2.2.2.1 255.255.255.0
@@ -190,7 +188,7 @@
     hostname r3
     buggy
     !
-    logging file debug ../binTmp/zzz37r3-log.run
+    logging file debug ../binTmp/zzz4r3-log.run
     !
     policy-map p1
      sequence 10 action drop
@@ -205,11 +203,11 @@
     !
     vrf definition v1
      rd 1:1
-     label-mode per-prefix
+     label4mode per-prefix
+     label6mode per-prefix
      exit
     !
     interface loopback0
-     no description
      vrf forwarding v1
      ipv4 address 3.3.3.2 255.255.255.255
      ipv6 address 3333::2 ffff:ffff:ffff:ffff:ffff:ffff:ffff:ffff
@@ -218,7 +216,6 @@
      exit
     !
     interface ethernet1
-     no description
      service-policy-in p1
      vrf forwarding v1
      ipv4 address 2.2.2.2 255.255.255.0

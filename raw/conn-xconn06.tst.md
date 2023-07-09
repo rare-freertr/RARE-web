@@ -14,7 +14,7 @@
     hostname r1
     buggy
     !
-    logging file debug ../binTmp/zzz35r1-log.run
+    logging file debug ../binTmp/zzz32r1-log.run
     !
     vrf definition tester
      exit
@@ -24,7 +24,6 @@
      exit
     !
     interface serial1
-     no description
      encapsulation isdn
      isdn mode dce
      vrf forwarding v1
@@ -76,13 +75,12 @@
     hostname r2
     buggy
     !
-    logging file debug ../binTmp/zzz35r2-log.run
+    logging file debug ../binTmp/zzz32r2-log.run
     !
     vrf definition tester
      exit
     !
     interface serial1
-     no description
      encapsulation isdn
      isdn mode dte
      no shutdown
@@ -90,7 +88,6 @@
      exit
     !
     interface serial2
-     no description
      encapsulation isdn
      isdn mode dte
      no shutdown
@@ -131,7 +128,7 @@
     hostname r3
     buggy
     !
-    logging file debug ../binTmp/zzz35r3-log.run
+    logging file debug ../binTmp/zzz32r3-log.run
     !
     vrf definition tester
      exit
@@ -141,7 +138,6 @@
      exit
     !
     interface serial1
-     no description
      encapsulation isdn
      isdn mode dce
      vrf forwarding v1

@@ -14,7 +14,7 @@
     hostname r1
     buggy
     !
-    logging file debug ../binTmp/zzz14r1-log.run
+    logging file debug ../binTmp/zzz25r1-log.run
     !
     bridge 1
      exit
@@ -33,7 +33,6 @@
      exit
     !
     interface bvi1
-     no description
      vrf forwarding v1
      ipv4 address 1.1.1.1 255.255.255.0
      ipv6 address 1111::1 ffff::
@@ -42,7 +41,6 @@
      exit
     !
     interface bvi2
-     no description
      vrf forwarding v1
      ipv4 address 1.1.2.1 255.255.255.0
      ipv6 address 1112::1 ffff::
@@ -51,7 +49,6 @@
      exit
     !
     interface bvi3
-     no description
      vrf forwarding v1
      ipv4 address 1.1.3.1 255.255.255.0
      ipv6 address 1113::1 ffff::
@@ -60,28 +57,24 @@
      exit
     !
     interface serial1
-     no description
      encapsulation hdlc
      no shutdown
      no log-link-change
      exit
     !
     interface serial1.11
-     no description
      bridge-group 1
      no shutdown
      no log-link-change
      exit
     !
     interface serial1.12
-     no description
      bridge-group 2
      no shutdown
      no log-link-change
      exit
     !
     interface serial1.13
-     no description
      bridge-group 3
      no shutdown
      no log-link-change
@@ -129,7 +122,7 @@
     hostname r2
     buggy
     !
-    logging file debug ../binTmp/zzz14r2-log.run
+    logging file debug ../binTmp/zzz25r2-log.run
     !
     bridge 1
      exit
@@ -148,7 +141,6 @@
      exit
     !
     interface bvi1
-     no description
      vrf forwarding v1
      ipv4 address 1.1.1.2 255.255.255.0
      ipv6 address 1111::2 ffff::
@@ -157,7 +149,6 @@
      exit
     !
     interface bvi2
-     no description
      vrf forwarding v1
      ipv4 address 1.1.2.2 255.255.255.0
      ipv6 address 1112::2 ffff::
@@ -166,7 +157,6 @@
      exit
     !
     interface bvi3
-     no description
      vrf forwarding v1
      ipv4 address 1.1.3.2 255.255.255.0
      ipv6 address 1113::2 ffff::
@@ -175,7 +165,6 @@
      exit
     !
     interface serial1
-     no description
      encapsulation hdlc
      service-instance 11 bridge-group 1
      service-instance 12 bridge-group 2

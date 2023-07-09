@@ -14,7 +14,7 @@
     hostname r1
     buggy
     !
-    logging file debug ../binTmp/zzz8r1-log.run
+    logging file debug ../binTmp/zzz36r1-log.run
     !
     bridge 1
      rd 1:1
@@ -53,11 +53,11 @@
     !
     vrf definition v1
      rd 1:1
-     label-mode per-prefix
+     label4mode per-prefix
+     label6mode per-prefix
      exit
     !
     interface loopback0
-     no description
      vrf forwarding v1
      ipv4 address 2.2.2.1 255.255.255.255
      ipv6 address 4321::1 ffff:ffff:ffff:ffff:ffff:ffff:ffff:ffff
@@ -66,7 +66,6 @@
      exit
     !
     interface bvi1
-     no description
      vrf forwarding v1
      ipv4 address 3.3.3.1 255.255.255.252
      no shutdown
@@ -74,7 +73,6 @@
      exit
     !
     interface bvi2
-     no description
      vrf forwarding v1
      ipv6 address 4444::1 ffff::
      no shutdown
@@ -82,7 +80,6 @@
      exit
     !
     interface bvi3
-     no description
      vrf forwarding v1
      ipv6 address 3333::1 ffff::
      no shutdown
@@ -90,7 +87,6 @@
      exit
     !
     interface bvi4
-     no description
      vrf forwarding v1
      ipv4 address 4.4.4.1 255.255.255.252
      no shutdown
@@ -98,7 +94,6 @@
      exit
     !
     interface ethernet1
-     no description
      vrf forwarding v1
      ipv4 address 1.1.1.1 255.255.255.252
      ipv6 address 1234:1::1 ffff:ffff::
@@ -116,7 +111,6 @@
      no safe-ebgp
      address-family evpn
      neighbor 2.2.2.2 remote-as 2
-     no neighbor 2.2.2.2 description
      neighbor 2.2.2.2 local-as 1
      neighbor 2.2.2.2 address-family evpn
      neighbor 2.2.2.2 distance 20
@@ -124,11 +118,11 @@
      neighbor 2.2.2.2 pmsitun
      neighbor 2.2.2.2 send-community standard extended
      afi-evpn 101 bridge-group 1
-     afi-evpn 101 bmac 0019.5613.735b
+     afi-evpn 101 bmac 001b.1970.3c62
      afi-evpn 101 encapsulation pbb
      afi-evpn 101 update-source loopback0
      afi-evpn 102 bridge-group 3
-     afi-evpn 102 bmac 0004.452d.611d
+     afi-evpn 102 bmac 003b.3f62.3f7c
      afi-evpn 102 encapsulation pbb
      afi-evpn 102 update-source loopback0
      exit
@@ -140,7 +134,6 @@
      no safe-ebgp
      address-family evpn
      neighbor 4321::2 remote-as 2
-     no neighbor 4321::2 description
      neighbor 4321::2 local-as 1
      neighbor 4321::2 address-family evpn
      neighbor 4321::2 distance 20
@@ -148,11 +141,11 @@
      neighbor 4321::2 pmsitun
      neighbor 4321::2 send-community standard extended
      afi-evpn 101 bridge-group 2
-     afi-evpn 101 bmac 0060.1154.7466
+     afi-evpn 101 bmac 0046.3257.5f06
      afi-evpn 101 encapsulation pbb
      afi-evpn 101 update-source loopback0
      afi-evpn 102 bridge-group 4
-     afi-evpn 102 bmac 0063.1a24.0804
+     afi-evpn 102 bmac 0042.6960.1d18
      afi-evpn 102 encapsulation pbb
      afi-evpn 102 update-source loopback0
      exit
@@ -201,7 +194,7 @@
     hostname r2
     buggy
     !
-    logging file debug ../binTmp/zzz8r2-log.run
+    logging file debug ../binTmp/zzz36r2-log.run
     !
     bridge 1
      rd 1:1
@@ -240,11 +233,11 @@
     !
     vrf definition v1
      rd 1:1
-     label-mode per-prefix
+     label4mode per-prefix
+     label6mode per-prefix
      exit
     !
     interface loopback0
-     no description
      vrf forwarding v1
      ipv4 address 2.2.2.2 255.255.255.255
      ipv6 address 4321::2 ffff:ffff:ffff:ffff:ffff:ffff:ffff:ffff
@@ -253,7 +246,6 @@
      exit
     !
     interface bvi1
-     no description
      vrf forwarding v1
      ipv4 address 3.3.3.2 255.255.255.252
      no shutdown
@@ -261,7 +253,6 @@
      exit
     !
     interface bvi2
-     no description
      vrf forwarding v1
      ipv6 address 4444::2 ffff::
      no shutdown
@@ -269,7 +260,6 @@
      exit
     !
     interface bvi3
-     no description
      vrf forwarding v1
      ipv6 address 3333::2 ffff::
      no shutdown
@@ -277,7 +267,6 @@
      exit
     !
     interface bvi4
-     no description
      vrf forwarding v1
      ipv4 address 4.4.4.2 255.255.255.252
      no shutdown
@@ -285,7 +274,6 @@
      exit
     !
     interface ethernet1
-     no description
      vrf forwarding v1
      ipv4 address 1.1.1.2 255.255.255.252
      ipv6 address 1234:1::2 ffff:ffff::
@@ -303,7 +291,6 @@
      no safe-ebgp
      address-family evpn
      neighbor 2.2.2.1 remote-as 1
-     no neighbor 2.2.2.1 description
      neighbor 2.2.2.1 local-as 2
      neighbor 2.2.2.1 address-family evpn
      neighbor 2.2.2.1 distance 20
@@ -311,11 +298,11 @@
      neighbor 2.2.2.1 pmsitun
      neighbor 2.2.2.1 send-community standard extended
      afi-evpn 101 bridge-group 1
-     afi-evpn 101 bmac 001e.3930.2729
+     afi-evpn 101 bmac 005f.354a.3250
      afi-evpn 101 encapsulation pbb
      afi-evpn 101 update-source loopback0
      afi-evpn 102 bridge-group 3
-     afi-evpn 102 bmac 003b.750c.0564
+     afi-evpn 102 bmac 0055.6944.0b0e
      afi-evpn 102 encapsulation pbb
      afi-evpn 102 update-source loopback0
      exit
@@ -327,7 +314,6 @@
      no safe-ebgp
      address-family evpn
      neighbor 4321::1 remote-as 1
-     no neighbor 4321::1 description
      neighbor 4321::1 local-as 2
      neighbor 4321::1 address-family evpn
      neighbor 4321::1 distance 20
@@ -335,11 +321,11 @@
      neighbor 4321::1 pmsitun
      neighbor 4321::1 send-community standard extended
      afi-evpn 101 bridge-group 2
-     afi-evpn 101 bmac 004a.5a5d.3027
+     afi-evpn 101 bmac 0039.512f.5a0f
      afi-evpn 101 encapsulation pbb
      afi-evpn 101 update-source loopback0
      afi-evpn 102 bridge-group 4
-     afi-evpn 102 bmac 0020.702b.1517
+     afi-evpn 102 bmac 0012.442a.6576
      afi-evpn 102 encapsulation pbb
      afi-evpn 102 update-source loopback0
      exit
@@ -393,7 +379,7 @@
      |~~~~~~~~~~|~~~~|~~~~~~~|~~~~~~~|~~~~~~|~~~~~~~~~~|
      | neighbor | as | ready | learn | sent | uptime   |
      |----------|----|-------|-------|------|----------|
-     | 2.2.2.2  | 2  | true  | 4     | 8    | 00:00:13 |
+     | 2.2.2.2  | 2  | true  | 4     | 8    | 00:00:14 |
      |__________|____|_______|_______|______|__________|
     r1#
     r1#
@@ -407,7 +393,7 @@
      |~~~~~~~~~~|~~~~|~~~~~~~|~~~~~~~|~~~~~~|~~~~~~~~~~|
      | neighbor | as | ready | learn | sent | uptime   |
      |----------|----|-------|-------|------|----------|
-     | 4321::2  | 2  | true  | 4     | 8    | 00:00:12 |
+     | 4321::2  | 2  | true  | 4     | 8    | 00:00:13 |
      |__________|____|_______|_______|______|__________|
     r1#
     r1#
@@ -421,12 +407,12 @@
      |~~~~~~~~~~~~~~~~~~~~~~~~~~|~~~~~~~~~|~~~~~~~~~~~~|~~~~~~~~|
      | prefix                   | hop     | metric     | aspath |
      |--------------------------|---------|------------|--------|
-     | 200::19:5613:735b#:: 1:1 | 2.2.2.1 | 0/0/0/0    |        |
-     | 200::1e:3930:2729#:: 1:1 | 2.2.2.2 | 20/100/0/0 | 2      |
+     | 200::1b:1970:3c62#:: 1:1 | 2.2.2.1 | 0/0/0/0    |        |
+     | 200::5f:354a:3250#:: 1:1 | 2.2.2.2 | 20/100/0/0 | 2      |
      | 300:0:65::#2.2.2.2 1:1   | 2.2.2.2 | 20/100/0/0 | 2      |
      | 300:0:65::#2.2.2.1 1:1   | 2.2.2.1 | 0/0/0/0    |        |
-     | 200::4:452d:611d#:: 1:3  | 2.2.2.1 | 0/0/0/0    |        |
-     | 200::3b:750c:564#:: 1:3  | 2.2.2.2 | 20/100/0/0 | 2      |
+     | 200::3b:3f62:3f7c#:: 1:3 | 2.2.2.1 | 0/0/0/0    |        |
+     | 200::55:6944:b0e#:: 1:3  | 2.2.2.2 | 20/100/0/0 | 2      |
      | 300:0:66::#2.2.2.2 1:3   | 2.2.2.2 | 20/100/0/0 | 2      |
      | 300:0:66::#2.2.2.1 1:3   | 2.2.2.1 | 0/0/0/0    |        |
      |__________________________|_________|____________|________|
@@ -442,12 +428,12 @@
      |~~~~~~~~~~~~~~~~~~~~~~~~~~|~~~~~~~~~|~~~~~~~~~~~~|~~~~~~~~|
      | prefix                   | hop     | metric     | aspath |
      |--------------------------|---------|------------|--------|
-     | 200::4a:5a5d:3027#:: 1:2 | 4321::2 | 20/100/0/0 | 2      |
-     | 200::60:1154:7466#:: 1:2 | 4321::1 | 0/0/0/0    |        |
+     | 200::39:512f:5a0f#:: 1:2 | 4321::2 | 20/100/0/0 | 2      |
+     | 200::46:3257:5f06#:: 1:2 | 4321::1 | 0/0/0/0    |        |
      | 300:0:65::#4321::2 1:2   | 4321::2 | 20/100/0/0 | 2      |
      | 300:0:65::#4321::1 1:2   | 4321::1 | 0/0/0/0    |        |
-     | 200::20:702b:1517#:: 1:4 | 4321::2 | 20/100/0/0 | 2      |
-     | 200::63:1a24:804#:: 1:4  | 4321::1 | 0/0/0/0    |        |
+     | 200::12:442a:6576#:: 1:4 | 4321::2 | 20/100/0/0 | 2      |
+     | 200::42:6960:1d18#:: 1:4 | 4321::1 | 0/0/0/0    |        |
      | 300:0:66::#4321::2 1:4   | 4321::2 | 20/100/0/0 | 2      |
      | 300:0:66::#4321::1 1:4   | 4321::1 | 0/0/0/0    |        |
      |__________________________|_________|____________|________|
@@ -463,12 +449,12 @@
      |~~~~~|~~~~~~~~~~~~|~~~~~~~~|~~~~~~~~~~~|~~~~~~~~~|~~~~~~~~~~|
      | typ | prefix     | metric | iface     | hop     | time     |
      |-----|------------|--------|-----------|---------|----------|
-     | C   | 1.1.1.0/30 | 0/0    | ethernet1 | null    | 00:00:16 |
-     | LOC | 1.1.1.1/32 | 0/1    | ethernet1 | null    | 00:00:16 |
-     | C   | 2.2.2.1/32 | 0/0    | loopback0 | null    | 00:00:16 |
+     | C   | 1.1.1.0/30 | 0/0    | ethernet1 | null    | 00:00:17 |
+     | LOC | 1.1.1.1/32 | 0/1    | ethernet1 | null    | 00:00:17 |
+     | C   | 2.2.2.1/32 | 0/0    | loopback0 | null    | 00:00:17 |
      | S   | 2.2.2.2/32 | 1/0    | ethernet1 | 1.1.1.2 | 00:00:02 |
-     | C   | 3.3.3.0/30 | 0/0    | bvi1      | null    | 00:00:16 |
-     | LOC | 3.3.3.1/32 | 0/1    | bvi1      | null    | 00:00:16 |
+     | C   | 3.3.3.0/30 | 0/0    | bvi1      | null    | 00:00:17 |
+     | LOC | 3.3.3.1/32 | 0/1    | bvi1      | null    | 00:00:17 |
      | C   | 4.4.4.0/30 | 0/0    | bvi4      | null    | 00:00:16 |
      | LOC | 4.4.4.1/32 | 0/1    | bvi4      | null    | 00:00:16 |
      |_____|____________|________|___________|_________|__________|
@@ -484,12 +470,12 @@
      |~~~~~|~~~~~~~~~~~~~~~|~~~~~~~~|~~~~~~~~~~~|~~~~~~~~~~~|~~~~~~~~~~|
      | typ | prefix        | metric | iface     | hop       | time     |
      |-----|---------------|--------|-----------|-----------|----------|
-     | C   | 1234:1::/32   | 0/0    | ethernet1 | null      | 00:00:16 |
-     | LOC | 1234:1::1/128 | 0/1    | ethernet1 | null      | 00:00:16 |
+     | C   | 1234:1::/32   | 0/0    | ethernet1 | null      | 00:00:17 |
+     | LOC | 1234:1::1/128 | 0/1    | ethernet1 | null      | 00:00:17 |
      | C   | 3333::/16     | 0/0    | bvi3      | null      | 00:00:16 |
      | LOC | 3333::1/128   | 0/1    | bvi3      | null      | 00:00:16 |
-     | C   | 4321::1/128   | 0/0    | loopback0 | null      | 00:00:16 |
-     | S   | 4321::2/128   | 1/0    | ethernet1 | 1234:1::2 | 00:00:05 |
+     | C   | 4321::1/128   | 0/0    | loopback0 | null      | 00:00:17 |
+     | S   | 4321::2/128   | 1/0    | ethernet1 | 1234:1::2 | 00:00:06 |
      | C   | 4444::/16     | 0/0    | bvi2      | null      | 00:00:16 |
      | LOC | 4444::1/128   | 0/1    | bvi2      | null      | 00:00:16 |
      |_____|_______________|________|___________|___________|__________|
@@ -507,14 +493,14 @@
      | iface            | fwd  | phys  | tx | rx | drop | tx  | rx  | drop | grp |
      |------------------|------|-------|----|----|------|-----|-----|------|-----|
      | brprt bvi        |      |       |    |    |      |     |     |      |     |
-     | evpn 2.2.2.2 101 | true | false | 14 | 14 | 0    | 888 | 888 | 0    |     |
+     | evpn 2.2.2.2 101 | true | false | 14 | 13 | 0    | 852 | 822 | 0    |     |
      |__________________|______|_______|____|____|______|_____|_____|______|_____|
      |~~~~~~~~~~~~~~~~|~~~~~~~~~~~~~~~~~~|~~~~~~~~|~~~~~~~~~~|~~~~|~~~~|~~~~~~|~~~~~|~~~~~|~~~~~~|
      |                                            | packet             | byte             |  |
      | addr           | iface            | static | time     | tx | rx | drop | tx  | rx  | drop |
      |----------------|------------------|--------|----------|----|----|------|-----|-----|------|
-     | 0006.3a40.2545 | evpn 2.2.2.2 101 | false  | 00:00:16 | 13 | 14 | 0    | 858 | 888 | 0    |
-     | 0039.5545.0b3e | bvi              | false  | 00:00:16 | 14 | 15 | 0    | 888 | 918 | 0    |
+     | 003f.525f.5775 | evpn 2.2.2.2 101 | false  | 00:00:17 | 12 | 13 | 0    | 792 | 822 | 0    |
+     | 0066.0048.4b4f | bvi              | false  | 00:00:17 | 13 | 15 | 0    | 822 | 882 | 0    |
      |________________|__________________|________|__________|____|____|______|_____|_____|______|
     r1#
     r1#
@@ -536,8 +522,8 @@
      |                                            | packet             | byte              |  |
      | addr           | iface            | static | time     | tx | rx | drop | tx  | rx   | drop |
      |----------------|------------------|--------|----------|----|----|------|-----|------|------|
-     | 001f.3566.1023 | evpn 4321::2 101 | false  | 00:00:16 | 15 | 15 | 0    | 998 | 1006 | 0    |
-     | 0038.5356.142e | bvi              | false  | 00:00:16 | 14 | 19 | 0    | 932 | 1326 | 0    |
+     | 0035.495c.6310 | bvi              | false  | 00:00:17 | 14 | 19 | 0    | 932 | 1326 | 0    |
+     | 0039.5f41.3328 | evpn 4321::2 101 | false  | 00:00:17 | 15 | 15 | 0    | 998 | 1006 | 0    |
      |________________|__________________|________|__________|____|____|______|_____|______|______|
     r1#
     r1#
@@ -559,8 +545,8 @@
      |                                            | packet             | byte              |  |
      | addr           | iface            | static | time     | tx | rx | drop | tx  | rx   | drop |
      |----------------|------------------|--------|----------|----|----|------|-----|------|------|
-     | 0005.0a6a.7826 | evpn 2.2.2.2 102 | false  | 00:00:17 | 15 | 15 | 0    | 998 | 1006 | 0    |
-     | 005b.4818.1c1e | bvi              | false  | 00:00:17 | 14 | 19 | 0    | 932 | 1326 | 0    |
+     | 004a.6b76.317e | evpn 2.2.2.2 102 | false  | 00:00:17 | 15 | 15 | 0    | 998 | 1006 | 0    |
+     | 0076.4c33.1f69 | bvi              | false  | 00:00:17 | 14 | 19 | 0    | 932 | 1326 | 0    |
      |________________|__________________|________|__________|____|____|______|_____|______|______|
     r1#
     r1#
@@ -582,8 +568,8 @@
      |                                            | packet             | byte             |  |
      | addr           | iface            | static | time     | tx | rx | drop | tx  | rx  | drop |
      |----------------|------------------|--------|----------|----|----|------|-----|-----|------|
-     | 0004.3855.7c0b | bvi              | false  | 00:00:17 | 15 | 15 | 0    | 954 | 954 | 0    |
-     | 001c.501a.6879 | evpn 4321::2 102 | false  | 00:00:17 | 14 | 15 | 0    | 924 | 954 | 0    |
+     | 0018.0e47.4a72 | bvi              | false  | 00:00:18 | 15 | 15 | 0    | 954 | 954 | 0    |
+     | 001c.6351.4571 | evpn 4321::2 102 | false  | 00:00:18 | 14 | 15 | 0    | 924 | 954 | 0    |
      |________________|__________________|________|__________|____|____|______|_____|_____|______|
     r1#
     r1#

@@ -14,7 +14,7 @@
     hostname r1
     buggy
     !
-    logging file debug ../binTmp/zzz34r1-log.run
+    logging file debug ../binTmp/zzz47r1-log.run
     !
     vrf definition tester
      exit
@@ -24,7 +24,6 @@
      exit
     !
     interface loopback0
-     no description
      vrf forwarding v1
      ipv6 address 4444::4 ffff:ffff:ffff:ffff:ffff:ffff:ffff:ffff
      no shutdown
@@ -32,7 +31,6 @@
      exit
     !
     interface ethernet1
-     no description
      vrf forwarding v1
      ipv6 address 1234::1 ffff::
      no shutdown
@@ -81,7 +79,7 @@
     hostname r2
     buggy
     !
-    logging file debug ../binTmp/zzz34r2-log.run
+    logging file debug ../binTmp/zzz47r2-log.run
     !
     prefix-list p6
      sequence 10 permit ::/0 ge 0 le 0
@@ -95,11 +93,10 @@
      exit
     !
     interface ethernet1
-     no description
      vrf forwarding v1
      ipv6 address fe80::200:ff:fe00:2222 ffff:ffff:ffff:ffff::
      ipv6 gateway-prefix p6
-     ipv6 slaac
+     ipv6 slaac-client enable
      no shutdown
      no log-link-change
      exit

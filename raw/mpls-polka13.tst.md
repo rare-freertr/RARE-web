@@ -14,7 +14,7 @@
     hostname r1
     buggy
     !
-    logging file debug ../binTmp/zzz25r1-log.run
+    logging file debug ../binTmp/zzz33r1-log.run
     !
     vrf definition tester
      exit
@@ -38,7 +38,6 @@
      exit
     !
     interface loopback0
-     no description
      vrf forwarding v1
      ipv4 address 2.2.2.1 255.255.255.255
      ipv6 address 4321::1 ffff:ffff:ffff:ffff:ffff:ffff:ffff:ffff
@@ -47,7 +46,6 @@
      exit
     !
     interface ethernet1
-     no description
      vrf forwarding v1
      ipv4 address 1.1.1.1 255.255.255.0
      ipv6 address 1234:1::1 ffff:ffff::
@@ -60,7 +58,6 @@
      exit
     !
     interface tunnel1
-     no description
      tunnel vrf v1
      tunnel source loopback0
      tunnel destination 2.2.2.3
@@ -73,7 +70,6 @@
      exit
     !
     interface tunnel2
-     no description
      tunnel vrf v1
      tunnel source loopback0
      tunnel destination 4321::3
@@ -127,7 +123,7 @@
     hostname r2
     buggy
     !
-    logging file debug ../binTmp/zzz25r2-log.run
+    logging file debug ../binTmp/zzz33r2-log.run
     !
     vrf definition tester
      exit
@@ -151,7 +147,6 @@
      exit
     !
     interface loopback0
-     no description
      vrf forwarding v1
      ipv4 address 2.2.2.2 255.255.255.255
      ipv6 address 4321::2 ffff:ffff:ffff:ffff:ffff:ffff:ffff:ffff
@@ -160,7 +155,6 @@
      exit
     !
     interface ethernet1
-     no description
      vrf forwarding v1
      ipv4 address 1.1.1.2 255.255.255.0
      ipv6 address 1234:1::2 ffff:ffff::
@@ -173,7 +167,6 @@
      exit
     !
     interface ethernet2
-     no description
      vrf forwarding v1
      ipv4 address 1.1.2.5 255.255.255.0
      ipv6 address 1234:2::2 ffff:ffff::
@@ -186,7 +179,6 @@
      exit
     !
     interface ethernet3
-     no description
      vrf forwarding v1
      ipv4 address 1.1.3.5 255.255.255.0
      ipv6 address 1234:3::2 ffff:ffff::
@@ -240,7 +232,7 @@
     hostname r3
     buggy
     !
-    logging file debug ../binTmp/zzz25r3-log.run
+    logging file debug ../binTmp/zzz33r3-log.run
     !
     vrf definition tester
      exit
@@ -264,7 +256,6 @@
      exit
     !
     interface loopback0
-     no description
      vrf forwarding v1
      ipv4 address 2.2.2.3 255.255.255.255
      ipv6 address 4321::3 ffff:ffff:ffff:ffff:ffff:ffff:ffff:ffff
@@ -273,7 +264,6 @@
      exit
     !
     interface ethernet1
-     no description
      vrf forwarding v1
      ipv4 address 1.1.2.6 255.255.255.0
      ipv6 address 1234:2::3 ffff:ffff::
@@ -286,7 +276,6 @@
      exit
     !
     interface tunnel1
-     no description
      tunnel vrf v1
      tunnel source loopback0
      tunnel destination 2.2.2.1
@@ -299,7 +288,6 @@
      exit
     !
     interface tunnel2
-     no description
      tunnel vrf v1
      tunnel source loopback0
      tunnel destination 4321::1
@@ -353,7 +341,7 @@
     hostname r4
     buggy
     !
-    logging file debug ../binTmp/zzz25r4-log.run
+    logging file debug ../binTmp/zzz33r4-log.run
     !
     vrf definition tester
      exit
@@ -377,7 +365,6 @@
      exit
     !
     interface loopback0
-     no description
      vrf forwarding v1
      ipv4 address 2.2.2.4 255.255.255.255
      ipv6 address 4321::4 ffff:ffff:ffff:ffff:ffff:ffff:ffff:ffff
@@ -386,7 +373,6 @@
      exit
     !
     interface ethernet1
-     no description
      vrf forwarding v1
      ipv4 address 1.1.3.6 255.255.255.0
      ipv6 address 1234:3::3 ffff:ffff::
@@ -399,7 +385,6 @@
      exit
     !
     interface tunnel1
-     no description
      tunnel vrf v1
      tunnel source loopback0
      tunnel destination 2.2.2.1
@@ -412,7 +397,6 @@
      exit
     !
     interface tunnel2
-     no description
      tunnel vrf v1
      tunnel source loopback0
      tunnel destination 4321::1

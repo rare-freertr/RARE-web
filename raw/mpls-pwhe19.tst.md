@@ -14,18 +14,18 @@
     hostname r1
     buggy
     !
-    logging file debug ../binTmp/zzz53r1-log.run
+    logging file debug ../binTmp/zzz49r1-log.run
     !
     vrf definition tester
      exit
     !
     vrf definition v1
      rd 1:1
-     label-mode per-prefix
+     label4mode per-prefix
+     label6mode per-prefix
      exit
     !
     interface loopback0
-     no description
      vrf forwarding v1
      ipv4 address 2.2.2.1 255.255.255.255
      ipv6 address 4321::1 ffff:ffff:ffff:ffff:ffff:ffff:ffff:ffff
@@ -34,7 +34,6 @@
      exit
     !
     interface ethernet1
-     no description
      vrf forwarding v1
      ipv4 address 1.1.1.1 255.255.255.0
      ipv6 address 1234::1 ffff::
@@ -46,9 +45,8 @@
      exit
     !
     interface pwether1
-     no description
      mtu 1500
-     macaddr 004d.3e4f.7670
+     macaddr 0032.7b39.232e
      vrf forwarding v1
      ipv4 address 3.3.3.1 255.255.255.0
      pseudowire v1 loopback0 pweompls 2.2.2.2 1234 control-word
@@ -100,18 +98,18 @@
     hostname r2
     buggy
     !
-    logging file debug ../binTmp/zzz53r2-log.run
+    logging file debug ../binTmp/zzz49r2-log.run
     !
     vrf definition tester
      exit
     !
     vrf definition v1
      rd 1:1
-     label-mode per-prefix
+     label4mode per-prefix
+     label6mode per-prefix
      exit
     !
     interface loopback0
-     no description
      vrf forwarding v1
      ipv4 address 2.2.2.2 255.255.255.255
      ipv6 address 4321::2 ffff:ffff:ffff:ffff:ffff:ffff:ffff:ffff
@@ -120,7 +118,6 @@
      exit
     !
     interface ethernet1
-     no description
      vrf forwarding v1
      ipv4 address 1.1.1.2 255.255.255.0
      ipv6 address 1234::2 ffff::
@@ -132,9 +129,8 @@
      exit
     !
     interface pwether1
-     no description
      mtu 1500
-     macaddr 002e.7b32.3128
+     macaddr 002e.4f63.7a53
      vrf forwarding v1
      ipv4 address 3.3.3.2 255.255.255.0
      pseudowire v1 loopback0 pweompls 2.2.2.1 1234 control-word

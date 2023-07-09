@@ -14,7 +14,7 @@
     hostname r1
     buggy
     !
-    logging file debug ../binTmp/zzz77r1-log.run
+    logging file debug ../binTmp/zzz10r1-log.run
     !
     bridge 1
      rd 1:1
@@ -53,11 +53,11 @@
     !
     vrf definition v1
      rd 1:1
-     label-mode per-prefix
+     label4mode per-prefix
+     label6mode per-prefix
      exit
     !
     interface loopback0
-     no description
      vrf forwarding v1
      ipv4 address 2.2.2.1 255.255.255.255
      ipv6 address 4321::1 ffff:ffff:ffff:ffff:ffff:ffff:ffff:ffff
@@ -66,7 +66,6 @@
      exit
     !
     interface bvi1
-     no description
      vrf forwarding v1
      ipv4 address 3.3.3.1 255.255.255.252
      no shutdown
@@ -74,7 +73,6 @@
      exit
     !
     interface bvi2
-     no description
      vrf forwarding v1
      ipv6 address 4444::1 ffff::
      no shutdown
@@ -82,7 +80,6 @@
      exit
     !
     interface bvi3
-     no description
      vrf forwarding v1
      ipv6 address 3333::1 ffff::
      no shutdown
@@ -90,7 +87,6 @@
      exit
     !
     interface bvi4
-     no description
      vrf forwarding v1
      ipv4 address 4.4.4.1 255.255.255.252
      no shutdown
@@ -98,7 +94,6 @@
      exit
     !
     interface ethernet1
-     no description
      vrf forwarding v1
      ipv4 address 1.1.1.1 255.255.255.252
      ipv6 address 1234:1::1 ffff:ffff::
@@ -116,7 +111,6 @@
      no safe-ebgp
      address-family vpls
      neighbor 2.2.2.2 remote-as 2
-     no neighbor 2.2.2.2 description
      neighbor 2.2.2.2 local-as 1
      neighbor 2.2.2.2 address-family vpls
      neighbor 2.2.2.2 distance 20
@@ -135,7 +129,6 @@
      no safe-ebgp
      address-family vpls
      neighbor 4321::2 remote-as 2
-     no neighbor 4321::2 description
      neighbor 4321::2 local-as 1
      neighbor 4321::2 address-family vpls
      neighbor 4321::2 distance 20
@@ -191,7 +184,7 @@
     hostname r2
     buggy
     !
-    logging file debug ../binTmp/zzz77r2-log.run
+    logging file debug ../binTmp/zzz10r2-log.run
     !
     bridge 1
      rd 1:1
@@ -230,11 +223,11 @@
     !
     vrf definition v1
      rd 1:1
-     label-mode per-prefix
+     label4mode per-prefix
+     label6mode per-prefix
      exit
     !
     interface loopback0
-     no description
      vrf forwarding v1
      ipv4 address 2.2.2.2 255.255.255.255
      ipv6 address 4321::2 ffff:ffff:ffff:ffff:ffff:ffff:ffff:ffff
@@ -243,7 +236,6 @@
      exit
     !
     interface bvi1
-     no description
      vrf forwarding v1
      ipv4 address 3.3.3.2 255.255.255.252
      no shutdown
@@ -251,7 +243,6 @@
      exit
     !
     interface bvi2
-     no description
      vrf forwarding v1
      ipv6 address 4444::2 ffff::
      no shutdown
@@ -259,7 +250,6 @@
      exit
     !
     interface bvi3
-     no description
      vrf forwarding v1
      ipv6 address 3333::2 ffff::
      no shutdown
@@ -267,7 +257,6 @@
      exit
     !
     interface bvi4
-     no description
      vrf forwarding v1
      ipv4 address 4.4.4.2 255.255.255.252
      no shutdown
@@ -275,7 +264,6 @@
      exit
     !
     interface ethernet1
-     no description
      vrf forwarding v1
      ipv4 address 1.1.1.2 255.255.255.252
      ipv6 address 1234:1::2 ffff:ffff::
@@ -293,7 +281,6 @@
      no safe-ebgp
      address-family vpls
      neighbor 2.2.2.1 remote-as 1
-     no neighbor 2.2.2.1 description
      neighbor 2.2.2.1 local-as 2
      neighbor 2.2.2.1 address-family vpls
      neighbor 2.2.2.1 distance 20
@@ -312,7 +299,6 @@
      no safe-ebgp
      address-family vpls
      neighbor 4321::1 remote-as 1
-     no neighbor 4321::1 description
      neighbor 4321::1 local-as 2
      neighbor 4321::1 address-family vpls
      neighbor 4321::1 distance 20
@@ -387,7 +373,7 @@
      |~~~~~~~~~~|~~~~|~~~~~~~|~~~~~~~|~~~~~~|~~~~~~~~~~|
      | neighbor | as | ready | learn | sent | uptime   |
      |----------|----|-------|-------|------|----------|
-     | 4321::2  | 2  | true  | 2     | 4    | 00:00:26 |
+     | 4321::2  | 2  | true  | 2     | 4    | 00:00:27 |
      |__________|____|_______|_______|______|__________|
     r1#
     r1#
@@ -438,7 +424,7 @@
      | C   | 1.1.1.0/30 | 0/0    | ethernet1 | null    | 00:00:30 |
      | LOC | 1.1.1.1/32 | 0/1    | ethernet1 | null    | 00:00:30 |
      | C   | 2.2.2.1/32 | 0/0    | loopback0 | null    | 00:00:30 |
-     | S   | 2.2.2.2/32 | 1/0    | ethernet1 | 1.1.1.2 | 00:00:14 |
+     | S   | 2.2.2.2/32 | 1/0    | ethernet1 | 1.1.1.2 | 00:00:20 |
      | C   | 3.3.3.0/30 | 0/0    | bvi1      | null    | 00:00:30 |
      | LOC | 3.3.3.1/32 | 0/1    | bvi1      | null    | 00:00:30 |
      | C   | 4.4.4.0/30 | 0/0    | bvi4      | null    | 00:00:29 |
@@ -461,7 +447,7 @@
      | C   | 3333::/16     | 0/0    | bvi3      | null      | 00:00:30 |
      | LOC | 3333::1/128   | 0/1    | bvi3      | null      | 00:00:30 |
      | C   | 4321::1/128   | 0/0    | loopback0 | null      | 00:00:30 |
-     | S   | 4321::2/128   | 1/0    | ethernet1 | 1234:1::2 | 00:00:16 |
+     | S   | 4321::2/128   | 1/0    | ethernet1 | 1234:1::2 | 00:00:15 |
      | C   | 4444::/16     | 0/0    | bvi2      | null      | 00:00:30 |
      | LOC | 4444::1/128   | 0/1    | bvi2      | null      | 00:00:30 |
      |_____|_______________|________|___________|___________|__________|
@@ -474,20 +460,20 @@
     r1#
     r1#show bridge 1
     r1#show bridge 1
-     |~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~|~~~~~~|~~~~~~~|~~~~|~~~~|~~~~~~|~~~~~|~~~~~|~~~~~~|~~~~~|
-     |                                             | packet         | byte             |     |
-     | iface                        | fwd  | phys  | tx | rx | drop | tx  | rx  | drop | grp |
-     |------------------------------|------|-------|----|----|------|-----|-----|------|-----|
-     | brprt bvi                    |      |       |    |    |      |     |     |      |     |
-     | pwe 2.2.2.2 2814754062073857 | true | false | 18 | 12 | 0    | 936 | 900 | 0    |     |
-     |______________________________|______|_______|____|____|______|_____|_____|______|_____|
-     |~~~~~~~~~~~~~~~~|~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~|~~~~~~~~|~~~~~~~~~~|~~~~|~~~~|~~~~~~|~~~~~|~~~~~|~~~~~~|
-     |                                                        | packet             | byte             |  |
-     | addr           | iface                        | static | time     | tx | rx | drop | tx  | rx  | drop |
-     |----------------|------------------------------|--------|----------|----|----|------|-----|-----|------|
-     | 0003.7d5f.6142 | pwe 2.2.2.2 2814754062073857 | false  | 00:00:31 | 11 | 12 | 0    | 726 | 756 | 0    |
-     | 0009.3645.1f65 | bvi                          | false  | 00:00:31 | 12 | 20 | 0    | 756 | 996 | 0    |
-     |________________|______________________________|________|__________|____|____|______|_____|_____|______|
+     |~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~|~~~~~~|~~~~~~~|~~~~|~~~~|~~~~~~|~~~~~~|~~~~~|~~~~~~|~~~~~|
+     |                                             | packet         | byte              |     |
+     | iface                        | fwd  | phys  | tx | rx | drop | tx   | rx  | drop | grp |
+     |------------------------------|------|-------|----|----|------|------|-----|------|-----|
+     | brprt bvi                    |      |       |    |    |      |      |     |      |     |
+     | pwe 2.2.2.2 2814754062073857 | true | false | 20 | 13 | 0    | 1032 | 978 | 0    |     |
+     |______________________________|______|_______|____|____|______|______|_____|______|_____|
+     |~~~~~~~~~~~~~~~~|~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~|~~~~~~~~|~~~~~~~~~~|~~~~|~~~~|~~~~~~|~~~~~|~~~~~~|~~~~~~|
+     |                                                        | packet             | byte              |  |
+     | addr           | iface                        | static | time     | tx | rx | drop | tx  | rx   | drop |
+     |----------------|------------------------------|--------|----------|----|----|------|-----|------|------|
+     | 005a.144e.6241 | bvi                          | false  | 00:00:31 | 13 | 20 | 0    | 822 | 1032 | 0    |
+     | 0067.4e0d.646c | pwe 2.2.2.2 2814754062073857 | false  | 00:00:31 | 12 | 13 | 0    | 792 | 822  | 0    |
+     |________________|______________________________|________|__________|____|____|______|_____|______|______|
     r1#
     r1#
     ```
@@ -508,8 +494,8 @@
      |                                                        | packet             | byte              |  |
      | addr           | iface                        | static | time     | tx | rx | drop | tx  | rx   | drop |
      |----------------|------------------------------|--------|----------|----|----|------|-----|------|------|
-     | 0053.6554.3a14 | bvi                          | false  | 00:00:31 | 14 | 19 | 0    | 932 | 1326 | 0    |
-     | 0077.4c7d.0638 | pwe 4321::2 2814754062073857 | false  | 00:00:31 | 15 | 15 | 0    | 998 | 1006 | 0    |
+     | 0036.756f.5e7e | bvi                          | false  | 00:00:31 | 14 | 19 | 0    | 932 | 1326 | 0    |
+     | 0049.0c57.5f2f | pwe 4321::2 2814754062073857 | false  | 00:00:31 | 15 | 15 | 0    | 998 | 1006 | 0    |
      |________________|______________________________|________|__________|____|____|______|_____|______|______|
     r1#
     r1#
@@ -531,8 +517,8 @@
      |                                                        | packet             | byte              |  |
      | addr           | iface                        | static | time     | tx | rx | drop | tx  | rx   | drop |
      |----------------|------------------------------|--------|----------|----|----|------|-----|------|------|
-     | 0058.352c.6057 | bvi                          | false  | 00:00:31 | 14 | 19 | 0    | 932 | 1326 | 0    |
-     | 0064.660a.7b5b | pwe 2.2.2.2 2814754062073858 | false  | 00:00:31 | 15 | 15 | 0    | 998 | 1006 | 0    |
+     | 003e.6248.4869 | pwe 2.2.2.2 2814754062073858 | false  | 00:00:31 | 15 | 15 | 0    | 998 | 1006 | 0    |
+     | 0059.494c.3f2d | bvi                          | false  | 00:00:31 | 14 | 19 | 0    | 932 | 1326 | 0    |
      |________________|______________________________|________|__________|____|____|______|_____|______|______|
     r1#
     r1#
@@ -543,20 +529,20 @@
     r1#
     r1#show bridge 4
     r1#show bridge 4
-     |~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~|~~~~~~|~~~~~~~|~~~~|~~~~|~~~~~~|~~~~~|~~~~~|~~~~~~|~~~~~|
-     |                                             | packet         | byte             |     |
-     | iface                        | fwd  | phys  | tx | rx | drop | tx  | rx  | drop | grp |
-     |------------------------------|------|-------|----|----|------|-----|-----|------|-----|
-     | brprt bvi                    |      |       |    |    |      |     |     |      |     |
-     | pwe 4321::2 2814754062073858 | true | false | 15 | 12 | 0    | 846 | 900 | 0    |     |
-     |______________________________|______|_______|____|____|______|_____|_____|______|_____|
-     |~~~~~~~~~~~~~~~~|~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~|~~~~~~~~|~~~~~~~~~~|~~~~|~~~~|~~~~~~|~~~~~|~~~~~|~~~~~~|
-     |                                                        | packet             | byte             |  |
-     | addr           | iface                        | static | time     | tx | rx | drop | tx  | rx  | drop |
-     |----------------|------------------------------|--------|----------|----|----|------|-----|-----|------|
-     | 0048.257d.6f78 | bvi                          | false  | 00:00:31 | 12 | 15 | 0    | 756 | 846 | 0    |
-     | 006f.107e.105e | pwe 4321::2 2814754062073858 | false  | 00:00:31 | 11 | 12 | 0    | 726 | 756 | 0    |
-     |________________|______________________________|________|__________|____|____|______|_____|_____|______|
+     |~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~|~~~~~~|~~~~~~~|~~~~|~~~~|~~~~~~|~~~~~~|~~~~~~|~~~~~~|~~~~~|
+     |                                             | packet         | byte               |     |
+     | iface                        | fwd  | phys  | tx | rx | drop | tx   | rx   | drop | grp |
+     |------------------------------|------|-------|----|----|------|------|------|------|-----|
+     | brprt bvi                    |      |       |    |    |      |      |      |      |     |
+     | pwe 4321::2 2814754062073858 | true | false | 20 | 15 | 0    | 1104 | 1134 | 0    |     |
+     |______________________________|______|_______|____|____|______|______|______|______|_____|
+     |~~~~~~~~~~~~~~~~|~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~|~~~~~~~~|~~~~~~~~~~|~~~~|~~~~|~~~~~~|~~~~~|~~~~~~|~~~~~~|
+     |                                                        | packet             | byte              |  |
+     | addr           | iface                        | static | time     | tx | rx | drop | tx  | rx   | drop |
+     |----------------|------------------------------|--------|----------|----|----|------|-----|------|------|
+     | 005c.0d3f.6843 | bvi                          | false  | 00:00:31 | 15 | 20 | 0    | 954 | 1104 | 0    |
+     | 0065.5e24.5e6e | pwe 4321::2 2814754062073858 | false  | 00:00:31 | 14 | 15 | 0    | 924 | 954  | 0    |
+     |________________|______________________________|________|__________|____|____|______|_____|______|______|
     r1#
     r1#
     ```

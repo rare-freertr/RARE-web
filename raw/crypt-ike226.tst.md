@@ -35,7 +35,6 @@
      exit
     !
     interface ethernet1
-     no description
      vrf forwarding v1
      ipv4 address 1.1.1.1 255.255.255.0
      no shutdown
@@ -43,7 +42,6 @@
      exit
     !
     interface tunnel1
-     no description
      tunnel vrf v1
      tunnel protection ips
      tunnel source ethernet1
@@ -56,7 +54,6 @@
      exit
     !
     interface tunnel2
-     no description
      tunnel vrf v1
      tunnel protection ips
      tunnel source tunnel1
@@ -131,7 +128,6 @@
      exit
     !
     interface ethernet1
-     no description
      vrf forwarding v1
      ipv4 address 1.1.1.2 255.255.255.0
      no shutdown
@@ -139,7 +135,6 @@
      exit
     !
     interface tunnel1
-     no description
      tunnel vrf v1
      tunnel protection ips
      tunnel source ethernet1
@@ -152,7 +147,6 @@
      exit
     !
     interface tunnel2
-     no description
      tunnel vrf v1
      tunnel protection ips
      tunnel source tunnel1

@@ -14,7 +14,7 @@
     hostname r1
     buggy
     !
-    logging file debug ../binTmp/zzz33r1-log.run
+    logging file debug ../binTmp/zzz42r1-log.run
     !
     crypto ipsec ips
      group 02
@@ -31,7 +31,6 @@
      exit
     !
     interface atm1
-     no description
      atmsar vpi 1
      atmsar vci 2
      macsec ips
@@ -84,7 +83,7 @@
     hostname r2
     buggy
     !
-    logging file debug ../binTmp/zzz33r2-log.run
+    logging file debug ../binTmp/zzz42r2-log.run
     !
     crypto ipsec ips
      group 02
@@ -101,7 +100,6 @@
      exit
     !
     interface atm1
-     no description
      atmsar vpi 1
      atmsar vci 2
      macsec ips

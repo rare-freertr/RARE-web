@@ -14,7 +14,7 @@
     hostname r1
     buggy
     !
-    logging file debug ../binTmp/zzz55r1-log.run
+    logging file debug ../binTmp/zzz12r1-log.run
     !
     bridge 1
      mac-learn
@@ -28,7 +28,6 @@
      exit
     !
     interface bvi1
-     no description
      vrf forwarding v1
      ipv4 address 2.2.2.1 255.255.255.0
      ipv6 address 4321::1 ffff:ffff::
@@ -37,7 +36,6 @@
      exit
     !
     interface ethernet1
-     no description
      vrf forwarding v1
      ipv4 address 1.1.1.1 255.255.255.252
      ipv6 address 1234:1::1 ffff:ffff::
@@ -46,7 +44,6 @@
      exit
     !
     interface ethernet2
-     no description
      vrf forwarding v1
      ipv4 address 1.1.1.5 255.255.255.252
      ipv6 address 1234:2::1 ffff:ffff::
@@ -55,7 +52,6 @@
      exit
     !
     interface ethernet3
-     no description
      bridge-group 1
      no shutdown
      no log-link-change
@@ -113,7 +109,7 @@
     hostname r2
     buggy
     !
-    logging file debug ../binTmp/zzz55r2-log.run
+    logging file debug ../binTmp/zzz12r2-log.run
     !
     bridge 1
      exit
@@ -126,7 +122,6 @@
      exit
     !
     interface bvi1
-     no description
      vrf forwarding v1
      ipv4 address 2.2.2.2 255.255.255.0
      ipv6 address 4321::2 ffff:ffff::
@@ -135,7 +130,6 @@
      exit
     !
     interface ethernet1
-     no description
      vrf forwarding v1
      ipv4 address 1.1.1.2 255.255.255.252
      ipv6 address 1234:1::2 ffff:ffff::
@@ -198,7 +192,7 @@
     hostname r3
     buggy
     !
-    logging file debug ../binTmp/zzz55r3-log.run
+    logging file debug ../binTmp/zzz12r3-log.run
     !
     bridge 1
      exit
@@ -211,7 +205,6 @@
      exit
     !
     interface bvi1
-     no description
      vrf forwarding v1
      ipv4 address 2.2.2.3 255.255.255.0
      ipv6 address 4321::3 ffff:ffff::
@@ -220,7 +213,6 @@
      exit
     !
     interface ethernet1
-     no description
      vrf forwarding v1
      ipv4 address 1.1.1.6 255.255.255.252
      ipv6 address 1234:2::2 ffff:ffff::
@@ -283,7 +275,7 @@
     hostname r4
     buggy
     !
-    logging file debug ../binTmp/zzz55r4-log.run
+    logging file debug ../binTmp/zzz12r4-log.run
     !
     vrf definition tester
      exit
@@ -293,7 +285,6 @@
      exit
     !
     interface ethernet1
-     no description
      vrf forwarding v1
      ipv4 address 2.2.2.4 255.255.255.0
      ipv6 address 4321::4 ffff:ffff::

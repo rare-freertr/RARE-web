@@ -14,7 +14,7 @@
     hostname r1
     buggy
     !
-    logging file debug ../binTmp/zzz93r1-log.run
+    logging file debug ../binTmp/zzz73r1-log.run
     !
     vrf definition tester
      exit
@@ -36,7 +36,6 @@
      exit
     !
     interface loopback1
-     no description
      vrf forwarding v1
      ipv4 address 2.2.2.1 255.255.255.255
      ipv6 address 4321::1 ffff:ffff:ffff:ffff:ffff:ffff:ffff:ffff
@@ -45,7 +44,6 @@
      exit
     !
     interface loopback2
-     no description
      vrf forwarding v1
      ipv4 address 2.2.2.101 255.255.255.255
      ipv6 address 4321::101 ffff:ffff:ffff:ffff:ffff:ffff:ffff:ffff
@@ -54,7 +52,6 @@
      exit
     !
     interface ethernet1
-     no description
      vrf forwarding v1
      ipv4 address 1.1.1.1 255.255.255.0
      ipv6 address 1234::1 ffff::
@@ -71,7 +68,6 @@
      no safe-ebgp
      address-family unicast linkstate
      neighbor 1.1.1.2 remote-as 2
-     no neighbor 1.1.1.2 description
      neighbor 1.1.1.2 local-as 1
      neighbor 1.1.1.2 address-family unicast linkstate
      neighbor 1.1.1.2 distance 20
@@ -87,7 +83,6 @@
      no safe-ebgp
      address-family unicast linkstate
      neighbor 1234::2 remote-as 2
-     no neighbor 1234::2 description
      neighbor 1234::2 local-as 1
      neighbor 1234::2 address-family unicast linkstate
      neighbor 1234::2 distance 20
@@ -138,7 +133,7 @@
     hostname r2
     buggy
     !
-    logging file debug ../binTmp/zzz93r2-log.run
+    logging file debug ../binTmp/zzz73r2-log.run
     !
     vrf definition tester
      exit
@@ -160,7 +155,6 @@
      exit
     !
     interface loopback1
-     no description
      vrf forwarding v1
      ipv4 address 2.2.2.2 255.255.255.255
      ipv6 address 4321::2 ffff:ffff:ffff:ffff:ffff:ffff:ffff:ffff
@@ -169,7 +163,6 @@
      exit
     !
     interface loopback2
-     no description
      vrf forwarding v1
      ipv4 address 2.2.2.102 255.255.255.255
      ipv6 address 4321::102 ffff:ffff:ffff:ffff:ffff:ffff:ffff:ffff
@@ -178,7 +171,6 @@
      exit
     !
     interface ethernet1
-     no description
      vrf forwarding v1
      ipv4 address 1.1.1.2 255.255.255.0
      ipv6 address 1234::2 ffff::
@@ -195,7 +187,6 @@
      no safe-ebgp
      address-family unicast linkstate
      neighbor 1.1.1.1 remote-as 1
-     no neighbor 1.1.1.1 description
      neighbor 1.1.1.1 local-as 2
      neighbor 1.1.1.1 address-family unicast linkstate
      neighbor 1.1.1.1 distance 20
@@ -211,7 +202,6 @@
      no safe-ebgp
      address-family unicast linkstate
      neighbor 1234::1 remote-as 1
-     no neighbor 1234::1 description
      neighbor 1234::1 local-as 2
      neighbor 1234::1 address-family unicast linkstate
      neighbor 1234::1 distance 20
@@ -267,7 +257,7 @@
      |~~~~~~~~~~~|~~~~~~~~~|~~~~~~|~~~~~~~~~~~|~~~~~~~~~|~~~~~~~|~~~~~~~~~~|
      | iface     | router  | name | peerif    | peer    | ready | uptime   |
      |-----------|---------|------|-----------|---------|-------|----------|
-     | ethernet1 | 4.4.4.1 | r1   | ethernet1 | 1.1.1.1 | true  | 00:00:08 |
+     | ethernet1 | 4.4.4.1 | r1   | ethernet1 | 1.1.1.1 | true  | 00:00:05 |
      |___________|_________|______|___________|_________|_______|__________|
     r2#
     r2#
@@ -281,7 +271,7 @@
      |~~~~~~~~~~~|~~~~~~~~~|~~~~~~|~~~~~~~~~~~|~~~~~~~~~|~~~~~~~|~~~~~~~~~~|
      | iface     | router  | name | peerif    | peer    | ready | uptime   |
      |-----------|---------|------|-----------|---------|-------|----------|
-     | ethernet1 | 6.6.6.1 | r1   | ethernet1 | 1234::1 | true  | 00:00:08 |
+     | ethernet1 | 6.6.6.1 | r1   | ethernet1 | 1234::1 | true  | 00:00:05 |
      |___________|_________|______|___________|_________|_______|__________|
     r2#
     r2#
@@ -295,8 +285,8 @@
      |~~~~~~~~~|~~~~~~|~~~~~|~~~~~|~~~~~|~~~~~~~~~~|~~~~~~~~~~|
      | id      | name | nei | net | seq | topo     | left     |
      |---------|------|-----|-----|-----|----------|----------|
-     | 4.4.4.1 | r1   | 1   | 2   | 4   | 58f0e2a5 | 00:59:53 |
-     | 4.4.4.2 | r2   | 1   | 2   | 4   | f141cf47 | 00:59:53 |
+     | 4.4.4.1 | r1   | 1   | 2   | 3   | 58f0e2a5 | 00:59:58 |
+     | 4.4.4.2 | r2   | 1   | 2   | 3   | f141cf47 | 00:59:58 |
      |_________|______|_____|_____|_____|__________|__________|
     r2#
     r2#
@@ -310,8 +300,8 @@
      |~~~~~~~~~|~~~~~~|~~~~~|~~~~~|~~~~~|~~~~~~~~~~|~~~~~~~~~~|
      | id      | name | nei | net | seq | topo     | left     |
      |---------|------|-----|-----|-----|----------|----------|
-     | 6.6.6.1 | r1   | 1   | 2   | 4   | 58f0e2a5 | 00:59:58 |
-     | 6.6.6.2 | r2   | 1   | 2   | 4   | f141cf47 | 00:59:58 |
+     | 6.6.6.1 | r1   | 1   | 2   | 3   | 58f0e2a5 | 00:59:58 |
+     | 6.6.6.2 | r2   | 1   | 2   | 4   | 542fdff7 | 00:59:58 |
      |_________|______|_____|_____|_____|__________|__________|
     r2#
     r2#
@@ -347,12 +337,12 @@
      |~~~~~~|~~~~~~~~~~~~~~|~~~~~~~~|~~~~~~~~~~~|~~~~~~~~~|~~~~~~~~~~|
      | typ  | prefix       | metric | iface     | hop     | time     |
      |------|--------------|--------|-----------|---------|----------|
-     | C    | 1.1.1.0/24   | 0/0    | ethernet1 | null    | 00:00:13 |
-     | LOC  | 1.1.1.2/32   | 0/1    | ethernet1 | null    | 00:00:13 |
-     | L EX | 2.2.2.1/32   | 70/10  | ethernet1 | 1.1.1.1 | 00:00:06 |
-     | C    | 2.2.2.2/32   | 0/0    | loopback1 | null    | 00:00:14 |
-     | B    | 2.2.2.101/32 | 20/0   | ethernet1 | 1.1.1.1 | 00:00:10 |
-     | C    | 2.2.2.102/32 | 0/0    | loopback2 | null    | 00:00:13 |
+     | C    | 1.1.1.0/24   | 0/0    | ethernet1 | null    | 00:00:11 |
+     | LOC  | 1.1.1.2/32   | 0/1    | ethernet1 | null    | 00:00:11 |
+     | L EX | 2.2.2.1/32   | 70/10  | ethernet1 | 1.1.1.1 | 00:00:01 |
+     | C    | 2.2.2.2/32   | 0/0    | loopback1 | null    | 00:00:11 |
+     | B    | 2.2.2.101/32 | 20/0   | ethernet1 | 1.1.1.1 | 00:00:07 |
+     | C    | 2.2.2.102/32 | 0/0    | loopback2 | null    | 00:00:11 |
      |______|______________|________|___________|_________|__________|
     r2#
     r2#
@@ -366,12 +356,12 @@
      |~~~~~~|~~~~~~~~~~~~~~~|~~~~~~~~|~~~~~~~~~~~|~~~~~~~~~|~~~~~~~~~~|
      | typ  | prefix        | metric | iface     | hop     | time     |
      |------|---------------|--------|-----------|---------|----------|
-     | C    | 1234::/16     | 0/0    | ethernet1 | null    | 00:00:13 |
-     | LOC  | 1234::2/128   | 0/1    | ethernet1 | null    | 00:00:13 |
+     | C    | 1234::/16     | 0/0    | ethernet1 | null    | 00:00:11 |
+     | LOC  | 1234::2/128   | 0/1    | ethernet1 | null    | 00:00:11 |
      | L EX | 4321::1/128   | 70/10  | ethernet1 | 1234::1 | 00:00:02 |
-     | C    | 4321::2/128   | 0/0    | loopback1 | null    | 00:00:14 |
-     | B    | 4321::101/128 | 20/0   | ethernet1 | 1234::1 | 00:00:10 |
-     | C    | 4321::102/128 | 0/0    | loopback2 | null    | 00:00:14 |
+     | C    | 4321::2/128   | 0/0    | loopback1 | null    | 00:00:11 |
+     | B    | 4321::101/128 | 20/0   | ethernet1 | 1234::1 | 00:00:07 |
+     | C    | 4321::102/128 | 0/0    | loopback2 | null    | 00:00:11 |
      |______|_______________|________|___________|_________|__________|
     r2#
     r2#
@@ -423,7 +413,6 @@
      | 9697:4068:c2dc:7e4c:4f80:780d:47e5:4734/128 | 1.1.1.2 | 20/100/0/0 | 2      |
      | 9e35:eee6:5ac2:69ae:e3c7:67a:a767:5d97/128  | null    | 0/0/0/0    |        |
      | a938:6f76:da1e:fdef:ce59:c2eb:cc26:628/128  | null    | 0/0/0/0    |        |
-     | b223:264b:60ce:7ad4:c3d9:9980:8ba1:55a8/128 | null    | 0/0/0/0    |        |
      | b240:899:5911:cb03:3b69:ac55:4b8c:2674/128  | 1.1.1.2 | 20/100/0/0 | 2      |
      | b428:8c01:c417:8e10:b892:157:9bb7:62a7/128  | null    | 0/0/0/0    |        |
      | d3b8:752e:3a70:8c26:8b48:f10a:7ca4:4479/128 | null    | 0/0/0/0    |        |
@@ -448,7 +437,6 @@
      | 120e:47a:41c4:5480:9f07:a653:6f1a:579e/128  | 1234::2 | 20/100/0/0 | 2      |
      | 2a33:54a8:5e34:ad7:a2f2:5073:2b17:a746/128  | null    | 0/0/0/0    |        |
      | 2e88:7451:ea4c:a2a4:343e:a76e:ad70:dfed/128 | 1234::2 | 20/100/0/0 | 2      |
-     | 4872:ddb:cf68:9c79:79b3:27a1:e3ef:6780/128  | 1234::2 | 20/100/0/0 | 2      |
      | 4e76:ccc4:c6a2:a9f0:87d0:201a:6c10:9d97/128 | 1234::2 | 20/100/0/0 | 2      |
      | 9981:7ba1:6e5d:d878:1d03:d6a9:b030:a41e/128 | null    | 0/0/0/0    |        |
      | a3db:af06:eb95:ea8b:7613:41d1:c2f1:e710/128 | 1234::2 | 20/100/0/0 | 2      |

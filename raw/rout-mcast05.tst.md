@@ -14,7 +14,7 @@
     hostname r1
     buggy
     !
-    logging file debug ../binTmp/zzz30r1-log.run
+    logging file debug ../binTmp/zzz67r1-log.run
     !
     vrf definition tester
      exit
@@ -24,7 +24,6 @@
      exit
     !
     interface ethernet1
-     no description
      vrf forwarding v1
      ipv4 address 1.1.1.1 255.255.255.252
      ipv4 pim enable
@@ -78,18 +77,18 @@
     hostname r2
     buggy
     !
-    logging file debug ../binTmp/zzz30r2-log.run
+    logging file debug ../binTmp/zzz67r2-log.run
     !
     vrf definition tester
      exit
     !
     vrf definition v1
      rd 1:1
-     label-mode per-prefix
+     label4mode per-prefix
+     label6mode per-prefix
      exit
     !
     interface loopback0
-     no description
      vrf forwarding v1
      ipv4 address 2.2.2.1 255.255.255.255
      ipv6 address 4321::1 ffff:ffff:ffff:ffff:ffff:ffff:ffff:ffff
@@ -98,7 +97,6 @@
      exit
     !
     interface ethernet1
-     no description
      vrf forwarding v1
      ipv4 address 1.1.1.2 255.255.255.252
      ipv4 pim enable
@@ -109,7 +107,6 @@
      exit
     !
     interface ethernet2
-     no description
      vrf forwarding v1
      ipv4 address 1.1.1.6 255.255.255.252
      ipv4 multicast mldp-enable
@@ -126,10 +123,8 @@
      vrf v1
      local-as 1
      router-id 4.4.4.1
-     no safe-ebgp
      address-family unicast multicast
      neighbor 2.2.2.3 remote-as 1
-     no neighbor 2.2.2.3 description
      neighbor 2.2.2.3 local-as 1
      neighbor 2.2.2.3 address-family unicast multicast
      neighbor 2.2.2.3 distance 200
@@ -141,10 +136,8 @@
      vrf v1
      local-as 1
      router-id 6.6.6.1
-     no safe-ebgp
      address-family unicast multicast
      neighbor 4321::3 remote-as 1
-     no neighbor 4321::3 description
      neighbor 4321::3 local-as 1
      neighbor 4321::3 address-family unicast multicast
      neighbor 4321::3 distance 200
@@ -196,18 +189,18 @@
     hostname r3
     buggy
     !
-    logging file debug ../binTmp/zzz30r3-log.run
+    logging file debug ../binTmp/zzz67r3-log.run
     !
     vrf definition tester
      exit
     !
     vrf definition v1
      rd 1:1
-     label-mode per-prefix
+     label4mode per-prefix
+     label6mode per-prefix
      exit
     !
     interface loopback0
-     no description
      vrf forwarding v1
      ipv4 address 2.2.2.2 255.255.255.255
      ipv6 address 4321::2 ffff:ffff:ffff:ffff:ffff:ffff:ffff:ffff
@@ -216,7 +209,6 @@
      exit
     !
     interface ethernet1
-     no description
      vrf forwarding v1
      ipv4 address 1.1.1.5 255.255.255.252
      ipv4 multicast mldp-enable
@@ -230,7 +222,6 @@
      exit
     !
     interface ethernet2
-     no description
      vrf forwarding v1
      ipv4 address 1.1.1.9 255.255.255.252
      ipv4 multicast mldp-enable
@@ -289,18 +280,18 @@
     hostname r4
     buggy
     !
-    logging file debug ../binTmp/zzz30r4-log.run
+    logging file debug ../binTmp/zzz67r4-log.run
     !
     vrf definition tester
      exit
     !
     vrf definition v1
      rd 1:1
-     label-mode per-prefix
+     label4mode per-prefix
+     label6mode per-prefix
      exit
     !
     interface loopback0
-     no description
      vrf forwarding v1
      ipv4 address 2.2.2.3 255.255.255.255
      ipv6 address 4321::3 ffff:ffff:ffff:ffff:ffff:ffff:ffff:ffff
@@ -309,7 +300,6 @@
      exit
     !
     interface ethernet1
-     no description
      vrf forwarding v1
      ipv4 address 1.1.1.10 255.255.255.252
      ipv4 multicast mldp-enable
@@ -323,7 +313,6 @@
      exit
     !
     interface ethernet2
-     no description
      vrf forwarding v1
      ipv4 address 1.1.1.14 255.255.255.252
      ipv4 pim enable
@@ -337,10 +326,8 @@
      vrf v1
      local-as 1
      router-id 4.4.4.3
-     no safe-ebgp
      address-family unicast multicast
      neighbor 2.2.2.1 remote-as 1
-     no neighbor 2.2.2.1 description
      neighbor 2.2.2.1 local-as 1
      neighbor 2.2.2.1 address-family unicast multicast
      neighbor 2.2.2.1 distance 200
@@ -352,10 +339,8 @@
      vrf v1
      local-as 1
      router-id 6.6.6.3
-     no safe-ebgp
      address-family unicast multicast
      neighbor 4321::1 remote-as 1
-     no neighbor 4321::1 description
      neighbor 4321::1 local-as 1
      neighbor 4321::1 address-family unicast multicast
      neighbor 4321::1 distance 200
@@ -407,7 +392,7 @@
     hostname r5
     buggy
     !
-    logging file debug ../binTmp/zzz30r5-log.run
+    logging file debug ../binTmp/zzz67r5-log.run
     !
     vrf definition tester
      exit
@@ -417,7 +402,6 @@
      exit
     !
     interface ethernet1
-     no description
      vrf forwarding v1
      ipv4 address 1.1.1.13 255.255.255.252
      ipv4 pim enable

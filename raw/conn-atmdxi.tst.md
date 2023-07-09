@@ -14,7 +14,7 @@
     hostname r1
     buggy
     !
-    logging file debug ../binTmp/zzz47r1-log.run
+    logging file debug ../binTmp/zzz40r1-log.run
     !
     vrf definition tester
      exit
@@ -24,7 +24,6 @@
      exit
     !
     interface serial1
-     no description
      encapsulation atmdxi
      atmdxi vpi 1
      atmdxi vci 2
@@ -77,7 +76,7 @@
     hostname r2
     buggy
     !
-    logging file debug ../binTmp/zzz47r2-log.run
+    logging file debug ../binTmp/zzz40r2-log.run
     !
     vrf definition tester
      exit
@@ -87,7 +86,6 @@
      exit
     !
     interface serial1
-     no description
      encapsulation atmdxi
      atmdxi vpi 1
      atmdxi vci 2
@@ -142,18 +140,20 @@
     r1#
     r1#show interface ser1 full
     r1#show interface ser1 full
-    serial1 is up (since 00:00:02, 3 changes)
+    serial1 is up
      description:
+     state changed 3 times, last at 2022-05-02 21:11:12, 00:00:01 ago
+     last packet input 00:00:00 ago, output 00:00:00 ago, drop never ago
      type is serial, hwaddr=none, mtu=1492, bw=2000kbps, vrf=v1
-     ip4 address=1.1.1.1/24, netmask=255.255.255.0, ifcid=766784870
-     ip6 address=1234::1/16, netmask=ffff::, ifcid=238145089
-     received 27 packets (1814 bytes) dropped 0 packets (0 bytes)
-     transmitted 28 packets (1880 bytes) promisc=false macsec=false sgt=false
+     ipv4 address=1.1.1.1/24, mask=255.255.255.0, ifcid=940846843
+     ipv6 address=1234::1/16, mask=ffff::, ifcid=128564148
+     received 23 packets (1550 bytes) dropped 0 packets (0 bytes)
+     transmitted 23 packets (1550 bytes) macsec=false sgt=false
      |~~~~~~~|~~~~|~~~~|~~~~~~|~~~~~|~~~~~|~~~~~~|
      |       | packet         | byte             |
      | time  | tx | rx | drop | tx  | rx  | drop |
      |-------|----|----|------|-----|-----|------|
-     | 1sec  | 4  | 7  | 0    | 264 | 494 | 0    |
+     | 1sec  | 9  | 9  | 0    | 610 | 610 | 0    |
      | 1min  | 0  | 0  | 0    | 0   | 0   | 0    |
      | 1hour | 0  | 0  | 0    | 0   | 0   | 0    |
      |_______|____|____|______|_____|_____|______|
@@ -162,7 +162,7 @@
      | type   | value | handler | tx | rx | drop | tx  | rx  | drop |
      |--------|-------|---------|----|----|------|-----|-----|------|
      | ethtyp | 0000  | null    | 0  | 0  | 0    | 0   | 0   | 0    |
-     | ethtyp | 0800  | ip4     | 15 | 14 | 0    | 990 | 924 | 0    |
+     | ethtyp | 0800  | ip4     | 10 | 10 | 0    | 660 | 660 | 0    |
      | ethtyp | 86dd  | ip6     | 13 | 13 | 0    | 890 | 890 | 0    |
      |________|_______|_________|____|____|______|_____|_____|______|
      |~~~~~|~~~~|~~~~|
@@ -172,14 +172,14 @@
      |~~~~~~~|~~~~~~|~~~~~~|
      | proto | pack | byte |
      |-------|------|------|
-     | 1     | 15   | 990  |
+     | 1     | 10   | 660  |
      | 58    | 13   | 890  |
      |_______|______|______|
      |~~~~~~~~~~~~|~~~~|~~~~|~~~~~~|~~~~~~|~~~~~~|~~~~~~|
      |            | packet         | byte               |
      | size       | tx | rx | drop | tx   | rx   | drop |
      |------------|----|----|------|------|------|------|
-     | 0-255      | 28 | 27 | 0    | 1880 | 1814 | 0    |
+     | 0-255      | 23 | 23 | 0    | 1550 | 1550 | 0    |
      | 256-511    | 0  | 0  | 0    | 0    | 0    | 0    |
      | 512-767    | 0  | 0  | 0    | 0    | 0    | 0    |
      | 768-1023   | 0  | 0  | 0    | 0    | 0    | 0    |
@@ -192,7 +192,7 @@
      |       | packet           | byte               |
      | class | cos | exp | prec | cos  | exp  | prec |
      |-------|-----|-----|------|------|------|------|
-     | 0     | 28  | 28  | 28   | 1880 | 1880 | 1880 |
+     | 0     | 23  | 23  | 23   | 1550 | 1550 | 1550 |
      | 1     | 0   | 0   | 0    | 0    | 0    | 0    |
      | 2     | 0   | 0   | 0    | 0    | 0    | 0    |
      | 3     | 0   | 0   | 0    | 0    | 0    | 0    |
@@ -201,41 +201,41 @@
      | 6     | 0   | 0   | 0    | 0    | 0    | 0    |
      | 7     | 0   | 0   | 0    | 0    | 0    | 0    |
      |_______|_____|_____|______|______|______|______|
-            6064|
-            5457|#
-            4851|#
-            4244|#
-            3638|#
-            3032|#
-            2425|#
-            1819|##
-            1212|##
-             606|##
-               0|##
+            9770|
+            9769|
+            9768|
+            9767|
+            9766|
+            9765|
+            9764|
+            9763|
+            9762|
+            9761|
+            9760|##
              bps|0---------10--------20--------30--------40--------50-------- seconds
+              10|
+               9|
+               8|
+               7|
+               6|
+               5|
+               4|
+               3|
+               2|
                1|
-               0|
-               0|
-               0|
-               0|
-               0|
-               0|
-               0|
-               0|
-               0|
-               0|
+               0|############################################################
              bps|0---------10--------20--------30--------40--------50-------- minutes
+              10|
+               9|
+               8|
+               7|
+               6|
+               5|
+               4|
+               3|
+               2|
                1|
-               0|
-               0|
-               0|
-               0|
-               0|
-               0|
-               0|
-               0|
-               0|
-               0|
+               0|############################################################
              bps|0---------10--------20--------30--------40--------50-------- hours
     r1#
     r1#

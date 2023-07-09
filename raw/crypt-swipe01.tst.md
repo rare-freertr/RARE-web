@@ -14,7 +14,7 @@
     hostname r1
     buggy
     !
-    logging file debug ../binTmp/zzz51r1-log.run
+    logging file debug ../binTmp/zzz75r1-log.run
     !
     crypto ipsec ips
      cipher des
@@ -30,7 +30,6 @@
      exit
     !
     interface serial1
-     no description
      encapsulation hdlc
      vrf forwarding v1
      ipv4 address 1.1.1.1 255.255.255.0
@@ -40,7 +39,6 @@
      exit
     !
     interface tunnel1
-     no description
      tunnel vrf v1
      tunnel protection ips
      tunnel source serial1
@@ -95,7 +93,7 @@
     hostname r2
     buggy
     !
-    logging file debug ../binTmp/zzz51r2-log.run
+    logging file debug ../binTmp/zzz75r2-log.run
     !
     crypto ipsec ips
      cipher des
@@ -111,7 +109,6 @@
      exit
     !
     interface serial1
-     no description
      encapsulation hdlc
      vrf forwarding v1
      ipv4 address 1.1.1.2 255.255.255.0
@@ -121,7 +118,6 @@
      exit
     !
     interface tunnel1
-     no description
      tunnel vrf v1
      tunnel protection ips
      tunnel source serial1
@@ -178,27 +174,29 @@
     r1#
     r1#show inter tun1 full
     r1#show inter tun1 full
-    tunnel1 is up (since 00:00:06, 15 changes)
+    tunnel1 is up
      description:
-     type is swipe, hwaddr=007b.6a17.3955, mtu=1470, bw=2000kbps, vrf=v1
-     ip4 address=2.2.2.1/24, netmask=255.255.255.0, ifcid=245794360
-     ip6 address=4321::1/16, netmask=ffff::, ifcid=166344902
-     received 21 packets (1386 bytes) dropped 0 packets (0 bytes)
-     transmitted 28 packets (1904 bytes) promisc=false macsec=false sgt=false
-     |~~~~~~~|~~~~|~~~~|~~~~~~|~~~~~|~~~~~|~~~~~~|
-     |       | packet         | byte             |
-     | time  | tx | rx | drop | tx  | rx  | drop |
-     |-------|----|----|------|-----|-----|------|
-     | 1sec  | 10 | 10 | 0    | 660 | 660 | 0    |
-     | 1min  | 0  | 0  | 0    | 0   | 0   | 0    |
-     | 1hour | 0  | 0  | 0    | 0   | 0   | 0    |
-     |_______|____|____|______|_____|_____|______|
+     state changed 15 times, last at 2022-05-02 21:14:38, 00:00:07 ago
+     last packet input 00:00:00 ago, output 00:00:00 ago, drop never ago
+     type is swipe, hwaddr=0036.5641.3845, mtu=1470, bw=2000kbps, vrf=v1
+     ipv4 address=2.2.2.1/24, mask=255.255.255.0, ifcid=743444838
+     ipv6 address=4321::1/16, mask=ffff::, ifcid=713035885
+     received 20 packets (1320 bytes) dropped 0 packets (0 bytes)
+     transmitted 28 packets (1904 bytes) macsec=false sgt=false
+     |~~~~~~~|~~~~|~~~~|~~~~~~|~~~~~~|~~~~~~|~~~~~~|
+     |       | packet         | byte               |
+     | time  | tx | rx | drop | tx   | rx   | drop |
+     |-------|----|----|------|------|------|------|
+     | 1sec  | 20 | 20 | 0    | 1320 | 1320 | 0    |
+     | 1min  | 0  | 0  | 0    | 0    | 0    | 0    |
+     | 1hour | 0  | 0  | 0    | 0    | 0    | 0    |
+     |_______|____|____|______|______|______|______|
      |~~~~~~~~|~~~~~~~|~~~~~~~~~|~~~~|~~~~|~~~~~~|~~~~~|~~~~~|~~~~~~|
      |                          | packet         | byte             |
      | type   | value | handler | tx | rx | drop | tx  | rx  | drop |
      |--------|-------|---------|----|----|------|-----|-----|------|
      | ethtyp | 0000  | null    | 0  | 0  | 0    | 0   | 0   | 0    |
-     | ethtyp | 0800  | ip4     | 15 | 11 | 0    | 990 | 726 | 0    |
+     | ethtyp | 0800  | ip4     | 15 | 10 | 0    | 990 | 660 | 0    |
      | ethtyp | 86dd  | ip6     | 13 | 10 | 0    | 914 | 660 | 0    |
      |________|_______|_________|____|____|______|_____|_____|______|
      |~~~~~|~~~~|~~~~|
@@ -215,7 +213,7 @@
      |            | packet         | byte               |
      | size       | tx | rx | drop | tx   | rx   | drop |
      |------------|----|----|------|------|------|------|
-     | 0-255      | 28 | 21 | 0    | 1904 | 1386 | 0    |
+     | 0-255      | 28 | 20 | 0    | 1904 | 1320 | 0    |
      | 256-511    | 0  | 0  | 0    | 0    | 0    | 0    |
      | 512-767    | 0  | 0  | 0    | 0    | 0    | 0    |
      | 768-1023   | 0  | 0  | 0    | 0    | 0    | 0    |
@@ -237,41 +235,41 @@
      | 6     | 0   | 0   | 0    | 0    | 0    | 0    |
      | 7     | 0   | 0   | 0    | 0    | 0    | 0    |
      |_______|_____|_____|______|______|______|______|
-             10k|
-            9504|#
+           21.1k|#
+           19.0k|#
+           16.8k|#
+           14.7k|#
+           12.6k|#
+           10.5k|#
             8448|#
-            7392|#
             6336|#
-            5280|#
             4224|#
-            3168|#
-            2112|#    #
-            1056|#    #
-               0|######
+            2112|#     #
+               0|############################################################
              bps|0---------10--------20--------30--------40--------50-------- seconds
+              10|
+               9|
+               8|
+               7|
+               6|
+               5|
+               4|
+               3|
+               2|
                1|
-               0|
-               0|
-               0|
-               0|
-               0|
-               0|
-               0|
-               0|
-               0|
-               0|
+               0|############################################################
              bps|0---------10--------20--------30--------40--------50-------- minutes
+              10|
+               9|
+               8|
+               7|
+               6|
+               5|
+               4|
+               3|
+               2|
                1|
-               0|
-               0|
-               0|
-               0|
-               0|
-               0|
-               0|
-               0|
-               0|
-               0|
+               0|############################################################
              bps|0---------10--------20--------30--------40--------50-------- hours
     r1#
     r1#

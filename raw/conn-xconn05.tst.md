@@ -14,7 +14,7 @@
     hostname r1
     buggy
     !
-    logging file debug ../binTmp/zzz45r1-log.run
+    logging file debug ../binTmp/zzz68r1-log.run
     !
     vrf definition tester
      exit
@@ -24,7 +24,6 @@
      exit
     !
     interface serial1
-     no description
      encapsulation atmdxi
      atmdxi vpi 1
      atmdxi vci 2
@@ -77,13 +76,12 @@
     hostname r2
     buggy
     !
-    logging file debug ../binTmp/zzz45r2-log.run
+    logging file debug ../binTmp/zzz68r2-log.run
     !
     vrf definition tester
      exit
     !
     interface serial1
-     no description
      encapsulation atmdxi
      atmdxi vpi 1
      atmdxi vci 2
@@ -92,7 +90,6 @@
      exit
     !
     interface serial2
-     no description
      encapsulation atmdxi
      atmdxi vpi 1
      atmdxi vci 2
@@ -134,7 +131,7 @@
     hostname r3
     buggy
     !
-    logging file debug ../binTmp/zzz45r3-log.run
+    logging file debug ../binTmp/zzz68r3-log.run
     !
     vrf definition tester
      exit
@@ -144,7 +141,6 @@
      exit
     !
     interface serial1
-     no description
      encapsulation atmdxi
      atmdxi vpi 1
      atmdxi vci 2

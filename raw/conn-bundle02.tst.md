@@ -14,7 +14,7 @@
     hostname r1
     buggy
     !
-    logging file debug ../binTmp/zzz11r1-log.run
+    logging file debug ../binTmp/zzz43r1-log.run
     !
     bundle 1
      no ethernet
@@ -28,7 +28,6 @@
      exit
     !
     interface bundle1
-     no description
      vrf forwarding v1
      ipv4 address 1.1.1.1 255.255.255.0
      ipv6 address 1234::1 ffff::
@@ -37,7 +36,6 @@
      exit
     !
     interface serial1
-     no description
      encapsulation hdlc
      bundle-group 1
      no shutdown
@@ -86,7 +84,7 @@
     hostname r2
     buggy
     !
-    logging file debug ../binTmp/zzz11r2-log.run
+    logging file debug ../binTmp/zzz43r2-log.run
     !
     vrf definition tester
      exit
@@ -96,7 +94,6 @@
      exit
     !
     interface serial1
-     no description
      encapsulation hdlc
      vrf forwarding v1
      ipv4 address 1.1.1.2 255.255.255.0

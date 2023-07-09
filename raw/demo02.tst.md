@@ -12,7 +12,7 @@
     **r1:**
     ```
     hostname r1
-    logging file debug ../binTmp/zzz9r1-log.run
+    logging file debug ../binTmp/zzz66r1-log.run
     vrf definition tester
      exit
     server telnet tester
@@ -53,7 +53,7 @@
     **r2:**
     ```
     hostname r2
-    logging file debug ../binTmp/zzz9r2-log.run
+    logging file debug ../binTmp/zzz66r2-log.run
     vrf definition tester
      exit
     server telnet tester
@@ -94,7 +94,7 @@
     **r3:**
     ```
     hostname r3
-    logging file debug ../binTmp/zzz9r3-log.run
+    logging file debug ../binTmp/zzz66r3-log.run
     vrf definition tester
      exit
     server telnet tester
@@ -135,7 +135,7 @@
     **r4:**
     ```
     hostname r4
-    logging file debug ../binTmp/zzz9r4-log.run
+    logging file debug ../binTmp/zzz66r4-log.run
     vrf definition tester
      exit
     server telnet tester

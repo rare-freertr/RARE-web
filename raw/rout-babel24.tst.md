@@ -14,7 +14,7 @@
     hostname r1
     buggy
     !
-    logging file debug ../binTmp/zzz19r1-log.run
+    logging file debug ../binTmp/zzz31r1-log.run
     !
     access-list test4
      sequence 10 deny 1 any all any all
@@ -31,7 +31,8 @@
     !
     vrf definition v1
      rd 1:1
-     label-mode per-prefix
+     label4mode per-prefix
+     label6mode per-prefix
      exit
     !
     router babel4 1
@@ -47,7 +48,6 @@
      exit
     !
     interface loopback0
-     no description
      vrf forwarding v1
      ipv4 address 2.2.2.1 255.255.255.255
      ipv6 address 4321::1 ffff:ffff:ffff:ffff:ffff:ffff:ffff:ffff
@@ -56,7 +56,6 @@
      exit
     !
     interface loopback1
-     no description
      vrf forwarding v1
      ipv4 address 2.2.2.11 255.255.255.255
      ipv6 address 4321::11 ffff:ffff:ffff:ffff:ffff:ffff:ffff:ffff
@@ -65,7 +64,6 @@
      exit
     !
     interface serial1
-     no description
      encapsulation hdlc
      vrf forwarding v1
      ipv4 address 9.9.9.1 255.255.255.0
@@ -79,7 +77,6 @@
      exit
     !
     interface serial2
-     no description
      encapsulation hdlc
      vrf forwarding v1
      ipv4 address 9.9.8.1 255.255.255.0
@@ -132,7 +129,7 @@
     hostname r2
     buggy
     !
-    logging file debug ../binTmp/zzz19r2-log.run
+    logging file debug ../binTmp/zzz31r2-log.run
     !
     access-list test4
      sequence 10 deny 1 any all any all
@@ -149,7 +146,8 @@
     !
     vrf definition v1
      rd 1:1
-     label-mode per-prefix
+     label4mode per-prefix
+     label6mode per-prefix
      exit
     !
     router babel4 1
@@ -165,7 +163,6 @@
      exit
     !
     interface loopback0
-     no description
      vrf forwarding v1
      ipv4 address 2.2.2.2 255.255.255.255
      ipv6 address 4321::2 ffff:ffff:ffff:ffff:ffff:ffff:ffff:ffff
@@ -174,7 +171,6 @@
      exit
     !
     interface loopback1
-     no description
      vrf forwarding v1
      ipv4 address 2.2.2.12 255.255.255.255
      ipv6 address 4321::12 ffff:ffff:ffff:ffff:ffff:ffff:ffff:ffff
@@ -183,7 +179,6 @@
      exit
     !
     interface serial1
-     no description
      encapsulation hdlc
      vrf forwarding v1
      ipv4 address 9.9.9.2 255.255.255.0
@@ -197,7 +192,6 @@
      exit
     !
     interface serial2
-     no description
      encapsulation hdlc
      vrf forwarding v1
      ipv4 address 9.9.8.2 255.255.255.0
@@ -269,7 +263,7 @@
      |~~~~~~~~~~~|~~~~~~~|~~~~~~~~~~|~~~~~~~~~~|
      | interface | learn | neighbor | uptime   |
      |-----------|-------|----------|----------|
-     | serial1   | 4     | 9999::1  | 00:00:21 |
+     | serial1   | 4     | 9999::1  | 00:00:22 |
      |___________|_______|__________|__________|
     r2#
     r2#
@@ -303,7 +297,7 @@
      | A   | 4321::1/128  | 130/100 | serial1 | 9999::1 | 00:00:22 |
      | A   | 4321::11/128 | 130/100 | serial1 | 9999::1 | 00:00:22 |
      | A   | 9998::/16    | 130/100 | serial1 | 9999::1 | 00:00:22 |
-     | A   | 9999::/16    | 1/0     | serial1 | null    | 00:00:38 |
+     | A   | 9999::/16    | 1/0     | serial1 | null    | 00:00:37 |
      |_____|______________|_________|_________|_________|__________|
     r2#
     r2#
@@ -338,10 +332,10 @@
      |~~~~~|~~~~~~~~~~~~~~|~~~~~~~~~|~~~~~~~~~~~|~~~~~~~~~|~~~~~~~~~~|
      | typ | prefix       | metric  | iface     | hop     | time     |
      |-----|--------------|---------|-----------|---------|----------|
-     | A   | 4321::1/128  | 130/100 | serial2   | 9998::1 | 00:00:22 |
-     | C   | 4321::2/128  | 0/0     | loopback0 | null    | 00:00:42 |
-     | A   | 4321::11/128 | 130/100 | serial2   | 9998::1 | 00:00:22 |
-     | C   | 4321::12/128 | 0/0     | loopback1 | null    | 00:00:42 |
+     | A   | 4321::1/128  | 130/100 | serial2   | 9998::1 | 00:00:23 |
+     | C   | 4321::2/128  | 0/0     | loopback0 | null    | 00:00:43 |
+     | A   | 4321::11/128 | 130/100 | serial2   | 9998::1 | 00:00:23 |
+     | C   | 4321::12/128 | 0/0     | loopback1 | null    | 00:00:43 |
      | C   | 9998::/16    | 0/0     | serial2   | null    | 00:00:38 |
      | LOC | 9998::2/128  | 0/1     | serial2   | null    | 00:00:38 |
      | C   | 9999::/16    | 0/0     | serial1   | null    | 00:00:38 |

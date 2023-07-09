@@ -14,7 +14,7 @@
     hostname r1
     buggy
     !
-    logging file debug ../binTmp/zzz25r1-log.run
+    logging file debug ../binTmp/zzz76r1-log.run
     !
     route-map p4
      sequence 10 action deny
@@ -54,7 +54,6 @@
      exit
     !
     interface loopback0
-     no description
      vrf forwarding v1
      ipv4 address 2.2.2.1 255.255.255.255
      ipv6 address 4321::1 ffff:ffff:ffff:ffff:ffff:ffff:ffff:ffff
@@ -63,7 +62,6 @@
      exit
     !
     interface loopback1
-     no description
      vrf forwarding v1
      ipv4 address 2.2.2.11 255.255.255.255
      ipv6 address 4321::11 ffff:ffff:ffff:ffff:ffff:ffff:ffff:ffff
@@ -72,7 +70,6 @@
      exit
     !
     interface loopback2
-     no description
      vrf forwarding v1
      ipv4 address 2.2.2.21 255.255.255.255
      ipv6 address 4321::21 ffff:ffff:ffff:ffff:ffff:ffff:ffff:ffff
@@ -81,7 +78,6 @@
      exit
     !
     interface ethernet1
-     no description
      vrf forwarding v1
      ipv4 address 1.1.1.1 255.255.255.252
      ipv6 address 1234:1::1 ffff:ffff::
@@ -135,7 +131,7 @@
     hostname r2
     buggy
     !
-    logging file debug ../binTmp/zzz25r2-log.run
+    logging file debug ../binTmp/zzz76r2-log.run
     !
     vrf definition tester
      exit
@@ -157,7 +153,6 @@
      exit
     !
     interface loopback0
-     no description
      vrf forwarding v1
      ipv4 address 2.2.2.2 255.255.255.255
      ipv6 address 4321::2 ffff:ffff:ffff:ffff:ffff:ffff:ffff:ffff
@@ -166,7 +161,6 @@
      exit
     !
     interface loopback1
-     no description
      vrf forwarding v1
      ipv4 address 2.2.2.12 255.255.255.255
      ipv6 address 4321::12 ffff:ffff:ffff:ffff:ffff:ffff:ffff:ffff
@@ -175,7 +169,6 @@
      exit
     !
     interface loopback2
-     no description
      vrf forwarding v1
      ipv4 address 2.2.2.22 255.255.255.255
      ipv6 address 4321::22 ffff:ffff:ffff:ffff:ffff:ffff:ffff:ffff
@@ -184,7 +177,6 @@
      exit
     !
     interface ethernet1
-     no description
      vrf forwarding v1
      ipv4 address 1.1.1.2 255.255.255.252
      ipv6 address 1234:1::2 ffff:ffff::
@@ -241,7 +233,7 @@
      |~~~~~~~~~~~|~~~~~~~~~|~~~~~~|~~~~~~~~~~~|~~~~~~~~~|~~~~~~~~~|~~~~~~~~~~|~~~~~~~~~~|
      | iface     | router  | name | peerif    | peer    | learned | adverted | uptime   |
      |-----------|---------|------|-----------|---------|---------|----------|----------|
-     | ethernet1 | 4.4.4.1 | r1   | ethernet1 | 1.1.1.1 | 3       | 3        | 00:00:07 |
+     | ethernet1 | 4.4.4.1 | r1   | ethernet1 | 1.1.1.1 | 3       | 3        | 00:00:06 |
      |___________|_________|______|___________|_________|_________|__________|__________|
     r2#
     r2#
@@ -269,13 +261,13 @@
      |~~~~~~|~~~~~~~~~~~~~|~~~~~~~~|~~~~~~~~~~~|~~~~~~~~~|~~~~~~~~~~|
      | typ  | prefix      | metric | iface     | hop     | time     |
      |------|-------------|--------|-----------|---------|----------|
-     | C    | 1.1.1.0/30  | 1/0    | ethernet1 | null    | 00:00:04 |
-     | null | 2.2.2.1/32  | 80/10  | ethernet1 | 1.1.1.1 | 00:00:04 |
-     | C    | 2.2.2.2/32  | 2/0    | loopback0 | null    | 00:00:13 |
-     | null | 2.2.2.11/32 | 80/10  | ethernet1 | 1.1.1.1 | 00:00:04 |
-     | C    | 2.2.2.12/32 | 2/0    | loopback1 | null    | 00:00:13 |
-     | null | 2.2.2.21/32 | 80/10  | ethernet1 | 1.1.1.1 | 00:00:04 |
-     | C    | 2.2.2.22/32 | 2/0    | loopback2 | null    | 00:00:13 |
+     | C    | 1.1.1.0/30  | 1/0    | ethernet1 | null    | 00:00:02 |
+     | null | 2.2.2.1/32  | 80/10  | ethernet1 | 1.1.1.1 | 00:00:02 |
+     | C    | 2.2.2.2/32  | 2/0    | loopback0 | null    | 00:00:12 |
+     | null | 2.2.2.11/32 | 80/10  | ethernet1 | 1.1.1.1 | 00:00:02 |
+     | C    | 2.2.2.12/32 | 2/0    | loopback1 | null    | 00:00:12 |
+     | null | 2.2.2.21/32 | 80/10  | ethernet1 | 1.1.1.1 | 00:00:02 |
+     | C    | 2.2.2.22/32 | 2/0    | loopback2 | null    | 00:00:12 |
      |______|_____________|________|___________|_________|__________|
     r2#
     r2#
@@ -289,13 +281,13 @@
      |~~~~~~|~~~~~~~~~~~~~~|~~~~~~~~|~~~~~~~~~~~|~~~~~~~~~~~|~~~~~~~~~~|
      | typ  | prefix       | metric | iface     | hop       | time     |
      |------|--------------|--------|-----------|-----------|----------|
-     | C    | 1234:1::/32  | 1/0    | ethernet1 | null      | 00:00:06 |
-     | null | 4321::1/128  | 80/10  | ethernet1 | 1234:1::1 | 00:00:06 |
-     | C    | 4321::2/128  | 2/0    | loopback0 | null      | 00:00:13 |
-     | null | 4321::11/128 | 80/10  | ethernet1 | 1234:1::1 | 00:00:06 |
-     | C    | 4321::12/128 | 2/0    | loopback1 | null      | 00:00:13 |
-     | null | 4321::21/128 | 80/10  | ethernet1 | 1234:1::1 | 00:00:06 |
-     | C    | 4321::22/128 | 2/0    | loopback2 | null      | 00:00:13 |
+     | C    | 1234:1::/32  | 1/0    | ethernet1 | null      | 00:00:02 |
+     | null | 4321::1/128  | 80/10  | ethernet1 | 1234:1::1 | 00:00:02 |
+     | C    | 4321::2/128  | 2/0    | loopback0 | null      | 00:00:12 |
+     | null | 4321::11/128 | 80/10  | ethernet1 | 1234:1::1 | 00:00:02 |
+     | C    | 4321::12/128 | 2/0    | loopback1 | null      | 00:00:12 |
+     | null | 4321::21/128 | 80/10  | ethernet1 | 1234:1::1 | 00:00:02 |
+     | C    | 4321::22/128 | 2/0    | loopback2 | null      | 00:00:12 |
      |______|______________|________|___________|___________|__________|
     r2#
     r2#
@@ -309,14 +301,14 @@
      |~~~~~~|~~~~~~~~~~~~~|~~~~~~~~|~~~~~~~~~~~|~~~~~~~~~|~~~~~~~~~~|
      | typ  | prefix      | metric | iface     | hop     | time     |
      |------|-------------|--------|-----------|---------|----------|
-     | C    | 1.1.1.0/30  | 0/0    | ethernet1 | null    | 00:00:13 |
-     | LOC  | 1.1.1.2/32  | 0/1    | ethernet1 | null    | 00:00:13 |
-     | P EX | 2.2.2.1/32  | 80/10  | ethernet1 | 1.1.1.1 | 00:00:04 |
-     | C    | 2.2.2.2/32  | 0/0    | loopback0 | null    | 00:00:13 |
-     | P EX | 2.2.2.11/32 | 80/10  | ethernet1 | 1.1.1.1 | 00:00:04 |
-     | C    | 2.2.2.12/32 | 0/0    | loopback1 | null    | 00:00:13 |
-     | P EX | 2.2.2.21/32 | 80/10  | ethernet1 | 1.1.1.1 | 00:00:04 |
-     | C    | 2.2.2.22/32 | 0/0    | loopback2 | null    | 00:00:13 |
+     | C    | 1.1.1.0/30  | 0/0    | ethernet1 | null    | 00:00:12 |
+     | LOC  | 1.1.1.2/32  | 0/1    | ethernet1 | null    | 00:00:12 |
+     | P EX | 2.2.2.1/32  | 80/10  | ethernet1 | 1.1.1.1 | 00:00:02 |
+     | C    | 2.2.2.2/32  | 0/0    | loopback0 | null    | 00:00:12 |
+     | P EX | 2.2.2.11/32 | 80/10  | ethernet1 | 1.1.1.1 | 00:00:02 |
+     | C    | 2.2.2.12/32 | 0/0    | loopback1 | null    | 00:00:12 |
+     | P EX | 2.2.2.21/32 | 80/10  | ethernet1 | 1.1.1.1 | 00:00:02 |
+     | C    | 2.2.2.22/32 | 0/0    | loopback2 | null    | 00:00:12 |
      |______|_____________|________|___________|_________|__________|
     r2#
     r2#
@@ -330,14 +322,14 @@
      |~~~~~~|~~~~~~~~~~~~~~~|~~~~~~~~|~~~~~~~~~~~|~~~~~~~~~~~|~~~~~~~~~~|
      | typ  | prefix        | metric | iface     | hop       | time     |
      |------|---------------|--------|-----------|-----------|----------|
-     | C    | 1234:1::/32   | 0/0    | ethernet1 | null      | 00:00:13 |
-     | LOC  | 1234:1::2/128 | 0/1    | ethernet1 | null      | 00:00:13 |
-     | P EX | 4321::1/128   | 80/10  | ethernet1 | 1234:1::1 | 00:00:06 |
-     | C    | 4321::2/128   | 0/0    | loopback0 | null      | 00:00:14 |
-     | P EX | 4321::11/128  | 80/10  | ethernet1 | 1234:1::1 | 00:00:06 |
-     | C    | 4321::12/128  | 0/0    | loopback1 | null      | 00:00:13 |
-     | P EX | 4321::21/128  | 80/10  | ethernet1 | 1234:1::1 | 00:00:06 |
-     | C    | 4321::22/128  | 0/0    | loopback2 | null      | 00:00:13 |
+     | C    | 1234:1::/32   | 0/0    | ethernet1 | null      | 00:00:12 |
+     | LOC  | 1234:1::2/128 | 0/1    | ethernet1 | null      | 00:00:12 |
+     | P EX | 4321::1/128   | 80/10  | ethernet1 | 1234:1::1 | 00:00:03 |
+     | C    | 4321::2/128   | 0/0    | loopback0 | null      | 00:00:12 |
+     | P EX | 4321::11/128  | 80/10  | ethernet1 | 1234:1::1 | 00:00:03 |
+     | C    | 4321::12/128  | 0/0    | loopback1 | null      | 00:00:12 |
+     | P EX | 4321::21/128  | 80/10  | ethernet1 | 1234:1::1 | 00:00:03 |
+     | C    | 4321::22/128  | 0/0    | loopback2 | null      | 00:00:12 |
      |______|_______________|________|___________|___________|__________|
     r2#
     r2#

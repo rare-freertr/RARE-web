@@ -14,7 +14,7 @@
     hostname r1
     buggy
     !
-    logging file debug ../binTmp/zzz24r1-log.run
+    logging file debug ../binTmp/zzz66r1-log.run
     !
     vrf definition tester
      exit
@@ -24,13 +24,11 @@
      exit
     !
     interface ethernet1
-     no description
      no shutdown
      no log-link-change
      exit
     !
     interface ethernet1.123
-     no description
      vrf forwarding v1
      ipv4 address 1.1.1.1 255.255.255.0
      ipv4 secondary-address 1.1.1.111
@@ -86,7 +84,7 @@
     hostname r2
     buggy
     !
-    logging file debug ../binTmp/zzz24r2-log.run
+    logging file debug ../binTmp/zzz66r2-log.run
     !
     vrf definition tester
      exit
@@ -96,13 +94,11 @@
      exit
     !
     interface ethernet1
-     no description
      no shutdown
      no log-link-change
      exit
     !
     interface ethernet1.123
-     no description
      vrf forwarding v1
      ipv4 address 1.1.1.2 255.255.255.0
      ipv6 address 1234::2 ffff::
@@ -154,11 +150,13 @@
     r1#
     r1#show inter eth1 full
     r1#show inter eth1 full
-    ethernet1 is promisc, up (since 00:00:21, 3 changes)
+    ethernet1 is up, promisc
      description:
+     state changed 3 times, last at 2022-05-02 21:15:07, 00:00:18 ago
+     last packet input 00:00:00 ago, output 00:00:00 ago, drop never ago
      type is ethernet, hwaddr=0000.0000.1111, mtu=1500, bw=100mbps
-     received 90 packets (6196 bytes) dropped 0 packets (0 bytes)
-     transmitted 96 packets (6556 bytes) promisc=true macsec=false sgt=false
+     received 88 packets (6104 bytes) dropped 0 packets (0 bytes)
+     transmitted 91 packets (6198 bytes) macsec=false sgt=false
      |~~~~~~~|~~~~|~~~~|~~~~~~|~~~~~|~~~~~|~~~~~~|
      |       | packet         | byte             |
      | time  | tx | rx | drop | tx  | rx  | drop |
@@ -172,7 +170,7 @@
      | type   | value | handler | tx | rx | drop | tx   | rx   | drop |
      |--------|-------|---------|----|----|------|------|------|------|
      | ethtyp | 0000  | null    | 0  | 0  | 0    | 0    | 0    | 0    |
-     | ethtyp | 8100  | dot1q   | 96 | 90 | 0    | 6556 | 6196 | 0    |
+     | ethtyp | 8100  | dot1q   | 91 | 88 | 0    | 6198 | 6104 | 0    |
      |________|_______|_________|____|____|______|______|______|______|
      |~~~~~|~~~~|~~~~|
      | who | tx | rx |
@@ -183,13 +181,13 @@
      |-------|------|------|
      | 0     | 7    | 238  |
      | 1     | 41   | 2870 |
-     | 58    | 48   | 3448 |
+     | 58    | 43   | 3090 |
      |_______|______|______|
      |~~~~~~~~~~~~|~~~~|~~~~|~~~~~~|~~~~~~|~~~~~~|~~~~~~|
      |            | packet         | byte               |
      | size       | tx | rx | drop | tx   | rx   | drop |
      |------------|----|----|------|------|------|------|
-     | 0-255      | 96 | 90 | 0    | 6556 | 6196 | 0    |
+     | 0-255      | 91 | 88 | 0    | 6198 | 6104 | 0    |
      | 256-511    | 0  | 0  | 0    | 0    | 0    | 0    |
      | 512-767    | 0  | 0  | 0    | 0    | 0    | 0    |
      | 768-1023   | 0  | 0  | 0    | 0    | 0    | 0    |
@@ -202,7 +200,7 @@
      |       | packet           | byte               |
      | class | cos | exp | prec | cos  | exp  | prec |
      |-------|-----|-----|------|------|------|------|
-     | 0     | 96  | 96  | 96   | 6556 | 6556 | 6556 |
+     | 0     | 91  | 91  | 91   | 6198 | 6198 | 6198 |
      | 1     | 0   | 0   | 0    | 0    | 0    | 0    |
      | 2     | 0   | 0   | 0    | 0    | 0    | 0    |
      | 3     | 0   | 0   | 0    | 0    | 0    | 0    |
@@ -211,41 +209,41 @@
      | 6     | 0   | 0   | 0    | 0    | 0    | 0    |
      | 7     | 0   | 0   | 0    | 0    | 0    | 0    |
      |_______|_____|_____|______|______|______|______|
-             12k|
-             11k|            #  #
-            9958|            #  #
-            8713|            #  #
-            7468|            #  #
-            6224| #  # #     #  #
-            4979| #  # # # # #  #
-            3734|## ########## ###
-            2489|## ########## ###
-            1244|## ########## ###
-               0|## ########## #######
+           22.9k|            #
+           20.6k|            #
+           18.3k|            #
+           16.0k|            #
+           13.7k|            #
+           11.4k|            #
+            9184|            #
+            6888|            #
+            4592| # # #  # # #
+            2296|####### ##### ###
+               0|############################################################
              bps|0---------10--------20--------30--------40--------50-------- seconds
+              10|
+               9|
+               8|
+               7|
+               6|
+               5|
+               4|
+               3|
+               2|
                1|
-               0|
-               0|
-               0|
-               0|
-               0|
-               0|
-               0|
-               0|
-               0|
-               0|
+               0|############################################################
              bps|0---------10--------20--------30--------40--------50-------- minutes
+              10|
+               9|
+               8|
+               7|
+               6|
+               5|
+               4|
+               3|
+               2|
                1|
-               0|
-               0|
-               0|
-               0|
-               0|
-               0|
-               0|
-               0|
-               0|
-               0|
+               0|############################################################
              bps|0---------10--------20--------30--------40--------50-------- hours
     r1#
     r1#

@@ -14,7 +14,7 @@
     hostname r1
     buggy
     !
-    logging file debug ../binTmp/zzz62r1-log.run
+    logging file debug ../binTmp/zzz34r1-log.run
     !
     access-list a2b4
      sequence 10 permit all 2.2.2.101 255.255.255.255 all 2.2.2.201 255.255.255.255 all
@@ -32,7 +32,6 @@
      exit
     !
     interface loopback0
-     no description
      vrf forwarding v1
      ipv4 address 2.2.2.101 255.255.255.255
      ipv6 address 4321::101 ffff:ffff:ffff:ffff:ffff:ffff:ffff:ffff
@@ -41,7 +40,6 @@
      exit
     !
     interface ethernet1
-     no description
      vrf forwarding v1
      ipv4 address 1.1.1.1 255.255.255.252
      ipv6 address 1234:1::1 ffff:ffff::
@@ -93,7 +91,7 @@
     hostname r2
     buggy
     !
-    logging file debug ../binTmp/zzz62r2-log.run
+    logging file debug ../binTmp/zzz34r2-log.run
     !
     access-list a2b4
      sequence 10 permit all 2.2.2.101 255.255.255.255 all 2.2.2.201 255.255.255.255 all
@@ -119,7 +117,6 @@
      exit
     !
     interface ethernet1
-     no description
      vrf forwarding v1
      ipv4 address 1.1.1.2 255.255.255.252
      ipv6 address 1234:1::2 ffff:ffff::
@@ -128,7 +125,6 @@
      exit
     !
     interface ethernet2
-     no description
      vrf forwarding v1
      ipv4 address 1.1.1.6 255.255.255.252
      ipv6 address 1234:2::2 ffff:ffff::
@@ -182,7 +178,7 @@
     hostname r3
     buggy
     !
-    logging file debug ../binTmp/zzz62r3-log.run
+    logging file debug ../binTmp/zzz34r3-log.run
     !
     access-list b2a4
      sequence 10 permit all 2.2.2.201 255.255.255.255 all 2.2.2.101 255.255.255.255 all
@@ -200,7 +196,6 @@
      exit
     !
     interface loopback0
-     no description
      vrf forwarding v1
      ipv4 address 2.2.2.201 255.255.255.255
      ipv6 address 4321::201 ffff:ffff:ffff:ffff:ffff:ffff:ffff:ffff
@@ -209,7 +204,6 @@
      exit
     !
     interface ethernet1
-     no description
      vrf forwarding v1
      ipv4 address 1.1.1.5 255.255.255.252
      ipv6 address 1234:2::1 ffff:ffff::
@@ -263,10 +257,13 @@
     r2#
     r2#show ipv4 pbr v1
     r2#show ipv4 pbr v1
-     sequence 10 a2b4 v1 nexthop 1.1.1.5
-      match=tx=0(0) rx=896(14) drp=0(0) accessed=00:00:00 ago, 00:00:00 timeout
-     sequence 20 b2a4 v1 nexthop 1.1.1.1
-      match=tx=0(0) rx=832(13) drp=0(0) accessed=00:00:00 ago, 00:00:00 timeout
+     |~~~~~|~~~~~~|~~~~~~|~~~~~~|~~~~~~|~~~~~~~~~~|~~~~~~~~~~|~~~~~~~~~~~~~~~~~~~~~~~~~|
+     |     | tx          | rx          | timers              |                         |
+     | seq | byte | pack | byte | pack | last     | timout   | cfg                     |
+     |-----|------|------|------|------|----------|----------|-------------------------|
+     | 10  | 0    | 0    | 896  | 14   | 00:00:00 | 00:00:00 | a2b4 v1 nexthop 1.1.1.5 |
+     | 20  | 0    | 0    | 832  | 13   | 00:00:00 | 00:00:00 | b2a4 v1 nexthop 1.1.1.1 |
+     |_____|______|______|______|______|__________|__________|_________________________|
     r2#
     r2#
     ```
@@ -276,10 +273,13 @@
     r2#
     r2#show ipv6 pbr v1
     r2#show ipv6 pbr v1
-     sequence 10 a2b6 v1 nexthop 1234:2::1
-      match=tx=0(0) rx=640(10) drp=0(0) accessed=00:00:00 ago, 00:00:00 timeout
-     sequence 20 b2a6 v1 nexthop 1234:1::1
-      match=tx=0(0) rx=640(10) drp=0(0) accessed=00:00:00 ago, 00:00:00 timeout
+     |~~~~~|~~~~~~|~~~~~~|~~~~~~|~~~~~~|~~~~~~~~~~|~~~~~~~~~~|~~~~~~~~~~~~~~~~~~~~~~~~~~~|
+     |     | tx          | rx          | timers              |                           |
+     | seq | byte | pack | byte | pack | last     | timout   | cfg                       |
+     |-----|------|------|------|------|----------|----------|---------------------------|
+     | 10  | 0    | 0    | 960  | 15   | 00:00:00 | 00:00:00 | a2b6 v1 nexthop 1234:2::1 |
+     | 20  | 0    | 0    | 896  | 14   | 00:00:00 | 00:00:00 | b2a6 v1 nexthop 1234:1::1 |
+     |_____|______|______|______|______|__________|__________|___________________________|
     r2#
     r2#
     ```

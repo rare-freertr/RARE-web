@@ -14,7 +14,7 @@
     hostname r1
     buggy
     !
-    logging file debug ../binTmp/zzz1r1-log.run
+    logging file debug ../binTmp/zzz26r1-log.run
     !
     vrf definition tester
      exit
@@ -24,7 +24,6 @@
      exit
     !
     interface loopback0
-     no description
      vrf forwarding v1
      ipv4 address 2.2.2.101 255.255.255.255
      ipv6 address 4321::101 ffff:ffff:ffff:ffff:ffff:ffff:ffff:ffff
@@ -33,7 +32,6 @@
      exit
     !
     interface ethernet1
-     no description
      vrf forwarding v1
      ipv4 address 1.1.1.1 255.255.255.252
      ipv6 address 1234:1::1 ffff:ffff::
@@ -42,7 +40,6 @@
      exit
     !
     interface ethernet2
-     no description
      vrf forwarding v1
      ipv4 address 1.1.2.1 255.255.255.252
      ipv4 bfd 100 100 3
@@ -122,7 +119,7 @@
     hostname r2
     buggy
     !
-    logging file debug ../binTmp/zzz1r2-log.run
+    logging file debug ../binTmp/zzz26r2-log.run
     !
     vrf definition tester
      exit
@@ -132,7 +129,6 @@
      exit
     !
     interface loopback0
-     no description
      vrf forwarding v1
      ipv4 address 2.2.2.201 255.255.255.255
      ipv6 address 4321::201 ffff:ffff:ffff:ffff:ffff:ffff:ffff:ffff
@@ -141,7 +137,6 @@
      exit
     !
     interface ethernet1
-     no description
      vrf forwarding v1
      ipv4 address 1.1.1.2 255.255.255.252
      ipv6 address 1234:1::2 ffff:ffff::
@@ -150,7 +145,6 @@
      exit
     !
     interface ethernet2
-     no description
      vrf forwarding v1
      ipv4 address 1.1.2.2 255.255.255.252
      ipv4 bfd 100 100 3
@@ -235,8 +229,8 @@
      |~~~~~~|~~~~~~~~|~~~~~~|~~~~~~~~~~~|~~~~~~~|~~~~~~~~~|~~~~~~~~~~|
      | name | type   | mode | target    | state | changes | changed  |
      |------|--------|------|-----------|-------|---------|----------|
-     | t1   | normal | bfd  | 1.1.2.1   | up    | 1       | 00:00:02 |
-     | t2   | normal | bfd  | 1234:2::1 | up    | 1       | 00:00:01 |
+     | t1   | normal | bfd  | 1.1.2.1   | up    | 2       | 00:00:02 |
+     | t2   | normal | bfd  | 1234:2::1 | up    | 2       | 00:00:01 |
      |______|________|______|___________|_______|_________|__________|
     r2#
     r2#
@@ -247,11 +241,11 @@
     r2#
     r2#show ipv4 bfd v1 nei
     r2#show ipv4 bfd v1 nei
-     |~~~~~~~~~~~|~~~~~~~~~|~~~~~~~|~~~~~~~~~~|~~~~~~~~~|
-     | interface | address | state | uptime   | clients |
-     |-----------|---------|-------|----------|---------|
-     | ethernet2 | 1.1.2.1 | up    | 00:00:04 | tracker |
-     |___________|_________|_______|__________|_________|
+     |~~~~~~~~~~~|~~~~~~~~~|~~~~~~~|~~~~~~~~~|~~~~~~~~~~|~~~~~~~~~|
+     | interface | address | state | timeout | uptime   | clients |
+     |-----------|---------|-------|---------|----------|---------|
+     | ethernet2 | 1.1.2.1 | up    | 300     | 00:00:04 | tracker |
+     |___________|_________|_______|_________|__________|_________|
     r2#
     r2#
     ```
@@ -261,11 +255,11 @@
     r2#
     r2#show ipv6 bfd v1 nei
     r2#show ipv6 bfd v1 nei
-     |~~~~~~~~~~~|~~~~~~~~~~~|~~~~~~~|~~~~~~~~~~|~~~~~~~~~|
-     | interface | address   | state | uptime   | clients |
-     |-----------|-----------|-------|----------|---------|
-     | ethernet2 | 1234:2::1 | up    | 00:00:04 | tracker |
-     |___________|___________|_______|__________|_________|
+     |~~~~~~~~~~~|~~~~~~~~~~~|~~~~~~~|~~~~~~~~~|~~~~~~~~~~|~~~~~~~~~|
+     | interface | address   | state | timeout | uptime   | clients |
+     |-----------|-----------|-------|---------|----------|---------|
+     | ethernet2 | 1234:2::1 | up    | 300     | 00:00:04 | tracker |
+     |___________|___________|_______|_________|__________|_________|
     r2#
     r2#
     ```
@@ -297,12 +291,12 @@
      |~~~~~|~~~~~~~~~~~~~~~|~~~~~~~~|~~~~~~~~~~~|~~~~~~~~~~~|~~~~~~~~~~|
      | typ | prefix        | metric | iface     | hop       | time     |
      |-----|---------------|--------|-----------|-----------|----------|
-     | S   | ::/0          | 11/0   | ethernet2 | 1234:2::1 | 00:00:01 |
-     | C   | 1234:1::/32   | 0/0    | ethernet1 | null      | 00:00:05 |
-     | LOC | 1234:1::2/128 | 0/1    | ethernet1 | null      | 00:00:05 |
+     | S   | ::/0          | 11/0   | ethernet2 | 1234:2::1 | 00:00:02 |
+     | C   | 1234:1::/32   | 0/0    | ethernet1 | null      | 00:00:06 |
+     | LOC | 1234:1::2/128 | 0/1    | ethernet1 | null      | 00:00:06 |
      | C   | 1234:2::/32   | 0/0    | ethernet2 | null      | 00:00:05 |
      | LOC | 1234:2::2/128 | 0/1    | ethernet2 | null      | 00:00:05 |
-     | C   | 4321::201/128 | 0/0    | loopback0 | null      | 00:00:05 |
+     | C   | 4321::201/128 | 0/0    | loopback0 | null      | 00:00:06 |
      |_____|_______________|________|___________|___________|__________|
     r2#
     r2#

@@ -14,7 +14,7 @@
     hostname r1
     buggy
     !
-    logging file debug ../binTmp/zzz67r1-log.run
+    logging file debug ../binTmp/zzz21r1-log.run
     !
     bundle 1
      exit
@@ -27,7 +27,6 @@
      exit
     !
     interface bundle1
-     no description
      vrf forwarding v1
      ipv4 address 1.1.1.1 255.255.255.0
      ipv6 address 1234::1 ffff::
@@ -36,7 +35,6 @@
      exit
     !
     interface ethernet1
-     no description
      bundle-group 1
      no shutdown
      no log-link-change
@@ -84,7 +82,7 @@
     hostname r2
     buggy
     !
-    logging file debug ../binTmp/zzz67r2-log.run
+    logging file debug ../binTmp/zzz21r2-log.run
     !
     vrf definition tester
      exit
@@ -94,7 +92,6 @@
      exit
     !
     interface ethernet1
-     no description
      vrf forwarding v1
      ipv4 address 1.1.1.2 255.255.255.0
      ipv6 address 1234::2 ffff::
@@ -171,13 +168,15 @@
     r1#
     r1#show inter bun1 full
     r1#show inter bun1 full
-    bundle1 is up (since 00:00:03, 3 changes)
+    bundle1 is up
      description:
-     type is bundle, hwaddr=005d.556f.156f, mtu=1500, bw=100mbps, vrf=v1
-     ip4 address=1.1.1.1/24, netmask=255.255.255.0, ifcid=446363586
-     ip6 address=1234::1/16, netmask=ffff::, ifcid=187265078
+     state changed 3 times, last at 2022-05-02 21:08:17, 00:00:03 ago
+     last packet input 00:00:00 ago, output 00:00:00 ago, drop never ago
+     type is bundle, hwaddr=0021.0e47.386c, mtu=1500, bw=100mbps, vrf=v1
+     ipv4 address=1.1.1.1/24, mask=255.255.255.0, ifcid=368457156
+     ipv6 address=1234::1/16, mask=ffff::, ifcid=532794636
      received 28 packets (1874 bytes) dropped 0 packets (0 bytes)
-     transmitted 28 packets (1868 bytes) promisc=false macsec=false sgt=false
+     transmitted 28 packets (1868 bytes) macsec=false sgt=false
      |~~~~~~~|~~~~|~~~~|~~~~~~|~~~~~~|~~~~~~|~~~~~~|
      |       | packet         | byte               |
      | time  | tx | rx | drop | tx   | rx   | drop |
@@ -232,41 +231,41 @@
      | 6     | 0   | 0   | 0    | 0    | 0    | 0    |
      | 7     | 0   | 0   | 0    | 0    | 0    | 0    |
      |_______|_____|_____|______|______|______|______|
-             21k|
-             19k|#
-             16k|#
-             14k|#
-             12k|#
-             10k|#
-            8448|#
-            6336|#
-            4224|# #
-            2112|###
-               0|###
+           21.1k|#
+           19.4k|#
+           17.7k|#
+           16.0k|#
+           14.3k|#
+           12.6k|#
+           10.9k|#
+            9291|#
+            7602|#
+            5913|#
+            4224|###
              bps|0---------10--------20--------30--------40--------50-------- seconds
+              10|
+               9|
+               8|
+               7|
+               6|
+               5|
+               4|
+               3|
+               2|
                1|
-               0|
-               0|
-               0|
-               0|
-               0|
-               0|
-               0|
-               0|
-               0|
-               0|
+               0|############################################################
              bps|0---------10--------20--------30--------40--------50-------- minutes
+              10|
+               9|
+               8|
+               7|
+               6|
+               5|
+               4|
+               3|
+               2|
                1|
-               0|
-               0|
-               0|
-               0|
-               0|
-               0|
-               0|
-               0|
-               0|
-               0|
+               0|############################################################
              bps|0---------10--------20--------30--------40--------50-------- hours
     r1#
     r1#
@@ -280,7 +279,7 @@
      |~~~~~~~~~~~~~~~~|~~~~~~~~~|~~~~~~~~~~|~~~~~~~~|
      | mac            | address | time     | static |
      |----------------|---------|----------|--------|
-     | 0000.0000.2222 | 1.1.1.2 | 00:00:03 | false  |
+     | 0000.0000.2222 | 1.1.1.2 | 00:00:02 | false  |
      |________________|_________|__________|________|
     r1#
     r1#
@@ -294,7 +293,7 @@
      |~~~~~~~~~~~~~~~~|~~~~~~~~~~~~~~~~~~~~~~~~|~~~~~~~~~~|~~~~~~~~|~~~~~~~~|
      | mac            | address                | time     | static | router |
      |----------------|------------------------|----------|--------|--------|
-     | 0000.0000.2222 | 1234::2                | 00:00:03 | false  | false  |
+     | 0000.0000.2222 | 1234::2                | 00:00:02 | false  | false  |
      | 0000.0000.2222 | fe80::200:ff:fe00:2222 | 00:00:03 | false  | true   |
      |________________|________________________|__________|________|________|
     r1#

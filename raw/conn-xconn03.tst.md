@@ -14,7 +14,7 @@
     hostname r1
     buggy
     !
-    logging file debug ../binTmp/zzz21r1-log.run
+    logging file debug ../binTmp/zzz62r1-log.run
     !
     vrf definition tester
      exit
@@ -24,7 +24,6 @@
      exit
     !
     interface serial1
-     no description
      encapsulation lapb
      lapb mode dte
      vrf forwarding v1
@@ -76,13 +75,12 @@
     hostname r2
     buggy
     !
-    logging file debug ../binTmp/zzz21r2-log.run
+    logging file debug ../binTmp/zzz62r2-log.run
     !
     vrf definition tester
      exit
     !
     interface serial1
-     no description
      encapsulation lapb
      lapb mode dce
      no shutdown
@@ -90,7 +88,6 @@
      exit
     !
     interface serial2
-     no description
      encapsulation lapb
      lapb mode dce
      no shutdown
@@ -131,7 +128,7 @@
     hostname r3
     buggy
     !
-    logging file debug ../binTmp/zzz21r3-log.run
+    logging file debug ../binTmp/zzz62r3-log.run
     !
     vrf definition tester
      exit
@@ -141,7 +138,6 @@
      exit
     !
     interface serial1
-     no description
      encapsulation lapb
      lapb mode dte
      vrf forwarding v1

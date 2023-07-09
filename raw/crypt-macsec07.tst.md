@@ -14,7 +14,7 @@
     hostname r1
     buggy
     !
-    logging file debug ../binTmp/zzz65r1-log.run
+    logging file debug ../binTmp/zzz45r1-log.run
     !
     crypto ipsec ips
      group 02
@@ -31,7 +31,6 @@
      exit
     !
     interface serial1
-     no description
      encapsulation atmdxi
      atmdxi vpi 1
      atmdxi vci 2
@@ -85,7 +84,7 @@
     hostname r2
     buggy
     !
-    logging file debug ../binTmp/zzz65r2-log.run
+    logging file debug ../binTmp/zzz45r2-log.run
     !
     crypto ipsec ips
      group 02
@@ -102,7 +101,6 @@
      exit
     !
     interface serial1
-     no description
      encapsulation atmdxi
      atmdxi vpi 1
      atmdxi vci 2

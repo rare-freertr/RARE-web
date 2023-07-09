@@ -14,7 +14,7 @@
     hostname r1
     buggy
     !
-    logging file debug ../binTmp/zzz64r1-log.run
+    logging file debug ../binTmp/zzz49r1-log.run
     !
     access-list test4
      sequence 10 deny 1 any all any all
@@ -31,11 +31,11 @@
     !
     vrf definition v1
      rd 1:1
-     label-mode per-prefix
+     label4mode per-prefix
+     label6mode per-prefix
      exit
     !
     interface loopback0
-     no description
      vrf forwarding v1
      ipv4 address 2.2.2.1 255.255.255.255
      ipv6 address 4321::1 ffff:ffff:ffff:ffff:ffff:ffff:ffff:ffff
@@ -44,7 +44,6 @@
      exit
     !
     interface ethernet1
-     no description
      vrf forwarding v1
      ipv4 address 1.1.1.1 255.255.255.0
      no ipv4 unreachables
@@ -105,7 +104,7 @@
     hostname r2
     buggy
     !
-    logging file debug ../binTmp/zzz64r2-log.run
+    logging file debug ../binTmp/zzz49r2-log.run
     !
     access-list test4
      sequence 10 deny 1 any all any all
@@ -126,11 +125,11 @@
     !
     vrf definition v1
      rd 1:1
-     label-mode per-prefix
+     label4mode per-prefix
+     label6mode per-prefix
      exit
     !
     interface loopback0
-     no description
      vrf forwarding v1
      ipv4 address 2.2.2.2 255.255.255.255
      ipv6 address 4321::2 ffff:ffff:ffff:ffff:ffff:ffff:ffff:ffff
@@ -139,7 +138,6 @@
      exit
     !
     interface bvi1
-     no description
      vrf forwarding v1
      ipv4 address 1.1.1.2 255.255.255.0
      no ipv4 unreachables
@@ -155,14 +153,12 @@
      exit
     !
     interface ethernet1
-     no description
      bridge-group 1
      no shutdown
      no log-link-change
      exit
     !
     interface ethernet2
-     no description
      bridge-group 1
      no shutdown
      no log-link-change
@@ -214,7 +210,7 @@
     hostname r3
     buggy
     !
-    logging file debug ../binTmp/zzz64r3-log.run
+    logging file debug ../binTmp/zzz49r3-log.run
     !
     access-list test4
      sequence 10 deny 1 any all any all
@@ -231,11 +227,11 @@
     !
     vrf definition v1
      rd 1:1
-     label-mode per-prefix
+     label4mode per-prefix
+     label6mode per-prefix
      exit
     !
     interface loopback0
-     no description
      vrf forwarding v1
      ipv4 address 2.2.2.3 255.255.255.255
      ipv6 address 4321::3 ffff:ffff:ffff:ffff:ffff:ffff:ffff:ffff
@@ -244,7 +240,6 @@
      exit
     !
     interface ethernet1
-     no description
      vrf forwarding v1
      ipv4 address 1.1.1.3 255.255.255.0
      no ipv4 unreachables

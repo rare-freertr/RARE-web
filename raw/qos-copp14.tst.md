@@ -14,7 +14,7 @@
     hostname r1
     buggy
     !
-    logging file debug ../binTmp/zzz75r1-log.run
+    logging file debug ../binTmp/zzz71r1-log.run
     !
     vrf definition tester
      exit
@@ -24,7 +24,6 @@
      exit
     !
     interface ethernet1
-     no description
      vrf forwarding v1
      ipv4 address 1.1.1.1 255.255.255.0
      ipv6 address 1234::1 ffff::
@@ -74,7 +73,7 @@
     hostname r2
     buggy
     !
-    logging file debug ../binTmp/zzz75r2-log.run
+    logging file debug ../binTmp/zzz71r2-log.run
     !
     access-list a4
      sequence 10 permit 1 any all any all
@@ -106,7 +105,6 @@
      exit
     !
     interface ethernet1
-     no description
      vrf forwarding v1
      ipv4 address 1.1.1.2 255.255.255.0
      ipv6 address 1234::2 ffff::
@@ -118,7 +116,6 @@
      vrf v1
      local-as 0
      router-id 0.0.0.0
-     no safe-ebgp
      address-family unicast
      flowspec-install
      flowspec-advert p4
@@ -128,7 +125,6 @@
      vrf v1
      local-as 0
      router-id 0.0.0.0
-     no safe-ebgp
      address-family unicast
      flowspec-install
      flowspec-advert p6

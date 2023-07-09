@@ -14,7 +14,7 @@
     hostname r1
     buggy
     !
-    logging file debug ../binTmp/zzz96r1-log.run
+    logging file debug ../binTmp/zzz39r1-log.run
     !
     bridge 1
      exit
@@ -27,7 +27,6 @@
      exit
     !
     interface bvi1
-     no description
      vrf forwarding v1
      ipv4 address 1.1.1.1 255.255.255.0
      ipv6 address 1234::1 ffff::
@@ -36,7 +35,6 @@
      exit
     !
     interface ethernet1
-     no description
      bridge-group 1
      no shutdown
      no log-link-change
@@ -84,7 +82,7 @@
     hostname r2
     buggy
     !
-    logging file debug ../binTmp/zzz96r2-log.run
+    logging file debug ../binTmp/zzz39r2-log.run
     !
     bridge 1
      mac-learn
@@ -98,7 +96,6 @@
      exit
     !
     interface bvi1
-     no description
      vrf forwarding v1
      ipv4 address 1.1.1.2 255.255.255.0
      ipv6 address 1234::2 ffff::
@@ -107,14 +104,12 @@
      exit
     !
     interface ethernet1
-     no description
      bridge-group 1
      no shutdown
      no log-link-change
      exit
     !
     interface ethernet2
-     no description
      bridge-group 1
      no shutdown
      no log-link-change
@@ -162,7 +157,7 @@
     hostname r3
     buggy
     !
-    logging file debug ../binTmp/zzz96r3-log.run
+    logging file debug ../binTmp/zzz39r3-log.run
     !
     bridge 1
      mac-learn
@@ -176,7 +171,6 @@
      exit
     !
     interface bvi1
-     no description
      vrf forwarding v1
      ipv4 address 1.1.1.3 255.255.255.0
      ipv6 address 1234::3 ffff::
@@ -185,14 +179,12 @@
      exit
     !
     interface ethernet1
-     no description
      bridge-group 1
      no shutdown
      no log-link-change
      exit
     !
     interface ethernet2
-     no description
      bridge-group 1
      no shutdown
      no log-link-change
@@ -240,7 +232,7 @@
     hostname r4
     buggy
     !
-    logging file debug ../binTmp/zzz96r4-log.run
+    logging file debug ../binTmp/zzz39r4-log.run
     !
     vrf definition tester
      exit
@@ -250,7 +242,6 @@
      exit
     !
     interface ethernet1
-     no description
      vrf forwarding v1
      ipv4 address 1.1.1.4 255.255.255.0
      ipv6 address 1234::4 ffff::
@@ -314,10 +305,10 @@
      |                                     | packet             | byte               |  |
      | addr           | iface     | static | time     | tx | rx | drop | tx   | rx   | drop |
      |----------------|-----------|--------|----------|----|----|------|------|------|------|
-     | 0000.0000.4444 | ethernet2 | false  | 00:00:16 | 48 | 53 | 0    | 3168 | 3494 | 0    |
-     | 0013.6746.3d29 | bvi       | false  | 00:00:16 | 74 | 78 | 0    | 4824 | 5096 | 0    |
-     | 005a.1f6d.7a78 | ethernet1 | false  | 00:00:16 | 75 | 78 | 0    | 4854 | 5114 | 0    |
-     | 006c.261d.7826 | ethernet2 | false  | 00:00:16 | 48 | 54 | 0    | 3168 | 3530 | 0    |
+     | 0000.0000.4444 | ethernet2 | false  | 00:00:15 | 48 | 53 | 0    | 3168 | 3494 | 0    |
+     | 0032.2d1d.1468 | ethernet2 | false  | 00:00:15 | 48 | 54 | 0    | 3168 | 3530 | 0    |
+     | 0041.6c33.6571 | ethernet1 | false  | 00:00:15 | 75 | 78 | 0    | 4854 | 5114 | 0    |
+     | 0055.0741.1a19 | bvi       | false  | 00:00:15 | 74 | 78 | 0    | 4824 | 5096 | 0    |
      |________________|___________|________|__________|____|____|______|______|______|______|
     r2#
     r2#
@@ -328,18 +319,20 @@
     r2#
     r2#show inter bvi1 full
     r2#show inter bvi1 full
-    bvi1 is up (since 00:00:16, 3 changes)
+    bvi1 is up
      description:
-     type is bridged, hwaddr=0013.6746.3d29, mtu=1500, bw=100mbps, vrf=v1
-     ip4 address=1.1.1.2/24, netmask=255.255.255.0, ifcid=613152601
-     ip6 address=1234::2/16, netmask=ffff::, ifcid=1021797668
+     state changed 3 times, last at 2022-05-02 21:08:49, 00:00:15 ago
+     last packet input 00:00:00 ago, output 00:00:00 ago, drop never ago
+     type is bridged, hwaddr=0055.0741.1a19, mtu=1500, bw=100mbps, vrf=v1
+     ipv4 address=1.1.1.2/24, mask=255.255.255.0, ifcid=478129220
+     ipv6 address=1234::2/16, mask=ffff::, ifcid=329230637
      received 87 packets (5730 bytes) dropped 0 packets (0 bytes)
-     transmitted 78 packets (5096 bytes) promisc=false macsec=false sgt=false
+     transmitted 78 packets (5096 bytes) macsec=false sgt=false
      |~~~~~~~|~~~~|~~~~|~~~~~~|~~~~~|~~~~~|~~~~~~|
      |       | packet         | byte             |
      | time  | tx | rx | drop | tx  | rx  | drop |
      |-------|----|----|------|-----|-----|------|
-     | 1sec  | 15 | 15 | 0    | 990 | 990 | 0    |
+     | 1sec  | 10 | 10 | 0    | 660 | 660 | 0    |
      | 1min  | 0  | 0  | 0    | 0   | 0   | 0    |
      | 1hour | 0  | 0  | 0    | 0   | 0   | 0    |
      |_______|____|____|______|_____|_____|______|
@@ -389,41 +382,41 @@
      | 6     | 0   | 0   | 0    | 0    | 0    | 0    |
      | 7     | 0   | 0   | 0    | 0    | 0    | 0    |
      |_______|_____|_____|______|______|______|______|
-             26k|
-             23k|   #
-             21k|   #
-             18k|   #
-             15k|   #
-             13k|#  #
-             10k|#  #
-            7920|#  #    #      #
-            5280|#  # #  #   #  #
-            2640|#  #### #   ## #
-               0|# ####### # ####
+           21.1k|   #
+           19.0k|   #
+           16.8k|   #
+           14.7k|   #
+           12.6k|   #
+           10.5k|#  #
+            8448|#  #          #
+            6336|#  #          #
+            4224|# #######   ###
+            2112|# #######   ###
+               0|############################################################
              bps|0---------10--------20--------30--------40--------50-------- seconds
+              10|
+               9|
+               8|
+               7|
+               6|
+               5|
+               4|
+               3|
+               2|
                1|
-               0|
-               0|
-               0|
-               0|
-               0|
-               0|
-               0|
-               0|
-               0|
-               0|
+               0|############################################################
              bps|0---------10--------20--------30--------40--------50-------- minutes
+              10|
+               9|
+               8|
+               7|
+               6|
+               5|
+               4|
+               3|
+               2|
                1|
-               0|
-               0|
-               0|
-               0|
-               0|
-               0|
-               0|
-               0|
-               0|
-               0|
+               0|############################################################
              bps|0---------10--------20--------30--------40--------50-------- hours
     r2#
     r2#
@@ -432,13 +425,15 @@
     ```
     r2#
     r2#
+    r2#show ipv
+    r2#show ipv
     r2#show ipv4 arp bvi1
     r2#show ipv4 arp bvi1
      |~~~~~~~~~~~~~~~~|~~~~~~~~~|~~~~~~~~~~|~~~~~~~~|
      | mac            | address | time     | static |
      |----------------|---------|----------|--------|
-     | 005a.1f6d.7a78 | 1.1.1.1 | 00:00:15 | false  |
-     | 006c.261d.7826 | 1.1.1.3 | 00:00:15 | false  |
+     | 0041.6c33.6571 | 1.1.1.1 | 00:00:15 | false  |
+     | 0032.2d1d.1468 | 1.1.1.3 | 00:00:15 | false  |
      | 0000.0000.4444 | 1.1.1.4 | 00:00:15 | false  |
      |________________|_________|__________|________|
     r2#
@@ -453,12 +448,12 @@
      |~~~~~~~~~~~~~~~~|~~~~~~~~~~~~~~~~~~~~~~~~~~|~~~~~~~~~~|~~~~~~~~|~~~~~~~~|
      | mac            | address                  | time     | static | router |
      |----------------|--------------------------|----------|--------|--------|
-     | 005a.1f6d.7a78 | 1234::1                  | 00:00:16 | false  | false  |
-     | 006c.261d.7826 | 1234::3                  | 00:00:16 | false  | false  |
-     | 0000.0000.4444 | 1234::4                  | 00:00:16 | false  | false  |
-     | 0000.0000.4444 | fe80::200:ff:fe00:4444   | 00:00:16 | false  | true   |
-     | 005a.1f6d.7a78 | fe80::25a:1fff:fe6d:7a78 | 00:00:16 | false  | true   |
-     | 006c.261d.7826 | fe80::26c:26ff:fe1d:7826 | 00:00:16 | false  | true   |
+     | 0041.6c33.6571 | 1234::1                  | 00:00:15 | false  | false  |
+     | 0032.2d1d.1468 | 1234::3                  | 00:00:15 | false  | false  |
+     | 0000.0000.4444 | 1234::4                  | 00:00:15 | false  | false  |
+     | 0000.0000.4444 | fe80::200:ff:fe00:4444   | 00:00:15 | false  | true   |
+     | 0032.2d1d.1468 | fe80::232:2dff:fe1d:1468 | 00:00:15 | false  | true   |
+     | 0041.6c33.6571 | fe80::241:6cff:fe33:6571 | 00:00:15 | false  | true   |
      |________________|__________________________|__________|________|________|
     r2#
     r2#

@@ -14,7 +14,7 @@
     hostname r1
     buggy
     !
-    logging file debug ../binTmp/zzz94r1-log.run
+    logging file debug ../binTmp/zzz50r1-log.run
     !
     vrf definition tester
      exit
@@ -40,7 +40,6 @@
      exit
     !
     interface loopback1
-     no description
      vrf forwarding v1
      ipv4 address 2.2.2.1 255.255.255.255
      ipv6 address 4321::1 ffff:ffff:ffff:ffff:ffff:ffff:ffff:ffff
@@ -49,7 +48,6 @@
      exit
     !
     interface loopback2
-     no description
      vrf forwarding v1
      ipv4 address 2.2.2.101 255.255.255.255
      ipv6 address 4321::101 ffff:ffff:ffff:ffff:ffff:ffff:ffff:ffff
@@ -58,7 +56,6 @@
      exit
     !
     interface ethernet1
-     no description
      vrf forwarding v1
      ipv4 address 1.1.1.1 255.255.255.0
      router isis4 1 enable
@@ -68,7 +65,6 @@
      exit
     !
     interface ethernet2
-     no description
      vrf forwarding v1
      ipv6 address 1234::1 ffff::
      router isis6 1 enable
@@ -84,7 +80,6 @@
      no safe-ebgp
      address-family unicast linkstate
      neighbor 1.1.1.2 remote-as 2
-     no neighbor 1.1.1.2 description
      neighbor 1.1.1.2 local-as 1
      neighbor 1.1.1.2 address-family unicast linkstate
      neighbor 1.1.1.2 distance 20
@@ -100,7 +95,6 @@
      no safe-ebgp
      address-family unicast linkstate
      neighbor 1234::2 remote-as 2
-     no neighbor 1234::2 description
      neighbor 1234::2 local-as 1
      neighbor 1234::2 address-family unicast linkstate
      neighbor 1234::2 distance 20
@@ -151,7 +145,7 @@
     hostname r2
     buggy
     !
-    logging file debug ../binTmp/zzz94r2-log.run
+    logging file debug ../binTmp/zzz50r2-log.run
     !
     vrf definition tester
      exit
@@ -177,7 +171,6 @@
      exit
     !
     interface loopback1
-     no description
      vrf forwarding v1
      ipv4 address 2.2.2.2 255.255.255.255
      ipv6 address 4321::2 ffff:ffff:ffff:ffff:ffff:ffff:ffff:ffff
@@ -186,7 +179,6 @@
      exit
     !
     interface loopback2
-     no description
      vrf forwarding v1
      ipv4 address 2.2.2.102 255.255.255.255
      ipv6 address 4321::102 ffff:ffff:ffff:ffff:ffff:ffff:ffff:ffff
@@ -195,7 +187,6 @@
      exit
     !
     interface ethernet1
-     no description
      vrf forwarding v1
      ipv4 address 1.1.1.2 255.255.255.0
      router isis4 1 enable
@@ -205,7 +196,6 @@
      exit
     !
     interface ethernet2
-     no description
      vrf forwarding v1
      ipv6 address 1234::2 ffff::
      router isis6 1 enable
@@ -221,7 +211,6 @@
      no safe-ebgp
      address-family unicast linkstate
      neighbor 1.1.1.1 remote-as 1
-     no neighbor 1.1.1.1 description
      neighbor 1.1.1.1 local-as 2
      neighbor 1.1.1.1 address-family unicast linkstate
      neighbor 1.1.1.1 distance 20
@@ -237,7 +226,6 @@
      no safe-ebgp
      address-family unicast linkstate
      neighbor 1234::1 remote-as 1
-     no neighbor 1234::1 description
      neighbor 1234::1 local-as 2
      neighbor 1234::1 address-family unicast linkstate
      neighbor 1234::1 distance 20
@@ -293,7 +281,7 @@
      |~~~~~~~~~~~|~~~~~~~~~~~~~~~~|~~~~~~~|~~~~~~~~~~~~~~~~|~~~~~~~~~~~~|~~~~~~~~~~~~~~~|~~~~~~~|~~~~~~~~~~|
      | interface | mac address    | level | routerid       | ip address | other address | state | uptime   |
      |-----------|----------------|-------|----------------|------------|---------------|-------|----------|
-     | ethernet1 | 0000.0000.0000 | 2     | 4444.0000.1111 | 1.1.1.1    | ::            | up    | 00:00:01 |
+     | ethernet1 | 0000.0000.0000 | 2     | 4444.0000.1111 | 1.1.1.1    | ::            | up    | 00:00:13 |
      |___________|________________|_______|________________|____________|_______________|_______|__________|
     r2#
     r2#
@@ -307,7 +295,7 @@
      |~~~~~~~~~~~|~~~~~~~~~~~~~~~~|~~~~~~~|~~~~~~~~~~~~~~~~|~~~~~~~~~~~~|~~~~~~~~~~~~~~~|~~~~~~~|~~~~~~~~~~|
      | interface | mac address    | level | routerid       | ip address | other address | state | uptime   |
      |-----------|----------------|-------|----------------|------------|---------------|-------|----------|
-     | ethernet2 | 0000.0000.0000 | 2     | 6666.0000.1111 | 1234::1    | ::            | up    | 00:00:01 |
+     | ethernet2 | 0000.0000.0000 | 2     | 6666.0000.1111 | 1234::1    | ::            | up    | 00:00:13 |
      |___________|________________|_______|________________|____________|_______________|_______|__________|
     r2#
     r2#
@@ -321,8 +309,9 @@
      |~~~~~~~~~~~~~~~~~~~~~~|~~~~~~~~~~|~~~~~~~|~~~~~|~~~~~~~~~~|
      | lspid                | sequence | flags | len | time     |
      |----------------------|----------|-------|-----|----------|
-     | 4444.0000.1111.00-00 | 00000003 | apo   | 45  | 00:19:58 |
-     | 4444.0000.2222.00-00 | 00000004 | apo   | 45  | 00:19:58 |
+     | 0000.0000.0000.00-00 | 00000001 | apo   | 10  | 00:19:45 |
+     | 4444.0000.1111.00-00 | 00000004 | apo   | 45  | 00:19:46 |
+     | 4444.0000.2222.00-00 | 00000004 | apo   | 45  | 00:19:46 |
      |______________________|__________|_______|_____|__________|
     r2#
     r2#
@@ -336,8 +325,9 @@
      |~~~~~~~~~~~~~~~~~~~~~~|~~~~~~~~~~|~~~~~~~|~~~~~|~~~~~~~~~~|
      | lspid                | sequence | flags | len | time     |
      |----------------------|----------|-------|-----|----------|
-     | 6666.0000.1111.00-00 | 00000004 | apo   | 58  | 00:19:57 |
-     | 6666.0000.2222.00-00 | 00000003 | apo   | 58  | 00:19:57 |
+     | 0000.0000.0000.00-00 | 00000001 | apo   | 10  | 00:19:45 |
+     | 6666.0000.1111.00-00 | 00000004 | apo   | 58  | 00:19:55 |
+     | 6666.0000.2222.00-00 | 00000004 | apo   | 58  | 00:19:56 |
      |______________________|__________|_______|_____|__________|
     r2#
     r2#
@@ -373,12 +363,12 @@
      |~~~~~|~~~~~~~~~~~~~~|~~~~~~~~|~~~~~~~~~~~|~~~~~~~~~|~~~~~~~~~~|
      | typ | prefix       | metric | iface     | hop     | time     |
      |-----|--------------|--------|-----------|---------|----------|
-     | C   | 1.1.1.0/24   | 0/0    | ethernet1 | null    | 00:00:12 |
-     | LOC | 1.1.1.2/32   | 0/1    | ethernet1 | null    | 00:00:12 |
-     | I   | 2.2.2.1/32   | 115/10 | ethernet1 | 1.1.1.1 | 00:00:02 |
-     | C   | 2.2.2.2/32   | 0/0    | loopback1 | null    | 00:00:13 |
-     | B   | 2.2.2.101/32 | 20/0   | ethernet1 | 1.1.1.1 | 00:00:10 |
-     | C   | 2.2.2.102/32 | 0/0    | loopback2 | null    | 00:00:12 |
+     | C   | 1.1.1.0/24   | 0/0    | ethernet1 | null    | 00:00:14 |
+     | LOC | 1.1.1.2/32   | 0/1    | ethernet1 | null    | 00:00:14 |
+     | I   | 2.2.2.1/32   | 115/10 | ethernet1 | 1.1.1.1 | 00:00:14 |
+     | C   | 2.2.2.2/32   | 0/0    | loopback1 | null    | 00:00:14 |
+     | B   | 2.2.2.101/32 | 20/0   | ethernet1 | 1.1.1.1 | 00:00:11 |
+     | C   | 2.2.2.102/32 | 0/0    | loopback2 | null    | 00:00:14 |
      |_____|______________|________|___________|_________|__________|
     r2#
     r2#
@@ -392,12 +382,12 @@
      |~~~~~~|~~~~~~~~~~~~~~~|~~~~~~~~|~~~~~~~~~~~|~~~~~~~~~|~~~~~~~~~~|
      | typ  | prefix        | metric | iface     | hop     | time     |
      |------|---------------|--------|-----------|---------|----------|
-     | C    | 1234::/16     | 0/0    | ethernet2 | null    | 00:00:12 |
-     | LOC  | 1234::2/128   | 0/1    | ethernet2 | null    | 00:00:12 |
-     | I EX | 4321::1/128   | 115/10 | ethernet2 | 1234::1 | 00:00:02 |
-     | C    | 4321::2/128   | 0/0    | loopback1 | null    | 00:00:13 |
-     | B    | 4321::101/128 | 20/0   | ethernet2 | 1234::1 | 00:00:10 |
-     | C    | 4321::102/128 | 0/0    | loopback2 | null    | 00:00:13 |
+     | C    | 1234::/16     | 0/0    | ethernet2 | null    | 00:00:14 |
+     | LOC  | 1234::2/128   | 0/1    | ethernet2 | null    | 00:00:14 |
+     | I EX | 4321::1/128   | 115/10 | ethernet2 | 1234::1 | 00:00:01 |
+     | C    | 4321::2/128   | 0/0    | loopback1 | null    | 00:00:14 |
+     | B    | 4321::101/128 | 20/0   | ethernet2 | 1234::1 | 00:00:11 |
+     | C    | 4321::102/128 | 0/0    | loopback2 | null    | 00:00:14 |
      |______|_______________|________|___________|_________|__________|
     r2#
     r2#
@@ -442,6 +432,7 @@
      | 1d4:702e:190a:8fc0:1e3c:6166:8a78:ced0/128  | 1.1.1.2 | 20/100/0/0 | 2      |
      | 2b6:2ea2:3603:cfea:35c2:a008:e7b3:6960/128  | 1.1.1.2 | 20/100/0/0 | 2      |
      | 1d72:9f37:cbcf:4f3a:438c:e354:5299:e403/128 | null    | 0/0/0/0    |        |
+     | 2a4f:9cb6:d48a:1c4c:b5fd:1df:eaf2:196f/128  | null    | 0/0/0/0    |        |
      | 2ee1:c3cf:9707:f8d0:c5ae:4a4c:9414:fc61/128 | 1.1.1.2 | 20/100/0/0 | 2      |
      | 5e8b:231c:78a9:9a6a:b8da:9630:6e19:374c/128 | null    | 0/0/0/0    |        |
      | 767f:b83c:37f3:ea74:a114:7909:3973:3f02/128 | null    | 0/0/0/0    |        |
@@ -450,6 +441,7 @@
      | 982c:56b0:f106:51e3:f4ab:3da5:be22:ab3c/128 | 1.1.1.2 | 20/100/0/0 | 2      |
      | bcc7:2cf9:bc82:eb5e:b16d:2a88:a914:7dee/128 | 1.1.1.2 | 20/100/0/0 | 2      |
      | c73d:a710:62c1:aa0d:7023:8573:6ba7:a388/128 | null    | 0/0/0/0    |        |
+     | d382:feb:9f38:aff5:72e7:149:29d5:e418/128   | 1.1.1.2 | 20/100/0/0 | 2      |
      | d616:ed58:b691:2b31:1914:2d6e:4f64:8fa3/128 | null    | 0/0/0/0    |        |
      | dc39:8741:3c1:2ef3:ad2:aa2d:2f67:bd8d/128   | 1.1.1.2 | 20/100/0/0 | 2      |
      | e2d6:3f2a:c19a:be9d:92de:40e0:b7d1:caa0/128 | null    | 0/0/0/0    |        |
@@ -479,9 +471,11 @@
      | 9194:8c9e:b5b6:2a6e:eab8:49d0:7f07:c988/128 | 1234::2 | 20/100/0/0 | 2      |
      | a112:69e9:9e0c:60f:503b:8d21:e8a7:9e64/128  | null    | 0/0/0/0    |        |
      | b215:f745:2344:87a6:cd2f:e4ac:728:840e/128  | 1234::2 | 20/100/0/0 | 2      |
+     | bce3:f666:2390:70df:6928:d8be:635b:117e/128 | null    | 0/0/0/0    |        |
      | d11d:59ed:4da5:2594:4280:f79b:7b57:eecb/128 | null    | 0/0/0/0    |        |
      | ee4f:41b8:8f25:ea98:e2b3:8d52:767f:c02d/128 | null    | 0/0/0/0    |        |
      | f21b:b63:9d73:a09c:b6f4:96d0:e682:c90b/128  | 1234::2 | 20/100/0/0 | 2      |
+     | f4a0:85ac:f13b:b2bd:a5f2:eb41:fb96:7602/128 | 1234::2 | 20/100/0/0 | 2      |
      | f92d:1bcb:c056:5f66:22e4:5bc5:2e2c:db4d/128 | 1234::2 | 20/100/0/0 | 2      |
      | fc03:ef3d:978a:1ba9:b846:e272:5133:29a0/128 | 1234::2 | 20/100/0/0 | 2      |
      |_____________________________________________|_________|____________|________|

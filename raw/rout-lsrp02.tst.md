@@ -14,7 +14,7 @@
     hostname r1
     buggy
     !
-    logging file debug ../binTmp/zzz40r1-log.run
+    logging file debug ../binTmp/zzz50r1-log.run
     !
     bridge 1
      exit
@@ -39,7 +39,6 @@
      exit
     !
     interface loopback1
-     no description
      vrf forwarding v1
      ipv4 address 2.2.2.1 255.255.255.255
      ipv6 address 4321::1 ffff:ffff:ffff:ffff:ffff:ffff:ffff:ffff
@@ -48,7 +47,6 @@
      exit
     !
     interface bvi1
-     no description
      vrf forwarding v1
      ipv4 address 1.1.1.1 255.255.255.0
      ipv6 address 1234::1 ffff::
@@ -59,7 +57,6 @@
      exit
     !
     interface ethernet1
-     no description
      bridge-group 1
      no shutdown
      no log-link-change
@@ -107,7 +104,7 @@
     hostname r2
     buggy
     !
-    logging file debug ../binTmp/zzz40r2-log.run
+    logging file debug ../binTmp/zzz50r2-log.run
     !
     bridge 1
      mac-learn
@@ -133,7 +130,6 @@
      exit
     !
     interface loopback1
-     no description
      vrf forwarding v1
      ipv4 address 2.2.2.2 255.255.255.255
      ipv6 address 4321::2 ffff:ffff:ffff:ffff:ffff:ffff:ffff:ffff
@@ -142,7 +138,6 @@
      exit
     !
     interface bvi1
-     no description
      vrf forwarding v1
      ipv4 address 1.1.1.2 255.255.255.0
      ipv6 address 1234::2 ffff::
@@ -153,14 +148,12 @@
      exit
     !
     interface ethernet1
-     no description
      bridge-group 1
      no shutdown
      no log-link-change
      exit
     !
     interface ethernet2
-     no description
      bridge-group 1
      no shutdown
      no log-link-change
@@ -208,7 +201,7 @@
     hostname r3
     buggy
     !
-    logging file debug ../binTmp/zzz40r3-log.run
+    logging file debug ../binTmp/zzz50r3-log.run
     !
     bridge 1
      mac-learn
@@ -234,7 +227,6 @@
      exit
     !
     interface loopback1
-     no description
      vrf forwarding v1
      ipv4 address 2.2.2.3 255.255.255.255
      ipv6 address 4321::3 ffff:ffff:ffff:ffff:ffff:ffff:ffff:ffff
@@ -243,7 +235,6 @@
      exit
     !
     interface bvi1
-     no description
      vrf forwarding v1
      ipv4 address 1.1.1.3 255.255.255.0
      ipv6 address 1234::3 ffff::
@@ -254,14 +245,12 @@
      exit
     !
     interface ethernet1
-     no description
      bridge-group 1
      no shutdown
      no log-link-change
      exit
     !
     interface ethernet2
-     no description
      bridge-group 1
      no shutdown
      no log-link-change
@@ -309,7 +298,7 @@
     hostname r4
     buggy
     !
-    logging file debug ../binTmp/zzz40r4-log.run
+    logging file debug ../binTmp/zzz50r4-log.run
     !
     bridge 1
      exit
@@ -334,7 +323,6 @@
      exit
     !
     interface loopback1
-     no description
      vrf forwarding v1
      ipv4 address 2.2.2.4 255.255.255.255
      ipv6 address 4321::4 ffff:ffff:ffff:ffff:ffff:ffff:ffff:ffff
@@ -343,7 +331,6 @@
      exit
     !
     interface bvi1
-     no description
      vrf forwarding v1
      ipv4 address 1.1.1.4 255.255.255.0
      ipv6 address 1234::4 ffff::
@@ -354,7 +341,6 @@
      exit
     !
     interface ethernet1
-     no description
      bridge-group 1
      no shutdown
      no log-link-change
@@ -407,9 +393,9 @@
      |~~~~~~~|~~~~~~~~~|~~~~~~|~~~~~~~~|~~~~~~~~~|~~~~~~~|~~~~~~~~~~|
      | iface | router  | name | peerif | peer    | ready | uptime   |
      |-------|---------|------|--------|---------|-------|----------|
-     | bvi1  | 4.4.4.1 | r1   | bvi1   | 1.1.1.1 | true  | 00:00:08 |
-     | bvi1  | 4.4.4.3 | r3   | bvi1   | 1.1.1.3 | true  | 00:00:08 |
-     | bvi1  | 4.4.4.4 | r4   | bvi1   | 1.1.1.4 | true  | 00:00:08 |
+     | bvi1  | 4.4.4.1 | r1   | bvi1   | 1.1.1.1 | true  | 00:00:11 |
+     | bvi1  | 4.4.4.3 | r3   | bvi1   | 1.1.1.3 | true  | 00:00:11 |
+     | bvi1  | 4.4.4.4 | r4   | bvi1   | 1.1.1.4 | true  | 00:00:11 |
      |_______|_________|______|________|_________|_______|__________|
     r2#
     r2#
@@ -423,9 +409,9 @@
      |~~~~~~~|~~~~~~~~~|~~~~~~|~~~~~~~~|~~~~~~~~~|~~~~~~~|~~~~~~~~~~|
      | iface | router  | name | peerif | peer    | ready | uptime   |
      |-------|---------|------|--------|---------|-------|----------|
-     | bvi1  | 6.6.6.1 | r1   | bvi1   | 1234::1 | true  | 00:00:08 |
-     | bvi1  | 6.6.6.3 | r3   | bvi1   | 1234::3 | true  | 00:00:08 |
-     | bvi1  | 6.6.6.4 | r4   | bvi1   | 1234::4 | true  | 00:00:08 |
+     | bvi1  | 6.6.6.1 | r1   | bvi1   | 1234::1 | true  | 00:00:12 |
+     | bvi1  | 6.6.6.3 | r3   | bvi1   | 1234::3 | true  | 00:00:12 |
+     | bvi1  | 6.6.6.4 | r4   | bvi1   | 1234::4 | true  | 00:00:12 |
      |_______|_________|______|________|_________|_______|__________|
     r2#
     r2#
@@ -439,10 +425,10 @@
      |~~~~~~~~~|~~~~~~|~~~~~|~~~~~|~~~~~|~~~~~~~~~~|~~~~~~~~~~|
      | id      | name | nei | net | seq | topo     | left     |
      |---------|------|-----|-----|-----|----------|----------|
-     | 4.4.4.1 | r1   | 3   | 2   | 8   | 1613dcc8 | 00:59:56 |
-     | 4.4.4.2 | r2   | 3   | 2   | 9   | 5958bd56 | 00:59:56 |
-     | 4.4.4.3 | r3   | 3   | 2   | 8   | 5958bd56 | 00:59:56 |
-     | 4.4.4.4 | r4   | 3   | 2   | 8   | 1613dcc8 | 00:59:56 |
+     | 4.4.4.1 | r1   | 3   | 2   | 8   | 795dadbe | 00:59:55 |
+     | 4.4.4.2 | r2   | 3   | 2   | 8   | c44aaa04 | 00:59:53 |
+     | 4.4.4.3 | r3   | 3   | 2   | 8   | 795dadbe | 00:59:55 |
+     | 4.4.4.4 | r4   | 3   | 2   | 7   | ceb1c261 | 00:59:52 |
      |_________|______|_____|_____|_____|__________|__________|
     r2#
     r2#
@@ -456,10 +442,10 @@
      |~~~~~~~~~|~~~~~~|~~~~~|~~~~~|~~~~~|~~~~~~~~~~|~~~~~~~~~~|
      | id      | name | nei | net | seq | topo     | left     |
      |---------|------|-----|-----|-----|----------|----------|
-     | 6.6.6.1 | r1   | 3   | 2   | 9   | 052808e8 | 00:59:56 |
-     | 6.6.6.2 | r2   | 3   | 2   | 9   | 49e7bd18 | 00:59:56 |
-     | 6.6.6.3 | r3   | 3   | 2   | 8   | 3616cc20 | 00:59:56 |
-     | 6.6.6.4 | r4   | 3   | 2   | 8   | 3616cc20 | 00:59:56 |
+     | 6.6.6.1 | r1   | 3   | 2   | 8   | 1613dcc8 | 00:59:52 |
+     | 6.6.6.2 | r2   | 3   | 2   | 8   | e1610c89 | 00:59:53 |
+     | 6.6.6.3 | r3   | 3   | 2   | 8   | 1613dcc8 | 00:59:52 |
+     | 6.6.6.4 | r4   | 3   | 2   | 8   | e1610c89 | 00:59:53 |
      |_________|______|_____|_____|_____|__________|__________|
     r2#
     r2#
@@ -499,12 +485,12 @@
      |~~~~~~|~~~~~~~~~~~~|~~~~~~~~|~~~~~~~~~~~|~~~~~~~~~|~~~~~~~~~~|
      | typ  | prefix     | metric | iface     | hop     | time     |
      |------|------------|--------|-----------|---------|----------|
-     | C    | 1.1.1.0/24 | 0/0    | bvi1      | null    | 00:00:13 |
-     | LOC  | 1.1.1.2/32 | 0/1    | bvi1      | null    | 00:00:13 |
-     | L EX | 2.2.2.1/32 | 70/10  | bvi1      | 1.1.1.1 | 00:00:04 |
-     | C    | 2.2.2.2/32 | 0/0    | loopback1 | null    | 00:00:14 |
-     | L EX | 2.2.2.3/32 | 70/10  | bvi1      | 1.1.1.3 | 00:00:03 |
-     | L EX | 2.2.2.4/32 | 70/10  | bvi1      | 1.1.1.4 | 00:00:05 |
+     | C    | 1.1.1.0/24 | 0/0    | bvi1      | null    | 00:00:18 |
+     | LOC  | 1.1.1.2/32 | 0/1    | bvi1      | null    | 00:00:18 |
+     | L EX | 2.2.2.1/32 | 70/10  | bvi1      | 1.1.1.1 | 00:00:07 |
+     | C    | 2.2.2.2/32 | 0/0    | loopback1 | null    | 00:00:18 |
+     | L EX | 2.2.2.3/32 | 70/10  | bvi1      | 1.1.1.3 | 00:00:08 |
+     | L EX | 2.2.2.4/32 | 70/10  | bvi1      | 1.1.1.4 | 00:00:08 |
      |______|____________|________|___________|_________|__________|
     r2#
     r2#
@@ -518,12 +504,12 @@
      |~~~~~~|~~~~~~~~~~~~~|~~~~~~~~|~~~~~~~~~~~|~~~~~~~~~|~~~~~~~~~~|
      | typ  | prefix      | metric | iface     | hop     | time     |
      |------|-------------|--------|-----------|---------|----------|
-     | C    | 1234::/16   | 0/0    | bvi1      | null    | 00:00:13 |
-     | LOC  | 1234::2/128 | 0/1    | bvi1      | null    | 00:00:13 |
-     | L EX | 4321::1/128 | 70/10  | bvi1      | 1234::1 | 00:00:04 |
-     | C    | 4321::2/128 | 0/0    | loopback1 | null    | 00:00:14 |
-     | L EX | 4321::3/128 | 70/10  | bvi1      | 1234::3 | 00:00:04 |
-     | L EX | 4321::4/128 | 70/10  | bvi1      | 1234::4 | 00:00:05 |
+     | C    | 1234::/16   | 0/0    | bvi1      | null    | 00:00:18 |
+     | LOC  | 1234::2/128 | 0/1    | bvi1      | null    | 00:00:18 |
+     | L EX | 4321::1/128 | 70/10  | bvi1      | 1234::1 | 00:00:08 |
+     | C    | 4321::2/128 | 0/0    | loopback1 | null    | 00:00:18 |
+     | L EX | 4321::3/128 | 70/10  | bvi1      | 1234::3 | 00:00:09 |
+     | L EX | 4321::4/128 | 70/10  | bvi1      | 1234::4 | 00:00:07 |
      |______|_____________|________|___________|_________|__________|
     r2#
     r2#

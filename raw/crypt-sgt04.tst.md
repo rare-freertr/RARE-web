@@ -14,7 +14,7 @@
     hostname r1
     buggy
     !
-    logging file debug ../binTmp/zzz23r1-log.run
+    logging file debug ../binTmp/zzz11r1-log.run
     !
     bundle 1
      exit
@@ -27,7 +27,6 @@
      exit
     !
     interface bundle1
-     no description
      sgt enable
      vrf forwarding v1
      ipv4 address 1.1.1.1 255.255.255.0
@@ -37,7 +36,6 @@
      exit
     !
     interface ethernet1
-     no description
      bundle-group 1
      no shutdown
      no log-link-change
@@ -85,7 +83,7 @@
     hostname r2
     buggy
     !
-    logging file debug ../binTmp/zzz23r2-log.run
+    logging file debug ../binTmp/zzz11r2-log.run
     !
     vrf definition tester
      exit
@@ -95,7 +93,6 @@
      exit
     !
     interface ethernet1
-     no description
      sgt enable
      vrf forwarding v1
      ipv4 address 1.1.1.2 255.255.255.0

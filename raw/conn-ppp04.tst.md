@@ -14,7 +14,7 @@
     hostname r1
     buggy
     !
-    logging file debug ../binTmp/zzz91r1-log.run
+    logging file debug ../binTmp/zzz13r1-log.run
     !
     vrf definition tester
      exit
@@ -24,7 +24,6 @@
      exit
     !
     interface serial1
-     no description
      encapsulation ppp
      ppp username c
      ppp password $v10$Yw==
@@ -79,7 +78,7 @@
     hostname r2
     buggy
     !
-    logging file debug ../binTmp/zzz91r2-log.run
+    logging file debug ../binTmp/zzz13r2-log.run
     !
     aaa tacacs usr
      secret $v10$Yw==
@@ -94,7 +93,6 @@
      exit
     !
     interface ethernet1
-     no description
      vrf forwarding v1
      ipv4 address 2.2.2.1 255.255.255.0
      no shutdown
@@ -102,7 +100,6 @@
      exit
     !
     interface serial1
-     no description
      encapsulation ppp
      ppp authentication usr
      ppp refuseauth chap
@@ -163,7 +160,7 @@
     hostname r3
     buggy
     !
-    logging file debug ../binTmp/zzz91r3-log.run
+    logging file debug ../binTmp/zzz13r3-log.run
     !
     aaa userlist usr
      username c
@@ -178,7 +175,6 @@
      exit
     !
     interface ethernet1
-     no description
      vrf forwarding v1
      ipv4 address 2.2.2.2 255.255.255.0
      no shutdown

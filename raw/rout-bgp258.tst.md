@@ -14,36 +14,42 @@
     hostname r1
     buggy
     !
-    logging file debug ../binTmp/zzz77r1-log.run
+    logging file debug ../binTmp/zzz5r1-log.run
     !
     vrf definition tester
      exit
     !
     vrf definition v1
      rd 1:1
-     label-mode per-prefix
+     label4mode per-prefix
+     label6mode per-prefix
      exit
     !
     vrf definition v2
      rd 1:2
-     rt-import 1:2
-     rt-export 1:2
+     rt4import 1:2
+     rt4export 1:2
+     rt6import 1:2
+     rt6export 1:2
      exit
     !
     vrf definition v3
      rd 1:3
-     rt-import 1:3
-     rt-export 1:3
+     rt4import 1:3
+     rt4export 1:3
+     rt6import 1:3
+     rt6export 1:3
      exit
     !
     vrf definition v4
      rd 1:4
-     rt-import 1:4
-     rt-export 1:4
+     rt4import 1:4
+     rt4export 1:4
+     rt6import 1:4
+     rt6export 1:4
      exit
     !
     interface loopback0
-     no description
      vrf forwarding v1
      ipv4 address 2.2.2.1 255.255.255.255
      ipv6 address 4321::1 ffff:ffff:ffff:ffff:ffff:ffff:ffff:ffff
@@ -52,7 +58,6 @@
      exit
     !
     interface loopback2
-     no description
      vrf forwarding v2
      ipv4 address 9.9.2.1 255.255.255.255
      ipv6 address 9992::1 ffff:ffff:ffff:ffff:ffff:ffff:ffff:ffff
@@ -61,7 +66,6 @@
      exit
     !
     interface loopback3
-     no description
      vrf forwarding v3
      ipv4 address 9.9.3.1 255.255.255.255
      ipv6 address 9993::1 ffff:ffff:ffff:ffff:ffff:ffff:ffff:ffff
@@ -70,7 +74,6 @@
      exit
     !
     interface loopback4
-     no description
      vrf forwarding v4
      ipv4 address 9.9.4.1 255.255.255.255
      ipv6 address 9994::1 ffff:ffff:ffff:ffff:ffff:ffff:ffff:ffff
@@ -79,7 +82,6 @@
      exit
     !
     interface ethernet1
-     no description
      vrf forwarding v1
      ipv4 address 1.1.1.1 255.255.255.252
      ipv6 address 1234:1::1 ffff:ffff::
@@ -91,13 +93,11 @@
      exit
     !
     interface ethernet2
-     no description
      no shutdown
      no log-link-change
      exit
     !
     interface ethernet2.12
-     no description
      vrf forwarding v2
      ipv4 address 9.8.2.1 255.255.255.0
      ipv6 address 9982::1 ffff:ffff:ffff:ffff::
@@ -106,7 +106,6 @@
      exit
     !
     interface ethernet2.13
-     no description
      vrf forwarding v3
      ipv4 address 9.8.3.1 255.255.255.0
      ipv6 address 9983::1 ffff:ffff:ffff:ffff::
@@ -115,7 +114,6 @@
      exit
     !
     interface ethernet2.14
-     no description
      vrf forwarding v4
      ipv4 address 9.8.4.1 255.255.255.0
      ipv6 address 9984::1 ffff:ffff:ffff:ffff::
@@ -127,10 +125,8 @@
      vrf v1
      local-as 1
      router-id 4.4.4.1
-     no safe-ebgp
      address-family ovpnuni
      neighbor 2.2.2.3 remote-as 1
-     no neighbor 2.2.2.3 description
      neighbor 2.2.2.3 local-as 1
      neighbor 2.2.2.3 address-family ovpnuni
      neighbor 2.2.2.3 distance 200
@@ -148,10 +144,8 @@
      vrf v1
      local-as 1
      router-id 6.6.6.1
-     no safe-ebgp
      address-family ovpnuni
      neighbor 4321::3 remote-as 1
-     no neighbor 4321::3 description
      neighbor 4321::3 local-as 1
      neighbor 4321::3 address-family ovpnuni
      neighbor 4321::3 distance 200
@@ -250,18 +244,18 @@
     hostname r2
     buggy
     !
-    logging file debug ../binTmp/zzz77r2-log.run
+    logging file debug ../binTmp/zzz5r2-log.run
     !
     vrf definition tester
      exit
     !
     vrf definition v1
      rd 1:1
-     label-mode per-prefix
+     label4mode per-prefix
+     label6mode per-prefix
      exit
     !
     interface loopback0
-     no description
      vrf forwarding v1
      ipv4 address 2.2.2.2 255.255.255.255
      ipv6 address 4321::2 ffff:ffff:ffff:ffff:ffff:ffff:ffff:ffff
@@ -270,7 +264,6 @@
      exit
     !
     interface ethernet1
-     no description
      vrf forwarding v1
      ipv4 address 1.1.1.2 255.255.255.252
      ipv6 address 1234:1::2 ffff:ffff::
@@ -282,7 +275,6 @@
      exit
     !
     interface ethernet2
-     no description
      vrf forwarding v1
      ipv4 address 1.1.1.5 255.255.255.252
      ipv6 address 1234:2::1 ffff:ffff::
@@ -339,36 +331,42 @@
     hostname r3
     buggy
     !
-    logging file debug ../binTmp/zzz77r3-log.run
+    logging file debug ../binTmp/zzz5r3-log.run
     !
     vrf definition tester
      exit
     !
     vrf definition v1
      rd 1:1
-     label-mode per-prefix
+     label4mode per-prefix
+     label6mode per-prefix
      exit
     !
     vrf definition v2
      rd 1:2
-     rt-import 1:2
-     rt-export 1:2
+     rt4import 1:2
+     rt4export 1:2
+     rt6import 1:2
+     rt6export 1:2
      exit
     !
     vrf definition v3
      rd 1:3
-     rt-import 1:3
-     rt-export 1:3
+     rt4import 1:3
+     rt4export 1:3
+     rt6import 1:3
+     rt6export 1:3
      exit
     !
     vrf definition v4
      rd 1:4
-     rt-import 1:4
-     rt-export 1:4
+     rt4import 1:4
+     rt4export 1:4
+     rt6import 1:4
+     rt6export 1:4
      exit
     !
     interface loopback0
-     no description
      vrf forwarding v1
      ipv4 address 2.2.2.3 255.255.255.255
      ipv6 address 4321::3 ffff:ffff:ffff:ffff:ffff:ffff:ffff:ffff
@@ -377,7 +375,6 @@
      exit
     !
     interface loopback2
-     no description
      vrf forwarding v2
      ipv4 address 9.9.2.3 255.255.255.255
      ipv6 address 9992::3 ffff:ffff:ffff:ffff:ffff:ffff:ffff:ffff
@@ -386,7 +383,6 @@
      exit
     !
     interface loopback3
-     no description
      vrf forwarding v3
      ipv4 address 9.9.3.3 255.255.255.255
      ipv6 address 9993::3 ffff:ffff:ffff:ffff:ffff:ffff:ffff:ffff
@@ -395,7 +391,6 @@
      exit
     !
     interface loopback4
-     no description
      vrf forwarding v4
      ipv4 address 9.9.4.3 255.255.255.255
      ipv6 address 9994::3 ffff:ffff:ffff:ffff:ffff:ffff:ffff:ffff
@@ -404,7 +399,6 @@
      exit
     !
     interface ethernet1
-     no description
      vrf forwarding v1
      ipv4 address 1.1.1.6 255.255.255.252
      ipv6 address 1234:2::2 ffff:ffff::
@@ -416,13 +410,11 @@
      exit
     !
     interface ethernet2
-     no description
      no shutdown
      no log-link-change
      exit
     !
     interface ethernet2.12
-     no description
      vrf forwarding v2
      ipv4 address 9.7.2.1 255.255.255.0
      ipv6 address 9972::1 ffff:ffff:ffff:ffff::
@@ -431,7 +423,6 @@
      exit
     !
     interface ethernet2.13
-     no description
      vrf forwarding v3
      ipv4 address 9.7.3.1 255.255.255.0
      ipv6 address 9973::1 ffff:ffff:ffff:ffff::
@@ -440,7 +431,6 @@
      exit
     !
     interface ethernet2.14
-     no description
      vrf forwarding v4
      ipv4 address 9.7.4.1 255.255.255.0
      ipv6 address 9974::1 ffff:ffff:ffff:ffff::
@@ -452,10 +442,8 @@
      vrf v1
      local-as 1
      router-id 4.4.4.3
-     no safe-ebgp
      address-family ovpnuni
      neighbor 2.2.2.1 remote-as 1
-     no neighbor 2.2.2.1 description
      neighbor 2.2.2.1 local-as 1
      neighbor 2.2.2.1 address-family ovpnuni
      neighbor 2.2.2.1 distance 200
@@ -473,10 +461,8 @@
      vrf v1
      local-as 1
      router-id 6.6.6.3
-     no safe-ebgp
      address-family ovpnuni
      neighbor 4321::1 remote-as 1
-     no neighbor 4321::1 description
      neighbor 4321::1 local-as 1
      neighbor 4321::1 address-family ovpnuni
      neighbor 4321::1 distance 200
@@ -575,37 +561,41 @@
     hostname r4
     buggy
     !
-    logging file debug ../binTmp/zzz77r4-log.run
+    logging file debug ../binTmp/zzz5r4-log.run
     !
     vrf definition tester
      exit
     !
     vrf definition v2
      rd 1:2
-     rt-import 1:2
-     rt-export 1:2
+     rt4import 1:2
+     rt4export 1:2
+     rt6import 1:2
+     rt6export 1:2
      exit
     !
     vrf definition v3
      rd 1:3
-     rt-import 1:3
-     rt-export 1:3
+     rt4import 1:3
+     rt4export 1:3
+     rt6import 1:3
+     rt6export 1:3
      exit
     !
     vrf definition v4
      rd 1:4
-     rt-import 1:4
-     rt-export 1:4
+     rt4import 1:4
+     rt4export 1:4
+     rt6import 1:4
+     rt6export 1:4
      exit
     !
     interface ethernet1
-     no description
      no shutdown
      no log-link-change
      exit
     !
     interface ethernet1.12
-     no description
      vrf forwarding v2
      ipv4 address 9.8.2.2 255.255.255.0
      ipv6 address 9982::2 ffff:ffff:ffff:ffff::
@@ -614,7 +604,6 @@
      exit
     !
     interface ethernet1.13
-     no description
      vrf forwarding v3
      ipv4 address 9.8.3.2 255.255.255.0
      ipv6 address 9983::2 ffff:ffff:ffff:ffff::
@@ -623,7 +612,6 @@
      exit
     !
     interface ethernet1.14
-     no description
      vrf forwarding v4
      ipv4 address 9.8.4.2 255.255.255.0
      ipv6 address 9984::2 ffff:ffff:ffff:ffff::
@@ -705,37 +693,41 @@
     hostname r5
     buggy
     !
-    logging file debug ../binTmp/zzz77r5-log.run
+    logging file debug ../binTmp/zzz5r5-log.run
     !
     vrf definition tester
      exit
     !
     vrf definition v2
      rd 1:2
-     rt-import 1:2
-     rt-export 1:2
+     rt4import 1:2
+     rt4export 1:2
+     rt6import 1:2
+     rt6export 1:2
      exit
     !
     vrf definition v3
      rd 1:3
-     rt-import 1:3
-     rt-export 1:3
+     rt4import 1:3
+     rt4export 1:3
+     rt6import 1:3
+     rt6export 1:3
      exit
     !
     vrf definition v4
      rd 1:4
-     rt-import 1:4
-     rt-export 1:4
+     rt4import 1:4
+     rt4export 1:4
+     rt6import 1:4
+     rt6export 1:4
      exit
     !
     interface ethernet1
-     no description
      no shutdown
      no log-link-change
      exit
     !
     interface ethernet1.12
-     no description
      vrf forwarding v2
      ipv4 address 9.7.2.2 255.255.255.0
      ipv6 address 9972::2 ffff:ffff:ffff:ffff::
@@ -744,7 +736,6 @@
      exit
     !
     interface ethernet1.13
-     no description
      vrf forwarding v3
      ipv4 address 9.7.3.2 255.255.255.0
      ipv6 address 9973::2 ffff:ffff:ffff:ffff::
@@ -753,7 +744,6 @@
      exit
     !
     interface ethernet1.14
-     no description
      vrf forwarding v4
      ipv4 address 9.7.4.2 255.255.255.0
      ipv6 address 9974::2 ffff:ffff:ffff:ffff::

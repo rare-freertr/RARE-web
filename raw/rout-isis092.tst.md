@@ -14,7 +14,7 @@
     hostname r1
     buggy
     !
-    logging file debug ../binTmp/zzz40r1-log.run
+    logging file debug ../binTmp/zzz9r1-log.run
     !
     access-list test4
      sequence 10 deny 1 any all any all
@@ -48,7 +48,6 @@
      exit
     !
     interface loopback1
-     no description
      vrf forwarding v1
      ipv4 address 2.2.2.1 255.255.255.255
      ipv6 address 4321::1 ffff:ffff:ffff:ffff:ffff:ffff:ffff:ffff
@@ -62,7 +61,6 @@
      exit
     !
     interface ethernet1
-     no description
      vrf forwarding v1
      ipv4 address 1.1.1.1 255.255.255.252
      ipv4 access-group-in test4
@@ -77,7 +75,6 @@
      exit
     !
     interface tunnel1
-     no description
      tunnel key 1
      tunnel vrf v1
      tunnel source loopback1
@@ -91,7 +88,6 @@
      exit
     !
     interface tunnel2
-     no description
      tunnel key 1
      tunnel vrf v1
      tunnel source loopback1
@@ -146,7 +142,7 @@
     hostname r2
     buggy
     !
-    logging file debug ../binTmp/zzz40r2-log.run
+    logging file debug ../binTmp/zzz9r2-log.run
     !
     access-list test4
      sequence 10 deny 1 any all any all
@@ -180,7 +176,6 @@
      exit
     !
     interface loopback1
-     no description
      vrf forwarding v1
      ipv4 address 2.2.2.2 255.255.255.255
      ipv6 address 4321::2 ffff:ffff:ffff:ffff:ffff:ffff:ffff:ffff
@@ -194,7 +189,6 @@
      exit
     !
     interface ethernet1
-     no description
      vrf forwarding v1
      ipv4 address 1.1.1.2 255.255.255.252
      ipv4 access-group-in test4
@@ -209,7 +203,6 @@
      exit
     !
     interface ethernet2
-     no description
      vrf forwarding v1
      ipv4 address 1.1.1.5 255.255.255.252
      ipv4 access-group-in test4
@@ -265,7 +258,7 @@
     hostname r3
     buggy
     !
-    logging file debug ../binTmp/zzz40r3-log.run
+    logging file debug ../binTmp/zzz9r3-log.run
     !
     access-list test4
      sequence 10 deny 1 any all any all
@@ -299,7 +292,6 @@
      exit
     !
     interface loopback1
-     no description
      vrf forwarding v1
      ipv4 address 2.2.2.3 255.255.255.255
      ipv6 address 4321::3 ffff:ffff:ffff:ffff:ffff:ffff:ffff:ffff
@@ -313,7 +305,6 @@
      exit
     !
     interface ethernet1
-     no description
      vrf forwarding v1
      ipv4 address 1.1.1.6 255.255.255.252
      ipv4 access-group-in test4
@@ -328,7 +319,6 @@
      exit
     !
     interface tunnel1
-     no description
      tunnel key 3
      tunnel vrf v1
      tunnel source loopback1
@@ -342,7 +332,6 @@
      exit
     !
     interface tunnel2
-     no description
      tunnel key 3
      tunnel vrf v1
      tunnel source loopback1
@@ -402,8 +391,8 @@
      |~~~~~~~~~~~|~~~~~~~~~~~~~~~~|~~~~~~~|~~~~~~~~~~~~~~~~|~~~~~~~~~~~~|~~~~~~~~~~~~~~~|~~~~~~~|~~~~~~~~~~|
      | interface | mac address    | level | routerid       | ip address | other address | state | uptime   |
      |-----------|----------------|-------|----------------|------------|---------------|-------|----------|
-     | ethernet1 | 0000.0000.0000 | 2     | 4444.0000.1111 | 1.1.1.1    | 1234:1::1     | up    | 00:00:14 |
-     | ethernet2 | 0000.0000.0000 | 2     | 4444.0000.3333 | 1.1.1.6    | 1234:2::2     | up    | 00:00:14 |
+     | ethernet1 | 0000.0000.0000 | 2     | 4444.0000.1111 | 1.1.1.1    | 1234:1::1     | up    | 00:00:12 |
+     | ethernet2 | 0000.0000.0000 | 2     | 4444.0000.3333 | 1.1.1.6    | 1234:2::2     | up    | 00:00:12 |
      |___________|________________|_______|________________|____________|_______________|_______|__________|
     r2#
     r2#
@@ -427,9 +416,10 @@
      |~~~~~~~~~~~~~~~~~~~~~~|~~~~~~~~~~|~~~~~~~|~~~~~|~~~~~~~~~~|
      | lspid                | sequence | flags | len | time     |
      |----------------------|----------|-------|-----|----------|
-     | 4444.0000.1111.00-00 | 00000016 | apo   | 166 | 00:19:45 |
-     | 4444.0000.3333.00-00 | 00000016 | apo   | 166 | 00:19:45 |
-     | 6666.0000.2222.00-00 | 00000014 | apo   | 169 | 00:19:45 |
+     | 0000.0000.0000.00-00 | 00000001 | apo   | 10  | 00:19:46 |
+     | 4444.0000.1111.00-00 | 00000012 | apo   | 166 | 00:19:46 |
+     | 4444.0000.3333.00-00 | 00000012 | apo   | 166 | 00:19:47 |
+     | 6666.0000.2222.00-00 | 00000017 | apo   | 169 | 00:19:47 |
      |______________________|__________|_______|_____|__________|
     r2#
     r2#
@@ -475,14 +465,14 @@
      |~~~~~|~~~~~~~~~~~~|~~~~~~~~|~~~~~~~~~~~|~~~~~~~~~|~~~~~~~~~~|
      | typ | prefix     | metric | iface     | hop     | time     |
      |-----|------------|--------|-----------|---------|----------|
-     | C   | 1.1.1.0/30 | 0/0    | ethernet1 | null    | 00:00:26 |
-     | LOC | 1.1.1.2/32 | 0/1    | ethernet1 | null    | 00:00:26 |
-     | C   | 1.1.1.4/30 | 0/0    | ethernet2 | null    | 00:00:26 |
-     | LOC | 1.1.1.5/32 | 0/1    | ethernet2 | null    | 00:00:26 |
-     | I   | 2.2.2.1/32 | 115/20 | ethernet1 | 1.1.1.1 | 00:00:15 |
-     | C   | 2.2.2.2/32 | 0/0    | loopback1 | null    | 00:00:27 |
-     | I   | 2.2.2.3/32 | 115/20 | ethernet2 | 1.1.1.6 | 00:00:15 |
-     | I   | 3.3.3.0/30 | 115/10 | ethernet2 | 1.1.1.6 | 00:00:15 |
+     | C   | 1.1.1.0/30 | 0/0    | ethernet1 | null    | 00:00:13 |
+     | LOC | 1.1.1.2/32 | 0/1    | ethernet1 | null    | 00:00:13 |
+     | C   | 1.1.1.4/30 | 0/0    | ethernet2 | null    | 00:00:13 |
+     | LOC | 1.1.1.5/32 | 0/1    | ethernet2 | null    | 00:00:13 |
+     | I   | 2.2.2.1/32 | 115/20 | ethernet1 | 1.1.1.1 | 00:00:13 |
+     | C   | 2.2.2.2/32 | 0/0    | loopback1 | null    | 00:00:14 |
+     | I   | 2.2.2.3/32 | 115/20 | ethernet2 | 1.1.1.6 | 00:00:13 |
+     | I   | 3.3.3.0/30 | 115/10 | ethernet2 | 1.1.1.6 | 00:00:13 |
      |_____|____________|________|___________|_________|__________|
     r2#
     r2#
@@ -496,14 +486,14 @@
      |~~~~~~|~~~~~~~~~~~~~~~~|~~~~~~~~|~~~~~~~~~~~|~~~~~~~~~~~|~~~~~~~~~~|
      | typ  | prefix         | metric | iface     | hop       | time     |
      |------|----------------|--------|-----------|-----------|----------|
-     | C    | 1234:1::/32    | 0/0    | ethernet1 | null      | 00:00:26 |
-     | LOC  | 1234:1::2/128  | 0/1    | ethernet1 | null      | 00:00:26 |
-     | C    | 1234:2::/32    | 0/0    | ethernet2 | null      | 00:00:26 |
-     | LOC  | 1234:2::1/128  | 0/1    | ethernet2 | null      | 00:00:26 |
-     | I    | 4321::1/128    | 115/20 | ethernet1 | 1234:1::1 | 00:00:15 |
-     | C    | 4321::2/128    | 0/0    | loopback1 | null      | 00:00:27 |
-     | I    | 4321::3/128    | 115/20 | ethernet2 | 1234:2::2 | 00:00:15 |
-     | I EX | 4321::1110/124 | 115/10 | ethernet2 | 1234:2::2 | 00:00:15 |
+     | C    | 1234:1::/32    | 0/0    | ethernet1 | null      | 00:00:14 |
+     | LOC  | 1234:1::2/128  | 0/1    | ethernet1 | null      | 00:00:14 |
+     | C    | 1234:2::/32    | 0/0    | ethernet2 | null      | 00:00:14 |
+     | LOC  | 1234:2::1/128  | 0/1    | ethernet2 | null      | 00:00:14 |
+     | I    | 4321::1/128    | 115/20 | ethernet1 | 1234:1::1 | 00:00:13 |
+     | C    | 4321::2/128    | 0/0    | loopback1 | null      | 00:00:14 |
+     | I    | 4321::3/128    | 115/20 | ethernet2 | 1234:2::2 | 00:00:13 |
+     | I EX | 4321::1110/124 | 115/10 | ethernet2 | 1234:2::2 | 00:00:13 |
      |______|________________|________|___________|___________|__________|
     r2#
     r2#
@@ -514,12 +504,12 @@
     r2#
     r2#show ipv4 bier v1
     r2#show ipv4 bier v1
-     |~~~~~~~~~~~~|~~~~~~~|~~~~~~~~~|~~~~~~~~~|~~~~~~~|
-     | prefix     | index | base    | oldbase | size  |
-     |------------|-------|---------|---------|-------|
-     | 2.2.2.1/32 | 1     | 1014592 | 1014592 | 3-256 |
-     | 2.2.2.3/32 | 5     | 928230  | 928230  | 3-256 |
-     |____________|_______|_________|_________|_______|
+     |~~~~~~~~~~~~|~~~~~~~|~~~~~~~~|~~~~~~~~~|~~~~~~~|
+     | prefix     | index | base   | oldbase | size  |
+     |------------|-------|--------|---------|-------|
+     | 2.2.2.1/32 | 1     | 346445 | 346445  | 3-256 |
+     | 2.2.2.3/32 | 5     | 813661 | 813661  | 3-256 |
+     |____________|_______|________|_________|_______|
     r2#
     r2#
     ```
@@ -529,12 +519,12 @@
     r2#
     r2#show ipv6 bier v1
     r2#show ipv6 bier v1
-     |~~~~~~~~~~~~~|~~~~~~~|~~~~~~~~~|~~~~~~~~~|~~~~~~~|
-     | prefix      | index | base    | oldbase | size  |
-     |-------------|-------|---------|---------|-------|
-     | 4321::1/128 | 2     | 1014592 | 1014592 | 3-256 |
-     | 4321::3/128 | 6     | 928230  | 928230  | 3-256 |
-     |_____________|_______|_________|_________|_______|
+     |~~~~~~~~~~~~~|~~~~~~~|~~~~~~~~|~~~~~~~~~|~~~~~~~|
+     | prefix      | index | base   | oldbase | size  |
+     |-------------|-------|--------|---------|-------|
+     | 4321::1/128 | 2     | 346445 | 346445  | 3-256 |
+     | 4321::3/128 | 6     | 813661 | 813661  | 3-256 |
+     |_____________|_______|________|_________|_______|
     r2#
     r2#
     ```

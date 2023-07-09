@@ -14,7 +14,7 @@
     hostname r1
     buggy
     !
-    logging file debug ../binTmp/zzz50r1-log.run
+    logging file debug ../binTmp/zzz42r1-log.run
     !
     aaa radius rad
      secret $v10$dGVzdGVy
@@ -29,7 +29,6 @@
      exit
     !
     interface loopback0
-     no description
      vrf forwarding v1
      ipv4 address 2.2.2.2 255.255.255.255
      no shutdown
@@ -37,7 +36,6 @@
      exit
     !
     interface ethernet1
-     no description
      vrf forwarding v1
      ipv4 address 1.1.1.1 255.255.255.0
      ipv6 address 1234::1 ffff::
@@ -99,7 +97,7 @@
     hostname r2
     buggy
     !
-    logging file debug ../binTmp/zzz50r2-log.run
+    logging file debug ../binTmp/zzz42r2-log.run
     !
     aaa userlist usr
      username c
@@ -115,7 +113,6 @@
      exit
     !
     interface ethernet1
-     no description
      vrf forwarding v1
      ipv4 address 1.1.1.2 255.255.255.0
      ipv6 address 1234::2 ffff::

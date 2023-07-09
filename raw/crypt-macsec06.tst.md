@@ -14,7 +14,7 @@
     hostname r1
     buggy
     !
-    logging file debug ../binTmp/zzz55r1-log.run
+    logging file debug ../binTmp/zzz34r1-log.run
     !
     crypto ipsec ips
      group 02
@@ -31,7 +31,6 @@
      exit
     !
     interface serial1
-     no description
      encapsulation framerelay
      framerelay mode dce
      framerelay dlci 123
@@ -85,7 +84,7 @@
     hostname r2
     buggy
     !
-    logging file debug ../binTmp/zzz55r2-log.run
+    logging file debug ../binTmp/zzz34r2-log.run
     !
     crypto ipsec ips
      group 02
@@ -102,7 +101,6 @@
      exit
     !
     interface serial1
-     no description
      encapsulation framerelay
      framerelay mode dte
      framerelay dlci 123

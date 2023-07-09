@@ -14,7 +14,7 @@
     hostname r1
     buggy
     !
-    logging file debug ../binTmp/zzz18r1-log.run
+    logging file debug ../binTmp/zzz71r1-log.run
     !
     vrf definition tester
      exit
@@ -24,7 +24,6 @@
      exit
     !
     interface serial1
-     no description
      encapsulation ppp
      ppp ip4cp close
      ppp ip6cp close
@@ -77,7 +76,7 @@
     hostname r2
     buggy
     !
-    logging file debug ../binTmp/zzz18r2-log.run
+    logging file debug ../binTmp/zzz71r2-log.run
     !
     vrf definition tester
      exit
@@ -87,7 +86,6 @@
      exit
     !
     interface serial1
-     no description
      encapsulation ppp
      ppp multilink 1500 long
      ppp fragment 256

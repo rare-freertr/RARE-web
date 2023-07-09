@@ -14,7 +14,7 @@
     hostname r1
     buggy
     !
-    logging file debug ../binTmp/zzz56r1-log.run
+    logging file debug ../binTmp/zzz39r1-log.run
     !
     access-list test4
      sequence 10 permit all 1.1.1.1 255.255.255.255 all any all
@@ -32,7 +32,6 @@
      exit
     !
     interface loopback1
-     no description
      vrf forwarding v1
      ipv4 address 1.1.1.1 255.255.255.0
      ipv6 address 1111::1 ffff:ffff::
@@ -41,7 +40,6 @@
      exit
     !
     interface ethernet1
-     no description
      nsh enable
      no shutdown
      no log-link-change
@@ -95,20 +93,18 @@
     hostname r2
     buggy
     !
-    logging file debug ../binTmp/zzz56r2-log.run
+    logging file debug ../binTmp/zzz39r2-log.run
     !
     vrf definition tester
      exit
     !
     interface ethernet1
-     no description
      nsh enable
      no shutdown
      no log-link-change
      exit
     !
     interface ethernet2
-     no description
      nsh enable
      no shutdown
      no log-link-change
@@ -147,20 +143,18 @@
     hostname r3
     buggy
     !
-    logging file debug ../binTmp/zzz56r3-log.run
+    logging file debug ../binTmp/zzz39r3-log.run
     !
     vrf definition tester
      exit
     !
     interface ethernet1
-     no description
      nsh enable
      no shutdown
      no log-link-change
      exit
     !
     interface ethernet2
-     no description
      nsh enable
      nsh xconnect 3 255
      no shutdown
@@ -200,7 +194,7 @@
     hostname r4
     buggy
     !
-    logging file debug ../binTmp/zzz56r4-log.run
+    logging file debug ../binTmp/zzz39r4-log.run
     !
     vrf definition tester
      exit
@@ -210,7 +204,6 @@
      exit
     !
     interface ethernet1
-     no description
      vrf forwarding v1
      ipv4 address 1.1.1.2 255.255.255.0
      ipv4 host-static 1.1.1.1 0000.1111.2222

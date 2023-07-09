@@ -14,7 +14,7 @@
     hostname r1
     buggy
     !
-    logging file debug ../binTmp/zzz12r1-log.run
+    logging file debug ../binTmp/zzz32r1-log.run
     !
     bridge 1
      mac-learn
@@ -28,7 +28,6 @@
      exit
     !
     interface bvi1
-     no description
      vrf forwarding v1
      ipv4 address 2.2.2.1 255.255.255.0
      ipv6 address 4321::1 ffff::
@@ -37,7 +36,6 @@
      exit
     !
     interface ethernet1
-     no description
      vrf forwarding v1
      ipv4 address 1.1.1.1 255.255.255.0
      ipv6 address 1234::1 ffff::
@@ -99,7 +97,7 @@
     hostname r2
     buggy
     !
-    logging file debug ../binTmp/zzz12r2-log.run
+    logging file debug ../binTmp/zzz32r2-log.run
     !
     bridge 1
      mac-learn
@@ -113,7 +111,6 @@
      exit
     !
     interface bvi1
-     no description
      vrf forwarding v1
      ipv4 address 2.2.2.2 255.255.255.0
      ipv6 address 4321::2 ffff::
@@ -122,7 +119,6 @@
      exit
     !
     interface ethernet1
-     no description
      vrf forwarding v1
      ipv4 address 1.1.1.2 255.255.255.0
      ipv6 address 1234::2 ffff::
@@ -197,8 +193,8 @@
      |                                             | packet             | byte               |  |
      | addr           | iface             | static | time     | tx | rx | drop | tx   | rx   | drop |
      |----------------|-------------------|--------|----------|----|----|------|------|------|------|
-     | 0019.2629.461b | erspan to 1.1.1.1 | false  | 00:00:05 | 29 | 31 | 0    | 1878 | 2018 | 0    |
-     | 0043.0c0e.6c67 | bvi               | false  | 00:00:05 | 30 | 33 | 0    | 1988 | 2206 | 0    |
+     | 0033.4b64.5724 | bvi               | false  | 00:00:05 | 30 | 33 | 0    | 1988 | 2206 | 0    |
+     | 004e.5f14.7e47 | erspan to 1.1.1.1 | false  | 00:00:05 | 29 | 31 | 0    | 1878 | 2018 | 0    |
      |________________|___________________|________|__________|____|____|______|______|______|______|
     r2#
     r2#
@@ -209,18 +205,20 @@
     r2#
     r2#show inter bvi1 full
     r2#show inter bvi1 full
-    bvi1 is up (since 00:00:05, 3 changes)
+    bvi1 is up
      description:
-     type is bridged, hwaddr=0043.0c0e.6c67, mtu=1400, bw=10mbps, vrf=v1
-     ip4 address=2.2.2.2/24, netmask=255.255.255.0, ifcid=504115234
-     ip6 address=4321::2/16, netmask=ffff::, ifcid=985640798
+     state changed 3 times, last at 2022-05-02 21:14:50, 00:00:05 ago
+     last packet input 00:00:00 ago, output 00:00:00 ago, drop never ago
+     type is bridged, hwaddr=0033.4b64.5724, mtu=1400, bw=10.0mbps, vrf=v1
+     ipv4 address=2.2.2.2/24, mask=255.255.255.0, ifcid=861183547
+     ipv6 address=4321::2/16, mask=ffff::, ifcid=184700211
      received 31 packets (2018 bytes) dropped 0 packets (0 bytes)
-     transmitted 33 packets (2206 bytes) promisc=false macsec=false sgt=false
+     transmitted 33 packets (2206 bytes) macsec=false sgt=false
      |~~~~~~~|~~~~|~~~~|~~~~~~|~~~~~|~~~~~|~~~~~~|
      |       | packet         | byte             |
      | time  | tx | rx | drop | tx  | rx  | drop |
      |-------|----|----|------|-----|-----|------|
-     | 1sec  | 10 | 10 | 0    | 660 | 660 | 0    |
+     | 1sec  | 4  | 4  | 0    | 264 | 264 | 0    |
      | 1min  | 0  | 0  | 0    | 0   | 0   | 0    |
      | 1hour | 0  | 0  | 0    | 0   | 0   | 0    |
      |_______|____|____|______|_____|_____|______|
@@ -270,41 +268,41 @@
      | 6     | 0   | 0   | 0    | 0    | 0    | 0    |
      | 7     | 0   | 0   | 0    | 0    | 0    | 0    |
      |_______|_____|_____|______|______|______|______|
-             12k|
-             11k|  #
-            9817|# #
-            8590|# #
-            7363|# #
-            6136|# #
-            4908|# #
-            3681|####
-            2454|#####
-            1227|#####
-               0|#####
+           12.2k| #
+           11.0k| #
+            9816| #
+            8589| #
+            7362| #
+            6135| #
+            4908| #
+            3681|## #
+            2454|## ##
+            1227|## ##
+               0|############################################################
              bps|0---------10--------20--------30--------40--------50-------- seconds
+              10|
+               9|
+               8|
+               7|
+               6|
+               5|
+               4|
+               3|
+               2|
                1|
-               0|
-               0|
-               0|
-               0|
-               0|
-               0|
-               0|
-               0|
-               0|
-               0|
+               0|############################################################
              bps|0---------10--------20--------30--------40--------50-------- minutes
+              10|
+               9|
+               8|
+               7|
+               6|
+               5|
+               4|
+               3|
+               2|
                1|
-               0|
-               0|
-               0|
-               0|
-               0|
-               0|
-               0|
-               0|
-               0|
-               0|
+               0|############################################################
              bps|0---------10--------20--------30--------40--------50-------- hours
     r2#
     r2#
@@ -318,7 +316,7 @@
      |~~~~~~~~~~~~~~~~|~~~~~~~~~|~~~~~~~~~~|~~~~~~~~|
      | mac            | address | time     | static |
      |----------------|---------|----------|--------|
-     | 0019.2629.461b | 2.2.2.1 | 00:00:05 | false  |
+     | 004e.5f14.7e47 | 2.2.2.1 | 00:00:05 | false  |
      |________________|_________|__________|________|
     r2#
     r2#
@@ -332,7 +330,7 @@
      |~~~~~~~~~~~~~~~~|~~~~~~~~~|~~~~~~~~~~|~~~~~~~~|~~~~~~~~|
      | mac            | address | time     | static | router |
      |----------------|---------|----------|--------|--------|
-     | 0019.2629.461b | 4321::1 | 00:00:05 | false  | false  |
+     | 004e.5f14.7e47 | 4321::1 | 00:00:05 | false  | false  |
      |________________|_________|__________|________|________|
     r2#
     r2#

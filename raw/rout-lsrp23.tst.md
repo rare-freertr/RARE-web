@@ -14,7 +14,7 @@
     hostname r1
     buggy
     !
-    logging file debug ../binTmp/zzz24r1-log.run
+    logging file debug ../binTmp/zzz65r1-log.run
     !
     access-list test4
      sequence 10 deny 1 any all any all
@@ -48,7 +48,6 @@
      exit
     !
     interface loopback1
-     no description
      vrf forwarding v1
      ipv4 address 2.2.2.1 255.255.255.255
      ipv6 address 4321::1 ffff:ffff:ffff:ffff:ffff:ffff:ffff:ffff
@@ -57,7 +56,6 @@
      exit
     !
     interface ethernet1
-     no description
      vrf forwarding v1
      ipv4 address 1.1.1.1 255.255.255.0
      ipv4 access-group-in test4
@@ -71,7 +69,6 @@
      exit
     !
     interface tunnel1
-     no description
      tunnel key 1
      tunnel vrf v1
      tunnel source loopback1
@@ -85,7 +82,6 @@
      exit
     !
     interface tunnel2
-     no description
      tunnel key 1
      tunnel vrf v1
      tunnel source loopback1
@@ -140,7 +136,7 @@
     hostname r2
     buggy
     !
-    logging file debug ../binTmp/zzz24r2-log.run
+    logging file debug ../binTmp/zzz65r2-log.run
     !
     access-list test4
      sequence 10 deny 1 any all any all
@@ -174,7 +170,6 @@
      exit
     !
     interface loopback1
-     no description
      vrf forwarding v1
      ipv4 address 2.2.2.2 255.255.255.255
      ipv6 address 4321::2 ffff:ffff:ffff:ffff:ffff:ffff:ffff:ffff
@@ -183,7 +178,6 @@
      exit
     !
     interface ethernet1
-     no description
      vrf forwarding v1
      ipv4 address 1.1.1.2 255.255.255.0
      ipv4 access-group-in test4
@@ -197,7 +191,6 @@
      exit
     !
     interface ethernet2
-     no description
      vrf forwarding v1
      ipv4 address 1.1.2.2 255.255.255.0
      ipv4 access-group-in test4
@@ -252,7 +245,7 @@
     hostname r3
     buggy
     !
-    logging file debug ../binTmp/zzz24r3-log.run
+    logging file debug ../binTmp/zzz65r3-log.run
     !
     access-list test4
      sequence 10 deny 1 any all any all
@@ -286,7 +279,6 @@
      exit
     !
     interface loopback1
-     no description
      vrf forwarding v1
      ipv4 address 2.2.2.3 255.255.255.255
      ipv6 address 4321::3 ffff:ffff:ffff:ffff:ffff:ffff:ffff:ffff
@@ -295,7 +287,6 @@
      exit
     !
     interface ethernet1
-     no description
      vrf forwarding v1
      ipv4 address 1.1.2.3 255.255.255.0
      ipv4 access-group-in test4
@@ -309,7 +300,6 @@
      exit
     !
     interface tunnel1
-     no description
      tunnel key 3
      tunnel vrf v1
      tunnel source loopback1
@@ -323,7 +313,6 @@
      exit
     !
     interface tunnel2
-     no description
      tunnel key 3
      tunnel vrf v1
      tunnel source loopback1
@@ -399,7 +388,7 @@
      | iface     | router  | name | peerif    | peer    | ready | uptime   |
      |-----------|---------|------|-----------|---------|-------|----------|
      | ethernet1 | 6.6.6.1 | r1   | ethernet1 | 1234::1 | true  | 00:00:16 |
-     | ethernet2 | 6.6.6.3 | r3   | ethernet1 | 1235::3 | true  | 00:00:16 |
+     | ethernet2 | 6.6.6.3 | r3   | ethernet1 | 1235::3 | true  | 00:00:21 |
      |___________|_________|______|___________|_________|_______|__________|
     r2#
     r2#
@@ -413,9 +402,9 @@
      |~~~~~~~~~|~~~~~~|~~~~~|~~~~~|~~~~~|~~~~~~~~~~|~~~~~~~~~~|
      | id      | name | nei | net | seq | topo     | left     |
      |---------|------|-----|-----|-----|----------|----------|
-     | 4.4.4.1 | r1   | 1   | 3   | 8   | a17e7c7c | 00:59:48 |
-     | 4.4.4.2 | r2   | 2   | 3   | 12  | 0ebb7815 | 00:59:48 |
-     | 4.4.4.3 | r3   | 1   | 3   | 9   | c2f77457 | 00:59:46 |
+     | 4.4.4.1 | r1   | 1   | 3   | 8   | a17e7c7c | 00:59:51 |
+     | 4.4.4.2 | r2   | 2   | 3   | 12  | 0ebb7815 | 00:59:51 |
+     | 4.4.4.3 | r3   | 1   | 3   | 7   | c2f77457 | 00:59:46 |
      |_________|______|_____|_____|_____|__________|__________|
     r2#
     r2#
@@ -429,9 +418,9 @@
      |~~~~~~~~~|~~~~~~|~~~~~|~~~~~|~~~~~|~~~~~~~~~~|~~~~~~~~~~|
      | id      | name | nei | net | seq | topo     | left     |
      |---------|------|-----|-----|-----|----------|----------|
-     | 6.6.6.1 | r1   | 1   | 3   | 8   | a17e7c7c | 00:59:47 |
-     | 6.6.6.2 | r2   | 2   | 3   | 11  | 10358654 | 00:59:47 |
-     | 6.6.6.3 | r3   | 1   | 3   | 9   | ccea845f | 00:59:46 |
+     | 6.6.6.1 | r1   | 1   | 3   | 9   | a17e7c7c | 00:59:47 |
+     | 6.6.6.2 | r2   | 2   | 3   | 12  | 0ebb7815 | 00:59:47 |
+     | 6.6.6.3 | r3   | 1   | 3   | 10  | ccea845f | 00:59:44 |
      |_________|______|_____|_____|_____|__________|__________|
     r2#
     r2#
@@ -471,12 +460,12 @@
      |------|------------|--------|-----------|---------|----------|
      | C    | 1.1.1.0/24 | 0/0    | ethernet1 | null    | 00:00:22 |
      | LOC  | 1.1.1.2/32 | 0/1    | ethernet1 | null    | 00:00:22 |
-     | C    | 1.1.2.0/24 | 0/0    | ethernet2 | null    | 00:00:22 |
-     | LOC  | 1.1.2.2/32 | 0/1    | ethernet2 | null    | 00:00:22 |
-     | L EX | 2.2.2.1/32 | 70/10  | ethernet1 | 1.1.1.1 | 00:00:11 |
+     | C    | 1.1.2.0/24 | 0/0    | ethernet2 | null    | 00:00:21 |
+     | LOC  | 1.1.2.2/32 | 0/1    | ethernet2 | null    | 00:00:21 |
+     | L EX | 2.2.2.1/32 | 70/10  | ethernet1 | 1.1.1.1 | 00:00:08 |
      | C    | 2.2.2.2/32 | 0/0    | loopback1 | null    | 00:00:22 |
-     | L EX | 2.2.2.3/32 | 70/10  | ethernet2 | 1.1.2.3 | 00:00:13 |
-     | L EX | 3.3.3.0/30 | 70/10  | ethernet2 | 1.1.2.3 | 00:00:13 |
+     | L EX | 2.2.2.3/32 | 70/10  | ethernet2 | 1.1.2.3 | 00:00:14 |
+     | L EX | 3.3.3.0/30 | 70/10  | ethernet2 | 1.1.2.3 | 00:00:14 |
      |______|____________|________|___________|_________|__________|
     r2#
     r2#
@@ -494,10 +483,10 @@
      | LOC  | 1234::2/128    | 0/1    | ethernet1 | null    | 00:00:22 |
      | C    | 1235::/16      | 0/0    | ethernet2 | null    | 00:00:22 |
      | LOC  | 1235::2/128    | 0/1    | ethernet2 | null    | 00:00:22 |
-     | L EX | 4321::1/128    | 70/10  | ethernet1 | 1234::1 | 00:00:12 |
+     | L EX | 4321::1/128    | 70/10  | ethernet1 | 1234::1 | 00:00:13 |
      | C    | 4321::2/128    | 0/0    | loopback1 | null    | 00:00:22 |
-     | L EX | 4321::3/128    | 70/10  | ethernet2 | 1235::3 | 00:00:14 |
-     | L EX | 4321::1110/124 | 70/10  | ethernet2 | 1235::3 | 00:00:14 |
+     | L EX | 4321::3/128    | 70/10  | ethernet2 | 1235::3 | 00:00:16 |
+     | L EX | 4321::1110/124 | 70/10  | ethernet2 | 1235::3 | 00:00:16 |
      |______|________________|________|___________|_________|__________|
     r2#
     r2#
@@ -511,9 +500,9 @@
      |~~~~~~~~~~~~|~~~~~~~|~~~~~~~~|~~~~~~~~~|~~~~~~~|
      | prefix     | index | base   | oldbase | size  |
      |------------|-------|--------|---------|-------|
-     | 2.2.2.1/32 | 1     | 311054 | 311054  | 3-256 |
-     | 2.2.2.3/32 | 3     | 334003 | 334003  | 3-256 |
-     | 3.3.3.0/30 | 3     | 334003 | 334003  | 3-256 |
+     | 2.2.2.1/32 | 1     | 889167 | 889167  | 3-256 |
+     | 2.2.2.3/32 | 3     | 927006 | 927006  | 3-256 |
+     | 3.3.3.0/30 | 3     | 927006 | 927006  | 3-256 |
      |____________|_______|________|_________|_______|
     r2#
     r2#
@@ -527,9 +516,9 @@
      |~~~~~~~~~~~~~~~~|~~~~~~~|~~~~~~~~|~~~~~~~~~|~~~~~~~|
      | prefix         | index | base   | oldbase | size  |
      |----------------|-------|--------|---------|-------|
-     | 4321::1/128    | 1     | 884275 | 884275  | 3-256 |
-     | 4321::3/128    | 3     | 462108 | 462108  | 3-256 |
-     | 4321::1110/124 | 3     | 462108 | 462108  | 3-256 |
+     | 4321::1/128    | 1     | 616678 | 616678  | 3-256 |
+     | 4321::3/128    | 3     | 649817 | 649817  | 3-256 |
+     | 4321::1110/124 | 3     | 649817 | 649817  | 3-256 |
      |________________|_______|________|_________|_______|
     r2#
     r2#

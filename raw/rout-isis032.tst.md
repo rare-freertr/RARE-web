@@ -14,7 +14,7 @@
     hostname r1
     buggy
     !
-    logging file debug ../binTmp/zzz95r1-log.run
+    logging file debug ../binTmp/zzz80r1-log.run
     !
     vrf definition tester
      exit
@@ -40,7 +40,6 @@
      exit
     !
     interface template1
-     no description
      vrf forwarding v1
      ipv4 address 9.9.9.9 255.255.255.0
      router isis4 1 enable
@@ -50,7 +49,6 @@
      exit
     !
     interface template2
-     no description
      vrf forwarding v1
      ipv6 address 9999::9 ffff::
      router isis6 1 enable
@@ -60,7 +58,6 @@
      exit
     !
     interface loopback1
-     no description
      vrf forwarding v1
      ipv4 address 2.2.2.1 255.255.255.255
      ipv6 address 4321::1 ffff:ffff:ffff:ffff:ffff:ffff:ffff:ffff
@@ -69,7 +66,6 @@
      exit
     !
     interface ethernet1
-     no description
      vrf forwarding v1
      ipv4 address 1.1.1.1 255.255.255.0
      template template1
@@ -77,7 +73,6 @@
      exit
     !
     interface ethernet2
-     no description
      vrf forwarding v1
      ipv6 address 1234::1 ffff::
      template template2
@@ -126,7 +121,7 @@
     hostname r2
     buggy
     !
-    logging file debug ../binTmp/zzz95r2-log.run
+    logging file debug ../binTmp/zzz80r2-log.run
     !
     vrf definition tester
      exit
@@ -152,7 +147,6 @@
      exit
     !
     interface template1
-     no description
      vrf forwarding v1
      ipv4 address 9.9.9.9 255.255.255.0
      router isis4 1 enable
@@ -162,7 +156,6 @@
      exit
     !
     interface template2
-     no description
      vrf forwarding v1
      ipv6 address 9999::9 ffff::
      router isis6 1 enable
@@ -172,7 +165,6 @@
      exit
     !
     interface loopback1
-     no description
      vrf forwarding v1
      ipv4 address 2.2.2.2 255.255.255.255
      ipv6 address 4321::2 ffff:ffff:ffff:ffff:ffff:ffff:ffff:ffff
@@ -181,7 +173,6 @@
      exit
     !
     interface ethernet1
-     no description
      vrf forwarding v1
      ipv4 address 1.1.1.2 255.255.255.0
      template template1
@@ -189,7 +180,6 @@
      exit
     !
     interface ethernet2
-     no description
      vrf forwarding v1
      ipv6 address 1234::2 ffff::
      template template2
@@ -271,8 +261,8 @@
      |~~~~~~~~~~~~~~~~~~~~~~|~~~~~~~~~~|~~~~~~~|~~~~~|~~~~~~~~~~|
      | lspid                | sequence | flags | len | time     |
      |----------------------|----------|-------|-----|----------|
-     | 4444.0000.1111.00-00 | 00000009 | apo   | 55  | 00:19:55 |
-     | 4444.0000.2222.00-00 | 00000009 | apo   | 55  | 00:19:55 |
+     | 4444.0000.1111.00-00 | 00000007 | apo   | 55  | 00:19:55 |
+     | 4444.0000.2222.00-00 | 00000008 | apo   | 55  | 00:19:55 |
      |______________________|__________|_______|_____|__________|
     r2#
     r2#
@@ -286,8 +276,8 @@
      |~~~~~~~~~~~~~~~~~~~~~~|~~~~~~~~~~|~~~~~~~|~~~~~|~~~~~~~~~~|
      | lspid                | sequence | flags | len | time     |
      |----------------------|----------|-------|-----|----------|
-     | 6666.0000.1111.00-00 | 0000000a | apo   | 68  | 00:19:55 |
-     | 6666.0000.2222.00-00 | 00000009 | apo   | 68  | 00:19:55 |
+     | 6666.0000.1111.00-00 | 00000009 | apo   | 68  | 00:19:55 |
+     | 6666.0000.2222.00-00 | 0000000a | apo   | 68  | 00:19:55 |
      |______________________|__________|_______|_____|__________|
     r2#
     r2#

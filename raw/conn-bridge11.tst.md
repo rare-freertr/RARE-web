@@ -14,7 +14,7 @@
     hostname r1
     buggy
     !
-    logging file debug ../binTmp/zzz3r1-log.run
+    logging file debug ../binTmp/zzz5r1-log.run
     !
     bridge 1
      exit
@@ -27,7 +27,6 @@
      exit
     !
     interface bvi1
-     no description
      vrf forwarding v1
      ipv4 address 1.1.1.1 255.255.255.0
      ipv6 address 1234::1 ffff::
@@ -36,7 +35,6 @@
      exit
     !
     interface ethernet1
-     no description
      bridge-group 1
      no shutdown
      no log-link-change
@@ -84,7 +82,7 @@
     hostname r2
     buggy
     !
-    logging file debug ../binTmp/zzz3r2-log.run
+    logging file debug ../binTmp/zzz5r2-log.run
     !
     bridge 1
      mac-learn
@@ -106,21 +104,18 @@
      exit
     !
     interface bvi1
-     no description
      bridge-group 3
      no shutdown
      no log-link-change
      exit
     !
     interface bvi2
-     no description
      bridge-group 3
      no shutdown
      no log-link-change
      exit
     !
     interface bvi3
-     no description
      vrf forwarding v1
      ipv4 address 1.1.1.2 255.255.255.0
      ipv6 address 1234::2 ffff::
@@ -129,14 +124,12 @@
      exit
     !
     interface ethernet1
-     no description
      bridge-group 1
      no shutdown
      no log-link-change
      exit
     !
     interface ethernet2
-     no description
      bridge-group 2
      no shutdown
      no log-link-change
@@ -184,7 +177,7 @@
     hostname r3
     buggy
     !
-    logging file debug ../binTmp/zzz3r3-log.run
+    logging file debug ../binTmp/zzz5r3-log.run
     !
     vrf definition tester
      exit
@@ -194,7 +187,6 @@
      exit
     !
     interface ethernet1
-     no description
      vrf forwarding v1
      ipv4 address 1.1.1.3 255.255.255.0
      ipv6 address 1234::3 ffff::

@@ -14,7 +14,7 @@
     hostname r1
     buggy
     !
-    logging file debug ../binTmp/zzz28r1-log.run
+    logging file debug ../binTmp/zzz11r1-log.run
     !
     access-list test4
      sequence 10 deny 1 any all any all
@@ -36,7 +36,8 @@
     !
     vrf definition v1
      rd 1:1
-     label-mode per-prefix
+     label4mode per-prefix
+     label6mode per-prefix
      exit
     !
     router babel4 1
@@ -54,7 +55,6 @@
      exit
     !
     interface loopback0
-     no description
      vrf forwarding v1
      ipv4 address 2.2.2.1 255.255.255.255
      ipv6 address 4321::1 ffff:ffff:ffff:ffff:ffff:ffff:ffff:ffff
@@ -63,7 +63,6 @@
      exit
     !
     interface serial1
-     no description
      encapsulation hdlc
      vrf forwarding v1
      ipv4 address 9.9.9.1 255.255.255.0
@@ -121,7 +120,7 @@
     hostname r2
     buggy
     !
-    logging file debug ../binTmp/zzz28r2-log.run
+    logging file debug ../binTmp/zzz11r2-log.run
     !
     access-list test4
      sequence 10 deny 1 any all any all
@@ -143,7 +142,8 @@
     !
     vrf definition v1
      rd 1:1
-     label-mode per-prefix
+     label4mode per-prefix
+     label6mode per-prefix
      exit
     !
     router babel4 1
@@ -161,7 +161,6 @@
      exit
     !
     interface loopback0
-     no description
      vrf forwarding v1
      ipv4 address 2.2.2.2 255.255.255.255
      ipv6 address 4321::2 ffff:ffff:ffff:ffff:ffff:ffff:ffff:ffff
@@ -170,7 +169,6 @@
      exit
     !
     interface serial1
-     no description
      encapsulation hdlc
      vrf forwarding v1
      ipv4 address 9.9.9.2 255.255.255.0
@@ -291,8 +289,8 @@
      |~~~~~|~~~~~~~~~~~~|~~~~~~~~~|~~~~~~~~~~~|~~~~~~~~~|~~~~~~~~~~|
      | typ | prefix     | metric  | iface     | hop     | time     |
      |-----|------------|---------|-----------|---------|----------|
-     | A   | 2.2.2.1/32 | 130/100 | serial1   | 9.9.9.1 | 00:00:03 |
-     | C   | 2.2.2.2/32 | 0/0     | loopback0 | null    | 00:00:23 |
+     | A   | 2.2.2.1/32 | 130/100 | serial1   | 9.9.9.1 | 00:00:04 |
+     | C   | 2.2.2.2/32 | 0/0     | loopback0 | null    | 00:00:24 |
      | C   | 9.9.9.0/24 | 0/0     | serial1   | null    | 00:00:19 |
      | MSH | 9.9.9.1/32 | 0/3     | serial1   | 9.9.9.1 | never    |
      | LOC | 9.9.9.2/32 | 0/1     | serial1   | null    | 00:00:19 |

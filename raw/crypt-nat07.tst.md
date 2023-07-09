@@ -14,7 +14,7 @@
     hostname r1
     buggy
     !
-    logging file debug ../binTmp/zzz63r1-log.run
+    logging file debug ../binTmp/zzz71r1-log.run
     !
     vrf definition tester
      exit
@@ -24,7 +24,6 @@
      exit
     !
     interface ethernet1
-     no description
      vrf forwarding v1
      ipv4 address 1.1.1.1 255.255.255.252
      no shutdown
@@ -74,7 +73,7 @@
     hostname r2
     buggy
     !
-    logging file debug ../binTmp/zzz63r2-log.run
+    logging file debug ../binTmp/zzz71r2-log.run
     !
     vrf definition tester
      exit
@@ -84,7 +83,6 @@
      exit
     !
     interface ethernet1
-     no description
      vrf forwarding v1
      ipv4 address 1.1.1.2 255.255.255.252
      no shutdown
@@ -92,7 +90,6 @@
      exit
     !
     interface ethernet2
-     no description
      vrf forwarding v1
      ipv6 address 1234::101:106 ffff:ffff:ffff:ffff:ffff:ffff:ffff:fffc
      no shutdown
@@ -100,7 +97,6 @@
      exit
     !
     interface tunnel1
-     no description
      tunnel key 120
      tunnel vrf v1
      tunnel source ethernet2
@@ -155,7 +151,7 @@
     hostname r3
     buggy
     !
-    logging file debug ../binTmp/zzz63r3-log.run
+    logging file debug ../binTmp/zzz71r3-log.run
     !
     vrf definition tester
      exit
@@ -165,7 +161,6 @@
      exit
     !
     interface ethernet1
-     no description
      vrf forwarding v1
      ipv6 address 1234::101:105 ffff:ffff:ffff:ffff:ffff:ffff:ffff:fffc
      no shutdown

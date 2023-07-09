@@ -14,7 +14,7 @@
     hostname r1
     buggy
     !
-    logging file debug ../binTmp/zzz97r1-log.run
+    logging file debug ../binTmp/zzz69r1-log.run
     !
     bridge 1
      exit
@@ -27,7 +27,6 @@
      exit
     !
     interface bvi1
-     no description
      sgt enable
      vrf forwarding v1
      ipv4 address 1.1.1.1 255.255.255.0
@@ -37,7 +36,6 @@
      exit
     !
     interface ethernet1
-     no description
      bridge-group 1
      no shutdown
      no log-link-change
@@ -85,7 +83,7 @@
     hostname r2
     buggy
     !
-    logging file debug ../binTmp/zzz97r2-log.run
+    logging file debug ../binTmp/zzz69r2-log.run
     !
     vrf definition tester
      exit
@@ -95,7 +93,6 @@
      exit
     !
     interface ethernet1
-     no description
      sgt enable
      vrf forwarding v1
      ipv4 address 1.1.1.2 255.255.255.0

@@ -14,7 +14,7 @@
     hostname r1
     buggy
     !
-    logging file debug ../binTmp/zzz43r1-log.run
+    logging file debug ../binTmp/zzz15r1-log.run
     !
     vrf definition tester
      exit
@@ -24,7 +24,6 @@
      exit
     !
     interface dialer1
-     no description
      encapsulation ppp
      vrf forwarding v1
      ipv4 address 1.1.1.1 255.255.255.252
@@ -33,7 +32,6 @@
      exit
     !
     interface ethernet1
-     no description
      p2poe client dialer1
      no shutdown
      no log-link-change
@@ -81,20 +79,18 @@
     hostname r2
     buggy
     !
-    logging file debug ../binTmp/zzz43r2-log.run
+    logging file debug ../binTmp/zzz15r2-log.run
     !
     vrf definition tester
      exit
     !
     interface ethernet1
-     no description
      p2poe relay serial1
      no shutdown
      no log-link-change
      exit
     !
     interface serial1
-     no description
      encapsulation raw
      no shutdown
      no log-link-change
@@ -129,7 +125,7 @@
     hostname r3
     buggy
     !
-    logging file debug ../binTmp/zzz43r3-log.run
+    logging file debug ../binTmp/zzz15r3-log.run
     !
     vrf definition tester
      exit
@@ -139,7 +135,6 @@
      exit
     !
     interface dialer1
-     no description
      encapsulation ppp
      vrf forwarding v1
      ipv4 address 1.1.1.5 255.255.255.252
@@ -148,14 +143,12 @@
      exit
     !
     interface ethernet1
-     no description
      p2poe relay dialer1
      no shutdown
      no log-link-change
      exit
     !
     interface serial1
-     no description
      encapsulation ppp
      vrf forwarding v1
      ipv4 address 1.1.1.2 255.255.255.252
@@ -205,7 +198,7 @@
     hostname r4
     buggy
     !
-    logging file debug ../binTmp/zzz43r4-log.run
+    logging file debug ../binTmp/zzz15r4-log.run
     !
     vrf definition tester
      exit
@@ -215,7 +208,6 @@
      exit
     !
     interface dialer1
-     no description
      encapsulation ppp
      vrf forwarding v1
      ipv4 address 1.1.1.6 255.255.255.252
@@ -224,7 +216,6 @@
      exit
     !
     interface ethernet1
-     no description
      p2poe client dialer1
      no shutdown
      no log-link-change

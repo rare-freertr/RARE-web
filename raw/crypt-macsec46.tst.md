@@ -14,7 +14,7 @@
     hostname r1
     buggy
     !
-    logging file debug ../binTmp/zzz57r1-log.run
+    logging file debug ../binTmp/zzz12r1-log.run
     !
     crypto ipsec ips
      group 02
@@ -31,7 +31,6 @@
      exit
     !
     interface ethernet1
-     no description
      macsec ips
      vrf forwarding v1
      ipv4 address 1.1.1.1 255.255.255.0
@@ -82,7 +81,7 @@
     hostname r2
     buggy
     !
-    logging file debug ../binTmp/zzz57r2-log.run
+    logging file debug ../binTmp/zzz12r2-log.run
     !
     crypto ipsec ips
      group 02
@@ -99,7 +98,6 @@
      exit
     !
     interface ethernet1
-     no description
      macsec ips
      vrf forwarding v1
      ipv4 address 1.1.1.2 255.255.255.0

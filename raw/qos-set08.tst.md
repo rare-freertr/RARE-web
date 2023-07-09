@@ -14,7 +14,7 @@
     hostname r1
     buggy
     !
-    logging file debug ../binTmp/zzz21r1-log.run
+    logging file debug ../binTmp/zzz71r1-log.run
     !
     policy-map p1
      sequence 10 action drop
@@ -32,14 +32,12 @@
      exit
     !
     interface ethernet1
-     no description
      service-policy-in p1
      no shutdown
      no log-link-change
      exit
     !
     interface ethernet1.11
-     no description
      vrf forwarding v1
      ipv4 address 1.1.1.1 255.255.255.0
      ipv6 address 1234::1 ffff::
@@ -91,7 +89,7 @@
     hostname r2
     buggy
     !
-    logging file debug ../binTmp/zzz21r2-log.run
+    logging file debug ../binTmp/zzz71r2-log.run
     !
     policy-map p1
      sequence 10 action transit
@@ -111,14 +109,12 @@
      exit
     !
     interface ethernet1
-     no description
      service-policy-out p1
      no shutdown
      no log-link-change
      exit
     !
     interface ethernet1.11
-     no description
      vrf forwarding v1
      ipv4 address 1.1.1.2 255.255.255.0
      ipv6 address 1234::2 ffff::
@@ -127,14 +123,12 @@
      exit
     !
     interface ethernet2
-     no description
      service-policy-out p1
      no shutdown
      no log-link-change
      exit
     !
     interface ethernet2.11
-     no description
      vrf forwarding v1
      ipv4 address 2.2.2.1 255.255.255.0
      ipv6 address 4321::1 ffff::
@@ -184,7 +178,7 @@
     hostname r3
     buggy
     !
-    logging file debug ../binTmp/zzz21r3-log.run
+    logging file debug ../binTmp/zzz71r3-log.run
     !
     policy-map p1
      sequence 10 action drop
@@ -202,14 +196,12 @@
      exit
     !
     interface ethernet1
-     no description
      service-policy-in p1
      no shutdown
      no log-link-change
      exit
     !
     interface ethernet1.11
-     no description
      vrf forwarding v1
      ipv4 address 2.2.2.2 255.255.255.0
      ipv6 address 4321::2 ffff::

@@ -14,7 +14,7 @@
     hostname r1
     buggy
     !
-    logging file debug ../binTmp/zzz36r1-log.run
+    logging file debug ../binTmp/zzz66r1-log.run
     !
     vrf definition tester
      exit
@@ -24,7 +24,6 @@
      exit
     !
     interface ethernet1
-     no description
      eapol client c c
      vrf forwarding v1
      ipv4 address 1.1.1.1 255.255.255.0
@@ -75,7 +74,7 @@
     hostname r2
     buggy
     !
-    logging file debug ../binTmp/zzz36r2-log.run
+    logging file debug ../binTmp/zzz66r2-log.run
     !
     aaa userlist usr
      username c
@@ -90,7 +89,6 @@
      exit
     !
     interface ethernet1
-     no description
      eapol server usr
      vrf forwarding v1
      ipv4 address 1.1.1.2 255.255.255.0

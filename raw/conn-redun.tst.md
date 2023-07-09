@@ -14,7 +14,7 @@
     hostname r1
     buggy
     !
-    logging file debug ../binTmp/zzz1r1-log.run
+    logging file debug ../binTmp/zzz5r1-log.run
     !
     vrf definition tester
      exit
@@ -24,7 +24,6 @@
      exit
     !
     interface ethernet1
-     no description
      vrf forwarding v1
      ipv4 address 1.1.1.1 255.255.255.0
      ipv6 address 1234::1 ffff::
@@ -76,7 +75,7 @@
     hostname r2
     buggy
     !
-    logging file debug ../binTmp/zzz1r2-log.run
+    logging file debug ../binTmp/zzz5r2-log.run
     !
     bridge 1
      exit
@@ -104,94 +103,80 @@
      exit
     !
     interface bvi1
-     no description
      no shutdown
      no log-link-change
      exit
     !
     interface bvi34
-     no description
      no shutdown
      no log-link-change
      exit
     !
     interface bvi35
-     no description
      no shutdown
      no log-link-change
      exit
     !
     interface bvi45
-     no description
      no shutdown
      no log-link-change
      exit
     !
     interface ethernet1
-     no description
      bridge-group 1
      no shutdown
      no log-link-change
      exit
     !
     interface ethernet2
-     no description
      bridge-group 1
      shutdown
      no log-link-change
      exit
     !
     interface ethernet3
-     no description
      bridge-group 1
      no shutdown
      no log-link-change
      exit
     !
     interface ethernet31
-     no description
      bridge-group 34
      shutdown
      no log-link-change
      exit
     !
     interface ethernet32
-     no description
      bridge-group 35
      shutdown
      no log-link-change
      exit
     !
     interface ethernet4
-     no description
      bridge-group 1
      no shutdown
      no log-link-change
      exit
     !
     interface ethernet41
-     no description
      bridge-group 34
      no shutdown
      no log-link-change
      exit
     !
     interface ethernet42
-     no description
      bridge-group 45
      no shutdown
      no log-link-change
      exit
     !
     interface ethernet51
-     no description
      bridge-group 35
      no shutdown
      no log-link-change
      exit
     !
     interface ethernet52
-     no description
      bridge-group 45
      no shutdown
      no log-link-change
@@ -237,7 +222,7 @@
     **r3:**
     ```
     hostname r3
-    logging file debug ../binTmp/zzz1r3-log.run
+    logging file debug ../binTmp/zzz5r3-log.run
     vrf definition tester
      exit
     server telnet tester
@@ -262,7 +247,7 @@
     **r4:**
     ```
     hostname r4
-    logging file debug ../binTmp/zzz1r4-log.run
+    logging file debug ../binTmp/zzz5r4-log.run
     vrf definition tester
      exit
     server telnet tester
@@ -287,7 +272,7 @@
     **r5:**
     ```
     hostname r5
-    logging file debug ../binTmp/zzz1r5-log.run
+    logging file debug ../binTmp/zzz5r5-log.run
     vrf definition tester
      exit
     server telnet tester

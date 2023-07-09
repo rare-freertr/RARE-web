@@ -14,36 +14,42 @@
     hostname r1
     buggy
     !
-    logging file debug ../binTmp/zzz48r1-log.run
+    logging file debug ../binTmp/zzz50r1-log.run
     !
     vrf definition tester
      exit
     !
     vrf definition v1
      rd 1:1
-     label-mode per-prefix
+     label4mode per-prefix
+     label6mode per-prefix
      exit
     !
     vrf definition v2
      rd 1:2
-     rt-import 1:2
-     rt-export 1:2
+     rt4import 1:2
+     rt4export 1:2
+     rt6import 1:2
+     rt6export 1:2
      exit
     !
     vrf definition v3
      rd 1:3
-     rt-import 1:3
-     rt-export 1:3
+     rt4import 1:3
+     rt4export 1:3
+     rt6import 1:3
+     rt6export 1:3
      exit
     !
     vrf definition v4
      rd 1:4
-     rt-import 1:4
-     rt-export 1:4
+     rt4import 1:4
+     rt4export 1:4
+     rt6import 1:4
+     rt6export 1:4
      exit
     !
     interface loopback0
-     no description
      vrf forwarding v1
      ipv4 address 2.2.2.1 255.255.255.255
      ipv6 address 4321::1 ffff:ffff:ffff:ffff:ffff:ffff:ffff:ffff
@@ -52,7 +58,6 @@
      exit
     !
     interface loopback1
-     no description
      vrf forwarding v1
      ipv4 address 4.4.4.1 255.255.255.255
      ipv6 address 4444::1 ffff:ffff:ffff:ffff:ffff:ffff:ffff:ffff
@@ -61,7 +66,6 @@
      exit
     !
     interface loopback2
-     no description
      vrf forwarding v2
      ipv4 address 9.9.2.1 255.255.255.255
      ipv6 address 9992::1 ffff:ffff:ffff:ffff:ffff:ffff:ffff:ffff
@@ -70,7 +74,6 @@
      exit
     !
     interface loopback3
-     no description
      vrf forwarding v3
      ipv4 address 9.9.3.1 255.255.255.255
      ipv6 address 9993::1 ffff:ffff:ffff:ffff:ffff:ffff:ffff:ffff
@@ -79,7 +82,6 @@
      exit
     !
     interface loopback4
-     no description
      vrf forwarding v4
      ipv4 address 9.9.4.1 255.255.255.255
      ipv6 address 9994::1 ffff:ffff:ffff:ffff:ffff:ffff:ffff:ffff
@@ -88,7 +90,6 @@
      exit
     !
     interface ethernet1
-     no description
      vrf forwarding v1
      ipv4 address 1.1.1.1 255.255.255.252
      ipv6 address 1234:1::1 ffff:ffff::
@@ -106,7 +107,6 @@
      no safe-ebgp
      address-family unicast vpnuni
      neighbor 2.2.2.2 remote-as 2
-     no neighbor 2.2.2.2 description
      neighbor 2.2.2.2 local-as 1
      neighbor 2.2.2.2 address-family unicast vpnuni
      neighbor 2.2.2.2 distance 20
@@ -128,7 +128,6 @@
      no safe-ebgp
      address-family unicast vpnuni
      neighbor 4321::2 remote-as 2
-     no neighbor 4321::2 description
      neighbor 4321::2 local-as 1
      neighbor 4321::2 address-family unicast vpnuni
      neighbor 4321::2 distance 20
@@ -226,36 +225,42 @@
     hostname r2
     buggy
     !
-    logging file debug ../binTmp/zzz48r2-log.run
+    logging file debug ../binTmp/zzz50r2-log.run
     !
     vrf definition tester
      exit
     !
     vrf definition v1
      rd 1:1
-     label-mode per-prefix
+     label4mode per-prefix
+     label6mode per-prefix
      exit
     !
     vrf definition v2
      rd 1:2
-     rt-import 1:2
-     rt-export 1:2
+     rt4import 1:2
+     rt4export 1:2
+     rt6import 1:2
+     rt6export 1:2
      exit
     !
     vrf definition v3
      rd 1:3
-     rt-import 1:3
-     rt-export 1:3
+     rt4import 1:3
+     rt4export 1:3
+     rt6import 1:3
+     rt6export 1:3
      exit
     !
     vrf definition v4
      rd 1:4
-     rt-import 1:4
-     rt-export 1:4
+     rt4import 1:4
+     rt4export 1:4
+     rt6import 1:4
+     rt6export 1:4
      exit
     !
     interface loopback0
-     no description
      vrf forwarding v1
      ipv4 address 2.2.2.2 255.255.255.255
      ipv6 address 4321::2 ffff:ffff:ffff:ffff:ffff:ffff:ffff:ffff
@@ -264,7 +269,6 @@
      exit
     !
     interface loopback1
-     no description
      vrf forwarding v1
      ipv4 address 4.4.4.2 255.255.255.255
      ipv6 address 4444::2 ffff:ffff:ffff:ffff:ffff:ffff:ffff:ffff
@@ -273,7 +277,6 @@
      exit
     !
     interface loopback2
-     no description
      vrf forwarding v2
      ipv4 address 9.9.2.2 255.255.255.255
      ipv6 address 9992::2 ffff:ffff:ffff:ffff:ffff:ffff:ffff:ffff
@@ -282,7 +285,6 @@
      exit
     !
     interface loopback3
-     no description
      vrf forwarding v3
      ipv4 address 9.9.3.2 255.255.255.255
      ipv6 address 9993::2 ffff:ffff:ffff:ffff:ffff:ffff:ffff:ffff
@@ -291,7 +293,6 @@
      exit
     !
     interface loopback4
-     no description
      vrf forwarding v4
      ipv4 address 9.9.4.2 255.255.255.255
      ipv6 address 9994::2 ffff:ffff:ffff:ffff:ffff:ffff:ffff:ffff
@@ -300,7 +301,6 @@
      exit
     !
     interface ethernet1
-     no description
      vrf forwarding v1
      ipv4 address 1.1.1.2 255.255.255.252
      ipv6 address 1234:1::2 ffff:ffff::
@@ -318,7 +318,6 @@
      no safe-ebgp
      address-family unicast vpnuni
      neighbor 2.2.2.1 remote-as 1
-     no neighbor 2.2.2.1 description
      neighbor 2.2.2.1 local-as 2
      neighbor 2.2.2.1 address-family unicast vpnuni
      neighbor 2.2.2.1 distance 20
@@ -340,7 +339,6 @@
      no safe-ebgp
      address-family unicast vpnuni
      neighbor 4321::1 remote-as 1
-     no neighbor 4321::1 description
      neighbor 4321::1 local-as 2
      neighbor 4321::1 address-family unicast vpnuni
      neighbor 4321::1 distance 20

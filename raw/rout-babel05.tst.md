@@ -14,7 +14,7 @@
     hostname r1
     buggy
     !
-    logging file debug ../binTmp/zzz62r1-log.run
+    logging file debug ../binTmp/zzz69r1-log.run
     !
     route-map p4
      sequence 10 action deny
@@ -54,7 +54,6 @@
      exit
     !
     interface loopback0
-     no description
      vrf forwarding v1
      ipv4 address 2.2.2.1 255.255.255.255
      ipv6 address 4321::1 ffff:ffff:ffff:ffff:ffff:ffff:ffff:ffff
@@ -63,7 +62,6 @@
      exit
     !
     interface loopback1
-     no description
      vrf forwarding v1
      ipv4 address 2.2.2.11 255.255.255.255
      ipv6 address 4321::11 ffff:ffff:ffff:ffff:ffff:ffff:ffff:ffff
@@ -72,7 +70,6 @@
      exit
     !
     interface loopback2
-     no description
      vrf forwarding v1
      ipv4 address 2.2.2.21 255.255.255.255
      ipv6 address 4321::21 ffff:ffff:ffff:ffff:ffff:ffff:ffff:ffff
@@ -81,7 +78,6 @@
      exit
     !
     interface ethernet1
-     no description
      vrf forwarding v1
      ipv4 address 1.1.1.1 255.255.255.252
      ipv6 address 1234:1::1 ffff:ffff::
@@ -135,7 +131,7 @@
     hostname r2
     buggy
     !
-    logging file debug ../binTmp/zzz62r2-log.run
+    logging file debug ../binTmp/zzz69r2-log.run
     !
     vrf definition tester
      exit
@@ -157,7 +153,6 @@
      exit
     !
     interface loopback0
-     no description
      vrf forwarding v1
      ipv4 address 2.2.2.2 255.255.255.255
      ipv6 address 4321::2 ffff:ffff:ffff:ffff:ffff:ffff:ffff:ffff
@@ -166,7 +161,6 @@
      exit
     !
     interface loopback1
-     no description
      vrf forwarding v1
      ipv4 address 2.2.2.12 255.255.255.255
      ipv6 address 4321::12 ffff:ffff:ffff:ffff:ffff:ffff:ffff:ffff
@@ -175,7 +169,6 @@
      exit
     !
     interface loopback2
-     no description
      vrf forwarding v1
      ipv4 address 2.2.2.22 255.255.255.255
      ipv6 address 4321::22 ffff:ffff:ffff:ffff:ffff:ffff:ffff:ffff
@@ -184,7 +177,6 @@
      exit
     !
     interface ethernet1
-     no description
      vrf forwarding v1
      ipv4 address 1.1.1.2 255.255.255.252
      ipv6 address 1234:1::2 ffff:ffff::
@@ -255,7 +247,7 @@
      |~~~~~~~~~~~|~~~~~~~|~~~~~~~~~~~|~~~~~~~~~~|
      | interface | learn | neighbor  | uptime   |
      |-----------|-------|-----------|----------|
-     | ethernet1 | 4     | 1234:1::1 | 00:00:03 |
+     | ethernet1 | 4     | 1234:1::1 | 00:00:04 |
      |___________|_______|___________|__________|
     r2#
     r2#
@@ -270,9 +262,9 @@
      | typ | prefix      | metric  | iface     | hop     | time     |
      |-----|-------------|---------|-----------|---------|----------|
      | A   | 1.1.1.0/30  | 1/0     | ethernet1 | null    | 00:00:24 |
-     | A   | 2.2.2.1/32  | 130/100 | ethernet1 | 1.1.1.1 | 00:00:03 |
-     | A   | 2.2.2.11/32 | 130/100 | ethernet1 | 1.1.1.1 | 00:00:03 |
-     | A   | 2.2.2.21/32 | 130/100 | ethernet1 | 1.1.1.1 | 00:00:03 |
+     | A   | 2.2.2.1/32  | 130/100 | ethernet1 | 1.1.1.1 | 00:00:04 |
+     | A   | 2.2.2.11/32 | 130/100 | ethernet1 | 1.1.1.1 | 00:00:04 |
+     | A   | 2.2.2.21/32 | 130/100 | ethernet1 | 1.1.1.1 | 00:00:04 |
      |_____|_____________|_________|___________|_________|__________|
     r2#
     r2#
@@ -287,9 +279,9 @@
      | typ | prefix       | metric  | iface     | hop       | time     |
      |-----|--------------|---------|-----------|-----------|----------|
      | A   | 1234:1::/32  | 1/0     | ethernet1 | null      | 00:00:24 |
-     | A   | 4321::1/128  | 130/100 | ethernet1 | 1234:1::1 | 00:00:03 |
-     | A   | 4321::11/128 | 130/100 | ethernet1 | 1234:1::1 | 00:00:03 |
-     | A   | 4321::21/128 | 130/100 | ethernet1 | 1234:1::1 | 00:00:03 |
+     | A   | 4321::1/128  | 130/100 | ethernet1 | 1234:1::1 | 00:00:04 |
+     | A   | 4321::11/128 | 130/100 | ethernet1 | 1234:1::1 | 00:00:04 |
+     | A   | 4321::21/128 | 130/100 | ethernet1 | 1234:1::1 | 00:00:04 |
      |_____|______________|_________|___________|___________|__________|
     r2#
     r2#

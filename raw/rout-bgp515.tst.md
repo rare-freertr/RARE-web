@@ -14,7 +14,7 @@
     hostname r1
     buggy
     !
-    logging file debug ../binTmp/zzz21r1-log.run
+    logging file debug ../binTmp/zzz52r1-log.run
     !
     access-list test4
      sequence 10 deny 1 any all any all
@@ -31,11 +31,11 @@
     !
     vrf definition v1
      rd 1:1
-     label-mode per-prefix
+     label4mode per-prefix
+     label6mode per-prefix
      exit
     !
     interface loopback0
-     no description
      vrf forwarding v1
      ipv4 address 2.2.2.1 255.255.255.255
      ipv6 address 4321::1 ffff:ffff:ffff:ffff:ffff:ffff:ffff:ffff
@@ -44,7 +44,6 @@
      exit
     !
     interface loopback1
-     no description
      vrf forwarding v1
      ipv4 address 2.2.2.11 255.255.255.255
      ipv6 address 4321::11 ffff:ffff:ffff:ffff:ffff:ffff:ffff:ffff
@@ -53,7 +52,6 @@
      exit
     !
     interface serial1
-     no description
      encapsulation hdlc
      vrf forwarding v1
      ipv4 address 9.9.9.1 255.255.255.0
@@ -65,7 +63,6 @@
      exit
     !
     interface serial2
-     no description
      encapsulation hdlc
      vrf forwarding v1
      ipv4 address 9.9.8.1 255.255.255.0
@@ -83,7 +80,6 @@
      no safe-ebgp
      address-family unicast
      neighbor 9.9.9.2 remote-as 2
-     no neighbor 9.9.9.2 description
      neighbor 9.9.9.2 local-as 1
      neighbor 9.9.9.2 address-family unicast
      neighbor 9.9.9.2 distance 20
@@ -97,7 +93,6 @@
      no safe-ebgp
      address-family unicast
      neighbor 9999::2 remote-as 2
-     no neighbor 9999::2 description
      neighbor 9999::2 local-as 1
      neighbor 9999::2 address-family unicast
      neighbor 9999::2 distance 20
@@ -146,7 +141,7 @@
     hostname r2
     buggy
     !
-    logging file debug ../binTmp/zzz21r2-log.run
+    logging file debug ../binTmp/zzz52r2-log.run
     !
     access-list test4
      sequence 10 deny 1 any all any all
@@ -163,11 +158,11 @@
     !
     vrf definition v1
      rd 1:1
-     label-mode per-prefix
+     label4mode per-prefix
+     label6mode per-prefix
      exit
     !
     interface loopback0
-     no description
      vrf forwarding v1
      ipv4 address 2.2.2.2 255.255.255.255
      ipv6 address 4321::2 ffff:ffff:ffff:ffff:ffff:ffff:ffff:ffff
@@ -176,7 +171,6 @@
      exit
     !
     interface loopback1
-     no description
      vrf forwarding v1
      ipv4 address 2.2.2.12 255.255.255.255
      ipv6 address 4321::12 ffff:ffff:ffff:ffff:ffff:ffff:ffff:ffff
@@ -185,7 +179,6 @@
      exit
     !
     interface serial1
-     no description
      encapsulation hdlc
      vrf forwarding v1
      ipv4 address 9.9.9.2 255.255.255.0
@@ -197,7 +190,6 @@
      exit
     !
     interface serial2
-     no description
      encapsulation hdlc
      vrf forwarding v1
      ipv4 address 9.9.8.2 255.255.255.0
@@ -215,7 +207,6 @@
      no safe-ebgp
      address-family unicast
      neighbor 9.9.9.1 remote-as 1
-     no neighbor 9.9.9.1 description
      neighbor 9.9.9.1 local-as 2
      neighbor 9.9.9.1 address-family unicast
      neighbor 9.9.9.1 distance 20
@@ -229,7 +220,6 @@
      no safe-ebgp
      address-family unicast
      neighbor 9999::1 remote-as 1
-     no neighbor 9999::1 description
      neighbor 9999::1 local-as 2
      neighbor 9999::1 address-family unicast
      neighbor 9999::1 distance 20

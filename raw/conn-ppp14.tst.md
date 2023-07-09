@@ -14,7 +14,7 @@
     hostname r1
     buggy
     !
-    logging file debug ../binTmp/zzz39r1-log.run
+    logging file debug ../binTmp/zzz36r1-log.run
     !
     aaa userlist usr
      username c
@@ -29,7 +29,6 @@
      exit
     !
     interface serial1
-     no description
      encapsulation ppp
      ppp authentication usr
      ppp ip4cp open
@@ -88,7 +87,7 @@
     hostname r2
     buggy
     !
-    logging file debug ../binTmp/zzz39r2-log.run
+    logging file debug ../binTmp/zzz36r2-log.run
     !
     vrf definition tester
      exit
@@ -98,7 +97,6 @@
      exit
     !
     interface serial1
-     no description
      encapsulation ppp
      ppp username c
      ppp password $v10$Yw==
@@ -107,8 +105,8 @@
      ppp ip6cp open
      vrf forwarding v1
      ipv4 address 3.3.3.3 255.255.255.255
-     ipv6 address fe80::268:2eff:fe4f:7711 ffff:ffff:ffff:ffff::
-     ipv6 slaac
+     ipv6 address fe80::23a:43ff:fe0b:7405 ffff:ffff:ffff:ffff::
+     ipv6 slaac-client enable
      no shutdown
      no log-link-change
      exit

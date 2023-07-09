@@ -14,7 +14,7 @@
     hostname r1
     buggy
     !
-    logging file debug ../binTmp/zzz22r1-log.run
+    logging file debug ../binTmp/zzz38r1-log.run
     !
     access-list test4
      sequence 10 deny 1 any all any all
@@ -34,7 +34,6 @@
      exit
     !
     interface loopback1
-     no description
      vrf forwarding v1
      ipv4 address 3.3.3.1 255.255.255.255
      ipv6 address 3333::1 ffff:ffff:ffff:ffff:ffff:ffff:ffff:ffff
@@ -43,7 +42,6 @@
      exit
     !
     interface ethernet1
-     no description
      vrf forwarding v1
      ipv4 address 1.1.1.1 255.255.255.0
      ipv4 access-group-in test4
@@ -57,7 +55,6 @@
      exit
     !
     interface tunnel1
-     no description
      tunnel vrf v1
      tunnel source ethernet1
      tunnel destination 1.1.2.2
@@ -69,7 +66,6 @@
      exit
     !
     interface tunnel2
-     no description
      tunnel vrf v1
      tunnel source ethernet1
      tunnel destination 2345::2
@@ -84,10 +80,8 @@
      vrf v1
      local-as 1
      router-id 4.4.4.1
-     no safe-ebgp
      address-family unicast
      neighbor 2.2.2.2 remote-as 1
-     no neighbor 2.2.2.2 description
      neighbor 2.2.2.2 local-as 1
      neighbor 2.2.2.2 address-family unicast
      neighbor 2.2.2.2 distance 200
@@ -98,10 +92,8 @@
      vrf v1
      local-as 1
      router-id 6.6.6.1
-     no safe-ebgp
      address-family unicast
      neighbor 4321::2 remote-as 1
-     no neighbor 4321::2 description
      neighbor 4321::2 local-as 1
      neighbor 4321::2 address-family unicast
      neighbor 4321::2 distance 200
@@ -152,7 +144,7 @@
     hostname r2
     buggy
     !
-    logging file debug ../binTmp/zzz22r2-log.run
+    logging file debug ../binTmp/zzz38r2-log.run
     !
     access-list test4
      sequence 10 deny 1 any all any all
@@ -172,7 +164,6 @@
      exit
     !
     interface ethernet1
-     no description
      vrf forwarding v1
      ipv4 address 1.1.1.2 255.255.255.0
      ipv4 access-group-in test4
@@ -186,7 +177,6 @@
      exit
     !
     interface ethernet2
-     no description
      vrf forwarding v1
      ipv4 address 1.1.2.1 255.255.255.0
      ipv4 access-group-in test4
@@ -241,7 +231,7 @@
     hostname r3
     buggy
     !
-    logging file debug ../binTmp/zzz22r3-log.run
+    logging file debug ../binTmp/zzz38r3-log.run
     !
     access-list test4
      sequence 10 deny 1 any all any all
@@ -261,7 +251,6 @@
      exit
     !
     interface loopback1
-     no description
      vrf forwarding v1
      ipv4 address 3.3.3.3 255.255.255.255
      ipv6 address 3333::3 ffff:ffff:ffff:ffff:ffff:ffff:ffff:ffff
@@ -270,7 +259,6 @@
      exit
     !
     interface ethernet1
-     no description
      vrf forwarding v1
      ipv4 address 1.1.2.2 255.255.255.0
      ipv4 access-group-in test4
@@ -284,7 +272,6 @@
      exit
     !
     interface tunnel1
-     no description
      tunnel vrf v1
      tunnel source ethernet1
      tunnel destination 1.1.1.1
@@ -296,7 +283,6 @@
      exit
     !
     interface tunnel2
-     no description
      tunnel vrf v1
      tunnel source ethernet1
      tunnel destination 1234::1
@@ -311,10 +297,8 @@
      vrf v1
      local-as 1
      router-id 4.4.4.3
-     no safe-ebgp
      address-family unicast
      neighbor 2.2.2.1 remote-as 1
-     no neighbor 2.2.2.1 description
      neighbor 2.2.2.1 local-as 1
      neighbor 2.2.2.1 address-family unicast
      neighbor 2.2.2.1 distance 200
@@ -325,10 +309,8 @@
      vrf v1
      local-as 1
      router-id 6.6.6.3
-     no safe-ebgp
      address-family unicast
      neighbor 4321::1 remote-as 1
-     no neighbor 4321::1 description
      neighbor 4321::1 local-as 1
      neighbor 4321::1 address-family unicast
      neighbor 4321::1 distance 200

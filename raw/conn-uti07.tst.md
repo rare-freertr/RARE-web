@@ -14,7 +14,7 @@
     hostname r1
     buggy
     !
-    logging file debug ../binTmp/zzz35r1-log.run
+    logging file debug ../binTmp/zzz56r1-log.run
     !
     vrf definition tester
      exit
@@ -24,7 +24,6 @@
      exit
     !
     interface serial1
-     no description
      encapsulation framerelay
      framerelay mode dce
      framerelay dlci 123
@@ -77,7 +76,7 @@
     hostname r2
     buggy
     !
-    logging file debug ../binTmp/zzz35r2-log.run
+    logging file debug ../binTmp/zzz56r2-log.run
     !
     vrf definition tester
      exit
@@ -87,7 +86,6 @@
      exit
     !
     interface ethernet1
-     no description
      vrf forwarding v1
      ipv4 address 1.1.1.1 255.255.255.0
      ipv6 address 1234::1 ffff::
@@ -96,7 +94,6 @@
      exit
     !
     interface serial1
-     no description
      encapsulation framerelay
      framerelay mode dte
      framerelay dlci 123
@@ -147,7 +144,7 @@
     hostname r3
     buggy
     !
-    logging file debug ../binTmp/zzz35r3-log.run
+    logging file debug ../binTmp/zzz56r3-log.run
     !
     vrf definition tester
      exit
@@ -157,7 +154,6 @@
      exit
     !
     interface ethernet1
-     no description
      vrf forwarding v1
      ipv4 address 1.1.1.2 255.255.255.0
      ipv6 address 1234::2 ffff:ffff::
@@ -166,7 +162,6 @@
      exit
     !
     interface serial1
-     no description
      encapsulation framerelay
      framerelay mode dce
      framerelay dlci 123
@@ -217,7 +212,7 @@
     hostname r4
     buggy
     !
-    logging file debug ../binTmp/zzz35r4-log.run
+    logging file debug ../binTmp/zzz56r4-log.run
     !
     vrf definition tester
      exit
@@ -227,7 +222,6 @@
      exit
     !
     interface serial1
-     no description
      encapsulation framerelay
      framerelay mode dte
      framerelay dlci 123

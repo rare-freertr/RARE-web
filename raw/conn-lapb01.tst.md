@@ -14,7 +14,7 @@
     hostname r1
     buggy
     !
-    logging file debug ../binTmp/zzz91r1-log.run
+    logging file debug ../binTmp/zzz70r1-log.run
     !
     vrf definition tester
      exit
@@ -24,7 +24,6 @@
      exit
     !
     interface serial1
-     no description
      encapsulation lapb
      lapb mode dce
      vrf forwarding v1
@@ -76,7 +75,7 @@
     hostname r2
     buggy
     !
-    logging file debug ../binTmp/zzz91r2-log.run
+    logging file debug ../binTmp/zzz70r2-log.run
     !
     vrf definition tester
      exit
@@ -86,7 +85,6 @@
      exit
     !
     interface serial1
-     no description
      encapsulation lapb
      lapb mode dte
      vrf forwarding v1
@@ -140,21 +138,23 @@
     r1#
     r1#show inter ser1 full
     r1#show inter ser1 full
-    serial1 is up (since 00:00:00, 3 changes)
+    serial1 is up
      description:
+     state changed 3 times, last at 2022-05-02 21:12:25, 00:00:00 ago
+     last packet input 00:00:00 ago, output 00:00:00 ago, drop never ago
      type is serial, hwaddr=none, mtu=1498, bw=2000kbps, vrf=v1
-     ip4 address=1.1.1.1/24, netmask=255.255.255.0, ifcid=422275931
-     ip6 address=1234::1/16, netmask=ffff::, ifcid=346962383
+     ipv4 address=1.1.1.1/24, mask=255.255.255.0, ifcid=979859986
+     ipv6 address=1234::1/16, mask=ffff::, ifcid=815857873
      received 23 packets (1550 bytes) dropped 0 packets (0 bytes)
-     transmitted 23 packets (1550 bytes) promisc=false macsec=false sgt=false
-     |~~~~~~~|~~~~|~~~~|~~~~~~|~~~~|~~~~|~~~~~~|
-     |       | packet         | byte           |
-     | time  | tx | rx | drop | tx | rx | drop |
-     |-------|----|----|------|----|----|------|
-     | 1sec  | 0  | 0  | 0    | 0  | 0  | 0    |
-     | 1min  | 0  | 0  | 0    | 0  | 0  | 0    |
-     | 1hour | 0  | 0  | 0    | 0  | 0  | 0    |
-     |_______|____|____|______|____|____|______|
+     transmitted 23 packets (1550 bytes) macsec=false sgt=false
+     |~~~~~~~|~~~~|~~~~|~~~~~~|~~~~~|~~~~~|~~~~~~|
+     |       | packet         | byte             |
+     | time  | tx | rx | drop | tx  | rx  | drop |
+     |-------|----|----|------|-----|-----|------|
+     | 1sec  | 6  | 6  | 0    | 445 | 445 | 0    |
+     | 1min  | 0  | 0  | 0    | 0   | 0   | 0    |
+     | 1hour | 0  | 0  | 0    | 0   | 0   | 0    |
+     |_______|____|____|______|_____|_____|______|
      |~~~~~~~~|~~~~~~~|~~~~~~~~~|~~~~|~~~~|~~~~~~|~~~~~|~~~~~|~~~~~~|
      |                          | packet         | byte             |
      | type   | value | handler | tx | rx | drop | tx  | rx  | drop |
@@ -199,41 +199,41 @@
      | 6     | 0   | 0   | 0    | 0    | 0    | 0    |
      | 7     | 0   | 0   | 0    | 0    | 0    | 0    |
      |_______|_____|_____|______|______|______|______|
-               1|
-               0|
-               0|
-               0|
-               0|
-               0|
-               0|
-               0|
-               0|
-               0|
-               0|
+            7130|
+            7129|
+            7128|
+            7127|
+            7126|
+            7125|
+            7124|
+            7123|
+            7122|
+            7121|
+            7120|##
              bps|0---------10--------20--------30--------40--------50-------- seconds
+              10|
+               9|
+               8|
+               7|
+               6|
+               5|
+               4|
+               3|
+               2|
                1|
-               0|
-               0|
-               0|
-               0|
-               0|
-               0|
-               0|
-               0|
-               0|
-               0|
+               0|############################################################
              bps|0---------10--------20--------30--------40--------50-------- minutes
+              10|
+               9|
+               8|
+               7|
+               6|
+               5|
+               4|
+               3|
+               2|
                1|
-               0|
-               0|
-               0|
-               0|
-               0|
-               0|
-               0|
-               0|
-               0|
-               0|
+               0|############################################################
              bps|0---------10--------20--------30--------40--------50-------- hours
     r1#
     r1#

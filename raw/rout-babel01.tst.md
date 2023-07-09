@@ -14,7 +14,7 @@
     hostname r1
     buggy
     !
-    logging file debug ../binTmp/zzz48r1-log.run
+    logging file debug ../binTmp/zzz62r1-log.run
     !
     vrf definition tester
      exit
@@ -36,7 +36,6 @@
      exit
     !
     interface loopback0
-     no description
      vrf forwarding v1
      ipv4 address 2.2.2.1 255.255.255.255
      ipv6 address 4321::1 ffff:ffff:ffff:ffff:ffff:ffff:ffff:ffff
@@ -45,7 +44,6 @@
      exit
     !
     interface ethernet1
-     no description
      vrf forwarding v1
      ipv4 address 1.1.1.1 255.255.255.0
      ipv6 address 1234::1 ffff::
@@ -97,7 +95,7 @@
     hostname r2
     buggy
     !
-    logging file debug ../binTmp/zzz48r2-log.run
+    logging file debug ../binTmp/zzz62r2-log.run
     !
     bridge 1
      mac-learn
@@ -123,7 +121,6 @@
      exit
     !
     interface loopback0
-     no description
      vrf forwarding v1
      ipv4 address 2.2.2.2 255.255.255.255
      ipv6 address 4321::2 ffff:ffff:ffff:ffff:ffff:ffff:ffff:ffff
@@ -132,7 +129,6 @@
      exit
     !
     interface bvi1
-     no description
      vrf forwarding v1
      ipv4 address 1.1.1.2 255.255.255.0
      ipv6 address 1234::2 ffff::
@@ -143,14 +139,12 @@
      exit
     !
     interface ethernet1
-     no description
      bridge-group 1
      no shutdown
      no log-link-change
      exit
     !
     interface ethernet2
-     no description
      bridge-group 1
      no shutdown
      no log-link-change
@@ -198,7 +192,7 @@
     hostname r3
     buggy
     !
-    logging file debug ../binTmp/zzz48r3-log.run
+    logging file debug ../binTmp/zzz62r3-log.run
     !
     bridge 1
      mac-learn
@@ -224,7 +218,6 @@
      exit
     !
     interface loopback0
-     no description
      vrf forwarding v1
      ipv4 address 2.2.2.3 255.255.255.255
      ipv6 address 4321::3 ffff:ffff:ffff:ffff:ffff:ffff:ffff:ffff
@@ -233,7 +226,6 @@
      exit
     !
     interface bvi1
-     no description
      vrf forwarding v1
      ipv4 address 1.1.1.3 255.255.255.0
      ipv6 address 1234::3 ffff::
@@ -244,14 +236,12 @@
      exit
     !
     interface ethernet1
-     no description
      bridge-group 1
      no shutdown
      no log-link-change
      exit
     !
     interface ethernet2
-     no description
      bridge-group 1
      no shutdown
      no log-link-change
@@ -299,7 +289,7 @@
     hostname r4
     buggy
     !
-    logging file debug ../binTmp/zzz48r4-log.run
+    logging file debug ../binTmp/zzz62r4-log.run
     !
     vrf definition tester
      exit
@@ -321,7 +311,6 @@
      exit
     !
     interface loopback0
-     no description
      vrf forwarding v1
      ipv4 address 2.2.2.4 255.255.255.255
      ipv6 address 4321::4 ffff:ffff:ffff:ffff:ffff:ffff:ffff:ffff
@@ -330,7 +319,6 @@
      exit
     !
     interface ethernet1
-     no description
      vrf forwarding v1
      ipv4 address 1.1.1.4 255.255.255.0
      ipv6 address 1234::4 ffff::
@@ -387,9 +375,9 @@
      |~~~~~~~~~~~|~~~~~~~|~~~~~~~~~~|~~~~~~~~~~|
      | interface | learn | neighbor | uptime   |
      |-----------|-------|----------|----------|
-     | bvi1      | 2     | 1.1.1.1  | 00:00:24 |
-     | bvi1      | 2     | 1.1.1.3  | 00:00:23 |
-     | bvi1      | 2     | 1.1.1.4  | 00:00:23 |
+     | bvi1      | 2     | 1.1.1.1  | 00:00:16 |
+     | bvi1      | 2     | 1.1.1.3  | 00:00:16 |
+     | bvi1      | 2     | 1.1.1.4  | 00:00:16 |
      |___________|_______|__________|__________|
     r2#
     r2#
@@ -403,9 +391,9 @@
      |~~~~~~~~~~~|~~~~~~~|~~~~~~~~~~|~~~~~~~~~~|
      | interface | learn | neighbor | uptime   |
      |-----------|-------|----------|----------|
-     | bvi1      | 2     | 1234::1  | 00:00:24 |
-     | bvi1      | 2     | 1234::3  | 00:00:23 |
-     | bvi1      | 2     | 1234::4  | 00:00:23 |
+     | bvi1      | 2     | 1234::1  | 00:00:16 |
+     | bvi1      | 2     | 1234::3  | 00:00:16 |
+     | bvi1      | 2     | 1234::4  | 00:00:16 |
      |___________|_______|__________|__________|
     r2#
     r2#
@@ -419,10 +407,10 @@
      |~~~~~|~~~~~~~~~~~~|~~~~~~~~~|~~~~~~~|~~~~~~~~~|~~~~~~~~~~|
      | typ | prefix     | metric  | iface | hop     | time     |
      |-----|------------|---------|-------|---------|----------|
-     | A   | 1.1.1.0/24 | 1/0     | bvi1  | null    | 00:00:44 |
-     | A   | 2.2.2.1/32 | 130/100 | bvi1  | 1.1.1.1 | 00:00:24 |
-     | A   | 2.2.2.3/32 | 130/100 | bvi1  | 1.1.1.3 | 00:00:23 |
-     | A   | 2.2.2.4/32 | 130/100 | bvi1  | 1.1.1.4 | 00:00:23 |
+     | A   | 1.1.1.0/24 | 1/0     | bvi1  | null    | 00:00:36 |
+     | A   | 2.2.2.1/32 | 130/100 | bvi1  | 1.1.1.1 | 00:00:16 |
+     | A   | 2.2.2.3/32 | 130/100 | bvi1  | 1.1.1.3 | 00:00:16 |
+     | A   | 2.2.2.4/32 | 130/100 | bvi1  | 1.1.1.4 | 00:00:16 |
      |_____|____________|_________|_______|_________|__________|
     r2#
     r2#
@@ -436,10 +424,10 @@
      |~~~~~|~~~~~~~~~~~~~|~~~~~~~~~|~~~~~~~|~~~~~~~~~|~~~~~~~~~~|
      | typ | prefix      | metric  | iface | hop     | time     |
      |-----|-------------|---------|-------|---------|----------|
-     | A   | 1234::/16   | 1/0     | bvi1  | null    | 00:00:44 |
-     | A   | 4321::1/128 | 130/100 | bvi1  | 1234::1 | 00:00:24 |
-     | A   | 4321::3/128 | 130/100 | bvi1  | 1234::3 | 00:00:24 |
-     | A   | 4321::4/128 | 130/100 | bvi1  | 1234::4 | 00:00:23 |
+     | A   | 1234::/16   | 1/0     | bvi1  | null    | 00:00:36 |
+     | A   | 4321::1/128 | 130/100 | bvi1  | 1234::1 | 00:00:16 |
+     | A   | 4321::3/128 | 130/100 | bvi1  | 1234::3 | 00:00:16 |
+     | A   | 4321::4/128 | 130/100 | bvi1  | 1234::4 | 00:00:16 |
      |_____|_____________|_________|_______|_________|__________|
     r2#
     r2#
@@ -453,12 +441,12 @@
      |~~~~~|~~~~~~~~~~~~|~~~~~~~~~|~~~~~~~~~~~|~~~~~~~~~|~~~~~~~~~~|
      | typ | prefix     | metric  | iface     | hop     | time     |
      |-----|------------|---------|-----------|---------|----------|
-     | C   | 1.1.1.0/24 | 0/0     | bvi1      | null    | 00:00:44 |
-     | LOC | 1.1.1.2/32 | 0/1     | bvi1      | null    | 00:00:44 |
-     | A   | 2.2.2.1/32 | 130/100 | bvi1      | 1.1.1.1 | 00:00:25 |
-     | C   | 2.2.2.2/32 | 0/0     | loopback0 | null    | 00:00:44 |
-     | A   | 2.2.2.3/32 | 130/100 | bvi1      | 1.1.1.3 | 00:00:24 |
-     | A   | 2.2.2.4/32 | 130/100 | bvi1      | 1.1.1.4 | 00:00:23 |
+     | C   | 1.1.1.0/24 | 0/0     | bvi1      | null    | 00:00:36 |
+     | LOC | 1.1.1.2/32 | 0/1     | bvi1      | null    | 00:00:36 |
+     | A   | 2.2.2.1/32 | 130/100 | bvi1      | 1.1.1.1 | 00:00:16 |
+     | C   | 2.2.2.2/32 | 0/0     | loopback0 | null    | 00:00:36 |
+     | A   | 2.2.2.3/32 | 130/100 | bvi1      | 1.1.1.3 | 00:00:16 |
+     | A   | 2.2.2.4/32 | 130/100 | bvi1      | 1.1.1.4 | 00:00:16 |
      |_____|____________|_________|___________|_________|__________|
     r2#
     r2#
@@ -472,12 +460,12 @@
      |~~~~~|~~~~~~~~~~~~~|~~~~~~~~~|~~~~~~~~~~~|~~~~~~~~~|~~~~~~~~~~|
      | typ | prefix      | metric  | iface     | hop     | time     |
      |-----|-------------|---------|-----------|---------|----------|
-     | C   | 1234::/16   | 0/0     | bvi1      | null    | 00:00:44 |
-     | LOC | 1234::2/128 | 0/1     | bvi1      | null    | 00:00:44 |
-     | A   | 4321::1/128 | 130/100 | bvi1      | 1234::1 | 00:00:25 |
-     | C   | 4321::2/128 | 0/0     | loopback0 | null    | 00:00:44 |
-     | A   | 4321::3/128 | 130/100 | bvi1      | 1234::3 | 00:00:24 |
-     | A   | 4321::4/128 | 130/100 | bvi1      | 1234::4 | 00:00:24 |
+     | C   | 1234::/16   | 0/0     | bvi1      | null    | 00:00:36 |
+     | LOC | 1234::2/128 | 0/1     | bvi1      | null    | 00:00:36 |
+     | A   | 4321::1/128 | 130/100 | bvi1      | 1234::1 | 00:00:16 |
+     | C   | 4321::2/128 | 0/0     | loopback0 | null    | 00:00:36 |
+     | A   | 4321::3/128 | 130/100 | bvi1      | 1234::3 | 00:00:16 |
+     | A   | 4321::4/128 | 130/100 | bvi1      | 1234::4 | 00:00:17 |
      |_____|_____________|_________|___________|_________|__________|
     r2#
     r2#

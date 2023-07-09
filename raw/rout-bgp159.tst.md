@@ -14,7 +14,7 @@
     hostname r1
     buggy
     !
-    logging file debug ../binTmp/zzz26r1-log.run
+    logging file debug ../binTmp/zzz72r1-log.run
     !
     bridge 1
      rd 1:1
@@ -53,11 +53,11 @@
     !
     vrf definition v1
      rd 1:1
-     label-mode per-prefix
+     label4mode per-prefix
+     label6mode per-prefix
      exit
     !
     interface loopback0
-     no description
      vrf forwarding v1
      ipv4 address 2.2.2.1 255.255.255.255
      ipv6 address 4321::1 ffff:ffff:ffff:ffff:ffff:ffff:ffff:ffff
@@ -66,7 +66,6 @@
      exit
     !
     interface bvi1
-     no description
      vrf forwarding v1
      ipv4 address 3.3.3.1 255.255.255.252
      no shutdown
@@ -74,7 +73,6 @@
      exit
     !
     interface bvi2
-     no description
      vrf forwarding v1
      ipv6 address 4444::1 ffff::
      no shutdown
@@ -82,7 +80,6 @@
      exit
     !
     interface bvi3
-     no description
      vrf forwarding v1
      ipv6 address 3333::1 ffff::
      no shutdown
@@ -90,7 +87,6 @@
      exit
     !
     interface bvi4
-     no description
      vrf forwarding v1
      ipv4 address 4.4.4.1 255.255.255.252
      no shutdown
@@ -98,7 +94,6 @@
      exit
     !
     interface ethernet1
-     no description
      vrf forwarding v1
      ipv4 address 1.1.1.1 255.255.255.252
      ipv6 address 1234:1::1 ffff:ffff::
@@ -116,7 +111,6 @@
      no safe-ebgp
      address-family vpls
      neighbor 2.2.2.2 remote-as 2
-     no neighbor 2.2.2.2 description
      neighbor 2.2.2.2 local-as 1
      neighbor 2.2.2.2 address-family vpls
      neighbor 2.2.2.2 distance 20
@@ -137,7 +131,6 @@
      no safe-ebgp
      address-family vpls
      neighbor 4321::2 remote-as 2
-     no neighbor 4321::2 description
      neighbor 4321::2 local-as 1
      neighbor 4321::2 address-family vpls
      neighbor 4321::2 distance 20
@@ -195,7 +188,7 @@
     hostname r2
     buggy
     !
-    logging file debug ../binTmp/zzz26r2-log.run
+    logging file debug ../binTmp/zzz72r2-log.run
     !
     bridge 1
      rd 1:1
@@ -234,11 +227,11 @@
     !
     vrf definition v1
      rd 1:1
-     label-mode per-prefix
+     label4mode per-prefix
+     label6mode per-prefix
      exit
     !
     interface loopback0
-     no description
      vrf forwarding v1
      ipv4 address 2.2.2.2 255.255.255.255
      ipv6 address 4321::2 ffff:ffff:ffff:ffff:ffff:ffff:ffff:ffff
@@ -247,7 +240,6 @@
      exit
     !
     interface bvi1
-     no description
      vrf forwarding v1
      ipv4 address 3.3.3.2 255.255.255.252
      no shutdown
@@ -255,7 +247,6 @@
      exit
     !
     interface bvi2
-     no description
      vrf forwarding v1
      ipv6 address 4444::2 ffff::
      no shutdown
@@ -263,7 +254,6 @@
      exit
     !
     interface bvi3
-     no description
      vrf forwarding v1
      ipv6 address 3333::2 ffff::
      no shutdown
@@ -271,7 +261,6 @@
      exit
     !
     interface bvi4
-     no description
      vrf forwarding v1
      ipv4 address 4.4.4.2 255.255.255.252
      no shutdown
@@ -279,7 +268,6 @@
      exit
     !
     interface ethernet1
-     no description
      vrf forwarding v1
      ipv4 address 1.1.1.2 255.255.255.252
      ipv6 address 1234:1::2 ffff:ffff::
@@ -297,7 +285,6 @@
      no safe-ebgp
      address-family vpls
      neighbor 2.2.2.1 remote-as 1
-     no neighbor 2.2.2.1 description
      neighbor 2.2.2.1 local-as 2
      neighbor 2.2.2.1 address-family vpls
      neighbor 2.2.2.1 distance 20
@@ -318,7 +305,6 @@
      no safe-ebgp
      address-family vpls
      neighbor 4321::1 remote-as 1
-     no neighbor 4321::1 description
      neighbor 4321::1 local-as 2
      neighbor 4321::1 address-family vpls
      neighbor 4321::1 distance 20
@@ -395,7 +381,7 @@
      |~~~~~~~~~~|~~~~|~~~~~~~|~~~~~~~|~~~~~~|~~~~~~~~~~|
      | neighbor | as | ready | learn | sent | uptime   |
      |----------|----|-------|-------|------|----------|
-     | 4321::2  | 2  | true  | 2     | 4    | 00:00:07 |
+     | 4321::2  | 2  | true  | 2     | 4    | 00:00:13 |
      |__________|____|_______|_______|______|__________|
     r1#
     r1#
@@ -443,12 +429,12 @@
      |~~~~~|~~~~~~~~~~~~|~~~~~~~~|~~~~~~~~~~~|~~~~~~~~~|~~~~~~~~~~|
      | typ | prefix     | metric | iface     | hop     | time     |
      |-----|------------|--------|-----------|---------|----------|
-     | C   | 1.1.1.0/30 | 0/0    | ethernet1 | null    | 00:00:17 |
-     | LOC | 1.1.1.1/32 | 0/1    | ethernet1 | null    | 00:00:17 |
-     | C   | 2.2.2.1/32 | 0/0    | loopback0 | null    | 00:00:17 |
-     | S   | 2.2.2.2/32 | 1/0    | ethernet1 | 1.1.1.2 | 00:00:08 |
-     | C   | 3.3.3.0/30 | 0/0    | bvi1      | null    | 00:00:17 |
-     | LOC | 3.3.3.1/32 | 0/1    | bvi1      | null    | 00:00:17 |
+     | C   | 1.1.1.0/30 | 0/0    | ethernet1 | null    | 00:00:16 |
+     | LOC | 1.1.1.1/32 | 0/1    | ethernet1 | null    | 00:00:16 |
+     | C   | 2.2.2.1/32 | 0/0    | loopback0 | null    | 00:00:16 |
+     | S   | 2.2.2.2/32 | 1/0    | ethernet1 | 1.1.1.2 | 00:00:00 |
+     | C   | 3.3.3.0/30 | 0/0    | bvi1      | null    | 00:00:16 |
+     | LOC | 3.3.3.1/32 | 0/1    | bvi1      | null    | 00:00:16 |
      | C   | 4.4.4.0/30 | 0/0    | bvi4      | null    | 00:00:16 |
      | LOC | 4.4.4.1/32 | 0/1    | bvi4      | null    | 00:00:16 |
      |_____|____________|________|___________|_________|__________|
@@ -464,14 +450,14 @@
      |~~~~~|~~~~~~~~~~~~~~~|~~~~~~~~|~~~~~~~~~~~|~~~~~~~~~~~|~~~~~~~~~~|
      | typ | prefix        | metric | iface     | hop       | time     |
      |-----|---------------|--------|-----------|-----------|----------|
-     | C   | 1234:1::/32   | 0/0    | ethernet1 | null      | 00:00:17 |
-     | LOC | 1234:1::1/128 | 0/1    | ethernet1 | null      | 00:00:17 |
-     | C   | 3333::/16     | 0/0    | bvi3      | null      | 00:00:17 |
-     | LOC | 3333::1/128   | 0/1    | bvi3      | null      | 00:00:17 |
-     | C   | 4321::1/128   | 0/0    | loopback0 | null      | 00:00:17 |
-     | S   | 4321::2/128   | 1/0    | ethernet1 | 1234:1::2 | 00:00:03 |
-     | C   | 4444::/16     | 0/0    | bvi2      | null      | 00:00:17 |
-     | LOC | 4444::1/128   | 0/1    | bvi2      | null      | 00:00:17 |
+     | C   | 1234:1::/32   | 0/0    | ethernet1 | null      | 00:00:16 |
+     | LOC | 1234:1::1/128 | 0/1    | ethernet1 | null      | 00:00:16 |
+     | C   | 3333::/16     | 0/0    | bvi3      | null      | 00:00:16 |
+     | LOC | 3333::1/128   | 0/1    | bvi3      | null      | 00:00:16 |
+     | C   | 4321::1/128   | 0/0    | loopback0 | null      | 00:00:16 |
+     | S   | 4321::2/128   | 1/0    | ethernet1 | 1234:1::2 | 00:00:05 |
+     | C   | 4444::/16     | 0/0    | bvi2      | null      | 00:00:16 |
+     | LOC | 4444::1/128   | 0/1    | bvi2      | null      | 00:00:16 |
      |_____|_______________|________|___________|___________|__________|
     r1#
     r1#
@@ -487,14 +473,14 @@
      | iface            | fwd  | phys  | tx | rx | drop | tx  | rx   | drop | grp |
      |------------------|------|-------|----|----|------|-----|------|------|-----|
      | brprt bvi        |      |       |    |    |      |     |      |      |     |
-     | vpls 2.2.2.2 1:1 | true | false | 14 | 14 | 0    | 888 | 1056 | 0    |     |
+     | vpls 2.2.2.2 1:1 | true | false | 15 | 14 | 0    | 918 | 1056 | 0    |     |
      |__________________|______|_______|____|____|______|_____|______|______|_____|
      |~~~~~~~~~~~~~~~~|~~~~~~~~~~~~~~~~~~|~~~~~~~~|~~~~~~~~~~|~~~~|~~~~|~~~~~~|~~~~~|~~~~~|~~~~~~|
      |                                            | packet             | byte             |  |
      | addr           | iface            | static | time     | tx | rx | drop | tx  | rx  | drop |
      |----------------|------------------|--------|----------|----|----|------|-----|-----|------|
-     | 001f.156c.7022 | vpls 2.2.2.2 1:1 | false  | 00:00:17 | 13 | 14 | 0    | 858 | 888 | 0    |
-     | 005d.7761.7d29 | bvi              | false  | 00:00:17 | 14 | 15 | 0    | 888 | 918 | 0    |
+     | 0004.6327.2e0d | bvi              | false  | 00:00:17 | 14 | 15 | 0    | 888 | 918 | 0    |
+     | 0045.0969.6e1f | vpls 2.2.2.2 1:1 | false  | 00:00:17 | 13 | 14 | 0    | 858 | 888 | 0    |
      |________________|__________________|________|__________|____|____|______|_____|_____|______|
     r1#
     r1#
@@ -516,8 +502,8 @@
      |                                            | packet             | byte              |  |
      | addr           | iface            | static | time     | tx | rx | drop | tx  | rx   | drop |
      |----------------|------------------|--------|----------|----|----|------|-----|------|------|
-     | 0016.2b01.3c03 | bvi              | false  | 00:00:18 | 14 | 19 | 0    | 932 | 1326 | 0    |
-     | 0035.5b62.5e0d | vpls 4321::2 1:1 | false  | 00:00:18 | 15 | 15 | 0    | 998 | 1006 | 0    |
+     | 001b.0652.7834 | vpls 4321::2 1:1 | false  | 00:00:17 | 15 | 15 | 0    | 998 | 1006 | 0    |
+     | 0046.2b10.0026 | bvi              | false  | 00:00:17 | 14 | 19 | 0    | 932 | 1326 | 0    |
      |________________|__________________|________|__________|____|____|______|_____|______|______|
     r1#
     r1#
@@ -539,8 +525,8 @@
      |                                            | packet             | byte              |  |
      | addr           | iface            | static | time     | tx | rx | drop | tx  | rx   | drop |
      |----------------|------------------|--------|----------|----|----|------|-----|------|------|
-     | 0054.1650.623b | bvi              | false  | 00:00:18 | 14 | 19 | 0    | 932 | 1326 | 0    |
-     | 0063.316e.4d2a | vpls 2.2.2.2 1:2 | false  | 00:00:18 | 15 | 15 | 0    | 998 | 1006 | 0    |
+     | 002c.1b4c.4562 | vpls 2.2.2.2 1:2 | false  | 00:00:17 | 15 | 15 | 0    | 998 | 1006 | 0    |
+     | 007b.6f5c.1734 | bvi              | false  | 00:00:17 | 14 | 19 | 0    | 932 | 1326 | 0    |
      |________________|__________________|________|__________|____|____|______|_____|______|______|
     r1#
     r1#
@@ -562,8 +548,8 @@
      |                                            | packet             | byte             |  |
      | addr           | iface            | static | time     | tx | rx | drop | tx  | rx  | drop |
      |----------------|------------------|--------|----------|----|----|------|-----|-----|------|
-     | 003b.7658.524a | bvi              | false  | 00:00:18 | 15 | 15 | 0    | 954 | 954 | 0    |
-     | 0077.2f6f.7856 | vpls 4321::2 1:2 | false  | 00:00:18 | 14 | 15 | 0    | 924 | 954 | 0    |
+     | 0033.006f.300f | vpls 4321::2 1:2 | false  | 00:00:17 | 14 | 15 | 0    | 924 | 954 | 0    |
+     | 0071.215d.7945 | bvi              | false  | 00:00:17 | 15 | 15 | 0    | 954 | 954 | 0    |
      |________________|__________________|________|__________|____|____|______|_____|_____|______|
     r1#
     r1#

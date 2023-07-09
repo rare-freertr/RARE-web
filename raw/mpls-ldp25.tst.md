@@ -14,7 +14,7 @@
     hostname r1
     buggy
     !
-    logging file debug ../binTmp/zzz51r1-log.run
+    logging file debug ../binTmp/zzz53r1-log.run
     !
     access-list test4
      sequence 10 deny 1 any all any all
@@ -31,11 +31,11 @@
     !
     vrf definition v1
      rd 1:1
-     label-mode per-prefix
+     label4mode per-prefix
+     label6mode per-prefix
      exit
     !
     interface loopback0
-     no description
      vrf forwarding v1
      ipv4 address 2.2.2.1 255.255.255.255
      ipv6 address 4321::1 ffff:ffff:ffff:ffff:ffff:ffff:ffff:ffff
@@ -44,7 +44,6 @@
      exit
     !
     interface ethernet1
-     no description
      vrf forwarding v1
      ipv4 address 1.1.1.1 255.255.255.0
      no ipv4 unreachables
@@ -62,9 +61,8 @@
      exit
     !
     interface pwether1
-     no description
      mtu 1500
-     macaddr 0002.217d.1466
+     macaddr 0073.0865.7034
      vrf forwarding v1
      ipv4 address 3.3.3.1 255.255.255.0
      pseudowire v1 loopback0 pweompls 2.2.2.3 1234
@@ -73,9 +71,8 @@
      exit
     !
     interface pwether2
-     no description
      mtu 1500
-     macaddr 0064.302b.2a6f
+     macaddr 0064.494b.2346
      vrf forwarding v1
      ipv4 address 3.3.4.1 255.255.255.0
      pseudowire v1 loopback0 pweompls 4321::3 1234
@@ -129,7 +126,7 @@
     hostname r2
     buggy
     !
-    logging file debug ../binTmp/zzz51r2-log.run
+    logging file debug ../binTmp/zzz53r2-log.run
     !
     access-list test4
      sequence 10 deny 1 any all any all
@@ -146,11 +143,11 @@
     !
     vrf definition v1
      rd 1:1
-     label-mode per-prefix
+     label4mode per-prefix
+     label6mode per-prefix
      exit
     !
     interface loopback0
-     no description
      vrf forwarding v1
      ipv4 address 2.2.2.2 255.255.255.255
      ipv6 address 4321::2 ffff:ffff:ffff:ffff:ffff:ffff:ffff:ffff
@@ -159,7 +156,6 @@
      exit
     !
     interface ethernet1
-     no description
      vrf forwarding v1
      ipv4 address 1.1.1.2 255.255.255.0
      no ipv4 unreachables
@@ -177,7 +173,6 @@
      exit
     !
     interface ethernet2
-     no description
      vrf forwarding v1
      ipv4 address 1.1.2.2 255.255.255.0
      no ipv4 unreachables
@@ -240,7 +235,7 @@
     hostname r3
     buggy
     !
-    logging file debug ../binTmp/zzz51r3-log.run
+    logging file debug ../binTmp/zzz53r3-log.run
     !
     access-list test4
      sequence 10 deny 1 any all any all
@@ -257,11 +252,11 @@
     !
     vrf definition v1
      rd 1:1
-     label-mode per-prefix
+     label4mode per-prefix
+     label6mode per-prefix
      exit
     !
     interface loopback0
-     no description
      vrf forwarding v1
      ipv4 address 2.2.2.3 255.255.255.255
      ipv6 address 4321::3 ffff:ffff:ffff:ffff:ffff:ffff:ffff:ffff
@@ -270,7 +265,6 @@
      exit
     !
     interface ethernet1
-     no description
      vrf forwarding v1
      ipv4 address 1.1.2.3 255.255.255.0
      no ipv4 unreachables
@@ -288,9 +282,8 @@
      exit
     !
     interface pwether1
-     no description
      mtu 1500
-     macaddr 002c.1b08.363c
+     macaddr 0023.4e65.2d48
      vrf forwarding v1
      ipv4 address 3.3.3.2 255.255.255.0
      pseudowire v1 loopback0 pweompls 2.2.2.1 1234
@@ -299,9 +292,8 @@
      exit
     !
     interface pwether2
-     no description
      mtu 1500
-     macaddr 0014.7d70.115e
+     macaddr 0061.5c06.075b
      vrf forwarding v1
      ipv4 address 3.3.4.2 255.255.255.0
      pseudowire v1 loopback0 pweompls 4321::1 1234

@@ -14,7 +14,7 @@
     hostname r1
     buggy
     !
-    logging file debug ../binTmp/zzz62r1-log.run
+    logging file debug ../binTmp/zzz43r1-log.run
     !
     crypto ipsec ips
      group 02
@@ -31,7 +31,6 @@
      exit
     !
     interface serial1
-     no description
      encapsulation ppp
      ppp ip4cp close
      ppp ip6cp close
@@ -85,7 +84,7 @@
     hostname r2
     buggy
     !
-    logging file debug ../binTmp/zzz62r2-log.run
+    logging file debug ../binTmp/zzz43r2-log.run
     !
     crypto ipsec ips
      group 02
@@ -102,7 +101,6 @@
      exit
     !
     interface serial1
-     no description
      encapsulation ppp
      ppp ip4cp close
      ppp ip6cp close

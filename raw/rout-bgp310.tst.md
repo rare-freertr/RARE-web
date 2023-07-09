@@ -14,7 +14,7 @@
     hostname r1
     buggy
     !
-    logging file debug ../binTmp/zzz3r1-log.run
+    logging file debug ../binTmp/zzz50r1-log.run
     !
     vrf definition tester
      exit
@@ -24,7 +24,6 @@
      exit
     !
     interface loopback1
-     no description
      vrf forwarding v1
      ipv4 address 2.2.2.1 255.255.255.255
      ipv6 address 2222::1 ffff:ffff:ffff:ffff:ffff:ffff:ffff:ffff
@@ -33,7 +32,6 @@
      exit
     !
     interface loopback2
-     no description
      vrf forwarding v1
      ipv4 address 2.2.2.2 255.255.255.255
      ipv6 address 2222::2 ffff:ffff:ffff:ffff:ffff:ffff:ffff:ffff
@@ -42,7 +40,6 @@
      exit
     !
     interface loopback3
-     no description
      vrf forwarding v1
      ipv4 address 2.2.2.3 255.255.255.255
      ipv6 address 2222::3 ffff:ffff:ffff:ffff:ffff:ffff:ffff:ffff
@@ -51,7 +48,6 @@
      exit
     !
     interface loopback4
-     no description
      vrf forwarding v1
      ipv4 address 2.2.2.4 255.255.255.255
      ipv6 address 2222::4 ffff:ffff:ffff:ffff:ffff:ffff:ffff:ffff
@@ -60,7 +56,6 @@
      exit
     !
     interface loopback5
-     no description
      vrf forwarding v1
      ipv4 address 2.2.2.5 255.255.255.255
      ipv6 address 2222::5 ffff:ffff:ffff:ffff:ffff:ffff:ffff:ffff
@@ -69,7 +64,6 @@
      exit
     !
     interface loopback6
-     no description
      vrf forwarding v1
      ipv4 address 2.2.2.6 255.255.255.255
      ipv6 address 2222::6 ffff:ffff:ffff:ffff:ffff:ffff:ffff:ffff
@@ -78,7 +72,6 @@
      exit
     !
     interface loopback7
-     no description
      vrf forwarding v1
      ipv4 address 2.2.2.7 255.255.255.255
      ipv6 address 2222::7 ffff:ffff:ffff:ffff:ffff:ffff:ffff:ffff
@@ -87,7 +80,6 @@
      exit
     !
     interface loopback8
-     no description
      vrf forwarding v1
      ipv4 address 2.2.2.8 255.255.255.255
      ipv6 address 2222::8 ffff:ffff:ffff:ffff:ffff:ffff:ffff:ffff
@@ -96,7 +88,6 @@
      exit
     !
     interface ethernet1
-     no description
      vrf forwarding v1
      ipv4 address 1.1.1.1 255.0.0.0
      ipv6 address 1234:1::1 ffff:ffff::
@@ -111,7 +102,6 @@
      no safe-ebgp
      address-family unicast
      neighbor 1.1.1.2 remote-as 2
-     no neighbor 1.1.1.2 description
      neighbor 1.1.1.2 local-as 1
      neighbor 1.1.1.2 address-family unicast
      neighbor 1.1.1.2 distance 20
@@ -125,7 +115,6 @@
      no safe-ebgp
      address-family unicast
      neighbor 1234:1::2 remote-as 2
-     no neighbor 1234:1::2 description
      neighbor 1234:1::2 local-as 1
      neighbor 1234:1::2 address-family unicast
      neighbor 1234:1::2 distance 20
@@ -174,7 +163,7 @@
     hostname r2
     buggy
     !
-    logging file debug ../binTmp/zzz3r2-log.run
+    logging file debug ../binTmp/zzz50r2-log.run
     !
     vrf definition tester
      exit
@@ -184,7 +173,6 @@
      exit
     !
     interface loopback1
-     no description
      vrf forwarding v1
      ipv4 address 3.3.3.1 255.255.255.255
      ipv6 address 3333::1 ffff:ffff:ffff:ffff:ffff:ffff:ffff:ffff
@@ -193,7 +181,6 @@
      exit
     !
     interface loopback2
-     no description
      vrf forwarding v1
      ipv4 address 3.3.3.2 255.255.255.255
      ipv6 address 3333::2 ffff:ffff:ffff:ffff:ffff:ffff:ffff:ffff
@@ -202,7 +189,6 @@
      exit
     !
     interface loopback3
-     no description
      vrf forwarding v1
      ipv4 address 3.3.3.3 255.255.255.255
      ipv6 address 3333::3 ffff:ffff:ffff:ffff:ffff:ffff:ffff:ffff
@@ -211,7 +197,6 @@
      exit
     !
     interface loopback4
-     no description
      vrf forwarding v1
      ipv4 address 3.3.3.4 255.255.255.255
      ipv6 address 3333::4 ffff:ffff:ffff:ffff:ffff:ffff:ffff:ffff
@@ -220,7 +205,6 @@
      exit
     !
     interface loopback5
-     no description
      vrf forwarding v1
      ipv4 address 3.3.3.5 255.255.255.255
      ipv6 address 3333::5 ffff:ffff:ffff:ffff:ffff:ffff:ffff:ffff
@@ -229,7 +213,6 @@
      exit
     !
     interface loopback6
-     no description
      vrf forwarding v1
      ipv4 address 3.3.3.6 255.255.255.255
      ipv6 address 3333::6 ffff:ffff:ffff:ffff:ffff:ffff:ffff:ffff
@@ -238,7 +221,6 @@
      exit
     !
     interface loopback7
-     no description
      vrf forwarding v1
      ipv4 address 3.3.3.7 255.255.255.255
      ipv6 address 3333::7 ffff:ffff:ffff:ffff:ffff:ffff:ffff:ffff
@@ -247,7 +229,6 @@
      exit
     !
     interface loopback8
-     no description
      vrf forwarding v1
      ipv4 address 3.3.3.8 255.255.255.255
      ipv6 address 3333::8 ffff:ffff:ffff:ffff:ffff:ffff:ffff:ffff
@@ -256,7 +237,6 @@
      exit
     !
     interface ethernet1
-     no description
      vrf forwarding v1
      ipv4 address 1.1.1.2 255.0.0.0
      ipv6 address 1234:1::2 ffff:ffff::
@@ -271,7 +251,6 @@
      no safe-ebgp
      address-family unicast
      neighbor 1.1.1.1 remote-as 1
-     no neighbor 1.1.1.1 description
      neighbor 1.1.1.1 local-as 2
      neighbor 1.1.1.1 address-family unicast
      neighbor 1.1.1.1 distance 20
@@ -285,7 +264,6 @@
      no safe-ebgp
      address-family unicast
      neighbor 1234:1::1 remote-as 1
-     no neighbor 1234:1::1 description
      neighbor 1234:1::1 local-as 2
      neighbor 1234:1::1 address-family unicast
      neighbor 1234:1::1 distance 20

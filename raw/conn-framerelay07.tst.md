@@ -14,7 +14,7 @@
     hostname r1
     buggy
     !
-    logging file debug ../binTmp/zzz27r1-log.run
+    logging file debug ../binTmp/zzz28r1-log.run
     !
     vrf definition tester
      exit
@@ -24,7 +24,6 @@
      exit
     !
     interface serial1
-     no description
      encapsulation frrfc
      framerelay mode dce
      framerelay dlci 123
@@ -77,7 +76,7 @@
     hostname r2
     buggy
     !
-    logging file debug ../binTmp/zzz27r2-log.run
+    logging file debug ../binTmp/zzz28r2-log.run
     !
     vrf definition tester
      exit
@@ -87,7 +86,6 @@
      exit
     !
     interface serial1
-     no description
      encapsulation frrfc
      framerelay mode dte
      framerelay dlci 123

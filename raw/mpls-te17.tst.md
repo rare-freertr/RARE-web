@@ -14,7 +14,7 @@
     hostname r1
     buggy
     !
-    logging file debug ../binTmp/zzz77r1-log.run
+    logging file debug ../binTmp/zzz72r1-log.run
     !
     access-list test4
      sequence 10 deny 1 any all any all
@@ -34,7 +34,6 @@
      exit
     !
     interface ethernet1
-     no description
      vrf forwarding v1
      ipv4 address 1.1.1.1 255.255.255.0
      ipv4 access-group-in test4
@@ -48,7 +47,6 @@
      exit
     !
     interface tunnel1
-     no description
      tunnel association 4.3.2.1 1234
      tunnel vrf v1
      tunnel source ethernet1
@@ -61,7 +59,6 @@
      exit
     !
     interface tunnel2
-     no description
      tunnel association 4444::5555 1234
      tunnel vrf v1
      tunnel source ethernet1
@@ -115,7 +112,7 @@
     hostname r2
     buggy
     !
-    logging file debug ../binTmp/zzz77r2-log.run
+    logging file debug ../binTmp/zzz72r2-log.run
     !
     access-list test4
      sequence 10 deny 1 any all any all
@@ -135,7 +132,6 @@
      exit
     !
     interface ethernet1
-     no description
      vrf forwarding v1
      ipv4 address 1.1.1.2 255.255.255.0
      ipv4 access-group-in test4
@@ -149,7 +145,6 @@
      exit
     !
     interface tunnel1
-     no description
      tunnel association 4.3.2.1 1234
      tunnel vrf v1
      tunnel source ethernet1
@@ -162,7 +157,6 @@
      exit
     !
     interface tunnel2
-     no description
      tunnel association 4444::5555 1234
      tunnel vrf v1
      tunnel source ethernet1

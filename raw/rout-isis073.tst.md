@@ -14,7 +14,7 @@
     hostname r1
     buggy
     !
-    logging file debug ../binTmp/zzz5r1-log.run
+    logging file debug ../binTmp/zzz56r1-log.run
     !
     vrf definition tester
      exit
@@ -32,7 +32,6 @@
      exit
     !
     interface loopback11
-     no description
      vrf forwarding v1
      ipv4 address 2.2.2.1 255.255.255.255
      ipv6 address 4321::1 ffff:ffff:ffff:ffff:ffff:ffff:ffff:ffff
@@ -45,7 +44,6 @@
      exit
     !
     interface loopback21
-     no description
      vrf forwarding v1
      ipv4 address 2.2.2.2 255.255.255.255
      ipv6 address 4321::2 ffff:ffff:ffff:ffff:ffff:ffff:ffff:ffff
@@ -60,7 +58,6 @@
      exit
     !
     interface loopback31
-     no description
      vrf forwarding v1
      ipv4 address 2.2.2.3 255.255.255.255
      ipv6 address 4321::3 ffff:ffff:ffff:ffff:ffff:ffff:ffff:ffff
@@ -73,7 +70,6 @@
      exit
     !
     interface ethernet1
-     no description
      vrf forwarding v1
      ipv4 address 1.1.1.1 255.255.255.0
      ipv6 address 1234::1 ffff::
@@ -126,7 +122,7 @@
     hostname r2
     buggy
     !
-    logging file debug ../binTmp/zzz5r2-log.run
+    logging file debug ../binTmp/zzz56r2-log.run
     !
     vrf definition tester
      exit
@@ -146,7 +142,6 @@
      exit
     !
     interface ethernet1
-     no description
      vrf forwarding v1
      ipv4 address 1.1.1.2 255.255.255.0
      ipv6 address 1234::2 ffff::
@@ -238,7 +233,8 @@
      |~~~~~~~~~~~~~~~~~~~~~~|~~~~~~~~~~|~~~~~~~|~~~~~|~~~~~~~~~~|
      | lspid                | sequence | flags | len | time     |
      |----------------------|----------|-------|-----|----------|
-     | 4444.0000.1111.00-00 | 0000000d | apo   | 115 | 00:19:56 |
+     | 0000.0000.0000.00-00 | 00000001 | apo   | 10  | 00:19:55 |
+     | 4444.0000.1111.00-00 | 0000000d | apo   | 115 | 00:19:55 |
      | 6666.0000.2222.00-00 | 00000009 | apo   | 45  | 00:19:56 |
      |______________________|__________|_______|_____|__________|
     r2#

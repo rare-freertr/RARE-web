@@ -14,7 +14,7 @@
     hostname r1
     buggy
     !
-    logging file debug ../binTmp/zzz32r1-log.run
+    logging file debug ../binTmp/zzz37r1-log.run
     !
     bridge 1
      mac-learn
@@ -29,8 +29,10 @@
     !
     vrf definition v2
      rd 1:2
-     rt-import 1:2
-     rt-export 1:2
+     rt4import 1:2
+     rt4export 1:2
+     rt6import 1:2
+     rt6export 1:2
      exit
     !
     router blackhole4 1
@@ -42,7 +44,6 @@
      exit
     !
     interface loopback1
-     no description
      vrf forwarding v1
      ipv4 address 2.2.2.1 255.255.255.255
      ipv6 address 4321::1 ffff:ffff:ffff:ffff:ffff:ffff:ffff:ffff
@@ -51,7 +52,6 @@
      exit
     !
     interface bvi1
-     no description
      vrf forwarding v1
      ipv4 address 1.1.1.1 255.255.255.0
      ipv6 address 1234::1 ffff::
@@ -60,28 +60,24 @@
      exit
     !
     interface ethernet1
-     no description
      bridge-group 1
      no shutdown
      no log-link-change
      exit
     !
     interface ethernet2
-     no description
      bridge-group 1
      no shutdown
      no log-link-change
      exit
     !
     interface ethernet3
-     no description
      bridge-group 1
      no shutdown
      no log-link-change
      exit
     !
     interface ethernet4
-     no description
      bridge-group 1
      no shutdown
      no log-link-change
@@ -91,10 +87,8 @@
      vrf v1
      local-as 1
      router-id 4.4.4.1
-     no safe-ebgp
      address-family unicast vpnuni
      neighbor 1.1.1.5 remote-as 1
-     no neighbor 1.1.1.5 description
      neighbor 1.1.1.5 local-as 1
      neighbor 1.1.1.5 address-family unicast vpnuni
      neighbor 1.1.1.5 distance 200
@@ -108,10 +102,8 @@
      vrf v1
      local-as 1
      router-id 6.6.6.1
-     no safe-ebgp
      address-family unicast vpnuni
      neighbor 1234::5 remote-as 1
-     no neighbor 1234::5 description
      neighbor 1234::5 local-as 1
      neighbor 1234::5 address-family unicast vpnuni
      neighbor 1234::5 distance 200
@@ -186,7 +178,7 @@
     hostname r2
     buggy
     !
-    logging file debug ../binTmp/zzz32r2-log.run
+    logging file debug ../binTmp/zzz37r2-log.run
     !
     vrf definition tester
      exit
@@ -196,7 +188,6 @@
      exit
     !
     interface loopback1
-     no description
      vrf forwarding v1
      ipv4 address 2.2.2.2 255.255.255.255
      ipv6 address 4321::2 ffff:ffff:ffff:ffff:ffff:ffff:ffff:ffff
@@ -205,7 +196,6 @@
      exit
     !
     interface ethernet1
-     no description
      vrf forwarding v1
      ipv4 address 1.1.1.2 255.255.255.0
      ipv6 address 1234::2 ffff::
@@ -255,7 +245,7 @@
     hostname r3
     buggy
     !
-    logging file debug ../binTmp/zzz32r3-log.run
+    logging file debug ../binTmp/zzz37r3-log.run
     !
     vrf definition tester
      exit
@@ -265,7 +255,6 @@
      exit
     !
     interface loopback1
-     no description
      vrf forwarding v1
      ipv4 address 2.2.2.3 255.255.255.255
      ipv6 address 4321::3 ffff:ffff:ffff:ffff:ffff:ffff:ffff:ffff
@@ -274,7 +263,6 @@
      exit
     !
     interface ethernet1
-     no description
      vrf forwarding v1
      ipv4 address 1.1.1.3 255.255.255.0
      ipv6 address 1234::3 ffff::
@@ -324,7 +312,7 @@
     hostname r4
     buggy
     !
-    logging file debug ../binTmp/zzz32r4-log.run
+    logging file debug ../binTmp/zzz37r4-log.run
     !
     vrf definition tester
      exit
@@ -334,7 +322,6 @@
      exit
     !
     interface loopback1
-     no description
      vrf forwarding v1
      ipv4 address 2.2.2.4 255.255.255.255
      ipv6 address 4321::4 ffff:ffff:ffff:ffff:ffff:ffff:ffff:ffff
@@ -343,7 +330,6 @@
      exit
     !
     interface ethernet1
-     no description
      vrf forwarding v1
      ipv4 address 1.1.1.4 255.255.255.0
      ipv6 address 1234::4 ffff::
@@ -393,7 +379,7 @@
     hostname r5
     buggy
     !
-    logging file debug ../binTmp/zzz32r5-log.run
+    logging file debug ../binTmp/zzz37r5-log.run
     !
     vrf definition tester
      exit
@@ -404,8 +390,10 @@
     !
     vrf definition v2
      rd 1:2
-     rt-import 1:2
-     rt-export 1:2
+     rt4import 1:2
+     rt4export 1:2
+     rt6import 1:2
+     rt6export 1:2
      exit
     !
     router blackhole4 1
@@ -419,7 +407,6 @@
      exit
     !
     interface loopback1
-     no description
      vrf forwarding v1
      ipv4 address 2.2.2.5 255.255.255.255
      ipv6 address 4321::5 ffff:ffff:ffff:ffff:ffff:ffff:ffff:ffff
@@ -428,7 +415,6 @@
      exit
     !
     interface ethernet1
-     no description
      vrf forwarding v1
      ipv4 address 1.1.1.5 255.255.255.0
      ipv6 address 1234::5 ffff::
@@ -440,10 +426,8 @@
      vrf v1
      local-as 1
      router-id 4.4.4.5
-     no safe-ebgp
      address-family unicast vpnuni
      neighbor 1.1.1.1 remote-as 1
-     no neighbor 1.1.1.1 description
      neighbor 1.1.1.1 local-as 1
      neighbor 1.1.1.1 address-family unicast vpnuni
      neighbor 1.1.1.1 distance 200
@@ -457,10 +441,8 @@
      vrf v1
      local-as 1
      router-id 6.6.6.5
-     no safe-ebgp
      address-family unicast vpnuni
      neighbor 1234::1 remote-as 1
-     no neighbor 1234::1 description
      neighbor 1234::1 local-as 1
      neighbor 1234::1 address-family unicast vpnuni
      neighbor 1234::1 distance 200

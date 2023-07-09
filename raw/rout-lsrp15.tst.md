@@ -14,7 +14,7 @@
     hostname r1
     buggy
     !
-    logging file debug ../binTmp/zzz31r1-log.run
+    logging file debug ../binTmp/zzz30r1-log.run
     !
     vrf definition tester
      exit
@@ -36,7 +36,6 @@
      exit
     !
     interface template1
-     no description
      vrf forwarding v1
      ipv4 address 9.9.9.9 255.255.255.0
      ipv6 address 9999::9 ffff::
@@ -47,7 +46,6 @@
      exit
     !
     interface loopback1
-     no description
      vrf forwarding v1
      ipv4 address 2.2.2.1 255.255.255.255
      ipv6 address 4321::1 ffff:ffff:ffff:ffff:ffff:ffff:ffff:ffff
@@ -56,7 +54,6 @@
      exit
     !
     interface ethernet1
-     no description
      vrf forwarding v1
      ipv4 address 1.1.1.1 255.255.255.0
      ipv6 address 1234::1 ffff::
@@ -106,7 +103,7 @@
     hostname r2
     buggy
     !
-    logging file debug ../binTmp/zzz31r2-log.run
+    logging file debug ../binTmp/zzz30r2-log.run
     !
     vrf definition tester
      exit
@@ -128,7 +125,6 @@
      exit
     !
     interface template1
-     no description
      vrf forwarding v1
      ipv4 address 9.9.9.9 255.255.255.0
      ipv6 address 9999::9 ffff::
@@ -139,7 +135,6 @@
      exit
     !
     interface loopback1
-     no description
      vrf forwarding v1
      ipv4 address 2.2.2.2 255.255.255.255
      ipv6 address 4321::2 ffff:ffff:ffff:ffff:ffff:ffff:ffff:ffff
@@ -148,7 +143,6 @@
      exit
     !
     interface ethernet1
-     no description
      vrf forwarding v1
      ipv4 address 1.1.1.2 255.255.255.0
      ipv6 address 1234::2 ffff::
@@ -203,7 +197,7 @@
      |~~~~~~~~~~~|~~~~~~~~~|~~~~~~|~~~~~~~~~~~|~~~~~~~~~|~~~~~~~|~~~~~~~~~~|
      | iface     | router  | name | peerif    | peer    | ready | uptime   |
      |-----------|---------|------|-----------|---------|-------|----------|
-     | ethernet1 | 4.4.4.1 | r1   | ethernet1 | 1.1.1.1 | true  | 00:00:04 |
+     | ethernet1 | 4.4.4.1 | r1   | ethernet1 | 1.1.1.1 | true  | 00:00:10 |
      |___________|_________|______|___________|_________|_______|__________|
     r2#
     r2#
@@ -231,8 +225,8 @@
      |~~~~~~~~~|~~~~~~|~~~~~|~~~~~|~~~~~|~~~~~~~~~~|~~~~~~~~~~|
      | id      | name | nei | net | seq | topo     | left     |
      |---------|------|-----|-----|-----|----------|----------|
-     | 4.4.4.1 | r1   | 1   | 3   | 10  | b2f83345 | 00:59:58 |
-     | 4.4.4.2 | r2   | 1   | 3   | 9   | 5bd02654 | 00:59:58 |
+     | 4.4.4.1 | r1   | 1   | 3   | 8   | b2f83345 | 00:59:52 |
+     | 4.4.4.2 | r2   | 1   | 3   | 10  | 5bd02654 | 00:59:52 |
      |_________|______|_____|_____|_____|__________|__________|
     r2#
     r2#
@@ -246,8 +240,8 @@
      |~~~~~~~~~|~~~~~~|~~~~~|~~~~~|~~~~~|~~~~~~~~~~|~~~~~~~~~~|
      | id      | name | nei | net | seq | topo     | left     |
      |---------|------|-----|-----|-----|----------|----------|
-     | 6.6.6.1 | r1   | 1   | 3   | 10  | b2f83345 | 00:59:53 |
-     | 6.6.6.2 | r2   | 1   | 3   | 8   | 5bd02654 | 00:59:53 |
+     | 6.6.6.1 | r1   | 1   | 3   | 8   | b2f83345 | 00:59:58 |
+     | 6.6.6.2 | r2   | 1   | 3   | 8   | 5bd02654 | 00:59:58 |
      |_________|______|_____|_____|_____|__________|__________|
     r2#
     r2#
@@ -283,12 +277,12 @@
      |~~~~~~|~~~~~~~~~~~~|~~~~~~~~|~~~~~~~~~~~|~~~~~~~~~|~~~~~~~~~~|
      | typ  | prefix     | metric | iface     | hop     | time     |
      |------|------------|--------|-----------|---------|----------|
-     | C    | 1.1.1.0/24 | 0/0    | ethernet1 | null    | 00:00:11 |
-     | LOC  | 1.1.1.2/32 | 0/1    | ethernet1 | null    | 00:00:11 |
-     | L EX | 2.2.2.1/32 | 70/10  | ethernet1 | 1.1.1.1 | 00:00:02 |
-     | C    | 2.2.2.2/32 | 0/0    | loopback1 | null    | 00:00:11 |
-     | C    | 9.9.9.0/24 | 0/0    | template1 | null    | 00:00:11 |
-     | LOC  | 9.9.9.9/32 | 0/1    | template1 | null    | 00:00:11 |
+     | C    | 1.1.1.0/24 | 0/0    | ethernet1 | null    | 00:00:16 |
+     | LOC  | 1.1.1.2/32 | 0/1    | ethernet1 | null    | 00:00:16 |
+     | L EX | 2.2.2.1/32 | 70/10  | ethernet1 | 1.1.1.1 | 00:00:08 |
+     | C    | 2.2.2.2/32 | 0/0    | loopback1 | null    | 00:00:17 |
+     | C    | 9.9.9.0/24 | 0/0    | template1 | null    | 00:00:17 |
+     | LOC  | 9.9.9.9/32 | 0/1    | template1 | null    | 00:00:17 |
      |______|____________|________|___________|_________|__________|
     r2#
     r2#
@@ -302,12 +296,12 @@
      |~~~~~~|~~~~~~~~~~~~~|~~~~~~~~|~~~~~~~~~~~|~~~~~~~~~|~~~~~~~~~~|
      | typ  | prefix      | metric | iface     | hop     | time     |
      |------|-------------|--------|-----------|---------|----------|
-     | C    | 1234::/16   | 0/0    | ethernet1 | null    | 00:00:11 |
-     | LOC  | 1234::2/128 | 0/1    | ethernet1 | null    | 00:00:11 |
-     | L EX | 4321::1/128 | 70/10  | ethernet1 | 1234::1 | 00:00:07 |
-     | C    | 4321::2/128 | 0/0    | loopback1 | null    | 00:00:11 |
-     | C    | 9999::/16   | 0/0    | template1 | null    | 00:00:11 |
-     | LOC  | 9999::9/128 | 0/1    | template1 | null    | 00:00:11 |
+     | C    | 1234::/16   | 0/0    | ethernet1 | null    | 00:00:17 |
+     | LOC  | 1234::2/128 | 0/1    | ethernet1 | null    | 00:00:17 |
+     | L EX | 4321::1/128 | 70/10  | ethernet1 | 1234::1 | 00:00:02 |
+     | C    | 4321::2/128 | 0/0    | loopback1 | null    | 00:00:17 |
+     | C    | 9999::/16   | 0/0    | template1 | null    | 00:00:17 |
+     | LOC  | 9999::9/128 | 0/1    | template1 | null    | 00:00:17 |
      |______|_____________|________|___________|_________|__________|
     r2#
     r2#

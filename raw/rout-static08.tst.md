@@ -14,7 +14,7 @@
     hostname r1
     buggy
     !
-    logging file debug ../binTmp/zzz32r1-log.run
+    logging file debug ../binTmp/zzz41r1-log.run
     !
     vrf definition tester
      exit
@@ -24,7 +24,6 @@
      exit
     !
     interface loopback0
-     no description
      vrf forwarding v1
      ipv4 address 2.2.2.101 255.255.255.255
      ipv6 address 4321::101 ffff:ffff:ffff:ffff:ffff:ffff:ffff:ffff
@@ -33,7 +32,6 @@
      exit
     !
     interface ethernet1
-     no description
      vrf forwarding v1
      ipv4 address 1.1.1.3 255.255.255.254
      ipv6 address 1234:1::3 ffff:ffff:ffff:ffff:ffff:ffff:ffff:fffe
@@ -85,7 +83,7 @@
     hostname r2
     buggy
     !
-    logging file debug ../binTmp/zzz32r2-log.run
+    logging file debug ../binTmp/zzz41r2-log.run
     !
     vrf definition tester
      exit
@@ -95,7 +93,6 @@
      exit
     !
     interface ethernet1
-     no description
      vrf forwarding v1
      ipv4 address 1.1.1.2 255.255.255.254
      ipv6 address 1234:1::2 ffff:ffff:ffff:ffff:ffff:ffff:ffff:fffe
@@ -104,7 +101,6 @@
      exit
     !
     interface ethernet2
-     no description
      vrf forwarding v1
      ipv4 address 1.1.1.6 255.255.255.254
      ipv6 address 1234:2::2 ffff:ffff:ffff:ffff:ffff:ffff:ffff:fffe
@@ -158,7 +154,7 @@
     hostname r3
     buggy
     !
-    logging file debug ../binTmp/zzz32r3-log.run
+    logging file debug ../binTmp/zzz41r3-log.run
     !
     vrf definition tester
      exit
@@ -168,7 +164,6 @@
      exit
     !
     interface loopback0
-     no description
      vrf forwarding v1
      ipv4 address 2.2.2.201 255.255.255.255
      ipv6 address 4321::201 ffff:ffff:ffff:ffff:ffff:ffff:ffff:ffff
@@ -177,7 +172,6 @@
      exit
     !
     interface ethernet1
-     no description
      vrf forwarding v1
      ipv4 address 1.1.1.7 255.255.255.254
      ipv6 address 1234:2::3 ffff:ffff:ffff:ffff:ffff:ffff:ffff:fffe
@@ -253,8 +247,8 @@
      |~~~~~|~~~~~~~~~~~~~~~|~~~~~~~~|~~~~~~~~~~~|~~~~~~~~~~~|~~~~~~~~~~|
      | typ | prefix        | metric | iface     | hop       | time     |
      |-----|---------------|--------|-----------|-----------|----------|
-     | C   | 1234:1::2/127 | 0/0    | ethernet1 | null      | 00:00:02 |
-     | LOC | 1234:1::2/128 | 0/1    | ethernet1 | null      | 00:00:02 |
+     | C   | 1234:1::2/127 | 0/0    | ethernet1 | null      | 00:00:01 |
+     | LOC | 1234:1::2/128 | 0/1    | ethernet1 | null      | 00:00:01 |
      | C   | 1234:2::2/127 | 0/0    | ethernet2 | null      | 00:00:01 |
      | LOC | 1234:2::2/128 | 0/1    | ethernet2 | null      | 00:00:01 |
      | S   | 4321::101/128 | 1/0    | ethernet1 | 1234:1::3 | 00:00:01 |

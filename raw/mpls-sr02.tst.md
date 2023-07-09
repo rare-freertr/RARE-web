@@ -14,7 +14,7 @@
     hostname r1
     buggy
     !
-    logging file debug ../binTmp/zzz35r1-log.run
+    logging file debug ../binTmp/zzz13r1-log.run
     !
     access-list test4
      sequence 10 deny 1 any all any all
@@ -48,7 +48,6 @@
      exit
     !
     interface loopback1
-     no description
      vrf forwarding v1
      ipv4 address 2.2.2.1 255.255.255.255
      ipv6 address 4321::1 ffff:ffff:ffff:ffff:ffff:ffff:ffff:ffff
@@ -57,7 +56,6 @@
      exit
     !
     interface ethernet1
-     no description
      vrf forwarding v1
      ipv4 address 1.1.1.1 255.255.255.0
      ipv4 access-group-in test4
@@ -71,7 +69,6 @@
      exit
     !
     interface ethernet2
-     no description
      vrf forwarding v1
      ipv4 address 1.1.2.2 255.255.255.0
      ipv4 access-group-in test4
@@ -85,7 +82,6 @@
      exit
     !
     interface ethernet3
-     no description
      vrf forwarding v1
      ipv4 address 1.1.3.3 255.255.255.0
      ipv4 access-group-in test4
@@ -140,7 +136,7 @@
     hostname r2
     buggy
     !
-    logging file debug ../binTmp/zzz35r2-log.run
+    logging file debug ../binTmp/zzz13r2-log.run
     !
     access-list test4
      sequence 10 deny 1 any all any all
@@ -174,7 +170,6 @@
      exit
     !
     interface loopback1
-     no description
      vrf forwarding v1
      ipv4 address 2.2.2.2 255.255.255.255
      ipv6 address 4321::2 ffff:ffff:ffff:ffff:ffff:ffff:ffff:ffff
@@ -183,7 +178,6 @@
      exit
     !
     interface ethernet1
-     no description
      vrf forwarding v1
      ipv4 address 1.1.1.2 255.255.255.0
      ipv4 access-group-in test4
@@ -238,7 +232,7 @@
     hostname r3
     buggy
     !
-    logging file debug ../binTmp/zzz35r3-log.run
+    logging file debug ../binTmp/zzz13r3-log.run
     !
     access-list test4
      sequence 10 deny 1 any all any all
@@ -272,7 +266,6 @@
      exit
     !
     interface loopback1
-     no description
      vrf forwarding v1
      ipv4 address 2.2.2.3 255.255.255.255
      ipv6 address 4321::3 ffff:ffff:ffff:ffff:ffff:ffff:ffff:ffff
@@ -281,7 +274,6 @@
      exit
     !
     interface ethernet1
-     no description
      vrf forwarding v1
      ipv4 address 1.1.2.3 255.255.255.0
      ipv4 access-group-in test4
@@ -336,7 +328,7 @@
     hostname r4
     buggy
     !
-    logging file debug ../binTmp/zzz35r4-log.run
+    logging file debug ../binTmp/zzz13r4-log.run
     !
     access-list test4
      sequence 10 deny 1 any all any all
@@ -370,7 +362,6 @@
      exit
     !
     interface loopback1
-     no description
      vrf forwarding v1
      ipv4 address 2.2.2.4 255.255.255.255
      ipv6 address 4321::4 ffff:ffff:ffff:ffff:ffff:ffff:ffff:ffff
@@ -379,7 +370,6 @@
      exit
     !
     interface ethernet1
-     no description
      vrf forwarding v1
      ipv4 address 1.1.3.4 255.255.255.0
      ipv4 access-group-in test4

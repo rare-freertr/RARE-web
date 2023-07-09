@@ -14,7 +14,7 @@
     hostname r1
     buggy
     !
-    logging file debug ../binTmp/zzz5r1-log.run
+    logging file debug ../binTmp/zzz49r1-log.run
     !
     policy-map p1
      sequence 10 action transit
@@ -32,7 +32,6 @@
      exit
     !
     interface ethernet1
-     no description
      service-policy-out p1
      vrf forwarding v1
      ipv4 address 3.3.3.1 255.255.255.0
@@ -83,7 +82,7 @@
     hostname r2
     buggy
     !
-    logging file debug ../binTmp/zzz5r2-log.run
+    logging file debug ../binTmp/zzz49r2-log.run
     !
     vrf definition tester
      exit
@@ -93,7 +92,6 @@
      exit
     !
     interface ethernet1
-     no description
      vrf forwarding v1
      ipv4 address 3.3.3.2 255.255.255.0
      ipv6 address 3333::2 ffff::

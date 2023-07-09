@@ -14,7 +14,7 @@
     hostname r1
     buggy
     !
-    logging file debug ../binTmp/zzz28r1-log.run
+    logging file debug ../binTmp/zzz73r1-log.run
     !
     access-list test4
      sequence 10 deny 1 any all any all
@@ -34,7 +34,6 @@
      exit
     !
     interface serial1
-     no description
      encapsulation hdlc
      vrf forwarding v1
      ipv4 address 1.1.1.1 255.255.255.0
@@ -49,7 +48,6 @@
      exit
     !
     interface tunnel1
-     no description
      tunnel vrf v1
      tunnel source serial1
      tunnel destination 1.1.1.2
@@ -61,7 +59,6 @@
      exit
     !
     interface tunnel2
-     no description
      tunnel vrf v1
      tunnel source serial1
      tunnel destination 1234::2
@@ -114,7 +111,7 @@
     hostname r2
     buggy
     !
-    logging file debug ../binTmp/zzz28r2-log.run
+    logging file debug ../binTmp/zzz73r2-log.run
     !
     access-list test4
      sequence 10 deny 1 any all any all
@@ -134,7 +131,6 @@
      exit
     !
     interface serial1
-     no description
      encapsulation hdlc
      vrf forwarding v1
      ipv4 address 1.1.1.2 255.255.255.0
@@ -149,7 +145,6 @@
      exit
     !
     interface tunnel1
-     no description
      tunnel vrf v1
      tunnel source serial1
      tunnel destination 1.1.1.1
@@ -161,7 +156,6 @@
      exit
     !
     interface tunnel2
-     no description
      tunnel vrf v1
      tunnel source serial1
      tunnel destination 1234::1
