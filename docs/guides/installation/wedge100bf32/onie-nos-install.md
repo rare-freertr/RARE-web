@@ -90,6 +90,11 @@ onie# onie-nos-install /root/onie-installer.bin
 ```
 You should observe RARE/freeRtr installation work in progress. Once finished, the Wedge 100BF-32 will reboot.
 
+Now you can access RARE/freeRtr CLI by telnet on port 2323
+```
+telnet [mgmt IP] 2323
+```
+
 And, «voilà !»
 
 Congratulations, you have just installed RARE/freeRtr on your Wedge 100BF-32!
